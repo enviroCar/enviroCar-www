@@ -1,0 +1,197 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>car.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+	  
+	  img.olTileImage {
+        max-width: none;	/* necessary for the map*/
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+	<script src="../assets/OpenLayers/OpenLayers.js"></script>
+								   
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top customNav">
+      <div class="customNav">
+        <div class="customNav">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
+		  <img src="../assets/img/settings.png" class="brand" style="height: 20px; float:right;">
+          <a class="brand" href="#">car.io</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">Route Information</a></li>
+              <li><a href="#contact">Friends</a></li>
+              <li><a href="#contact">Groups</a></li>
+              <li><a href="#contact">Data Access</a></li>
+              <li><a href="#contact">Help</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+<div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div style="width:100%; height:60%" id="map"></div>
+	  
+	  <script type="text/javascript">
+        var map = new OpenLayers.Map('map');
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+        map.setCenter(new OpenLayers.LonLat(7.63,51.96) // Center of the map
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+          ),12
+        );
+		
+		
+		var overlay = new OpenLayers.Layer.Vector("Routes");
+		
+		var style_blue = OpenLayers.Util.extend();
+            style_blue.strokeColor = '#048ABF';
+            style_blue.strokeWidth = 3;
+        
+		var style_green = OpenLayers.Util.extend();
+            style_green.strokeColor = '#8CBF3F';
+            style_green.strokeWidth = 3;
+			
+		var style_darkblue = OpenLayers.Util.extend();
+            style_darkblue.strokeColor = '#0065A0';
+            style_darkblue.strokeWidth = 3;
+		
+		var point1 = [];
+		point1[0] = new OpenLayers.Geometry.Point(7.63,51.96).transform("EPSG:4326", "EPSG:900913");
+        point1[1] = new OpenLayers.Geometry.Point(7.64,51.97).transform("EPSG:4326", "EPSG:900913");
+        point1[2] = new OpenLayers.Geometry.Point(7.645,51.967).transform("EPSG:4326", "EPSG:900913");
+        point1[3] = new OpenLayers.Geometry.Point(7.653,51.95).transform("EPSG:4326", "EPSG:900913");
+        point1[4] = new OpenLayers.Geometry.Point(7.66,51.945).transform("EPSG:4326", "EPSG:900913");
+        
+		var point2 = [];
+		point2[0] = new OpenLayers.Geometry.Point(7.613,51.942).transform("EPSG:4326", "EPSG:900913");
+        point2[1] = new OpenLayers.Geometry.Point(7.609,51.938).transform("EPSG:4326", "EPSG:900913");
+        point2[2] = new OpenLayers.Geometry.Point(7.62,51.938).transform("EPSG:4326", "EPSG:900913");
+        point2[3] = new OpenLayers.Geometry.Point(7.64,51.97).transform("EPSG:4326", "EPSG:900913");
+        point2[4] = new OpenLayers.Geometry.Point(7.65,51.98).transform("EPSG:4326", "EPSG:900913");
+
+		var point3 = [];
+		point3[0] = new OpenLayers.Geometry.Point(7.645,51.96).transform("EPSG:4326", "EPSG:900913");
+        point3[1] = new OpenLayers.Geometry.Point(7.66,51.973).transform("EPSG:4326", "EPSG:900913");
+        point3[2] = new OpenLayers.Geometry.Point(7.675,51.98).transform("EPSG:4326", "EPSG:900913");
+        point3[3] = new OpenLayers.Geometry.Point(7.665,51.96).transform("EPSG:4326", "EPSG:900913");
+        point3[4] = new OpenLayers.Geometry.Point(7.62,51.935).transform("EPSG:4326", "EPSG:900913");
+        
+		var line1 = new OpenLayers.Geometry.LineString(point1);
+		var lineFeature1 = new OpenLayers.Feature.Vector(line1, null, style_blue);
+        
+		var line2 = new OpenLayers.Geometry.LineString(point2);
+		var lineFeature2 = new OpenLayers.Feature.Vector(line2, null, style_green);
+        
+		var line3 = new OpenLayers.Geometry.LineString(point3);
+		var lineFeature3 = new OpenLayers.Feature.Vector(line3, null, style_darkblue);
+
+		map.addLayer(overlay);
+		overlay.addFeatures(lineFeature1);
+        overlay.addFeatures(lineFeature2);
+        overlay.addFeatures(lineFeature3);
+		
+		
+      </script>	  
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Route 1</h2>
+          <p>Start: 28.04.2013 14:30</p>
+		  <p>End: 28.04.2013 15:00</p>
+		  <p>Length: 5.3 km</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Route 2</h2>
+          <p>Start: 29.04.2013 11:08</p>
+		  <p>End: 29.04.2013 11:47</p>
+		  <p>Length: 6.1 km</p>
+		  <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Route 3</h2>
+          <p>Start: 30.04.2013 12:14</p>
+		  <p>End: 30.04.2013 12:29</p>
+		  <p>Length: 4.8 km</p>
+		  <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+
+      <!-- FOOTER -->
+	  
+	<footer>
+		<div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+		</div>
+	</footer>
+	
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script type="text/javascript">
+		$('.nav li a').on('click', function() {
+			$(this).parent().parent().find('.active').removeClass('active');
+			$(this).parent().addClass('active');
+		});
+	</script>
+  </body>
+</html>
