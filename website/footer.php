@@ -24,6 +24,15 @@
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap-typeahead.js"></script>
+<<<<<<< HEAD
 
+=======
+	<script type="text/javascript">
+		$('.nav li a').on('click', function() {
+			$(this).parent().parent().find('.active').removeClass('active');
+			$(this).parent().addClass('active');
+		});
+	</script>
+>>>>>>> Initial Website Commit
   </body>
 </html>
