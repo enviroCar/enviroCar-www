@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-=======
-<?
-function echoActiveClassIfRequestMatches($requestUri)
-{
-    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
-
-    if ($current_file_name == $requestUri)
-        echo 'class="active"';
-}
-?>
-
->>>>>>> refs/heads/dev
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,25 +43,15 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
           </button>
 		  <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
-		  <img src="../assets/img/settings.png" class="brand" style="height: 20px; float:right;">
           <a class="brand" href="#">car.io</a>
           <div class="nav-collapse collapse">
-            <ul class="nav">
-<<<<<<< HEAD
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">Route Information</a></li>
-              <li><a href="#contact">Friends</a></li>
-              <li><a href="#contact">Groups</a></li>
-              <li><a href="#contact">Data Access</a></li>
-              <li><a href="#contact">Help</a></li>
-=======
-              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="#">Home</a></li>
-              <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Route Information</a></li>
-              <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
-              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
->>>>>>> refs/heads/dev
+            <ul class="nav" style="float:right">
+                <li><h4 class="form-signin-heading" style="color:white; padding-top: 5px;margin-right:20px;">Please sign in</h4></li>
+                <li style="padding-top: 10px;"><input type="text" class="input-block-level" placeholder="Email address" ></li>
+                <li style="padding-top: 10px;"><input type="password" class="input-block-level" placeholder="Password"></li>
+                <li><button class="btn btn-medium btn-primary" type="submit">Sign in</button> </li>
+                <li ><button class="btn btn-medium btn-primary" type="submit">Register</button></li>
+ 
             </ul>
           </div><!--/.nav-collapse -->
         </div>
