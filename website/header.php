@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?
 function echoActiveClassIfRequestMatches($requestUri)
 {
@@ -8,6 +10,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 }
 ?>
 
+>>>>>>> refs/heads/dev
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,12 +60,21 @@ function echoActiveClassIfRequestMatches($requestUri)
           <a class="brand" href="#">car.io</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
+<<<<<<< HEAD
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">Route Information</a></li>
+              <li><a href="#contact">Friends</a></li>
+              <li><a href="#contact">Groups</a></li>
+              <li><a href="#contact">Data Access</a></li>
+              <li><a href="#contact">Help</a></li>
+=======
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="#">Home</a></li>
               <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Route Information</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
               <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
+>>>>>>> refs/heads/dev
             </ul>
           </div><!--/.nav-collapse -->
         </div>
