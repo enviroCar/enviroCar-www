@@ -36,9 +36,19 @@ function echoActiveClassIfRequestMatches($requestUri)
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    
+    <script type="text/javascript">
+
+      function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if(e.style.display == 'block') e.style.display = 'none';
+        else e.style.display = 'block';
+      }
+
+    </script>
 
   </head>
 
@@ -53,7 +63,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
           </button>
 		  <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
-		  <img src="../assets/img/settings.png" class="brand" style="height: 20px; float:right;">
+		  <img src="../assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
           <a class="brand" href="dashboard.php">car.io</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -67,4 +77,8 @@ function echoActiveClassIfRequestMatches($requestUri)
           </div><!--/.nav-collapse -->
         </div>
       </div>
+    </div>
+    <div id="settings" class="settings">
+      <h4><a style="padding:10px;" href="">Settings</a></h4><br>
+      <h4><a style="padding:10px;" href="">Logout</a></h4>
     </div>

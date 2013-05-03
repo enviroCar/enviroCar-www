@@ -28,6 +28,17 @@ body{
 	*/
 }
 
+.settings{
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 50px;
+	right: 0px;
+	display: none;
+	background-color: #FFFFFF; 
+	box-shadow: 1px 2px 2px #D4D4D4;
+}
+
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
 color: #F2F2F2;
 text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
