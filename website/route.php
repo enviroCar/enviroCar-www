@@ -18,7 +18,7 @@ include('header.php');
     </div>
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="span5" id="map"></div>
+      <div class="span5" id="map" style="top: 0; left: 0; bottom: 0; right: 0; position: fixed;"></div>
 </div>	
 	
 	  <script type="text/javascript">
