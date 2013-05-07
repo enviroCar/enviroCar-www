@@ -7,6 +7,7 @@ include('header.php');
 	here will be information about LOD and the API
 </div>
 
+
 <?
 include('footer.php');
 ?>

@@ -30,7 +30,6 @@ include('header.php');
 			<br>
 			Contact Person<br>
 			<a href="mailto:email@whatever.com">email@whatever.com</a>
-			<a
 		</div>
 	</div>
 </div>

@@ -1,9 +1,9 @@
       <!-- FOOTER -->
 	  
 	<footer>
-		<div class="container">
+		<div class="container leftband">
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2013 car.io &middot; <a href="#">Terms</a></p>
 		</div>
 	</footer>
 	
@@ -11,7 +11,6 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap-transition.js"></script>
     <script src="../assets/js/bootstrap-alert.js"></script>
     <script src="../assets/js/bootstrap-modal.js"></script>

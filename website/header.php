@@ -1,4 +1,11 @@
 <?
+require('../assets/includes/authentification.php');
+if(!is_logged_in()){
+  //header('Location: index.php?accessdenied');
+}else{
+  //TODO: include access denied notice
+}
+
 function echoActiveClassIfRequestMatches($requestUri)
 {
     $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
@@ -40,6 +47,8 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
     
+    <script src="../assets/js/jquery.js"></script>
+
     <script type="text/javascript">
 
       function toggle_visibility(id) {
@@ -80,5 +89,5 @@ function echoActiveClassIfRequestMatches($requestUri)
     </div>
     <div id="settings" class="settings">
       <h4><a style="padding:10px;" href="">Settings</a></h4><br>
-      <h4><a style="padding:10px;" href="">Logout</a></h4>
+      <h4><a style="padding:10px;" href="../assets/includes/authentification?logout">Logout</a></h4>
     </div>

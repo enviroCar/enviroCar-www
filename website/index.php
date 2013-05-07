@@ -1,42 +1,20 @@
 <?
-include('header.php');
+include('header-start.php');
 ?>
 
-    <div class="container leftband">
-    <div class="row-fluid">
-        <div class="span6">
-      <h1>car.io</h1>
-      <p>Here goes the eyecatching marketing slogan!.<br> Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui..</p>
-	</div>
-	<div class="span6">
-	<form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button> 
-		<button class="btn btn-large btn-primary" type="submit">Register</button>
-      </form>
-	  </div>
-	  
-	</div>
-    </div> <!-- /container -->
-	<br>
 	<div class="container rightband">
 	<div class="row-fluid">
         <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <h2>Keep track over your Costs</h2>
+          <p>car.io helps you to automatically calculate your gas costs.</p>
        </div>
         <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <h2>Watch our Video!</h2>
+          <iframe src="http://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="span4">
+          <h2>Be a Citizen Scientist!</h2>
+          <p>Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your research!</p>
         </div>
       </div>
 
