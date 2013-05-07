@@ -2,6 +2,8 @@
 include('header.php');
 ?>
 
+<script src="../assets/OpenLayers/OpenLayers.js"></script>
+
 <div class="container">
 	<div class="span5">
           <h2>Route 1</h2>
