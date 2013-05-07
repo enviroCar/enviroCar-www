@@ -1,4 +1,33 @@
 <?
+session_start();
+
+/*Example Usage:
+$uri = 'giv-car.uni-muenster.de:8080/stable/rest/users/website';
+
+echo get_request($uri, true);
+echo '<br>';
+echo get_request('giv-car.uni-muenster.de:8080/stable/rest/users/', false);
+*/
+function get_request($uri, $isAuthRequired){
+    $ch = curl_init($uri);
+    if($isAuthRequired){
+        curl_setopt_array($ch, array(
+            CURLOPT_HTTPHEADER  => array('X-User: website', 'X-Token: website'),  //TODO: exchange with credentials from $_SESSION
+            CURLOPT_RETURNTRANSFER  =>true,
+            CURLOPT_VERBOSE     => 1
+        ));
+    }else{
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER  =>true,
+            CURLOPT_VERBOSE     => 1
+        ));
+    }
+    
+    $out = curl_exec($ch);
+    curl_close($ch);
+    // echo response output
+    return $out;
+}
 
 //Method to execute a post request
 function post_request($url, $data, $referer='') {
@@ -29,7 +58,8 @@ function post_request($url, $data, $referer='') {
         if ($referer != '')
             fputs($fp, "Referer: $referer\r\n");
  
-        fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");  //todo: application/json (test!)
+        //fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");  //todo: application/json (test!)
+        fputs($fp, "Content-type: application/json\r\n");  //todo: application/json (test!)
         fputs($fp, "Content-length: ". strlen($data) ."\r\n");
         fputs($fp, "Connection: close\r\n\r\n");
         fputs($fp, $data);
@@ -65,33 +95,6 @@ function post_request($url, $data, $referer='') {
 }
 
 
-//Example POST
-/*
 
-// Submit those variables to the server
-$post_data = array(
-    'test' => 'foobar',
-    'okay' => 'yes',
-    'number' => 2
-);
- 
-// Send a request to example.com 
-$result = post_request('http://www.example.com/', $post_data);
- 
-if ($result['status'] == 'ok'){
- 
-    // Print headers 
-    echo $result['header']; 
- 
-    echo '<hr />';
- 
-    // print the result of the whole request:
-    echo $result['content'];
- 
-}
-else {
-    echo 'A error occured: ' . $result['error']; 
-}
-*/
 
 ?>
