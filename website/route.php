@@ -3,6 +3,11 @@ include('header.php');
 ?>
 
 <script src="../assets/OpenLayers/OpenLayers.js"></script>
+<style>
+	  img.olTileImage {
+        max-width: none;
+      }
+    </style>
 
 <div class="container">
 	<div class="span5">
