@@ -14,7 +14,7 @@ include('header-start.php');
         </div>
         <div class="span4">
           <h2>Be a Citizen Scientist!</h2>
-          <p>Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your research!</p>
+          <p>Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your own research!</p>
         </div>
       </div>
 
@@ -26,16 +26,22 @@ include('header-start.php');
 
       <div class="featurette">
         <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-chrome.png">
-        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
+        <p class="lead">This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.</p>
       </div>
 
       <hr class="featurette-divider">
 
       <div class="featurette">
         <img class="featurette-image pull-left" src="../assets/img/examples/browser-icon-firefox.png">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
+        <p class="lead">
+          <ul>
+            <li>Connect your OBD2 adapter to your car</li>
+            <li>Download the enviroCar App</li>
+            <li>Drive & Share</li>
+          </ul>
+        </p>
       </div>
 
       <hr class="featurette-divider">

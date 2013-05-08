@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>car.io</title>
+    <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -64,7 +64,7 @@
             <span class="icon-bar"></span>
           </button>
       <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
-          <a class="brand" href="index.php">car.io</a>
+          <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav" style="float:right">
                 <li><h4 class="form-signin-heading" style="color:white; padding-top: 5px;margin-right:20px;">Please sign in</h4></li>
@@ -76,3 +76,27 @@
           </div><!--/.nav-collapse -->      </div>
       </div>
     </div>
+ 
+<?
+if(isset($_GET['accessdenied'])){
+?>
+  <div class="container alert alert-block alert-error fade in"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <h4 class="alert-heading">Access denied!</h4>  
+   You are currently not logged in!  
+  </div> 
+<?
+}
+?>
+
+<?
+if(isset($_GET['logout'])){
+?>
+  <div class="container alert alert-block fade in"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <h4 class="alert-heading">Logout!</h4>  
+ Successfully logged out... 
+</div> 
+<?
+}
+?>

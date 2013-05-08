@@ -1,9 +1,7 @@
 <?
 require('../assets/includes/authentification.php');
 if(!is_logged_in()){
-  //header('Location: index.php?accessdenied');
-}else{
-  //TODO: include access denied notice
+ header('Location: index.php?accessdenied');
 }
 
 function echoActiveClassIfRequestMatches($requestUri)
@@ -20,7 +18,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>car.io</title>
+    <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -51,10 +49,13 @@ function echoActiveClassIfRequestMatches($requestUri)
 
     <script type="text/javascript">
 
+      //Used slide down/up to toggle the visibility of a given element
       function toggle_visibility(id) {
-        var e = document.getElementById(id);
-        if(e.style.display == 'block') e.style.display = 'none';
-        else e.style.display = 'block';
+        if ($('#'+id).is(":hidden")) {
+          $('#'+id).slideDown("fast");
+        } else {
+          $('#'+id).slideUp("fast");
+        }
       }
 
     </script>
@@ -73,7 +74,7 @@ function echoActiveClassIfRequestMatches($requestUri)
           </button>
 		  <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
 		  <img src="../assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
-          <a class="brand" href="dashboard.php">car.io</a>
+          <a class="brand" href="dashboard.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php">Home</a></li>
