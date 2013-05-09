@@ -20,8 +20,12 @@ include('header-start.php');
           		alert('Passwords are not identic');
           	}else{
 	          $.post('../assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
-	            function(data){
-	              console.log(data);
+	            function(response){
+	              if(response === 'status:ok'){
+	              	window.location.href = "index.php?registration_successful";
+	              }else{
+	              	toggle_visibility('registration_fail');
+	              }
 	            });
 	        }
         }

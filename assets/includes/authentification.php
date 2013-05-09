@@ -4,6 +4,7 @@ if (!isset($_SESSION)) session_start();
 require('connection.php');
 $baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
 
+//Login
 if(isset($_GET['login'])){
 	$_SESSION['name'] = $_POST['name'];
 	$_SESSION['password'] = $_POST['password'];
@@ -18,14 +19,24 @@ if(isset($_GET['login'])){
 		echo 'access_denied';
 	}
 }
-else if(isset($_GET['registration'])){
-	//TODO send registration information to the server
 
-	/*
-	echo $_POST['name'].'<br>';
-	echo $_POST['password'];
-	echo $_POST['name'];
-	*/
+//Registration
+else if(isset($_GET['registration'])){
+	error_log($_POST['name'].' '.$_POST['email'].' '.$_POST['password'],0);
+
+	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
+	$response = post_request($baseUrl.'users', $newUser);
+
+	error_log($response['status'],0);
+
+	if($response["status"] == 201){
+		$_SESSION['name'] = $_POST['name'];
+		$_SESSION['password'] = $_POST['password'];
+		echo 'status:ok';
+	}else{
+		echo 'status:error';
+	}
+
 }
 
 else if(isset($_GET['logout'])){
