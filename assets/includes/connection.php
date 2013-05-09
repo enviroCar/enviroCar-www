@@ -54,4 +54,23 @@ function post_request($url, $data){
 }
 
 
+//delete_request('giv-car.uni-muenster.de:8080/stable/rest/users/blablub');
+
+//Method to perform a DELETE request
+function delete_request($url){                                                                                
+     
+    $ch = curl_init($url);                                                                      
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");                                                                                                          
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                    
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+        'X-User: '.$_SESSION['name'], 
+        'X-Token: '.$_SESSION['password'])                                                                       
+    );                                                                                                                   
+     
+    $result = curl_exec($ch);
+    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    return array("status" => $http_status, "response" => $result);
+}
+
 ?>
