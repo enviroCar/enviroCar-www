@@ -36,26 +36,18 @@ include('header.php');
           ),12
         );
 		
-		
-		var overlay = new OpenLayers.Layer.Vector("Routes");
-		
-		var style_blue = OpenLayers.Util.extend();
-            style_blue.strokeColor = '#0065A0';
-            style_blue.strokeWidth = 3;
-		
-		var point1 = [];
-		point1[0] = new OpenLayers.Geometry.Point(7.63,51.96).transform("EPSG:4326", "EPSG:900913");
-        point1[1] = new OpenLayers.Geometry.Point(7.64,51.97).transform("EPSG:4326", "EPSG:900913");
-        point1[2] = new OpenLayers.Geometry.Point(7.645,51.967).transform("EPSG:4326", "EPSG:900913");
-        point1[3] = new OpenLayers.Geometry.Point(7.653,51.95).transform("EPSG:4326", "EPSG:900913");
-        point1[4] = new OpenLayers.Geometry.Point(7.66,51.945).transform("EPSG:4326", "EPSG:900913");
-
-        
-		var line1 = new OpenLayers.Geometry.LineString(point1);
-		var lineFeature1 = new OpenLayers.Feature.Vector(line1, null, style_blue);
-
+		var overlay = new OpenLayers.Layer.Vector("GPX-Track",
+                             {protocol:   new OpenLayers.Protocol.HTTP({   
+                                                       url:             "../assets/track1.gpx",
+                                                       format:          new OpenLayers.Format.GPX }),
+                              styleMap:   new OpenLayers.StyleMap({ 
+                                                       strokeColor:     "#0065A0", 
+                                                       strokeWidth:     3}),
+                              strategies: [new OpenLayers.Strategy.Fixed()],
+                              projection: new OpenLayers.Projection("EPSG:4326")
+                              }); 
+							  
 		map.addLayer(overlay);
-		overlay.addFeatures(lineFeature1);
 			
       </script>	  
 
