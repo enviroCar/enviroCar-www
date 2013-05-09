@@ -1,6 +1,46 @@
 <?
 include('header-start.php');
 ?>
+  
+    <script type="text/javascript">
+
+      //Sending the credentials to the authentification page
+      function login(){
+        if($('#login_name').val() === ''){
+          alert("Invalid Email");
+        }
+        else if($('#login_password').val() === ''){
+          alert('Password cannot be empty');
+        }else{
+          $.post('../assets/includes/authentification.php?login', {name: $('#login_name').val(), password: $('#login_password').val()}, 
+            function(data){
+              if(data === 'status:ok'){
+                window.location.href = "dashboard.php";
+              }else{
+                toggle_visibility("login_fail");
+              }
+            });
+        }
+      }
+    </script>
+
+
+  <div class="container leftband">
+    <div class="row-fluid">
+      <div class="span6">
+        <h1>car.io</h1>
+        <p>Here goes the eyecatching marketing slogan!.<br> Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui..</p>
+      </div>
+      <div class="span6">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <input type="text" id="login_name" class="input-block-level" placeholder="User name">
+            <input type="password" id="login_password" class="input-block-level" placeholder="Password">
+            <button class="btn btn-large btn-primary" onclick="login()">Sign in</button> 
+            <button class="btn btn-large btn-primary" onclick="window.location.href='registration.php'">Register</button>
+      </div>
+    
+    </div>
+  </div> <!-- /container -->
 
 	<div class="container rightband">
 	<div class="row-fluid">
@@ -10,7 +50,6 @@ include('header-start.php');
        </div>
         <div class="span4">
           <h2>Watch our Video!</h2>
-          <iframe src="http://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="span4">
           <h2>Be a Citizen Scientist!</h2>

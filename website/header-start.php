@@ -1,3 +1,13 @@
+<?
+function echoActiveClassIfRequestMatches($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'class="active"';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,24 +43,16 @@
 
     <script type="text/javascript">
 
-      //Sending the credentials to the authentification page
-      function login(){
-        if($('#login_email').val() === ''){
-          alert("Invalid Email");
-        }
-        else if($('#login_password').val() === ''){
-          alert('Password cannot be empty');
-        }else{
-          $.post('../assets/includes/authentification.php?login', {email: $('#login_email').val(), password: $('#login_password').val()}, 
-            function(data){
-              if(data === 'status:ok'){
-                window.location.href = "dashboard.php";
-              }
-            });
+      //Used slide down/up to toggle the visibility of a given element
+      function toggle_visibility(id) {
+        if ($('#'+id).is(":hidden")) {
+          $('#'+id).slideDown("fast");
+        } else {
+          $('#'+id).slideUp("fast");
         }
       }
-    </script>
 
+    </script>
   </head>
 
   <body>
@@ -66,12 +68,10 @@
       <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
           <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
-            <ul class="nav" style="float:right">
-                <li><h4 class="form-signin-heading" style="color:white; padding-top: 5px;margin-right:20px;">Please sign in</h4></li>
-                <li style="padding-top: 10px;"><input id="login_email" type="text" class="input-block-level" placeholder="Email address" ></li>
-                <li style="padding-top: 10px;"><input id="login_password" type="password" class="input-block-level" placeholder="Password"></li>
-                <li><button class="btn btn-medium btn-primary" onclick="login()">Sign in</button> </li>
-                <li><button class="btn btn-medium btn-primary"  onclick="window.location.href='registration.php'">Registration</button></li>
+            <ul class="nav">
+              <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Data Access</a></li>
+              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
+              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->      </div>
       </div>
@@ -100,3 +100,10 @@ if(isset($_GET['logout'])){
 <?
 }
 ?>
+
+
+<div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <h4 class="alert-heading">Error!</h4>  
+ Username or Password are wrong, or the user does not exist!
+</div> 

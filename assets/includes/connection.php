@@ -1,5 +1,5 @@
 <?
-session_start();
+if (!isset($_SESSION)) session_start();
 
 /*Example Usage:
 $uri = 'giv-car.uni-muenster.de:8080/stable/rest/users/website';
@@ -12,7 +12,7 @@ function get_request($uri, $isAuthRequired){
     $ch = curl_init($uri);
     if($isAuthRequired){
         curl_setopt_array($ch, array(
-            CURLOPT_HTTPHEADER  => array('X-User: website', 'X-Token: website'),  //TODO: exchange with credentials from $_SESSION
+            CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
             CURLOPT_RETURNTRANSFER  =>true,
             CURLOPT_VERBOSE     => 1
         ));
@@ -24,9 +24,12 @@ function get_request($uri, $isAuthRequired){
     }
     
     $out = curl_exec($ch);
+    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
     curl_close($ch);
-    // echo response output
-    return $out;
+
+    return array("status" => $http_status, "response" => $out);
+
 }
 
 //Method to execute a post request
