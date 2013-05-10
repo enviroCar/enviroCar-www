@@ -12,7 +12,9 @@ if(isset($_GET['login'])){
 	$response = get_request($baseUrl.'users/'.$_POST['name'], true);
 
 	if($response["status"] == 200){
-		$response = json_encode($response["response"]);
+		error_log($response['response'],0);
+		$response = json_decode($response["response"],true);
+		$_SESSION['mail'] = $response['mail'];
 		echo 'status:ok';
 	}else{
 		session_destroy();
@@ -44,6 +46,21 @@ else if(isset($_GET['logout'])){
 	header('Location: ../../website/index.php?logout');
 }
 
+
+else if(isset($_GET['delete'])){
+	if(isset($_POST['delete'])){
+		if($_POST['delete']){
+			$response = delete_request('giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name']);
+			if($response['status'] == 204){
+				echo 'status:ok';
+				session_destroy();
+			}
+			else{
+				echo 'status:error';
+			}
+		}
+	}
+}
 
 function is_logged_in(){
 	if(isset($_SESSION['name']) && isset($_SESSION['password'])) return true;

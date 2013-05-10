@@ -74,11 +74,11 @@ function echoActiveClassIfRequestMatches($requestUri)
           </button>
 		  <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
 		  <img src="../assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
-          <a class="brand" href="dashboard.php">enviroCar</a>
+          <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php">Home</a></li>
-              <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Route Information</a></li>
+              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php">Activities</a></li>
+              <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Routes</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
                <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
@@ -90,6 +90,6 @@ function echoActiveClassIfRequestMatches($requestUri)
       </div>
     </div>
     <div id="settings" class="settings">
-      <h4><a style="padding-left:15px;" href="">Settings</a></h4><br>
+      <h4><a style="padding-left:15px;" href="profile.php">Profile</a></h4><br>
       <h4><a style="padding-left:15px;" href="../assets/includes/authentification?logout">Logout</a></h4>
     </div>

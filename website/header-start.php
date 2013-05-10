@@ -113,6 +113,18 @@ if(isset($_GET['registration_successful'])){
 }
 ?>
 
+<?
+if(isset($_GET['deleted'])){
+?>
+<div id="deleted" class="container alert alert-block fade in"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <h4 class="alert-heading">Account deleted.</h4>  
+  Your Account has been successfully deleted.
+</div> 
+<?
+}
+?>
+
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
  Username or Password are wrong, or the user does not exist!
