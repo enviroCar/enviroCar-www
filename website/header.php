@@ -1,5 +1,5 @@
 <?
-require('../assets/includes/authentification.php');
+require_once('../assets/includes/authentification.php');
 if(!is_logged_in()){
  header('Location: index.php?accessdenied');
 }
@@ -81,6 +81,7 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Route Information</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
+               <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
               <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
             </ul>
@@ -89,6 +90,6 @@ function echoActiveClassIfRequestMatches($requestUri)
       </div>
     </div>
     <div id="settings" class="settings">
-      <h4><a style="padding:10px;" href="">Settings</a></h4><br>
-      <h4><a style="padding:10px;" href="../assets/includes/authentification?logout">Logout</a></h4>
+      <h4><a style="padding-left:15px;" href="">Settings</a></h4><br>
+      <h4><a style="padding-left:15px;" href="../assets/includes/authentification?logout">Logout</a></h4>
     </div>

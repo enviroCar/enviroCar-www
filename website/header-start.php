@@ -69,7 +69,7 @@ function echoActiveClassIfRequestMatches($requestUri)
           <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Data Access</a></li>
+              <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
               <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
             </ul>
