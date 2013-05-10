@@ -7,12 +7,26 @@ include('header.php');
 	  img.olTileImage {
         max-width: none;
       }
+
+
+
+      .mapContainer{
+          height:300px; 
+          width:300px;
+      }
+      @media (min-width: 500px) {
+      .mapContainer{
+          height:500px; 
+          width:500px;
+      }
+    
+
     </style>
 
 <div class="container">
 	<div class="span5">
-          <h2>Route 1</h2>
-          <p>Start: 28.04.2013 14:45</p>
+      <h2>Route 1</h2>
+      <p>Start: 28.04.2013 14:45</p>
 		  <p>End: 28.04.2013 15:00</p>
 		  <p>Duration: 0:15 h</p>
 		  <p>Length: 5.3 km</p>
@@ -22,8 +36,11 @@ include('header.php');
           <p><a class="btn" href="#">View details &raquo;</a></p>
     </div>
 
-    <div class="span7" id="map" style="top: 15%; left: 50%; bottom: 30%; right: 0; position: fixed;"></div>
-</div>	
+    <div class="span7 mapContainer">
+      <div id="map" style="height: 100%; width:100%;">
+      </div>
+    </div>	
+  </div>
 	
 	  <script type="text/javascript">
         var map = new OpenLayers.Map('map');
@@ -36,9 +53,16 @@ include('header.php');
           ),12
         );
 		
+		
+		// var overlay = new OpenLayers.Layer.Vector("Routes");
+		
+		var style_blue = OpenLayers.Util.extend();
+            style_blue.strokeColor = '#0065A0';
+            style_blue.strokeWidth = 3;
+		
 		var overlay = new OpenLayers.Layer.Vector("GPX-Track",
                              {protocol:   new OpenLayers.Protocol.HTTP({   
-                                                       url:             "../assets/track1.gpx",
+                                                       url:             "../Prototype Route Information/track1.gpx",
                                                        format:          new OpenLayers.Format.GPX }),
                               styleMap:   new OpenLayers.StyleMap({ 
                                                        strokeColor:     "#0065A0", 
@@ -46,7 +70,7 @@ include('header.php');
                               strategies: [new OpenLayers.Strategy.Fixed()],
                               projection: new OpenLayers.Projection("EPSG:4326")
                               }); 
-							  
+
 		map.addLayer(overlay);
 			
       </script>	  

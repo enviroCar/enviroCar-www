@@ -3,7 +3,7 @@
 	<footer>
 		<div class="container leftband">
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 car.io &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2013 enviroCar &middot; <a href="#">Terms</a></p>
 		</div>
 	</footer>
 	
