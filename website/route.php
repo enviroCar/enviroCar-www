@@ -62,7 +62,7 @@ include('header.php');
 		
 		var overlay = new OpenLayers.Layer.Vector("GPX-Track",
                              {protocol:   new OpenLayers.Protocol.HTTP({   
-                                                       url:             "../Prototype Route Information/track1.gpx",
+                                                       url:             "../assets/track1.gpx",
                                                        format:          new OpenLayers.Format.GPX }),
                               styleMap:   new OpenLayers.StyleMap({ 
                                                        strokeColor:     "#0065A0", 
