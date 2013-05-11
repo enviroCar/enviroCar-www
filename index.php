@@ -12,7 +12,7 @@ include('header-start.php');
         else if($('#login_password').val() === ''){
           alert('Password cannot be empty');
         }else{
-          $.post('../assets/includes/authentification.php?login', {name: $('#login_name').val(), password: $('#login_password').val()}, 
+          $.post('./assets/includes/authentification.php?login', {name: $('#login_name').val(), password: $('#login_password').val()}, 
             function(data){
               if(data === 'status:ok'){
                 window.location.href = "dashboard.php";
@@ -28,7 +28,7 @@ include('header-start.php');
   <div class="container leftband">
     <div class="row-fluid">
       <div class="span5 offset1">
-        <p><img style="width:40%" src="../assets/img/play.svg"/></p>
+        <p><img style="width:40%" src="./assets/img/play.svg"/></p>
         <h2>Watch our video </h2>
       </div>
       <div class="span5">
@@ -70,7 +70,7 @@ include('header-start.php');
 
 
       <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/img/heatmap.PNG" style="margin-top:-80px;">
+        <img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="margin-top:-80px;">
         <h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
         <p class="lead">This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.</p>
       </div>
@@ -78,7 +78,7 @@ include('header-start.php');
       <hr class="featurette-divider">
 
       <div class="featurette">
-        <img class="featurette-image pull-left" style="height:50%" src="../assets/img/paper_architecture.png">
+        <img class="featurette-image pull-left" style="height:50%" src="./assets/img/paper_architecture.png">
         <h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
         <p class="lead">
           <ul>
@@ -92,7 +92,7 @@ include('header-start.php');
       <hr class="featurette-divider">
 
       <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-safari.png">
+        <img class="featurette-image pull-right" src="./assets/img/examples/browser-icon-safari.png">
         <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>

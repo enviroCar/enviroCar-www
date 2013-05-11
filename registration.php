@@ -19,7 +19,7 @@ include('header-start.php');
         	if($('#password1').val() != $('#password2').val()){
           		alert('Passwords are not identic');
           	}else{
-	          $.post('../assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
+	          $.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
 	            function(response){
 	              if(response === 'status:ok'){
 	              	window.location.href = "index.php?registration_successful";
