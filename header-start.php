@@ -18,28 +18,28 @@ function echoActiveClassIfRequestMatches($requestUri)
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/custom.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
-    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
+      <script src="./assets/js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="./assets/ico/favicon.png">
 
-    <script src="../assets/js/jquery.js"></script>
+    <script src="./assets/js/jquery.js"></script>
 
     <script type="text/javascript">
 
@@ -65,7 +65,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-      <img src="../assets/img/cario.png" class="brand" style="height: 20px; ">
+      <img src="./assets/img/cario.png" class="brand" style="height: 20px; ">
           <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -108,6 +108,18 @@ if(isset($_GET['registration_successful'])){
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading">Welcome to enviroCar</h4>  
   Your registration was successful. Please login to continue.
+</div> 
+<?
+}
+?>
+
+<?
+if(isset($_GET['deleted'])){
+?>
+<div id="deleted" class="container alert alert-block fade in"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <h4 class="alert-heading">Account deleted.</h4>  
+  Your Account has been successfully deleted.
 </div> 
 <?
 }
