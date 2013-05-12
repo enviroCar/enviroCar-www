@@ -63,9 +63,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Albert Remke.png"/>
 =======
 							<img src="assets/img/Albert Remke.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Albert Remke.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -82,9 +86,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Daniel Nust.png"/>
 =======
 							<img src="assets/img/Daniel Nust.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Daniel Nust.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -101,9 +109,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Dennis Wilhelm.png"/>
 =======
 							<img src="assets/img/Dennis Wilhelm.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Dennis Wilhelm.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -120,9 +132,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Dominik Schlarmann.png"/>
 =======
 							<img src="assets/img/Dominik Schlarmann.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Dominik Schlarmann.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -139,9 +155,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Friedrich Muller.png"/>
 =======
 							<img src="assets/img/Friedrich Muller.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Friedrich Muller.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -158,9 +178,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Gerald Pape.png"/>
 =======
 							<img src="assets/img/Gerald Pape.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Gerald Pape.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -177,9 +201,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Jakob Mollers.png"/>
 =======
 							<img src="assets/img/Jakob Mollers.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Jakob Mollers.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -196,9 +224,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Kassiani Tsouvala.png"/>
 =======
 							<img src="assets/img/Kassiani Tsouvala.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Kassiani Tsouvala.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -215,9 +247,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Oraib Almegdadi.png"/>
 =======
 							<img src="assets/img/Oraib Almegdadi.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Oraib Almegdadi.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -234,9 +270,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Purnima Dasgupta.png"/>
 =======
 							<img src="assets/img/Purnima Dasgupta.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Purnima Dasgupta.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -253,9 +293,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/rajchandar.png"/>
 =======
 							<img src="assets/img/rajchandar.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/rajchandar.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -273,9 +317,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Stephanie Walter.png"/>
 =======
 							<img src="assets/img/Stephanie Walter.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Stephanie Walter.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
@@ -293,9 +341,13 @@ include('header.php');
 					<div class="profi_inf">
 						<div style="float:left;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<img src="../assets/img/Tobias Tresselt.png"/>
 =======
 							<img src="assets/img/Tobias Tresselt.png"/>
+>>>>>>> friend page
+=======
+							<img src="../assets/img/Tobias Tresselt.png"/>
 >>>>>>> friend page
 						</div>
 						<div style="float:left;">
