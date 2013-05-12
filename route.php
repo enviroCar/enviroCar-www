@@ -33,7 +33,7 @@ include('header.php');
 		  <p>Fuel consumption: 0,265 l</p>
 		  <p>Average consumption: 5 l per 100 km</p>
 		  <p>Average speed: 21.2 km/h</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <p><a class="btn" href="graph.php">Graphs</a><a class="btn" href="heatmap.php">Thematic maps</a></p>
     </div>
 
     <div class="span7 mapContainer">
