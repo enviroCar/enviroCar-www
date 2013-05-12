@@ -26,14 +26,14 @@ include('header.php');
 <div class="container">
 	<div class="span5">
       <h2>Route 1</h2>
-      <p>Start: 28.04.2013 14:45</p>
-		  <p>End: 28.04.2013 15:00</p>
-		  <p>Duration: 0:15 h</p>
-		  <p>Length: 5.3 km</p>
-		  <p>Fuel consumption: 0,265 l</p>
+      <p>Start: 28.04.2013 00:47</p>
+		  <p>End: 28.04.2013 01:05</p>
+		  <p>Duration: 0:18 h</p>
+		  <p>Length: 10.4 km</p>
+		  <p>Fuel consumption: 0,52 l</p>
 		  <p>Average consumption: 5 l per 100 km</p>
-		  <p>Average speed: 21.2 km/h</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+		  <p>Average speed: 35.4 km/h</p>
+          <p><a class="btn" href="graph.php">Graphs</a><a class="btn" href="heatmap.php">Thematic maps</a></p>
     </div>
 
     <div class="span7 mapContainer">

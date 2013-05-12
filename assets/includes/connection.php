@@ -54,6 +54,32 @@ function post_request($url, $data){
 }
 
 
+
+// Update user: $user = array("mail" => "test@dennismail.com");
+// put_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/dennis', $user);
+
+//Method to perform a PUT request
+function put_request($url, $data){
+    $data_string = json_encode($data);                                                                                   
+     
+    $ch = curl_init($url);                                                                      
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");                                                                     
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+        'Content-Type: application/json',                                                                                
+        'Content-Length: ' . strlen($data_string),
+        'X-User: '.$_SESSION['name'], 
+        'X-Token: '.$_SESSION['password'])                                                                       
+    );                                                                                                                   
+     
+    $result = curl_exec($ch);
+    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    return array("status" => $http_status, "response" => $result);
+}
+
+
 //delete_request('giv-car.uni-muenster.de:8080/stable/rest/users/blablub');
 
 //Method to perform a DELETE request
