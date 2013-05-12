@@ -38,7 +38,7 @@ include('header-start.php');
 		<div class="span3"></div>
 		<div class="span6">
 		        <h2 class="form-signin-heading">Registration</h2>
-		        <input id="name" type="text" class="input-block-level" placeholder="Nickname">
+		        <input id="name" type="text" class="input-block-level" placeholder="Username">
 		        <input id="registrationemail" type="text" class="input-block-level" placeholder="Email Address">
 		        <input id="password1" type="password" class="input-block-level" placeholder="Password">
 		        <input id="password2" type="password" class="input-block-level" placeholder="Repeat Password">
@@ -48,8 +48,6 @@ include('header-start.php');
 		<div class="span3"></div>
 	</div>
 </div>
-
-
 
 <?
 include('footer.php');
