@@ -1,18 +1,17 @@
 <?
 include('header-start.php');
 ?>
-  
+    
     <script type="text/javascript">
-
       //Sending the credentials to the authentification page
-      function login(){
-        if($('#login_name').val() === ''){
-          alert("Invalid Email");
+      function login(ln, lp){
+        if(ln === ''){
+          alert("Invalid Login Name");
         }
-        else if($('#login_password').val() === ''){
+        else if(lp === ''){
           alert('Password cannot be empty');
         }else{
-          $.post('./assets/includes/authentification.php?login', {name: $('#login_name').val(), password: $('#login_password').val()}, 
+          $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
             function(data){
               if(data === 'status:ok'){
                 window.location.href = "dashboard.php";
@@ -23,8 +22,33 @@ include('header-start.php');
         }
       }
     </script>
-
-
+	    <?         
+	    $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form_attempt"] : 0;
+	    $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
+	    $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
+	    
+	    if ($login_form_attempt>=1){
+	    
+	      if ($login_name != "" &&  $login_password == ""){
+		echo "<div class=\"container alert alert-block alert-error fade in\"><a class=\"close\" data-dismiss=\"alert\">×</a>  
+  <h4 class=\"alert-heading\">Access denied!</h4>sorry, but you can't have an empty password.</div>";
+	      }
+	      
+	      if ($login_name == "" && $login_password != ""){
+		echo "<div class=\"container alert alert-block alert-error fade in\"><a class=\"close\" data-dismiss=\"alert\">×</a>  
+  <h4 class=\"alert-heading\">Access denied!</h4>everybody should have a name, even you.</div>";
+	      }
+	      
+	      if ($login_name == "" && $login_password == ""){
+		echo "<div class=\"container alert alert-block alert-error fade in\"><a class=\"close\" data-dismiss=\"alert\">×</a>  
+  <h4 class=\"alert-heading\">Access denied!</h4>nice try, but empty credentials are invalid.</div>";
+	      }
+	      
+	      if ($login_name != "" && $login_password != ""){
+		echo "<script type=\"text/javascript\">login(\"". $login_name . "\",\"" . $login_password ."\");</script>";
+	      }
+	    }
+	   ?>
   <div class="container leftband">
     <div class="row-fluid">
       <div class="span5 offset1">
@@ -33,10 +57,19 @@ include('header-start.php');
       </div>
       <div class="span5">
             <h2 class="form-signin-heading">Please sign in</h2>
-            <input type="text" id="login_name" class="input-block-level" placeholder="User name">
-            <input type="password" id="login_password" class="input-block-level" placeholder="Password">
-            <button class="btn btn-large btn-primary" onclick="login()">Sign in</button> 
-            <button class="btn btn-large btn-primary" onclick="window.location.href='registration.php'">Register</button>
+            
+            <form name="login" action="" method="post">
+	      <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
+	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
+	      <input type="submit" 	class="btn btn-large btn-primary" value="Sign in"/>
+	      <button class="btn btn-large btn-primary" onclick="window.location.href='registration.php'">Register</button>
+            </form>
+            
+	      <? if ($login_form_attempt >= 5){
+		 echo "Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>";
+		}
+	      ?>
       </div>
     
     </div>
