@@ -43,7 +43,7 @@ else if(isset($_GET['registration'])){
 
 else if(isset($_GET['logout'])){
 	session_destroy();
-	header('Location: /index.php?logout');
+	header('Location: ../../index.php?logout');
 }
 
 
