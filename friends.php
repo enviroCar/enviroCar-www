@@ -62,7 +62,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Albert Remke.png"/>
+							<img src="../assets/img/Albert Remke.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -77,7 +77,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Daniel Nust.png"/>
+							<img src="../assets/img/Daniel Nust.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -92,7 +92,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Dennis Wilhelm.png"/>
+							<img src="../assets/img/Dennis Wilhelm.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -107,7 +107,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Dominik Schlarmann.png"/>
+							<img src="../assets/img/Dominik Schlarmann.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -122,7 +122,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Friedrich Muller.png"/>
+							<img src="../assets/img/Friedrich Muller.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -137,7 +137,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Gerald Pape.png"/>
+							<img src="../assets/img/Gerald Pape.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -152,7 +152,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Jakob Mollers.png"/>
+							<img src="../assets/img/Jakob Mollers.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -167,7 +167,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Kassiani Tsouvala.png"/>
+							<img src="../assets/img/Kassiani Tsouvala.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -182,7 +182,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Oraib Almegdadi.png"/>
+							<img src="../assets/img/Oraib Almegdadi.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -197,7 +197,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Purnima Dasgupta.png"/>
+							<img src="../assets/img/Purnima Dasgupta.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -212,7 +212,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/rajchandar.png"/>
+							<img src="../assets/img/rajchandar.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -228,7 +228,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Stephanie Walter.png"/>
+							<img src="../assets/img/Stephanie Walter.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
@@ -244,7 +244,7 @@ include('header.php');
 				<li class="prof_lis_sub">
 					<div class="profi_inf">
 						<div style="float:left;">
-							<img src="assets/img/Tobias Tresselt.png"/>
+							<img src="../assets/img/Tobias Tresselt.png"/>
 						</div>
 						<div style="float:left;">
 							<div class="profile_name">
