@@ -58,13 +58,18 @@ include('header-start.php');
       <div class="span5">
             <h2 class="form-signin-heading">Please sign in</h2>
             
-            <form name="login" action="" method="post">
+            <p>
+            <form name="login" action="" method="post" style="display: inline;">
 	      <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
 	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
 	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
-	      <input type="submit" 	class="btn btn-large btn-primary" value="Sign in"/>
-	      <button class="btn btn-large btn-primary" onclick="window.location.href='registration.php'">Register</button>
+	      <input type="submit" 	class="btn btn-large btn-primary" value="Sign in" style="float: left"/>
             </form>
+	    <a href="registration.php">
+	      <button class="btn btn-large btn-primary" name="login_register" value="register" style="float: right;">Register</button>
+	    </a>
+	    <div style="clear:both"></div>
+	    </p>
             
 	      <? if ($login_form_attempt >= 5){
 		 echo "Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>";
