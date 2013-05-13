@@ -35,8 +35,22 @@ body{
 	top: 50px;
 	right: 0px;
 	display: none;
-	background-color: #FFFFFF; 
-	box-shadow: 1px 2px 2px #D4D4D4;
+
+	padding: 5px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
@@ -58,6 +72,9 @@ h1,h2,h3,h4,h5{
 	background-color: #FFFFFF; 
 	box-shadow: 1px 2px 2px #D4D4D4;
 	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 28px;
 }
 
 .rightband{
@@ -90,6 +107,7 @@ h1,h2,h3,h4,h5{
 	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 	text-color: black;
+	font-size: 18px;
 }
 
 .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
@@ -169,8 +187,8 @@ background-color: #0065A0;
 
 	background-color: #f2f2f2; 
 	box-shadow: 1px 2px 2px #D4D4D4;
-	padding: 5px;
-	margin: 1px;
+	padding: 10px;
+	margin: 5px;
 }
 
 pre{
@@ -179,75 +197,4 @@ pre{
 	padding: 5px;
 	margin: 1px;
 	border:0px;
-}
-
-.spans5{
-
-	background-color: #f2f2f2; 
-	box-shadow: 1px 2px 2px #D4D4D4;
-	padding: 5px !important;
-	margin: 10px !important;
-	border:0px;
-	width:100%;
-}
-.spans6
-{
-
-	background-color: #f2f2f2; 
-	box-shadow: 1px 2px 2px #D4D4D4;
-	padding: 5px !important;
-	margin: 10px !important;
-	border:0px;
-	width:60% !important;
-	float:left;
-}
-
-.spans7
-{
-
-	background-color: #f2f2f2; 
-	box-shadow: 1px 2px 2px #D4D4D4;
-	padding: 5px !important;
-	margin: 10px !important;
-	border:0px;
-	width:36% !important;
-	float:right;
-}
-.prof_lis
-{
-	margin-top:10px;
-	
-}
-.prof_lis_sub
-{
-	/*width:40% !important;
-	border: 1px solid black;*/
-	display:inline;
-	float:left;
-	width: 320px;
-	margin:5px;
-}
-.profi_inf
-{
-	width:100% !important;
-	border: 1px solid #e9eaed;
-	box-shadow: 1px 2px 2px #fff;
-}
-.profile_name
-{
-	margin-left:10px;
-	color:#3b5998 !important;
-	margin-top:20px;
-	font-size:16px;
-
-}
-.prof_activity
-{
-display:inline;
-}
-.profile_name_sub
-{
-	border-bottom: 1px solid #e9eaed;
-	box-shadow: 1px 2px 2px #fff;
-	padding-bottom:15px;
 }
