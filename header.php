@@ -81,9 +81,7 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Routes</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
-               <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

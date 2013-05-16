@@ -6,6 +6,9 @@ function echoActiveClassIfRequestMatches($requestUri)
     if ($current_file_name == $requestUri)
         echo 'class="active"';
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -69,9 +72,7 @@ function echoActiveClassIfRequestMatches($requestUri)
           <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->      </div>
       </div>
