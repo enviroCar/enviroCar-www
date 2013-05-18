@@ -3,6 +3,7 @@ include('header.php');
 ?>
 
 <script src="./assets/OpenLayers/OpenLayers.js"></script>
+<script src="./assets/js/geojsontools.js"></script>
 <style>
     img.olTileImage {
         max-width: none;
@@ -53,6 +54,30 @@ include('header.php');
       window.$_GET = function(name){return name ? c[name] : c;}
   }())
 
+  function convertToLocalTime(serverDate) {
+      var dt = new Date(Date.parse(serverDate));
+      var localDate = dt;
+
+
+      var gmt = localDate;
+          var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
+          var localNow = new Date().getTimezoneOffset(); // get the timezone
+          // offset in minutes
+          var localTime = min - localNow; // get the local time
+
+      var dateStr = new Date(localTime * 1000 * 60);
+      var d = dateStr.getDate();
+      var m = dateStr.getMonth() + 1;
+      var y = dateStr.getFullYear();
+
+      var totalSec = dateStr.getTime() / 1000;
+      var hours = parseInt( totalSec / 3600 ) % 24;
+      var minutes = parseInt( totalSec / 60 ) % 60;
+
+
+      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+    }
+
   function addRouteInformation(name, start, end){
       $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph2.php">Graphs</a><a class="btn" href="heatmap.php">Thematic maps</a></p>');
   }
@@ -85,7 +110,7 @@ include('header.php');
                 strokeWidth: 1,             
                 strokeColor: "#000", 
                 fillOpacity: 1,
-        pointRadius: 10//"${getSize}"
+                pointRadius: 10//"${getSize}"
                 //label: "${getLabel}"                  
             },
             {
@@ -104,6 +129,7 @@ include('header.php');
     }
   );
   var geojson_layer = new OpenLayers.Layer.Vector("Measurements",{styleMap: co2_style});
+  var geojson_line = new OpenLayers.Layer.Vector("lines");
                   
     
     var geojson_format = new OpenLayers.Format.GeoJSON({
@@ -111,6 +137,8 @@ include('header.php');
                 'externalProjection': new OpenLayers.Projection("EPSG:4326")
             });
  
+
+  map.addLayer(geojson_line);
   map.addLayer(geojson_layer);
 
 
@@ -127,15 +155,17 @@ include('header.php');
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-            console.log('error in getting tracks');
-        }else{
-          geojson_layer.addFeatures(geojson_format.read(data));
-          map.zoomToExtent(geojson_layer.getDataExtent());
-          data = JSON.parse(data);
-          console.log(data.properties);
-          addRouteInformation(data.properties.id, data.features[0].properties.time, data.features[data.features.length - 1].properties.time);
+        console.log('error in getting tracks');
+    }else{
+      geojson_layer.addFeatures(geojson_format.read(data));
+      map.zoomToExtent(geojson_layer.getDataExtent());
 
-      }
+      geojson_line.addFeatures(geojson_format.read(JSON.stringify(GeoJSONTools.points_to_lineString(data).features)));
+
+
+      data = JSON.parse(data);
+      addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
+    }
     
   });
 

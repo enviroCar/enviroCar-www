@@ -12,15 +12,20 @@ include('header.php');
           	console.log('error in getting tracks');
       	}else{
         	data = JSON.parse(data);
-    		for(i = 0; i < data.tracks.length; i++){
-    			addRoutes(data.tracks[i].id, data.tracks[i].name, convertToLocalTime(data.tracks[i].modified));
-    		}
+          if(data.tracks.length > 0){
+    		    for(i = 0; i < data.tracks.length; i++){
+    			     addRoutes(data.tracks[i].id, data.tracks[i].name, convertToLocalTime(data.tracks[i].modified));
+    		    }
+          }else{
+            $('#routes').append("No routes available");
+          }
     	}
   	});
 
   	function convertToLocalTime(serverDate) {
 	    var dt = new Date(Date.parse(serverDate));
 	    var localDate = dt;
+
 
 	    var gmt = localDate;
 	        var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
@@ -29,11 +34,17 @@ include('header.php');
 	        var localTime = min - localNow; // get the local time
 
 	    var dateStr = new Date(localTime * 1000 * 60);
-		var d = dateStr.getDate();
+		  var d = dateStr.getDate();
 	    var m = dateStr.getMonth() + 1;
 	    var y = dateStr.getFullYear();
-	    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
-	}
+
+      var totalSec = dateStr.getTime() / 1000;
+      var hours = parseInt( totalSec / 3600 ) % 24;
+      var minutes = parseInt( totalSec / 60 ) % 60;
+
+
+	    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+	  }
 
 </script>
 
