@@ -22,6 +22,13 @@ include('header.php');
     </div>
 </div>
 
+<style type="text/css">
+	.olControlAttribution{
+		bottom:0px;
+
+	}
+</style>
+
 <script type="text/javascript">
 	var raster = new OpenLayers.Layer.OSM("osm");
 
@@ -29,7 +36,7 @@ include('header.php');
 	// use the heatmap renderer instead of the default one (SVG, VML or Canvas)
 	    renderers: ['Heatmap'],
 	    protocol: new OpenLayers.Protocol.HTTP({
-	        url: "assets/data.geojson",
+	        url: "http://giv-cario.uni-muenster.de/working-folder/assets/includes/get.php?url=http://giv-car.uni-muenster.de:8080/dev/rest/tracks/51944e28e4b017df94de8e2d&auth=true",
 	        format: new OpenLayers.Format.GeoJSON()
 
 	    }),
@@ -41,7 +48,7 @@ include('header.php');
 	            context: {
 	// the 'weight' of the point (between 0.0 and 1.0), used by the heatmap renderer
 	                weight: function(f) {
-	                    return Math.min(Math.max((f.attributes.accuracy || 0) / 43200, 0.25), 1.0);
+	                    return Math.min(Math.max((f.attributes.phenomenons.testphenomenon1.value || 0) / 10, 0.25), 1.0);
 	                }
 	            }
 	        })

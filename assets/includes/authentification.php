@@ -27,7 +27,7 @@ else if(isset($_GET['registration'])){
 	error_log($_POST['name'].' '.$_POST['email'].' '.$_POST['password'],0);
 
 	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
-	$response = post_request($baseUrl.'users', $newUser);
+	$response = post_request($baseUrl.'users', $newUser, false);
 
 	error_log($response['status'],0);
 

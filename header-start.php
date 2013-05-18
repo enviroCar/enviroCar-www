@@ -6,6 +6,9 @@ function echoActiveClassIfRequestMatches($requestUri)
     if ($current_file_name == $requestUri)
         echo 'class="active"';
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -65,13 +68,11 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-      <img src="./assets/img/cario.png" class="brand" style="height: 20px; ">
+      <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
           <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->      </div>
       </div>

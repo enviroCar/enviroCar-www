@@ -72,24 +72,23 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <img src="./assets/img/cario.png" class="brand" style="height: 20px; ">
+		  <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
           <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php">Activities</a></li>
-              <li <?=echoActiveClassIfRequestMatches("route")?>><a href="route.php">Routes</a></li>
+              <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php">Routes</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
-               <li <?=echoActiveClassIfRequestMatches("contributors")?>><a href="contributors.php">Contributors</a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="help.php">Help</a></li>
+             <!-- <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li> -->
+              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
     <div id="settings" class="settings">
-      <h4><a style="padding-left:15px;" href="profile.php">Profile</a></h4><br>
+      <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> ">Profile</a></h4><br>
       <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout">Logout</a></h4>
     </div>
