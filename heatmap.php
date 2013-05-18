@@ -17,24 +17,25 @@ include('header.php');
 	  <button class="btn">Engine Load</button>
 	</div>
 -->
+	<div style="z-index=30000">
+		<div style="float:right; display:inline;">
+		  	<input type="text" 	id="radius" placeholder="Radius" value=""/>
+		  	<input type="text" 	id="valMin" placeholder="Min Value" value=""/>
+		  	<input type="text" 	id="valMax" placeholder="Max Value" value=""/>
+		</div>
 
-	<div style="float:right; display:inline">
-	  	<input type="text" 	id="radius" placeholder="Radius" value=""/>
-	  	<input type="text" 	id="valMin" placeholder="Min Value" value=""/>
-	  	<input type="text" 	id="valMax" placeholder="Max Value" value=""/>
+		<div class="btn-group" style="float:right">
+		  <button class="btn btn-small">Choose Sensor</button>
+		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+			<span class="caret"></span>
+		  </button>
+		  <ul id="sensorsDropdown" class="dropdown-menu">
+
+		  </ul>
+		</div>
 	</div>
 
-	<div class="btn-group" style="float:right">
-	  <button class="btn btn-small">Choose Sensor</button>
-	  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-		<span class="caret"></span>
-	  </button>
-	  <ul id="sensorsDropdown" class="dropdown-menu">
-
-	  </ul>
-	</div>
-
-	<div id="map" style="width: 100%; height: 512px" class="smallmap">
+	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
 	</div>
 	<p style="float:right"><a class="btn" href="route.php">Route overview</a></p>
     </div>
