@@ -28,8 +28,17 @@ if(isset($_GET['friends'])){
 	}
 }
 
+if(isset($_GET['friendsOf'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_GET['friendsOf'].'/friends', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 if(isset($_GET['addFriend'])){
-	$friend = array("name" => ''.$_GET['addFriend']); 
+	$friend = array("name" => ''.$_POST['addFriend']); 
 	$response = post_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/friends', $friend, true);
 	if($response['status'] == 204){
 		echo $response['response'];
@@ -49,6 +58,15 @@ if(isset($_GET['deleteFriend'])){
 
 if(isset($_GET['groups'])){
 	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/groups', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['groupsOf'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_GET['groupsOf'].'/groups', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
