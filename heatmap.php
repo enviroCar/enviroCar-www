@@ -4,18 +4,36 @@ include('header.php');
 <link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
 
 
-<script src="http://openlayers.org/dev/OpenLayers.js"></script>
+<script src="./assets/OpenLayers/OpenLayers.js"></script>
 <script src="assets/OpenLayers/Renderer/Heatmap.js"></script>
 
 <div class="container rightband" style="padding-right: 0px">
 
+<!--
 	<div class="btn-group" style="float:right">
 	  <button class="btn">CO2</button>
 	  <button class="btn">Noise</button>
 	  <button class="btn">Fuel Consumption</button>
 	  <button class="btn">Engine Load</button>
 	</div>
-	<h2>CO2 Concentration</h2>
+-->
+
+	<div style="float:right; display:inline">
+	  	<input type="text" 	id="radius" placeholder="Radius" value=""/>
+	  	<input type="text" 	id="valMin" placeholder="Min Value" value=""/>
+	  	<input type="text" 	id="valMax" placeholder="Max Value" value=""/>
+	</div>
+
+	<div class="btn-group" style="float:right">
+	  <button class="btn btn-small">Choose Sensor</button>
+	  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+	  </button>
+	  <ul id="sensorsDropdown" class="dropdown-menu">
+
+	  </ul>
+	</div>
+
 	<div id="map" style="width: 100%; height: 512px" class="smallmap">
 	</div>
 	<p style="float:right"><a class="btn" href="route.php">Route overview</a></p>
@@ -30,7 +48,27 @@ include('header.php');
 </style>
 
 <script type="text/javascript">
+
+	(function(){
+    var s = window.location.search.substring(1).split('&');
+      if(!s.length) return;
+        var c = {};
+        for(var i  = 0; i < s.length; i++)  {
+          var parts = s[i].split('=');
+          c[unescape(parts[0])] = unescape(parts[1]);
+        }
+      window.$_GET = function(name){return name ? c[name] : c;}
+  	}())
+
+	var valMin = 0;
+	var valMax = 1;
+	var sensors = null;
+	var sensor = null;
+	var radius = 20;
+
 	var raster = new OpenLayers.Layer.OSM("osm");
+
+
 
 	var vector = new OpenLayers.Layer.Vector("heatmap", {
 	// use the heatmap renderer instead of the default one (SVG, VML or Canvas)
@@ -46,9 +84,9 @@ include('header.php');
 	            weight: "${weight}"
 	        }, {
 	            context: {
-	// the 'weight' of the point (between 0.0 and 1.0), used by the heatmap renderer
+					// the 'weight' of the point (between 0.0 and 1.0), used by the heatmap renderer
 	                weight: function(f) {
-	                    return Math.min(Math.max((f.attributes.phenomenons.testphenomenon1.value || 0) / 10, 0.25), 1.0);
+	                    return mapValue(f.attributes.phenomenons, valMin, valMax);
 	                }
 	            }
 	        })
@@ -63,6 +101,77 @@ include('header.php');
 	var map = new OpenLayers.Map("map", {
 	    layers: [raster, vector]
 	});
+
+	var heatmapStyle = null;
+
+	function newHeatmap(){
+		heatmapStyle = new OpenLayers.StyleMap({
+	        "default": new OpenLayers.Style({
+	            pointRadius: radius,
+	            weight: "${weight}"
+	        }, {
+	            context: {
+	// the 'weight' of the point (between 0.0 and 1.0), used by the heatmap renderer
+	                weight: function(f) {
+	                    return mapValue(f.attributes.phenomenons, valMin, valMax);
+	                }
+	            }
+	        })
+		});
+	}
+
+
+
+	function mapValue(x, in_min, in_max) {
+		for(property in x){
+			if(x[property].name === sensor.name){
+				x = x[property].value;
+				console.log(x);
+				break;
+			}
+		}
+        return (x - in_min) * (1 - 0) / (in_max - in_min) + 0;
+    }
+
+	function changeHeatmapStyle(style){
+		vector.styleMap = style;
+		map.getLayersByName("heatmap")[0].refresh();
+
+	}
+
+	function changeSensor(chosenSensor){
+		for(property in sensors){
+			if($('#radius').val()!= "") radius = $('#radius').val();
+			if($('#valMin').val()!= "") valMin = $('#valMin').val();
+			if($('#valMax').val()!= "") valMax = $('#valMax').val();
+
+			if(sensors[property].name === chosenSensor){
+				sensor = sensors[property];
+				newHeatmap();
+				changeHeatmapStyle(heatmapStyle);
+				break;
+			}
+		}
+	}
+
+	$.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
+    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+        console.log('error while receiving track');
+    }else{
+      
+      data = JSON.parse(data);
+      sensors = data.features[0].properties.phenomenons;
+      for (property in sensors) { 
+      	sensor = sensors[property];
+      	$('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\''+sensors[property].name+'\')">'+sensors[property].name+'</a></li>');
+      }
+
+
+    }
+    
+  });
+
+
 
 </script>
 
