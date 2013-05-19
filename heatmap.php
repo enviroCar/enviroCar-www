@@ -9,15 +9,7 @@ include('header.php');
 
 <div class="container rightband" style="padding-right: 0px">
 
-<!--
-	<div class="btn-group" style="float:right">
-	  <button class="btn">CO2</button>
-	  <button class="btn">Noise</button>
-	  <button class="btn">Fuel Consumption</button>
-	  <button class="btn">Engine Load</button>
-	</div>
--->
-	<div style="z-index=30000">
+	<div>
 		<div style="float:right; display:inline;">
 		  	<input type="text" 	id="radius" placeholder="Radius" value=""/>
 		  	<input type="text" 	id="valMin" placeholder="Min Value" value=""/>
