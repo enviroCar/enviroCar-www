@@ -49,13 +49,11 @@ include('header-start.php');
 	      }
 	    }
 	   ?>
-  <div class="container leftband">
+  <div class="container rightband">
     <div class="row-fluid">
-      <div class="span5 offset1">
-        <p><img style="width:40%" src="./assets/img/play.svg"/></p>
-        <h2>Watch our video </h2>
-      </div>
-      <div class="span5">
+        <div class="span6" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+        </div>
+      <div class="span6">
             <h2 class="form-signin-heading">Please sign in</h2>
             
             <p>
@@ -76,11 +74,10 @@ include('header-start.php');
 		}
 	      ?>
       </div>
-    
     </div>
   </div> <!-- /container -->
 
-	<div class="container rightband">
+	<div class="container leftband">
 	<div class="row-fluid">
         <div class="span4">
           <h2>Get our App!</h2>
@@ -103,11 +100,11 @@ include('header-start.php');
 
 	</div>
 
-	<div class="container leftband">
+	<div class="container rightband">
       <!-- START THE FEATURETTES -->
 
 
-      <div class="featurette">
+      <div class="featurette" style="margin-left: 20px;">
         <img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="margin-top:-80px;">
         <h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
         <p class="lead">This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.</p>
@@ -115,8 +112,8 @@ include('header-start.php');
 
       <hr class="featurette-divider">
 
-      <div class="featurette">
-        <img class="featurette-image pull-left" style="height:50%" src="./assets/img/paper_architecture.png">
+      <div class="featurette" style="margin-left: 20px;">
+        <img class="featurette-image pull-left" style="height:50%" src="./assets/img/architecture_new3.svg">
         <h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
         <p class="lead">
           <ul>
@@ -126,18 +123,9 @@ include('header-start.php');
           </ul>
         </p>
       </div>
-
       <hr class="featurette-divider">
 
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="./assets/img/examples/browser-icon-safari.png">
-        <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
 
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
 	</div>
 
   <?

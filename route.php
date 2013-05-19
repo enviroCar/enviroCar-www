@@ -2,6 +2,10 @@
 include('header.php');
 ?>
 
+<div id="loadingIndicator" class="loadingIndicator">
+  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+</div>
+
 <script src="./assets/OpenLayers/OpenLayers.js"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <style>
@@ -156,6 +160,7 @@ include('header.php');
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
         console.log('error in getting tracks');
+        $('#loadingIndicator').hide();
     }else{
       geojson_layer.addFeatures(geojson_format.read(data));
       map.zoomToExtent(geojson_layer.getDataExtent());
@@ -166,6 +171,8 @@ include('header.php');
 
       data = JSON.parse(data);
       addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
+
+      $('#loadingIndicator').hide();
     }
     
   });

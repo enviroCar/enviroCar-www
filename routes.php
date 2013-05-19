@@ -2,6 +2,10 @@
 include('header.php');
 ?>
 
+<div id="loadingIndicator" class="loadingIndicator">
+  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+</div>
+
 <script type="text/javascript">
 	function addRoutes(id, name, date){
       $('#routes').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a><br><div>Created: '+date+'</div></li>');
@@ -13,11 +17,14 @@ include('header.php');
       	}else{
         	data = JSON.parse(data);
           if(data.tracks.length > 0){
+            $('#loadingIndicator').hide();
     		    for(i = 0; i < data.tracks.length; i++){
     			     addRoutes(data.tracks[i].id, data.tracks[i].name, convertToLocalTime(data.tracks[i].modified));
     		    }
+
           }else{
             $('#routes').append("No routes available");
+            $('#loadingIndicator').hide();
           }
     	}
   	});
