@@ -7,6 +7,10 @@ include('header.php');
 <script src="./assets/OpenLayers/OpenLayers.js"></script>
 <script src="assets/OpenLayers/Renderer/Heatmap.js"></script>
 
+<div id="loadingIndicator" class="loadingIndicator">
+  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+</div>
+
 <div class="container rightband" style="padding-right: 0px">
 
 	<div>
@@ -29,8 +33,7 @@ include('header.php');
 
 	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
 	</div>
-	<p style="float:right"><a class="btn" href="route.php">Route overview</a></p>
-    </div>
+	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php">Route overview</a></p>
 </div>
 
 <style type="text/css">
@@ -67,7 +70,7 @@ include('header.php');
 	// use the heatmap renderer instead of the default one (SVG, VML or Canvas)
 	    renderers: ['Heatmap'],
 	    protocol: new OpenLayers.Protocol.HTTP({
-	        url: "http://giv-cario.uni-muenster.de/working-folder/assets/includes/get.php?url=http://giv-car.uni-muenster.de:8080/dev/rest/tracks/51944e28e4b017df94de8e2d&auth=true",
+	        url: 'assets/includes/users.php?track='+$_GET(['id']),
 	        format: new OpenLayers.Format.GeoJSON()
 
 	    }),
@@ -119,7 +122,6 @@ include('header.php');
 		for(property in x){
 			if(x[property].name === sensor.name){
 				x = x[property].value;
-				console.log(x);
 				break;
 			}
 		}
@@ -161,6 +163,8 @@ include('header.php');
 
 
     }
+
+   	$('#loadingIndicator').hide(); 
     
   });
 
