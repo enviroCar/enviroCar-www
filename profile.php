@@ -50,7 +50,7 @@ require_once('assets/includes/connection.php');
         if(data.users.length > 0 ){
           $('#friends').append('<ul style="margin-bottom: 10px; overflow-y:auto">');
           for(i = 0; i < data.users.length; i++){
-            $('#friends').append('<li class="customLi" style="list-style-type:none"><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/><a href="profile2.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
+            $('#friends').append('<li class="customLi" style="list-style-type:none"><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
           }
           $('#friends').append('</ul>');
         }
