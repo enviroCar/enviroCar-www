@@ -14,7 +14,7 @@ include('header-start.php');
           $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
             function(data){
               if(data === 'status:ok'){
-                window.location.href = "dashboard.php";
+                window.location.href = "routes.php";
               }else{
                 toggle_visibility("login_fail");
               }
@@ -51,9 +51,9 @@ include('header-start.php');
 	   ?>
   <div class="container rightband">
     <div class="row-fluid">
-        <div class="span6" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+        <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
         </div>
-      <div class="span6">
+      <div class="span4">
             <h2 class="form-signin-heading">Please sign in</h2>
             
             <p>
@@ -61,10 +61,10 @@ include('header-start.php');
 	      <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
 	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
 	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
-	      <input type="submit" 	class="btn btn-large btn-primary" value="Sign in" style="float: left"/>
+	      <input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
             </form>
 	    <a href="registration.php">
-	      <button class="btn btn-large btn-primary" name="login_register" value="register" style="float: right;">Register</button>
+	      <button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
 	    </a>
 	    <div style="clear:both"></div>
 	    </p>

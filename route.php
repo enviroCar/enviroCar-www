@@ -6,7 +6,7 @@ include('header.php');
   <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
 
-<script src="./assets/OpenLayers/OpenLayers.js"></script>
+<script src="./assets/OpenLayers/OpenLayers.light.js"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <style>
     img.olTileImage {
@@ -83,7 +83,7 @@ include('header.php');
     }
 
   function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph2.php">Graphs</a><a class="btn" href="heatmap.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
+      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="heatmap.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
   }
 
   function onFeatureSelect(feature){
