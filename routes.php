@@ -7,17 +7,33 @@ include('header.php');
 </div>
 
 <script type="text/javascript">
-	function addRoutes(id, name, date){
+  var loading = true;
+
+	function addPhenomenonStatistics(name, avg){
+      $('#phenomenonStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+': &Oslash;  '+Math.round(avg*100)/100);
+  }
+
+  function addOverallStatistics(name, value){
+      $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+': '+value);
+  }
+
+  function addRoutes(id, name, date){
       $('#routes').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a><br><div>Created: '+date+'</div></li>');
-    }
+  }
 
     $.get('./assets/includes/users.php?tracks', function(data) {
     	if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           	console.log('error in getting tracks');
       	}else{
         	data = JSON.parse(data);
-          if(data.tracks.length > 0){
-            $('#loadingIndicator').hide();
+          numberofTracks = data.tracks.length;
+          addOverallStatistics("Tracks", numberofTracks);
+          if(numberofTracks > 0){
+            if(!loading){
+              $('#loadingIndicator').hide();
+            }else{
+              loading = false;
+            }
     		    for(i = 0; i < data.tracks.length; i++){
     			     addRoutes(data.tracks[i].id, data.tracks[i].name, convertToLocalTime(data.tracks[i].modified));
     		    }
@@ -28,6 +44,27 @@ include('header.php');
           }
     	}
   	});
+
+    $.get('./assets/includes/users.php?userStatistics', function(data) {
+      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+            console.log('error in getting statistics');
+        }else{
+          data = JSON.parse(data);
+          if(data.statistics.length > 0){
+            if(!loading){
+              $('#loadingIndicator').hide();
+            }else{
+              loading = false;
+            }
+            for(i = 0; i < data.statistics.length; i++){
+               addPhenomenonStatistics(data.statistics[i].phenomenon.name, data.statistics[i].avg);
+            }
+
+          }else{
+            $('#loadingIndicator').hide();
+          }
+      }
+    });
 
   	function convertToLocalTime(serverDate) {
 	    var dt = new Date(Date.parse(serverDate));
@@ -58,12 +95,20 @@ include('header.php');
 
 <div class="container rightband">
 	<div class="row-fluid">
-		<h2>Your Routes</h2>
-        <div class="span5 offset3">
-        	<ul id="routes">
+      <div class="span5">
+        <h2>Your Routes</h2>
+        	<ul id="routes" style="max-height: 400px; overflow-y: auto;">
         	</ul>
-
+      </div>
+      <div class="span5 ">
+        <h2>Your Statistics</h2>
+        <div style="max-height: 400px; overflow-y: auto;">
+          <ul id="overallStatistics">
+          </ul>
+          <ul id="phenomenonStatistics">
+          </ul>
         </div>
+      </div>
     </div>
 </div>
 

@@ -102,6 +102,15 @@ if(isset($_GET['track'])){
 	}
 }
 
+if(isset($_GET['userStatistics'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/statistics', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 
 
 
