@@ -2,139 +2,124 @@
 include('header.php');
 ?>
 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>	
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<!-- https://google-developers.appspot.com/chart/interactive/docs/gallery/linechart -->
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          
-['time',	'km/h'],
-['00:47:54',	14.3],
-['00:48:04',	93.3],
-['00:48:14',	59.5],
-['00:48:24',	56.3],
-['00:48:34',	12.2],
-['00:48:44',	25.7],
-['00:48:57',	53.1],
-['00:49:07',	62.8],
-['00:49:17',	51.5],
-['00:49:27',	19.3],
-['00:49:37',	17.7],
-['00:49:47',	24.1],
-['00:49:58',	1.1],
-['00:50:08',	14.2],
-['00:50:18',	33.8],
-['00:50:28',	46.7],
-['00:50:38',	13.0],
-['00:50:52',	24.1],
-['00:51:02',	46.7],
-['00:51:12',	12.6],
-['00:51:22',	19.3],
-['00:51:32',	19.3],
-['00:51:42',	0.5],
-['00:51:55',	20.9],
-['00:52:05',	45.1],
-['00:52:15',	56.3],
-['00:52:25',	12.7],
-['00:52:39',	0.9],
-['00:52:49',	0.5],
-['00:52:59',	0.1],
-['00:53:09',	4.2],
-['00:53:19',	33.8],
-['00:53:29',	46.7],
-['00:53:39',	51.5],
-['00:53:49',	49.9],
-['00:53:59',	41.8],
-['00:54:09',	16.1],
-['00:54:19',	43.5],
-['00:54:29',	53.1],
-['00:54:39',	59.5],
-['00:54:49',	53.1],
-['00:54:59',	56.3],
-['00:55:09',	62.8],
-['00:55:20',	45.1],
-['00:55:30',	3.4],
-['00:55:40',	29.0],
-['00:55:52',	53.1],
-['00:56:02',	49.9],
-['00:56:13',	20.9],
-['00:56:23',	45.1],
-['00:56:33',	57.9],
-['00:56:45',	54.7],
-['00:56:55',	6.6],
-['00:57:05',	3.4],
-['00:57:15',	1.9],
-['00:57:25',	2.3],
-['00:57:35',	7.6],
-['00:57:45',	5.6],
-['00:57:55',	78.9],
-['00:58:05',	48.3],
-['00:58:15',	57.9],
-['00:58:25',	59.5],
-['00:58:35',	48.3],
-['00:58:45',	30.6],
-['00:58:55',	51.5],
-['00:59:05',	57.9],
-['00:59:15',	53.1],
-['00:59:25',	53.1],
-['00:59:35',	53.1],
-['00:59:45',	57.9],
-['00:59:57',	57.9],
-['01:00:07',	59.5],
-['01:00:17',	56.3],
-['01:00:27',	46.7],
-['01:00:37',	7.4],
-['01:00:47',	1.1],
-['01:00:57',	1.8],
-['01:01:07',	0.4],
-['01:01:17',	0.8],
-['01:01:27',	0.6],
-['01:01:37',	40.2],
-['01:01:47',	70.8],
-['01:01:57',	78.9],
-['01:02:07',	67.6],
-['01:02:17',	72.4],
-['01:02:27',	69.2],
-['01:02:37',	70.8],
-['01:02:47',	59.5],
-['01:02:57',	64.4],
-['01:03:07',	70.8],
-['01:03:18',	64.4],
-['01:03:28',	17.7],
-['01:03:38',	0.4],
-['01:03:48',	0.9],
-['01:03:58',	5.3],
-['01:04:08',	41.8],
-['01:04:18',	62.8],
-['01:04:28',	69.2],
-['01:04:38',	57.9],
-['01:04:48',	25.7],
-['01:04:58',	1.9],
-['01:05:11',	0.8],
-['01:05:21',	0.6],
-['01:05:31',	3.7],
-['01:05:41',	4.5],
-
-        ]);
+<script type="text/javascript">
+	   
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(callData);
+	
+	var time = [];
+	var phen1 = [];
+	var phen2 = [];
+	var phen3 = [];
+	var phen4 = [];
+	var phen5 = [];
+	var phen6 = [];
+	var phen7 = [];
+	var phen8 = [];
+	var phen9 = [];
+	var phen10 = [];
+		
+	function callData(){
+		$.getJSON('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/51944e28e4b017df94de8e2d')
+		.success(function(data) {
+			for(var i=0;i<data.features.length;i++){
+				time[i] = data.features[i].properties.time;
+				phen1[0] = ['time','x'];
+				phen1[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon1.value];
+				phen2[0] = ['time','x'];
+				phen2[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon2.value];
+				phen3[0] = ['time','x'];
+				phen3[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon3.value];
+				phen4[0] = ['time','x'];
+				phen4[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon4.value];
+				phen5[0] = ['time','x'];
+				phen5[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon5.value];
+				phen6[0] = ['time','x'];
+				phen6[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon6.value];
+				phen7[0] = ['time','x'];
+				phen7[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon7.value];
+				phen8[0] = ['time','x'];
+				phen8[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon8.value];
+				phen9[0] = ['time','x'];
+				phen9[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon9.value];
+				phen10[0] = ['time','x'];
+				phen10[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon10.value];
+				}
+			drawChart(phen1, 'chart1');
+			drawChart(phen2, 'chart2');
+			drawChart(phen3, 'chart3');
+			drawChart(phen4, 'chart4');
+			drawChart(phen5, 'chart5');
+			drawChart(phen6, 'chart6');
+			drawChart(phen7, 'chart7');
+			drawChart(phen8, 'chart8');
+			drawChart(phen9, 'chart9');
+			drawChart(phen10, 'chart10');
+			});
+		}
+		
+	function drawChart(phenomenons, chart) {
+        data = google.visualization.arrayToDataTable(
+			phenomenons
+			);
 
         var options = {
-          title: 'Speed',
 		  colors: ['#048ABF']
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        var speedChart = new google.visualization.LineChart(document.getElementById(chart));
+        speedChart.draw(data, options);
       }
-    </script>
-<div class="container rightband">
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-</div>
+	  
 
+</script>
+
+<div class="container rightband">
+  <div class="span5">
+    <h2>Testphenomenon1</h2>
+    <div id="chart1" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon2</h2>
+    <div id="chart2" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon3</h2>
+    <div id="chart3" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon4</h2>
+    <div id="chart4" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon5</h2>
+    <div id="chart5" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon6</h2>
+    <div id="chart6" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon7</h2>
+    <div id="chart7" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon8</h2>
+    <div id="chart8" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon9</h2>
+    <div id="chart9" style="width: 500px; height: 400px;"></div>
+  </div>
+  <div class="span5">
+    <h2>Testphenomenon10</h2>
+    <div id="chart10" style="width: 500px; height: 400px;"></div>
+  </div>
+</div>
 
 <?
 include('footer.php');
 ?>
-
