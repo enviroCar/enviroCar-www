@@ -10,7 +10,7 @@ include('header.php');
   var loading = true;
 
 	function addPhenomenonStatistics(name, avg){
-      $('#phenomenonStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+': &Oslash;  '+Math.round(avg,2));
+      $('#phenomenonStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+': &Oslash;  '+Math.round(avg*100)/100);
   }
 
   function addOverallStatistics(name, value){
