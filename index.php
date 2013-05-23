@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?
 
 //on all other pages, "header.php" has to be loaded to enable authentification.
@@ -135,8 +134,3 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
   <?
   include('footer.php');
   ?>
-=======
-<?php
-header('Location: website');
-?>
->>>>>>> added index.php forwarding to /website. this diasbles the 403 forbidden error when browsinf the / directory
