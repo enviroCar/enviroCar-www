@@ -6,10 +6,33 @@ include('header.php');
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-	   
+	
+	function convertToLocalTime(serverDate) {
+		var dt = new Date(Date.parse(serverDate));
+		var localDate = dt;
+
+		var gmt = localDate;
+			var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
+			var localNow = new Date().getTimezoneOffset(); // get the timezone
+			// offset in minutes
+			var localTime = min - localNow; // get the local time
+
+		var dateStr = new Date(localTime * 1000 * 60);
+		var d = dateStr.getDate();
+		var m = dateStr.getMonth() + 1;
+		var y = dateStr.getFullYear();
+
+		var totalSec = dateStr.getTime() / 1000;
+		var hours = parseInt( totalSec / 3600 ) % 24;
+		var minutes = parseInt( totalSec / 60 ) % 60;
+
+		return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+	}
+	
 	google.load("visualization", "1", {packages:["corechart"]});
 	google.setOnLoadCallback(callData);
 	
+	var serverTime = [];
 	var time = [];
 	var phen1 = [];
 	var phen2 = [];
@@ -21,12 +44,15 @@ include('header.php');
 	var phen8 = [];
 	var phen9 = [];
 	var phen10 = [];
-		
+	
+	var trackID = '51944e28e4b017df94de8e2d'
+	
 	function callData(){
-		$.getJSON('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/51944e28e4b017df94de8e2d')
+		$.getJSON('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/' + trackID)
 		.success(function(data) {
 			for(var i=0;i<data.features.length;i++){
-				time[i] = data.features[i].properties.time;
+				serverTime[i] = data.features[i].properties.time;
+				time[i] = convertToLocalTime(serverTime[i]);
 				phen1[0] = ['time','x'];
 				phen1[i+1] = [time[i], data.features[i].properties.phenomenons.testphenomenon1.value];
 				phen2[0] = ['time','x'];
