@@ -85,9 +85,9 @@ include("lang_".$lang.".php");
     <!-- Adding flag symbols -->
         <div align="right" style="margin-right:2em; margin-top:0; margin-bottom:0" >
 		<a href="?lang=de">
-            <img align=center alt="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
+            <img align=center alt="Deutsch" title="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
         </a><a href="?lang=en">
-            <img align=center alt="English"  src="./assets/img/england-flagge.jpg" height="25" width="20" />
+            <img align=center alt="English" title="English"  src="./assets/img/england-flagge.jpg" height="25" width="20" />
           </a>
 	   </div>
     </div>
