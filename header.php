@@ -1,7 +1,7 @@
 <?
 require_once('./assets/includes/authentification.php');
 if(!is_logged_in()){
- header('Location: index.php?accessdenied');
+ header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
 }
 
 function echoActiveClassIfRequestMatches($requestUri)

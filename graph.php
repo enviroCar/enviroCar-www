@@ -2,6 +2,10 @@
 include('header.php');
 ?>
 
+<div id="loadingIndicator" class="loadingIndicator">
+<div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+</div>
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>	
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -45,11 +49,15 @@ include('header.php');
 	var phen9 = [];
 	var phen10 = [];
 	
-	var trackID = '51944e28e4b017df94de8e2d'
+	var trackID = '<?php echo $_GET["id"]; ?>';
 	
 	function callData(){
-		$.getJSON('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/' + trackID)
-		.success(function(data) {
+		$.get('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/' + trackID, function(data) {
+		if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+			console.log('error in getting tracks');
+			$('#loadingIndicator').hide();
+		}else{
+			data = JSON.parse(data);
 			for(var i=0;i<data.features.length;i++){
 				serverTime[i] = data.features[i].properties.time;
 				time[i] = convertToLocalTime(serverTime[i]);
@@ -84,6 +92,8 @@ include('header.php');
 			drawChart(phen8, 'chart8');
 			drawChart(phen9, 'chart9');
 			drawChart(phen10, 'chart10');
+			}
+			$('#loadingIndicator').hide();
 			});
 		}
 		

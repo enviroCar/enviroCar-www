@@ -1,5 +1,9 @@
 <?
+
+//on all other pages, "header.php" has to be loaded to enable authentification.
 include('header-start.php');
+
+$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 ?>
     
     <script type="text/javascript">
@@ -14,7 +18,7 @@ include('header-start.php');
           $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
             function(data){
               if(data === 'status:ok'){
-                window.location.href = "routes.php";
+                window.location.href = "<? echo $login_referer;?>";
               }else{
                 toggle_visibility("login_fail");
               }
@@ -62,6 +66,10 @@ include('header-start.php');
 	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
 	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
 	      <input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
+	      <span title="this places a cookie on your device">
+	      <input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
+	      <label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
+	      </span>
             </form>
 	    <a href="registration.php">
 	      <button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>

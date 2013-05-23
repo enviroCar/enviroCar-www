@@ -8,13 +8,18 @@ $baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
 if(isset($_GET['login'])){
 	$_SESSION['name'] = $_POST['name'];
 	$_SESSION['password'] = $_POST['password'];
-
+		
 	$response = get_request($baseUrl.'users/'.$_POST['name'], true);
 
 	if($response["status"] == 200){
 		error_log($response['response'],0);
 		$response = json_decode($response["response"],true);
 		$_SESSION['mail'] = $response['mail'];
+	
+		if (isset $_POST['login_remember'] && 	$_POST['login_remember'] == "on"){
+			//ToDdo: generate a place and remember me cookie
+		}
+		
 		echo 'status:ok';
 	}else{
 		session_destroy();
