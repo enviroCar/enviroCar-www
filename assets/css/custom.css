@@ -42,6 +42,9 @@ body{
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
 color: #F2F2F2;
 text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+font-size: 20px;
+font-weight: 200;
+line-height: 28px;
 }
 
 .navbar-inverse .nav > li > a {
@@ -63,6 +66,7 @@ h1,h2,h3,h4,h5{
 .rightband{
 	padding-right: 20px;
 	border-right: 15px solid #8CBF3F;
+	font-size: 18px;
 }
 
 .leftband{
