@@ -16,7 +16,7 @@ if(isset($_GET['login'])){
 		$response = json_decode($response["response"],true);
 		$_SESSION['mail'] = $response['mail'];
 	
-		if (isset $_POST['login_remember'] && 	$_POST['login_remember'] == "on"){
+		if (isset ($_POST['login_remember']) && 	$_POST['login_remember'] == "on"){
 			//ToDdo: generate a place and remember me cookie
 		}
 		
