@@ -7,6 +7,12 @@ function echoActiveClassIfRequestMatches($requestUri)
         echo 'class="active"';
 }
 
+//selection of language file
+$lang= $_GET["lang"]; 
+if ($lang=="")
+{$lang="en";
+}
+include("lang_".$lang.".php");
 
 
 ?>
@@ -76,6 +82,14 @@ function echoActiveClassIfRequestMatches($requestUri)
             </ul>
           </div><!--/.nav-collapse -->      </div>
       </div>
+    <!-- Adding flag symbols -->
+        <div align="right" style="margin-right:2em; margin-top:0; margin-bottom:0" >
+		<a href="?lang=de">
+            <img align=center alt="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
+        </a><a href="?lang=en">
+            <img align=center alt="English"  src="./assets/img/england-flagge.jpg" height="25" width="20" />
+          </a>
+	   </div>
     </div>
  
 <?
