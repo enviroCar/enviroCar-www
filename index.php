@@ -1,5 +1,7 @@
 <?
 include('header-start.php');
+
+$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 ?>
     
     <script type="text/javascript">
@@ -14,7 +16,7 @@ include('header-start.php');
           $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
             function(data){
               if(data === 'status:ok'){
-                window.location.href = "routes.php";
+                window.location.href = "<? echo $login_referer;?>";
               }else{
                 toggle_visibility("login_fail");
               }
