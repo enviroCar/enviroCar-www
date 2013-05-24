@@ -57,7 +57,6 @@ include('header.php');
 			console.log('error in getting tracks');
 			$('#loadingIndicator').hide();
 		}else{
-			data = JSON.parse(data);
 			for(var i=0;i<data.features.length;i++){
 				serverTime[i] = data.features[i].properties.time;
 				time[i] = convertToLocalTime(serverTime[i]);
