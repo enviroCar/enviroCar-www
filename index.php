@@ -5,7 +5,7 @@ if(!is_logged_in()){
 }else{
 	include('header.php');
 }
-$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
+$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 ?>
     
     <script type="text/javascript">
