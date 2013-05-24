@@ -12,7 +12,6 @@ if(isset($_GET['login'])){
 	$response = get_request($baseUrl.'users/'.$_POST['name'], true);
 
 	if($response["status"] == 200){
-		error_log($response['response'],0);
 		$response = json_decode($response["response"],true);
 		$_SESSION['mail'] = $response['mail'];
 	
@@ -29,12 +28,10 @@ if(isset($_GET['login'])){
 
 //Registration
 else if(isset($_GET['registration'])){
-	error_log($_POST['name'].' '.$_POST['email'].' '.$_POST['password'],0);
 
 	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
 	$response = post_request($baseUrl.'users', $newUser, false);
 
-	error_log($response['status'],0);
 
 	if($response["status"] == 201){
 		$_SESSION['name'] = $_POST['name'];
