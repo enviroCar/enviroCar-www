@@ -100,7 +100,7 @@ include("lang_".$lang.".php");
           <a class="brand" href="index.php">enviroCar</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="index_lang.php">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->      </div>
       </div>
