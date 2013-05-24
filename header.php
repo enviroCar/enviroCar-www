@@ -88,7 +88,7 @@ function echoActiveClassIfRequestMatches($requestUri)
           </div><!--/.nav-collapse -->
         </div>
        <!-- Adding flag symbols -->
-	<div align="right" style="margin-right:3em; margin-top:1em; margin-bottom:0; height:50px" >
+	<div align="right" style="margin-right:3em; margin-top:10px; margin-bottom:0; height:50px" >
 	<a href="?lang=de">
 	<img align=center alt="Deutsch" title="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
 	</a><a href="?lang=en">
