@@ -28,6 +28,23 @@ include('header.php');
           height:500px; 
           width:500px;
       }
+
+    .olPopup{
+      font-size: 16px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
+    }
     
 
 </style>
@@ -46,6 +63,8 @@ include('header.php');
 
   
 <script type="text/javascript">
+
+  var popup;
 
   (function(){
     var s = window.location.search.substring(1).split('&');
@@ -87,11 +106,28 @@ include('header.php');
   }
 
   function onFeatureSelect(feature){
-    console.log(feature);
+    popup = new OpenLayers.Popup("chicken",
+                       feature.geometry.getBounds().getCenterLonLat(),
+                       new OpenLayers.Size(200,200),
+                       getContent(),
+                       true);
+
+    map.addPopup(popup);
+
+    function getContent(){
+      var output = "<b>"+convertToLocalTime(feature.attributes.time)+"</b><br>";
+      for(property in feature.attributes.phenomenons){
+        output += property+": "+feature.attributes.phenomenons[property].value+"<br>";
+      }
+      return output;
+    }
+
   }
 
+
   function onFeatureUnselect(feature){
-      
+      popup.destroy();
+      popup = null;
   }
 
 
@@ -132,7 +168,7 @@ include('header.php');
             })
     }
   );
-  var geojson_layer = new OpenLayers.Layer.Vector("Measurements",{styleMap: co2_style});
+  var geojson_layer = new OpenLayers.Layer.Vector("Measurements");
   var geojson_line = new OpenLayers.Layer.Vector("lines");
                   
     
@@ -165,7 +201,6 @@ include('header.php');
       geojson_layer.addFeatures(geojson_format.read(data));
       map.zoomToExtent(geojson_layer.getDataExtent());
 
-      console.log(JSON.stringify(GeoJSONTools.points_to_lineString(data)));
       geojson_line.addFeatures(geojson_format.read(JSON.stringify(GeoJSONTools.points_to_lineString(data).features)));
 
 
