@@ -109,28 +109,24 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 	</div>
 
 	<div class="container rightband">
-      <!-- START THE FEATURETTES -->
-
-
-      <div class="featurette" style="margin-left: 20px;">
-        <img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="margin-top:-80px; height: 50%">
-        <h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
-        <p class="lead">This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.</p>
+      <div class="featurette" style="margin-left: 2%">
+		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%"/>
+		<h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
+		<p class="lead" style="text-align: justify">
+			This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.
+		</p>
       </div>
 
       <hr class="featurette-divider">
 
-      <div class="featurette" style="margin-left: 20px;">
-        <img class="featurette-image pull-left" style="height:50%" src="./assets/img/architecture_new3.svg">
-        <h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
-        <p class="lead">
-        </p>
+      <div class="featurette" style="margin-right: 2%">
+		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%"/>
+		<h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
+		<p class="lead" style="text-align: justify">
+		...description of the steps...
+		</p>
       </div>
-      <hr class="featurette-divider">
-
-
 	</div>
-
   <?
   include('footer.php');
   ?>
