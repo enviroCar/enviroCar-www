@@ -48,14 +48,14 @@ else if(isset($_GET['registration'])){
 
 else if(isset($_GET['logout'])){
 	session_destroy();
-	header('Location: ../../index.php?logout');
+	header('Location: /index.php?logout');
 }
 
 
 else if(isset($_GET['delete'])){
 	if(isset($_POST['delete'])){
 		if($_POST['delete']){
-			$response = delete_request('giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name']);
+			$response = delete_request($baseUrl.'/users/'.$_SESSION['name']);
 			if($response['status'] == 204){
 				echo 'status:ok';
 				session_destroy();
