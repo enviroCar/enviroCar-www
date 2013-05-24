@@ -1,70 +1,44 @@
 <?
 include('header.php');
 ?>
+<link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+
+
+<script src="./assets/OpenLayers/OpenLayers.js"></script>
+<script src="assets/OpenLayers/Renderer/Heatmap.js"></script>
 
 <div id="loadingIndicator" class="loadingIndicator">
   <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
 
-<script src="./assets/OpenLayers/OpenLayers.light.js"></script>
-<script src="./assets/js/geojsontools.js"></script>
-<style>
-    img.olTileImage {
-        max-width: none;
-      }
+<div class="container rightband" style="padding-right: 0px">
 
+	<div>
+		<div class="btn-group" style="float:right">
+		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Choose Sensor
+			<span class="caret"></span>
+		  </button>
+		  <ul id="sensorsDropdown" class="dropdown-menu">
 
-    .olControlAttribution{
-    bottom:0px;
-    }
+		  </ul>
+		</div>
+	</div>
 
+	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
+	</div>
+	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php">Route overview</a></p>
+</div>
 
-      .mapContainer{
-          height:300px; 
-          width:300px;
-      }
-      @media (min-width: 500px) {
-      .mapContainer{
-          height:500px; 
-          width:500px;
-      }
+<style type="text/css">
+	.olControlAttribution{
+		bottom:0px;
 
-    .olPopup{
-      font-size: 16px;
-      padding: 5px 0;
-      margin: 2px 0 0;
-      border: 1px solid #ccc;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
-      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      -webkit-background-clip: padding-box;
-      -moz-background-clip: padding;
-      background-clip: padding-box;
-    }
-    
-
+	}
 </style>
 
-<div class="container">
-
-  <div id="routeInformation" class="span5">
-
-          
-  </div>
-    <div class="span7 mapContainer">
-      <div id="map" style="height: 100%; width:100%;">
-      </div>
-    </div>  
-  </div>
-
-  
 <script type="text/javascript">
 
-  var popup;
+var popup;
 
   (function(){
     var s = window.location.search.substring(1).split('&');
@@ -102,7 +76,7 @@ include('header.php');
     }
 
   function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
+      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="heatmap.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
   }
 
   function onFeatureSelect(feature){
@@ -168,8 +142,37 @@ include('header.php');
             })
     }
   );
+
+    var testphenomenon1 = new OpenLayers.StyleMap(
+    { 
+            "default": new OpenLayers.Style({ 
+                fillColor: "${getColor}",
+                strokeWidth: 1,             
+                strokeColor: "#000", 
+                fillOpacity: 1,
+                pointRadius: 10//"${getSize}"
+                //label: "${getLabel}"                  
+            },
+            {
+                context: {
+                    getColor : function (feature) {
+                        return feature.attributes.phenomenons.testphenomenon1.value > 40 ? '#FF0000' :
+                               feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF5A08' :
+                                                                  '#08FF41' ;
+                    },
+          getSize: function(feature) {
+            console.log(100 / feature.layer.map.getResolution());
+            return 100 / feature.layer.map.getResolution();
+          }
+                } 
+            })
+    }
+  );
+
+
+
+
   var geojson_layer = new OpenLayers.Layer.Vector("Measurements");
-  var geojson_line = new OpenLayers.Layer.Vector("lines");
                   
     
     var geojson_format = new OpenLayers.Format.GeoJSON({
@@ -178,7 +181,6 @@ include('header.php');
             });
  
 
-  map.addLayer(geojson_line);
   map.addLayer(geojson_layer);
 
 
@@ -191,6 +193,11 @@ include('header.php');
     selectControl.activate();
       
 
+  function changeSensor(property){
+  		geojson_layer.styleMap = co2_style;
+  		geojson_layer.redraw();
+  }
+
 
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
@@ -201,11 +208,14 @@ include('header.php');
       geojson_layer.addFeatures(geojson_format.read(data));
       map.zoomToExtent(geojson_layer.getDataExtent());
 
-      geojson_line.addFeatures(geojson_format.read(JSON.stringify(GeoJSONTools.points_to_lineString(data).features)));
+ 	  data = JSON.parse(data);
+      sensors = data.features[0].properties.phenomenons;
+      for (property in sensors) { 
+      	sensor = sensors[property];
+      	$('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\''+property+'\')">'+property+'</a></li>');
+      }
 
 
-      data = JSON.parse(data);
-      addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
 
       $('#loadingIndicator').hide();
     }
@@ -213,7 +223,9 @@ include('header.php');
   });
 
 
-</script>   
+</script>
+
+
 
 <?
 include('footer.php');
