@@ -48,7 +48,7 @@ if(isset($_GET['addFriend'])){
 }
 
 if(isset($_GET['deleteFriend'])){ 
-	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/friends/'.$_GET['deleteFriend']);
+	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/friends/'.$_POST['deleteFriend']);
 	if($response['status'] == 204){
 		echo $response['response'];
 	}else{
@@ -95,6 +95,15 @@ if(isset($_GET['tracks'])){
 
 if(isset($_GET['track'])){
 	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/tracks/'.$_GET['track'], true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['trackStatistics'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/tracks/'.$_GET['trackStatistics'].'/statistics', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
