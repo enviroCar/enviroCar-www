@@ -7,32 +7,7 @@ function echoActiveClassIfRequestMatches($requestUri)
         echo 'class="active"';
 }
 
-//selection of language file
-if(isSet($_GET['lang']))
-{
-$lang = $_GET['lang'];
-
-// register the session and set the cookie
-$_SESSION['lang'] = $lang;
-
-setcookie('lang', $lang, time() + (3600 * 24 * 30));
-}
-else if(isSet($_SESSION['lang']))
-{
-$lang = $_SESSION['lang'];
-}
-else if(isSet($_COOKIE['lang']))
-{
-$lang = $_COOKIE['lang'];
-}
-else
-{
-$lang = 'en';
-}
-
-
-
-include('lang_'.$lang.'.php');
+require_once('assets/includes/language.php');
 
 
 
@@ -81,6 +56,12 @@ include('lang_'.$lang.'.php');
         }
       }
 
+      function changeLanguage(lang){
+        $.get('assets/includes/language.php?lang='+lang, function(data) {
+          window.location.reload();
+        }); 
+      }
+
     </script>
   </head>
 
@@ -94,23 +75,23 @@ include('lang_'.$lang.'.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-      <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
+          <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
           <a class="brand" href="index.php">enviroCar</a>
+          <?
+            error_log($lang,0);
+            if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right;">';
+            }else{
+              echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right;">';
+            }
+          ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
             </ul>
+
+
           </div><!--/.nav-collapse -->      </div>
-      </div>
-    <!-- Adding flag symbols -->
-        <div align="right" style="margin-right:3em; margin-top:0; margin-bottom:0; height:50px" >
-        <br>
-		<a href="?lang=de">
-            <img align=center alt="Deutsch" title="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
-        </a><a href="?lang=en">
-            <img align=center alt="English" title="English"  src="./assets/img/england-flagge.jpg" height="25" width="20" />
-          </a>
-	   </div>
+        </div>
     </div>
  
 <?
