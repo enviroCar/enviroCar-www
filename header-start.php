@@ -83,7 +83,7 @@ include("lang_".$lang.".php");
           </div><!--/.nav-collapse -->      </div>
       </div>
     <!-- Adding flag symbols -->
-        <div align="right" style="margin-right:2em; margin-top:0; margin-bottom:0"; height:"50" >
+        <div align="right" style="margin-right:2em; margin-top:0; margin-bottom:0"; height:50px >
 		<a href="?lang=de">
             <img align=center alt="Deutsch" title="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
         </a><a href="?lang=en">
