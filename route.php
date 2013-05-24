@@ -225,7 +225,7 @@ include('header.php');
       data = JSON.parse(data);
 
       for(i = 0; i < data.statistics.length; i++){
-        $('#routeStatistics').append('<p>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100/100)+'</p');
+        $('#routeStatistics').append('<p>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p');
       }
       
     }
