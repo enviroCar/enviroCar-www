@@ -155,6 +155,20 @@ require_once('assets/includes/connection.php');
       <div id="groups" class="span4">
         <h2>Groups</h2>
       </div>
+      <div id="licensing" class="span4">
+        <h2>Licensing</h2>
+        
+            <div class="btn-group">
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+				License all new data as:
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Private</a></li>
+					<li><a href="#">Open DataBase License</a></li>
+				</ul>
+			</div>
+      </div>
     </div>
   </div>
 </div>
