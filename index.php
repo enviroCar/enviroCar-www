@@ -79,8 +79,10 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 			<div style="clear:both"></div>
 	    </p>
 	<?
-	if ($login_form_attempt >= 5){
-		echo "Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>";
+		if ($login_form_attempt >= 5){
+	?>
+		Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>"
+	<?
 		}
 	?>
     </div>
@@ -90,7 +92,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 			<h2 style="color:WhiteSmoke; text-shadow: 0.1em 0.1em 0.1em black; margin-bottom: 0em; padding-bottom: 0em;">
 				Welcome, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
 			</h2>
-			<a href="index.php?logout" style="color: white; font-size: small">
+			<a href="./assets/includes/authentification?logout" style="color: white; font-size: small">
 				Wait, that's not my name!
 			</a>
 			<br/>
