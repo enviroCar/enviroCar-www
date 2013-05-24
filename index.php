@@ -1,8 +1,10 @@
 <?
-
-//on all other pages, "header.php" has to be loaded to enable authentification.
-include('header-start.php');
-
+require_once('./assets/includes/authentification.php');
+if(!is_logged_in()){
+	include('header-start.php');
+}else{
+	include('header.php');
+}
 $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 ?>
     
@@ -66,10 +68,10 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
 	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
 	      <input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
-	      <span title="this places a cookie on your device">
+	      <!--span title="this places a cookie on your device">
 	      <input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
 	      <label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
-	      </span>
+	      </span-->
             </form>
 	    <a href="registration.php">
 	      <button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
