@@ -95,7 +95,7 @@ $lang = 'en';
 
 
 
-include("./lang_".$lang.".php");
+include('lang_'.$lang.'.php');
 
 
 ?>
