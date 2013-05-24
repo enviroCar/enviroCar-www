@@ -12,7 +12,6 @@ if(isset($_GET['login'])){
 	$response = get_request($baseUrl.'users/'.$_POST['name'], true);
 
 	if($response["status"] == 200){
-		error_log($response['response'],0);
 		$response = json_decode($response["response"],true);
 		$_SESSION['mail'] = $response['mail'];
 	
@@ -29,12 +28,10 @@ if(isset($_GET['login'])){
 
 //Registration
 else if(isset($_GET['registration'])){
-	error_log($_POST['name'].' '.$_POST['email'].' '.$_POST['password'],0);
 
 	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
 	$response = post_request($baseUrl.'users', $newUser, false);
 
-	error_log($response['status'],0);
 
 	if($response["status"] == 201){
 		$_SESSION['name'] = $_POST['name'];
@@ -48,14 +45,14 @@ else if(isset($_GET['registration'])){
 
 else if(isset($_GET['logout'])){
 	session_destroy();
-	header('Location: ../../index.php?logout');
+	header('Location: /index.php?logout');
 }
 
 
 else if(isset($_GET['delete'])){
 	if(isset($_POST['delete'])){
 		if($_POST['delete']){
-			$response = delete_request('giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name']);
+			$response = delete_request($baseUrl.'/users/'.$_SESSION['name']);
 			if($response['status'] == 204){
 				echo 'status:ok';
 				session_destroy();
@@ -72,7 +69,33 @@ function is_logged_in(){
 	else return false;
 }
 
+//language
 
+if(isSet($_GET['lang']))
+{
+$lang = $_GET['lang'];
+
+// register the session and set the cookie
+$_SESSION['lang'] = $lang;
+
+setcookie('lang', $lang, time() + (3600 * 24 * 30));
+}
+else if(isSet($_SESSION['lang']))
+{
+$lang = $_SESSION['lang'];
+}
+else if(isSet($_COOKIE['lang']))
+{
+$lang = $_COOKIE['lang'];
+}
+else
+{
+$lang = 'en';
+}
+
+
+
+include('lang_'.$lang.'.php');
 
 
 ?>

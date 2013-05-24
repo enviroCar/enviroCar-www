@@ -18,9 +18,11 @@ require_once('assets/includes/connection.php');
   
   function init(){
     user = $_GET(['user']);
+    loggedInUser = '<?php echo $_SESSION["name"] ?>';
     $('#username').html(user);
     getUserFriends();
     getUserGroups();
+    getLoggedInUserFriends();
   }
 
 
@@ -41,6 +43,29 @@ require_once('assets/includes/connection.php');
     });
   }
 
+  function getLoggedInUserFriends(){
+    $.get('./assets/includes/users.php?friendsOf='+loggedInUser, function(data) {
+      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          console.log('error in getting groups');
+      }else{
+        data = JSON.parse(data);
+        if(data.users.length > 0 ){
+          for(i = 0; i < data.users.length; i++){
+            console.log(loggedInUser+" "+data.users[i].name);
+            if(user == data.users[i].name){
+              $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
+              console.log("jes");
+            }
+            else{ 
+              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
+            }
+          }
+        }
+
+      }
+    });
+  }
+
   function getUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
@@ -57,6 +82,17 @@ require_once('assets/includes/connection.php');
 
       }
     });
+  }
+
+  function removeAsFriend(){
+    $.post('./assets/includes/users.php?deleteFriend', {deleteFriend: user}, 
+      function(data){
+        if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          console.log('error in deleting Friend');
+        }else{
+          console.log('deleting friend successfull');
+        }
+      });
   }
 
   function addAsFriend(){
@@ -101,10 +137,11 @@ require_once('assets/includes/connection.php');
           <img src="./assets/img/user.jpg" align="center" style="height: 100px; margin-right: 100px; "/>
           <li class="nav-header">Community</li>
           <li>Username:    <b id="username"></b></li>
-          <li><a href="javascript:addAsFriend();">Add as Friend</a></li>
           <?
             if($_GET['user'] == $_SESSION['name']){
               echo '<p><a href="" class="btn btn-primary btn-small">Change profile &raquo;</a><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete my Account &raquo;</a></p>';
+            }else{
+              echo '<li id="addAsFriendLink"></li>';
             }
           ?>
         </ul>
@@ -117,6 +154,20 @@ require_once('assets/includes/connection.php');
       </div>
       <div id="groups" class="span4">
         <h2>Groups</h2>
+      </div>
+      <div id="licensing" class="span4">
+        <h2>Licensing</h2>
+        
+            <div class="btn-group">
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+				License all new data as:
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Private</a></li>
+					<li><a href="#">Open DataBase License</a></li>
+				</ul>
+			</div>
       </div>
     </div>
   </div>

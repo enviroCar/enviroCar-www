@@ -1,9 +1,11 @@
 <?
-
-//on all other pages, "header.php" has to be loaded to enable authentification.
-include('header-start.php');
-
-$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
+require_once('./assets/includes/authentification.php');
+if(!is_logged_in()){
+	include('header-start.php');
+}else{
+	include('header.php');
+}
+$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 ?>
     
     <script type="text/javascript">
@@ -55,33 +57,52 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 	   ?>
   <div class="container rightband">
     <div class="row-fluid">
-        <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-        </div>
+<? if (!is_logged_in()) { ?>
+      <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+      </div>
       <div class="span4">
             <h2 class="form-signin-heading">Please sign in</h2>
-            
             <p>
             <form name="login" action="" method="post" style="display: inline;">
-	      <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
-	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
-	      <input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
-	      <span title="this places a cookie on your device">
-	      <input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
-	      <label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
-	      </span>
+				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
+				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
+				<input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
+				<!--span title="this places a cookie on your device">
+					<input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
+					<label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
+				</span-->
             </form>
-	    <a href="registration.php">
-	      <button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
-	    </a>
-	    <div style="clear:both"></div>
+			<a href="registration.php">
+				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
+			</a>
+			<div style="clear:both"></div>
 	    </p>
-            
-	      <? if ($login_form_attempt >= 5){
-		 echo "Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>";
+	<?
+		if ($login_form_attempt >= 5){
+	?>
+		Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>"
+	<?
 		}
-	      ?>
-      </div>
+	?>
+    </div>
+<? 	} else { ?>
+	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+		<div style="margin-right: 1%; margin-top 60%; float:right; text-align: center">
+			<h2 style="color:WhiteSmoke; text-shadow: 0.1em 0.1em 0.1em black; margin-bottom: 0em; padding-bottom: 0em;">
+				Welcome, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
+			</h2>
+			<a href="./assets/includes/authentification?logout" style="color: white; font-size: small">
+				Wait, that's not my name!
+			</a>
+			<br/>
+			<a href="dashboard.php">
+				<button class="btn btn-medium btn-inversed" name="dashboard" value="dashboard" style="margin-top: 2em">continue to your dashboard</button>
+			</a>
+		</div>
+	 </div>
+<? } ?>
+
     </div>
   </div> <!-- /container -->
 
@@ -109,28 +130,24 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 	</div>
 
 	<div class="container rightband">
-      <!-- START THE FEATURETTES -->
-
-
-      <div class="featurette" style="margin-left: 20px;">
-        <img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="margin-top:-80px; height: 50%">
-        <h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
-        <p class="lead">This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.</p>
+      <div class="featurette" style="margin-left: 2%">
+		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%"/>
+		<h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
+		<p class="lead" style="text-align: justify">
+			This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.
+		</p>
       </div>
 
       <hr class="featurette-divider">
 
-      <div class="featurette" style="margin-left: 20px;">
-        <img class="featurette-image pull-left" style="height:50%" src="./assets/img/architecture_new3.svg">
-        <h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
-        <p class="lead">
-        </p>
+      <div class="featurette" style="margin-right: 2%">
+		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%"/>
+		<h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
+		<p class="lead" style="text-align: justify">
+		...description of the steps...
+		</p>
       </div>
-      <hr class="featurette-divider">
-
-
 	</div>
-
   <?
   include('footer.php');
   ?>

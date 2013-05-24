@@ -7,12 +7,9 @@ function echoActiveClassIfRequestMatches($requestUri)
         echo 'class="active"';
 }
 
-//selection of language file
-$lang= $_GET["lang"]; 
-if ($lang=="")
-{$lang="en";
-}
-include("lang_".$lang.".php");
+require_once('assets/includes/language.php');
+
+
 
 
 ?>
@@ -42,11 +39,9 @@ include("lang_".$lang.".php");
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="./assets/ico/favicon.png">
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
+    <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
     <script src="./assets/js/jquery.js"></script>
 
@@ -59,6 +54,12 @@ include("lang_".$lang.".php");
         } else {
           $('#'+id).slideUp("fast");
         }
+      }
+
+      function changeLanguage(lang){
+        $.get('assets/includes/language.php?lang='+lang, function(data) {
+          window.location.reload();
+        }); 
       }
 
     </script>
@@ -74,22 +75,22 @@ include("lang_".$lang.".php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-      <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
+          <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
           <a class="brand" href="index.php">enviroCar</a>
+          <?
+            if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right;">';
+            }else{
+              echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right;">';
+            }
+          ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
             </ul>
+
+
           </div><!--/.nav-collapse -->      </div>
-      </div>
-    <!-- Adding flag symbols -->
-        <div align="right" style="margin-right:2em; margin-top:0; margin-bottom:0" >
-		<a href="?lang=de">
-            <img align=center alt="Deutsch" title="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
-        </a><a href="?lang=en">
-            <img align=center alt="English" title="English"  src="./assets/img/england-flagge.jpg" height="25" width="20" />
-          </a>
-	   </div>
+        </div>
     </div>
  
 <?

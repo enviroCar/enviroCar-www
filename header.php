@@ -1,5 +1,7 @@
 <?
 require_once('./assets/includes/authentification.php');
+require_once('./assets/includes/language.php');
+
 if(!is_logged_in()){
  header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
 }
@@ -58,6 +60,12 @@ function echoActiveClassIfRequestMatches($requestUri)
         }
       }
 
+      function changeLanguage(lang){
+        $.get('assets/includes/language.php?lang='+lang, function(data) {
+          window.location.reload();
+        }); 
+      }
+
     </script>
 
   </head>
@@ -73,6 +81,12 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
           </button>
 		  <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
+      <?
+        if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right;">';
+        }else{
+          echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right;">';
+        }
+      ?>
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
           <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
@@ -81,6 +95,7 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php">Routes</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
+             <!-- <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li> -->
               <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->
