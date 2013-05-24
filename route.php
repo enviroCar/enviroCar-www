@@ -51,7 +51,12 @@ include('header.php');
 
 <div class="container">
 
-  <div id="routeInformation" class="span5">
+  <div class="span5">
+    <div style="max-height:400px; overflow:auto;">
+      <div id="routeInformation"></div>
+      <div id="routeStatistics"></div>
+    </div>
+    <div id="furtherInformation"></div>
 
           
   </div>
@@ -102,7 +107,8 @@ include('header.php');
     }
 
   function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
+      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p>');
+      $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
   }
 
   function onFeatureSelect(feature){
@@ -208,6 +214,20 @@ include('header.php');
       addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
 
       $('#loadingIndicator').hide();
+    }
+    
+  });
+
+    $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
+    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+        console.log('error in getting statistics');
+    }else{
+      data = JSON.parse(data);
+
+      for(i = 0; i < data.statistics.length; i++){
+        $('#routeStatistics').append('<p>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100/100)+'</p');
+      }
+      
     }
     
   });
