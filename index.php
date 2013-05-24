@@ -57,33 +57,50 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "routes.php";
 	   ?>
   <div class="container rightband">
     <div class="row-fluid">
-        <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-        </div>
+<? if (!is_logged_in()) { ?>
+      <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+      </div>
       <div class="span4">
             <h2 class="form-signin-heading">Please sign in</h2>
-            
             <p>
             <form name="login" action="" method="post" style="display: inline;">
-	      <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-	      <input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
-	      <input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
-	      <input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
-	      <!--span title="this places a cookie on your device">
-	      <input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
-	      <label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
-	      </span-->
+				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
+				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
+				<input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
+				<!--span title="this places a cookie on your device">
+					<input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
+					<label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
+				</span-->
             </form>
-	    <a href="registration.php">
-	      <button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
-	    </a>
-	    <div style="clear:both"></div>
+			<a href="registration.php">
+				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
+			</a>
+			<div style="clear:both"></div>
 	    </p>
-            
-	      <? if ($login_form_attempt >= 5){
-		 echo "Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>";
+	<?
+	if ($login_form_attempt >= 5){
+		echo "Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>";
 		}
-	      ?>
-      </div>
+	?>
+    </div>
+<? 	} else { ?>
+	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+		<div style="margin-right: 1%; margin-top 60%; float:right; text-align: center">
+			<h2 style="color:WhiteSmoke; text-shadow: 0.1em 0.1em 0.1em black; margin-bottom: 0em; padding-bottom: 0em;">
+				Welcome, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
+			</h2>
+			<a href="index.php?logout" style="color: white; font-size: small">
+				Wait, that's not my name!
+			</a>
+			<br/>
+			<a href="dashboard.php">
+				<button class="btn btn-medium btn-inversed" name="dashboard" value="dashboard" style="margin-top: 2em">continue to your dashboard</button>
+			</a>
+		</div>
+	 </div>
+<? } ?>
+
     </div>
   </div> <!-- /container -->
 
