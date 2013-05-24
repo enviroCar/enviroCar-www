@@ -1,5 +1,7 @@
 <?
 require_once('./assets/includes/authentification.php');
+require_once('./assets/includes/language.php');
+
 if(!is_logged_in()){
  header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
 }
@@ -39,8 +41,11 @@ function echoActiveClassIfRequestMatches($requestUri)
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
-    <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="./assets/ico/favicon.png">
     
     <script src="./assets/js/jquery.js"></script>
 
@@ -53,6 +58,12 @@ function echoActiveClassIfRequestMatches($requestUri)
         } else {
           $('#'+id).slideUp("fast");
         }
+      }
+
+      function changeLanguage(lang){
+        $.get('assets/includes/language.php?lang='+lang, function(data) {
+          window.location.reload();
+        }); 
       }
 
     </script>
@@ -69,9 +80,13 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="./index.php">
-			<img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
-		  </a>
+		  <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
+      <?
+        if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right;">';
+        }else{
+          echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right;">';
+        }
+      ?>
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
           <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
@@ -80,19 +95,11 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php">Routes</a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
+             <!-- <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li> -->
               <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support">Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
-       <!-- Adding flag symbols -->
-	<div align="right" style="margin-right:3em; margin-top:0; margin-bottom:0; height:50px" >
-	<br>
-	<a href="?lang=de">
-	<img align=center alt="Deutsch" title="Deutsch" src="./assets/img/deutschland-flagge.jpg" height="25" width="20"/>
-	</a><a href="?lang=en">
-	<img align=center alt="English" title="English" src="./assets/img/england-flagge.jpg" height="25" width="20" />
-	</a>
-	</div>
       </div>
     </div>
     <div id="settings" class="settings">
