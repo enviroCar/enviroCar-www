@@ -14,12 +14,12 @@ function get_request($uri, $isAuthRequired){
         curl_setopt_array($ch, array(
             CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
             CURLOPT_RETURNTRANSFER  =>true,
-            CURLOPT_VERBOSE     => 1
+            CURLOPT_VERBOSE     => 0
         ));
     }else{
         curl_setopt_array($ch, array(
             CURLOPT_RETURNTRANSFER  =>true,
-            CURLOPT_VERBOSE     => 1
+            CURLOPT_VERBOSE     => 0
         ));
     }
     
@@ -39,7 +39,8 @@ function post_request($url, $data, $isAuthRequired){
     $data_string = json_encode($data);                                                                                   
      
     $ch = curl_init($url);                                                                      
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_VERBOSE,0);                                                                     
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	if($isAuthRequired){
@@ -74,7 +75,8 @@ function put_request($url, $data){
      
     $ch = curl_init($url);                                                                      
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");                                                                     
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);   
+    curl_setopt($ch, CURLOPT_VERBOSE,0);                                                               
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'Content-Type: application/json',                                                                                
@@ -96,14 +98,17 @@ function put_request($url, $data){
 function delete_request($url){                                                                                
      
     $ch = curl_init($url);                                                                      
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");                                                                                                          
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+    curl_setopt($ch, CURLOPT_VERBOSE,0);                                                                                                          
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                    
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'X-User: '.$_SESSION['name'], 
         'X-Token: '.$_SESSION['password'])                                                                       
     );                                                                                                                   
      
+
     $result = curl_exec($ch);
+        error_log($result,0);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
     return array("status" => $http_status, "response" => $result);
