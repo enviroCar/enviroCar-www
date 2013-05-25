@@ -82,12 +82,12 @@ function echoActiveClassIfRequestMatches($requestUri)
           </button>
 		  <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
       <?
-        if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right;">';
+        if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer">';
         }else{
-          echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right;">';
+          echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer">';
         }
       ?>
-		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right;">
+		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer">
           <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
