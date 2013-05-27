@@ -15,7 +15,7 @@ include('header.php');
 
 	<div>
 		<div class="btn-group" style="float:right">
-		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Choose Sensor
+		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
 			<span class="caret"></span>
 		  </button>
 		  <ul id="sensorsDropdown" class="dropdown-menu">

@@ -15,7 +15,7 @@ include('header.php');
 
 	<div>
 		<div class="btn-group" style="float:right">
-		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Choose Sensor
+		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
 			<span class="caret"></span>
 		  </button>
 		  <ul id="sensorsDropdown" class="dropdown-menu">
@@ -26,7 +26,7 @@ include('header.php');
 
 	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
 	</div>
-	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php">Route overview</a></p>
+	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><? echo $routeoverview ?></a></p>
 </div>
 
 <style type="text/css">

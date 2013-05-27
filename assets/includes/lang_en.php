@@ -19,6 +19,26 @@ $index_cont16="Register";
 $index_cont17="Sign in";
 $index_cont18="User name";
 
+$created ="Created";
+$yourroutes = "Your Routes";
+$yourstatistics = "Your Statistics";
+$noroutesavailable = "No routes available";
+
+$profile = "Profil";
+$activities = "Activities";
+$routes = "Routes";
+$friends ="Friends";
+$groups = "Groups";
+$help = "Help";
+$community ="Community";
+
+$graphs ="Graphs";
+$thematicmaps = "Thematic maps";
+
+$choosesensor ="Choose sensor";
+$routeoverview = "Route overview";
+
+
 
 
 

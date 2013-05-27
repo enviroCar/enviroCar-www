@@ -19,6 +19,24 @@ $index_cont16="Registrieren";
 $index_cont17="Anmelden";
 $index_cont18="Benutzername";
 
+$created ="Erstellt";
+$yourroutes = "Deine Routen";
+$yourstatistics = "Deine Statistiken";
+$noroutesavailable = "Keine Routen verfügbar";
+
+$profile = "Profil";
+$activities = "Aktivitäten";
+$routes = "Routen";
+$friends ="Freunde";
+$groups = "Gruppen";
+$help = "Hilfe";
+$community ="Gemeinschaft";
+
+$graphs ="Graphen";
+$thematicmaps = "Thematische Karten";
+
+$choosesensor ="Sensor auswählen";
+$routeoverview = "Route Übersicht";
 
 
 

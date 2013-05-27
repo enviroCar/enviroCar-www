@@ -18,7 +18,7 @@ include('header.php');
   }
 
   function addRoutes(id, name, date){
-      $('#routes').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a><br><div>Created: '+date+'</div></li>');
+      $('#routes').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a><br><div><? echo $created ?>: '+date+'</div></li>');
   }
 
     $.get('./assets/includes/users.php?tracks', function(data) {
@@ -39,7 +39,7 @@ include('header.php');
     		    }
 
           }else{
-            $('#routes').append("No routes available");
+            $('#routes').append("<? echo $noroutesavailable ?>");
             $('#loadingIndicator').hide();
           }
     	}
@@ -96,12 +96,12 @@ include('header.php');
 <div class="container rightband">
 	<div class="row-fluid">
       <div class="span5">
-        <h2>Your Routes</h2>
+        <h2><? echo $yourroutes ?></h2>
         	<ul id="routes" style="max-height: 400px; overflow-y: auto;">
         	</ul>
       </div>
       <div class="span5 ">
-        <h2>Your Statistics</h2>
+        <h2><? echo $yourstatistics ?></h2>
         <div style="max-height: 400px; overflow-y: auto;">
           <ul id="overallStatistics">
           </ul>

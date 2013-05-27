@@ -87,18 +87,18 @@ function echoActiveClassIfRequestMatches($requestUri)
           <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php">Activities</a></li>
-              <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php">Routes</a></li>
-              <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php">Friends</a></li>
-              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php">Groups</a></li>
-             <!-- <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php">Data Access</a></li> -->
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php"><? echo $routes ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php"><? echo $friends ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("community")?>><a href="community.php"><? echo $community ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support"><? echo $help ?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
     <div id="settings" class="settings">
-      <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> ">Profile</a></h4><br>
+      <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
       <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout">Logout</a></h4>
     </div>
