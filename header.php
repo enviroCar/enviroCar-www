@@ -40,8 +40,9 @@ function echoActiveClassIfRequestMatches($requestUri)
       <script src="./assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="./assets/ico/favicon.png">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
+    <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
 
@@ -84,7 +85,7 @@ function echoActiveClassIfRequestMatches($requestUri)
         }
       ?>
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer">
-          <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
+          <a class="brand" href="index.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>

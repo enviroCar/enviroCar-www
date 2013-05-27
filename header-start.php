@@ -38,8 +38,7 @@ require_once('assets/includes/language.php');
       <script src="./assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <!-- Fav and touch icons -->
+    <!-- Favicons -->
     <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
