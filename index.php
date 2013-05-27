@@ -12,10 +12,10 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
       //Sending the credentials to the authentification page
       function login(ln, lp){
         if(ln === ''){
-          alert("Invalid Login Name");
+          alert("<? echo $index_cont1;?>");
         }
         else if(lp === ''){
-          alert('Password cannot be empty');
+          alert('<? echo $index_cont2;?>');
         }else{
           $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
             function(data){
@@ -36,22 +36,39 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 	    if ($login_form_attempt>=1){
 	    
 	      if ($login_name != "" &&  $login_password == ""){
-		echo "<div class=\"container alert alert-block alert-error fade in\"><a class=\"close\" data-dismiss=\"alert\">×</a>  
-  <h4 class=\"alert-heading\">Access denied!</h4>sorry, but you can't have an empty password.</div>";
+			?>
+			<div class="container alert alert-block alert-error fade in">
+				<a class="close" data-dismiss="alert">×</a>  
+				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
+				<? echo $index_cont20;?>
+			</div>
+			<?
 	      }
 	      
 	      if ($login_name == "" && $login_password != ""){
-		echo "<div class=\"container alert alert-block alert-error fade in\"><a class=\"close\" data-dismiss=\"alert\">×</a>  
-  <h4 class=\"alert-heading\">Access denied!</h4>everybody should have a name, even you.</div>";
+			?>
+			<div class="container alert alert-block alert-error fade in">
+				<a class="close" data-dismiss="alert">×</a>
+				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
+				<? echo $index_cont21;?>
+			</div>
+			<?
 	      }
 	      
 	      if ($login_name == "" && $login_password == ""){
-		echo "<div class=\"container alert alert-block alert-error fade in\"><a class=\"close\" data-dismiss=\"alert\">×</a>  
-  <h4 class=\"alert-heading\">Access denied!</h4>nice try, but empty credentials are invalid.</div>";
+			?>
+			<div class="container alert alert-block alert-error fade in">
+				<a class="close" data-dismiss="alert">×</a>  
+				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
+				<? echo $index_cont22;?>
+			</div>
+			<?
 	      }
 	      
 	      if ($login_name != "" && $login_password != ""){
-		echo "<script type=\"text/javascript\">login(\"". $login_name . "\",\"" . $login_password ."\");</script>";
+			?>
+			<script type="text/javascript">login("<? echo $login_name;?>","<?echo $login_password;?>");</script>
+			<?
 	      }
 	    }
 	   ?>
@@ -61,27 +78,27 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
       <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
       </div>
       <div class="span4">
-            <h2 class="form-signin-heading">Please sign in</h2>
+            <h2 class="form-signin-heading"><? echo $index_cont4;?></h2>
             <p>
             <form name="login" action="" method="post" style="display: inline;">
 				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="User name" value="<?echo $login_name;?>"/>
-				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="Password" />
-				<input type="submit" 	class="btn btn-medium btn-primary" value="Sign in" style="float: left"/>
+				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_cont18;?>" value="<?echo $login_name;?>"/>
+				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_cont5;?>" />
+				<input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_cont17;?>" style="float: left"/>
 				<!--span title="this places a cookie on your device">
 					<input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
 					<label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
 				</span-->
             </form>
 			<a href="registration.php">
-				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;">Register</button>
+				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;"><? echo $index_cont16;?></button>
 			</a>
 			<div style="clear:both"></div>
 	    </p>
 	<?
 		if ($login_form_attempt >= 5){
 	?>
-		Are you sure, of having an account?<br/> You can create a new one. It's free!<br/>"
+		<? echo $index_cont23;?><br/> <? echo $index_cont24;?><br/>"
 	<?
 		}
 	?>
@@ -93,7 +110,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 				Welcome, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
 			</h2>
 			<a href="./assets/includes/authentification?logout" style="color: white; font-size: small">
-				Wait, that's not my name!
+				<? echo  $indec_cont25;?>
 			</a>
 			<br/>
 			<a href="dashboard.php">
@@ -109,20 +126,20 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 	<div class="container leftband">
 	<div class="row-fluid">
         <div class="span4">
-          <h2>Get our App soon!</h2>
+          <h2><? echo $index_cont8;?></h2>
           <a href="https://play.google.com/store/apps/details?id=enviroCar">
             <img alt="Get it on Google Play" style="margin-left: 50px; margin-top: 10px;"
                  src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
           </a>
        </div>
         <div class="span4">
-          <h2>Be a Citizen Scientist!</h2>
-          <p>Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your own research!</p>
+          <h2><? echo $index_cont10;?></h2>
+          <p><? echo $index_cont11;?></p>
         </div>
         <div class="span4">
-          <h2>Support us on Indiegogo</h2>
+          <h2><? echo $index_cont12;?></h2>
           <a href="http://www.indiegogo.com/projects/envirocar" target='_blank'>
-            <img style="width:70%;" src="http://www.pcgameshardware.de/screenshots/811x455/2012/12/igg_logo_color_print_black_h.jpg"/>
+            <img style="width:70%;" src="http://www.indiegogo.com/assets/igg_logo_color_print_black_h.jpg"/>
           </a>
         </div>
       </div>
@@ -132,9 +149,9 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 	<div class="container rightband">
       <div class="featurette" style="margin-left: 2%">
 		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%"/>
-		<h2 class="featurette-heading">enviroCar <span class="muted">Make our cities smarter!</span></h2>
+		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_cont19;?></span></h2>
 		<p class="lead" style="text-align: justify">
-			This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.
+			<? echo $index_cont13;?>
 		</p>
       </div>
 
@@ -142,7 +159,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 
       <div class="featurette" style="margin-right: 2%">
 		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%"/>
-		<h2 class="featurette-heading">How does it work? <span class="muted">Three steps to become a citizen scientist</span></h2>
+		<h2 class="featurette-heading"><? echo $index_cont14;?><span class="muted"><? echo $index_cont15;?></span></h2>
 		<p class="lead" style="text-align: justify">
 		...description of the steps...
 		</p>

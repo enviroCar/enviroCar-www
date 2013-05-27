@@ -18,6 +18,14 @@ $index_cont15="Three steps to become a citizen scientist";
 $index_cont16="Register";
 $index_cont17="Sign in";
 $index_cont18="User name";
+$index_cont19="Make our cities smarter!";
+$index_cont20="sorry, but you can't have an empty password.";
+$index_cont21="everybody should have a name, even you.";
+$index_cont22="nice try, but empty credentials are invalid.";
+$index_cont23="Are you sure, of having an account?";
+$index_cont24="You can create a new one. It's free";
+$index_cont25="Wait, that's not my name!";
+
 
 $created ="Created";
 $yourroutes = "Your Routes";
@@ -42,7 +50,7 @@ $routeoverview = "Route overview";
 
 
 
-
+$enviroCar="enviroCar"
 
 
 
