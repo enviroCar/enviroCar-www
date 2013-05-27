@@ -204,7 +204,6 @@ var sensorProperties = Array();
     map.zoomToExtent(geojson_layer.getDataExtent());
 
 
-    //TODO: append only new properties!
     data = JSON.parse(data);
     sensors = data.features[0].properties.phenomenons;
     for (property in sensors) {
@@ -225,7 +224,7 @@ var sensorProperties = Array();
         $('#loadingIndicator').hide();
     }else{
       data = JSON.parse(data);
-      for(i = 0; data.tracks.length; i++){
+      for(i = 0; i < data.tracks.length; i++){
         $.get('assets/includes/get.php?url='+data.tracks[i].href, function(trackResponse){
           if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
             console.log("error in receiving track");
