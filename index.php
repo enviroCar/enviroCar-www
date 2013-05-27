@@ -107,14 +107,14 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
 		<div style="margin-right: 1%; margin-top 60%; float:right; text-align: center">
 			<h2 style="color:WhiteSmoke; text-shadow: 0.1em 0.1em 0.1em black; margin-bottom: 0em; padding-bottom: 0em;">
-				Welcome, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
+				<? echo  $index_cont27;?>, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
 			</h2>
 			<a href="./assets/includes/authentification?logout" style="color: white; font-size: small">
-				<? echo  $indec_cont25;?>
+				<? echo  $index_cont25;?>
 			</a>
 			<br/>
 			<a href="dashboard.php">
-				<button class="btn btn-medium btn-inversed" name="dashboard" value="dashboard" style="margin-top: 2em">continue to your dashboard</button>
+				<button class="btn btn-medium btn-inversed" name="dashboard" value="dashboard" style="margin-top: 2em"><? echo  $index_cont26;?></button>
 			</a>
 		</div>
 	 </div>
@@ -134,7 +134,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
        </div>
         <div class="span4">
           <h2><? echo $index_cont10;?></h2>
-          <p><? echo $index_cont11;?></p>
+          <p style="text-align: justify;"><? echo $index_cont11;?></p>
         </div>
         <div class="span4">
           <h2><? echo $index_cont12;?></h2>

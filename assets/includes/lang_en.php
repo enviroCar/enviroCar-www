@@ -25,6 +25,8 @@ $index_cont22="nice try, but empty credentials are invalid.";
 $index_cont23="Are you sure, of having an account?";
 $index_cont24="You can create a new one. It's free";
 $index_cont25="Wait, that's not my name!";
+$index_cont26="Continue to your dashboard";
+$index_cont27="Welcome";
 
 
 $created ="Created";
