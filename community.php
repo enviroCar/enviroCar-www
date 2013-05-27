@@ -1,75 +1,44 @@
 <?
 include('header.php');
 ?>
+<link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+
+
+<script src="./assets/OpenLayers/OpenLayers.js"></script>
+<script src="assets/OpenLayers/Renderer/Heatmap.js"></script>
 
 <div id="loadingIndicator" class="loadingIndicator">
   <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
 
-<script src="./assets/OpenLayers/OpenLayers.light.js"></script>
-<script src="./assets/js/geojsontools.js"></script>
-<style>
-    img.olTileImage {
-        max-width: none;
-      }
+<div class="container rightband" style="padding-right: 0px">
 
+	<div>
+		<div class="btn-group" style="float:right">
+		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
+			<span class="caret"></span>
+		  </button>
+		  <ul id="sensorsDropdown" class="dropdown-menu">
 
-    .olControlAttribution{
-    bottom:0px;
-    }
+		  </ul>
+		</div>
+	</div>
 
+	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
+	</div>
+</div>
 
-      .mapContainer{
-          height:300px; 
-          width:300px;
-      }
-      @media (min-width: 500px) {
-      .mapContainer{
-          height:500px; 
-          width:500px;
-      }
+<style type="text/css">
+	.olControlAttribution{
+		bottom:0px;
 
-    .olPopup{
-      font-size: 16px;
-      padding: 5px 0;
-      margin: 2px 0 0;
-      border: 1px solid #ccc;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
-      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      -webkit-background-clip: padding-box;
-      -moz-background-clip: padding;
-      background-clip: padding-box;
-    }
-    
-
+	}
 </style>
 
-<div class="container">
-
-  <div class="span5">
-    <div style="max-height:400px; overflow:auto;">
-      <div id="routeInformation"></div>
-      <div id="routeStatistics"></div>
-    </div>
-    <div id="furtherInformation"></div>
-
-          
-  </div>
-    <div class="span7 mapContainer">
-      <div id="map" style="height: 100%; width:100%;">
-      </div>
-    </div>  
-  </div>
-
-  
 <script type="text/javascript">
 
-  var popup;
+var popup;
+var sensorProperties = Array();
 
   (function(){
     var s = window.location.search.substring(1).split('&');
@@ -107,8 +76,7 @@ include('header.php');
     }
 
   function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p>');
-      $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'"><? echo $graphs ?></a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'"><? echo $thematicmaps ?></a></p>');
+      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="heatmap.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
   }
 
   function onFeatureSelect(feature){
@@ -174,8 +142,37 @@ include('header.php');
             })
     }
   );
+
+    var testphenomenon1 = new OpenLayers.StyleMap(
+    { 
+            "default": new OpenLayers.Style({ 
+                fillColor: "${getColor}",
+                strokeWidth: 1,             
+                strokeColor: "#000", 
+                fillOpacity: 1,
+                pointRadius: 10//"${getSize}"
+                //label: "${getLabel}"                  
+            },
+            {
+                context: {
+                    getColor : function (feature) {
+                        return feature.attributes.phenomenons.testphenomenon1.value > 40 ? '#FF0000' :
+                               feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF5A08' :
+                                                                  '#08FF41' ;
+                    },
+          getSize: function(feature) {
+            console.log(100 / feature.layer.map.getResolution());
+            return 100 / feature.layer.map.getResolution();
+          }
+                } 
+            })
+    }
+  );
+
+
+
+
   var geojson_layer = new OpenLayers.Layer.Vector("Measurements");
-  var geojson_line = new OpenLayers.Layer.Vector("lines");
                   
     
     var geojson_format = new OpenLayers.Format.GeoJSON({
@@ -184,7 +181,6 @@ include('header.php');
             });
  
 
-  map.addLayer(geojson_line);
   map.addLayer(geojson_layer);
 
 
@@ -197,43 +193,55 @@ include('header.php');
     selectControl.activate();
       
 
+  function changeSensor(property){
+  		geojson_layer.styleMap = co2_style;
+  		geojson_layer.redraw();
+  }
+
+
+  function addGeoJSONToLayer(data){
+    geojson_layer.addFeatures(geojson_format.read(data));
+    map.zoomToExtent(geojson_layer.getDataExtent());
+
+
+    data = JSON.parse(data);
+    sensors = data.features[0].properties.phenomenons;
+    for (property in sensors) {
+      if($.inArray(property, sensorProperties) == -1){ 
+        sensor = sensors[property];
+        sensorProperties.push(property);
+        $('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\''+property+'\')">'+property+'</a></li>');
+      }
+    }
+
+
+  }
 
   //GET the information about the specific track
-  $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
+  $.get('assets/includes/get.php?url=http://giv-car.uni-muenster.de:8080/stable/rest/tracks', function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
         console.log('error in getting tracks');
         $('#loadingIndicator').hide();
     }else{
-      geojson_layer.addFeatures(geojson_format.read(data));
-      map.zoomToExtent(geojson_layer.getDataExtent());
-
-      geojson_line.addFeatures(geojson_format.read(JSON.stringify(GeoJSONTools.points_to_lineString(data).features)));
-
-
       data = JSON.parse(data);
-      addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
+      for(i = 0; i < data.tracks.length; i++){
+        $.get('assets/includes/get.php?url='+data.tracks[i].href, function(trackResponse){
+          if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+            console.log("error in receiving track");
+          }else{
+            addGeoJSONToLayer(trackResponse);
+          }
+        });
 
       $('#loadingIndicator').hide();
+     }
     }
-    
-  });
-
-    $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        console.log('error in getting statistics');
-    }else{
-      data = JSON.parse(data);
-
-      for(i = 0; i < data.statistics.length; i++){
-        $('#routeStatistics').append('<p>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p');
-      }
-      
-    }
-    
   });
 
 
-</script>   
+</script>
+
+
 
 <?
 include('footer.php');
