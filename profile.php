@@ -53,6 +53,7 @@ require_once('assets/includes/connection.php');
           for(i = 0; i < data.users.length; i++){
             if(user == data.users[i].name){
               $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
+              break;
             }
             else{ 
               $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
