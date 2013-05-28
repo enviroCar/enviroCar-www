@@ -40,8 +40,9 @@ function echoActiveClassIfRequestMatches($requestUri)
       <script src="./assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="./assets/ico/favicon.png">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
+    <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
 
@@ -84,7 +85,7 @@ function echoActiveClassIfRequestMatches($requestUri)
         }
       ?>
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer">
-          <a class="brand" href="dashboard.php"><b>enviroCar</b></a>
+          <a class="brand" href="index.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>
@@ -92,7 +93,7 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php"><? echo $friends ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("community")?>><a href="community.php"><? echo $community ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support"><? echo $help ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="support_new.php"><? echo $help ?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
