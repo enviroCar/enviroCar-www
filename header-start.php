@@ -85,7 +85,7 @@ require_once('assets/includes/language.php');
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support_new.php">Help</a></li>
             </ul>
 
 
