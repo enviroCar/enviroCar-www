@@ -48,7 +48,7 @@ $thematicmaps = "Thematic maps";
 $choosesensor ="Choose sensor";
 $routeoverview = "Route overview";
 
-
+$searchfriends = "Search for Persons";
 
 
 
