@@ -39,6 +39,16 @@ $choosesensor ="Sensor auswählen";
 $routeoverview = "Route Übersicht";
 
 
+//registration.php
+$reg_registration="Anmeldung";
+$reg_username="Benutzername";
+$reg_emailadress="Emailadresse";
+$reg_password="Passwort";
+$reg_password2="Wiederholen Sie ihr Passwort";
+$reg_register="Registrieren";
+$reg_reset="Reset";
+
+
 
 
 

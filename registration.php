@@ -37,13 +37,13 @@ include('header-start.php');
 	<div class="row-fluid">
 		<div class="span3"></div>
 		<div class="span6">
-		        <h2 class="form-signin-heading">Registration</h2>
-		        <input id="name" type="text" class="input-block-level" placeholder="Username">
-		        <input id="registrationemail" type="text" class="input-block-level" placeholder="Email Address">
-		        <input id="password1" type="password" class="input-block-level" placeholder="Password">
-		        <input id="password2" type="password" class="input-block-level" placeholder="Repeat Password">
-		        <button class="btn btn-large btn-primary" onclick="registration()">Register</button> 
-				<button style="float:right;" class="btn btn-large btn-primary" type="reset">Reset</button>
+		        <h2 class="form-signin-heading"><?php echo $reg_registration?></h2>
+		        <input id="name" type="text" class="input-block-level" placeholder="<?php echo $reg_username?>">
+		        <input id="registrationemail" type="text" class="input-block-level" placeholder="<?php echo $reg_emailadress?>">
+		        <input id="password1" type="password" class="input-block-level" placeholder="<?php echo $reg_password?>">
+		        <input id="password2" type="password" class="input-block-level" placeholder="<?php echo $reg_password2?>">
+		        <button class="btn btn-large btn-primary" onclick="registration()"><?php echo $reg_register?></button> 
+				<button style="float:right;" class="btn btn-large btn-primary" type="reset"><?php echo $reg_reset?></button>
 		</div>
 		<div class="span3"></div>
 	</div>
