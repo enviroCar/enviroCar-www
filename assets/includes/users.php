@@ -19,6 +19,15 @@ if(isset($_GET['user'])){
 	}
 }
 
+if(isset($_GET['users'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 if(isset($_GET['friends'])){
 	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name'].'/friends', true);
 	if($response['status'] == 200){
