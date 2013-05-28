@@ -1,26 +1,27 @@
 <?php
 include('header.php');
 ?>
-  <script type="text/javascript">
-    
-    function addRecentActivities(img, id, titel){
-      $('#recentActivities').append('<li class="customLi"><img src="'+img+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a></li>');
-    }
 
-    function addFriendActivities(actionImg, friendImg, id, titel){
-      $('#friendActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/></li>');
-    }
+  	<script type="text/javascript">
+  		function addFriendToList(name){
+  			$('#friendsList').append('<li class="prof_lis_sub"><div class="profi_inf"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></div></li>');
+  		}
 
-  </script>
-  
-	<div class="container rightband">
-	<div class="row-fluid">  
-        <div class="spans5">
-          <h2 style="float:left">Friend </h2>
-		  <div style="float:right; margin-top: 15px;">
-		  	<input type="text" name="text" value="Search Friends"/>
-		  </div>
-        </div>
+  		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
+	      	if(data >= 400){
+	          console.log('error in getting friends');
+	      	}else{
+		        data = JSON.parse(data);
+		        if(data.users.length > 0 ){
+		        	for(i = 0; i < data.users.length; i++){
+		            	addFriendToList(data.users[i].name);
+		          	}
+		        }
+	      	}
+	  	});
+
+  	</script>
+	
 		<style>
 		.styled-v-bar{ /* sample CSS class for a different vertical scrollbar look */
 				background:	url(http://www.dynamicdrive.com/dynamicindex11/facescroll/custom-scroll-bar.png) center top no-repeat;
@@ -57,206 +58,17 @@ include('header.php');
 				$('#scroo_lis').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': true });	
 			})
 		</script>
+		<div class="container rightband">
+			<div class="row-fluid">  
+		        <div class="spans5">
+		          <h2 style="float:left"><? echo $friends ?></h2>
+				  <div style="float:right; margin-top: 15px;">
+				  	<input type="text" name="text" value="Search Friends"/>
+				  </div>
+        	</div>
 		<div class="spans6" style="height:400px; padding:10px; padding-right:8px; overflow:scroll; resize:both;">
-			<ul class="prof_lis">	
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
+			<ul class="prof_lis" id="friendsList">	
 
-							<img src="assets/img/Albert Remke.png"/>
-
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Albert Remke</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Daniel Nust.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Daniel N&uuml;st</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Dennis Wilhelm.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Dennis Wilhelm</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Dominik Schlarmann.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Dominik Schlarmann</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Friedrich Muller.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Friedrich M&uuml;ller</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Gerald Pape.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Gerald Pape</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Jakob Mollers.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Jakob M&ouml;llers</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Kassiani Tsouvala.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Kassiani Tsouvala</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Oraib Almegdadi.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Oraib Almegdadi</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Purnima Dasgupta.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Purnima Dasgupta</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/rajchandar.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Rajchandar</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Stephanie Walter.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Stephanie Walter</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				
-				<li class="prof_lis_sub">
-					<div class="profi_inf">
-						<div style="float:left;">
-							<img src="assets/img/Tobias Tresselt.png"/>
-						</div>
-						<div style="float:left;">
-							<div class="profile_name">
-								<a href="">Tobias Tresselt</a>
-								<br/>
-								muenster
-							</div>
-						</div>
-					</div>
-				</li>
 			</ul>          
         </div>
 		
