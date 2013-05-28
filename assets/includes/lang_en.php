@@ -38,18 +38,6 @@ $thematicmaps = "Thematic maps";
 $choosesensor ="Choose sensor";
 $routeoverview = "Route overview";
 
-//registration.php
-$reg_registration="Registration";
-$reg_username="Username";
-$reg_emailadress="Email Adress";
-$reg_password="Password";
-$reg_password2="Repeat password";
-$reg_register="Register";
-$reg_reset="Reset";
-
-
-
-
 
 
 
