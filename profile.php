@@ -46,20 +46,22 @@ require_once('assets/includes/connection.php');
   function getLoggedInUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+loggedInUser, function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in getting groups');
+          console.log('error in logged in user friends');
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
           for(i = 0; i < data.users.length; i++){
-            console.log(loggedInUser+" "+data.users[i].name);
             if(user == data.users[i].name){
               $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
-              console.log("jes");
+              break;
             }
             else{ 
               $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
             }
           }
+        }
+        else{ 
+              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
         }
 
       }
@@ -69,15 +71,14 @@ require_once('assets/includes/connection.php');
   function getUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in getting groups');
+          console.log('error in getting friends');
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
-          $('#friends').append('<ul style="margin-bottom: 10px; overflow-y:auto">');
+          $('#friends').html("");
           for(i = 0; i < data.users.length; i++){
-            $('#friends').append('<li class="customLi" style="list-style-type:none"><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
+            $('#friends').append('<li class="customLi" style="list-style-type:none; min-height: 25px;"><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
           }
-          $('#friends').append('</ul>');
         }
 
       }
@@ -90,7 +91,7 @@ require_once('assets/includes/connection.php');
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           console.log('error in deleting Friend');
         }else{
-          console.log('deleting friend successfull');
+          $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
         }
       });
   }
@@ -101,7 +102,7 @@ require_once('assets/includes/connection.php');
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           console.log('error in adding Friend');
         }else{
-          console.log('adding friend successfull');
+          $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
         }
       });
   }
@@ -139,7 +140,7 @@ require_once('assets/includes/connection.php');
           <li>Username:    <b id="username"></b></li>
           <?
             if($_GET['user'] == $_SESSION['name']){
-              echo '<p><a href="" class="btn btn-primary btn-small">Change profile &raquo;</a><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete my Account &raquo;</a></p>';
+              echo '<p><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete my Account &raquo;</a></p>';
             }else{
               echo '<li id="addAsFriendLink"></li>';
             }
@@ -149,8 +150,10 @@ require_once('assets/includes/connection.php');
     </div><!--/span-->
 
     <div class="span8">
-      <div id="friends" class="span4">
+      <div class="span4">
         <h2>Friends</h2>
+        <ul id="friends" style="margin-bottom: 10px; overflow-y:auto">
+        </ul>
       </div>
       <div id="groups" class="span4">
         <h2>Groups</h2>

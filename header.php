@@ -91,9 +91,8 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php"><? echo $routes ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php"><? echo $friends ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("community")?>><a href="community.php"><? echo $community ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="http://giv-cario.uni-muenster.de/working-folder/support"><? echo $help ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("help")?>><a href="support_new.php"><? echo $help ?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

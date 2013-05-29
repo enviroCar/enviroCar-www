@@ -219,17 +219,18 @@ var sensorProperties = Array();
 
   //GET the information about the specific track
   $.get('assets/includes/get.php?url=http://giv-car.uni-muenster.de:8080/stable/rest/tracks', function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404 || data == 500){
         console.log('error in getting tracks');
         $('#loadingIndicator').hide();
     }else{
       data = JSON.parse(data);
       for(i = 0; i < data.tracks.length; i++){
         $.get('assets/includes/get.php?url='+data.tracks[i].href, function(trackResponse){
-          if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          if(trackResponse == 400 || trackResponse == 401 || data == 402 || trackResponse == 403 || trackResponse == 404 || trackResponse == 500){
             console.log("error in receiving track");
           }else{
             addGeoJSONToLayer(trackResponse);
+
           }
         });
 
