@@ -105,7 +105,7 @@ if(isset($_GET['accessdenied'])){
 ?>
 
 <?
-if(isset($_GET['logout'])){
+if(isset($_GET['lo'])){
 ?>
   <div class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  

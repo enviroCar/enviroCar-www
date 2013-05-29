@@ -1,5 +1,6 @@
 <?
 require_once('./assets/includes/authentification.php');
+
 if(!is_logged_in()){
 	include('header-start.php');
 }else{
@@ -159,7 +160,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 
       <div class="featurette" style="margin-right: 2%">
 		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%"/>
-		<h2 class="featurette-heading"><? echo $index_cont14;?><span class="muted"><? echo $index_cont15;?></span></h2>
+		<h2 class="featurette-heading"><? echo $index_cont14;?><span class="muted"> <? echo $index_cont15;?></span></h2>
 		<p class="lead" style="text-align: justify">
 		...description of the steps...
 		</p>
