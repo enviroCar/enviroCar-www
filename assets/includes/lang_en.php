@@ -67,10 +67,16 @@ $searchfriends = "Search for Persons";
 
 $envirocar="enviroCar"
 
+$licensing_datalicensing = "Licensing of Data";
+$licensing_datalicensingtext = "";
+$licensing_allowed = "You are allowed to:";
+$licensing_allowedtext ="";
+$licensing_aslongas = "As long as you:";
+$licensing_aslongastext = "";
 
-
-
-
-
-
+$footer_backtotop = "Back to Top";
+$footer_imprint = "Imprint";
+$footer_terms = "Terms of Use";
+$footer_privacy = "Privacy";
+$footer_license = "Licensing";
 ?>

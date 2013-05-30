@@ -70,6 +70,17 @@ $envirocar="enviroCar"
 
 
 
+$licensing_datalicensing = "Lizenzierung der Daten";
+$licensing_datalicensingtext = "";
+$licensing_allowed = "Es ist dir erlaubt:";
+$licensing_allowedtext ="";
+$licensing_aslongas = "Solange du folgendes einhälst:";
+$licensing_aslongastext = "";
 
+$footer_backtotop = "Nach Oben";
+$footer_imprint = "Impressum";
+$footer_terms = "Nutzungsbedingungen";
+$footer_privacy = "Datenschutz";
+$footer_license = "Lizensbedingungen";
 
 ?>
