@@ -72,7 +72,9 @@ function is_logged_in(){
 
 
 function login($name, $password, $permanent){
-
+	
+	if (!isset($_SESSION)) session_start();
+	
 	$_SESSION['name'] = $name;
 	$_SESSION['password'] = $password;
 		

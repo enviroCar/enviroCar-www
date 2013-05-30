@@ -11,7 +11,9 @@ $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] :
 
 //Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
 if ($login_name != "" && $login_password != ""){
+	
 	require_once('./assets/includes/authentification.php');
+	
 	if (login($login_name, $login_password, false)){
 		//successfully logged in
 		header('Location: '.$login_referer);
