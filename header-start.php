@@ -9,7 +9,7 @@ $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form
 $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
 $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
 
-$paasWrong = false;
+$passWrong = false;
 
 //Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
 if ($login_name != "" && $login_password != ""){
