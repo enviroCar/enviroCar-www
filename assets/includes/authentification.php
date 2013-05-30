@@ -72,7 +72,8 @@ function is_logged_in(){
 
 
 function login($name, $password, $permanent){
-	
+
+	$baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
 	if (!isset($_SESSION)) session_start();
 	
 	$_SESSION['name'] = $name;
