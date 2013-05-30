@@ -3,7 +3,7 @@ if (!isset($_SESSION)) session_start();
 
 //First: Get language from Browser:
 
-	require_once('./httplanguage/httplanguage.php');
+	require_once('httplanguage/httplanguage.php');
 	//get language from accept-language header
 	$allowed_langs = array ('de', 'en');
 	$lang = lang_getfrombrowser ($allowed_langs, 'en', null, false);
