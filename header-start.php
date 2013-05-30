@@ -6,12 +6,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     if ($current_file_name == $requestUri)
         echo 'class="active"';
 }
-
 require_once('assets/includes/language.php');
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +70,7 @@ require_once('assets/includes/language.php');
             <span class="icon-bar"></span>
           </button>
           <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
-          <a class="brand" href="index.php">enviroCar</a>
+          <a class="brand" href="index.php"><? echo $envirocar ?></a>
           <?
             if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer">';
             }else{
@@ -84,7 +79,7 @@ require_once('assets/includes/language.php');
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
             </ul>
 
 

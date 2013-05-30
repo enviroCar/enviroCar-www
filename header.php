@@ -100,5 +100,5 @@ function echoActiveClassIfRequestMatches($requestUri)
     </div>
     <div id="settings" class="settings">
       <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
-      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout">Logout</a></h4>
+      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
     </div>

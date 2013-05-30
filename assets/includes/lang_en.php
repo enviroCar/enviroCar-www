@@ -41,6 +41,7 @@ $friends ="Friends";
 $groups = "Groups";
 $help = "Help";
 $community ="Community";
+$logout = "Logout";
 
 $graphs ="Graphs";
 $thematicmaps = "Thematic maps";
