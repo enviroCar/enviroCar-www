@@ -1,12 +1,26 @@
 <?
-function echoActiveClassIfRequestMatches($requestUri)
-{
-    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+require_once('assets/includes/commons.php');
 
-    if ($current_file_name == $requestUri)
-        echo 'class="active"';
+//get the requested website, from request string
+$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
+
+
+$login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form_attempt"] : 0;
+$login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
+$login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
+
+//Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
+if ($login_name != "" && $login_password != ""){
+	require_once('./assets/includes/authentification.php');
+	if (login($login_name, $login_password, false)){
+		//successfully logged in
+		header('Location: '.$login_referer);
+	}else{
+		//Could not log in
+	}
+	
 }
-require_once('assets/includes/language.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -134,6 +148,43 @@ if(isset($_GET['deleted'])){
 <?
 }
 ?>
+
+<?         
+if ($login_form_attempt>=1){
+
+  if ($login_name != "" &&  $login_password == ""){
+	?>
+	<div class="container alert alert-block alert-error fade in">
+		<a class="close" data-dismiss="alert">×</a>  
+		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
+		<? echo $index_cont20;?>
+	</div>
+	<?
+  }
+  
+  if ($login_name == "" && $login_password != ""){
+	?>
+	<div class="container alert alert-block alert-error fade in">
+		<a class="close" data-dismiss="alert">×</a>
+		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
+		<? echo $index_cont21;?>
+	</div>
+	<?
+  }
+  
+  if ($login_name == "" && $login_password == ""){
+	?>
+	<div class="container alert alert-block alert-error fade in">
+		<a class="close" data-dismiss="alert">×</a>  
+		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
+		<? echo $index_cont22;?>
+	</div>
+	<?
+  }
+}
+?>
+
+
 
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   

@@ -6,74 +6,7 @@ if(!is_logged_in()){
 }else{
 	include('header.php');
 }
-$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
-?>
-    
-    <script type="text/javascript">
-      //Sending the credentials to the authentification page
-      function login(ln, lp){
-        if(ln === ''){
-          alert("<? echo $index_cont1;?>");
-        }
-        else if(lp === ''){
-          alert('<? echo $index_cont2;?>');
-        }else{
-          $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
-            function(data){
-              if(data === 'status:ok'){
-                window.location.href = "<? echo $login_referer;?>";
-              }else{
-                toggle_visibility("login_fail");
-              }
-            });
-        }
-      }
-    </script>
-	    <?         
-	    $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form_attempt"] : 0;
-	    $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
-	    $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
-	    
-	    if ($login_form_attempt>=1){
-	    
-	      if ($login_name != "" &&  $login_password == ""){
-			?>
-			<div class="container alert alert-block alert-error fade in">
-				<a class="close" data-dismiss="alert">×</a>  
-				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-				<? echo $index_cont20;?>
-			</div>
-			<?
-	      }
-	      
-	      if ($login_name == "" && $login_password != ""){
-			?>
-			<div class="container alert alert-block alert-error fade in">
-				<a class="close" data-dismiss="alert">×</a>
-				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-				<? echo $index_cont21;?>
-			</div>
-			<?
-	      }
-	      
-	      if ($login_name == "" && $login_password == ""){
-			?>
-			<div class="container alert alert-block alert-error fade in">
-				<a class="close" data-dismiss="alert">×</a>  
-				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-				<? echo $index_cont22;?>
-			</div>
-			<?
-	      }
-	      
-	      if ($login_name != "" && $login_password != ""){
-			?>
-			<script type="text/javascript">login("<? echo $login_name;?>","<?echo $login_password;?>");</script>
-			<?
-	      }
-	    }
-	   ?>
-
+?>    
 
   <div class="container rightband">
     <div class="row-fluid">

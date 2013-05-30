@@ -69,8 +69,35 @@ function is_logged_in(){
 	else return false;
 }
 
-//language
 
+
+function login($name, $password, $permanent){
+
+	$_SESSION['name'] = $name;
+	$_SESSION['password'] = $password;
+		
+	$response = get_request($baseUrl.'users/'.$name, true);
+
+	if($response["status"] == 200){
+		$response = json_decode($response["response"],true);
+		$_SESSION['mail'] = $response['mail'];
+	
+		if ($permanent == true){
+			//ToDdo: generate a place and remember me cookie
+		}
+		
+		return true;
+	}else{
+		session_destroy();
+		return false;
+	}
+}
+
+
+
+
+
+//language
 if(isSet($_GET['lang']))
 {
 $lang = $_GET['lang'];

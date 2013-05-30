@@ -1,17 +1,11 @@
 <?
 require_once('./assets/includes/authentification.php');
-require_once('./assets/includes/language.php');
+require_once('./assets/includes/commons.php');
 
+// If you try to open a page, but are not logged in, you will be forwarded to the index.php.
+// a forwarding referer will be added to the request string, enabling a redirection to the target you requested after logging in.
 if(!is_logged_in()){
  header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
-}
-
-function echoActiveClassIfRequestMatches($requestUri)
-{
-    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
-
-    if ($current_file_name == $requestUri)
-        echo 'class="active"';
 }
 ?>
 
