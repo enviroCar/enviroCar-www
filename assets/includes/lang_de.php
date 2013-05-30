@@ -66,9 +66,7 @@ $searchfriends ="Suche nach Personen";
 
 
 
-$envirocar="enviroCar"
-
-
+$envirocar="enviroCar";
 
 $licensing_datalicensing = "Lizenzierung der Daten";
 $licensing_datalicensingtext = "";

@@ -65,7 +65,7 @@ $searchfriends = "Search for Persons";
 
 
 
-$envirocar="enviroCar"
+$envirocar="enviroCar";
 
 $licensing_datalicensing = "Licensing of Data";
 $licensing_datalicensingtext = "";
