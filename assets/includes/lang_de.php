@@ -79,6 +79,6 @@ $footer_backtotop = "Nach Oben";
 $footer_imprint = "Impressum";
 $footer_terms = "Nutzungsbedingungen";
 $footer_privacy = "Datenschutz";
-$footer_license = "Lizensbedingungen";
+$footer_license = "Lizenzbedingungen";
 
 ?>
