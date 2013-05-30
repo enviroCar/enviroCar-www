@@ -9,6 +9,8 @@ $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form
 $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
 $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
 
+$paasWrong = false;
+
 //Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
 if ($login_name != "" && $login_password != ""){
 	
@@ -18,7 +20,7 @@ if ($login_name != "" && $login_password != ""){
 		//successfully logged in
 		header('Location: '.$login_referer);
 	}else{
-		//Could not log in
+		$passWrong = true;
 	}
 	
 }
@@ -197,3 +199,14 @@ if ($login_form_attempt>=1){
   <a class="close" data-dismiss="alert">×</a>  
  Registration not successful. This combination of username and email already exists.
 </div> 
+
+<?
+if ($passWrong) {
+?>
+<div id="login_fail" class="container alert alert-block alert-error fade in"> 
+  <a class="close" data-dismiss="alert">×</a>   
+ Username or Password are wrong, or the user does not exist!
+</div> 
+<?
+}
+?>
