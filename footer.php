@@ -6,7 +6,7 @@
         <span> &middot; <a href="imprint.php"><? echo $footer_imprint; ?></a></span>
         <span> &middot; <a href="#"><? echo $footer_terms; ?></a><span>
         <span> &middot; <a href="#"><? echo $footer_privacy; ?></a><span>
-        <span> &middot; <a href="#"><? echo $footer_license; ?></a><span>
+        <span> &middot; <a href="licensing.php"><? echo $footer_license; ?></a><span>
 		</div>
 	</footer>
 	
