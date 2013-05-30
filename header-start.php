@@ -9,7 +9,7 @@ $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form
 $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
 $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
 
-$passWrong = false;
+$login_fail = false;
 
 //Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
 if ($login_name != "" && $login_password != ""){
@@ -20,9 +20,9 @@ if ($login_name != "" && $login_password != ""){
 		//successfully logged in
 		header('Location: '.$login_referer);
 	}else{
-		$passWrong = true;
+		session_destroy();
+		$login_fail = true;
 	}
-	
 }
 
 ?>
@@ -110,8 +110,8 @@ if(isset($_GET['accessdenied'])){
 ?>
   <div class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading">Access denied!</h4>  
-   You are currently not logged in!  
+  <h4 class="alert-heading"><? echo $index_cont3; ?></h4>  
+  <? echo $currentlynotloggedin; ?>
   </div> 
 <?
 }
@@ -122,8 +122,8 @@ if(isset($_GET['lo'])){
 ?>
   <div class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading">Logout!</h4>  
- Successfully logged out... 
+  <h4 class="alert-heading"><? echo $logout; ?></h4>  
+ <? echo $logoutsuccess; ?>
 </div> 
 <?
 }
@@ -134,8 +134,8 @@ if(isset($_GET['registration_successful'])){
 ?>
 <div id="registration_successful" class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading">Welcome to enviroCar</h4>  
-  Your registration was successful. Please login to continue.
+  <h4 class="alert-heading"><?echo $welcometoec;?></h4>  
+  <? echo $regsuccessfull.' '.$logincontinue ?>
 </div> 
 <?
 }
@@ -146,8 +146,8 @@ if(isset($_GET['deleted'])){
 ?>
 <div id="deleted" class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading">Account deleted.</h4>  
-  Your Account has been successfully deleted.
+  <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
+  <?echo $accountdeletedsuccess?>
 </div> 
 <?
 }
@@ -188,24 +188,22 @@ if ($login_form_attempt>=1){
 }
 ?>
 
-
-
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
- Username or Password are wrong, or the user does not exist!
+	<? echo $usernameorpasswordwrong ?>
 </div> 
 
 <div id="registration_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>  
- Registration not successful. This combination of username and email already exists.
+ <? echo $registrationunsuccessfull.' '.$existingusername?>
 </div> 
 
 <?
-if ($passWrong) {
+if ($login_fail) {
 ?>
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
- Username or Password are wrong, or the user does not exist!
+ <? echo $usernameorpasswordwrong ?>
 </div> 
 <?
 }

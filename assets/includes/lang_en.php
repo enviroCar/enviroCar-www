@@ -43,6 +43,18 @@ $help = "Help";
 $community ="Community";
 $logout = "Logout";
 
+$logoutsuccess = "Successfully logged out";
+$currentlynotloggedin = "You are currently not logged in.";
+$welcometoex = "Welcome to enviroCar";
+$regsuccessfull = "Your registration was successful.";
+$logincontinue = "Please login to continue.";
+$accountdeleted = "Account deleted.";
+$accountdeletedsuccess ="Your Account has been successfully deleted.";
+
+$usernameorpasswordwrong = "Username or Password are wrong, or the user does not exist!";
+$registrationunsuccessfull = "Registration not successful.";
+$existingusername = "This username or email already exists.";
+
 $graphs ="Graphs";
 $thematicmaps = "Thematic maps";
 

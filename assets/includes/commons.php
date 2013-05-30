@@ -5,7 +5,6 @@
 require_once('language.php');
 
 
-
 //changes the css-class of a link to "Active"
 function echoActiveClassIfRequestMatches($requestUri)
 {

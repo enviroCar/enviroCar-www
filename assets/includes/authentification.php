@@ -86,12 +86,13 @@ function login($name, $password, $permanent){
 		$_SESSION['mail'] = $response['mail'];
 	
 		if ($permanent == true){
-			//ToDdo: generate a place and remember me cookie
+			//ToDo: generate a place and remember me cookie
 		}
 		
 		return true;
 	}else{
 		session_destroy();
+		
 		return false;
 	}
 }
