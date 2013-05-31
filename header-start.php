@@ -1,4 +1,5 @@
 <?
+<<<<<<< HEAD
 require_once('assets/includes/commons.php');
 
 //get the requested website, from request string
@@ -23,7 +24,20 @@ if ($login_name != "" && $login_password != ""){
 		if (isset($_SESSION)) session_destroy();
 		$login_fail = true;
 	}
+=======
+function echoActiveClassIfRequestMatches($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'class="active"';
+>>>>>>> Additional Translations(dashboard,functions,registration), index changed variable names, adding flag symbols from free license source,
 }
+
+require_once('assets/includes/language.php');
+
+
+
 
 ?>
 
@@ -87,17 +101,26 @@ if ($login_name != "" && $login_password != ""){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+<<<<<<< HEAD
           <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="">
           <a class="brand" href="index.php"><? echo $envirocar ?></a>
           <?
             if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">';
             }else{
               echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">';
+=======
+          <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px; ">
+          <a class="brand" href="index.php">enviroCar</a>
+          <?
+            if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer">';
+            }else{
+              echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer">';
+>>>>>>> Additional Translations(dashboard,functions,registration), index changed variable names, adding flag symbols from free license source,
             }
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php">Help</a></li>
             </ul>
 
 
@@ -110,20 +133,20 @@ if(isset($_GET['accessdenied'])){
 ?>
   <div class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><? echo $index_cont3; ?></h4>  
-  <? echo $currentlynotloggedin; ?>
+  <h4 class="alert-heading">Access denied!</h4>  
+   You are currently not logged in!  
   </div> 
 <?
 }
 ?>
 
 <?
-if(isset($_GET['lo'])){
+if(isset($_GET['logout'])){
 ?>
   <div class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><? echo $logout; ?></h4>  
- <? echo $logoutsuccess; ?>
+  <h4 class="alert-heading">Logout!</h4>  
+ Successfully logged out... 
 </div> 
 <?
 }
@@ -134,8 +157,8 @@ if(isset($_GET['registration_successful'])){
 ?>
 <div id="registration_successful" class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><?echo $welcometoec;?></h4>  
-  <? echo $regsuccessfull.' '.$logincontinue ?>
+  <h4 class="alert-heading">Welcome to enviroCar</h4>  
+  Your registration was successful. Please login to continue.
 </div> 
 <?
 }
@@ -146,65 +169,19 @@ if(isset($_GET['deleted'])){
 ?>
 <div id="deleted" class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
-  <?echo $accountdeletedsuccess?>
+  <h4 class="alert-heading">Account deleted.</h4>  
+  Your Account has been successfully deleted.
 </div> 
 <?
-}
-?>
-
-<?         
-if ($login_form_attempt>=1){
-
-  if ($login_name != "" &&  $login_password == ""){
-	?>
-	<div class="container alert alert-block alert-error fade in">
-		<a class="close" data-dismiss="alert">×</a>  
-		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-		<? echo $index_cont20;?>
-	</div>
-	<?
-  }
-  
-  if ($login_name == "" && $login_password != ""){
-	?>
-	<div class="container alert alert-block alert-error fade in">
-		<a class="close" data-dismiss="alert">×</a>
-		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-		<? echo $index_cont21;?>
-	</div>
-	<?
-  }
-  
-  if ($login_name == "" && $login_password == ""){
-	?>
-	<div class="container alert alert-block alert-error fade in">
-		<a class="close" data-dismiss="alert">×</a>  
-		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-		<? echo $index_cont22;?>
-	</div>
-	<?
-  }
 }
 ?>
 
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
-	<? echo $usernameorpasswordwrong ?>
+ Username or Password are wrong, or the user does not exist!
 </div> 
 
 <div id="registration_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>  
- <? echo $registrationunsuccessfull.' '.$existingusername?>
+ Registration not successful. This combination of username and email already exists.
 </div> 
-
-<?
-if ($login_fail) {
-?>
-<div id="login_fail" class="container alert alert-block alert-error fade in"> 
-  <a class="close" data-dismiss="alert">×</a>   
- <? echo $usernameorpasswordwrong ?>
-</div> 
-<?
-}
-?>
