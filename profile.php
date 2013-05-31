@@ -35,7 +35,7 @@ require_once('assets/includes/connection.php');
         if(data.groups.length > 0 ){
           $('#groups').append('<ul style="margin-bottom: 10px; overflow-y:auto">');
           for(i = 0; i < data.groups.length; i++){
-            $('#groups').append('<li class="customLi"><a href="">'+data.groups[i].name+'</a></li>');
+            $('#groups').append('<li class="customLi"><a href="group.php?group='+data.groups[i].name+'">'+data.groups[i].name+'</a></li>');
           }
           $('#groups').append('</ul>');
         }
