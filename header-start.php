@@ -20,7 +20,7 @@ if ($login_name != "" && $login_password != ""){
 		//successfully logged in
 		header('Location: '.$login_referer);
 	}else{
-		session_destroy();
+		if (isset($_SESSION)) session_destroy();
 		$login_fail = true;
 	}
 }

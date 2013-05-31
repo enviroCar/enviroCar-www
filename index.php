@@ -37,7 +37,7 @@ if(!is_logged_in()){
 	<?
 		if ($login_form_attempt >= 5){
 	?>
-		<? echo $index_cont23;?><br/> <? echo $index_cont24;?><br/>"
+		<? echo $index_cont23;?><br/> <? echo $index_cont24;?><br/>
 	<?
 		}
 	?>

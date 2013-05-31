@@ -44,7 +44,7 @@ else if(isset($_GET['registration'])){
 }
 
 else if(isset($_GET['logout'])){
-	session_destroy();
+	if (isset($_SESSION)) session_destroy();
 	header('Location: ../../index.php?lo=done');
 }
 
@@ -91,7 +91,7 @@ function login($name, $password, $permanent){
 		
 		return true;
 	}else{
-		session_destroy();
+		if (isset($_SESSION)) session_destroy();
 		
 		return false;
 	}
