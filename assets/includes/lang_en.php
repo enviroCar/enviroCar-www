@@ -92,6 +92,6 @@ $imprint_contenttext = "The ".$envirocar." project team makes every effort to en
 $imprint_copyright = "Copyright";
 $imprint_copyrighttext = "The graphics on this website are, licensed as ".$license_ccby.", unless stated otherwise, all texts of this website is licensed as ".$license_ccby.", unless stated otherwise. All data which is accessible with the ".$envirocar." API is licensed under the ".$license_odbl.".";
 
-$license_ccby= "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
-$license_odbl= "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
+$license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
+$license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
 ?>
