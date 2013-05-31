@@ -71,7 +71,7 @@ $envirocar="enviroCar";
 $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
 $license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
 
-$register_licensereminder = "Denk dran, alle Daten die wir von dir aufzeichnen werden anonymisiert (<a href=\"support.php\" target=\"_blank\">lern wie</a>), und werden veröffentlicht unter der ".$license_odbl."."
+$register_licensereminder = "Denk dran, alle Daten die wir von dir aufzeichnen werden anonymisiert (<a href=\"support.php\" target=\"_blank\">lern wie</a>), und werden veröffentlicht unter der ".$license_odbl.".";
 
 $licensing_datalicensing = "Lizenzierung der Daten";
 $licensing_datalicensingtext = "";
