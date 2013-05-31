@@ -18,7 +18,6 @@ if(!is_logged_in()){
       </div>
       <div class="span4">
             <h2 class="form-signin-heading"><? echo $index_cont4;?></h2>
-            <p>
             <form name="login" action="index.php" method="post" style="display: inline;">
 				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
 				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_cont18;?>" value="<?echo $login_name;?>"/>
@@ -33,7 +32,6 @@ if(!is_logged_in()){
 				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;"><? echo $index_cont16;?></button>
 			</a>
 			<div style="clear:both"></div>
-	    </p>
 	<?
 		if ($login_form_attempt >= 5){
 	?>
