@@ -2,6 +2,8 @@
 require_once('./assets/includes/authentification.php');
 require_once('./assets/includes/language.php');
 
+// If you try to open a page, but are not logged in, you will be forwarded to the index.php.
+// a forwarding referer will be added to the request string, enabling a redirection to the target you requested after logging in.
 if(!is_logged_in()){
  header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
 }
@@ -101,5 +103,5 @@ function echoActiveClassIfRequestMatches($requestUri)
     </div>
     <div id="settings" class="settings">
       <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
-      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout">Logout</a></h4>
+      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
     </div>
