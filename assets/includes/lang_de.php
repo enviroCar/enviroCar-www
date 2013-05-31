@@ -88,8 +88,11 @@ $imprint_email = "E-Mail: ";
 $imprint_directors = "Geschäftsführer: ";
 $imprint_registry = "Handelsregister: ";
 $imprint_content = "Inhalt";
-$imprint_contenttext = "";
+$imprint_contenttext = "Das Projektteam von ".$$envirocar." versucht mit bestem Wissen und Gewissen die Inhalte dieser Website aktuell, vollständig und korrekt zu halten. Trotzdem sind Fehler nicht auszuschließen. Das ". $$envirocar." Projekt übernimmt keinerlei Verantwortung für Aktualität, Genauigkeit oder Vollständigkeit der auf dieser Webseite dargestellen Inhalte, es sei denn der Fehler sei unter Absicht oder aufgrund grober Fahrlässigkeit entstanden.";
 
 $imprint_copyright = "Urheberrecht";
-$imprint_copyrighttext = "";
+$imprint_copyrighttext = "Alle Grafiken dieser Webseite sind lizenziert als ".$$license_ccby.", es sei denn eine andere Lizen wurde genannt. Alle Texte dieser Website sind lizenziert als ".$$license_ccby.", es sei denn eine andere Lizen wurde genannt. Alle Daten die über die ".$$envirocar." API abrufbar sind, sind lizenziert unter der ".$$license_odbl.".";
+
+$license_ccby= "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>"
+$license_odbl= "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>"
 ?>
