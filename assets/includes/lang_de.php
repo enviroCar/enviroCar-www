@@ -1,65 +1,39 @@
 <?php 
 // index.php
-$index_invalid_login_name="Ungültiger Benutzername"; 
-$index_empty_password="Bitte tragen sie ein Passwort ein"; 
-$index_access_denied="Zugriff verweigert!";
-$index_Please_sign_in="Bitte melden Sie sich an";
-$index_password="Passwort";
-$index_user_details="Benutzerangaben";
-$index_register="Register";
-$index_get_App="Hol dir unsere App!";
-$index_get_it_on_google="Besuch Google Play!";
-$index_be_a_citizen_scientist="Trage deinen Teil zur Wissenschaft bei!";
-$index_help_the_world="Mach die Welt zu einem besseren Ort, indem du deine erfassten Daten mit Wis&shy;sen&shy;schaft&shy;lern auf der ganzen Welt teilst! Oder forsche mit bereits vorhandenen Daten!";
-$index_support_indiegogo="Unterstütze uns auf Indiegogo";
-$index_this_is_community="Dies ist eine Community, eine App für dein Handy und es ist eine Webseite. EnviroCar ist unser Beitrag für eine intelligentere Welt. Wir werden Wissen über den Auto&shy;mobil&shy;ver&shy;kehr und der damit verbundenen Ab&shy;gas&shy;emission auf unseren Straßen generieren, und ein Be&shy;wusst&shy;sein schaffen welche Aus&shy;wirk&shy;ung&shy;en unser Fahr&shy;ver&shy;hal&shy;ten auf die Umwelt besitzt.";
-$index_how_it_works="Wie funktioniert das Ganze?";
-$index_three_steps_to="Drei Schritte und sei dabei.";
-$index_register="Registrieren";
-$index_sign_in="Anmelden";
-$index_user_name="Benutzername";
-$index_make_smarter="Mach unsere Städte ein bisschen schlauer!";
-$index_empty_password="Es tut uns leid, aber du kannst keine leeren Passwörter verwenden.";
-$index_name_missing="Jeder sollte einen Namen haben, auch Du.";
-$index_credentials_invalid="Netter Versuch, aber keine Anmeldedaten anzugeben hilft nicht.";
-$index_having_account="Bist du dir sicher, dass du bereits einen Account besitzt?";
-$index_create_new_one="Erstell dir einen neuen, es ist kostenlos.";
-$index_wrong_name="Moment, das ist nicht meine Name!";
-$index_continue_dashboard="Weiter zum Armaturenbrett";
-$index_welcome="Willkommen";
-
-// registration.php
-$reg_registration="Registration";
-$reg_username="Benutzername";
-$reg_email="Email";
-$reg_password="Passwort";
-$reg_repeat_password="Passwort wiederholen";
-$reg_btn_register="Registrieren";
-$reg_btn_reset="Löschen";
-
-// dashboard.php
-$dashboard_recent_avtivities="Letzte Aktivitäten";
-$dashboard_view_details="Details anzeigen";
-$dashboard_overview="Übersicht";
-$dashboard_friend_activities="Aktivitäten deiner Freunde";
-
-//function registration
-$freg_invalidemail="Ungültige Email";
-$freg_empty_nickname="Benutzername kann nicht leer sein";
-$freg_empty_password="Passwort kann nicht leer sein";
-$freg_notidentic_password="Passwörter sind nicht identisch";
+$index_cont1="Ungültiger Benutzername"; 
+$index_cont2="Bitte tragen sie ein Passwort ein"; 
+$index_cont3="Zugriff verweigert!";
+$index_cont4="Bitte melden Sie sich an";
+$index_cont5="Passwort";
+$index_cont6="Benutzerangaben";
+$index_cont7="Register";
+$index_cont8="Hol dir unsere App!";
+$index_cont9="Besuch Google Play!";
+$index_cont10="Trage deinen Teil zur Wissenschaft bei!";
+$index_cont11="Mach die Welt zu einem besseren Ort, indem du deine erfassten Daten mit Wis&shy;sen&shy;schaft&shy;lern auf der ganzen Welt teilst! Oder forsche mit bereits vorhandenen Daten!";
+$index_cont12="Unterstütze uns auf Indiegogo";
+$index_cont13="Dies ist eine Community, eine App für dein Handy und es ist eine Webseite. EnviroCar ist unser Beitrag für eine intelligentere Welt. Wir werden Wissen über den Auto&shy;mobil&shy;ver&shy;kehr und der damit verbundenen Ab&shy;gas&shy;emission auf unseren Straßen generieren, und ein Be&shy;wusst&shy;sein schaffen welche Aus&shy;wirk&shy;ung&shy;en unser Fahr&shy;ver&shy;hal&shy;ten auf die Umwelt besitzt.";
+$index_cont14="Wie funktioniert das Ganze?";
+$index_cont15="Drei Schritte und sei dabei.";
+$index_cont16="Registrieren";
+$index_cont17="Anmelden";
+$index_cont18="Benutzername";
+$index_cont19="Mach unsere Städte ein bisschen schlauer!";
+$index_cont20="Es tut uns leid, aber du kannst keine leeren Passwörter verwenden.";
+$index_cont21="Jeder sollte einen Namen haben, auch Du.";
+$index_cont22="Netter Versuch, aber keine Anmeldedaten anzugeben hilft nicht.";
+$index_cont23="Bist du dir sicher, dass du bereits einen Account besitzt?";
+$index_cont24="Erstell dir einen neuen, es ist kostenlos.";
+$index_cont25="Moment, das ist nicht meine Name!";
+$index_cont26="Weiter zum Armaturenbrett";
+$index_cont27="Wilkommen";
 
 
-
-
-// route.php
 $created ="Erstellt";
 $yourroutes = "Deine Routen";
 $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
 
-
-// Header 
 $profile = "Profil";
 $activities = "Aktivitäten";
 $routes = "Routen";
@@ -94,7 +68,6 @@ $searchfriends ="Suche nach Personen";
 
 $envirocar="enviroCar";
 
-<<<<<<< HEAD
 $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
 $license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
 
@@ -125,10 +98,3 @@ $imprint_contenttext = "Das Projektteam von ".$envirocar." versucht mit bestem W
 $imprint_copyright = "Urheberrecht";
 $imprint_copyrighttext = "Alle Grafiken dieser Webseite sind lizenziert als ".$license_ccby.", es sei denn eine andere Lizenz wurde genannt. Alle Texte dieser Website sind lizenziert als ".$license_ccby.", es sei denn eine andere Lizenz wurde genannt. Alle Daten die über die ".$envirocar." API abrufbar sind, sind lizenziert unter der ".$license_odbl.".";
 ?>
-=======
-
-
-
-
-?>
->>>>>>> Additional Translations(dashboard,functions,registration), index changed variable names, adding flag symbols from free license source,
