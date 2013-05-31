@@ -22,14 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-* Libraries *
+_Libraries_
 This project uses Twitter Bootstrap, which is licensed under Apache 2.0 License
 This project uses OpenLayers, Licensed under MIT
 This project makes use of Google Charts, which underly the Google APIs Terms
 
-* Fonts *
+_Fonts_
 This project uses the fonts Raleway an News Cycle which are SIL Open Fonts Licencse 1.1
 
-* Icons *
+_Icons_
 Route icon: http://thenounproject.com/noun/route/#icon-No14382 (CC0)
 Trophy icon: http://thenounproject.com/noun/trophy/#icon-No1198 (CC0)
+
+_Graphics_
+All graphics created by the enviroCar project are licensed as CC-BY
