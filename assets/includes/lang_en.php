@@ -70,6 +70,8 @@ $envirocar="enviroCar";
 $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
 $license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
 
+$register_licensereminder = "Remember, all data collected within this project will be anonymised (<a href=\"support.php\" target=\"_blank\">learn how</a>), and made publicly available under ".$license_odbl."."
+
 $licensing_datalicensing = "Licensing of Data";
 $licensing_datalicensingtext = "";
 $licensing_allowed = "You are allowed to:";
