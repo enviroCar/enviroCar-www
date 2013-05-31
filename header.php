@@ -1,11 +1,17 @@
 <?
 require_once('./assets/includes/authentification.php');
-require_once('./assets/includes/commons.php');
+require_once('./assets/includes/language.php');
 
-// If you try to open a page, but are not logged in, you will be forwarded to the index.php.
-// a forwarding referer will be added to the request string, enabling a redirection to the target you requested after logging in.
 if(!is_logged_in()){
  header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
+}
+
+function echoActiveClassIfRequestMatches($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'class="active"';
 }
 ?>
 
@@ -85,6 +91,7 @@ if(!is_logged_in()){
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php"><? echo $routes ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php"><? echo $friends ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("community")?>><a href="community.php"><? echo $community ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("help")?>><a href="support_new.php"><? echo $help ?></a></li>
             </ul>
@@ -94,5 +101,5 @@ if(!is_logged_in()){
     </div>
     <div id="settings" class="settings">
       <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
-      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
+      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout">Logout</a></h4>
     </div>

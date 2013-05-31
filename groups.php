@@ -10,7 +10,7 @@ include('header.php');
   			$('#groupsList').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="group.php?group='+name+'">'+name+'</a></li>');
   		}
 
-  		$.get('./assets/includes/users.php?groupsOf', function(data) {
+  		$.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
 	      	if(data >= 400){
 	          console.log('error in getting groups');
 	      	}else{
@@ -54,6 +54,7 @@ include('header.php');
 			
 			<div class="span4">
 				<h2><? echo $activities ?></h2>
+				<!--
 			  	<ul>
 			  	<li class="customLi">
 					<a href="">Albert Remke</a>
@@ -76,6 +77,7 @@ include('header.php');
 					release4 gml co2 during last drive
 				</li>
 			  </ul>
+			-->
 	        </div>
 	      </div>
 		</div>
