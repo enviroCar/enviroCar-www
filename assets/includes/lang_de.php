@@ -81,4 +81,15 @@ $footer_terms = "Nutzungsbedingungen";
 $footer_privacy = "Datenschutz";
 $footer_license = "Lizenzbedingungen";
 
+$imprint_imprint = "Impressum";
+$imprint_phone = "Telefon: ";
+$imprint_fax = "Telefax: ";
+$imprint_email = "E-Mail: ";
+$imprint_directors = "Geschäftsführer: ";
+$imprint_registry = "Handelsregister: ";
+$imprint_content = "Inhalt";
+$imprint_contenttext = "";
+
+$imprint_copyright = "Urheberrecht";
+$imprint_copyrighttext = "";
 ?>
