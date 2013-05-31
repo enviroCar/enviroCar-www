@@ -19,7 +19,7 @@ if(!is_logged_in()){
       <div class="span4">
             <h2 class="form-signin-heading"><? echo $index_cont4;?></h2>
             <p>
-            <form name="login" action="" method="post" style="display: inline;">
+            <form name="login" action="index.php" method="post" style="display: inline;">
 				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
 				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_cont18;?>" value="<?echo $login_name;?>"/>
 				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_cont5;?>" />
@@ -87,7 +87,7 @@ if(!is_logged_in()){
 
 	<div class="container rightband">
       <div class="featurette" style="margin-left: 2%">
-		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%"/>
+		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_cont19;?></span></h2>
 		<p class="lead" style="text-align: justify">
 			<? echo $index_cont13;?>
@@ -97,7 +97,7 @@ if(!is_logged_in()){
       <hr class="featurette-divider">
 
       <div class="featurette" style="margin-right: 2%">
-		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%"/>
+		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $index_cont14;?><span class="muted"><? echo ' '.$index_cont15;?></span></h2>
 		<p class="lead" style="text-align: justify">
 		</p>
