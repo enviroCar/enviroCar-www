@@ -93,6 +93,6 @@ $imprint_contenttext = "Das Projektteam von ".$$envirocar." versucht mit bestem 
 $imprint_copyright = "Urheberrecht";
 $imprint_copyrighttext = "Alle Grafiken dieser Webseite sind lizenziert als ".$$license_ccby.", es sei denn eine andere Lizen wurde genannt. Alle Texte dieser Website sind lizenziert als ".$$license_ccby.", es sei denn eine andere Lizen wurde genannt. Alle Daten die über die ".$$envirocar." API abrufbar sind, sind lizenziert unter der ".$$license_odbl.".";
 
-$license_ccby= "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>"
-$license_odbl= "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>"
+$license_ccby= "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
+$license_odbl= "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
 ?>
