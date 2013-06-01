@@ -1,32 +1,54 @@
 <?php 
 // index.php
-$index_cont1="Invalid Login Name"; 
-$index_cont2="Password cannot be empty"; 
-$index_cont3="Access denied!";
-$index_cont4="Please sign in";
-$index_cont5="Password";
-$index_cont6="User details";
-$index_cont7="Register";
-$index_cont8="Get our App soon!";
-$index_cont9="Get it on Google Play!";
-$index_cont10="Be a Citizen Scientist";
-$index_cont11="Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your own research!";
-$index_cont12="Support us on Indiegogo";
-$index_cont13="This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.";
-$index_cont14="How does it work?";
-$index_cont15="Three steps to become a citizen scientist";
-$index_cont16="Register";
-$index_cont17="Sign in";
-$index_cont18="User name";
-$index_cont19="Make our cities smarter!";
-$index_cont20="sorry, but you can't have an empty password.";
-$index_cont21="everybody should have a name, even you.";
-$index_cont22="nice try, but empty credentials are invalid.";
-$index_cont23="Are you sure, of having an account?";
-$index_cont24="You can create a new one. It's free";
-$index_cont25="Wait, that's not my name!";
-$index_cont26="Continue to your dashboard";
-$index_cont27="Welcome";
+$index_invalid_login_name="Invalid Login Name"; 
+$index_empty_password="Password cannot be empty"; 
+$index_access_denied="Access denied!";
+$index_Please_sign_in="Please sign in";
+$index_password="Password";
+$index_user_details="User details";
+$index_register="Register";
+$index_get_App="Get our App soon!";
+$index_get_it_on_google="Get it on Google Play!";
+$index_be_a_citizen_scientist="Be a Citizen Scientist";
+$index_help_the_world="Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your own research!";
+$index_support_indiegogo="Support us on Indiegogo";
+$index_this_is_community="This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.";
+$index_how_it_works="How does it work?";
+$index_three_steps_to="Three steps to become a citizen scientist";
+$index_register="Register";
+$index_sign_in="Sign in";
+$index_user_name="User name";
+$index_make_smarter="Make our cities smarter!";
+$index_empty_password="sorry, but you can't have an empty password.";
+$index_name_missing="everybody should have a name, even you.";
+$index_credentials_invalid="nice try, but empty credentials are invalid.";
+$index_having_account="Are you sure, of having an account?";
+$index_create_new_one="You can create a new one. It's free";
+$index_wrong_name="Wait, that's not my name!";
+$index_continue_dashboard="Continue to your dashboard";
+$index_welcome="Welcome";
+
+// registration.php
+$reg_registration="Registration";
+$reg_username="User name";
+$reg_email="Email Adress";
+$reg_password="Password";
+$reg_repeat_password="Repeat Password";
+$reg_btn_register="Register";
+$reg_btn_reset="Reset";
+
+
+// dashboard.php
+$dashboard_recent_avtivities="Recent Activities";
+$dashboard_view_details="View details";
+$dashboard_overview="Overview";
+$dashboard_friend_activities="Friend Activities";
+
+//function registration
+$freg_invalidemail="Invalid Email";
+$freg_empty_nickname="Nickname cannot be empty";
+$freg_empty_password="Password cannot be empty";
+$freg_notidentic_password='Passwords are not identic';
 
 
 $created ="Created";
