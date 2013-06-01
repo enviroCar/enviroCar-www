@@ -54,6 +54,7 @@ include('header.php');
 			
 			<div class="span4">
 				<h2><? echo $activities ?></h2>
+				<!--
 			  	<ul>
 			  	<li class="customLi">
 					<a href="">Albert Remke</a>
@@ -76,6 +77,7 @@ include('header.php');
 					release4 gml co2 during last drive
 				</li>
 			  </ul>
+			  -->
 	        </div>
 	      </div>
 		</div>
