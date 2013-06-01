@@ -44,8 +44,8 @@ else if(isset($_GET['registration'])){
 }
 
 else if(isset($_GET['logout'])){
-	session_destroy();
-	header('Location: /index.php?logout');
+	if (isset($_SESSION)) session_destroy();
+	header('Location: ../../index.php?lo=done');
 }
 
 
@@ -69,8 +69,39 @@ function is_logged_in(){
 	else return false;
 }
 
-//language
 
+
+function login($name, $password, $permanent){
+
+	$baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
+	if (!isset($_SESSION)) session_start();
+	
+	$_SESSION['name'] = $name;
+	$_SESSION['password'] = $password;
+		
+	$response = get_request($baseUrl.'users/'.$name, true);
+
+	if($response["status"] == 200){
+		$response = json_decode($response["response"],true);
+		$_SESSION['mail'] = $response['mail'];
+	
+		if ($permanent == true){
+			//ToDo: generate a place and remember me cookie
+		}
+		
+		return true;
+	}else{
+		if (isset($_SESSION)) session_destroy();
+		
+		return false;
+	}
+}
+
+
+
+
+
+//language
 if(isSet($_GET['lang']))
 {
 $lang = $_GET['lang'];

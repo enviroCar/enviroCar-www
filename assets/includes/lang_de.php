@@ -41,6 +41,20 @@ $friends ="Freunde";
 $groups = "Gruppen";
 $help = "Hilfe";
 $community ="Gemeinschaft";
+$logout = "Abmelden";
+
+
+$logoutsuccess = "Erfolgreich abgemeldet";
+$currentlynotloggedin = "Du bist derzeit nicht angemeldet.";
+$welcometoex = "Willkommen bei enviroCar";
+$regsuccessfull = "Du hast dich erfolgreich registriert.";
+$logincontinue = "melde dich an um fortzufahren.";
+$accountdeleted = "Zugang gelöscht";
+$accountdeletedsuccess ="Dein Account wurde erfolgreich gelöscht.";
+
+$usernameorpasswordwrong = "Nutzername oder Passwort sind falsch, oder der Nutzer existiert nicht";
+$registrationunsuccessfull = "Die Registrierung war nicht erfolgreich";
+$existingusername = "Der Nutzername oder dei E-Mail Adresse exisiteren bereits in unsere Datenbank.";
 
 $graphs ="Graphen";
 $thematicmaps = "Thematische Karten";
@@ -52,10 +66,35 @@ $searchfriends ="Suche nach Personen";
 
 
 
-$enviroCar="enviroCar"
+$envirocar="enviroCar";
 
+$license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
+$license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
 
+$register_licensereminder = "Denk dran, alle Daten die wir von dir aufzeichnen werden anonymisiert (<a href=\"support.php\" target=\"_blank\">lern wie</a>), und werden veröffentlicht unter der ".$license_odbl.".";
 
+$licensing_datalicensing = "Lizenzierung der Daten";
+$licensing_datalicensingtext = "";
+$licensing_allowed = "Es ist dir erlaubt:";
+$licensing_allowedtext ="";
+$licensing_aslongas = "Solange du folgendes einhälst:";
+$licensing_aslongastext = "";
 
+$footer_backtotop = "Nach Oben";
+$footer_imprint = "Impressum";
+$footer_terms = "Nutzungsbedingungen";
+$footer_privacy = "Datenschutz";
+$footer_license = "Lizenzbedingungen";
 
+$imprint_imprint = "Impressum";
+$imprint_phone = "Telefon: ";
+$imprint_fax = "Telefax: ";
+$imprint_email = "E-Mail: ";
+$imprint_directors = "Geschäftsführer: ";
+$imprint_registry = "Handelsregister: ";
+$imprint_content = "Inhalt";
+$imprint_contenttext = "Das Projektteam von ".$envirocar." versucht mit bestem Wissen und Gewissen die Inhalte dieser Website aktuell, vollständig und korrekt zu halten. Trotzdem sind Fehler nicht auszuschließen. Das ". $envirocar." Projekt übernimmt keinerlei Verantwortung für Aktualität, Genauigkeit oder Vollständigkeit der auf dieser Webseite dargestellen Inhalte, es sei denn der Fehler sei unter Absicht oder aufgrund grober Fahrlässigkeit entstanden.";
+
+$imprint_copyright = "Urheberrecht";
+$imprint_copyrighttext = "Alle Grafiken dieser Webseite sind lizenziert als ".$license_ccby.", es sei denn eine andere Lizenz wurde genannt. Alle Texte dieser Website sind lizenziert als ".$license_ccby.", es sei denn eine andere Lizenz wurde genannt. Alle Daten die über die ".$envirocar." API abrufbar sind, sind lizenziert unter der ".$license_odbl.".";
 ?>

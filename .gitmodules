@@ -1,0 +1,3 @@
+[submodule "assets/includes/httplanguage"]
+	path = assets/includes/httplanguage
+	url = git://github.com/dustindemuth/httplanguage.git

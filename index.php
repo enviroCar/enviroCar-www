@@ -1,88 +1,24 @@
 <?
 require_once('./assets/includes/authentification.php');
+
+$logged_in=false; 
 if(!is_logged_in()){
 	include('header-start.php');
+	$logged_in=false; 
 }else{
 	include('header.php');
+	$loggedin=true;
 }
-$login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
-?>
-    
-    <script type="text/javascript">
-      //Sending the credentials to the authentification page
-      function login(ln, lp){
-        if(ln === ''){
-          alert("<? echo $index_cont1;?>");
-        }
-        else if(lp === ''){
-          alert('<? echo $index_cont2;?>');
-        }else{
-          $.post('./assets/includes/authentification.php?login', {name: ln, password: lp}, 
-            function(data){
-              if(data === 'status:ok'){
-                window.location.href = "<? echo $login_referer;?>";
-              }else{
-                toggle_visibility("login_fail");
-              }
-            });
-        }
-      }
-    </script>
-	    <?         
-	    $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form_attempt"] : 0;
-	    $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
-	    $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
-	    
-	    if ($login_form_attempt>=1){
-	    
-	      if ($login_name != "" &&  $login_password == ""){
-			?>
-			<div class="container alert alert-block alert-error fade in">
-				<a class="close" data-dismiss="alert">×</a>  
-				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-				<? echo $index_cont20;?>
-			</div>
-			<?
-	      }
-	      
-	      if ($login_name == "" && $login_password != ""){
-			?>
-			<div class="container alert alert-block alert-error fade in">
-				<a class="close" data-dismiss="alert">×</a>
-				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-				<? echo $index_cont21;?>
-			</div>
-			<?
-	      }
-	      
-	      if ($login_name == "" && $login_password == ""){
-			?>
-			<div class="container alert alert-block alert-error fade in">
-				<a class="close" data-dismiss="alert">×</a>  
-				<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-				<? echo $index_cont22;?>
-			</div>
-			<?
-	      }
-	      
-	      if ($login_name != "" && $login_password != ""){
-			?>
-			<script type="text/javascript">login("<? echo $login_name;?>","<?echo $login_password;?>");</script>
-			<?
-	      }
-	    }
-	   ?>
-
+?>    
 
   <div class="container rightband">
     <div class="row-fluid">
-<? if (!is_logged_in()) { ?>
+<? if ($logged_in==false) { ?>
       <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
       </div>
       <div class="span4">
             <h2 class="form-signin-heading"><? echo $index_cont4;?></h2>
-            <p>
-            <form name="login" action="" method="post" style="display: inline;">
+            <form name="login" action="index.php" method="post" style="display: inline;">
 				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
 				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_cont18;?>" value="<?echo $login_name;?>"/>
 				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_cont5;?>" />
@@ -96,11 +32,10 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;"><? echo $index_cont16;?></button>
 			</a>
 			<div style="clear:both"></div>
-	    </p>
 	<?
 		if ($login_form_attempt >= 5){
 	?>
-		<? echo $index_cont23;?><br/> <? echo $index_cont24;?><br/>"
+		<? echo $index_cont23;?><br/> <? echo $index_cont24;?><br/>
 	<?
 		}
 	?>
@@ -150,7 +85,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 
 	<div class="container rightband">
       <div class="featurette" style="margin-left: 2%">
-		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%"/>
+		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_cont19;?></span></h2>
 		<p class="lead" style="text-align: justify">
 			<? echo $index_cont13;?>
@@ -160,7 +95,7 @@ $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
       <hr class="featurette-divider">
 
       <div class="featurette" style="margin-right: 2%">
-		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%"/>
+		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $index_cont14;?><span class="muted"><? echo ' '.$index_cont15;?></span></h2>
 		<p class="lead" style="text-align: justify">
 		</p>

@@ -45,7 +45,11 @@ include('header-start.php');
 		        <button class="btn btn-large btn-primary" onclick="registration()">Register</button> 
 				<button style="float:right;" class="btn btn-large btn-primary" type="reset">Reset</button>
 		</div>
-		<div class="span3"></div>
+		<div class="span">
+			<p style="text-align: justify">
+				<? echo $register_licensereminder; ?>
+			</p>
+		</div>
 	</div>
 </div>
 
