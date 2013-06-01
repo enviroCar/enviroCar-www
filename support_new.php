@@ -92,7 +92,7 @@ $('#myTab a:last').tab('show');
 		<div class="container rightband" style="padding-left:20px">
 			<div class="row-fluid">
 				<div class="span10 offset1">
-				<div class="customLi"><a name="reg">Regestration</a>
+				<div class="customLi"><a name="reg">Registration</a>
 					<p>  
 							registration Steps ... </br> .. </br> ... </br> .. </br>... </br> .. </br>
 					</p>
@@ -134,14 +134,15 @@ $('#myTab a:last').tab('show');
 	  <div class="tab-pane fade in " id="website">
 	  
 	  <ul>
-			<li><a href="#sign">How to regestar and Sign In ?</a></li>		
-			<li><a href="#compare">How to comapre your data?</a></li>	
+			<li><a href="#sign">How to register and sign in ?</a></li>		
+			<li><a href="#compare">How to compare your data?</a></li>	
 			<li><a href="#share">How to share your data?</a></li>
+			<li><a href="#cookie">Why does this website use cookies?</a></li>
 		</ul>
 		<div class="container rightband" style="padding-left:20px">
 			<div class="row-fluid">
 				<div class="span10 offset1">
-				<div class="customLi"><a name="sign">How to regestar and Sign In ?</a>
+				<div class="customLi"><a name="sign">How to register and sign in ?</a>
 					<p>  
 							registration and Sign in Steps ... </br> .. </br> ... </br> .. </br>... </br> .. </br>
 					</p>
@@ -170,6 +171,50 @@ $('#myTab a:last').tab('show');
 				<div class="customLi"><a name="share">How to share your data?</a>
 					<p>  
 							sharing options... </br> .. </br> ... </br> .. </br>... </br> .. </br>
+					</p>
+					
+					<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
+			 </div>    
+			   </div>    
+            </div>    
+         </div>
+		 
+		 <div class="container rightband" style="padding-left:20px">
+			<div class="row-fluid">
+				<div class="span10 offset1">
+				<div class="customLi"><a name="cookie">Why does this website use cookies?</a></br>
+					<p>  
+					</br>
+					     <h3>What are cookies?</h3>
+						 
+						 Cookies are textfiles that contain certain settings information of the website.
+						 The website places cookies on your browser software in order to store personal settings for example
+						 that you stay logged in when you visit the website again during a session.
+				
+						 
+						 </br>
+						 </br>
+					     <h3>And why cookies?</h3>
+						 
+						 Cookies make a website more user friendly and more functional.
+					     Cookies help to make your visit on our website more comfortable. Because certain settings of you can be stored temporarily.
+						 For us the website designer cookies help making the programming work and the data administration easier.
+                         </br>
+						 </br>
+						 <h3>Should I disable cookies?</h3>	
+						 
+                         The using of cookies is combined with functionality on our website. If you disable them
+						 the use of a few functions could be impossible or they could be used very circuitously.
+						 </br>
+						 </br>
+						 <h3>Where can i find more information about cookies?</h3>
+						
+						 Here:
+						 </br>
+						<a href=http://en.wikipedia.org/wiki/HTTP_cookie> http://en.wikipedia.org/wiki/HTTP_cookie</a>
+												 
+												 
+												
 					</p>
 					
 					<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
