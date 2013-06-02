@@ -90,16 +90,17 @@ $searchfriends = "Search for Persons";
 $envirocar="enviroCar";
 
 $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
-$license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
+$license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODbL</a>";
+$license_odbl_summary = "<a href=\"http://opendatacommons.org/licenses/odbl/summary/\" target=\"_blank\">ODbL Summary</a>";
 
 $register_licensereminder = "Remember, all data collected within this project will be anonymised (<a href=\"support.php\" target=\"_blank\">learn how</a>), and made publicly available under ".$license_odbl.".";
 
 $licensing_datalicensing = "Licensing of Data";
-$licensing_datalicensingtext = "";
+$licensing_datalicensingtext = "Data which is available via the ".$envirocar." API is lizensed as ".$license_odbl.". This means: ";
 $licensing_allowed = "You are allowed to:";
-$licensing_allowedtext ="";
+$licensing_allowedtext ="Copy and redistribute this database, create works from this database, modify copies of this database";
 $licensing_aslongas = "As long as you:";
-$licensing_aslongastext = "";
+$licensing_aslongastext = "Attribute (mention us as the source of the data), Share copies or modified copies of this database also under ODbL, you keep your database open and accessible.";
 
 $footer_backtotop = "Back to Top";
 $footer_imprint = "Imprint";

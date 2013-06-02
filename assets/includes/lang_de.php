@@ -94,16 +94,18 @@ $searchfriends ="Suche nach Personen";
 $envirocar="enviroCar";
 
 $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" target=\"_blank\">CC-BY</a>";
-$license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODBL</a>";
+$license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODbL</a>";
+$license_odbl_summary = "<a href=\"http://opendatacommons.org/licenses/odbl/summary/\" target=\"_blank\">ODbL Zusammenfassung</a>";
+
 
 $register_licensereminder = "Denk dran, alle Daten die wir von dir aufzeichnen werden anonymisiert (<a href=\"support.php\" target=\"_blank\">lern wie</a>), und werden veröffentlicht unter der ".$license_odbl.".";
 
 $licensing_datalicensing = "Lizenzierung der Daten";
-$licensing_datalicensingtext = "";
+$licensing_datalicensingtext = "Die Daten die über die ".$envirocar." API abrufbar sind, sind lizensiert unter der ".$license_odbl.". Das heißt für dich: ";
 $licensing_allowed = "Es ist dir erlaubt:";
-$licensing_allowedtext ="";
+$licensing_allowedtext ="Die Daten dieser Datenbank zu kopieren und zu verteilen, Sachen aus dieser Datenbank zu erzeugen und Kopien dieser Datenbank zu modifizieren";
 $licensing_aslongas = "Solange du folgendes einhälst:";
-$licensing_aslongastext = "";
+$licensing_aslongastext = "Angibts woher die Daten stammen (also uns als Quelle nennst). Wenn deine Arbeit eine veränderte Version dieser Datenbank enthält musst du diese ebenfalls unter der ODbL lizenzieren. Wenn du diese datenbank weiterverteilst darfst du sie nicht mit DRM schützen, solange du nicht auch eine DRM-freie Version verteilst.";
 
 $footer_backtotop = "Nach Oben";
 $footer_imprint = "Impressum";
