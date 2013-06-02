@@ -4,7 +4,7 @@ include('header-start.php');
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="margin-right: 1%">
 				<h2 id="ImprintHead"><? echo $imprint_imprint;?></h2>
 				<p>
 					52&deg; North Initiative for Geospatial Open Source Software GmbH<br/>
@@ -28,7 +28,7 @@ include('header-start.php');
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="margin-right: 1%">
 				<h2 id="ContentHead"><? echo $imprint_content;?></h2>
 				<p style="text-align: justify">
 					<? echo $imprint_contenttext;?>
@@ -39,7 +39,7 @@ include('header-start.php');
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="margin-right: 1%">
 				<h2 id="CopyrightHead"><? echo $imprint_copyright;?></h2>
 				<p style="text-align: justify">
 					<? echo $imprint_copyrighttext;?>
