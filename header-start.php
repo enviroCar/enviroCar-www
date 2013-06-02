@@ -97,7 +97,7 @@ if ($login_name != "" && $login_password != ""){
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support_new.php"><? echo $help ?></a></li>
             </ul>
 
 
