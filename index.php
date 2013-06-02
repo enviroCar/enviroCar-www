@@ -1,19 +1,19 @@
 <?
 require_once('./assets/includes/authentification.php');
 
-$logged_in=false; 
+$logged_in = false; 
 if(!is_logged_in()){
+	$logged_in = false; 
 	include('header-start.php');
-	$logged_in=false; 
 }else{
+	$logged_in = true;
 	include('header.php');
-	$loggedin=true;
 }
 ?>    
 
   <div class="container rightband">
     <div class="row-fluid">
-<? if ($logged_in==false) { ?>
+<? if ($logged_in == false) { ?>
       <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
       </div>
       <div class="span4">
