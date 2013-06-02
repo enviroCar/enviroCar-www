@@ -1,12 +1,21 @@
 <?
-include('header-start.php');
-?>
+require_once('./assets/includes/authentification.php');
+
+$logged_in = false; 
+if(!is_logged_in()){
+	$logged_in = false; 
+	include('header-start.php');
+}else{
+	$logged_in = true;
+	include('header.php');
+}
+?> 
 
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span">
 				<h2 id="ImprintHead"><? echo $imprint_imprint;?></h2>
-				<p style="margin-right: 1%">>
+				<p style="margin-right: 1%">
 					52&deg; North Initiative for Geospatial Open Source Software GmbH<br/>
 					Martin-Luther-King-Weg 24<br/>
 					48155 Münster, Germany<br/>

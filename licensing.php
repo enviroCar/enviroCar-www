@@ -1,6 +1,15 @@
 <?
-include('header-start.php');
-?>
+require_once('./assets/includes/authentification.php');
+
+$logged_in = false; 
+if(!is_logged_in()){
+	$logged_in = false; 
+	include('header-start.php');
+}else{
+	$logged_in = true;
+	include('header.php');
+}
+?> 
 
 	<div class="container leftband">
 		<div class="row-fluid">
