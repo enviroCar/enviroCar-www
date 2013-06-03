@@ -108,9 +108,7 @@ function delete_request($url){
      
 
     $result = curl_exec($ch);
-    error_log("delete",0);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    error_log($http_status,0);
 
     return array("status" => $http_status, "response" => $result);
 }
