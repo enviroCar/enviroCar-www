@@ -52,13 +52,14 @@ else if(isset($_GET['logout'])){
 else if(isset($_GET['delete'])){
 	if(isset($_POST['delete'])){
 		if($_POST['delete']){
-			$response = delete_request($baseUrl.'/users/'.$_SESSION['name']);
+			$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.$_SESSION['name']);
+			error_log("response: ".$response['status'],0);
 			if($response['status'] == 204){
 				echo 'status:ok';
 				session_destroy();
 			}
 			else{
-				echo 'status:error';
+				echo $response['status'];
 			}
 		}
 	}

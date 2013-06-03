@@ -109,9 +109,9 @@ require_once('assets/includes/connection.php');
 
   function deleteAccount(){
     if(confirm("Are you sure you want to delete your account? This can't be undone!")){
-        console.log("blub");
         $.post('./assets/includes/authentification.php?delete', {delete: true }, 
             function(data){
+              console.log(data);
               if(data === 'status:ok'){
                 window.location.href = "index.php?deleted";
               }else{
