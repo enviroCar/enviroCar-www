@@ -22,10 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+
+
 _Libraries_
 This project uses Twitter Bootstrap, which is licensed under Apache 2.0 License
 This project uses OpenLayers, Licensed under MIT
 This project makes use of Google Charts, which underly the Google APIs Terms
+This project makes use of httplanguage.php licensed as CC0
 
 _Fonts_
 This project uses the fonts Raleway an News Cycle which are SIL Open Fonts Licencse 1.1
