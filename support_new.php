@@ -73,7 +73,7 @@ $('#myTab a:last').tab('show');
 				 to that OBD2 adapter to read out parameters from your car, such as current fuel consumption or revolutions 
 				 per minute. This way, enviroCar can accurately measure your driving costs, can compute emitted CO2 or even 
 				 estimate the noise created by your car.</br>
-				</br> <img class="offset2" src="./assets/img/obd_adapter.png" height="200" width="400" ></br>
+				</br> <img class="offset2" src="./assets/img/obd_adapter1.png" height="200" width="400" ></br>
 				</br>By using OBD2 adapter, enviroCar is able to receive your cars data by pairing your smartphone via Bluetooth with the adapter. The smartphone app analyzes and parses the data to give you in the app and on the enviroCar these information, which you want to see.
 				</p>
 				<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
