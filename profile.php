@@ -29,7 +29,7 @@ require_once('assets/includes/connection.php');
   function getUserGroups(){
     $.get('./assets/includes/users.php?groupsOf='+user, function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in getting groups');
+          error_msg("Groups couldn't be loaded successfully.");
       }else{
         data = JSON.parse(data);
         if(data.groups.length > 0 ){
@@ -46,7 +46,7 @@ require_once('assets/includes/connection.php');
   function getLoggedInUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+loggedInUser, function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in logged in user friends');
+          error_msg("Friends couldn't be loaded successfully.");
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
@@ -71,7 +71,7 @@ require_once('assets/includes/connection.php');
   function getUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in getting friends');
+          error_msg("Friends couldn't be loaded successfully.");
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
@@ -89,7 +89,7 @@ require_once('assets/includes/connection.php');
     $.post('./assets/includes/users.php?deleteFriend', {deleteFriend: user}, 
       function(data){
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in deleting Friend');
+          error_msg("Friend couldn't be removed.");
         }else{
           $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
         }
@@ -100,7 +100,7 @@ require_once('assets/includes/connection.php');
     $.post('./assets/includes/users.php?addFriend', {addFriend: user}, 
       function(data){
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          console.log('error in adding Friend');
+          error_msg("Friend couldn't be added successfully.");
         }else{
           $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
         }
@@ -115,12 +115,9 @@ require_once('assets/includes/connection.php');
               if(data === 'status:ok'){
                 window.location.href = "index.php?deleted";
               }else{
-                alert("Deletion has failed. Please try again");
+                error_msg("Deletion has failed. Please try again");
               }
       });
-    }
-    else{
-      console.log("bla");
     }
   }
   

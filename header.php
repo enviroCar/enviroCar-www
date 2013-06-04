@@ -59,6 +59,13 @@ function echoActiveClassIfRequestMatches($requestUri)
         }
       }
 
+      function error_msg(msg){
+        if ($('#error_div').is(":hidden")) {
+          $('#error_div').append(msg);
+          toggle_visibility("error_div");
+        }
+      }
+
       function changeLanguage(lang){
         $.get('assets/includes/language.php?lang='+lang, function(data) {
           window.location.reload();
@@ -105,3 +112,8 @@ function echoActiveClassIfRequestMatches($requestUri)
       <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
       <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
     </div>
+
+    <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+      <a class="close" data-dismiss="alert">×</a>  
+      <h4 class="alert-heading">Error</h4>  
+    </div> 
