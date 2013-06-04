@@ -18,7 +18,9 @@ include('header-start.php');
 		<script src="./assets/js/prettify/prettify.js"></script>
 
 <!-- Scripts specific to this page -->
-		<script src="./assets/js/script.js"></script>
+		<script src="./assets/js/validation.js"></script>
+		
+<link href="./assets/css/validation.css" rel="stylesheet">
 
 <script type="text/javascript">
       //Sending the credentials to the authentification page
