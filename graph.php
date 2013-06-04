@@ -57,8 +57,8 @@ include('header.php');
 	
 	function callData(){
 		$.get('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/' + trackID, function(data) {
-		if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-			console.log('error in getting tracks');
+		if(data >=400){
+			error_msg("Routes couldn't be loaded successfully.");
 			$('#loadingIndicator').hide();
 		}else{
 			for(var i=0;i<phenName.length;i++){

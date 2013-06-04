@@ -12,7 +12,7 @@ include('header.php');
 
   		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
 	      	if(data >= 400){
-	          console.log('error in getting friends');
+	          error_msg("Friends couldn't be loaded successfully.");
 	      	}else{
 		        data = JSON.parse(data);
 		        if(data.users.length > 0 ){
@@ -26,7 +26,7 @@ include('header.php');
 	  	$.get('./assets/includes/users.php?users', function(data){
 
 	  		if(data >= 400){
-	  			console.log("error in getting users");
+	  			error_msg("Users couldn't be loaded successfully.");
 			}
 	  		else{
 	  			data = JSON.parse(data);

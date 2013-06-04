@@ -12,7 +12,7 @@ include('header.php');
 
   		$.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
 	      	if(data >= 400){
-	          console.log('error in getting groups');
+	          error_msg("Groups couldn't be loaded successfully.");
 	      	}else{
 		        data = JSON.parse(data);
 		        if(data.groups.length > 0 ){
@@ -26,7 +26,7 @@ include('header.php');
 	  	$.get('./assets/includes/groups.php?groups', function(data){
 
 	  		if(data >= 400){
-	  			console.log("error in getting groups");
+	  			error_msg("Groups couldn't be loaded successfully.");
 			}
 	  		else{
 	  			data = JSON.parse(data);

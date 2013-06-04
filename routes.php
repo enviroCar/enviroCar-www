@@ -23,7 +23,7 @@ include('header.php');
 
     $.get('./assets/includes/users.php?tracks', function(data) {
     	if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          	console.log('error in getting tracks');
+          	error_msg("Routes couldn't be loaded successfully.");
       	}else{
         	data = JSON.parse(data);
           numberofTracks = data.tracks.length;
@@ -47,7 +47,7 @@ include('header.php');
 
     $.get('./assets/includes/users.php?userStatistics', function(data) {
       if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-            console.log('error in getting statistics');
+            error_msg("Routes couldn't be loaded successfully.");
         }else{
           data = JSON.parse(data);
           if(data.statistics.length > 0){
