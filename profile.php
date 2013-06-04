@@ -33,7 +33,7 @@ require_once('assets/includes/connection.php');
       }else{
         data = JSON.parse(data);
         if(data.groups.length > 0 ){
-          $('#groups').append('<ul style="margin-bottom: 10px; overflow-y:auto">');
+          $('#groups').append('<ul style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">');
           for(i = 0; i < data.groups.length; i++){
             $('#groups').append('<li class="customLi"><a href="group.php?group='+data.groups[i].name+'">'+data.groups[i].name+'</a></li>');
           }
@@ -77,7 +77,7 @@ require_once('assets/includes/connection.php');
         if(data.users.length > 0 ){
           $('#friends').html("");
           for(i = 0; i < data.users.length; i++){
-            $('#friends').append('<li class="customLi" style="list-style-type:none; min-height: 25px;"><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
+            $('#friends').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
           }
         }
 
@@ -147,27 +147,13 @@ require_once('assets/includes/connection.php');
     </div><!--/span-->
 
     <div class="span8">
-      <div class="span4">
+      <div class="span5">
         <h2>Friends</h2>
-        <ul id="friends" style="margin-bottom: 10px; overflow-y:auto">
+        <ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
         </ul>
       </div>
-      <div id="groups" class="span4">
+      <div id="groups" class="span5">
         <h2>Groups</h2>
-      </div>
-      <div id="licensing" class="span4">
-        <h2>Licensing</h2>
-        
-            <div class="btn-group">
-				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-				License all new data as:
-					<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Private</a></li>
-					<li><a href="#">Open DataBase License</a></li>
-				</ul>
-			</div>
       </div>
     </div>
   </div>

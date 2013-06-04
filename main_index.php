@@ -4,12 +4,13 @@ include('header_new.php');
 
 
 <!--o-->
-<div class="container rightband">
+<div class="container leftband">
+<div class="row-fluid">
 <h2 style="text-align: center"> Make Our Cities Smarter ... HOW ??!!??</h2>
-</div>
+</div></div>
 
 <!-- The Carousel-->
-<div class="container">
+<div class="container rightband">
     <div class="row-fluid">
 <div class="span10 offset1" style="border: 3px groove">
   <div id="myCarousel" class="carousel slide" data-interval="3000" >
@@ -33,16 +34,17 @@ include('header_new.php');
 
 <!--End of  The Carousel-->
 <div class="container leftband">
+<div class="row-fluid">
 <h2 style="text-align: center"> Be a Citizen Scientist ... HOW ??!!??</h2>
-</div>
+</div></div>
 
 
 <!--video and graph statistics -->
-<div class="container">
+<div class="container rightband">
     <div class="row-fluid">
 
 <div class="span5 ">
-  <iframe src="http://www.youtube.com/embed/FXD3eVooo2U"  style="width:90%;" frameborder="7"  allowfullscreen></iframe>
+  <iframe src="http://www.youtube.com/embed/FXD3eVooo2U"  height=370 width=450  frameborder="7"  allowfullscreen></iframe>
  </div>
  <!--end of video -->
 <div class="span5 offset1">
@@ -54,11 +56,12 @@ include('header_new.php');
  </div></div>
 <!--END of video and graph statistics -->
 
-<div class="container rightband">
-<h3 style="text-align: center"> Raise awareness of environmental consequences of our driving behaviour ... HOW ??!!??</h3>
-</div>
-
 <div class="container leftband">
+<div class="row-fluid">
+<h3 style="text-align: center"> Raise awareness of environmental consequences of our driving behaviour ... HOW ??!!??</h3>
+</div></div>
+
+<div class="container rightband">
 <div class="row-fluid">
         <div class="span4">
           <h2>Get our App!</h2>
