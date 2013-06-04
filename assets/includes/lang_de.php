@@ -79,7 +79,7 @@ $accountdeletedsuccess ="Dein Account wurde erfolgreich gelöscht.";
 
 $usernameorpasswordwrong = "Nutzername oder Passwort sind falsch, oder der Nutzer existiert nicht";
 $registrationunsuccessfull = "Die Registrierung war nicht erfolgreich";
-$existingusername = "Der Nutzername oder dei E-Mail Adresse exisiteren bereits in unsere Datenbank.";
+$existingusername = "Der Nutzername oder die E-Mail Adresse existiert bereits in unserer Datenbank.";
 
 $graphs ="Graphen";
 $thematicmaps = "Thematische Karten";

@@ -32,9 +32,36 @@ include('header.php');
   			})
   		}
 
+  		function deleteGroup(){
+  			if(confirm("Are you sure you want to delete this group? This can't be undone!")){
+	  			$.get('./assets/includes/groups.php?deleteGroup=<? echo $_GET['group'] ?>', function(data){
+	  				if(data >= 400){
+	  					error_msg("The group couldn't be deleted successfully.");
+	  				}else{
+	  					window.location.reload();
+	  				}
+	  			});
+	  		}
+  		}
+
   		function addGroupActivities(actionImg, friendImg, id, titel){
       		$('#groupActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/></li>');
     	}
+
+
+    	$.get('./assets/includes/groups.php?group=<? echo $_GET['group'] ?>', function(data) {
+	      	if(data >= 400){
+	          error_msg("Group information couldn't be loaded successfully.");
+	      	}else{
+		        data = JSON.parse(data);
+    			$('#group_headline').html(data.name);
+		        $('#group_description').html(data.description);
+		        $('#group_owner').append('<a href="profile.php?user='+data.owner.name+'">'+data.owner.name+'</a>');
+		        if(data.owner.name == loggedInUser){
+		        	$('#delete_group').html('- <a href="javascript:deleteGroup()">Delete Group</a>');
+		        }
+		    }
+		});
 
   		$.get('./assets/includes/groups.php?groupMembers=<? echo $_GET['group'] ?>', function(data) {
 	      	if(data >= 400){
@@ -68,7 +95,6 @@ include('header.php');
 	          	if(data.activities.length > 0){
 		            for(i = 0; i < data.activities.length; i++){
 		              	var activity = data.activities[i];
-		              	console.log(activity);
 		              	if(activity.type == "JOINED_GROUP"){
 		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "Joined: "+activity.group.name);
 		              	}else if(activity.type == "CREATED_GROUP"){
@@ -88,11 +114,21 @@ include('header.php');
 
   	</script>
 	
-		<div class="container rightband"> 
-			<div id="join_leave_group" style="float:right">
+		<div class="container rightband">
+			<div class="span7">
+				<h2 id="group_headline"></h2>
+				<div id="group_description"></div> 
+			</div>
+			<div class="span3 offset1">
+				<div id="group_owner">Founded by: </div>
+				<div id="join_leave_group" style="display:inline"></div>
+				<div id="delete_group" style="display:inline"></div>
+			</div>
 				
 			</div>
+		</div>
 
+		<div class="container leftband">
 
 			<div class="span5">
 				<h2>Members</h2>
