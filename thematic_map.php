@@ -38,7 +38,6 @@ include('header.php');
 
 <script type="text/javascript">
 
-var popup;
 var statistics = null;
 var chosenSensor = null;
 
@@ -52,54 +51,6 @@ var chosenSensor = null;
         }
       window.$_GET = function(name){return name ? c[name] : c;}
   }())
-
-  function convertToLocalTime(serverDate) {
-      var dt = new Date(Date.parse(serverDate));
-      var localDate = dt;
-
-
-      var gmt = localDate;
-          var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
-          var localNow = new Date().getTimezoneOffset(); // get the timezone
-          // offset in minutes
-          var localTime = min - localNow; // get the local time
-
-      var dateStr = new Date(localTime * 1000 * 60);
-      var d = dateStr.getDate();
-      var m = dateStr.getMonth() + 1;
-      var y = dateStr.getFullYear();
-
-      var totalSec = dateStr.getTime() / 1000;
-      var hours = parseInt( totalSec / 3600 ) % 24;
-      var minutes = parseInt( totalSec / 60 ) % 60;
-
-
-      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
-    }
-
-  function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="heatmap.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
-  }
-
-  function onFeatureSelect(feature){
-    popup = new OpenLayers.Popup("chicken",
-                       feature.geometry.getBounds().getCenterLonLat(),
-                       new OpenLayers.Size(200,200),
-                       getContent(),
-                       true);
-
-    map.addPopup(popup);
-
-    function getContent(){
-      var output = "<b>"+convertToLocalTime(feature.attributes.time)+"</b><br>";
-      for(property in feature.attributes.phenomenons){
-        output += property+": "+feature.attributes.phenomenons[property].value+"<br>";
-      }
-      return output;
-    }
-
-  }
-
 
   function onFeatureUnselect(feature){
       popup.destroy();
@@ -118,8 +69,20 @@ var chosenSensor = null;
       
 
   function changeSensor(property){
-  		//geojson_layer.styleMap = co2_style;
-  		//geojson_layer.redraw();
+    for(i = 0; i < statistics.length; i++){
+      if(property == statistics[i].phenomenon.name) chosenSensor = statistics[i];
+    }
+  	for(i = 0; i < routes.features.length; i++){
+        var style = {
+          strokeColor: getColor(routes.features[i].attributes[chosenSensor.phenomenon.name]), 
+          strokeOpacity: 0.8,
+          strokeWidth: 5
+        };
+        routes.features[i].style = style;
+    }
+    routes.redraw();
+    $('#sensor_headline').html(property);
+
   }
 
 
@@ -132,26 +95,24 @@ var chosenSensor = null;
       );
       var line = new OpenLayers.Geometry.LineString(points);
 
-      if(chosenSensor != null){
-        var style = {
-          strokeColor: getColor((features[i].properties.phenomenons[chosenSensor.phenomenon.name].value+features[i+1].properties.phenomenons[chosenSensor.phenomenon.name].value)/2), 
-          strokeOpacity: 0.8,
-          strokeWidth: 5
-        };
-      }else{
         var style = { 
-          strokeColor: '#0000ff', 
+          strokeColor: '#000000', 
           strokeOpacity: 0.5,
           strokeWidth: 5
         };
-      }
+      //}
       var lineFeature = new OpenLayers.Feature.Vector(line, null, style);
-      lineFeature.attributes.test = 5;
+
+      for(property in features[i].properties.phenomenons){
+        lineFeature.attributes[property] = (features[i].properties.phenomenons[property].value+features[i+1].properties.phenomenons[property].value)/2;
+
+      }
       routes.addFeatures([lineFeature]);
       
     }
     map.zoomToExtent(routes.getDataExtent());
   }
+
 
   function getColor(property){
     var range = chosenSensor.max - chosenSensor.min;
@@ -169,12 +130,6 @@ var chosenSensor = null;
     }else{
       data = JSON.parse(data);
       statistics = data.statistics;  
-      if(statistics.length > 0){
-        chosenSensor = statistics[0];
-        $('#sensor_headline').html(chosenSensor.phenomenon.name);
-      }else{
-        console.log("No phenomenons available");
-      }
     }
     
   });
