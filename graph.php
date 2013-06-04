@@ -7,7 +7,6 @@ include('header.php');
 </div>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>	
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <div id="graphs" class="container rightband">
 </div>
