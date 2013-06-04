@@ -201,7 +201,7 @@ include('header.php');
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        console.log('error in getting tracks');
+        error_msg("Route couldn't be loaded successfully.");
         $('#loadingIndicator').hide();
     }else{
       geojson_layer.addFeatures(geojson_format.read(data));
@@ -220,7 +220,7 @@ include('header.php');
 
     $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        console.log('error in getting statistics');
+        error_msg("Route couldn't be loaded successfully.");
     }else{
       data = JSON.parse(data);
 

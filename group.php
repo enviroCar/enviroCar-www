@@ -14,7 +14,7 @@ include('header.php');
   		function joinGroup(){
   			$.get('./assets/includes/groups.php?joinGroup=<? echo $_GET['group'] ?>', function(data){
   				if(data >= 400){
-  					console.log('error in joining group');
+  					cerror_msg("The group couldn't be joined successfully.");
   				}else{
   					addMemberToList("<? echo $_SESSION['name'] ?>");
   					$('#join_leave_group').html('<a href="javascript:leaveGroup()">Leave Group</a>');
@@ -25,7 +25,7 @@ include('header.php');
   		 function leaveGroup(){
   			$.get('./assets/includes/groups.php?leaveGroup=<? echo $_GET['group'] ?>', function(data){
   				if(data >= 400){
-  					console.log('error in leaving group');
+  					error_msg("The group couldn't be left successfully.");
   				}else{
   					window.location.reload();
   				}
@@ -34,7 +34,7 @@ include('header.php');
 
   		$.get('./assets/includes/groups.php?groupMembers=<? echo $_GET['group'] ?>', function(data) {
 	      	if(data >= 400){
-	          console.log('error in getting groupMembers');
+	          error_msg("Group members couldn't be loaded successfully.");
 	      	}else{
 		        data = JSON.parse(data);
 		        var member = false;
