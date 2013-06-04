@@ -28,7 +28,16 @@ if(isset($_GET['createGroup'])){
 }
 
 if(isset($_GET['groupMembers'])){
-	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['groupMembers'].'/members', false);
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['groupMembers'].'/members', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['groupActivities'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['groupActivities'].'/activities', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{

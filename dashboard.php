@@ -11,47 +11,50 @@ include('header.php');
       $('#friendActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/></li>');
     }
 
+    $.get('./assets/includes/users.php?userActivities', function(data) {
+      if(data >= 400){
+            error_msg("Activities couldn't be loaded successfully.");
+      }else{
+          data = JSON.parse(data);
+          if(data.activities.length > 0){
+            for(i = 0; i < data.activities.length; i++){
+              var activity = data.activities[i];
+              if(activity.type == "JOINED_GROUP"){
+                addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "Joined: "+activity.group.name);
+              }else if(activity.type == "CREATED_GROUP"){
+                addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "Created: "+activity.group.name);
+              }else if(activity.type == "FRIENDED_USER"){
+                addRecentActivities("./assets/img/user.jpg", "profile.php?user="+activity.other.name, "Friended: "+activity.other.name);
+              }else if(activity.type == "CREATED_TRACK"){
+                addRecentActivities("./assets/img/route.svg", "track.php?id="+activity.track.properties.id, "Created: "+activity.track.properties.name);
+              }
+            }
+        }else{
+          $('#recentActivities').append("No recent activities available");
+        }
+      }
+    });
+
+
   </script>
   
 	<div class="container rightband">
 	<div class="row-fluid">
         <div class="span4">
           <h2><?php echo $dashboard_recent_avtivities; ?></h2>
-		  <ul id="recentActivities" style="margin-bottom: 10px; overflow-y:auto">
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a></li>
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a></li>
-              <li class="customLi"><img src="./assets/img/trophy.svg" style="height: 30px; margin-right: 10px; "/><a href="">Award: Economic driver</a></li>
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a></li>
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a></li>
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a></li>
-
-		  </ul>
-          <p><a class="btn" href="#"><?php echo $dashboard_view_details; ?> &raquo;</a></p>
-		  <p> </p>
+		      <ul id="recentActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
+		      </ul>
         </div>
+
         <div class="span4">
           <h2><?php echo $dashboard_overview; ?></h2>
-          <p>
-			<pre>Uploaded Tracks:	<b>12</b>
-Total Km:		<b>231</b> 
-L/Km:			<b>7.5</b>
-Total Costs:		<b>22 Euro</b>
-Costs/Km:		<b>10 Euro</b></pre>
-
-			
-		  </p>
-          <p><a class="btn" href="#"><?php echo $dashboard_view_details; ?> &raquo;</a></p>
        </div>
+
         <div class="span4">
           <h2><?php echo $dashboard_friend_activities; ?></h2>
-		  <ul id="friendActivities" style="margin-bottom: 10px; overflow-y:auto">
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a><img src="./assets/img/dennis.png" style="height: 30px; margin-right: 10px; float:right; "/></li>
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/></li>
-              <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/></li>
-              <li class="customLi"><img src="./assets/img/trophy.svg" style="height: 30px; margin-right: 10px; "/><a href="">Award: Economic driver</a><img src="./assets/img/dennis.png" style="height: 30px; margin-right: 10px; float:right;"/></li>
-			  <li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="">Track 25.02.2013: 14Km</a><img src="./assets/img/person.svg" style="height: 30px; margin-right: 10px; float:right; "/></li>
+		  <ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">
+              
 		  </ul>
-          <p><a class="btn" href="#"><?php echo $dashboard_view_details; ?> &raquo;</a></p>
 		  <p> </p>
         </div>
       </div>
