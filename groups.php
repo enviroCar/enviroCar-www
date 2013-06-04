@@ -45,9 +45,9 @@ include('header.php');
 			<input id="searchgroups" type="text" name="text" placeholder="Search Groups" style="float:right" data-provide="typeahead"/>
 
 
-			<div class="span5" style="max-height:400px">
+			<div class="span5">
 				<h2>Groups</h2>
-				<ul id="groupsList">	
+				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">	
 
 				</ul>          
 	        </div>
@@ -55,7 +55,7 @@ include('header.php');
 			<div class="span4">
 				<h2><? echo $activities ?></h2>
 				<!--
-			  	<ul>
+			  	<ul style="max-height: 400px; overflow-y: auto;">
 			  	<li class="customLi">
 					<a href="">Albert Remke</a>
 					<br/>
