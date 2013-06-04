@@ -12,7 +12,7 @@ include('header.php');
 </div>
 
 <div class="container rightband" style="padding-right: 0px">
-
+  <div id="sensor_headline" style="float:left"></div>
 	<div>
 		<div class="btn-group" style="float:right">
 		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
@@ -39,6 +39,8 @@ include('header.php');
 <script type="text/javascript">
 
 var popup;
+var statistics = null;
+var chosenSensor = null;
 
   (function(){
     var s = window.location.search.substring(1).split('&');
@@ -108,96 +110,74 @@ var popup;
     var map = new OpenLayers.Map('map');
     var mapnik = new OpenLayers.Layer.OSM();
     map.addLayer(mapnik);
-    map.setCenter(new OpenLayers.LonLat(7.9,51,9) // Center of the map
-      .transform(
-        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-        new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
-      ),8
-    );
+    map.setCenter(new OpenLayers.LonLat(7.9,51,9),8);
     
-  
-  //var styleMap = new OpenLayers.StyleMap({pointRadius: 10});
-  var co2_style = new OpenLayers.StyleMap(
-    { 
-            "default": new OpenLayers.Style({ 
-                fillColor: "${getColor}",
-                strokeWidth: 1,             
-                strokeColor: "#000", 
-                fillOpacity: 1,
-                pointRadius: 10//"${getSize}"
-                //label: "${getLabel}"                  
-            },
-            {
-                context: {
-                    getColor : function (feature) {
-                        return feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF0000' :
-                               feature.attributes.phenomenons.testphenomenon1.value > 10 ? '#FF5A08' :
-                                                                  '#08FF41' ;
-                    },
-          getSize: function(feature) {
-            console.log(100 / feature.layer.map.getResolution());
-            return 100 / feature.layer.map.getResolution();
-          }
-                } 
-            })
-    }
-  );
+    var routes = new OpenLayers.Layer.Vector("Routes");
+    map.addLayer(routes);
 
-    var testphenomenon1 = new OpenLayers.StyleMap(
-    { 
-            "default": new OpenLayers.Style({ 
-                fillColor: "${getColor}",
-                strokeWidth: 1,             
-                strokeColor: "#000", 
-                fillOpacity: 1,
-                pointRadius: 10//"${getSize}"
-                //label: "${getLabel}"                  
-            },
-            {
-                context: {
-                    getColor : function (feature) {
-                        return feature.attributes.phenomenons.testphenomenon1.value > 40 ? '#FF0000' :
-                               feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF5A08' :
-                                                                  '#08FF41' ;
-                    },
-          getSize: function(feature) {
-            console.log(100 / feature.layer.map.getResolution());
-            return 100 / feature.layer.map.getResolution();
-          }
-                } 
-            })
-    }
-  );
-
-
-
-
-  var geojson_layer = new OpenLayers.Layer.Vector("Measurements");
-                  
-    
-    var geojson_format = new OpenLayers.Format.GeoJSON({
-                'internalProjection': new OpenLayers.Projection("EPSG:900913"),
-                'externalProjection': new OpenLayers.Projection("EPSG:4326")
-            });
- 
-
-  map.addLayer(geojson_layer);
-
-
-
-    selectControl = new OpenLayers.Control.SelectFeature(geojson_layer, {
-            onSelect: onFeatureSelect,
-            onUnselect: onFeatureUnselect
-        });
-    map.addControl(selectControl);
-    selectControl.activate();
       
 
   function changeSensor(property){
-  		geojson_layer.styleMap = co2_style;
-  		geojson_layer.redraw();
+  		//geojson_layer.styleMap = co2_style;
+  		//geojson_layer.redraw();
   }
 
+
+  function createThematicRoutes(track){
+    features = track.features;
+    for(i = 0; i < features.length-1; i++){
+      var points = new Array(
+         new OpenLayers.Geometry.Point(features[i].geometry.coordinates[0], features[i].geometry.coordinates[1]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject()),
+         new OpenLayers.Geometry.Point(features[i+1].geometry.coordinates[0],features[i+1].geometry.coordinates[1]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject())
+      );
+      var line = new OpenLayers.Geometry.LineString(points);
+
+      if(chosenSensor != null){
+        var style = {
+          strokeColor: getColor((features[i].properties.phenomenons[chosenSensor.phenomenon.name].value+features[i+1].properties.phenomenons[chosenSensor.phenomenon.name].value)/2), 
+          strokeOpacity: 0.8,
+          strokeWidth: 5
+        };
+      }else{
+        var style = { 
+          strokeColor: '#0000ff', 
+          strokeOpacity: 0.5,
+          strokeWidth: 5
+        };
+      }
+      var lineFeature = new OpenLayers.Feature.Vector(line, null, style);
+      lineFeature.attributes.test = 5;
+      routes.addFeatures([lineFeature]);
+      
+    }
+    map.zoomToExtent(routes.getDataExtent());
+  }
+
+  function getColor(property){
+    var range = chosenSensor.max - chosenSensor.min;
+    var steps = range/5;
+    if(property < chosenSensor.min + steps) return "#1BE01B";
+    else if(property < chosenSensor.min + steps * 2) return "#B5E01B";
+    else if(property < chosenSensor.min + steps * 3) return "#E0C61B";
+    else if(property < chosenSensor.min + steps * 4) return "#E08B1B";
+    else return "#E01B1B";
+  }
+
+  $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
+    if(data >= 400){
+        console.log('error in getting statistics');
+    }else{
+      data = JSON.parse(data);
+      statistics = data.statistics;  
+      if(statistics.length > 0){
+        chosenSensor = statistics[0];
+        $('#sensor_headline').html(chosenSensor.phenomenon.name);
+      }else{
+        console.log("No phenomenons available");
+      }
+    }
+    
+  });
 
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
@@ -205,18 +185,14 @@ var popup;
         console.log('error in getting tracks');
         $('#loadingIndicator').hide();
     }else{
-      geojson_layer.addFeatures(geojson_format.read(data));
-      map.zoomToExtent(geojson_layer.getDataExtent());
-
- 	  data = JSON.parse(data);
+      
+ 	    data = JSON.parse(data);
+      createThematicRoutes(data);
       sensors = data.features[0].properties.phenomenons;
       for (property in sensors) { 
       	sensor = sensors[property];
       	$('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\''+property+'\')">'+property+'</a></li>');
       }
-
-
-
       $('#loadingIndicator').hide();
     }
     
