@@ -73,7 +73,7 @@ $('#myTab a:last').tab('show');
 				 to that OBD2 adapter to read out parameters from your car, such as current fuel consumption or revolutions 
 				 per minute. This way, enviroCar can accurately measure your driving costs, can compute emitted CO2 or even 
 				 estimate the noise created by your car.</br>
-				</br> <img class="offset2" src="./assets/img/obd_adapter1.png" height="200" width="400" ></br>
+				</br> <img class="offset2" src="./assets/img/obd_adapter.png" height="200" width="400" ></br>
 				</br>By using OBD2 adapter, enviroCar is able to receive your cars data by pairing your smartphone via Bluetooth with the adapter. The smartphone app analyzes and parses the data to give you in the app and on the enviroCar these information, which you want to see.
 				</p>
 				<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
@@ -146,11 +146,11 @@ $('#myTab a:last').tab('show');
 	<div class="row-fluid">
         <div class="span9 offset1 ">
             <ul id="recentActivities" style="margin-bottom: 10px; overflow-y:auto">
-              <li class="customLi"><a style="font-size:14px" href="#sign">- How to Regitar and Sign In ?</a></li>
+              <li class="customLi"><a style="font-size:14px" href="#sign">- How to Regitar, Sign In and log out ?</a></li>
               <li class="customLi"><a style="font-size:14px"  href="#compare">- How to Comapre your Data?</a></li>
 			  <li class="customLi"><a style="font-size:14px" href="#share">- How to Share your Data?</a></li>
 			  <li class="customLi"><a style="font-size:14px" href="#Cookies">- Why does this website use cookies?</a></li>
-
+			  <li class="customLi"><a style="font-size:14px" href="#lang">- Which are the supported languages?</a></li>
 
 
 		  </ul>
@@ -174,6 +174,13 @@ $('#myTab a:last').tab('show');
 					  
 						<img class="offset2" src="./assets/img/sign.jpg" height="500" width="700" /></br>
 					1-From the start page; fill your user name and password and press “SignIn” .</br>
+					</p>
+					<strong style="font-size:14px;"> Loging Out </strong>
+					<p style="text-align: justify; font-size:14px;">
+					 
+					  
+						<img class="offset2" src="./assets/img/logout.jpg" height="500" width="700" /></br>
+					1- You can Log out from any page; notice the image in the top right corner of each page header.</br>
 					</p>
 					
 					<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
@@ -238,6 +245,22 @@ $('#myTab a:last').tab('show');
 				 
 					<a href=http://en.wikipedia.org/wiki/HTTP_cookie> http://en.wikipedia.org/wiki/HTTP_cookie</a>
 												 
+					</p>
+					
+					<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
+			 </div>    
+			   </div>    
+            </div>    
+         </div>
+		 <div class="container rightband" style="padding-left:20px">
+			<div class="row-fluid">
+				<div class="span9 offset1">
+				<div class="customLi"><h3 id="lang">Which are the supported languages?</h3>
+					<p>  
+						1- Until Now; we support two languages in ower website: English and German languages.
+						2- You can toggle between the languages by preesing the flags as seen in the picture below.
+						
+						<img src="./assets/img/languages.jpg" height="500" width="700" /></br>
 					</p>
 					
 					<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
