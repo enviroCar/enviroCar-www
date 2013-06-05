@@ -162,7 +162,7 @@ $('#myTab a:last').tab('show');
 				<div class="customLi"><h3 id="sign">How to Registar and Sign In ?</h3>
 					<p style="text-align: justify; font-size:14px;">
 					<strong> Registeration </strong> 
-					<img class="offset2" src="./assets/img/registrationsteps.jpg" height="500" width="700" /></br>
+					<img class="offset2" src="./assets/img/registrationsteps.jpg" height="450" width="650" /></br>
 					1- From the start page; press "Register" as seen in the picture.</br>
 					2- Fill your information inside the input fileds, and then press "Register" to create a new account of the entered information.</br>
 					3- If you want to reset the information inside the input fields; press "Reset". </br></br></br>
@@ -172,14 +172,13 @@ $('#myTab a:last').tab('show');
 					<p style="text-align: justify; font-size:14px;">
 					 
 					  
-						<img class="offset2" src="./assets/img/sign.jpg" height="500" width="700" /></br>
+						<img class="offset2" src="./assets/img/sign.jpg" height="450" width="600" /></br>
 					1-From the start page; fill your user name and password and press “SignIn” .</br>
 					</p>
 					<strong style="font-size:14px;"> Loging Out </strong>
 					<p style="text-align: justify; font-size:14px;">
-					 
-					  
-						<img class="offset2" src="./assets/img/logout.jpg" height="500" width="700" /></br>
+					 					  
+						<img class="offset2" src="./assets/img/logout.jpg" height="200" width="350" /></br>
 					1- You can Log out from any page; notice the image in the top right corner of each page header.</br>
 					</p>
 					
@@ -256,11 +255,11 @@ $('#myTab a:last').tab('show');
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h3 id="lang">Which are the supported languages?</h3>
-					<p>  
+					<p style="text-align: justify; font-size:14px;">  
 						1- Until Now; we support two languages in ower website: English and German languages.
 						2- You can toggle between the languages by preesing the flags as seen in the picture below.
-						
-						<img src="./assets/img/languages.jpg" height="500" width="700" /></br>
+						</br>
+						<img src="./assets/img/languages.jpg" height="400" width="600" /></br>
 					</p>
 					
 					<p class="pull-right" style="font-size:10px"><a href="#">Back to top</a></p>
