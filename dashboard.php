@@ -24,7 +24,7 @@ include('header.php');
               }else if(activity.type == "CREATED_GROUP"){
                 addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "Created: "+activity.group.name);
               }else if(activity.type == "FRIENDED_USER"){
-                addRecentActivities("./assets/img/user.jpg", "profile.php?user="+activity.other.name, "Friended: "+activity.other.name);
+                addRecentActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "Friended: "+activity.other.name);
               }else if(activity.type == "CREATED_TRACK"){
                 addRecentActivities("./assets/img/route.svg", "track.php?id="+activity.track.properties.id, "Created: "+activity.track.properties.name);
               }

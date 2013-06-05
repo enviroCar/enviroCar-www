@@ -1,5 +1,15 @@
 <?php
 include('header.php');
+
+if(isset($_GET['group_deleted'])){
+?>
+<div id="deleted" class="container alert alert-block fade in"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <h4 class="alert-heading">Group deleted</h4>  
+  	Group successfully deleted
+</div> 
+<?
+}
 ?>
 
   	<script type="text/javascript">

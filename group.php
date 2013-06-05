@@ -8,7 +8,7 @@ include('header.php');
 
   		function addMemberToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#memberList').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
+  			$('#memberList').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
   		}
 
   		function joinGroup(){
@@ -38,7 +38,7 @@ include('header.php');
 	  				if(data >= 400){
 	  					error_msg("The group couldn't be deleted successfully.");
 	  				}else{
-	  					window.location.reload();
+	  					window.location.href = "groups.php?group_deleted";
 	  				}
 	  			});
 	  		}
@@ -100,7 +100,7 @@ include('header.php');
 		              	}else if(activity.type == "CREATED_GROUP"){
 		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name);
 		              	}else if(activity.type == "FRIENDED_USER"){
-		                	addGroupActivities("./assets/img/user.jpg","./assets/img/user.jpg", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name);
+		                	addGroupActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name);
 		              	}else if(activity.type == "CREATED_TRACK"){
 		                	addGroupActivities("./assets/img/route.svg","./assets/img/user.jpg", "track.php?id="+activity.track.properties.id, "<? echo $jcreated ?>: "+activity.track.properties.name);
 		              	}
