@@ -124,4 +124,16 @@ $imprint_contenttext = "Das Projektteam von ".$envirocar." versucht mit bestem W
 
 $imprint_copyright = "Urheberrecht";
 $imprint_copyrighttext = "Alle Grafiken dieser Webseite sind lizenziert als ".$license_ccby.", es sei denn eine andere Lizenz wurde genannt. Alle Texte dieser Website sind lizenziert als ".$license_ccby.", es sei denn eine andere Lizenz wurde genannt. Alle Daten die über die ".$envirocar." API abrufbar sind, sind lizenziert unter der ".$license_odbl.".";
+
+$member = "Mitglieder";
+$foundedby = "Erstellt durch";
+$leavegroup = "Gruppe verlassen";
+$joingroup ="Gruppe beitreten";
+$deletegroup ="Gruppe löschen";
+
+$norecentactivities = "Keine neuen Aktivitäten";
+$joined ="Eingetreten";
+$friended ="Freund hinzugefügt";
+$left ="Verließ";
+$created ="Erstellte";
 ?>
