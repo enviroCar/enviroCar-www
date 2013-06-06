@@ -57,7 +57,7 @@ if(isset($_GET['addFriend'])){
 }
 
 if(isset($_GET['deleteFriend'])){ 
-	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']).'/friends/'.rawurlencode($_POST['deleteFriend']);
+	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']).'/friends/'.rawurlencode($_POST['deleteFriend']));
 	if($response['status'] == 204){
 		echo $response['response'];
 	}else{
