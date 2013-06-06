@@ -132,8 +132,8 @@ require_once('assets/includes/connection.php');
     <div class="span4">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
-          <img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=100" align="center" style="height: 100px; margin-right: 100px; "/>
-          <li class="nav-header">Community</li>
+          <img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=200" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
+          <li class="nav-header"></li>
           <li>Username:    <b id="username"></b></li>
           <?
             if($_GET['user'] == $_SESSION['name']){
