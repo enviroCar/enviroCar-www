@@ -1,7 +1,7 @@
 <?
 include('header.php');
 ?>
-<link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+<link rel="stylesheet" href="./assets/OpenLayers/theme/default/style.css" type="text/css">
 
 
 <script src="./assets/OpenLayers/OpenLayers.js"></script>
@@ -34,6 +34,7 @@ include('header.php');
 		bottom:0px;
 
 	}
+  #map img{max-width:none;}
 </style>
 
 <script type="text/javascript">
@@ -59,8 +60,30 @@ var chosenSensor = null;
 
 
     var map = new OpenLayers.Map('map');
-    var mapnik = new OpenLayers.Layer.OSM();
-    map.addLayer(mapnik);
+    //var mapnik = new OpenLayers.Layer.OSM();
+    //map.addLayer(mapnik);
+
+    var grey = new OpenLayers.Layer.OSM('Simple OSM Map', null, {
+    eventListeners: {
+        tileloaded: function(evt) {
+            var ctx = evt.tile.getCanvasContext();
+            if (ctx) {
+                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
+                var pix = imgd.data;
+                for (var i = 0, n = pix.length; i < n; i += 4) {
+                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
+                }
+                ctx.putImageData(imgd, 0, 0);
+                evt.tile.imgDiv.removeAttribute("crossorigin");
+                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
+            }
+        }
+    }
+  });
+
+    map.addLayer(grey);
+
+
     map.setCenter(new OpenLayers.LonLat(7.9,51,9),8);
     
     var routes = new OpenLayers.Layer.Vector("Routes");
@@ -96,7 +119,7 @@ var chosenSensor = null;
       var line = new OpenLayers.Geometry.LineString(points);
 
         var style = { 
-          strokeColor: '#000000', 
+          strokeColor: '#0008FF', 
           strokeOpacity: 0.5,
           strokeWidth: 5
         };

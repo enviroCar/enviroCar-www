@@ -18,7 +18,7 @@ if(isset($_GET['groups'])){
 }
 
 if(isset($_GET['group'])){
-	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['group'], true);
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.rawurlencode($_GET['group']), true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
@@ -37,7 +37,7 @@ if(isset($_GET['createGroup'])){
 }
 
 if(isset($_GET['groupMembers'])){
-	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['groupMembers'].'/members', true);
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.rawurlencode($_GET['groupMembers']).'/members', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
@@ -46,7 +46,7 @@ if(isset($_GET['groupMembers'])){
 }
 
 if(isset($_GET['groupActivities'])){
-	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['groupActivities'].'/activities', true);
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.rawurlencode($_GET['groupActivities']).'/activities', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
@@ -56,7 +56,7 @@ if(isset($_GET['groupActivities'])){
 
 if(isset($_GET['joinGroup'])){
 	$user = array("name" => ''.$_SESSION['name']); 
-	$response = post_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['joinGroup'].'/members', $user, true);
+	$response = post_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.rawurlencode($_GET['joinGroup']).'/members', $user, true);
 	if($response['status'] == 204){
 		echo $response['response'];
 	}else{
@@ -65,7 +65,7 @@ if(isset($_GET['joinGroup'])){
 }
 
 if(isset($_GET['leaveGroup'])){ 
-	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['leaveGroup'].'/members/'.$_SESSION['name']);
+	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.rawurlencode($_GET['leaveGroup']).'/members/'.$_SESSION['name']);
 	if($response['status'] == 204){
 		echo $response['response'];
 	}else{
@@ -74,7 +74,7 @@ if(isset($_GET['leaveGroup'])){
 }
 
 if(isset($_GET['deleteGroup'])){ 
-	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.$_GET['deleteGroup']);
+	$response = delete_request('http://giv-car.uni-muenster.de:8080/stable/rest/groups/'.rawurlencode($_GET['deleteGroup']));
 	if($response['status'] == 204){
 		echo $response['response'];
 	}else{
