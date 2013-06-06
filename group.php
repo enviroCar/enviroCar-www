@@ -8,7 +8,7 @@ include('header.php');
 
   		function addMemberToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#memberList').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
+  			$('#memberList').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
   		}
 
   		function joinGroup(){
@@ -38,7 +38,7 @@ include('header.php');
 	  				if(data >= 400){
 	  					error_msg("The group couldn't be deleted successfully.");
 	  				}else{
-	  					window.location.reload();
+	  					window.location.href = "groups.php?group_deleted";
 	  				}
 	  			});
 	  		}
@@ -58,7 +58,7 @@ include('header.php');
 		        $('#group_description').html(data.description);
 		        $('#group_owner').append('<a href="profile.php?user='+data.owner.name+'">'+data.owner.name+'</a>');
 		        if(data.owner.name == loggedInUser){
-		        	$('#delete_group').html('- <a href="javascript:deleteGroup()">Delete Group</a>');
+		        	$('#delete_group').html('- <a href="javascript:deleteGroup()"><? echo $deletegroup ?></a>');
 		        }
 		    }
 		});
@@ -80,9 +80,9 @@ include('header.php');
 		          	}
 		        }
 		        if(member){
-		          		$('#join_leave_group').html('<a href="javascript:leaveGroup()">Leave Group</a>');
+		          		$('#join_leave_group').html('<a href="javascript:leaveGroup()"><? echo $leavegroup ?></a>');
 		          	}else{
-		          		$('#join_leave_group').html('<a href="javascript:joinGroup()">Join Group</a>');
+		          		$('#join_leave_group').html('<a href="javascript:joinGroup()"><? echo $joingroup ?></a>');
 		        }
 	      	}
 	  	});
@@ -96,17 +96,17 @@ include('header.php');
 		            for(i = 0; i < data.activities.length; i++){
 		              	var activity = data.activities[i];
 		              	if(activity.type == "JOINED_GROUP"){
-		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "Joined: "+activity.group.name);
+		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name);
 		              	}else if(activity.type == "CREATED_GROUP"){
-		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "Created: "+activity.group.name);
+		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name);
 		              	}else if(activity.type == "FRIENDED_USER"){
-		                	addGroupActivities("./assets/img/user.jpg","./assets/img/user.jpg", "profile.php?user="+activity.other.name, "Friended: "+activity.other.name);
+		                	addGroupActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name);
 		              	}else if(activity.type == "CREATED_TRACK"){
-		                	addGroupActivities("./assets/img/route.svg","./assets/img/user.jpg", "track.php?id="+activity.track.properties.id, "Created: "+activity.track.properties.name);
+		                	addGroupActivities("./assets/img/route.svg","./assets/img/user.jpg", "route.php?id="+activity.track.id, "<? echo $jcreated ?>: "+activity.track.name);
 		              	}
 		            }
 		        }else{
-		          $('#groupActivities').append("No recent activities available");
+		          $('#groupActivities').append("<? echo $norecentactivities ?>");
 		        }   
 	      	}
 	  	});
@@ -120,7 +120,7 @@ include('header.php');
 				<div id="group_description"></div> 
 			</div>
 			<div class="span3 offset1">
-				<div id="group_owner">Founded by: </div>
+				<div id="group_owner"><? echo $foundedby ?>: </div>
 				<div id="join_leave_group" style="display:inline"></div>
 				<div id="delete_group" style="display:inline"></div>
 			</div>
@@ -131,7 +131,7 @@ include('header.php');
 		<div class="container leftband">
 
 			<div class="span5">
-				<h2>Members</h2>
+				<h2><? echo $member ?></h2>
 				<ul id="memberList" style="max-height: 400px; overflow-y: auto;">	
 
 				</ul>          

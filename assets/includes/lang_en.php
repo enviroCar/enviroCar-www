@@ -120,5 +120,15 @@ $imprint_contenttext = "The ".$envirocar." project team makes every effort to en
 $imprint_copyright = "Copyright";
 $imprint_copyrighttext = "The graphics on this website are, licensed as ".$license_ccby.", unless stated otherwise, all texts of this website is licensed as ".$license_ccby.", unless stated otherwise. All data which is accessible with the ".$envirocar." API is licensed under the ".$license_odbl.".";
 
+$member = "Member";
+$foundedby = "Founded by";
+$leavegroup = "Leave Group";
+$joingroup ="Join Group";
+$deletegroup ="Delete Group";
 
+$norecentactivities = "No recent activities";
+$joined ="Joined";
+$friended ="Friended";
+$left ="Left";
+$created ="Created";
 ?>

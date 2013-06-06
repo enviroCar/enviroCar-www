@@ -77,7 +77,7 @@ require_once('assets/includes/connection.php');
         if(data.users.length > 0 ){
           $('#friends').html("");
           for(i = 0; i < data.users.length; i++){
-            $('#friends').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
+            $('#friends').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+data.users[i].name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
           }
         }
 
@@ -132,8 +132,8 @@ require_once('assets/includes/connection.php');
     <div class="span4">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
-          <img src="./assets/img/user.jpg" align="center" style="height: 100px; margin-right: 100px; "/>
-          <li class="nav-header">Community</li>
+          <img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=200" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
+          <li class="nav-header"></li>
           <li>Username:    <b id="username"></b></li>
           <?
             if($_GET['user'] == $_SESSION['name']){
