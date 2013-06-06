@@ -46,9 +46,9 @@ include('header.php');
 	var trackID = '<?php echo $_GET["id"]; ?>';
 	
 	function callPhens(){
-		$.get('http://giv-car.uni-muenster.de:8080/stable/rest/phenomenons', function(data) {
-			for(var i=0;i<data.phenomenons.length;i++){
-				phenName[i] = data.phenomenons[i].name;
+		$.get('http://giv-car.uni-muenster.de:8080/stable/rest/tracks/' + trackID + '/statistics', function(data) {
+			for(var i=0;i<data.statistics.length;i++){
+				phenName[i] = data.statistics[i].phenomenon.name;
 				}
 			callData();
 			});
