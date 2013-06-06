@@ -1,7 +1,7 @@
 <?
 include('header.php');
 ?>
-<link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+<link rel="stylesheet" href="./assets/OpenLayers/theme/default/style.css" type="text/css">
 
 
 <script src="./assets/OpenLayers/OpenLayers.js"></script>
@@ -34,6 +34,7 @@ include('header.php');
 		bottom:0px;
 
 	}
+  #map img{max-width:none;}
 </style>
 
 <script type="text/javascript">
