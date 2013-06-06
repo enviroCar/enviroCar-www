@@ -12,7 +12,7 @@ if(isset($_GET['group_deleted'])){
 }
 ?>
 
-  	<script type="text/javascript">
+ 	<script type="text/javascript">
   		var groups = Array();
 
   		function addGroupToList(name){
@@ -49,7 +49,50 @@ if(isset($_GET['group_deleted'])){
 	  		}
 	  	});
 
+	  	function createGroup(){
+	  		if($('#group_name').val() === '' || $('#group_description').val() === ''){
+	  			alert("Both fields have to be filled.");
+	  		}else{
+	  			$.post('./assets/includes/groups.php?createGroup', {group_name: $('#group_name').val(), group_description: $('#group_description').val()}, 
+	            function(response){
+	              if(response >= 400){
+	              	error_msg("Group could not be created successfully");
+	              }else{
+	              	window.location.href="group.php?group="+$('#group_name').val();
+	              }
+	            });
+	  		}
+
+	  	}
+
   	</script>
+
+  		<div id="create_group_modal" class="modal hide fade">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		    <h3>Create Group</h3>
+		  </div>
+		  <div class="modal-body">
+		    <input id="group_name" type="text" class="input-block-level" placeholder="Group name">
+		    <input id="group_description" type="text" class="input-block-level" placeholder="Description">
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		    <a href="javascript:createGroup();" class="btn btn-primary">Save changes</a>
+		  </div>
+		</div>
+
+
+		<div class="container leftband">
+			<div class="span7">
+				<h2 id="groups_headline"></h2> 
+			</div>
+			<div class="span3 offset1">
+				<div id="create_group" style="float:right"><a href="#create_group_modal" role="button" class="btn" data-toggle="modal">Create Group</a></div>
+			</div>
+				
+			</div>
+		</div>
 	
 		<div class="container rightband"> 
 			<input id="searchgroups" type="text" name="text" placeholder="Search Groups" style="float:right" data-provide="typeahead"/>
