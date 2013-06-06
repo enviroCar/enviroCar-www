@@ -102,7 +102,7 @@ include('header.php');
 		              	}else if(activity.type == "FRIENDED_USER"){
 		                	addGroupActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name);
 		              	}else if(activity.type == "CREATED_TRACK"){
-		                	addGroupActivities("./assets/img/route.svg","./assets/img/user.jpg", "track.php?id="+activity.track.properties.id, "<? echo $jcreated ?>: "+activity.track.properties.name);
+		                	addGroupActivities("./assets/img/route.svg","./assets/img/user.jpg", "track.php?id="+activity.track.id, "<? echo $jcreated ?>: "+activity.track.name);
 		              	}
 		            }
 		        }else{

@@ -26,7 +26,7 @@ include('header.php');
               }else if(activity.type == "FRIENDED_USER"){
                 addRecentActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "Friended: "+activity.other.name);
               }else if(activity.type == "CREATED_TRACK"){
-                addRecentActivities("./assets/img/route.svg", "track.php?id="+activity.track.properties.id, "Created: "+activity.track.properties.name);
+                addRecentActivities("./assets/img/route.svg", "track.php?id="+activity.track.id, "Created: "+activity.track.name);
               }
             }
         }else{
