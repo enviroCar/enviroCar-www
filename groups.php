@@ -49,21 +49,24 @@ if(isset($_GET['group_deleted'])){
 	  		}
 	  	});
 
-	  	function createGroup(){
-	  		if($('#group_name').val() === '' || $('#group_description').val() === ''){
-	  			alert("Both fields have to be filled.");
-	  		}else{
+	  	$(function(){
+		  	$('#createGroupForm').submit(function(){
+		  		if($('#group_name').val() === '' || $('#group_description').val() === ''){
+	  				alert("Both fields have to be filled.");
+	  			}else{
 	  			$.post('./assets/includes/groups.php?createGroup', {group_name: $('#group_name').val(), group_description: $('#group_description').val()}, 
-	            function(response){
-	              if(response >= 400){
-	              	error_msg("Group could not be created successfully");
-	              }else{
-	              	window.location.href="group.php?group="+$('#group_name').val();
-	              }
-	            });
-	  		}
+	            	function(response){
+	              		if(response >= 400){
+	              			error_msg("Group could not be created successfully");
+	              		}else{
+	              			window.location.href="group.php?group="+$('#group_name').val();
+	              		}
+	            	});
+	  			}
+		  		return false;
+		  	});
+		});
 
-	  	}
 
   	</script>
 
@@ -73,12 +76,14 @@ if(isset($_GET['group_deleted'])){
 		    <h3>Create Group</h3>
 		  </div>
 		  <div class="modal-body">
-		    <input id="group_name" type="text" class="input-block-level" placeholder="Group name">
-		    <input id="group_description" type="text" class="input-block-level" placeholder="Description">
+		  	<form id="createGroupForm" action="./assets/includes/groups.php?createGroup" method="post">
+		    	<input id="group_name" type="text" class="input-block-level" placeholder="Group name">
+		    	<input id="group_description" type="text" class="input-block-level" placeholder="Description">
+		    	<input type="submit" class="btn btn-primary">
+		    </form>
 		  </div>
 		  <div class="modal-footer">
 		    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-		    <a href="javascript:createGroup();" class="btn btn-primary">Save changes</a>
 		  </div>
 		</div>
 
