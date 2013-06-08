@@ -135,11 +135,11 @@ $created ="Created";
 
 
 $privacy_website_head = "Data collected with this website";
-$privacy_website_text_01 = "When using this website, the following data is collected, and stored for a period of XXX YYY.:";
-$privacy_website_text_02 = "If you register on our website, we collect and store the following information, until you delte your account:";
+$privacy_website_text_01 = "When using this website, the following data is collected, and stored for a period of XXX YYY.:"; //todo
+$privacy_website_text_02 = "If you register on our website, we collect and store the following information, until you delete your account:";
 $privacy_website_text_03 = "You can delete (with delete we mean delete, there is no way back!) your account and the data associated to it at anytime you feel convenient. Read the FAQ if you want to know how to delete your data and / or your account";
 $privacy_website_text_use_datalist = "<li>your ip-address, within our servers access log and error log file</li>";
-$privacy_website_text_register_datalist = "<li>The username you have chosen</li><li>The e-mail address you provided</li><li>The password you provided</li><li>The username of people who added your username as a friend</li><li>The username of the person you added as a friend</li><li>The name of the groups you became a member of</li>";
+$privacy_website_text_register_datalist = "<li>The username you have chosen</li><li>The e-mail address you provided</li><li>The password you provided</li><li>The username of persons who added your username as a friend</li><li>The username of the person you added as a friend</li><li>The name of the groups you became a member of</li>";
 $privacy_cookies_head = "Use of cookies";
 $privacy_cookies_text_01 = "By using this website you agree to the use of cookies. Those are needed to give you the possibility to login to our services and to select the language of our website. The cookie stores:";
 $privacy_cookies_text_02 = "We promise not to use cookies for tracking purposes. Our cookies have a validity of one (1) browser session. This allows you to log out, restart your browser and our website will not recognise you.";
