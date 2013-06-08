@@ -135,7 +135,6 @@ $norecentactivities = "Keine neuen Aktivitäten";
 $joined ="Eingetreten";
 $friended ="Freund hinzugefügt";
 $left ="Verließ";
-$created ="Erstellte";
 
 
 $privacy_website_head = "";
