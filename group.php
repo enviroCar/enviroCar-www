@@ -44,8 +44,8 @@ include('header.php');
 	  		}
   		}
 
-  		function addGroupActivities(actionImg, friendImg, id, titel){
-      		$('#groupActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/></li>');
+  		function addGroupActivities(actionImg, friendImg, id, titel, date){
+      		$('#groupActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/><br><div><? echo $created ?>: '+date+'</div></li>');
     	}
 
 
@@ -96,13 +96,13 @@ include('header.php');
 		            for(i = 0; i < data.activities.length; i++){
 		              	var activity = data.activities[i];
 		              	if(activity.type == "JOINED_GROUP"){
-		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name);
+		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_GROUP"){
-		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name);
+		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "FRIENDED_USER"){
-		                	addGroupActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name);
+		                	addGroupActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_TRACK"){
-		                	addGroupActivities("./assets/img/route.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name);
+		                	addGroupActivities("./assets/img/route.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
 		              	}
 		            }
 		        }else{
@@ -110,6 +110,30 @@ include('header.php');
 		        }   
 	      	}
 	  	});
+
+    function convertToLocalTime(serverDate) {
+      var dt = new Date(Date.parse(serverDate));
+      var localDate = dt;
+
+
+      var gmt = localDate;
+          var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
+          var localNow = new Date().getTimezoneOffset(); // get the timezone
+          // offset in minutes
+          var localTime = min - localNow; // get the local time
+
+      var dateStr = new Date(localTime * 1000 * 60);
+      var d = dateStr.getDate();
+      var m = dateStr.getMonth() + 1;
+      var y = dateStr.getFullYear();
+
+      var totalSec = dateStr.getTime() / 1000;
+      var hours = parseInt( totalSec / 3600 ) % 24;
+      var minutes = parseInt( totalSec / 60 ) % 60;
+
+
+      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+    }
 
 
   	</script>
