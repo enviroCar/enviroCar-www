@@ -150,4 +150,5 @@ $privacy_cookies_text_02 = "";
 $privacy_cookies_text_use_datalist = "";
 $privacy_uploadeddata_head = "";
 $privacy_uploadeddata_text = "";
+$privacy_uploadeddata_datalist = "<li>Location of the measurement</li><li>Speed</li><li>Time and Date</li><li>various parameters of your cars engine</li>";
 ?>

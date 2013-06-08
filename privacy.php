@@ -50,7 +50,10 @@ if(!is_logged_in()){
 			<div class="span">
 				<h2 id="privacy_uploadeddata_head"><?echo $privacy_uploadeddata_head; ?></h2>
 				<p style="text-align: justify; margin-right: 1%">
-				<?echo $privacy_uploadeddata_text; ?>
+					<?echo $privacy_uploadeddata_text; ?>
+					<ul>
+						<?echo $privacy_uploadeddata_datalist; ?>
+					</ul>
 				</p>
 			</div>
 		</div>
