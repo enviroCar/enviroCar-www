@@ -1,5 +1,4 @@
 <?
-if (!isset($_SESSION)) session_start();
 
 //First: Get language from Browser:
 
@@ -12,6 +11,7 @@ if (!isset($_SESSION)) session_start();
 if(isSet($_GET['lang'])){
 	$lang = $_GET['lang'];
 
+	if (!isset($_SESSION)) session_start();
 	// register the session and set the cookie
 	$_SESSION['lang'] = $lang;
 
