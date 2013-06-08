@@ -135,5 +135,19 @@ $norecentactivities = "Keine neuen Aktivitäten";
 $joined ="Eingetreten";
 $friended ="Freund hinzugefügt";
 $left ="Verließ";
-$created ="Erstellte";
+
+
+$privacy_website_head = "";
+$privacy_website_text_01 = "";
+$privacy_website_text_02 = "";
+$privacy_website_text_03 = "";
+$privacy_website_text_use_datalist = "<li>item 1</li><li>item 2</li><li>item 3</li><li>item 4</li><li>item 5</li>";
+$privacy_website_text_register_datalist = "<li>item 1</li><li>item 2</li><li>item 3</li><li>item 4</li><li>item 5</li>";
+$privacy_cookies_head = "";
+$privacy_cookies_text_01 = "";
+$privacy_cookies_text_02 = "";
+$privacy_cookies_text_use_datalist = "";
+$privacy_uploadeddata_head = "";
+$privacy_uploadeddata_text = "";
+$privacy_uploadeddata_datalist = "<li>Location of the measurement</li><li>Speed</li><li>Time and Date</li><li>various parameters of your cars engine</li>";
 ?>
