@@ -136,6 +136,10 @@ $changed = "Changed";
 $updated = "Updated";
 
 $activityerror ="Activities couldn't be loaded successfully.";
+$creategrouperror ="Group couln\'t be created.";
+$invalidCharacterError ="Invalid characters in name or description";
+
+$bothFieldsFilled = "Both input fiels have to be filled";
 
 
 

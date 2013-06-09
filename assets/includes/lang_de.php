@@ -140,6 +140,9 @@ $changed = "Veränderte";
 $updated =" Aktualisierte";
 
 $activityerror ="Activitäten konnten nicht geladen werden.";
+$creategrouperror ="Gruppe konnte nicht erstellt werden.";
+$invalidCharacterError ="Es befinden sich unerlaubte Zeichen in der Eingabe.";
+$bothFieldsFilled = "Beide Eingabefelder müssen ausgefüllt sein.";
 
 
 $privacy_website_head = "Gesammelte Daten in dieser Webseite";
