@@ -52,20 +52,29 @@ if(isset($_GET['group_deleted'])){
 	  	$(function(){
 		  	$('#createGroupForm').submit(function(){
 		  		if($('#group_name').val() === '' || $('#group_description').val() === ''){
-	  				alert("Both fields have to be filled.");
+	  				alert("<? echo $bothFieldsFilled ?>");
 	  			}else{
-	  			$.post('./assets/includes/groups.php?createGroup', {group_name: $('#group_name').val(), group_description: $('#group_description').val()}, 
-	            	function(response){
-	              		if(response >= 400){
-	              			error_msg("Group could not be created successfully");
-	              		}else{
-	              			window.location.href="group.php?group="+$('#group_name').val();
-	              		}
-	            	});
+	  				if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){	
+		  				$.post('./assets/includes/groups.php?createGroup', {group_name: $('#group_name').val(), group_description: $('#group_description').val()}, 
+			            	function(response){
+			              		if(response >= 400){
+			              			error_msg("<? echo $creategrouperror ?>");
+			              		}else{
+			              			window.location.href="group.php?group="+$('#group_name').val();
+			              		}
+			            });
+		  			}else{
+		  				alert("<? echo $invalidCharacterError ?>");
+		  			}
 	  			}
 		  		return false;
 		  	});
 		});
+
+		function validateInput(input){
+			re = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
+			return re.test(input);
+		}
 
 
   	</script>
