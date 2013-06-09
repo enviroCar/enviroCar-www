@@ -131,6 +131,11 @@ $joined ="Joined";
 $friended ="Friended";
 $left ="Left";
 $created ="Created";
+$deleted = "Deleted";
+$changed = "Changed";
+$updated = "Updated";
+
+$activityerror ="Activities couldn't be loaded successfully.";
 
 
 

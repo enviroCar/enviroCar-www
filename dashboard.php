@@ -4,7 +4,7 @@ include('header.php');
   <script type="text/javascript">
     
     function addRecentActivities(img, id, titel, date){
-      $('#recentActivities').append('<li class="customLi"><img src="'+img+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><br><div><? echo $created ?>: '+date+'</div></li>');
+      $('#recentActivities').append('<li class="customLi"><img src="'+img+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><br><div>'+date+'</div></li>');
     }
 
     function addFriendActivities(actionImg, friendImg, id, titel){
@@ -13,24 +13,30 @@ include('header.php');
 
     $.get('./assets/includes/users.php?userActivities', function(data) {
       if(data >= 400){
-            error_msg("Activities couldn't be loaded successfully.");
+            error_msg("<? echo $activityerror ?>");
       }else{
           data = JSON.parse(data);
           if(data.activities.length > 0){
             for(i = 0; i < data.activities.length; i++){
               var activity = data.activities[i];
               if(activity.type == "JOINED_GROUP"){
-                if(activity.group)addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "Joined: "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group)addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_GROUP"){
-                if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "Created: "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "FRIENDED_USER"){
-                addRecentActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "Friended: "+activity.other.name, convertToLocalTime(activity.time));
+                addRecentActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_TRACK"){
-                addRecentActivities("./assets/img/route.svg", "route.php?id="+activity.track.id, "Created: "+activity.track.name, convertToLocalTime(activity.time));
+                addRecentActivities("./assets/img/route.svg", "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "LEFT_GROUP"){
+                if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "<? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_GROUP"){
+                if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, "<? echo $changed ?>: "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_PROFILE"){
+                addRecentActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "profile.php?user="+activity.user.name, "<? echo $updated ?>: "+activity.user.name, convertToLocalTime(activity.time));
               }
             }
         }else{
-          $('#recentActivities').append("No recent activities available");
+          $('#recentActivities').append("<? echo $norecentactivities ?>");
         }
       }
     });
@@ -56,7 +62,7 @@ include('header.php');
       var minutes = parseInt( totalSec / 60 ) % 60;
 
 
-      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ (minutes <= 9 ? '0' + minutes : minutes);
     }
 
 

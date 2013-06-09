@@ -54,7 +54,7 @@ $freg_notidentic_password="Passwörter sind nicht identisch";
 
 
 
-$created ="Erstellt";
+$created ="Erstellte";
 $yourroutes = "Deine Routen";
 $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
@@ -135,6 +135,11 @@ $norecentactivities = "Keine neuen Aktivitäten";
 $joined ="Eingetreten";
 $friended ="Freund hinzugefügt";
 $left ="Verließ";
+$deleted = "Löschte";
+$changed = "Veränderte";
+$updated =" Aktualisierte";
+
+$activityerror ="Activitäten konnten nicht geladen werden.";
 
 
 $privacy_website_head = "Gesammelte Daten in dieser Webseite";
