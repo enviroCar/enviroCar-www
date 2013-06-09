@@ -54,7 +54,7 @@ $freg_notidentic_password="Passwörter sind nicht identisch";
 
 
 
-$created ="Erstellt";
+$created ="Erstellte";
 $yourroutes = "Deine Routen";
 $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
@@ -135,19 +135,24 @@ $norecentactivities = "Keine neuen Aktivitäten";
 $joined ="Eingetreten";
 $friended ="Freund hinzugefügt";
 $left ="Verließ";
+$deleted = "Löschte";
+$changed = "Veränderte";
+$updated =" Aktualisierte";
+
+$activityerror ="Activitäten konnten nicht geladen werden.";
 
 
-$privacy_website_head = "";
-$privacy_website_text_01 = "";
-$privacy_website_text_02 = "";
-$privacy_website_text_03 = "";
-$privacy_website_text_use_datalist = "<li>item 1</li><li>item 2</li><li>item 3</li><li>item 4</li><li>item 5</li>";
-$privacy_website_text_register_datalist = "<li>item 1</li><li>item 2</li><li>item 3</li><li>item 4</li><li>item 5</li>";
-$privacy_cookies_head = "";
-$privacy_cookies_text_01 = "";
-$privacy_cookies_text_02 = "";
-$privacy_cookies_text_use_datalist = "";
-$privacy_uploadeddata_head = "";
-$privacy_uploadeddata_text = "";
-$privacy_uploadeddata_datalist = "<li>Location of the measurement</li><li>Speed</li><li>Time and Date</li><li>various parameters of your cars engine</li>";
+$privacy_website_head = "Gesammelte Daten in dieser Webseite";
+$privacy_website_text_01 = "Beim Benutzen dieser Webseite werden die folgenden Daten gesammelt und für einen Zeitraum von XXX YYY gespeichert.";
+$privacy_website_text_02 = "Bei der Registrierung auf unserer Webseite werden die folgenden Informationen gesammelt und gespeichert, bis du deinen Benutzernamen löschst.";
+$privacy_website_text_03 = "Du kannst deinen Benutzernamen löschen (mit Löschen meinen wir Löschen, das kann nicht rückgängig gemacht werden) und die Daten die damit zusammenhängen, wann immer du willst. Lese die FAQ, wenn du erfahren willst, wie du deine Daten und deinen Benutzernamen löschst.";
+$privacy_website_text_use_datalist = "<li>Deine IP-Adresse im Zugangs- und Fehler-Protokoll unseres Servers</li>";
+$privacy_website_text_register_datalist = "<li>Der gewählte Benutzername</li><li>Die angegebene E-Mail-Adresse</li><li>Das angegebene Passwort</li><li>Der Benutzername der Personen, die deinen Benutzernamen als Freund hinzugefügt haben</li><li>Der Benutzername der Personen, die du als Freund hinzugefügt hast</li><li>Der Name der Gruppen, deren Mitglied du geworden bist</li>";
+$privacy_cookies_head = "Nutzung von Cookies";
+$privacy_cookies_text_01 = "Durch die Nutzung dieser Webseite erklärst du dich mit der Nutzung von Cookies einverstanden. Diese sind nötig, um das Einloggen für den Service und die Sprachauswahl zu ermöglichen. Der Cookie speichert:";
+$privacy_cookies_text_02 = "Wir versprechen, dass wir die Cookies nicht zu Verfolgungszwecken verwenden. Unsere Cookies sind für die Dauer einer (1) Browsersitzung gültig. Dadurch ist es möglich, dass unsere Webseite dich nach dem Logout und Neustarten des Browsers nicht wiedererkennt.";
+$privacy_cookies_text_use_datalist = "<li>Eine Kombination aus Zahlen und Buchstaben, um dich zu identifizieren</li>";
+$privacy_uploadeddata_head = "Wenn du dich dazu entscheidest, Daten zu unserem Service hochzuladen:";
+$privacy_uploadeddata_text = "Wir werden die folgenden Daten, die du uns zur Verfügung stellst, sammeln und speichern:";
+$privacy_uploadeddata_datalist = "<li>Ort der Messung</li><li>Geschwindigkeit</li><li>Zeit und Datum</li><li>Verschiedene Parameter deines Automotors</li>";
 ?>

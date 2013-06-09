@@ -45,7 +45,7 @@ include('header.php');
   		}
 
   		function addGroupActivities(actionImg, friendImg, id, titel, date){
-      		$('#groupActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/><br><div><? echo $created ?>: '+date+'</div></li>');
+      		$('#groupActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/><br><div>'+date+'</div></li>');
     	}
 
 
@@ -96,13 +96,19 @@ include('header.php');
 		            for(i = 0; i < data.activities.length; i++){
 		              	var activity = data.activities[i];
 		              	if(activity.type == "JOINED_GROUP"){
-		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_GROUP"){
-		                	addGroupActivities("./assets/img/person.svg","./assets/img/user.jpg", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "FRIENDED_USER"){
 		                	addGroupActivities("http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.other.name+"/avatar?size=30", "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_TRACK"){
 		                	addGroupActivities("./assets/img/route.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
+		              	}else if(activity.type == "LEFT_GROUP"){
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "group.php?group="+activity.group.name, "<? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		              	}else if(activity.type == "CHANGED_PROFILE"){
+		                	addGroupActivities("./assets/img/person.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "profile.php?user="+activity.user.name, '<? echo $changed." ".$profile?>', convertToLocalTime(activity.time));
+		              	}else if(activity.type == "CHANGED_GROUP"){
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg","http://giv-car.uni-muenster.de:8080/stable/rest/users/"+activity.user.name+"/avatar?size=30", "group.php?group="+activity.group.name, "<? echo $changed ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}
 		            }
 		        }else{
