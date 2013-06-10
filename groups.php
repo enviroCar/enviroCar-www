@@ -72,7 +72,7 @@ if(isset($_GET['group_deleted'])){
 		});
 
 		function validateInput(input){
-			re = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
+			re = /[&=`\[\]"'<>\/]/;
 			return re.test(input);
 		}
 
