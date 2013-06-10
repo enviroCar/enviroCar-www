@@ -9,8 +9,8 @@ include('header.php');
 <script type="text/javascript">
   var loading = true;
 
-	function addPhenomenonStatistics(name, avg){
-      $('#phenomenonStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+': &Oslash;  '+Math.round(avg*100)/100);
+	function addPhenomenonStatistics(name, avg, unit){
+      $('#phenomenonStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>&Oslash;  '+name+':  '+Math.round(avg*100)/100+" "+unit);
   }
 
   function addOverallStatistics(name, value){
@@ -57,7 +57,7 @@ include('header.php');
               loading = false;
             }
             for(i = 0; i < data.statistics.length; i++){
-               addPhenomenonStatistics(data.statistics[i].phenomenon.name, data.statistics[i].avg);
+               addPhenomenonStatistics(data.statistics[i].phenomenon.name, data.statistics[i].avg, data.statistics[i].phenomenon.unit);
             }
 
           }else{
@@ -87,7 +87,7 @@ include('header.php');
       var minutes = parseInt( totalSec / 60 ) % 60;
 
 
-	    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+	    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ (minutes <= 9 ? '0' + minutes : minutes);
 	  }
 
 </script>

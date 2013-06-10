@@ -103,7 +103,7 @@ include('header.php');
       var minutes = parseInt( totalSec / 60 ) % 60;
 
 
-      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ (minutes <= 9 ? '0' + minutes : minutes);
     }
 
   function addRouteInformation(name, start, end){
@@ -249,7 +249,7 @@ include('header.php');
       data = JSON.parse(data);
 
       for(i = 0; i < data.statistics.length; i++){
-        $('#routeStatistics').append('<p>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p');
+        $('#routeStatistics').append('<p>&Oslash;  '+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+'  '+data.statistics[i].phenomenon.unit+'</p');
       }
       
     }
