@@ -29,7 +29,7 @@ $('#myTab a:last').tab('show');
     <div class="tab-content">
 	
       <div class="tab-pane fade in active" id="main">
-	  <div class="container leftband"  style="padding-right:20px">
+	  <div class="container leftband"  style="padding-right:20px; padding-top:20px">
 	<div class="row-fluid">
         <div class="span9 offset1 ">
             <ul id="recentActivities" style="margin-bottom: 10px; overflow-y:auto">
@@ -39,7 +39,7 @@ $('#myTab a:last').tab('show');
         </div> </div></div>
 		 
 		
-<div class="container rightband" style="padding-left:20px">
+<div class="container rightband" style="padding-left:20px; padding-top:20px">
  <div class="row-fluid">
  		<div class="span9 offset1">
 		<div class="customLi"><h3 id="what">What is EnviroCar?</h3>
@@ -64,7 +64,7 @@ $('#myTab a:last').tab('show');
          </div>    
          </div>
 		 
-<div class="container leftband" style="padding-right:20px">
+<div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
  <div class="row-fluid">
  		<div class="span9 offset1">
 		<div class="customLi"><h3 id="how">How EnviroCar works?</h3>
@@ -85,7 +85,7 @@ $('#myTab a:last').tab('show');
    <!--end of div id="main"-->
      
 	 <div class="tab-pane fade in " id="mobile">
-	  <div class="container leftband" style="padding-right:20px">
+	  <div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
 	<div class="row-fluid">
         <div class="span9 offset1 ">
             <ul id="recentActivities" style="margin-bottom: 10px; overflow-y:auto">
@@ -98,7 +98,7 @@ $('#myTab a:last').tab('show');
 		</div>
 		</div>
 	 		
-		<div class="container rightband" style="padding-left:20px">
+		<div class="container rightband" style="padding-left:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h2 id="reg">Registration</h2>
@@ -111,7 +111,7 @@ $('#myTab a:last').tab('show');
 			   </div>    
             </div>    
          </div>
-		<div class="container leftband" style="padding-right:20px">
+		<div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><a id="down">Downloading</a>
@@ -124,7 +124,7 @@ $('#myTab a:last').tab('show');
 			   </div>    
             </div>    
          </div>
-		<div class="container rightband" style="padding-left:20px">
+		<div class="container rightband" style="padding-left:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><a id="sync">synchronization</a>
@@ -142,7 +142,7 @@ $('#myTab a:last').tab('show');
      <!--end of div id="mobile"-->
 	  <div class="tab-pane fade in " id="website">
 	  
-	   <div class="container leftband" style="padding-right:20px">
+	   <div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
 	<div class="row-fluid">
         <div class="span9 offset1 ">
             <ul id="recentActivities" style="margin-bottom: 10px; overflow-y:auto">
@@ -156,7 +156,7 @@ $('#myTab a:last').tab('show');
 		  </ul>
         </div> </div></div>
 	  
-	  		<div class="container rightband" style="padding-left:20px">
+	  		<div class="container rightband" style="padding-left:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h3 id="sign">How to Registar and Sign In ?</h3>
@@ -187,7 +187,7 @@ $('#myTab a:last').tab('show');
 			   </div>    
             </div>    
          </div>
-		<div class="container leftband" style="padding-right:20px">
+		<div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h3 id="compare">How to Compare your Data?</h3>
@@ -200,7 +200,7 @@ $('#myTab a:last').tab('show');
 			   </div>    
             </div>    
          </div>
-		<div class="container rightband" style="padding-left:20px">
+		<div class="container rightband" style="padding-left:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h3 id="share">How to share your data?</h3>
@@ -214,7 +214,7 @@ $('#myTab a:last').tab('show');
             </div>    
          </div>
 	
-	  <div class="container leftband" style="padding-right:20px">
+	  <div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h3 id="Cookies">Why does this website use cookies?</h3>
@@ -251,12 +251,12 @@ $('#myTab a:last').tab('show');
 			   </div>    
             </div>    
          </div>
-		 <div class="container rightband" style="padding-left:20px">
+		 <div class="container rightband" style="padding-left:20px; padding-top:20px">
 			<div class="row-fluid">
 				<div class="span9 offset1">
 				<div class="customLi"><h3 id="lang">Which are the supported languages?</h3>
 					<p style="text-align: justify; font-size:14px;">  
-						1- Until Now; we support two languages in ower website: English and German languages.
+						1- Until Now; Envirocar supports two languages in ower website: English and German languages.
 						2- You can toggle between the languages by preesing the flags as seen in the picture below.
 						</br>
 						<img src="./assets/img/languages.jpg" height="400" width="600" /></br>
@@ -272,7 +272,7 @@ $('#myTab a:last').tab('show');
       <!--end of div id="website"-->
 	  <div class="tab-pane fade in " id="faqs">
 	  
-	  <div class="container leftband" style="padding-right:20px">
+	  <div class="container leftband" style="padding-right:20px; padding-top:20px">
 	<div class="row-fluid">
         <div class="span9 offset1 ">
             <ul id="recentActivities" style="margin-bottom: 10px; overflow-y:auto">
@@ -293,7 +293,7 @@ $('#myTab a:last').tab('show');
        	</div>
 		</div> 
 	  		</div>
- <div class="container rightband" style="padding-left:20px">
+ <div class="container rightband" style="padding-left:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q1">How does it work?</strong>
@@ -307,7 +307,7 @@ $('#myTab a:last').tab('show');
          </div>    
          </div>
 		 
-<div class="container leftband" style="padding-right:20px">
+<div class="container leftband" style="padding-right:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q2">How to get started? What are the requirements?</strong>
@@ -322,7 +322,7 @@ $('#myTab a:last').tab('show');
 		 
 	  
 	  
-<div class="container rightband" style="padding-left:20px">
+<div class="container rightband" style="padding-left:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q3">Which OBD-II adapters are compatible with enviroCar?</strong>
@@ -340,7 +340,7 @@ Also one very important fact about OBD-II use adapters in Germany: It’s only a
          </div>    
          </div>
 		 
-<div class="container leftband" style="padding-right:20px">
+<div class="container leftband" style="padding-right:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q4">Is my car supported?</strong>
@@ -358,7 +358,7 @@ Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/5
 	  
 	  
 	 
-	<div class="container rightband" style="padding-left:20px">
+	<div class="container rightband" style="padding-left:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q5">Why do we need Indiegogo backers? </strong>
@@ -378,7 +378,7 @@ Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/5
          </div>    
          </div>
 		 
-<div class="container leftband" style="padding-right:20px">
+<div class="container leftband" style="padding-right:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q6">What’s about privacy and security?</strong>
@@ -395,7 +395,7 @@ Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/5
 	  
 	 
 
-	<div class="container rightband" style="padding-left:20px">
+	<div class="container rightband" style="padding-left:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q7"> I’m a developer and very interested in this project. Is there a way to make some further implementations?</strong>
@@ -409,7 +409,7 @@ Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/5
          </div>    
          </div>
 		 
-		<div class="container leftband" style="padding-right:20px">
+		<div class="container leftband" style="padding-right:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q8">What’s next?</strong>
@@ -424,7 +424,7 @@ Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/5
 	  
 	  
 
-	<div class="container rightband" style="padding-left:20px">
+	<div class="container rightband" style="padding-left:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q9"> When enviroCar will be published?</strong>
@@ -440,7 +440,7 @@ We plan to release enviroCar with the end of XXX. Please be patient and look for
          </div>
 
 		 
-	  <div class="container leftband" style="padding-right:20px">
+	  <div class="container leftband" style="padding-right:20px; padding-top:20px">
  <div class="row-fluid">
 		<div class="span9 offset1">
 	  		<div class="customLi"><strong style="font-size:14" id="q10">Can we ship to your country?</strong>
