@@ -28,7 +28,10 @@ require_once('assets/includes/connection.php');
 
   function getUserGroups(){
     $.get('./assets/includes/users.php?groupsOf='+user, function(data) {
-      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+      if(data == 400){
+          alert("<? echo $userNotExist ?>");
+          window.location.href="dashboard.php";
+      }else if(data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Groups couldn't be loaded successfully.");
       }else{
         data = JSON.parse(data);

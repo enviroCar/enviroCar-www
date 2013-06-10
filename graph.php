@@ -32,7 +32,7 @@ include('header.php');
 		var hours = parseInt( totalSec / 3600 ) % 24;
 		var minutes = parseInt( totalSec / 60 ) % 60;
 
-		return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
+		return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ (minutes <= 9 ? '0' + minutes : minutes);
 	}
 	
 	google.load("visualization", "1", {packages:["corechart"]});

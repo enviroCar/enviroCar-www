@@ -37,7 +37,7 @@ if ($login_name != "" && $login_password != ""){
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <style>
       body {

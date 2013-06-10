@@ -139,6 +139,8 @@ $deleted = "Löschte";
 $changed = "Veränderte";
 $updated =" Aktualisierte";
 
+$userNotExist = "Der angeforderte Benutzer existiert nicht...";
+
 $activityerror ="Activitäten konnten nicht geladen werden.";
 $creategrouperror ="Gruppe konnte nicht erstellt werden.";
 $invalidCharacterError ="Es befinden sich unerlaubte Zeichen in der Eingabe.";
