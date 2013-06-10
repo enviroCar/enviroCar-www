@@ -135,6 +135,8 @@ $deleted = "Deleted";
 $changed = "Changed";
 $updated = "Updated";
 
+$userNotExist = "The requested user doesn't exist...";
+
 $activityerror ="Activities couldn't be loaded successfully.";
 $creategrouperror ="Group couln\'t be created.";
 $invalidCharacterError ="Invalid characters in name or description";
