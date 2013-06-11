@@ -86,7 +86,9 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <img src="./assets/img/enviroCar_Icon_13-06-08_50x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="">
+          <a class="brand" href="index.php">
+		  <img src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
+          </a>
       <?
         if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
         }else{
@@ -94,7 +96,6 @@ function echoActiveClassIfRequestMatches($requestUri)
         }
       ?>
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
-          <a class="brand" href="index.php"><b>enviroCar</b></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>

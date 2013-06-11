@@ -87,8 +87,9 @@ if ($login_name != "" && $login_password != ""){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="./assets/img/enviroCar_Icon_13-06-08_50x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="">
-          <a class="brand" href="index.php"><? echo $envirocar ?></a>
+          <a class="brand" href="index.php">
+          <img src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
+          </a>
           <?
             if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
             }else{
