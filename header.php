@@ -86,7 +86,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="">
+		  <img src="./assets/img/enviroCar_Icon_13-06-08_50x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="">
       <?
         if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
         }else{
