@@ -160,4 +160,12 @@ $privacy_cookies_text_use_datalist = "<li>Eine Kombination aus Zahlen und Buchst
 $privacy_uploadeddata_head = "Wenn du dich dazu entscheidest, Daten zu unserem Service hochzuladen:";
 $privacy_uploadeddata_text = "Wir werden die folgenden Daten, die du uns zur Verfügung stellst, sammeln und speichern:";
 $privacy_uploadeddata_datalist = "<li>Ort der Messung</li><li>Geschwindigkeit</li><li>Zeit und Datum</li><li>Verschiedene Parameter deines Automotors</li>";
+
+
+$personNotFound = "Die Person konnte nicht gefunden werden.";
+$routeNotFound = "Die Route konnte nicht gefunden werden.";
+$personNotAllowed = "Es ist dir nicht erlaubt, das Profil der Person zu betrachten.";
+$routeNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Route zu betrachten.";
+$personError ="Person konnte nicht erfolgreich geladen werden.";
+$routeError ="Route konnte nicht erfolgreich geladen werden.";
 ?>
