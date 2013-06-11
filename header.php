@@ -86,7 +86,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="index.php">
+          <a class="brand" href="index.php" style="padding:0px;">
 		  <img src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
           </a>
       <?
