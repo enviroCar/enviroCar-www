@@ -149,6 +149,15 @@ if(isset($_GET['userActivities'])){
 	}
 }
 
+if(isset($_GET['friendActivities'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']).'/friendActivities', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 
 
 
