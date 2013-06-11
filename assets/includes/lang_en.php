@@ -57,7 +57,7 @@ $yourstatistics = "Your Statistics";
 $noroutesavailable = "No routes available";
 
 $profile = "Profil";
-$activities = "Activities";
+$activities = "Dashboard";
 $routes = "Routes";
 $friends ="Friends";
 $groups = "Groups";
@@ -159,5 +159,12 @@ $privacy_uploadeddata_head = "If you decide to upload data to our service:";
 $privacy_uploadeddata_text = "We will collect and store the following data you provided to us:";
 $privacy_uploadeddata_datalist = "<li>Location of the measurement</li><li>Speed</li><li>Time and Date</li><li>various parameters of your cars engine</li>";
 
+
+$personNotFound = "The requested person could't be found.";
+$routeNotFound = "The requested route couldn't be found.";
+$personNotAllowed = "You are not allowed to view the requested profile.";
+$routeNotAllowed = "You are not allowed to view the requested route.";
+$personError ="Person couldn't be loaded successfully.";
+$routeError ="Route couldn't be loaded successfully.";
 
 ?>

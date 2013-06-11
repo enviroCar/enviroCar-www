@@ -18,11 +18,61 @@ require_once('assets/includes/connection.php');
   
   function init(){
     user = $_GET(['user']);
+    getUserInfo();
     loggedInUser = '<?php echo $_SESSION["name"] ?>';
     $('#username').html(user);
     getUserFriends();
     getUserGroups();
     getLoggedInUserFriends();
+  }
+
+  function getUserInfo(){
+    $.get('./assets/includes/users.php?user='+user, function(data){
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $personError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $personNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $personNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
+      }else{
+        data = JSON.parse(data);
+        if(data.firstName){
+           $('#userInformation').append('<li>First name: <b>'+data.firstName+'</b></li>');
+           $('#firstName').val(data.firstName);
+         }
+        if(data.lastName){
+           $('#userInformation').append('<li>Last name: <b>'+data.lastName+'</b></li>');
+           $('#lastName').val(data.lastName);
+         }
+        if(data.dayOfBirth){
+           $('#userInformation').append('<li>Birthday: <b>'+data.dayOfBirth+'</b></li>');
+           $('#dayOfBirth').val(data.dayOfBirth);
+         }
+        if(data.location){
+           $('#userInformation').append('<li>Location: <b>'+data.location+'</b></li>');
+           $('#location').val(data.location);
+         }
+        if(data.country){
+           $('#userInformation').append('<li>Country: <b>'+data.country+'</b></li>');
+           $('#country').val(data.country);
+         }
+        if(data.gender){
+           $('#userInformation').append('<li>Gender: <b>'+data.gender+'</b></li>');
+           $('#gender').val(data.gender);
+         }
+        if(data.url){
+           $('#userInformation').append('<li>Website: <b>'+data.url+'</b></li>');
+           $('#url').val(data.url);
+         }
+        if(data.language){
+           $('#userInformation').append('<li>Language: <b>'+data.language+'</b></li>');
+           $('#language').val(data.language);
+         }
+      }
+    });
   }
 
 
@@ -123,6 +173,32 @@ require_once('assets/includes/connection.php');
       });
     }
   }
+
+  function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+      if(n['value'] !== '') indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+  }
+
+  $(function(){
+        $('#changeProfilForm').submit(function(){
+          changeData = getFormData($('#changeProfilForm'));
+          $.post('./assets/includes/users.php?updateUser', changeData, function(response){
+            if(response >= 400){
+              console.log('error');
+            }else{
+              alert("Profile has been changed");
+              window.location.reload()
+            }
+          });
+          return false;
+        });
+    });
   
   $(function () {
     init();
@@ -130,6 +206,30 @@ require_once('assets/includes/connection.php');
 
 </script>
  
+<div id="changeProfil" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Change Profil</h3>
+  </div>
+  <div class="modal-body">
+    <form id="changeProfilForm" action="./assets/includes/users.php?updateUser" method="post">
+      First  Name: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
+      Last Name:<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="Last Name">
+      Country:<input id="country" name="country" type="text" class="input-block-level" placeholder="Country">
+      Location:<input id="location" name="location" type="text" class="input-block-level" placeholder="Location">
+      Website:<input id="url" name="url" type="text" class="input-block-level" placeholder="Website">
+      Birthday:<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
+      Gender:<input id="gender" name="gender" type="text" class="input-block-level" placeholder="Gender">
+      Language:<input id="language" name="language" type="text" class="input-block-level" placeholder="Language">
+      About Me:<input id="aboutMe" name="aboutMe" type="text" class="input-block-level" placeholder="aboutMe">
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
 <div class="container rightband">
   <div class="row-fluid">
     <div class="span4">
@@ -138,9 +238,13 @@ require_once('assets/includes/connection.php');
           <img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=200" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
           <li class="nav-header"></li>
           <li>Username:    <b id="username"></b></li>
+        </ul>
+        <ul id="userInformation" class="nav nav-list">
+        </ul>
+        <ul class="nav nav-list">
           <?
             if($_GET['user'] == $_SESSION['name']){
-              echo '<p><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete my Account &raquo;</a></p>';
+              echo '<p><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete my Account &raquo;</a><a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">Edit &raquo;</a></p>';
             }else{
               echo '<li id="addAsFriendLink"></li>';
             }
@@ -149,7 +253,7 @@ require_once('assets/includes/connection.php');
       </div><!--/.well -->
     </div><!--/span-->
 
-    <div class="span8">
+    <div id="friendsgroups" class="span8">
       <div class="span5">
         <h2>Friends</h2>
         <ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">

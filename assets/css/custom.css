@@ -67,7 +67,10 @@ border-left: 1px solid #048ABF;
 
 h1,h2,h3,h4,h5{
 	font-family:  raleway;
+	position: relative;
 }
+
+h3 span{ position:absolute; top:-50px;} /*fixed header anchor issue*/
 
 .container{
 	background-color: #FFFFFF; 

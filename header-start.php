@@ -87,8 +87,9 @@ if ($login_name != "" && $login_password != ""){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="./assets/img/Logo_icon.svg" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="">
-          <a class="brand" href="index.php"><? echo $envirocar ?></a>
+          <a class="brand" href="index.php" style="padding:0px;">
+          <img src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
+          </a>
           <?
             if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
             }else{
@@ -97,7 +98,7 @@ if ($login_name != "" && $login_password != ""){
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("support_new")?>><a href="support_new.php"><? echo $help ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
             </ul>
 
 

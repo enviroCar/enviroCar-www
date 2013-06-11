@@ -19,6 +19,17 @@ if(isset($_GET['user'])){
 	}
 }
 
+if(isset($_GET['updateUser'])){
+	var_dump($_POST);
+	$changeData = array("firstName" => ''.$_POST['firstName'], "lastName" => ''.$_POST['lastName'], "country" => ''.$_POST['country'], "aboutMe" => ''.$_POST['aboutMe'], "gender" => 'm'); 
+	$response = put_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']), $changeData, true);
+	if($response['status'] == 204){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 if(isset($_GET['users'])){
 	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/', true);
 	if($response['status'] == 200){
