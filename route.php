@@ -224,9 +224,16 @@ include('header.php');
 
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        error_msg("Route couldn't be loaded successfully.");
-        $('#loadingIndicator').hide();
+    if(data >= 400){
+      console.log(data);
+      if(data == 400){
+          error_msg("<? echo $routeError ?>");
+      }else if(data == 401 || data == 403){
+        error_msg("<? echo $routeNotAllowed ?>")
+      }else if(data == 404){
+        error_msg("<? echo $routeNotFound ?>")
+      }
+      $('#loadingIndicator').hide();
     }else{
       geojson_layer.addFeatures(geojson_format.read(data));
       map.zoomToExtent(geojson_layer.getDataExtent());
