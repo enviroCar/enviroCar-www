@@ -57,7 +57,7 @@ $yourstatistics = "Your Statistics";
 $noroutesavailable = "No routes available";
 
 $profile = "Profil";
-$activities = "Activities";
+$activities = "Dashboard";
 $routes = "Routes";
 $friends ="Friends";
 $groups = "Groups";

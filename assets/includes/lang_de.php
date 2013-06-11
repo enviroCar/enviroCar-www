@@ -60,7 +60,7 @@ $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
 
 $profile = "Profil";
-$activities = "Aktivitäten";
+$activities = "Armaturenbrett";
 $routes = "Routen";
 $friends ="Freunde";
 $groups = "Gruppen";
