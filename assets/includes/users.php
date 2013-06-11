@@ -21,7 +21,7 @@ if(isset($_GET['user'])){
 
 if(isset($_GET['updateUser'])){
 	var_dump($_POST);
-	$changeData = array("firstName" => ''.$_POST['firstName'], "lastName" => ''.$_POST['lastName'], "country" => ''.$_POST['country'], "aboutMe" => ''.$_POST['aboutMe'], "gender" => 'm'); 
+	$changeData = array("firstName" => ''.$_POST['firstName'], "lastName" => ''.$_POST['lastName'], "country" => ''.$_POST['country'], "aboutMe" => ''.$_POST['aboutMe'], "gender" => ''.$_POST['gender'], "language" => ''.$_POST['language']); 
 	$response = put_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']), $changeData, true);
 	if($response['status'] == 204){
 		echo $response['response'];
@@ -142,6 +142,15 @@ if(isset($_GET['userStatistics'])){
 
 if(isset($_GET['userActivities'])){
 	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']).'/activities', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friendActivities'])){
+	$response = get_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/'.rawurlencode($_SESSION['name']).'/friendActivities', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{

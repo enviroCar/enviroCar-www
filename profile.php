@@ -47,6 +47,10 @@ require_once('assets/includes/connection.php');
            $('#userInformation').append('<li>Last name: <b>'+data.lastName+'</b></li>');
            $('#lastName').val(data.lastName);
          }
+        if(data.gender){
+           $('#userInformation').append('<li>Gender: <b>'+(data.gender == 'm' ? 'Male':'Female') +'</b></li>');
+           $('#gender').val(data.gender);
+         }
         if(data.dayOfBirth){
            $('#userInformation').append('<li>Birthday: <b>'+data.dayOfBirth+'</b></li>');
            $('#dayOfBirth').val(data.dayOfBirth);
@@ -59,10 +63,6 @@ require_once('assets/includes/connection.php');
            $('#userInformation').append('<li>Country: <b>'+data.country+'</b></li>');
            $('#country').val(data.country);
          }
-        if(data.gender){
-           $('#userInformation').append('<li>Gender: <b>'+data.gender+'</b></li>');
-           $('#gender').val(data.gender);
-         }
         if(data.url){
            $('#userInformation').append('<li>Website: <b>'+data.url+'</b></li>');
            $('#url').val(data.url);
@@ -70,7 +70,10 @@ require_once('assets/includes/connection.php');
         if(data.language){
            $('#userInformation').append('<li>Language: <b>'+data.language+'</b></li>');
            $('#language').val(data.language);
-         }
+        }
+        if(data.aboutMe){
+          $('#aboutMe').val(data.aboutMe);
+        }
       }
     });
   }
@@ -219,8 +222,16 @@ require_once('assets/includes/connection.php');
       Location:<input id="location" name="location" type="text" class="input-block-level" placeholder="Location">
       Website:<input id="url" name="url" type="text" class="input-block-level" placeholder="Website">
       Birthday:<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
-      Gender:<input id="gender" name="gender" type="text" class="input-block-level" placeholder="Gender">
-      Language:<input id="language" name="language" type="text" class="input-block-level" placeholder="Language">
+      Gender:<br>
+      <select id="gender" name="gender">
+        <option value="m">Male</option>
+        <option value="f">Female</option>
+      </select><br>
+      Language:<br>
+      <select id="language" name="language">
+        <option value="de-DE">Deutsch</option>
+        <option value="en-EN">English</option>
+      </select><br>
       About Me:<input id="aboutMe" name="aboutMe" type="text" class="input-block-level" placeholder="aboutMe">
       <input type="submit" class="btn btn-primary">
     </form>
