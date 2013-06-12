@@ -43,6 +43,9 @@ require_once('assets/includes/connection.php');
            $('#userInformation').append('<li>First name: <b>'+data.firstName+'</b></li>');
            $('#firstName').val(data.firstName);
          }
+        if(data.mail){
+           $('#mail').val(data.mail);
+         }
         if(data.lastName){
            $('#userInformation').append('<li>Last name: <b>'+data.lastName+'</b></li>');
            $('#lastName').val(data.lastName);
@@ -188,9 +191,20 @@ require_once('assets/includes/connection.php');
     return indexed_array;
   }
 
+  function validateDate(date){
+    re = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+    return re.test(date);
+  }
+
   $(function(){
         $('#changeProfilForm').submit(function(){
           changeData = getFormData($('#changeProfilForm'));
+          if($('#dayOfBirth').val() != ''){
+            if(!validateDate($('#dayOfBirth').val())){
+              alert("Birthday has to be in the format YYYY-MM-DD");
+              return false;
+            }
+          }
           $.post('./assets/includes/users.php?updateUser', changeData, function(response){
             if(response >= 400){
               console.log('error');
@@ -216,6 +230,7 @@ require_once('assets/includes/connection.php');
   </div>
   <div class="modal-body">
     <form id="changeProfilForm" action="./assets/includes/users.php?updateUser" method="post">
+      Email: <input id="mail" name="mail" type="text" class="input-block-level" placeholder="Email">
       First  Name: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
       Last Name:<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="Last Name">
       Country:<input id="country" name="country" type="text" class="input-block-level" placeholder="Country">
