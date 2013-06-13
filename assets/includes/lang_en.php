@@ -167,4 +167,24 @@ $routeNotAllowed = "You are not allowed to view the requested route.";
 $personError ="Person couldn't be loaded successfully.";
 $routeError ="Route couldn't be loaded successfully.";
 
+
+$firstname = "First name";
+$lastname = "Last name";
+$birthday = "Birthday";
+$gender = "Gender";
+$country = "Country";
+$location = "Location";
+$language = "Language";
+$aboutme ="About me";
+
+
+$addasfriend ="Add as friend";
+$removeasfriend ="Delete as friend";
+
+$close = "Close";
+$male = "male";
+$female ="female";
+
+$deletemyaccount ="Delete account";
+$editaccount = "Edit";
 ?>
