@@ -14,7 +14,8 @@ function get_request($uri, $isAuthRequired){
         curl_setopt_array($ch, array(
             CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
             CURLOPT_RETURNTRANSFER  =>true,
-            CURLOPT_VERBOSE     => 0
+            CURLOPT_VERBOSE     => 0,
+            CURLOPT_CAPATH => wwuca_chain.pem
         ));
     }else{
         curl_setopt_array($ch, array(
