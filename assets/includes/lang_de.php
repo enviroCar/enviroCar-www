@@ -168,6 +168,16 @@ $personNotAllowed = "Es ist dir nicht erlaubt, das Profil der Person zu betracht
 $routeNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Route zu betrachten.";
 $personError ="Person konnte nicht erfolgreich geladen werden.";
 $routeError ="Route konnte nicht erfolgreich geladen werden.";
+$groupNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Gruppe zu betrachten.";
+$groupError ="Gruppe konnte nicht erfolgreich geladen werden.";
+$friendNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Freunde zu betrachten.";
+$friendError ="Freunde konnte nicht erfolgreich geladen werden.";
+$activityNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Aktivitäten zu betrachten.";
+$activityError ="Aktivitäten konnte nicht erfolgreich geladen werden.";
+$groupNotFound = "Die Gruppe konnte nicht gefunden werden.";
+$friendNotFound = "Die Freunde konnte nicht gefunden werden.";
+$activityNotFound = "Die Aktivitäten konnte nicht gefunden werden.";
+
 
 
 $firstname = "Vorname";

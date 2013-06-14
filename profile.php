@@ -84,9 +84,15 @@ require_once('assets/includes/connection.php');
 
   function getUserGroups(){
     $.get('./assets/includes/users.php?groupsOf='+user, function(data) {
-      if(data == 400){
-          alert("<? echo $userNotExist ?>");
-          window.location.href="dashboard.php";
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $groupError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $groupNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $groupNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else if(data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Groups couldn't be loaded successfully.");
       }else{
@@ -104,8 +110,15 @@ require_once('assets/includes/connection.php');
 
   function getLoggedInUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+loggedInUser, function(data) {
-      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          error_msg("Friends couldn't be loaded successfully.");
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $friendError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $friendNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $friendNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
@@ -129,8 +142,15 @@ require_once('assets/includes/connection.php');
 
   function getUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
-      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          error_msg("Friends couldn't be loaded successfully.");
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $friendError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $friendNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $friendNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
