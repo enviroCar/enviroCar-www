@@ -166,5 +166,34 @@ $personNotAllowed = "You are not allowed to view the requested profile.";
 $routeNotAllowed = "You are not allowed to view the requested route.";
 $personError ="Person couldn't be loaded successfully.";
 $routeError ="Route couldn't be loaded successfully.";
+$groupNotAllowed = "You are not allowed to view the requested group.";
+$groupError ="Group couldn't be loaded successfully.";
+$friendNotAllowed = "You are not allowed to view the requested friends.";
+$friendError ="Friends couldn't be loaded successfully.";
+$activityNotAllowed = "You are not allowed to view the requested activities.";
+$activityError ="Activities couldn't be loaded successfully.";
+$groupNotFound = "The requested group couldn't be found.";
+$friendNotFound = "The requested friends couldn't be found.";
+$activityNotFound = "The requested activities couldn't be found.";
 
+
+$firstname = "First name";
+$lastname = "Last name";
+$birthday = "Birthday";
+$gender = "Gender";
+$country = "Country";
+$location = "Location";
+$language = "Language";
+$aboutme ="About me";
+
+
+$addasfriend ="Add as friend";
+$removeasfriend ="Delete as friend";
+
+$close = "Close";
+$male = "male";
+$female ="female";
+
+$deletemyaccount ="Delete account";
+$editaccount = "Edit";
 ?>

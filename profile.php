@@ -40,27 +40,30 @@ require_once('assets/includes/connection.php');
       }else{
         data = JSON.parse(data);
         if(data.firstName){
-           $('#userInformation').append('<li>First name: <b>'+data.firstName+'</b></li>');
+           $('#userInformation').append('<li><? echo $firstname ?>: <b>'+data.firstName+'</b></li>');
            $('#firstName').val(data.firstName);
          }
+        if(data.mail){
+           $('#mail').val(data.mail);
+         }
         if(data.lastName){
-           $('#userInformation').append('<li>Last name: <b>'+data.lastName+'</b></li>');
+           $('#userInformation').append('<li><? echo $lastname ?>: <b>'+data.lastName+'</b></li>');
            $('#lastName').val(data.lastName);
          }
         if(data.gender){
-           $('#userInformation').append('<li>Gender: <b>'+(data.gender == 'm' ? 'Male':'Female') +'</b></li>');
+           $('#userInformation').append('<li><? echo $gender ?>: <b>'+(data.gender == 'm' ? '<? echo $male ?>':'<? echo $female ?>') +'</b></li>');
            $('#gender').val(data.gender);
          }
         if(data.dayOfBirth){
-           $('#userInformation').append('<li>Birthday: <b>'+data.dayOfBirth+'</b></li>');
+           $('#userInformation').append('<li><? echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
            $('#dayOfBirth').val(data.dayOfBirth);
          }
         if(data.location){
-           $('#userInformation').append('<li>Location: <b>'+data.location+'</b></li>');
+           $('#userInformation').append('<li><? echo $location ?>: <b>'+data.location+'</b></li>');
            $('#location').val(data.location);
          }
         if(data.country){
-           $('#userInformation').append('<li>Country: <b>'+data.country+'</b></li>');
+           $('#userInformation').append('<li><? echo $country ?>: <b>'+data.country+'</b></li>');
            $('#country').val(data.country);
          }
         if(data.url){
@@ -68,7 +71,7 @@ require_once('assets/includes/connection.php');
            $('#url').val(data.url);
          }
         if(data.language){
-           $('#userInformation').append('<li>Language: <b>'+data.language+'</b></li>');
+           $('#userInformation').append('<li><? echo $language ?>: <b>'+data.language+'</b></li>');
            $('#language').val(data.language);
         }
         if(data.aboutMe){
@@ -81,9 +84,15 @@ require_once('assets/includes/connection.php');
 
   function getUserGroups(){
     $.get('./assets/includes/users.php?groupsOf='+user, function(data) {
-      if(data == 400){
-          alert("<? echo $userNotExist ?>");
-          window.location.href="dashboard.php";
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $groupError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $groupNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $groupNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else if(data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Groups couldn't be loaded successfully.");
       }else{
@@ -101,23 +110,30 @@ require_once('assets/includes/connection.php');
 
   function getLoggedInUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+loggedInUser, function(data) {
-      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          error_msg("Friends couldn't be loaded successfully.");
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $friendError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $friendNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $friendNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
           for(i = 0; i < data.users.length; i++){
             if(user == data.users[i].name){
-              $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
+              $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();"><? echo $removeasfriend ?></a>');
               break;
             }
             else{ 
-              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
+              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><? echo $addasfriend ?></a>');
             }
           }
         }
         else{ 
-              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
+              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><? echo $addasfriend ?></a>');
         }
 
       }
@@ -126,8 +142,15 @@ require_once('assets/includes/connection.php');
 
   function getUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
-      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          error_msg("Friends couldn't be loaded successfully.");
+      if(data >= 400){
+        if(data == 400){
+          error_msg("<? echo $friendError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $friendNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $friendNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
@@ -147,7 +170,7 @@ require_once('assets/includes/connection.php');
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Friend couldn't be removed.");
         }else{
-          $('#addAsFriendLink').html('<a href="javascript:addAsFriend();">Add as Friend</a>');
+          $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><? echo $addasfriend ?></a>');
         }
       });
   }
@@ -158,7 +181,7 @@ require_once('assets/includes/connection.php');
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Friend couldn't be added successfully.");
         }else{
-          $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();">Remove as Friend</a>');
+          $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();"><? echo $removeasfriend ?></a>');
         }
       });
   }
@@ -188,9 +211,20 @@ require_once('assets/includes/connection.php');
     return indexed_array;
   }
 
+  function validateDate(date){
+    re = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+    return re.test(date);
+  }
+
   $(function(){
         $('#changeProfilForm').submit(function(){
           changeData = getFormData($('#changeProfilForm'));
+          if($('#dayOfBirth').val() != ''){
+            if(!validateDate($('#dayOfBirth').val())){
+              alert("Birthday has to be in the format YYYY-MM-DD");
+              return false;
+            }
+          }
           $.post('./assets/includes/users.php?updateUser', changeData, function(response){
             if(response >= 400){
               console.log('error');
@@ -216,23 +250,24 @@ require_once('assets/includes/connection.php');
   </div>
   <div class="modal-body">
     <form id="changeProfilForm" action="./assets/includes/users.php?updateUser" method="post">
-      First  Name: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
-      Last Name:<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="Last Name">
-      Country:<input id="country" name="country" type="text" class="input-block-level" placeholder="Country">
-      Location:<input id="location" name="location" type="text" class="input-block-level" placeholder="Location">
+      Email: <input id="mail" name="mail" type="text" class="input-block-level" placeholder="Email">
+      <? echo $firstname ?>: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
+      <? echo $lastname ?>:<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="Last Name">
+      <? echo $country ?>:<input id="country" name="country" type="text" class="input-block-level" placeholder="Country">
+      <? echo $location ?>:<input id="location" name="location" type="text" class="input-block-level" placeholder="Location">
       Website:<input id="url" name="url" type="text" class="input-block-level" placeholder="Website">
-      Birthday:<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
-      Gender:<br>
+      <? echo $birthday ?>:<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
+      <? echo $gender ?>:<br>
       <select id="gender" name="gender">
-        <option value="m">Male</option>
-        <option value="f">Female</option>
+        <option value="m"><? echo $male ?></option>
+        <option value="f"><? echo $female ?></option>
       </select><br>
-      Language:<br>
+      <? echo $language ?>:<br>
       <select id="language" name="language">
         <option value="de-DE">Deutsch</option>
         <option value="en-EN">English</option>
       </select><br>
-      About Me:<input id="aboutMe" name="aboutMe" type="text" class="input-block-level" placeholder="aboutMe">
+      <? echo $aboutme ?>:<input id="aboutMe" name="aboutMe" type="text" class="input-block-level" placeholder="aboutMe">
       <input type="submit" class="btn btn-primary">
     </form>
   </div>
@@ -255,7 +290,7 @@ require_once('assets/includes/connection.php');
         <ul class="nav nav-list">
           <?
             if($_GET['user'] == $_SESSION['name']){
-              echo '<p><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete my Account &raquo;</a><a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">Edit &raquo;</a></p>';
+              echo '<p><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete Account &raquo;</a><a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">Edit &raquo;</a></p>';
             }else{
               echo '<li id="addAsFriendLink"></li>';
             }
@@ -266,12 +301,12 @@ require_once('assets/includes/connection.php');
 
     <div id="friendsgroups" class="span8">
       <div class="span5">
-        <h2>Friends</h2>
+        <h2><? echo $friends ?></h2>
         <ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
         </ul>
       </div>
       <div id="groups" class="span5">
-        <h2>Groups</h2>
+        <h2><? echo $groups ?></h2>
       </div>
     </div>
   </div>
