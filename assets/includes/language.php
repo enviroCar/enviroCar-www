@@ -10,7 +10,7 @@
 //Second: Look if BrowserChoice has been overridden By User input
 if(isSet($_GET['lang'])){
 
-	if ($_GET['lang'] == "" || in_array(strtolower (join ('-', $_GET['lang'])), $allowed_languages)==false) break 1;
+	if ($_GET['lang'] == "" || in_array(strtolower (join ('-', $_GET['lang'])), $allowed_langs)==false) break;
 	
 	$lang = $_GET['lang'];
 
