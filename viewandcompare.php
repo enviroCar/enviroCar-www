@@ -7,62 +7,93 @@ include('header.php');
 </div>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="./assets/js/geojsontools.js"></script>
-
-<div class="container">
+    <script src="js/bootstrap-select.js" type="text/javascript"></script>
+ 
+<div class="container leftband">
  <div class="span5 offset6">
   <div class="btn-group" style="float:right">
-  	  <button class="btn dropdown-toggle" data-toggle="dropdown"  >Friends to Compare with <span class="caret"></span>
+  	  <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong>Pick Friends to Compare with..</strong> <span class="caret"></span>
 		  </button>
-		  <ul id="sensorsDropdown" class="dropdown-menu" style=" max-height: 400px; overflow-y: scroll;">
+		  <ul id="sensorsDropdown" class="dropdown-menu" style=" max-height: 300px; width:200px; overflow-y: scroll;">
 
 		  </ul>
 		</div>
 		</div>
  </div>
-<div class="container rightband">
+
+ <div class="container rightband">
  
   <div class="span5">
     <div style="max-height:400px; overflow:auto;">
-      <div id="routeInformation"></div>
-      <div id="routeStatistics"></div>
+      <div id="userStatistics">
+	  <p style="font-size:25px">Statistics of  <? echo $_SESSION['name'] ?> :</p> 
+	  </div>
+	  
     </div>
 
  <!--   <div id="furtherInformation"></div> -->
 
           
   </div>
-  <div class="span5">
-   <h3> Friend Statistics Data</h3>          
-  </div>
+  <div class="span5" >
+   <div id ="friendStatistics" style="font-size:25px"> </div> 
+	<div id="fStatistics"></div>
+   </div>
    </div>
 <div class="container leftband">
        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+	   
 </div>
 
 <script type="text/javascript">
 
-  function addFriendActivities(actionImg, friendImg, id, titel){
-      $('#sensorsDropdown').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/></li>');
-    }
-  		function addFriendToList(name){
-  			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#sensorsDropdown').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="javascript:addRoutes2('+name+')">'+name+'</a></li>');
-  		}
 
-  		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
-	      	if(data >= 400){
+  	var values = [];
+	var values2=[];
+
+$(function(){
+  
+  $(".dropdown-menu li a").click(function(){
+    $('#friendStatistics').text("");
+	$('#fStatistics').text("");
+    $(".btn:first-child").text('Your choice is : '+$(this).text());
+     $(".btn:first-child").val($(this).text());
+	 $('#friendStatistics').append('Statistics of '+$(this).text()+' :');
+	 name2=$(this).text();
+	
+	$.get('assets/includes/users.php?userStatistics='+$_GET['name2'], function(data) {
+    if(data == 200){
+        error_msg("user statistics couldn't be loaded successfully3");
+    }else{
+      data = JSON.parse(data);
+      for(i = 0; i < data.statistics.length; i++)
+{
+        $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name2+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+	    values2[i]= Math.round(data.statistics[i].avg*100)/100;
+	  }
+ 
+    }
+  });
+  });
+  });
+
+
+  $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
+	  	if(data >= 400){
 	          error_msg("Friends couldn't be loaded successfully.");
 	      	}else{
 		        data = JSON.parse(data);
 		        if(data.users.length > 0 ){
 		        	for(i = 0; i < data.users.length; i++){
-		            	addFriendToList(data.users[i].name);
+		            	//addFriendToList(data.users[i].name);
+				 $('#sensorsDropdown').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+data.users[i].name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="javascript:addRoutes2('+data.users[i].name+')">'+data.users[i].name+'</a></li>');
+
 		          	}
 		        }
 	      	}
 	  	});
 		
-  (function(){
+			(function(){
     var s = window.location.search.substring(1).split('&');
       if(!s.length) return;
         var c = {};
@@ -98,47 +129,31 @@ include('header.php');
     }
 
 
-function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p>');
-  }
-  
- //GET the information about the specific track
-
-  $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        error_msg("Route couldn't be loaded successfully.1");
-        $('#loadingIndicator').hide();
-    }else{
-      data = JSON.parse(data);
-	  addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
-      $('#loadingIndicator').hide();
-    }
-    
-  });
-  	var values = [];
-//  		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
- $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        error_msg("Route couldn't be loaded successfully.2");
+	$.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
+    if(data == 200){
+        error_msg("user statistics couldn't be loaded successfully.2");
     }else{
       data = JSON.parse(data);
       for(i = 0; i < data.statistics.length; i++){
-        $('#routeStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
-	values[i]= Math.round(data.statistics[i].avg*100)/100;
+        $('#userStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+	    values[i]= Math.round(data.statistics[i].avg*100)/100;
+      $('#loadingIndicator').hide();
 
 	  }
-      
+ 
     }
     
   });
+  
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
+
       function drawChart() 
 	  {
 	  var data = new google.visualization.DataTable();
 			data.addColumn('string','Measurement');
 			data.addColumn('number', 'values');
-		//	data.addColumn('number', 'user2');
+			data.addColumn('number', 'values');
 
 			data.addRows(4);
 			data.setValue(0, 0, 'MAF');
@@ -149,6 +164,8 @@ function addRouteInformation(name, start, end){
 	 for(i = 0; i < 4; i++)
 			{	       
 			data.setValue(i, 1, values[i]);
+		    data.setValue(i, 2, values2[i]);
+
 			}
  
         var options = {
@@ -159,6 +176,7 @@ function addRouteInformation(name, start, end){
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+
     </script>
 
 
