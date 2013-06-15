@@ -51,9 +51,42 @@ include('header.php');
   	var values = [];
 	var values2=[];
 
+google.load("visualization", "1", {packages:["corechart"]});
+function drawChart() 
+	  {
+	  var data = new google.visualization.DataTable();
+			data.addColumn('string','Measurement');
+			data.addColumn('number', 'user1');
+			data.addColumn('number', 'user2');
+
+			data.addRows(4);
+			data.setValue(0, 0, 'MAF');
+			data.setValue(1, 0, 'Speed');
+			data.setValue(2, 0, 'CO2');
+			data.setValue(3, 0, 'Consumption');
+			
+	 for(i = 0; i < 4; i++)
+			{	       
+			data.setValue(i, 1, values[i]);
+		    data.setValue(i, 2, values2[i]);
+
+			}
+ 
+        var options = {
+          title: 'Statistics',
+          vAxis: {title: '',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      };
+
+	
+	
 $(function(){
   
-  $(".dropdown-menu li a").click(function(){
+  $(".dropdown-menu li a").click(function()
+  {
     $('#friendStatistics').text("");
 	$('#fStatistics').text("");
     $(".btn:first-child").text('Your choice is : '+$(this).text());
@@ -74,7 +107,12 @@ $(function(){
  
     }
   });
+  google.setOnLoadCallback(drawChart());
+
   });
+
+
+  
   });
 
 
@@ -145,38 +183,6 @@ $(function(){
     
   });
   
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-
-      function drawChart() 
-	  {
-	  var data = new google.visualization.DataTable();
-			data.addColumn('string','Measurement');
-			data.addColumn('number', 'values');
-			data.addColumn('number', 'values');
-
-			data.addRows(4);
-			data.setValue(0, 0, 'MAF');
-			data.setValue(1, 0, 'Speed');
-			data.setValue(2, 0, 'CO2');
-			data.setValue(3, 0, 'Consumption');
-			
-	 for(i = 0; i < 4; i++)
-			{	       
-			data.setValue(i, 1, values[i]);
-		    data.setValue(i, 2, values2[i]);
-
-			}
- 
-        var options = {
-          title: 'Statistics',
-          vAxis: {title: '',  titleTextStyle: {color: 'red'}}
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-
     </script>
 
 
