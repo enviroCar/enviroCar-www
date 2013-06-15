@@ -9,15 +9,14 @@
 
 //Second: Look if BrowserChoice has been overridden By User input
 if(isSet($_GET['lang'])){
-
-	if ($_GET['lang'] == "" || in_array(strtolower (join ('-', $_GET['lang'])), $allowed_langs)==false) break;
+	if ($_GET['lang'] != "" || in_array(strtolower (join ('-', $_GET['lang'])), $allowed_langs)==true){
 	
-	$lang = $_GET['lang'];
+		$lang = $_GET['lang'];
 
-	if (!isset($_SESSION)) session_start();
-	// register the session and set the cookie
-	$_SESSION['lang'] = $lang;
-
+		if (!isset($_SESSION)) session_start();
+		// register the session and set the cookie
+		$_SESSION['lang'] = $lang;
+	}
 }
 else if(isSet($_SESSION['lang'])){
 	$lang = $_SESSION['lang'];
