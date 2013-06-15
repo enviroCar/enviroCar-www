@@ -9,6 +9,9 @@
 
 //Second: Look if BrowserChoice has been overridden By User input
 if(isSet($_GET['lang'])){
+
+	if ($_GET['lang'] == "" || in_array(strtolower (join ('-', $_GET['lang'])), $allowed_languages)==false) break 1;
+	
 	$lang = $_GET['lang'];
 
 	if (!isset($_SESSION)) session_start();
