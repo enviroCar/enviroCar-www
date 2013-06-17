@@ -13,26 +13,26 @@ include('header.php');
 
 <div class="container rightband" style="padding-right: 0px">
 
-	<div>
-		<div class="btn-group" style="float:right">
-		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
-			<span class="caret"></span>
-		  </button>
-		  <ul id="sensorsDropdown" class="dropdown-menu">
+  <div>
+    <div class="btn-group" style="float:right">
+      <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
+      <span class="caret"></span>
+      </button>
+      <ul id="sensorsDropdown" class="dropdown-menu">
 
-		  </ul>
-		</div>
-	</div>
+      </ul>
+    </div>
+  </div>
 
-	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
-	</div>
+  <div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
+  </div>
 </div>
 
 <style type="text/css">
-	.olControlAttribution{
-		bottom:0px;
+  .olControlAttribution{
+    bottom:0px;
 
-	}
+  }
 </style>
 
 <script type="text/javascript">
@@ -87,10 +87,11 @@ var chosensensor = null;
     map.addPopup(popup);
 
     function getContent(){
-      var output = "<b>"+convertToLocalTime(feature.attributes.time)+"</b><br>";
-      for(property in feature.attributes.phenomenons){
-        output += property+": "+feature.attributes.phenomenons[property].value+"<br>";
-      }
+      var output = "";
+      output += "<b>Speed: </b>"+feature.attributes.Speed+"Km/h<br>";
+      output += "<b>CO2: </b>"+feature.attributes.CO2+"g/s<br>";
+      output += "<b>OSM Id: </b>"+feature.attributes.osm_id+"<br>";
+
       return output;
     }
 
@@ -180,8 +181,8 @@ var chosensensor = null;
       })
       }
     );
-  	geojson_layer.styleMap = style;
-  	geojson_layer.redraw();
+    geojson_layer.styleMap = style;
+    geojson_layer.redraw();
   }
 
   function getPointColor(property){
