@@ -24,16 +24,10 @@ include('header.php');
  <div class="container rightband">
  
   <div class="span5">
-    <div style="max-height:400px; overflow:auto;">
-      <div id="userStatistics">
+      <div id="userStatistics" style="max-height:400px; overflow:auto;">
 	  <p style="font-size:25px">Statistics of  <? echo $_SESSION['name'] ?> :</p> 
-	  </div>
-	  
-    </div>
-
- <!--   <div id="furtherInformation"></div> -->
-
-          
+	</div>
+        
   </div>
   <div class="span5" >
    <div id ="friendStatistics" style="font-size:25px"> </div> 
@@ -46,10 +40,9 @@ include('header.php');
 </div>
 
 <script type="text/javascript">
-
-
-  	var values = [];
-	var values2=[];
+	var values = new Array();
+	var values2 = new Array();
+  	
 
 google.load("visualization", "1", {packages:["corechart"]});
 function drawChart() 
@@ -69,7 +62,6 @@ function drawChart()
 			{	       
 			data.setValue(i, 1, values[i]);
 		    data.setValue(i, 2, values2[i]);
-
 			}
  
         var options = {
@@ -80,8 +72,6 @@ function drawChart()
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       };
-
-	
 	
 $(function(){
   
@@ -92,29 +82,26 @@ $(function(){
     $(".btn:first-child").text('Your choice is : '+$(this).text());
      $(".btn:first-child").val($(this).text());
 	 $('#friendStatistics').append('Statistics of '+$(this).text()+' :');
-	 name2=$(this).text();
-	
-	$.get('assets/includes/users.php?userStatistics='+$_GET['name2'], function(data) {
+	 fname=$(this).text();
+	//at the get function try to put the value insted !
+	$.get('assets/includes/users.php?userStatistics='+$_GET['fname'], function(data) {
     if(data == 200){
-        error_msg("user statistics couldn't be loaded successfully3");
+        error_msg("friend statistics couldn't be loaded successfully3");
     }else{
       data = JSON.parse(data);
       for(i = 0; i < data.statistics.length; i++)
-{
-        $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name2+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+		{	
+        $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.fname+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 	    values2[i]= Math.round(data.statistics[i].avg*100)/100;
-	  }
+		}
  
     }
-  });
-  google.setOnLoadCallback(drawChart());
+ google.setOnLoadCallback(drawChart());
+
+	});
 
   });
-
-
-  
   });
-
 
   $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
 	  	if(data >= 400){
@@ -123,8 +110,7 @@ $(function(){
 		        data = JSON.parse(data);
 		        if(data.users.length > 0 ){
 		        	for(i = 0; i < data.users.length; i++){
-		            	//addFriendToList(data.users[i].name);
-				 $('#sensorsDropdown').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+data.users[i].name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="javascript:addRoutes2('+data.users[i].name+')">'+data.users[i].name+'</a></li>');
+				 $('#sensorsDropdown').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+data.users[i].name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a>'+data.users[i].name+'</a></li>');
 
 		          	}
 		        }
@@ -145,8 +131,6 @@ $(function(){
   function convertToLocalTime(serverDate) {
       var dt = new Date(Date.parse(serverDate));
       var localDate = dt;
-
-
       var gmt = localDate;
           var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
           var localNow = new Date().getTimezoneOffset(); // get the timezone
@@ -162,7 +146,6 @@ $(function(){
       var hours = parseInt( totalSec / 3600 ) % 24;
       var minutes = parseInt( totalSec / 60 ) % 60;
 
-
       return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
     }
 
@@ -175,17 +158,13 @@ $(function(){
       for(i = 0; i < data.statistics.length; i++){
         $('#userStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 	    values[i]= Math.round(data.statistics[i].avg*100)/100;
-      $('#loadingIndicator').hide();
-
+        $('#loadingIndicator').hide();
 	  }
- 
     }
     
   });
-  
-    </script>
 
-
+  </script>
 <?
 include('footer.php');
 ?>
