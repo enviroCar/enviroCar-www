@@ -17,12 +17,15 @@ function get_request($uri, $isAuthRequired){
             CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
             CURLOPT_RETURNTRANSFER  =>true,
             CURLOPT_VERBOSE     => 0,
-            CURLOPT_CAINFO => "wwuca_chain.pem"
+            CURLOPT_CAINFO => "wwuca_chain.pem",
+            CURLOPT_FOLLOWLOCATION => TRUE
         ));
     }else{
         curl_setopt_array($ch, array(
             CURLOPT_RETURNTRANSFER  =>true,
-            CURLOPT_VERBOSE     => 0
+            CURLOPT_VERBOSE     => 0,
+            CURLOPT_CAINFO => "wwuca_chain.pem",
+            CURLOPT_FOLLOWLOCATION => TRUE
         ));
     }
     
@@ -109,9 +112,7 @@ function delete_request($url){
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'X-User: '.$_SESSION['name'], 
         'X-Token: '.$_SESSION['password'])                                                                       
-    );                                                                                                                   
-     
-
+    );                                                                                                  
     $result = curl_exec($ch);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 

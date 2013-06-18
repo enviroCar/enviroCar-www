@@ -7,8 +7,12 @@ include('header.php');
 
   		function addFriendToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#friendsList').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
+  			$('#friendsList').append('<li class="customLi"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
   		}
+		
+		function getAvatar(name, size){
+			return './assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar?size='+size+'&auth=true';
+		}
 
   		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
 	      	if(data >= 400){

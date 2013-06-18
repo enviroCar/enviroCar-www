@@ -13,32 +13,34 @@ include('header.php');
 
 <div class="container rightband" style="padding-right: 0px">
 
-	<div>
-		<div class="btn-group" style="float:right">
-		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
-			<span class="caret"></span>
-		  </button>
-		  <ul id="sensorsDropdown" class="dropdown-menu">
+  <div>
+    <div class="btn-group" style="float:right">
+      <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
+      <span class="caret"></span>
+      </button>
+      <ul id="sensorsDropdown" class="dropdown-menu">
 
-		  </ul>
-		</div>
-	</div>
+      </ul>
+    </div>
+  </div>
 
-	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
-	</div>
+  <div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
+  </div>
 </div>
 
 <style type="text/css">
-	.olControlAttribution{
-		bottom:0px;
+  .olControlAttribution{
+    bottom:0px;
 
-	}
+  }
 </style>
 
 <script type="text/javascript">
 
 var popup;
 var sensorProperties = Array();
+var statistics = null;
+var chosensensor = null;
 
   (function(){
     var s = window.location.search.substring(1).split('&');
@@ -75,10 +77,6 @@ var sensorProperties = Array();
       return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
     }
 
-  function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p><p><a class="btn" href="graph.php?id='+$_GET(['id'])+'">Graphs</a><a class="btn" href="heatmap.php?id='+$_GET(['id'])+'">Thematic maps</a></p>');
-  }
-
   function onFeatureSelect(feature){
     popup = new OpenLayers.Popup("chicken",
                        feature.geometry.getBounds().getCenterLonLat(),
@@ -89,10 +87,11 @@ var sensorProperties = Array();
     map.addPopup(popup);
 
     function getContent(){
-      var output = "<b>"+convertToLocalTime(feature.attributes.time)+"</b><br>";
-      for(property in feature.attributes.phenomenons){
-        output += property+": "+feature.attributes.phenomenons[property].value+"<br>";
-      }
+      var output = "";
+      output += "<b>Speed: </b>"+feature.attributes.Speed+"Km/h<br>";
+      output += "<b>CO2: </b>"+feature.attributes.CO2+"g/s<br>";
+      output += "<b>OSM Id: </b>"+feature.attributes.osm_id+"<br>";
+
       return output;
     }
 
@@ -106,8 +105,27 @@ var sensorProperties = Array();
 
 
     var map = new OpenLayers.Map('map');
-    var mapnik = new OpenLayers.Layer.OSM();
-    map.addLayer(mapnik);
+
+    var grey = new OpenLayers.Layer.OSM('Simple OSM Map', null, {
+    eventListeners: {
+        tileloaded: function(evt) {
+            var ctx = evt.tile.getCanvasContext();
+            if (ctx) {
+                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
+                var pix = imgd.data;
+                for (var i = 0, n = pix.length; i < n; i += 4) {
+                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
+                }
+                ctx.putImageData(imgd, 0, 0);
+                evt.tile.imgDiv.removeAttribute("crossorigin");
+                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
+            }
+        }
+    }
+  });
+
+    map.addLayer(grey);
+
     map.setCenter(new OpenLayers.LonLat(7.9,51,9) // Center of the map
       .transform(
         new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
@@ -115,87 +133,66 @@ var sensorProperties = Array();
       ),8
     );
     
-  
-  //var styleMap = new OpenLayers.StyleMap({pointRadius: 10});
-  var co2_style = new OpenLayers.StyleMap(
-    { 
-            "default": new OpenLayers.Style({ 
-                fillColor: "${getColor}",
-                strokeWidth: 1,             
-                strokeColor: "#000", 
-                fillOpacity: 1,
-                pointRadius: 10//"${getSize}"
-                //label: "${getLabel}"                  
-            },
-            {
-                context: {
-                    getColor : function (feature) {
-                        return feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF0000' :
-                               feature.attributes.phenomenons.testphenomenon1.value > 10 ? '#FF5A08' :
-                                                                  '#08FF41' ;
-                    },
-          getSize: function(feature) {
-            console.log(100 / feature.layer.map.getResolution());
-            return 100 / feature.layer.map.getResolution();
-          }
-                } 
-            })
-    }
-  );
-
-    var testphenomenon1 = new OpenLayers.StyleMap(
-    { 
-            "default": new OpenLayers.Style({ 
-                fillColor: "${getColor}",
-                strokeWidth: 1,             
-                strokeColor: "#000", 
-                fillOpacity: 1,
-                pointRadius: 10//"${getSize}"
-                //label: "${getLabel}"                  
-            },
-            {
-                context: {
-                    getColor : function (feature) {
-                        return feature.attributes.phenomenons.testphenomenon1.value > 40 ? '#FF0000' :
-                               feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF5A08' :
-                                                                  '#08FF41' ;
-                    },
-          getSize: function(feature) {
-            console.log(100 / feature.layer.map.getResolution());
-            return 100 / feature.layer.map.getResolution();
-          }
-                } 
-            })
-    }
-  );
-
-
-
-
   var geojson_layer = new OpenLayers.Layer.Vector("Measurements");
                   
     
-    var geojson_format = new OpenLayers.Format.GeoJSON({
-                'internalProjection': new OpenLayers.Projection("EPSG:900913"),
-                'externalProjection': new OpenLayers.Projection("EPSG:4326")
-            });
+  var geojson_format = new OpenLayers.Format.GeoJSON({
+      'internalProjection': new OpenLayers.Projection("EPSG:900913"),
+      'externalProjection': new OpenLayers.Projection("EPSG:4326")
+  });
  
 
   map.addLayer(geojson_layer);
 
 
 
-    selectControl = new OpenLayers.Control.SelectFeature(geojson_layer, {
+  selectControl = new OpenLayers.Control.SelectFeature(geojson_layer, {
             onSelect: onFeatureSelect,
             onUnselect: onFeatureUnselect
         });
-    map.addControl(selectControl);
-    selectControl.activate();
+  map.addControl(selectControl);
+  selectControl.activate();
       
 
   function changeSensor(property){
-  		geojson_layer.styleMap = co2_style;
-  		geojson_layer.redraw();
+    for(i = 0; i < statistics.length; i++){
+      if(property == statistics[i].phenomenon.name) chosenSensor = statistics[i];
+    }
+
+    
+    var style = new OpenLayers.StyleMap({ 
+      "default": new OpenLayers.Style({ 
+          fillColor: "${getColor}",
+          strokeWidth: 1,             
+          strokeColor: "#000", 
+          fillOpacity: 0.6,
+          pointRadius: "${getSize}"
+          //label: "${getLabel}"                  
+      },
+      {
+          context: {
+              getColor : function (feature) {
+                  return getPointColor(feature.attributes[chosenSensor.phenomenon.name]);
+              },
+              getSize: function(feature) {
+                return 80 / feature.layer.map.getResolution();
+              }
+          } 
+      })
+      }
+    );
+    geojson_layer.styleMap = style;
+    geojson_layer.redraw();
+  }
+
+  function getPointColor(property){
+    var range = chosenSensor.max - chosenSensor.min;
+    var steps = range/5;
+    if(property < chosenSensor.min + steps) return "#1BE01B";
+    else if(property < chosenSensor.min + steps * 2) return "#B5E01B";
+    else if(property < chosenSensor.min + steps * 3) return "#E0C61B";
+    else if(property < chosenSensor.min + steps * 4) return "#E08B1B";
+    else return "#E01B1B";
   }
 
 
@@ -203,41 +200,34 @@ var sensorProperties = Array();
     geojson_layer.addFeatures(geojson_format.read(data));
     map.zoomToExtent(geojson_layer.getDataExtent());
 
-
-    data = JSON.parse(data);
-    sensors = data.features[0].properties.phenomenons;
-    for (property in sensors) {
-      if($.inArray(property, sensorProperties) == -1){ 
-        sensor = sensors[property];
-        sensorProperties.push(property);
-        $('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\''+property+'\')">'+property+'</a></li>');
-      }
-    }
-
+    data = JSON.parse(data); 
+    $('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\'Speed\')">Speed</a></li>');
+    $('#sensorsDropdown').append('<li><a href="javascript:changeSensor(\'CO2\')">CO2</a></li>');
 
   }
 
+  $.get('./assets/includes/get.php?url=http://giv-wilhelm.uni-muenster.de/lcs/product/statistics.php', function(data) {
+    if(data >= 400){
+        console.log('error in getting statistics');
+        error_msg("Route couldn't be loaded successfully.");
+    }else{
+      data = JSON.parse(data);
+      statistics = data.statistics;  
+    }
+    
+  });
+
   //GET the information about the specific track
-  $.get('assets/includes/get.php?url=http://giv-car.uni-muenster.de:8080/stable/rest/tracks', function(data) {
+  $.get('assets/includes/get.php?url=http://giv-wilhelm.uni-muenster.de/lcs/product/tracks.php', function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404 || data == 500){
         console.log('error in getting tracks');
         $('#loadingIndicator').hide();
     }else{
-      data = JSON.parse(data);
-      for(i = 0; i < data.tracks.length; i++){
-        $.get('assets/includes/get.php?url='+data.tracks[i].href, function(trackResponse){
-          if(trackResponse == 400 || trackResponse == 401 || data == 402 || trackResponse == 403 || trackResponse == 404 || trackResponse == 500){
-            console.log("error in receiving track");
-          }else{
-            addGeoJSONToLayer(trackResponse);
-
-          }
-        });
-
+      addGeoJSONToLayer(data);
       $('#loadingIndicator').hide();
-     }
     }
   });
+
 
 
 </script>
