@@ -10,7 +10,7 @@ $baseURL = 'https://giv-car.uni-muenster.de/stable/rest';
 
 
 if(isset($_GET['groups'])){
-	$response = get_request($baseURL.'/groups/', false);
+	$response = get_request($baseURL.'/groups/', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
