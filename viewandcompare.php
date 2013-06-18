@@ -21,7 +21,7 @@ include('header.php');
 		</div>
  </div>
 
-<div class="container rightband">
+ <div class="container rightband">
  
   <div class="span5">
       <div id="userStatistics" style="max-height:400px; overflow:auto;">
@@ -85,14 +85,14 @@ $(function(){
 	 $('#friendStatistics').append('Statistics of '+$(this).text()+' :');
 	 fname=$(this).text();
 	//at the get function try to put the value insted !
-	$.get('assets/includes/users.php?userStatistics='+$_GET['fname'], function(data) {
+	$.get('assets/includes/users.php?friendStatistics='+fname, function(data) {
     if(data == 200){
         error_msg("friend statistics couldn't be loaded successfully3");
     }else{
       data = JSON.parse(data);
       for(i = 0; i < data.statistics.length; i++)
 		{	
-        $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.fname+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+        $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 	    values2[i]= Math.round(data.statistics[i].avg*100)/100;
 		}
  
