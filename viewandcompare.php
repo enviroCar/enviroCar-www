@@ -21,7 +21,7 @@ include('header.php');
 		</div>
  </div>
 
- <div class="container rightband">
+<div class="container rightband">
  
   <div class="span5">
       <div id="userStatistics" style="max-height:400px; overflow:auto;">
