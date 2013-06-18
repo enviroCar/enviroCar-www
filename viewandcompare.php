@@ -42,6 +42,7 @@ include('header.php');
 <script type="text/javascript">
 	var values = new Array();
 	var values2 = new Array();
+	var fname;
   	
 
 google.load("visualization", "1", {packages:["corechart"]});
@@ -49,8 +50,8 @@ function drawChart()
 	  {
 	  var data = new google.visualization.DataTable();
 			data.addColumn('string','Measurement');
-			data.addColumn('number', 'user1');
-			data.addColumn('number', 'user2');
+			data.addColumn('number', '<? echo $_SESSION['name'] ?>');
+			data.addColumn('number', fname);
 
 			data.addRows(4);
 			data.setValue(0, 0, 'MAF');
