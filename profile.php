@@ -140,6 +140,10 @@ require_once('assets/includes/connection.php');
     });
   }
 
+	function getAvatar(name, size){
+		return './assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar?size='+size+'&auth=true';
+	}
+	
   function getUserFriends(){
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
       if(data >= 400){
@@ -156,7 +160,7 @@ require_once('assets/includes/connection.php');
         if(data.users.length > 0 ){
           $('#friends').html("");
           for(i = 0; i < data.users.length; i++){
-            $('#friends').append('<li class="customLi"><img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/'+data.users[i].name+'/avatar?size=30" style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
+            $('#friends').append('<li class="customLi"><img src='+getAvatar(data.users[i].name,30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+data.users[i].name+'">'+data.users[i].name+'</a></li>');
           }
         }
 
@@ -281,7 +285,7 @@ require_once('assets/includes/connection.php');
     <div class="span4">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
-          <img src="http://giv-car.uni-muenster.de:8080/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=200" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
+          <img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=200&auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
           <li class="nav-header"></li>
           <li>Username:    <b id="username"></b></li>
         </ul>
