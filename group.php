@@ -6,9 +6,9 @@ include('header.php');
   		var users = Array();
   		var loggedInUser = '<? echo $_SESSION["name"] ?>';
 		
-		function getAvatar(name, size){
-			return './assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar?size='+size+'&auth=true';
-		}
+    function getAvatar(name, size){
+      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
+    }
 		
   		function addMemberToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');

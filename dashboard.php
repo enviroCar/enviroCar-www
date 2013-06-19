@@ -19,9 +19,9 @@ include('header.php');
         $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+':  '+value);
     }
 	
-	function getAvatar(name, size){
-		return './assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar?size='+size+'&auth=true';
-	}
+    function getAvatar(name, size){
+      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
+    }
 
     $.get('./assets/includes/users.php?userActivities', function(data) {
       if(data >= 400){
