@@ -3,7 +3,8 @@ require_once('assets/includes/commons.php');
 
 //get the requested website, from request string
 $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
-
+//overwrite if fwd_ref wad posted
+$login_referer = (isset($_POST["fwdref"])) ? $_POST["fwdref"] : $login_referer;
 
 $login_form_attempt = (isset($_POST["login_form_attempt"])) ? $_POST["login_form_attempt"] : 0;
 $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";

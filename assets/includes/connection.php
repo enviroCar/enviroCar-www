@@ -9,6 +9,9 @@ echo '<br>';
 echo get_request('giv-car.uni-muenster.de:8080/stable/rest/users/', false);
 */
 
+$serverurl = "https://giv-car.uni-muenster.de/stable/rest";
+$chainfile = "wwuca_chain.pem";
+
 
 function get_request($uri, $isAuthRequired){
     $ch = curl_init($uri);

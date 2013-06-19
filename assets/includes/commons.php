@@ -4,9 +4,6 @@
 //Language
 require_once('language.php');
 
-$serverurl = "https://giv-car.uni-muenster.de/stable/rest";
-$chainfile = "wwuca_chain.pem";
-
 
 //changes the css-class of a link to "Active"
 function echoActiveClassIfRequestMatches($requestUri)

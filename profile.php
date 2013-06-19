@@ -1,6 +1,9 @@
 <?
 include('header.php');
 require_once('assets/includes/connection.php');
+
+$loggedInUser = $_SESSION["name"];
+$user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 ?>
 
 <script type="text/javascript">
@@ -17,9 +20,9 @@ require_once('assets/includes/connection.php');
   }())
   
   function init(){
-    user = $_GET(['user']);
-    getUserInfo();
     loggedInUser = '<?php echo $_SESSION["name"] ?>';
+    user = '<?php echo $user; ?>';
+    getUserInfo();
     $('#username').html(user);
     getUserFriends();
     getUserGroups();
@@ -141,7 +144,7 @@ require_once('assets/includes/connection.php');
   }
 
     function getAvatar(name, size){
-      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
+      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&amp;auth=true';
     }
 	
   function getUserFriends(){
@@ -285,18 +288,29 @@ require_once('assets/includes/connection.php');
     <div class="span4">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
-          <img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $_GET['user'] ?>/avatar?size=200&auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
+          <img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
           <li class="nav-header"></li>
-          <li>Username:    <b id="username"></b></li>
+          <li><b id="username"></b></li>
         </ul>
         <ul id="userInformation" class="nav nav-list">
         </ul>
         <ul class="nav nav-list">
           <?
-            if($_GET['user'] == $_SESSION['name']){
-              echo '<p><a href="javascript:deleteAccount();" class="btn btn-primary btn-small">Delete Account &raquo;</a><a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">Edit &raquo;</a></p>';
+            if($user == $loggedInUser){
+          ?>
+              <p>
+				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small">
+					<? echo $deletemyaccount; ?>
+				</a>
+				<a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">
+					<? echo $editaccount; ?>
+				</a>
+			</p>
+          <?
             }else{
-              echo '<li id="addAsFriendLink"></li>';
+          ?>
+              <li id="addAsFriendLink"></li>
+           <?
             }
           ?>
         </ul>
