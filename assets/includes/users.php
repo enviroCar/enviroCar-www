@@ -2,7 +2,7 @@
 require_once('connection.php');
 
 
-$baseURL = 'https://giv-car.uni-muenster.de/stable/rest';
+$baseURL = $serverurl; //as defined in commons.php
 //USAGE: Just call this page via GET with the specific parameters:
 // users.php?user=username
 // users.php?friends

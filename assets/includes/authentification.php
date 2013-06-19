@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) session_start();
 
 require('connection.php');
-$baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
+$baseUrl = $serverurl; //as defined in commons.php
 
 //Login
 if(isset($_GET['login'])){

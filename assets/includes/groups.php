@@ -6,7 +6,7 @@ require_once('connection.php');
 
 //Create new group:
 //groups.php?createGroup and POST "group_name" and "groupe_description"
-$baseURL = 'https://giv-car.uni-muenster.de/stable/rest';
+$baseURL = $serverurl; //as defined in commons.php
 
 
 if(isset($_GET['groups'])){
