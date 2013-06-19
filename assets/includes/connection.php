@@ -1,7 +1,6 @@
 <?
 if (!isset($_SESSION)) session_start();
 
-require_once('commons.php');
 /*Example Usage:
 $uri = 'giv-car.uni-muenster.de:8080/stable/rest/users/website';
 
