@@ -20,6 +20,7 @@ if(!is_logged_in()){
             <h2 class="form-signin-heading"><? echo $index_Please_sign_in;?></h2>
             <form name="login" action="index.php" method="post" style="display: inline;">
 				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+				<input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
 				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
 				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_password;?>" />
 				<input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
