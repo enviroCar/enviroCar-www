@@ -6,7 +6,7 @@ require_once('connection.php');
 
 //Create new group:
 //groups.php?createGroup and POST "group_name" and "groupe_description"
-$baseURL = $serverurl; //as defined in commons.php
+$baseURL = $serverurl; //as defined in connection.php
 
 
 if(isset($_GET['groups'])){

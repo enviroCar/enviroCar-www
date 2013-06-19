@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) session_start();
 
 require('connection.php');
-$baseUrl = $serverurl; //as defined in commons.php
+$baseUrl = $serverurl; //as defined in connection.php
 
 //Login
 if(isset($_GET['login'])){
