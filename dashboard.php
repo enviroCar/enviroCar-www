@@ -71,11 +71,11 @@ include('header.php');
               }else if(activity.type == "FRIENDED_USER"){
                 addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_TRACK"){
-                addFriendActivities(getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
+                addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
               }else if(activity.type == "LEFT_GROUP"){
-                if(activity.group) addFriendActivities(getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_GROUP"){
-                if(activity.group) addFriendActivities(getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $changed ?>: "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $changed ?>: "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_PROFILE"){
                 addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, "<? echo $updated ?>: "+activity.user.name, convertToLocalTime(activity.time));
               }
@@ -109,8 +109,10 @@ include('header.php');
             error_msg("Routes couldn't be loaded successfully.");
         }else{
           data = JSON.parse(data);
-          numberofTracks = data.tracks.length;
-          addOverallStatistics("Tracks", numberofTracks);
+          if(data.tracks != null){
+            numberofTracks = data.tracks.length;
+            addOverallStatistics("Tracks", numberofTracks);
+          }
 
       }
     });
