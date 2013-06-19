@@ -26,6 +26,9 @@ include('header.php');
 
 	<div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
 	</div>
+	
+	<p id="legend"></p>
+	
 	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><? echo $routeoverview ?></a></p>
 </div>
 
@@ -105,6 +108,7 @@ var chosenSensor = null;
     }
     routes.redraw();
     $('#sensor_headline').html(property);
+	drawLegend(property);
 
   }
 
@@ -147,6 +151,22 @@ var chosenSensor = null;
     else return "#E01B1B";
   }
 
+  function drawLegend(property){
+	var range = chosenSensor.max - chosenSensor.min;
+    var steps = range/5;
+	var step1 = chosenSensor.min + steps;
+	var step2 = chosenSensor.min + steps * 2;
+	var step3 = chosenSensor.min + steps * 3;
+	var step4 = chosenSensor.min + steps * 4;
+	
+	document.getElementById('legend').innerHTML='<img src="assets/img/legend/legend1.png">'+' 0 - ' + step1 +'<br>'+ 
+		'<img src="assets/img/legend/legend2.png">'+ ' ' + step1 + ' - '+ step2 +'<br>'+
+		'<img src="assets/img/legend/legend3.png">'+ ' ' + step2 + ' - '+ step3 +'<br>'+
+		'<img src="assets/img/legend/legend4.png">'+ ' ' + step3 + ' - '+ step4 +'<br>'+
+		'<img src="assets/img/legend/legend5.png">'+ ' ' + step4 + ' - '+ chosenSensor.max
+		;
+  }
+  
   $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
     if(data >= 400){
         console.log('error in getting statistics');
