@@ -8,6 +8,11 @@ if(!is_logged_in()){
  header('Location: index.php?accessdenied&fwdref='.$_SERVER['REQUEST_URI']);
 }
 
+//Kick the user to the page which was requested BEFORE authorization and access was denied
+if(isset($_POST["fwdref"])){
+ header('Location: '.$_POST["fwdref"]);
+}
+
 function echoActiveClassIfRequestMatches($requestUri)
 {
     $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
