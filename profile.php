@@ -3,7 +3,7 @@ include('header.php');
 require_once('assets/includes/connection.php');
 
 $loggedInUser = $_SESSION["name"];
-$user = (isset($_GET['user'])) ? $_GET['user'] : loggedInUser;
+$user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 ?>
 
 <script type="text/javascript">
