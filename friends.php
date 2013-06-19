@@ -9,9 +9,13 @@ include('header.php');
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
   			$('#friendsList').append('<li class="customLi"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
   		}
+
+  		function addFriendActivities(actionImg, friendImg, id, titel, date){
+      		$('#friendActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/><br><div>'+date+'</div></li>');
+    	}
 		
 		function getAvatar(name, size){
-			return './assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar?size='+size+'&auth=true';
+			return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
 		}
 
   		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
@@ -43,6 +47,64 @@ include('header.php');
 	  		}
 	  	});
 
+
+	$.get('./assets/includes/users.php?friendActivities', function(data) {
+      if(data >= 400){
+            error_msg("<? echo $activityerror ?>");
+      }else{
+          data = JSON.parse(data);
+
+          if(data.activities.length > 0){
+
+            for(i = 0; i < data.activities.length; i++){
+              var activity = data.activities[i];
+              if(activity.type == "JOINED_GROUP"){
+                if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CREATED_GROUP"){
+                if(activity.group) addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "FRIENDED_USER"){
+                addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CREATED_TRACK"){
+                addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "LEFT_GROUP"){
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_GROUP"){
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, "<? echo $changed ?>: "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_PROFILE"){
+                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, "<? echo $updated ?>: "+activity.user.name, convertToLocalTime(activity.time));
+              }
+            }
+            
+        }else{
+          $('#friendActivities').append("<? echo $norecentactivities ?>");
+        }
+      }
+    });
+	
+
+function convertToLocalTime(serverDate) {
+      var dt = new Date(Date.parse(serverDate));
+      var localDate = dt;
+
+
+      var gmt = localDate;
+          var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
+          var localNow = new Date().getTimezoneOffset(); // get the timezone
+          // offset in minutes
+          var localTime = min - localNow; // get the local time
+
+      var dateStr = new Date(localTime * 1000 * 60);
+      var d = dateStr.getDate();
+      var m = dateStr.getMonth() + 1;
+      var y = dateStr.getFullYear();
+
+      var totalSec = dateStr.getTime() / 1000;
+      var hours = parseInt( totalSec / 3600 ) % 24;
+      var minutes = parseInt( totalSec / 60 ) % 60;
+
+
+      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ (minutes <= 9 ? '0' + minutes : minutes);
+    }
   	</script>
 	
 		<div class="container rightband"> 
@@ -57,33 +119,11 @@ include('header.php');
 	        </div>
 			
 			<div class="span4">
-				<h2><? echo $activities ?></h2>
-				<!--
-			  	<ul style="max-height: 400px; overflow-y: auto;">
-			  	<li class="customLi">
-					<a href="">Albert Remke</a>
-					<br/>
-					awards economic driver today
-				</li>
-				<li class="customLi">
-					<a href="">Jakob </a>
-					<br/>
-					moving towards muenster city
-				</li>
-				<li class="customLi">
-					<a href="">Dennis</a>
-					<br/>
-					 spend 20 euro for travelling 100 km
-				</li>
-				<li class="customLi">
-					<a href="">Stephnie</a>
-					<br/>
-					release4 gml co2 during last drive
-				</li>
-			  </ul>
-			  -->
-	        </div>
-	      </div>
+			          <h2><?php echo $dashboard_friend_activities; ?></h2>
+					  <ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">
+			              
+					  </ul>
+			</div>
 		</div>
 
 

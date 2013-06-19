@@ -14,3 +14,21 @@ if(isset($_GET['url'])){
 		echo $response['status'];
 	}
 }
+
+if(isset($_GET['redirectUrl'])){
+	if(isset($_GET['auth'])){
+		$response = get_request($_GET['redirectUrl'], $_GET['auth']);
+	}else{
+		$response = get_request($_GET['redirectUrl'], false);
+	}
+	if($response['status'] == 200){
+		header('Location:'.$response['url']);
+	}else{
+		echo $response['status'];
+
+	}
+}
+
+
+
+

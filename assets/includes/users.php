@@ -12,6 +12,18 @@ $baseURL = 'https://giv-car.uni-muenster.de/stable/rest';
 
 //Possible error status: 303,400,401,403,303
 
+
+if(isset($_GET['avatar'])){
+	if(isset($_GET['size'])) $response = get_image_request($baseURL.'/users/'.rawurlencode($_GET['avatar']).'/avatar&size='.$_GET['size']);
+	else $response = get_image_request($baseURL.'/users/'.rawurlencode($_GET['avatar']).'/avatar');
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+		echo $response['response'];
+	}
+}
+
 if(isset($_GET['user'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_GET['user']), true);
 	if($response['status'] == 200){
@@ -131,7 +143,6 @@ if(isset($_GET['userStatistics'])){
 	}
 }
 
-
 if(isset($_GET['friendStatistics'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_GET['friendStatistics']).'/statistics', true);
 	if($response['status'] == 200){
@@ -140,6 +151,7 @@ if(isset($_GET['friendStatistics'])){
 		echo $response['status'];
 	}
 }
+
 
 if(isset($_GET['userActivities'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/activities', true);
