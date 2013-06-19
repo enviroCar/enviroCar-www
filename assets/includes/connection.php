@@ -33,12 +33,14 @@ function get_request($uri, $isAuthRequired){
     $out = curl_exec($ch);
     //Returns the HTTP status codes 
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 
     curl_close($ch);
 
-    return array("status" => $http_status, "response" => $out);
+    return array("status" => $http_status, "response" => $out, "url" => $lastUrl);
 
 }
+
 
 //Method to perform a POST request
 function post_request($url, $data, $isAuthRequired){
