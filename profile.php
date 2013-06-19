@@ -17,9 +17,9 @@ require_once('assets/includes/connection.php');
   }())
   
   function init(){
-    user = $_GET(['user']);
-    getUserInfo();
     loggedInUser = '<?php echo $_SESSION["name"] ?>';
+    user = (typeof $_GET(['user']) != 'undefined') ? $_GET(['user']) : loggedInUser;
+    getUserInfo();
     $('#username').html(user);
     getUserFriends();
     getUserGroups();
