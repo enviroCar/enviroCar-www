@@ -459,16 +459,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="305.26445"
-     inkscape:cy="247.09543"
+     inkscape:zoom="0.7"
+     inkscape:cx="531.75974"
+     inkscape:cy="381.37215"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1440"
+     inkscape:window-height="853"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -495,7 +495,7 @@
        sodipodi:cy="460.52304"
        sodipodi:rx="247.85715"
        sodipodi:ry="247.85715"
-       d="m 741.42859,460.52304 a 247.85715,247.85715 0 1 1 -495.7143,0 247.85715,247.85715 0 1 1 495.7143,0 z"
+       d="m 741.42859,460.52304 c 0,136.88772 -110.96943,247.85715 -247.85715,247.85715 -136.88772,0 -247.85715,-110.96943 -247.85715,-247.85715 0,-136.88772 110.96943,-247.85715 247.85715,-247.85715 136.88772,0 247.85715,110.96943 247.85715,247.85715 z"
        transform="matrix(1.2400893,0,0,1.2400893,-85.891572,109.22525)" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none"
@@ -732,12 +732,12 @@
        x="530.16058"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Raleway;-inkscape-font-specification:Raleway"
        xml:space="preserve"><tspan
-         style="font-weight:bold;-inkscape-font-specification:Raleway Bold"
+         style="font-weight:bold;-inkscape-font-specification:Raleway Bold;font-size:22px"
          y="465.46356"
          x="530.16058"
          id="tspan3274"
          sodipodi:role="line">enviroCar</tspan><tspan
-         style="font-weight:bold;-inkscape-font-specification:Raleway Bold"
+         style="font-weight:bold;-inkscape-font-specification:Raleway Bold;font-size:22px"
          id="tspan3276"
          y="487.96356"
          x="530.16058"
@@ -745,35 +745,35 @@
     <text
        sodipodi:linespacing="125%"
        id="text3278"
-       y="415.68256"
-       x="242.17232"
+       y="397.55457"
+       x="215.74374"
        style="font-size:21.43182182px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Raleway;-inkscape-font-specification:Raleway Bold"
        xml:space="preserve"><tspan
-         style="font-weight:normal;-inkscape-font-specification:Raleway"
-         y="415.68256"
-         x="242.17232"
+         style="font-size:32px;font-weight:normal;-inkscape-font-specification:Raleway"
+         y="397.55457"
+         x="215.74374"
          id="tspan3280"
          sodipodi:role="line">Bluetooth</tspan><tspan
-         style="font-weight:normal;-inkscape-font-specification:Raleway"
+         style="font-size:32px;font-weight:normal;-inkscape-font-specification:Raleway"
          id="tspan3282"
-         y="442.47235"
-         x="242.17232"
+         y="437.55457"
+         x="215.74374"
          sodipodi:role="line">connection</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3278-8"
-       y="413.40027"
-       x="815.49237"
+       y="394.11456"
+       x="824.06378"
        style="font-size:21.43182182px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Raleway;-inkscape-font-specification:Raleway Bold"
        xml:space="preserve"><tspan
-         style="font-weight:normal;-inkscape-font-specification:Raleway"
+         style="font-size:32px;font-weight:normal;-inkscape-font-specification:Raleway"
          id="tspan3282-2"
-         y="413.40027"
-         x="815.49237"
+         y="394.11456"
+         x="824.06378"
          sodipodi:role="line">data</tspan><tspan
-         style="font-weight:normal;-inkscape-font-specification:Raleway"
-         y="440.19003"
-         x="815.49237"
+         style="font-size:32px;font-weight:normal;-inkscape-font-specification:Raleway"
+         y="434.11456"
+         x="824.06378"
          sodipodi:role="line"
          id="tspan3393">exchange</tspan></text>
     <rect
@@ -945,7 +945,7 @@
        sodipodi:cy="223.3802"
        sodipodi:rx="89.285713"
        sodipodi:ry="89.285713"
-       d="M 135,223.3802 A 89.285713,89.285713 0 0 1 92.440346,299.46314 L 45.714287,223.3802 z"
+       d="m 135,223.3802 c 0,31.03399 -16.1147,59.84187 -42.559654,76.08294 L 45.714287,223.3802 z"
        transform="matrix(-0.38025305,0.50656264,-0.50656264,-0.38025305,585.81173,437.51354)"
        sodipodi:start="0"
        sodipodi:end="1.02004" />
@@ -957,7 +957,7 @@
        sodipodi:cy="223.3802"
        sodipodi:rx="89.285713"
        sodipodi:ry="89.285713"
-       d="M 135,223.3802 A 89.285713,89.285713 0 0 1 92.440346,299.46314 L 45.714287,223.3802 z"
+       d="m 135,223.3802 c 0,31.03399 -16.1147,59.84187 -42.559654,76.08294 L 45.714287,223.3802 z"
        transform="matrix(-0.4218499,-0.4724836,0.4724836,-0.4218499,725.48648,705.67346)"
        sodipodi:start="0"
        sodipodi:end="1.02004" />
@@ -969,7 +969,7 @@
        sodipodi:cy="223.3802"
        sodipodi:rx="89.285713"
        sodipodi:ry="89.285713"
-       d="M 135,223.3802 A 89.285713,89.285713 0 0 1 92.440346,299.46314 L 45.714287,223.3802 z"
+       d="m 135,223.3802 c 0,31.03399 -16.1147,59.84187 -42.559654,76.08294 L 45.714287,223.3802 z"
        transform="matrix(0.37091899,-0.51343664,0.51343664,0.37091899,503.32014,907.00066)"
        sodipodi:start="0"
        sodipodi:end="1.02004" />
@@ -977,17 +977,17 @@
        sodipodi:linespacing="125%"
        id="text3278-8-1"
        y="910.05017"
-       x="815.49237"
+       x="824.06378"
        style="font-size:21.43182182px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Raleway;-inkscape-font-specification:Raleway Bold"
        xml:space="preserve"><tspan
-         style="font-weight:normal;-inkscape-font-specification:Raleway"
+         style="font-size:32px;font-weight:normal;-inkscape-font-specification:Raleway"
          id="tspan3282-2-7"
          y="910.05017"
-         x="815.49237"
+         x="824.06378"
          sodipodi:role="line">data</tspan><tspan
-         style="font-weight:normal;-inkscape-font-specification:Raleway"
-         y="936.83997"
-         x="815.49237"
+         style="font-size:32px;font-weight:normal;-inkscape-font-specification:Raleway"
+         y="950.05017"
+         x="824.06378"
          sodipodi:role="line"
          id="tspan3393-1">exchange</tspan></text>
     <g
@@ -1067,13 +1067,13 @@
     <text
        sodipodi:linespacing="125%"
        id="text3272-8"
-       y="905.354"
+       y="913.354"
        x="527.17987"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Raleway;-inkscape-font-specification:Raleway"
        xml:space="preserve"><tspan
-         style="font-weight:bold;-inkscape-font-specification:Raleway Bold"
+         style="font-size:36px;font-weight:bold;-inkscape-font-specification:Raleway Bold"
          id="tspan3276-7"
-         y="905.354"
+         y="913.354"
          x="527.17987"
          sodipodi:role="line">website</tspan></text>
   </g>
