@@ -55,8 +55,15 @@ include('header.php');
 
     	$.get('./assets/includes/groups.php?group=<? echo $_GET['group'] ?>', function(data) {
 	      	if(data >= 400){
-	          error_msg("Group information couldn't be loaded successfully.");
-	      	}else{
+      		  if(data == 400){
+      		    error_msg("<? echo $groupError ?>");
+      		  }else if(data == 401 || data == 403){
+      		    error_msg("<? echo $groupNotAllowed ?>")
+      		  }else if(data == 404){
+      		    error_msg("<? echo $groupNotFound ?>")
+      		  }
+      		  $('#loadingIndicator').hide();
+      		}else{
 		        data = JSON.parse(data);
     			$('#group_headline').html(data.name);
 		        $('#group_description').html(data.description);
@@ -68,9 +75,16 @@ include('header.php');
 		});
 
   		$.get('./assets/includes/groups.php?groupMembers=<? echo $_GET['group'] ?>', function(data) {
-	      	if(data >= 400){
-	          error_msg("Group members couldn't be loaded successfully.");
-	      	}else{
+      		if(data >= 400){
+      		  if(data == 400){
+      		    error_msg("<? echo $groupError ?>");
+      		  }else if(data == 401 || data == 403){
+      		    error_msg("<? echo $groupNotAllowed ?>")
+      		  }else if(data == 404){
+      		    error_msg("<? echo $groupNotFound ?>")
+      		  }
+      		  $('#loadingIndicator').hide();
+      		}else{
 		        data = JSON.parse(data);
 		        var member = false;
 		        if(data.users.length > 0 ){
@@ -92,9 +106,16 @@ include('header.php');
 	  	});
 
 	  	$.get('./assets/includes/groups.php?groupActivities=<? echo $_GET['group'] ?>', function(data) {
-	      	if(data >= 400){
-	          error_msg("Group activities couldn't be loaded successfully.");
-	      	}else{
+      		if(data >= 400){
+      		  if(data == 400){
+      		    error_msg("<? echo $activityError ?>");
+      		  }else if(data == 401 || data == 403){
+      		    error_msg("<? echo $activityNotAllowed ?>")
+      		  }else if(data == 404){
+      		    error_msg("<? echo $activityNotFound ?>")
+      		  }
+      		  $('#loadingIndicator').hide();
+      		}else{
 		        data = JSON.parse(data);
 	          	if(data.activities.length > 0){
 		            for(i = 0; i < data.activities.length; i++){

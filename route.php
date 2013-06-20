@@ -250,9 +250,17 @@ include('header.php');
   });
 
     $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        error_msg("Route couldn't be loaded successfully.");
-    }else{
+      if(data >= 400){
+        console.log(data);
+        if(data == 400){
+            error_msg("<? echo $statisticsError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $statisticsNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $statisticsNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
+      }else{
       data = JSON.parse(data);
 
       for(i = 0; i < data.statistics.length; i++){

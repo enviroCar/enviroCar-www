@@ -96,8 +96,6 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           error_msg("<? echo $groupNotFound ?>")
         }
         $('#loadingIndicator').hide();
-      }else if(data == 401 || data == 402 || data == 403 || data == 404){
-          error_msg("Groups couldn't be loaded successfully.");
       }else{
         data = JSON.parse(data);
         if(data.groups.length > 0 ){

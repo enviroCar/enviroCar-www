@@ -177,6 +177,12 @@ $activityError ="Aktivitäten konnte nicht erfolgreich geladen werden.";
 $groupNotFound = "Die Gruppe konnte nicht gefunden werden.";
 $friendNotFound = "Die Freunde konnte nicht gefunden werden.";
 $activityNotFound = "Die Aktivitäten konnte nicht gefunden werden.";
+$statisticsNotFound = "Die Statistiken konnte nicht gefunden werden.";
+$statisticsNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Statistiken zu betrachten.";
+$statisticsError ="Statistiken konnte nicht erfolgreich geladen werden.";
+$groupOfNotFound = "Es konnten keine Gruppen von der gewünschten Person gefunden werden.";
+$groupOfNotAllowed = "Es ist dir nicht erlaubt, die Gruppen der angefragten Person zu betrachten.";
+$groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.";
 
 
 
