@@ -28,7 +28,7 @@ include('header.php');
             }else if(data == 404){
               error_msg("<? echo $friendNotFound ?>")
             }
-            $('#loadingIndicator').hide();
+            $('#loadingIndicator_friends').hide();
           }else{
 		        data = JSON.parse(data);
 		        if(data.users.length > 0 ){
@@ -37,6 +37,7 @@ include('header.php');
 		          	}
 		        }
 	      	}
+          $('#loadingIndicator_friends').hide();
 	  	});
 
 	  	$.get('./assets/includes/users.php?users', function(data){
@@ -73,7 +74,7 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $activityNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_activities').hide();
       }else{
           data = JSON.parse(data);
 
@@ -102,6 +103,7 @@ include('header.php');
           $('#friendActivities').append("<? echo $norecentactivities ?>");
         }
       }
+      $('#loadingIndicator_activities').hide();
     });
 	
 
@@ -136,6 +138,7 @@ function convertToLocalTime(serverDate) {
 
 			<div class="span5">
 				<h2> <? echo $friends ?></h2>
+        <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 				<ul id="friendsList" style="max-height: 400px; overflow-y: auto;">	
 
 				</ul>          
@@ -143,6 +146,7 @@ function convertToLocalTime(serverDate) {
 			
 			<div class="span4">
 			          <h2><?php echo $dashboard_friend_activities; ?></h2>
+                <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 					  <ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">
 			              
 					  </ul>

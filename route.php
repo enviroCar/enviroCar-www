@@ -52,6 +52,7 @@ include('header.php');
 <div class="container">
 
   <div class="span5">
+  <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
     <div style="max-height:400px; overflow:auto;">
       <div id="routeInformation"></div>
       <div id="routeStatistics"></div>
@@ -259,7 +260,7 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $statisticsNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_route').hide();
       }else{
       data = JSON.parse(data);
 
@@ -268,7 +269,7 @@ include('header.php');
       }
       
     }
-    
+   $('#loadingIndicator_route').hide(); 
   });
 
 

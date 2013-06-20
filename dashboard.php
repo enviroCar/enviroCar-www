@@ -33,7 +33,7 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $activityNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_activities').hide();
       }else{
           data = JSON.parse(data);
           if(data.activities.length > 0){
@@ -58,6 +58,7 @@ include('header.php');
         }else{
           $('#recentActivities').append("<? echo $norecentactivities ?>");
         }
+        $('#loadingIndicator_activities').hide();
       }
     });
     
@@ -72,7 +73,7 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $activityNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_friend_activities').hide();
       }else{
           data = JSON.parse(data);
 
@@ -100,6 +101,7 @@ include('header.php');
         }else{
           $('#friendActivities').append("<? echo $norecentactivities ?>");
         }
+        $('#loadingIndicator_friend_activities').hide();
       }
     });
 
@@ -114,7 +116,7 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $statisticsNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_overview').hide();
       }else{
           data = JSON.parse(data);
           if(data.statistics.length > 0){
@@ -123,9 +125,10 @@ include('header.php');
             }
 
           }else{
-            $('#loadingIndicator').hide();
+            $('#loadingIndicator_overview').hide();
           }
       }
+      $('#loadingIndicator_overview').hide();
     });
 
     $.get('./assets/includes/users.php?tracks', function(data) {
@@ -138,7 +141,6 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $routeNotFound ?>")
         }
-        $('#loadingIndicator').hide();
       }else{
           data = JSON.parse(data);
           if(data.tracks != null){
@@ -180,12 +182,16 @@ include('header.php');
 	<div class="row-fluid">
         <div class="span4">
           <h2><?php echo $dashboard_recent_avtivities; ?></h2>
+          <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 		      <ul id="recentActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
 		      </ul>
         </div>
 
         <div class="span4">
           <h2><?php echo $dashboard_overview; ?></h2>
+          <div id="loadingIndicator_overview">
+            <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+          </div>
           <div style="max-height: 400px; overflow-y: auto;">
             <ul id="overallStatistics">
             </ul>
@@ -196,6 +202,8 @@ include('header.php');
 
         <div class="span4">
           <h2><?php echo $dashboard_friend_activities; ?></h2>
+            <div id="loadingIndicator_friend_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
+            </div>
 		  <ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">
               
 		  </ul>
