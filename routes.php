@@ -22,9 +22,17 @@ include('header.php');
   }
 
     $.get('./assets/includes/users.php?tracks', function(data) {
-    	if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-          	error_msg("Routes couldn't be loaded successfully.");
-      	}else{
+      if(data >= 400){
+        console.log(data);
+        if(data == 400){
+            error_msg("<? echo $routeError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $routeNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $routeNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
+      }else{
         	data = JSON.parse(data);
           numberofTracks = data.tracks.length;
           addOverallStatistics("Tracks", numberofTracks);
@@ -46,9 +54,17 @@ include('header.php');
   	});
 
     $.get('./assets/includes/users.php?userStatistics', function(data) {
-      if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-            error_msg("Routes couldn't be loaded successfully.");
-        }else{
+      if(data >= 400){
+        console.log(data);
+        if(data == 400){
+            error_msg("<? echo $statisticsError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $statisticsNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $statisticsNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
+      }else{
           data = JSON.parse(data);
           if(data.statistics.length > 0){
             if(!loading){

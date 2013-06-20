@@ -21,9 +21,16 @@ if(isset($_GET['group_deleted'])){
   		}
 
   		$.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
-	      	if(data >= 400){
-	          error_msg("Groups couldn't be loaded successfully.");
-	      	}else{
+      		if(data >= 400){
+      		  if(data == 400){
+      		    error_msg("<? echo $groupOfError ?>");
+      		  }else if(data == 401 || data == 403){
+      		    error_msg("<? echo $groupOfNotAllowed ?>")
+      		  }else if(data == 404){
+      		    error_msg("<? echo $groupOfNotFound ?>")
+      		  }
+      		  $('#loadingIndicator').hide();
+      		}else{
 		        data = JSON.parse(data);
 		        if(data.groups.length > 0 ){
 		        	for(i = 0; i < data.groups.length; i++){
@@ -34,11 +41,16 @@ if(isset($_GET['group_deleted'])){
 	  	});
 
 	  	$.get('./assets/includes/groups.php?groups', function(data){
-
-	  		if(data >= 400){
-	  			error_msg("Groups couldn't be loaded successfully.");
-			}
-	  		else{
+      		if(data >= 400){
+      		  if(data == 400){
+      		    error_msg("<? echo $groupError ?>");
+      		  }else if(data == 401 || data == 403){
+      		    error_msg("<? echo $groupNotAllowed ?>")
+      		  }else if(data == 404){
+      		    error_msg("<? echo $groupNotFound ?>")
+      		  }
+      		  $('#loadingIndicator').hide();
+      		}else{
 	  			data = JSON.parse(data);
 	  			for(i = 0; i < data.groups.length; i++){
 	  				groups.push(data.groups[i].name);
@@ -112,40 +124,13 @@ if(isset($_GET['group_deleted'])){
 			<input id="searchgroups" type="text" name="text" placeholder="Search Groups" style="float:right" data-provide="typeahead"/>
 
 
-			<div class="span5">
+			<div class="span6">
 				<h2>Groups</h2>
 				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">	
 
 				</ul>          
 	        </div>
 			
-			<div class="span4">
-				<h2><? echo $activities ?></h2>
-				<!--
-			  	<ul style="max-height: 400px; overflow-y: auto;">
-			  	<li class="customLi">
-					<a href="">Albert Remke</a>
-					<br/>
-					awards economic driver today
-				</li>
-				<li class="customLi">
-					<a href="">Jakob </a>
-					<br/>
-					moving towards muenster city
-				</li>
-				<li class="customLi">
-					<a href="">Dennis</a>
-					<br/>
-					 spend 20 euro for travelling 100 km
-				</li>
-				<li class="customLi">
-					<a href="">Stephnie</a>
-					<br/>
-					release4 gml co2 during last drive
-				</li>
-			  </ul>
-			-->
-	        </div>
 	      </div>
 		</div>
 
