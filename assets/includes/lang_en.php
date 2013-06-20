@@ -175,6 +175,12 @@ $activityError ="Activities couldn't be loaded successfully.";
 $groupNotFound = "The requested group couldn't be found.";
 $friendNotFound = "The requested friends couldn't be found.";
 $activityNotFound = "The requested activities couldn't be found.";
+$statisticsNotFound = "The requested statistics couldn't be loadel successfully.";
+$statisticsNotAllowed = "You are not allowed to view the requested statistics.";
+$statisticsError ="Statistics couldn't be loaded successfully.";
+$groupOfNotFound = "The groups of the requested person couldn't be found.";
+$groupOfNotAllowed = "You are not allowed to view the groups of the requested person.";
+$groupOfError ="The groups of the requested person couldn't be loaded successfully.";
 
 
 $firstname = "First name";
