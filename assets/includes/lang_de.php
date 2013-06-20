@@ -43,6 +43,7 @@ $dashboard_recent_avtivities="Letzte Aktivitäten";
 $dashboard_view_details="Details anzeigen";
 $dashboard_overview="Übersicht";
 $dashboard_friend_activities="Aktivitäten deiner Freunde";
+$dashboard_group_activities="Aktivitäten der Gruppe";
 
 //function registration
 $freg_invalidemail="Ungültige Email";
@@ -168,11 +169,11 @@ $personNotAllowed = "Es ist dir nicht erlaubt, das Profil der Person zu betracht
 $routeNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Route zu betrachten.";
 $personError ="Person konnte nicht erfolgreich geladen werden.";
 $routeError ="Route konnte nicht erfolgreich geladen werden.";
-$groupNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Gruppe zu betrachten.";
+$groupNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Gruppe zu betrachten. Trete der Gruppe bei um mehr Informationen zu erhalten.";
 $groupError ="Gruppe konnte nicht erfolgreich geladen werden.";
-$friendNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Freunde zu betrachten.";
+$friendNotAllowed = "Es ist dir nicht erlaubt, die Freunde der Person zu betrachten.";
 $friendError ="Freunde konnte nicht erfolgreich geladen werden.";
-$activityNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Aktivitäten zu betrachten.";
+$activityNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Aktivitäten zu betrachten.";
 $activityError ="Aktivitäten konnte nicht erfolgreich geladen werden.";
 $groupNotFound = "Die Gruppe konnte nicht gefunden werden.";
 $friendNotFound = "Die Freunde konnte nicht gefunden werden.";
@@ -182,7 +183,10 @@ $statisticsNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Statistiken z
 $statisticsError ="Statistiken konnte nicht erfolgreich geladen werden.";
 $groupOfNotFound = "Es konnten keine Gruppen von der gewünschten Person gefunden werden.";
 $groupOfNotAllowed = "Es ist dir nicht erlaubt, die Gruppen der angefragten Person zu betrachten.";
+$groupMemberNotAllowed = "Es ist dir nicht erlaubt die Mitglieder dieser Gruppe zu betrachten.";
 $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.";
+$joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
+
 
 
 
