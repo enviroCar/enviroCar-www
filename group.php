@@ -17,9 +17,16 @@ include('header.php');
 
   		function joinGroup(){
   			$.get('./assets/includes/groups.php?joinGroup=<? echo $_GET['group'] ?>', function(data){
-  				if(data >= 400){
-  					cerror_msg("The group couldn't be joined successfully.");
-  				}else{
+	      		if(data >= 400){
+      			  if(data == 400){
+      			    error_msg("<? echo $groupError ?>");
+      			  }else if(data == 401 || data == 403){
+      			    error_msg("<? echo $joinGroupNotAllowed ?>")
+      			  }else if(data == 404){
+      			    error_msg("<? echo $groupNotFound ?>")
+      			  }
+      			  $('#loadingIndicator').hide();
+      			}else{
   					addMemberToList("<? echo $_SESSION['name'] ?>");
   					$('#join_leave_group').html('<a href="javascript:leaveGroup()">Leave Group</a>');
   				}
@@ -79,7 +86,8 @@ include('header.php');
       		  if(data == 400){
       		    error_msg("<? echo $groupError ?>");
       		  }else if(data == 401 || data == 403){
-      		    error_msg("<? echo $groupNotAllowed ?>")
+      		   	$('#memberList').html("<? echo $groupMemberNotAllowed ?>");
+      		    $('#join_leave_group').html('<a href="javascript:joinGroup()"><? echo $joingroup ?></a>');
       		  }else if(data == 404){
       		    error_msg("<? echo $groupNotFound ?>")
       		  }
@@ -110,7 +118,7 @@ include('header.php');
       		  if(data == 400){
       		    error_msg("<? echo $activityError ?>");
       		  }else if(data == 401 || data == 403){
-      		    error_msg("<? echo $activityNotAllowed ?>")
+      		  	$('#groupActivities').html("<? echo $activityNotAllowed ?>");
       		  }else if(data == 404){
       		    error_msg("<? echo $activityNotFound ?>")
       		  }
@@ -193,7 +201,7 @@ include('header.php');
 	        </div>
 			
 			<div class="span4">
-				<h2><? echo $activities ?></h2>	
+				<h2><? echo $dashboard_group_activities ?></h2>	
 			  	<ul id="groupActivities" style="max-height: 400px; overflow-y: auto;">
 			  	</ul>
 	        </div>

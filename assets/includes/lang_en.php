@@ -43,6 +43,7 @@ $dashboard_recent_avtivities="Recent Activities";
 $dashboard_view_details="View details";
 $dashboard_overview="Overview";
 $dashboard_friend_activities="Friend Activities";
+$dashboard_group_activities="Group Activities";
 
 //function registration
 $freg_invalidemail="Invalid Email";
@@ -166,7 +167,7 @@ $personNotAllowed = "You are not allowed to view the requested profile.";
 $routeNotAllowed = "You are not allowed to view the requested route.";
 $personError ="Person couldn't be loaded successfully.";
 $routeError ="Route couldn't be loaded successfully.";
-$groupNotAllowed = "You are not allowed to view the requested group.";
+$groupNotAllowed = "You are not allowed to view the requested group. Join the group to get more information.";
 $groupError ="Group couldn't be loaded successfully.";
 $friendNotAllowed = "You are not allowed to view the requested friends.";
 $friendError ="Friends couldn't be loaded successfully.";
@@ -180,7 +181,9 @@ $statisticsNotAllowed = "You are not allowed to view the requested statistics.";
 $statisticsError ="Statistics couldn't be loaded successfully.";
 $groupOfNotFound = "The groups of the requested person couldn't be found.";
 $groupOfNotAllowed = "You are not allowed to view the groups of the requested person.";
+$groupMemberNotAllowed = "You are not allowed to view the member of the group.";
 $groupOfError ="The groups of the requested person couldn't be loaded successfully.";
+$joinGroupNotAllowed = "You are not allowed to join this group.";
 
 
 $firstname = "First name";

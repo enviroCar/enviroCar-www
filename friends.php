@@ -19,9 +19,17 @@ include('header.php');
 		}
 
   		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
-	      	if(data >= 400){
-	          error_msg("Friends couldn't be loaded successfully.");
-	      	}else{
+          if(data >= 400){
+            console.log(data);
+            if(data == 400){
+                error_msg("<? echo $friendError ?>");
+            }else if(data == 401 || data == 403){
+              error_msg("<? echo $friendNotAllowed ?>")
+            }else if(data == 404){
+              error_msg("<? echo $friendNotFound ?>")
+            }
+            $('#loadingIndicator').hide();
+          }else{
 		        data = JSON.parse(data);
 		        if(data.users.length > 0 ){
 		        	for(i = 0; i < data.users.length; i++){
@@ -32,10 +40,17 @@ include('header.php');
 	  	});
 
 	  	$.get('./assets/includes/users.php?users', function(data){
-
-	  		if(data >= 400){
-	  			error_msg("Users couldn't be loaded successfully.");
-			}
+        if(data >= 400){
+          console.log(data);
+          if(data == 400){
+              error_msg("<? echo $personError ?>");
+          }else if(data == 401 || data == 403){
+            error_msg("<? echo $personNotAllowed ?>")
+          }else if(data == 404){
+            error_msg("<? echo $personNotFound ?>")
+          }
+          $('#loadingIndicator').hide();
+        }
 	  		else{
 	  			data = JSON.parse(data);
 	  			for(i = 0; i < data.users.length; i++){
@@ -50,7 +65,15 @@ include('header.php');
 
 	$.get('./assets/includes/users.php?friendActivities', function(data) {
       if(data >= 400){
-            error_msg("<? echo $activityerror ?>");
+        console.log(data);
+        if(data == 400){
+            error_msg("<? echo $activityError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $activityNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $activityNotFound ?>")
+        }
+        $('#loadingIndicator').hide();
       }else{
           data = JSON.parse(data);
 
