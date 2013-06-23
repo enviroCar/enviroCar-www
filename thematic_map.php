@@ -151,7 +151,7 @@ var chosenSensor = null;
     else return "#E01B1B";
   }
 
-  function drawLegend(property){
+  function drawLegend(property, unit){
 	var range = chosenSensor.max - chosenSensor.min;
     var steps = range/5;
 	var step1 = Math.round(chosenSensor.min + steps);
