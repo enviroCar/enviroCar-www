@@ -101,7 +101,7 @@ $(function(){
     $('#friendStatistics').text("");
 	$('#fStatistics').text("");
     $(".btn:first-child").text('Your choice is : '+$(this).text());
-    // $(".btn:first-child").val($(this).text());
+    $(".btn:first-child").val($(this).text());
 	 $('#friendStatistics').append('<p>Statistics of '+$(this).text()+' :</p>');
 	 fname=$(this).text();
 	//at the get function try to put the value insted !
@@ -110,7 +110,10 @@ $(function(){
         error_msg(fname+" statistics couldn't be loaded successfully, because "+fname+" is not your friend");
     }else{
       data = JSON.parse(data);
-      for(i = 0; i < data.statistics.length; i++)
+	  for (h=0; h<count; h++ )
+	  values2[h]=0;
+		
+	    for(i = 0; i < data.statistics.length; i++)
 		{	
         $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 		for (j=0; j<count; j++ )
@@ -121,6 +124,11 @@ $(function(){
 		}
 		}
 		}
+   if(data.statistics.length==0)
+   	$('#fStatistics').text("Sorry; "+fname+" did not share any data yet !!");
+
+   
+
  
     }
  google.setOnLoadCallback(drawChart());
