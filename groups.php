@@ -93,8 +93,8 @@ if(isset($_GET['group_deleted'])){
 
 
   	</script>
-<div id="loadingIndicator" class="loadingIndicator">
-  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none"></div>
+<div id="loadingIndicator" class="loadingIndicator" style="display:none">
+  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px"></div>
 </div>
   		<div id="create_group_modal" class="modal hide fade">
 		  <div class="modal-header">
