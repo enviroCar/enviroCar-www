@@ -188,7 +188,9 @@ $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.
 $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
 
 
-
+$fuelType = "Treibstoff";
+$constructionYear ="Baujahr";
+$manufacturer = "Hersteller";
 
 $firstname = "Vorname";
 $lastname = "Nachname";
@@ -208,4 +210,6 @@ $female ="weiblich";
 
 $deletemyaccount ="Account löschen";
 $editaccount = "Editieren";
+
+$avatarGravatar ="Dein Profilbild basiert auf deiner E-Mail-Adresse. Ändere es jetzt auf ";
 ?>

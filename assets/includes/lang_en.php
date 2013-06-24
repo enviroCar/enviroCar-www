@@ -195,6 +195,9 @@ $location = "Location";
 $language = "Language";
 $aboutme ="About me";
 
+$fuelType = "Fuel type";
+$constructionYear ="Construction Year";
+$manufacturer = "Manufacturer";
 
 $addasfriend ="Add as friend";
 $removeasfriend ="Delete as friend";
@@ -205,4 +208,6 @@ $female ="female";
 
 $deletemyaccount ="Delete account";
 $editaccount = "Edit";
+
+$avatarGravatar ="Your profile picture is based on your email adress. You can change it at ";
 ?>
