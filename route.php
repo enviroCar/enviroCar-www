@@ -244,6 +244,12 @@ include('header.php');
 
       data = JSON.parse(data);
       addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
+      if(data.properties.sensor.properties != null){
+        $('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
+        $('#routeInformation').append('<p>Fuel Type: '+data.properties.sensor.properties.fuelType+'<br>');
+        $('#routeInformation').append('<p>Construciton Year: '+data.properties.sensor.properties.constructionYear+'<br>');
+        $('#routeInformation').append('<p>Manufacturer: '+manufacturer+'/p><br>');
+      }
 
       $('#loadingIndicator').hide();
     }
