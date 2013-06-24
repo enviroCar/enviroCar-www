@@ -146,7 +146,7 @@ var chosenSensor = null;
     else return "#E01B1B";
   }
 
-  $.get('./assets/includes/get.php?url=http://giv-wilhelm.uni-muenster.de/lcs/product/statistics.php', function(data) {
+  $.get('../data-aggregation/statistics.php', function(data) {
     if(data >= 400){
         console.log('error in getting statistics');
         error_msg("Route couldn't be loaded successfully.");
@@ -158,7 +158,7 @@ var chosenSensor = null;
   });
 
   //GET the information about the specific track
-  $.get('./assets/includes/get.php?url=http://giv-wilhelm.uni-muenster.de/lcs/product/tracks.php', function(data) {
+  $.get('../data-aggregation/tracks.php', function(data) {
     if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
         console.log('error in getting tracks');
         error_msg("Route couldn't be loaded successfully.");
