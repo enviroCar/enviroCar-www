@@ -19,14 +19,18 @@ include('header-start.php');
         	if($('#password1').val() != $('#password2').val()){
           		alert("<?php echo $freg_notidentic_password;?>");
           	}else{
-	          $.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
-	            function(response){
-	              if(response === 'status:ok'){
-	              	window.location.href = "index.php?registration_successful";
-	              }else{
-	              	toggle_visibility('registration_fail');
-	              }
-	            });
+          		if($('#password1').val().length > 5){
+		          $.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
+		            function(response){
+		              if(response === 'status:ok'){
+		              	window.location.href = "index.php?registration_successful";
+		              }else{
+		              	toggle_visibility('registration_fail');
+		              }
+		            });
+	      		}else{
+	      			alert('Password has to be at least 6 characters long');
+	      		}
 	        }
         }
       }

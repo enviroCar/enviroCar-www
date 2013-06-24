@@ -2,14 +2,14 @@
 if (!isset($_SESSION)) session_start();
 
 require('connection.php');
-$baseUrl = $serverurl; //as defined in connection.php
+$baseUrl = $serverurl;
 
 //Login
 if(isset($_GET['login'])){
 	$_SESSION['name'] = $_POST['name'];
 	$_SESSION['password'] = $_POST['password'];
 		
-	$response = get_request($baseUrl.'users/'.$_POST['name'], true);
+	$response = get_request($baseUrl.'/users/'.$_POST['name'], true);
 
 	if($response["status"] == 200){
 		$response = json_decode($response["response"],true);
@@ -30,7 +30,7 @@ if(isset($_GET['login'])){
 else if(isset($_GET['registration'])){
 
 	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
-	$response = post_request($baseUrl.'users', $newUser, false);
+	$response = post_request($baseUrl.'/users', $newUser, false);
 
 
 	if($response["status"] == 201){
@@ -96,4 +96,37 @@ function login($name, $password, $permanent){
 		return false;
 	}
 }
+
+
+
+
+
+//language
+if(isSet($_GET['lang']))
+{
+$lang = $_GET['lang'];
+
+// register the session and set the cookie
+$_SESSION['lang'] = $lang;
+
+setcookie('lang', $lang, time() + (3600 * 24 * 30));
+}
+else if(isSet($_SESSION['lang']))
+{
+$lang = $_SESSION['lang'];
+}
+else if(isSet($_COOKIE['lang']))
+{
+$lang = $_COOKIE['lang'];
+}
+else
+{
+$lang = 'en';
+}
+
+
+
+include('lang_'.$lang.'.php');
+
+
 ?>
