@@ -9,13 +9,14 @@ include('header.php');
     function getAvatar(name, size){
       return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
     }
-		
+
   		function addMemberToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
   			$('#memberList').append('<li class="customLi"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></li>');
   		}
 
   		function joinGroup(){
+        $('#loadingIndicator').show();
   			$.get('./assets/includes/groups.php?joinGroup=<? echo $_GET['group'] ?>', function(data){
 	      		if(data >= 400){
       			  if(data == 400){
@@ -30,12 +31,15 @@ include('header.php');
   					addMemberToList("<? echo $_SESSION['name'] ?>");
   					$('#join_leave_group').html('<a href="javascript:leaveGroup()">Leave Group</a>');
   				}
-  			})
+  			$('#loadingIndicator').hide();
+        })
   		}
 
   		 function leaveGroup(){
+        $('#loadingIndicator').show();
   			$.get('./assets/includes/groups.php?leaveGroup=<? echo $_GET['group'] ?>', function(data){
   				if(data >= 400){
+            $('#loadingIndicator').hide();
   					error_msg("The group couldn't be left successfully.");
   				}else{
   					window.location.reload();
@@ -45,8 +49,10 @@ include('header.php');
 
   		function deleteGroup(){
   			if(confirm("Are you sure you want to delete this group? This can't be undone!")){
+          $('#loadingIndicator').show();
 	  			$.get('./assets/includes/groups.php?deleteGroup=<? echo $_GET['group'] ?>', function(data){
 	  				if(data >= 400){
+              $('#loadingIndicator').hide();
 	  					error_msg("The group couldn't be deleted successfully.");
 	  				}else{
 	  					window.location.href = "groups.php?group_deleted";
@@ -91,7 +97,7 @@ include('header.php');
       		  }else if(data == 404){
       		    error_msg("<? echo $groupNotFound ?>")
       		  }
-      		  $('#loadingIndicator').hide();
+      		  $('#loadingIndicator_members').hide();
       		}else{
 		        data = JSON.parse(data);
 		        var member = false;
@@ -111,6 +117,7 @@ include('header.php');
 		          		$('#join_leave_group').html('<a href="javascript:joinGroup()"><? echo $joingroup ?></a>');
 		        }
 	      	}
+          $('#loadingIndicator_members').hide();
 	  	});
 
 	  	$.get('./assets/includes/groups.php?groupActivities=<? echo $_GET['group'] ?>', function(data) {
@@ -122,7 +129,7 @@ include('header.php');
       		  }else if(data == 404){
       		    error_msg("<? echo $activityNotFound ?>")
       		  }
-      		  $('#loadingIndicator').hide();
+      		  $('#loadingIndicator_activities').hide();
       		}else{
 		        data = JSON.parse(data);
 	          	if(data.activities.length > 0){
@@ -148,6 +155,7 @@ include('header.php');
 		          $('#groupActivities').append("<? echo $norecentactivities ?>");
 		        }   
 	      	}
+          $('#loadingIndicator_activities').hide();
 	  	});
 
     function convertToLocalTime(serverDate) {
@@ -176,7 +184,9 @@ include('header.php');
 
 
   	</script>
-	
+	<div id="loadingIndicator" class="loadingIndicator" style="display:none">
+    <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+  </div>
 		<div class="container rightband">
 			<div class="span7">
 				<h2 id="group_headline"></h2>
@@ -195,6 +205,7 @@ include('header.php');
 
 			<div class="span5">
 				<h2><? echo $member ?></h2>
+          <div id="loadingIndicator_members" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 				<ul id="memberList" style="max-height: 400px; overflow-y: auto;">	
 
 				</ul>          
@@ -202,6 +213,7 @@ include('header.php');
 			
 			<div class="span4">
 				<h2><? echo $dashboard_group_activities ?></h2>	
+          <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 			  	<ul id="groupActivities" style="max-height: 400px; overflow-y: auto;">
 			  	</ul>
 	        </div>

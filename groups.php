@@ -49,7 +49,7 @@ if(isset($_GET['group_deleted'])){
       		  }else if(data == 404){
       		    error_msg("<? echo $groupNotFound ?>")
       		  }
-      		  $('#loadingIndicator').hide();
+      		  $('#loadingIndicator_groups').hide();
       		}else{
 	  			data = JSON.parse(data);
 	  			for(i = 0; i < data.groups.length; i++){
@@ -59,6 +59,7 @@ if(isset($_GET['group_deleted'])){
         			window.location.href = "group.php?group="+item;
 			    }});
 	  		}
+	  		$('#loadingIndicator_groups').hide();
 	  	});
 
 	  	$(function(){
@@ -66,7 +67,8 @@ if(isset($_GET['group_deleted'])){
 		  		if($('#group_name').val() === '' || $('#group_description').val() === ''){
 	  				alert("<? echo $bothFieldsFilled ?>");
 	  			}else{
-	  				if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){	
+	  				if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){
+	  					$('#loadingIndicator').show();	
 		  				$.post('./assets/includes/groups.php?createGroup', {group_name: $('#group_name').val(), group_description: $('#group_description').val()}, 
 			            	function(response){
 			              		if(response >= 400){
@@ -76,6 +78,7 @@ if(isset($_GET['group_deleted'])){
 			              		}
 			            });
 		  			}else{
+		  				$('#loadingIndicator').hide();
 		  				alert("<? echo $invalidCharacterError ?>");
 		  			}
 	  			}
@@ -90,7 +93,9 @@ if(isset($_GET['group_deleted'])){
 
 
   	</script>
-
+<div id="loadingIndicator" class="loadingIndicator">
+  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none"></div>
+</div>
   		<div id="create_group_modal" class="modal hide fade">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -126,6 +131,7 @@ if(isset($_GET['group_deleted'])){
 
 			<div class="span6">
 				<h2>Groups</h2>
+				 <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">	
 
 				</ul>          
