@@ -28,8 +28,7 @@ include('header.php');
       			  }
       			  $('#loadingIndicator').hide();
       			}else{
-  					addMemberToList("<? echo $_SESSION['name'] ?>");
-  					$('#join_leave_group').html('<a href="javascript:leaveGroup()">Leave Group</a>');
+  					window.location.reload();
   				}
   			$('#loadingIndicator').hide();
         })
