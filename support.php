@@ -17,16 +17,16 @@ if(!is_logged_in()){
 		e.preventDefault();
 		$(this).tab('show');
 	})
-	$('#myTab a:last').tab('show');
+	//$('#myTab a:last').tab('show');
 </script>
 
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="tabbable">
 			<ul id="myTab" class="nav nav-tabs" >
-				<li><a href="#main" data-toggle="tab" ><strong>Main Information</strong></a></li>
-				<li><a href="#mobile" data-toggle="tab"> <strong>Mobile Application</strong></a></li>
-				<li><a href="#website" data-toggle="tab"> <strong>WebSite</strong></a></li>
+				<li><a href="#main" data-toggle="tab"><strong>Main Information</strong></a></li>
+				<li><a href="#mobile" data-toggle="tab"><strong>Mobile Application</strong></a></li>
+				<li><a href="#website" data-toggle="tab"><strong>WebSite</strong></a></li>
 				<li><a href="#faqs" data-toggle="tab"><strong>FAQs</strong></a></li>
 			</ul>
 		</div>
@@ -141,7 +141,7 @@ if(!is_logged_in()){
 					</div>    
 				</div>
 			</div><!--end of div id="mobile"-->
-			<div class="tab-pane fade in " id="website">
+			<div class="tab-pane fade in" id="website">
 				<div class="container leftband" style="padding-right:20px; padding-top:20px; padding-top:20px">
 					<div class="row-fluid">
 						<div class="span9 offset1 ">
@@ -268,169 +268,169 @@ if(!is_logged_in()){
 							</p>
 						</div>
 					</div>
-				</div><!--end of div id="website"-->
-				<div class="tab-pane fade in" id="faqs">
-					<div class="container leftband" style="padding-right:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1 ">
-								<ul id="faqList" style="margin-bottom: 10px; overflow-y:auto">
-									<li><a style="font-size:14px" href="#q1"> Q1: How does it work?</a></li>		
-									<li><a style="font-size:14px" href="#q2"> Q2: How to get started? What are the requirements?</a></li>
-									<li><a style="font-size:14px" href="#q3"> Q3: Which OBD-II adapters are compatible with enviroCar?</a></li>		
-									<li><a style="font-size:14px" href="#q4"> Q4: Is my car supported?</a></li>
-									<li><a style="font-size:14px" href="#q5"> Q5: Why do we need Indiegogo backers?</a></li>		
-									<li><a style="font-size:14px" href="#q6"> Q6: What’s about privacy and security?</a></li>
-									<li><a style="font-size:14px" href="#q7"> Q7: I’m a developer and very interested in this project. Is there a way to make some further implementations?</a></li>
-									<li><a style="font-size:14px" href="#q8"> Q8: What’s next?</a></li>		
-									<li><a style="font-size:14px" href="#q9"> Q9: When enviroCar will be published?</a></li>	
-									<li><a style="font-size:14px" href="#q10"> Q10: Can we ship to your country?</a></li>	
-								</ul>
-							</div>
-						</div> 
-					</div>
-					<div class="container rightband" style="padding-left:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q1">How does it work?</strong>
-								<p style="text-align: justify; font-size:14px;">  
-									By using OBD2 adapter, enviroCar is able to receive your cars data by pairing your smartphone via Bluetooth with the adapter. The smartphone app analyzes and parses the data to give you in the app and on the enviroCar these information, which you want to see.
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>
-						</div>    
+				</div>
+			</div><!--end of div id="website"-->
+			<div class="tab-pane fade in" id="faqs">
+				<div class="container leftband" style="padding-right:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1 ">
+							<ul id="faqList" style="margin-bottom: 10px; overflow-y:auto">
+								<li><a style="font-size:14px" href="#q1"> Q1: How does it work?</a></li>		
+								<li><a style="font-size:14px" href="#q2"> Q2: How to get started? What are the requirements?</a></li>
+								<li><a style="font-size:14px" href="#q3"> Q3: Which OBD-II adapters are compatible with enviroCar?</a></li>		
+								<li><a style="font-size:14px" href="#q4"> Q4: Is my car supported?</a></li>
+								<li><a style="font-size:14px" href="#q5"> Q5: Why do we need Indiegogo backers?</a></li>		
+								<li><a style="font-size:14px" href="#q6"> Q6: What’s about privacy and security?</a></li>
+								<li><a style="font-size:14px" href="#q7"> Q7: I’m a developer and very interested in this project. Is there a way to make some further implementations?</a></li>
+								<li><a style="font-size:14px" href="#q8"> Q8: What’s next?</a></li>		
+								<li><a style="font-size:14px" href="#q9"> Q9: When enviroCar will be published?</a></li>	
+								<li><a style="font-size:14px" href="#q10"> Q10: Can we ship to your country?</a></li>	
+							</ul>
+						</div>
 					</div> 
-					<div class="container leftband" style="padding-right:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q2">How to get started? What are the requirements?</strong>
-								<p style="text-align: justify; font-size:14px;">
-									Plug your OBD2 adapter into the OnBoard Diagnostic (OBD) port of your car. Download &amp; install the app, pair it with your adapter and you’re ready to be a part of enviroCar.
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>    
-							</div>    
-						</div>    
-					</div>
-					<div class="container rightband" style="padding-left:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q3">Which OBD-II adapters are compatible with enviroCar?</strong>
-								<p style="text-align: justify; font-size:14px">  
-									There are quite a lot OBD-II adapters for using enviroCar in different pricy ranges. You can buy these adapters on ebay, amazon or several shops. To get some infomation, you can get q quick overview. But please keep in mind, there are many (for example on ebay or amazon) which won’t work. Please have a look on some reviews. If you want to be sure, 
-									Also one very important fact about OBD-II use adapters in Germany: It’s only allowed to use CE-certified OBD-II adpaters. While driving your car, the usage of adapters without a CE-certificate is permitted. If you want to be sure, to have the right adapter, contact us or make a pledge for the 199€ pledge (enviroCar device (early bird)), where the right adapter is already included.
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>   
-							</div>    
-						</div>    
-					</div> 
-					<div class="container leftband" style="padding-right:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q4">Is my car supported?</strong>
-								<p style="text-align: justify; font-size:14px">
-									Mainly there is the following rule. In the USA, all cars from 01.01.1996 have to have the OBD2 interface.
-									In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles from 01.01.2003 OBD-2 is supported. For trucks, the OBD2 support started with 1. January 2005
-									You can also have a look here
-									Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/51-ist-mein-fahrzeug-obd-2-kompatibel.html 
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>    
-							</div>    
-						</div>    
-					</div>
-					<div class="container rightband" style="padding-left:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q5">Why do we need Indiegogo backers? </strong>
-								<p style="text-align: justify; font-size:14px">  
-									By using indiegogo we want to collect 10.000€ for our future work. With your donation,
-									you can be sure, that the enviroCar has a future. That you have the chance to review your and other 
-									data for a long time; that you can make yourself and your city more smarter. Help us, that people and 
-									students can extend and work on this project. 
-									(Linked Citizen science is a topic, in which the ifgi and 52N want to do more scientific work) 
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>    
+				</div>
+				<div class="container rightband" style="padding-left:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q1">How does it work?</strong>
+							<p style="text-align: justify; font-size:14px;">  
+								By using OBD2 adapter, enviroCar is able to receive your cars data by pairing your smartphone via Bluetooth with the adapter. The smartphone app analyzes and parses the data to give you in the app and on the enviroCar these information, which you want to see.
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
+						</div>
+					</div>    
+				</div> 
+				<div class="container leftband" style="padding-right:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q2">How to get started? What are the requirements?</strong>
+							<p style="text-align: justify; font-size:14px;">
+								Plug your OBD2 adapter into the OnBoard Diagnostic (OBD) port of your car. Download &amp; install the app, pair it with your adapter and you’re ready to be a part of enviroCar.
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>    
 						</div>    
 					</div>    
-					<div class="container leftband" style="padding-right:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q6">What’s about privacy and security?</strong>
-								<p style="text-align: justify; font-size:14px">
-									Of course we are aware of your privacy issue. All your data will be anonymized, 
-									so nobody will be able to collect sensitive, specific, person-related data about your usage. Your security is a very important 
-								topic for us. By using enviroCar you haven’t worry about it. </p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>    
+				</div>
+				<div class="container rightband" style="padding-left:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q3">Which OBD-II adapters are compatible with enviroCar?</strong>
+							<p style="text-align: justify; font-size:14px">  
+								There are quite a lot OBD-II adapters for using enviroCar in different pricy ranges. You can buy these adapters on ebay, amazon or several shops. To get some infomation, you can get q quick overview. But please keep in mind, there are many (for example on ebay or amazon) which won’t work. Please have a look on some reviews. If you want to be sure, 
+								Also one very important fact about OBD-II use adapters in Germany: It’s only allowed to use CE-certified OBD-II adpaters. While driving your car, the usage of adapters without a CE-certificate is permitted. If you want to be sure, to have the right adapter, contact us or make a pledge for the 199€ pledge (enviroCar device (early bird)), where the right adapter is already included.
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>   
 						</div>    
 					</div>    
-					<div class="container rightband" style="padding-left:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q7">I’m a developer and very interested in this project. Is there a way to make some further implementations?</strong>
-								<p style="text-align: justify; font-size:14px">
-									Open Source software, sparql, contact us
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>
-						</div>    
-					</div>     
-					<div class="container leftband" style="padding-right:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q8">What’s next?</strong>
-								<p style="text-align: justify; font-size:14px">
-									To start with our goal to make your place a little bit smarter, you’re the most important person in this program. The next steps include further implementation of new features and the development a working system, as well as building up the enviroCar community.
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>    
+				</div> 
+				<div class="container leftband" style="padding-right:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q4">Is my car supported?</strong>
+							<p style="text-align: justify; font-size:14px">
+								Mainly there is the following rule. In the USA, all cars from 01.01.1996 have to have the OBD2 interface.
+								In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles from 01.01.2003 OBD-2 is supported. For trucks, the OBD2 support started with 1. January 2005
+								You can also have a look here
+								Alternatively we could use a picture like this: http://www.obd-2.de/faqs/obd-2/51-ist-mein-fahrzeug-obd-2-kompatibel.html 
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>    
 						</div>    
 					</div>    
-					<div class="container rightband" style="padding-left:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q9"> When enviroCar will be published?</strong>
-								<p style="text-align: justify; font-size:14px">
-									We’re working hard on the enviroCar system. For now we’ve implemented first prototypes for app and website. Further work will be on adding more features and implementing useful functions for you.
-									We plan to release enviroCar with the end of XXX. Please be patient and look for our updates.
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>    
+				</div>
+				<div class="container rightband" style="padding-left:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q5">Why do we need Indiegogo backers? </strong>
+							<p style="text-align: justify; font-size:14px">  
+								By using indiegogo we want to collect 10.000€ for our future work. With your donation,
+								you can be sure, that the enviroCar has a future. That you have the chance to review your and other 
+								data for a long time; that you can make yourself and your city more smarter. Help us, that people and 
+								students can extend and work on this project. 
+								(Linked Citizen science is a topic, in which the ifgi and 52N want to do more scientific work) 
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
 						</div>    
-					</div>
-					<div class="container leftband" style="padding-right:20px; padding-top:20px">
-						<div class="row-fluid">
-							<div class="span9 offset1">
-								<strong style="font-size:14" id="q10">Can we ship to your country?</strong>
-								<p style="text-align: justify; font-size:14px">
-									We will ship in all countries.
-								</p>
-								<p class="pull-right" style="font-size:10px">
-									<a href="#">Back to top</a>
-								</p>
-							</div>    
+					</div>    
+				</div>    
+				<div class="container leftband" style="padding-right:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q6">What’s about privacy and security?</strong>
+							<p style="text-align: justify; font-size:14px">
+								Of course we are aware of your privacy issue. All your data will be anonymized, 
+								so nobody will be able to collect sensitive, specific, person-related data about your usage. Your security is a very important 
+							topic for us. By using enviroCar you haven’t worry about it. </p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
 						</div>    
-					</div>
-				</div><!--end of div id="faqs"-->   
-			</div><!--end tab content-->
-		</div>
+					</div>    
+				</div>    
+				<div class="container rightband" style="padding-left:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q7">I’m a developer and very interested in this project. Is there a way to make some further implementations?</strong>
+							<p style="text-align: justify; font-size:14px">
+								Open Source software, sparql, contact us
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
+						</div>
+					</div>    
+				</div>     
+				<div class="container leftband" style="padding-right:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q8">What’s next?</strong>
+							<p style="text-align: justify; font-size:14px">
+								To start with our goal to make your place a little bit smarter, you’re the most important person in this program. The next steps include further implementation of new features and the development a working system, as well as building up the enviroCar community.
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
+						</div>    
+					</div>    
+				</div>    
+				<div class="container rightband" style="padding-left:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q9"> When enviroCar will be published?</strong>
+							<p style="text-align: justify; font-size:14px">
+								We’re working hard on the enviroCar system. For now we’ve implemented first prototypes for app and website. Further work will be on adding more features and implementing useful functions for you.
+								We plan to release enviroCar with the end of XXX. Please be patient and look for our updates.
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
+						</div>    
+					</div>    
+				</div>
+				<div class="container leftband" style="padding-right:20px; padding-top:20px">
+					<div class="row-fluid">
+						<div class="span9 offset1">
+							<strong style="font-size:14" id="q10">Can we ship to your country?</strong>
+							<p style="text-align: justify; font-size:14px">
+								We will ship in all countries.
+							</p>
+							<p class="pull-right" style="font-size:10px">
+								<a href="#">Back to top</a>
+							</p>
+						</div>    
+					</div>    
+				</div>
+			</div><!--end of div id="faqs"-->   
+		</div><!--end tab content-->
 	</div>
 </div>
 <?
