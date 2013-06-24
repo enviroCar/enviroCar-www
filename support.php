@@ -140,7 +140,7 @@ if(!is_logged_in()){
 				</div>
 			</div><!--end of div id="mobile"-->
 			<div class="tab-pane fade in" id="website">
-				<div class="container leftband>
+				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span">
 							<ul id="websiteList">
