@@ -256,6 +256,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     <h3>Change Profil</h3>
   </div>
   <div class="modal-body">
+      <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
     <form id="changeProfilForm" action="./assets/includes/users.php?updateUser" method="post">
       Email: <input id="mail" name="mail" type="text" class="input-block-level" placeholder="Email">
       <? echo $firstname ?>: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
