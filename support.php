@@ -25,9 +25,9 @@ if(!is_logged_in()){
 		<div class="tabbable">
 			<ul id="myTab" class="nav nav-tabs" >
 				<li><a href="#main" data-toggle="tab" ><strong>Main Information</strong></a></li>
-				<li><a href="#mobile" data-toggle="tab"> <strong> Mobile Application</strong></a></li>
-				<li><a href="#website" data-toggle="tab"> <strong> WebSite</strong></a></li>
-				<li><a href="#faqs" data-toggle="tab"><strong> FAQs</strong></a></li>
+				<li><a href="#mobile" data-toggle="tab"> <strong>Mobile Application</strong></a></li>
+				<li><a href="#website" data-toggle="tab"> <strong>WebSite</strong></a></li>
+				<li><a href="#faqs" data-toggle="tab"><strong>FAQs</strong></a></li>
 			</ul>
 		</div>
 		<div class="tab-content">
@@ -269,7 +269,7 @@ if(!is_logged_in()){
 						</div>
 					</div>
 				</div><!--end of div id="website"-->
-				<div class="tab-pane fade in " id="faqs">
+				<div class="tab-pane fade in" id="faqs">
 					<div class="container leftband" style="padding-right:20px; padding-top:20px">
 						<div class="row-fluid">
 							<div class="span9 offset1 ">
