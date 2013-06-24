@@ -95,7 +95,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }else if(data == 404){
           error_msg("<? echo $groupNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_groups').hide();
       }else{
         data = JSON.parse(data);
         if(data.groups.length > 0 ){
@@ -106,6 +106,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           $('#groups').append('</ul>');
         }
       }
+      $('#loadingIndicator_groups').hide();
     });
   }
 
@@ -155,7 +156,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }else if(data == 404){
           error_msg("<? echo $friendNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_friends').hide();
       }else{
         data = JSON.parse(data);
         if(data.users.length > 0 ){
@@ -166,6 +167,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }
 
       }
+      $('#loadingIndicator_friends').hide();
     });
   }
 
@@ -318,11 +320,13 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     <div id="friendsgroups" class="span8">
       <div class="span5">
         <h2><? echo $friends ?></h2>
+         <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
         <ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
         </ul>
       </div>
       <div id="groups" class="span5">
         <h2><? echo $groups ?></h2>
+         <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
       </div>
     </div>
   </div>

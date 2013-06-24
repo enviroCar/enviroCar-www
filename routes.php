@@ -2,10 +2,6 @@
 include('header.php');
 ?>
 
-<div id="loadingIndicator" class="loadingIndicator">
-  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-</div>
-
 <script type="text/javascript">
   var loading = true;
 
@@ -31,14 +27,14 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $routeNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_routes').hide();
       }else{
         	data = JSON.parse(data);
           numberofTracks = data.tracks.length;
           addOverallStatistics("Tracks", numberofTracks);
           if(numberofTracks > 0){
             if(!loading){
-              $('#loadingIndicator').hide();
+              $('#loadingIndicator_routes').hide();
             }else{
               loading = false;
             }
@@ -48,7 +44,7 @@ include('header.php');
 
           }else{
             $('#routes').append("<? echo $noroutesavailable ?>");
-            $('#loadingIndicator').hide();
+            $('#loadingIndicator_routes').hide();
           }
     	}
   	});
@@ -63,12 +59,12 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $statisticsNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_statistics').hide();
       }else{
           data = JSON.parse(data);
           if(data.statistics.length > 0){
             if(!loading){
-              $('#loadingIndicator').hide();
+              $('#loadingIndicator_').hide();
             }else{
               loading = false;
             }
@@ -77,9 +73,10 @@ include('header.php');
             }
 
           }else{
-            $('#loadingIndicator').hide();
+            $('#loadingIndicator_statistics').hide();
           }
       }
+      $('#loadingIndicator_statistics').hide();
     });
 
   	function convertToLocalTime(serverDate) {
@@ -113,11 +110,13 @@ include('header.php');
 	<div class="row-fluid">
       <div class="span5">
         <h2><? echo $yourroutes ?></h2>
+        <div id="loadingIndicator_routes" style="background:url(./assets/img/ajax-loader.gif) no-repeat centereight:100px;"></div>
         	<ul id="routes" style="max-height: 400px; overflow-y: auto;">
         	</ul>
       </div>
       <div class="span5 ">
         <h2><? echo $yourstatistics ?></h2>
+        <div id="loadingIndicator_statistics" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
         <div style="max-height: 400px; overflow-y: auto;">
           <ul id="overallStatistics">
           </ul>

@@ -52,6 +52,7 @@ include('header.php');
 <div class="container">
 
   <div class="span5">
+  <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
     <div style="max-height:400px; overflow:auto;">
       <div id="routeInformation"></div>
       <div id="routeStatistics"></div>
@@ -243,6 +244,12 @@ include('header.php');
 
       data = JSON.parse(data);
       addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
+      if(data.properties.sensor.properties != null){
+        $('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
+        $('#routeInformation').append('<p>Fuel Type: '+data.properties.sensor.properties.fuelType+'<br>');
+        $('#routeInformation').append('<p>Construciton Year: '+data.properties.sensor.properties.constructionYear+'<br>');
+        $('#routeInformation').append('<p>Manufacturer: '+manufacturer+'/p><br>');
+      }
 
       $('#loadingIndicator').hide();
     }
@@ -259,7 +266,7 @@ include('header.php');
         }else if(data == 404){
           error_msg("<? echo $statisticsNotFound ?>")
         }
-        $('#loadingIndicator').hide();
+        $('#loadingIndicator_route').hide();
       }else{
       data = JSON.parse(data);
 
@@ -268,7 +275,7 @@ include('header.php');
       }
       
     }
-    
+   $('#loadingIndicator_route').hide(); 
   });
 
 

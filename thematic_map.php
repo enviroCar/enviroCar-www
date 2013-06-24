@@ -108,7 +108,7 @@ var chosenSensor = null;
     }
     routes.redraw();
     $('#sensor_headline').html(property);
-	drawLegend(property);
+	drawLegend(property, chosenSensor.phenomenon.unit);
 
   }
 
@@ -151,19 +151,19 @@ var chosenSensor = null;
     else return "#E01B1B";
   }
 
-  function drawLegend(property){
+  function drawLegend(property, unit){
 	var range = chosenSensor.max - chosenSensor.min;
     var steps = range/5;
-	var step1 = chosenSensor.min + steps;
-	var step2 = chosenSensor.min + steps * 2;
-	var step3 = chosenSensor.min + steps * 3;
-	var step4 = chosenSensor.min + steps * 4;
+	var step1 = Math.round(chosenSensor.min + steps);
+	var step2 = Math.round(chosenSensor.min + steps * 2);
+	var step3 = Math.round(chosenSensor.min + steps * 3);
+	var step4 = Math.round(chosenSensor.min + steps * 4);
 	
-	document.getElementById('legend').innerHTML='<img src="assets/img/legend/legend1.png">'+' 0 - ' + step1 +'<br>'+ 
-		'<img src="assets/img/legend/legend2.png">'+ ' ' + step1 + ' - '+ step2 +'<br>'+
-		'<img src="assets/img/legend/legend3.png">'+ ' ' + step2 + ' - '+ step3 +'<br>'+
-		'<img src="assets/img/legend/legend4.png">'+ ' ' + step3 + ' - '+ step4 +'<br>'+
-		'<img src="assets/img/legend/legend5.png">'+ ' ' + step4 + ' - '+ chosenSensor.max
+	document.getElementById('legend').innerHTML='<img src="assets/img/legend/legend1.png">'+' 0 - ' + step1 + ' ' + unit +'<br>'+ 
+		'<img src="assets/img/legend/legend2.png">'+ ' ' + step1 + ' - '+ step2 + ' ' + unit +'<br>'+
+		'<img src="assets/img/legend/legend3.png">'+ ' ' + step2 + ' - '+ step3 + ' ' + unit +'<br>'+
+		'<img src="assets/img/legend/legend4.png">'+ ' ' + step3 + ' - '+ step4 + ' ' + unit +'<br>'+
+		'<img src="assets/img/legend/legend5.png">'+ ' ' + step4 + ' - '+ chosenSensor.max + ' ' + unit
 		;
   }
   

@@ -96,7 +96,7 @@ if(!is_logged_in()){
       <hr class="featurette-divider">
 
       <div class="featurette" style="margin-right: 2%">
-		<img class="featurette-image pull-left" src="./assets/img/architecture.svg"  style="width: 50%; padding: 3%" alt=""/>
+		<img class="featurette-image pull-left" src="./assets/img/enviroCar_architecture.svg"  style="width: 50%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $index_how_it_works;?><span class="muted"><? echo ' '.$index_three_steps_to;?></span></h2>
 		<p class="lead" style="text-align: justify">
 		</p>
