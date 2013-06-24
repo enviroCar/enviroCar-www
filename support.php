@@ -17,7 +17,6 @@ if(!is_logged_in()){
 		e.preventDefault();
 		$(this).tab('show');
 	})
-	//$('#myTab a:last').tab('show');
 </script>
 
 		<div class="tabbable">
@@ -34,8 +33,8 @@ if(!is_logged_in()){
 					<div class="row-fluid">
 						<div class="span">
 							<ul id="mainList">
-								<li><a href="#what">- What is EnviroCar?</a></li>
-								<li><a href="#how">- How EnviroCar works?</a></li>
+								<li><a href="#what">What is EnviroCar?</a></li>
+								<li><a href="#how">How EnviroCar works?</a></li>
 							</ul>
 						</div>
 					</div>
@@ -92,9 +91,9 @@ if(!is_logged_in()){
 					<div class="row-fluid">
 						<div class="span">
 							<ul id="mobileList">
-								<li><a href="#reg">- How to registar from your mobile phone?</a></li>
-								<li><a href="#down">- How to Download Envirocar application?</a></li>
-								<li><a href="#sync">- How to Synchronize your data?</a></li>
+								<li><a href="#reg">How to register from your mobile phone?</a></li>
+								<li><a href="#down">How to Download Envirocar application?</a></li>
+								<li><a href="#sync">How to Synchronize your data?</a></li>
 							</ul>
 						</div> 
 					</div>
@@ -144,11 +143,11 @@ if(!is_logged_in()){
 					<div class="row-fluid">
 						<div class="span">
 							<ul id="websiteList">
-								<li><a href="#sign">- How to Register, Sign In and log out ?</a></li>
-								<li><a href="#compare">- How to Comapre your Data?</a></li>
-								<li><a href="#share">- How to Share your Data?</a></li>
-								<li><a href="#Cookies">- Why does this website use cookies?</a></li>
-								<li><a href="#lang">- Which are the supported languages?</a></li>
+								<li><a href="#sign">How to Register, Sign In and log out ?</a></li>
+								<li><a href="#compare">How to Comapre your Data?</a></li>
+								<li><a href="#share">How to Share your Data?</a></li>
+								<li><a href="#Cookies">Why does this website use cookies?</a></li>
+								<li><a href="#lang">Which are the supported languages?</a></li>
 							</ul>
 						</div>
 					</div>
@@ -273,16 +272,16 @@ if(!is_logged_in()){
 					<div class="row-fluid">
 						<div class="span">
 							<ul id="faqList">
-								<li><a href="#q1"> Q1: How does it work?</a></li>		
-								<li><a href="#q2"> Q2: How to get started? What are the requirements?</a></li>
-								<li><a href="#q3"> Q3: Which OBD-II adapters are compatible with enviroCar?</a></li>		
-								<li><a href="#q4"> Q4: Is my car supported?</a></li>
-								<li><a href="#q5"> Q5: Why do we need Indiegogo backers?</a></li>		
-								<li><a href="#q6"> Q6: What’s about privacy and security?</a></li>
-								<li><a href="#q7"> Q7: I’m a developer and very interested in this project. Is there a way to make some further implementations?</a></li>
-								<li><a href="#q8"> Q8: What’s next?</a></li>		
-								<li><a href="#q9"> Q9: When enviroCar will be published?</a></li>	
-								<li><a href="#q10"> Q10: Can we ship to your country?</a></li>	
+								<li><a href="#q1">Q1: How does it work?</a></li>		
+								<li><a href="#q2">Q2: How to get started? What are the requirements?</a></li>
+								<li><a href="#q3">Q3: Which OBD-II adapters are compatible with enviroCar?</a></li>		
+								<li><a href="#q4">Q4: Is my car supported?</a></li>
+								<li><a href="#q5">Q5: Why do we need Indiegogo backers?</a></li>		
+								<li><a href="#q6">Q6: What’s about privacy and security?</a></li>
+								<li><a href="#q7">Q7: I’m a developer and very interested in this project. Is there a way to make some further implementations?</a></li>
+								<li><a href="#q8">Q8: What’s next?</a></li>		
+								<li><a href="#q9">Q9: When enviroCar will be published?</a></li>	
+								<li><a href="#q10">Q10: Can we ship to your country?</a></li>	
 							</ul>
 						</div>
 					</div> 
