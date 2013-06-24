@@ -261,7 +261,7 @@ if(!is_logged_in()){
 								1- Until Now; Envirocar supports two languages in ower website: English and German languages.
 								2- You can toggle between the languages by preesing the flags as seen in the picture below.
 							<br/>
-							<img src="./assets/img/languages.jpg" height="400" width="600" img="Depiction: How to change languages"/><br/>
+							<img src="./assets/img/languages.jpg" height="400" width="600" alt="Depiction: How to change languages"/><br/>
 							</p>
 							<p class="pull-right" style="font-size:10px">
 								<a href="#">Back to top</a>
