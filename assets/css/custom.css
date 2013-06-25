@@ -65,12 +65,25 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 border-left: 1px solid #048ABF;
 }
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5{
 	font-family:  raleway;
 	position: relative;
 }
 
-h3 span{ position:absolute; top:-50px;} /*fixed header anchor issue*/
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span{
+	position:absolute;
+	top:-50px;
+	
+} /*fixed header anchor issue*/
+
 
 .container{
 	background-color: #FFFFFF; 
