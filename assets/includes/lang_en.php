@@ -188,6 +188,8 @@ $groupMemberNotAllowed = "You are not allowed to view the member of the group.";
 $groupOfError ="The groups of the requested person couldn't be loaded successfully.";
 $joinGroupNotAllowed = "You are not allowed to join this group.";
 
+$noFriendsYet = "hasn't added you as a friend yet.";
+
 
 $firstname = "First name";
 $lastname = "Last name";

@@ -190,6 +190,8 @@ $groupMemberNotAllowed = "Es ist dir nicht erlaubt die Mitglieder dieser Gruppe 
 $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.";
 $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
 
+$noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
+
 
 $fuelType = "Treibstoff";
 $constructionYear ="Baujahr";

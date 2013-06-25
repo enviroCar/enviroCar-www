@@ -91,7 +91,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         if(data == 400){
           error_msg("<? echo $groupError ?>");
         }else if(data == 401 || data == 403){
-          error_msg("<? echo $groupNotAllowed ?>")
+          $('#groups').append("<? echo $groupOfNotAllowed ?> "+user+" <? echo $noFriendsYet ?>");
         }else if(data == 404){
           error_msg("<? echo $groupNotFound ?>")
         }
@@ -152,7 +152,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         if(data == 400){
           error_msg("<? echo $friendError ?>");
         }else if(data == 401 || data == 403){
-          error_msg("<? echo $friendNotAllowed ?>")
+          $('#friends').append("<? echo $friendNotAllowed ?> "+user+" <? echo $noFriendsYet ?>");
         }else if(data == 404){
           error_msg("<? echo $friendNotFound ?>")
         }
