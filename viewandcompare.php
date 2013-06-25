@@ -5,48 +5,70 @@ include('header.php');
 <div id="loadingIndicator" class="loadingIndicator">
   <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
-    
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script src="./assets/js/geojsontools.js"></script>
-   
- 
+
 <div class="container leftband">
  <div class="span5 offset6">
   <div class="btn-group" style="float:right">
-  	  <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong>Pick Friends to Compare with..</strong> <span class="caret"></span>
-		  </button>
-		  <ul id="friendsDropdown" class="dropdown-menu" style=" max-height: 300px; width:200px; overflow-y: scroll;">
+      <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong>Pick Friends to Compare with..</strong> <span class="caret"></span>
+      </button>
+      <ul id="friendsDropdown" class="dropdown-menu" style=" max-height: 300px; width:200px; overflow-y: scroll;">
 
-		  </ul>
-		</div>
-		</div>
+      </ul>
+    </div>
+    </div>
  </div>
 
  <div class="container rightband">
  
   <div class="span5">
       <div id="userStatistics" style="max-height:400px; overflow:auto;">
-	  <p style="font-size:25px">Statistics of  <? echo $_SESSION['name'] ?> :</p> 
-	</div>
+    <p style="font-size:25px">Statistics of  <? echo $_SESSION['name'] ?> :</p> 
+  </div>
         
   </div>
   <div class="span5" >
    <div id ="friendStatistics" style="font-size:25px"> </div> 
-	<div id="fStatistics"></div>
+   <p id="friendHeadline" style="font-size:25px"></p>
+   <div id="loadingIndicator_friend_statistics" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none"></div>
+  <div id="fStatistics"></div>
    </div>
    </div>
 <div class="container leftband">
-       <div id="chart_div" style="width: 900px; height: 500px;"></div>
-	   
+      <div id="chart_div" style="width: 900px; height: 500px;">   
+        <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none"></div>
+      </div>
+     
 </div>
-
+    
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   
+ 
 <script type="text/javascript">
-	var values = [];
-	var values2 = [];
-	var fname;
-	var count=0;
-	var phen=[];
-  	
+  var values = [];
+  var values2 = [];
+  var fname;
+  var count=0;
+  var phen=[];
+  var image="";
+
+  $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
+    if(data >= 400){
+        error_msg("user statistics couldn't be loaded successfully.2");
+        $('#loadingIndicator').hide();
+    }else{
+      data = JSON.parse(data);
+      count=data.statistics.length;
+      for(i = 0; i < data.statistics.length; i++){
+        $('#userStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+      
+        values[i]= Math.round(data.statistics[i].avg*100)/100;
+        phen[i]=data.statistics[i].phenomenon.name;
+      }
+      $('#loadingIndicator').hide();
+    }
+    
+  });
+
 
 google.load("visualization", "1", {packages:["corechart"]});
 
@@ -72,87 +94,65 @@ google.load("visualization", "1", {packages:["corechart"]});
       return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ minutes;
     }
 
-
-	$.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
-    if(data >= 400){
-        error_msg("user statistics couldn't be loaded successfully.2");
-    }else{
-      data = JSON.parse(data);
-	  count=data.statistics.length;
-      for(i = 0; i < data.statistics.length; i++){
-        $('#userStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
-	    values[i]= Math.round(data.statistics[i].avg*100)/100;
-		phen[i]=data.statistics[i].phenomenon.name;
-        $('#loadingIndicator').hide();
-	  }
-    }
-    
-  });
-
   
   function getAvatar(name){
      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
   }
-
-$(function(){
   
-  $(".dropdown-menu li a").click(function()
-  {
-    $('#friendStatistics').text("");
-	$('#fStatistics').text("");
-    $(".btn:first-child").text('Your choice is : '+$(this).text());
-    $(".btn:first-child").val($(this).text());
-	 $('#friendStatistics').append('<p>Statistics of '+$(this).text()+' :</p>');
-	 fname=$(this).text();
-	//at the get function try to put the value insted !
-	$.get('assets/includes/users.php?friendStatistics='+fname, function(data) {
-    if(data >= 400){
-        error_msg(fname+" statistics couldn't be loaded successfully, because "+fname+" is not your friend");
-    }else{
-      data = JSON.parse(data);
-	  for (h=0; h<count; h++ )
-	  values2[h]=0;
-		
-	    for(i = 0; i < data.statistics.length; i++)
-		{	
-        $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
-		for (j=0; j<count; j++ )
-		{
-		if ((data.statistics[i].phenomenon.name)==phen[j])
-		{	values2[j]= Math.round(data.statistics[i].avg*100)/100;
-		break;
-		}
-		}
-		}
-   if(data.statistics.length==0)
-   	$('#fStatistics').text("Sorry; "+fname+" did not share any data yet !!");
+  function getFriendStatistics(friend){
+    $('#loadingIndicator_graph').show();
+    $('#loadingIndicator_friend_statistics').show();
+    $('#fStatistics').text("");
 
-   
+    fname = friend;
+    $.get('assets/includes/users.php?friendStatistics='+friend, function(data) {
+      if(data >= 400){
+          if(data == 401 || data == 403) error_msg("Permission denied. "+friend+" hasn't added you as a friend yet.");
+          else error_msg("Statistics could not be found");
+      }else{
+        data = JSON.parse(data);
+        if(data.length)
+        for (h=0; h<count; h++ ){
+          values2[h]=0;
+        }
+        $('#friendHeadline').html("Statistics of  "+friend+":");
+        for(i = 0; i < data.statistics.length; i++){ 
+          $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+          for (j=0; j<count; j++ ){
+            if ((data.statistics[i].phenomenon.name)==phen[j]){ 
+              values2[j]= Math.round(data.statistics[i].avg*100)/100;
+              break;
+            }
+          }
+        }
+        if(data.statistics.length==0){
+          $('#fStatistics').text("Sorry; "+friend+" did not share any data yet !!");
+          values2 = [0,0,0,0];
 
- 
-    }
- google.setOnLoadCallback(drawChart());
+        }
+      }
+      google.setOnLoadCallback(drawChart());
 
-	});
+      $('#loadingIndicator_graph').hide();
+      $('#loadingIndicator_friend_statistics').hide();
 
-  });
-  });
+    });
+  }
 
   $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
-	  	if(data >= 400){
-	          error_msg("Friends couldn't be loaded successfully.");
-	      	}else{
-		        data = JSON.parse(data);
-		        if(data.users.length > 0 ){
-		        	for(i = 0; i < data.users.length; i++){
-				 $('#friendsDropdown').append('<li class="customLi"><img src="'+getAvatar(data.users[i].name)+'" style="height: 30px; margin-right: 10px; "/><a style="display:inline;">'+data.users[i].name+'</a></li>');
-
-		          	}
-		        }
-	      	}
-	  	});
-		
-			(function(){
+    if(data >= 400){
+      error_msg("Friends couldn't be loaded successfully.");
+    }else{
+      data = JSON.parse(data);
+      if(data.users.length > 0 ){
+        for(i = 0; i < data.users.length; i++){
+          $('#friendsDropdown').append('<li class="customLi" onclick="getFriendStatistics(\''+data.users[i].name+'\')"><img src="'+getAvatar(data.users[i].name)+'" style="height: 30px; margin-right: 10px; "/><a style="display:inline;">'+data.users[i].name+'</a></li>');
+        }
+      }
+    }
+  });
+    
+ (function(){
     var s = window.location.search.substring(1).split('&');
       if(!s.length) return;
         var c = {};
@@ -166,21 +166,21 @@ $(function(){
 
 
 function drawChart() 
-	  {
-	  var data = new google.visualization.DataTable();
-			data.addColumn('string','Measurement');
-			data.addColumn('number', '<? echo $_SESSION['name'] ?>');
-			data.addColumn('number', fname);
+    {
+    var data = new google.visualization.DataTable();
+      data.addColumn('string','Measurement');
+      data.addColumn('number', '<? echo $_SESSION['name'] ?>');
+      data.addColumn('number', fname);
 
-			data.addRows(count);
-			
-			
-	 for(i = 0; i < count; i++)
-			{
-			data.setValue(i, 0, phen[i]);
-			data.setValue(i, 1, values[i]);
-		    data.setValue(i, 2, values2[i]);
-			}
+      data.addRows(count);
+      
+      
+   for(i = 0; i < count; i++)
+      {
+      data.setValue(i, 0, phen[i]);
+      data.setValue(i, 1, values[i]);
+        data.setValue(i, 2, values2[i]);
+      }
  
         var options = {
           title: 'Statistics',
@@ -190,7 +190,7 @@ function drawChart()
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       };
-	
+  
 
 
   </script>

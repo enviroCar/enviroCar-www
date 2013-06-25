@@ -13,9 +13,9 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="padding-right: 1ex">
 				<h2 id="privacy_website_head"><?echo $privacy_website_head; ?></h2>
-				<p style="text-align: justify; margin-right: 1%">
+				<p style="text-align: justify;">
 					<?echo $privacy_website_text_01; ?>
 					<ul>
 						<?echo $privacy_website_text_use_datalist; ?>
@@ -32,9 +32,9 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="padding-right: 1ex">
 				<h2 id="privacy_cookies_head"><?echo $privacy_cookies_head; ?></h2>
-				<p style="text-align: justify; margin-right: 1%">
+				<p style="text-align: justify;">
 					<?echo $privacy_cookies_text_01; ?>
 					<ul>
 						<?echo $privacy_cookies_text_use_datalist; ?>
@@ -47,9 +47,9 @@ if(!is_logged_in()){
 	
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="padding-right: 1ex">
 				<h2 id="privacy_uploadeddata_head"><?echo $privacy_uploadeddata_head; ?></h2>
-				<p style="text-align: justify; margin-right: 1%">
+				<p style="text-align: justify;">
 					<?echo $privacy_uploadeddata_text; ?>
 					<ul>
 						<?echo $privacy_uploadeddata_datalist; ?>

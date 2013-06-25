@@ -45,7 +45,7 @@ if(!is_logged_in()){
 	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
 		<div style="margin-right: 1%; margin-top 60%; float:right; text-align: center">
 			<h2 style="color:WhiteSmoke; text-shadow: 0.1em 0.1em 0.1em black; margin-bottom: 0em; padding-bottom: 0em;">
-				<? echo  $index_welcome;?>, <span style="color: WhiteSmoke"><?echo $_SESSION["name"];?></span>
+				<? echo  $index_welcome;?>, <?echo $_SESSION["name"];?>
 			</h2>
 			<a href="./assets/includes/authentification?logout" style="color: white; font-size: small">
 				<? echo  $index_wrong_name;?>

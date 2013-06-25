@@ -1,4 +1,3 @@
-
 @font-face {
 	font-family: news cycle;
 	src:url('../fonts/newscycle-regular.ttf');
@@ -65,12 +64,21 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 border-left: 1px solid #048ABF;
 }
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5{
 	font-family:  raleway;
 	position: relative;
 }
 
-h3 span{ position:absolute; top:-50px;} /*fixed header anchor issue*/
+.anchor{
+	position:absolute;
+	top:-50px;
+	
+} /*fixed header anchor issue*/
+
 
 .container{
 	background-color: #FFFFFF; 
@@ -189,12 +197,17 @@ background-color: #0065A0;
 }
 
 .customLi{
-
 	background-color: #f2f2f2; 
 	box-shadow: 1px 2px 2px #D4D4D4;
 	padding: 5px;
 	margin: 1px;
 	list-style-type:none;
+}
+
+.neutralList{
+	list-style-type:none;
+	padding: 1ex;
+	margin: 0.5ex;
 }
 
 pre{
