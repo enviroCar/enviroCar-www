@@ -128,13 +128,16 @@ $joingroup ="Join Group";
 $deletegroup ="Delete Group";
 
 $norecentactivities = "No recent activities";
-$joined ="Joined";
-$friended ="Friended";
-$left ="Left";
+$joined ="joined a group:";
+$friended ="made friends with ";
+$left ="has left the group";
 $created ="Created";
 $deleted = "Deleted";
-$changed = "Changed";
+$changedProfile = "has changed his profile";
+$changedGroup = "has changed a group";
 $updated = "Updated";
+$createdGroup = "has created a new group:";
+$createdRoute = "has created a new route";
 
 $userNotExist = "The requested user doesn't exist...";
 

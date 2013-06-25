@@ -133,12 +133,15 @@ $joingroup ="Gruppe beitreten";
 $deletegroup ="Gruppe löschen";
 
 $norecentactivities = "Keine neuen Aktivitäten";
-$joined ="Eingetreten";
-$friended ="Freund hinzugefügt";
-$left ="Verließ";
+$joined ="ist einer Gruppe beigetreten:";
+$friended ="hat einen Freund hinzugefügt:";
+$left ="hat eine Gruppe verlassen:";
 $deleted = "Löschte";
-$changed = "Veränderte";
+$changedProfile = "hat sein Profil bearbeitet";
+$changedGroup = "hat eine Gruppe bearbeitet";
 $updated =" Aktualisierte";
+$createdGroup = "hat eine neue Gruppe gegründet:";
+$createdRoute = "hat eine neue Route erstellt";
 
 $userNotExist = "Der angeforderte Benutzer existiert nicht...";
 
