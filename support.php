@@ -19,7 +19,7 @@ if(!is_logged_in()){
 	})
 </script>
 
-		<div class="tabbable">
+		<div class="tabbable" style="text-align: center">
 			<ul id="myTab" class="nav nav-tabs">
 				<li><a href="#main" data-toggle="tab"><strong>Main Information</strong></a></li>
 				<li><a href="#mobile" data-toggle="tab"><strong>Mobile Application</strong></a></li>
