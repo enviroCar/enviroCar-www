@@ -64,11 +64,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 	<div class="row-fluid">
         <div class="span4">
-          <h2><? echo $index_get_App;?></h2>
-          <a href="https://play.google.com/store/apps/details?id=enviroCar">
-            <img alt="Get it on Google Play" style="margin-left: 50px; margin-top: 10px;"
-                 src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
-          </a>
+<a class="twitter-timeline" href="https://twitter.com/enviroCar_org" data-widget-id="335068168525578241">Tweets von @enviroCar_org</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
        </div>
         <div class="span4">
           <h2><? echo $index_be_a_citizen_scientist;?></h2>

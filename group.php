@@ -135,19 +135,19 @@ include('header.php');
 		            for(i = 0; i < data.activities.length; i++){
 		              	var activity = data.activities[i];
 		              	if(activity.type == "JOINED_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, "<? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, "<? echo $created ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+"<? echo $createdGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "FRIENDED_USER"){
-		                	addGroupActivities(getAvatar(activity.user.name,30),getAvatar(activity.other.name,30), "profile.php?user="+activity.other.name, "<? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
+		                	addGroupActivities(getAvatar(activity.user.name,30),getAvatar(activity.other.name,30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_TRACK"){
 		                	addGroupActivities("./assets/img/route.svg",getAvatar(activity.user.name,30), "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "LEFT_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, "<? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CHANGED_PROFILE"){
-		                	addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "profile.php?user="+activity.user.name, '<? echo $changed." ".$profile?>', convertToLocalTime(activity.time));
+		                	addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "profile.php?user="+activity.user.name, activity.user.name+' <? echo $changedProfile?>', convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CHANGED_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, "<? echo $changed ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}
 		            }
 		        }else{
