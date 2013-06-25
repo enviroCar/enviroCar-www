@@ -262,9 +262,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       <? echo $firstname ?>: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
       <? echo $lastname ?>:<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="Last Name">
       <? echo $country ?>:<input id="country" name="country" type="text" class="input-block-level" placeholder="Country">
-      <? echo $location ?>:<input id="location" name="location" type="text" class="input-block-level" placeholder="Location">
-      Website:<input id="url" name="url" type="text" class="input-block-level" placeholder="Website">
-      <? echo $birthday ?>:<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
+      <? echo $birthday ?> (yyyy-mm-dd):<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
       <? echo $gender ?>:<br>
       <select id="gender" name="gender">
         <option value="m"><? echo $male ?></option>
@@ -275,8 +273,6 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         <option value="de-DE">Deutsch</option>
         <option value="en-EN">English</option>
       </select><br>
-      <? echo $aboutme ?>:<input id="aboutMe" name="aboutMe" type="text" class="input-block-level" placeholder="aboutMe">
-      <input type="submit" class="btn btn-primary">
     </form>
   </div>
   <div class="modal-footer">
@@ -299,6 +295,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           <?
             if($user == $loggedInUser){
           ?>
+            <br>
               <p>
 				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small">
 					<? echo $deletemyaccount; ?>
