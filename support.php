@@ -289,7 +289,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span id="q2"></span>How does it work?</h2>
+							<h2><span id="q1"></span>How does it work?</h2>
 							<p style="text-align: justify;">
 								By using OBD2 adapter, enviroCar is able to receive your cars data by pairing your smartphone via Bluetooth with the adapter. The smartphone app analyzes and parses the data to give you in the app and on the enviroCar these information, which you want to see.
 							</p>
