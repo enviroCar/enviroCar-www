@@ -94,7 +94,7 @@ include('header.php');
               }else if(activity.type == "CHANGED_GROUP"){
                 if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_PROFILE"){
-                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $updated ?>", convertToLocalTime(activity.time));
+                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
               }
             }
             
