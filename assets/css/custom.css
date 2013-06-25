@@ -74,11 +74,11 @@ h5{
 	position: relative;
 }
 
-h1 span,
-h2 span,
-h3 span,
-h4 span,
-h5 span{
+h1 span .anchor,
+h2 span .anchor,
+h3 span .anchor,
+h4 span .anchor,
+h5 span .anchor{
 	position:absolute;
 	top:-50px;
 	
