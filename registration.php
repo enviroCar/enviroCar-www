@@ -1,60 +1,89 @@
 <?
 include('header-start.php');
+
 ?>
 
-<script type="text/javascript">
-      //Sending the credentials to the authentification page
-    function registration(){
-        if($('#registrationemail').val() === ''){
-          alert("<?php echo $freg_invalidemail;?>");
-        }else if($('#name').val() === ''){
-          alert("<?php echo $freg_empty_nickname;?>");
-        }
-        else if($('#password1').val() === ''){
-          alert("<?php echo $freg_empty_password;?>");
-        }
-        else if($('#password2').val() === ''){
-          alert("<?php echo $freg_empty_password;?>");
-        }else{
-        	if($('#password1').val() != $('#password2').val()){
-          		alert("<?php echo $freg_notidentic_password;?>");
-          	}else{
-          		if($('#password1').val().length > 5){
-		          $.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
-		            function(response){
-		              if(response === 'status:ok'){
-		              	window.location.href = "index.php?registration_successful";
-		              }else{
-		              	toggle_visibility('registration_fail');
-		              }
-		            });
-	      		}else{
-	      			alert('Password has to be at least 6 characters long');
-	      		}
-	        }
-        }
-      }
-</script>
+<!-- Validate plugin -->
+<script src="./assets/js/jquery.validate.min.js"></script>
 
+
+<script type="text/javascript">
+	$(function(){
+        $('#contact-form').submit(function(){
+          	$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
+	        function(response){
+	        	if(response === 'status:ok'){
+	              	window.location.href = "index.php?registration_successful";
+	            }else{
+	            	toggle_visibility('registration_fail');
+	            }
+	    	});
+          return false;
+        });
+    });
+        
+    $(document).ready(function(){
+		$('#contact-form').validate({
+		    rules: {
+		      name: {
+		        minlength: 4,
+		        required: true
+		      },
+		      email: {
+		        required: true,
+		        email: true
+		      },
+		      password1: {
+		      	minlength: 6,
+		        required: true
+		      },
+		      password2: {
+			    equalTo:'#password1',
+		        minlength: 6,
+		        required: true
+		      }
+		    },
+				highlight: function(element) {
+					$(element).closest('.control-group').removeClass('success').addClass('error');
+				},
+				success: function(element) {
+					element
+					.text('OK!').addClass('valid')
+					.closest('.control-group').removeClass('error').addClass('success');
+				}
+		  });
+
+	});
+</script>
 
 <div class="container rightband">
 	<div class="row-fluid">
-		<div class="span3"></div>
-		<div class="span6">
-		        <h2 class="form-signin-heading"><?php echo $reg_registration;?></h2>
-		        <input id="name" type="text" class="input-block-level" placeholder="<?php echo $reg_username;?>">
-		        <input id="registrationemail" type="text" class="input-block-level" placeholder="<?php echo $reg_email;?>">
-		        <input id="password1" type="password" class="input-block-level" placeholder="<?php echo $reg_password;?>">
-		        <input id="password2" type="password" class="input-block-level" placeholder="<?php echo $reg_repeat_password;?>">
-		        <button class="btn btn-large btn-primary" onclick="registration()"><?php echo $reg_btn_register;?></button> 
-				<button style="float:right;" class="btn btn-large btn-primary" type="reset"><?php echo $reg_btn_reset;?></button>
+		<div class="span6 offset2">
+		<form action="./assets/includes/authentification.php?registration" id="contact-form" class="form-horizontal" method="post">
+			<h2 class="form-signin-heading"><?php echo $reg_registration;?></h2>
+		    <div class="control-group">
+				<label class="control-label" for="name">Nick-Name</label>
+				<div class="controls">
+				    <input type="text" class="input-xlarge" name="name" id="name" placeholder="Nick-Name">
+				</div>
+				<label class="control-label" for="registrationemail"><?php echo $reg_email;?></label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" name="email" id="registrationemail" placeholder="<?php echo $reg_email;?>">
+				</div>
+				<label class="control-label" for="password1"><?php echo $reg_password;?></label>
+				<div class="controls">
+					<input class="input-xlarge" name="password1" type="password" id="password1" placeholder="<?php echo $reg_password;?>">
+				</div>
+				<label class="control-label" for="password2"><?php echo $reg_repeat_password;?></label>
+				<div class="controls">
+					<input class="input-xlarge" name="password2" type="password" id="password2" placeholder="<?php echo $reg_repeat_password;?>">
+				</div>
+			</div>
+	        <button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button> 
+			<button style="float:right;" class="btn btn-medium btn-primary" type="reset"><?php echo $reg_btn_reset;?></button>
+		</form>
 		</div>
-		<div class="span">
-			<p style="text-align: justify">
-				<? echo $register_licensereminder; ?>
-			</p>
-		</div>
-	</div>
+
 </div>
 
 <?
