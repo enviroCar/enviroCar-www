@@ -289,7 +289,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q1">How does it work?</strong>
+							<h2><span id="q2"></span>How does it work?</h2>
 							<p style="text-align: justify;">
 								By using OBD2 adapter, enviroCar is able to receive your cars data by pairing your smartphone via Bluetooth with the adapter. The smartphone app analyzes and parses the data to give you in the app and on the enviroCar these information, which you want to see.
 							</p>
@@ -302,7 +302,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q2">How to get started? What are the requirements?</strong>
+							<h2><span id="q2"></span>How to get started? What are the requirements?</h2>
 							<p style="text-align: justify;">
 								Plug your OBD2 adapter into the OnBoard Diagnostic (OBD) port of your car. Download &amp; install the app, pair it with your adapter and you’re ready to be a part of enviroCar.
 							</p>
@@ -315,7 +315,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q3">Which OBD-II adapters are compatible with enviroCar?</strong>
+							<h2><span id="q3"></span>Which OBD-II adapters are compatible with enviroCar?</h2>
 							<p style="text-align: justify;">  
 								There are quite a lot OBD-II adapters for using enviroCar in different pricy ranges. You can buy these adapters on ebay, amazon or several shops. To get some infomation, you can get q quick overview. But please keep in mind, there are many (for example on ebay or amazon) which won’t work. Please have a look on some reviews. If you want to be sure, 
 								Also one very important fact about OBD-II use adapters in Germany: It’s only allowed to use CE-certified OBD-II adpaters. While driving your car, the usage of adapters without a CE-certificate is permitted. If you want to be sure, to have the right adapter, contact us or make a pledge for the 199€ pledge (enviroCar device (early bird)), where the right adapter is already included.
@@ -329,7 +329,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q4">Is my car supported?</strong>
+							<h2><span id="q4"></span>Is my car supported?</h2>
 							<p style="text-align: justify;">
 								Mainly there is the following rule. In the USA, all cars from 01.01.1996 have to have the OBD2 interface.
 								In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles from 01.01.2003 OBD-2 is supported. For trucks, the OBD2 support started with 1. January 2005
@@ -345,7 +345,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q5">Why do we need Indiegogo backers? </strong>
+							<h2><span id="q5"></span>Why do we need Indiegogo backers?</h2>
 							<p style="text-align: justify;">  
 								By using indiegogo we want to collect 10.000€ for our future work. With your donation,
 								you can be sure, that the enviroCar has a future. That you have the chance to review your and other 
@@ -362,7 +362,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q6">What’s about privacy and security?</strong>
+							<h2><span id="q6"></span>What’s about privacy and security?</h2>
 							<p style="text-align: justify;">
 								Of course we are aware of your privacy issue. All your data will be anonymized, 
 								so nobody will be able to collect sensitive, specific, person-related data about your usage. Your security is a very important 
@@ -376,7 +376,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q7">I’m a developer and very interested in this project. Is there a way to make some further implementations?</strong>
+							<h2><span id="q7"></span>I’m a developer and very interested in this project. Is there a way to make some further implementations?</h2>
 							<p style="text-align: justify;">
 								Open Source software, sparql, contact us
 							</p>
@@ -389,7 +389,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q8">What’s next?</strong>
+							<h2><span id="q8"></span>What’s next?</h2>
 							<p style="text-align: justify;">
 								To start with our goal to make your place a little bit smarter, you’re the most important person in this program. The next steps include further implementation of new features and the development a working system, as well as building up the enviroCar community.
 							</p>
@@ -402,7 +402,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q9"> When enviroCar will be published?</strong>
+							<h2><span id="q9"></span>When enviroCar will be published?</h2>
 							<p style="text-align: justify;">
 								We’re working hard on the enviroCar system. For now we’ve implemented first prototypes for app and website. Further work will be on adding more features and implementing useful functions for you.
 								We plan to release enviroCar with the end of XXX. Please be patient and look for our updates.
@@ -416,7 +416,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<strong id="q10">Can we ship to your country?</strong>
+							<h2><span id="q10"></span>Can we ship to your country?</h2>
 							<p style="text-align: justify;">
 								We will ship in all countries.
 							</p>
