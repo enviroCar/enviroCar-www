@@ -189,12 +189,17 @@ background-color: #0065A0;
 }
 
 .customLi{
-
 	background-color: #f2f2f2; 
 	box-shadow: 1px 2px 2px #D4D4D4;
 	padding: 5px;
 	margin: 1px;
 	list-style-type:none;
+}
+
+.neutralList{
+	list-style-type:none;
+	padding: 1ex;
+	margin: 0.5ex;
 }
 
 pre{

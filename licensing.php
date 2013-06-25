@@ -13,9 +13,9 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="padding-right: 1ex">
 				<h2 id="licensing_datalicensing_head"><?echo $licensing_datalicensing; ?></h2>
-				<p style="text-align: justify; margin-right: 1%">
+				<p style="text-align: justify">
 				<?echo $licensing_datalicensingtext; ?>
 				</p>
 			</div>
@@ -24,9 +24,9 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="padding-right: 1ex">
 				<h2 id="licensing_allowed_head"><?echo $licensing_allowed; ?></h2>
-				<p style="text-align: justify; margin-right: 1%">
+				<p style="text-align: justify">
 				<?echo $licensing_allowedtext; ?>
 				</p>
 			</div>
@@ -35,9 +35,9 @@ if(!is_logged_in()){
 	
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span" style="padding-right: 1ex">
 				<h2 id="licensing_aslongas_head"><?echo $licensing_aslongas; ?></h2>
-				<p style="text-align: justify; margin-right: 1%">
+				<p style="text-align: justify">
 				<?echo $licensing_aslongastext; ?>
 				</p>
 			</div>
