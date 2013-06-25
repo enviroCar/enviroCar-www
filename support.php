@@ -19,8 +19,8 @@ if(!is_logged_in()){
 	})
 </script>
 
-		<div class="tabbable" style="text-align: center">
-			<ul id="myTab" class="nav nav-tabs">
+		<div class="tabbable" style="text-align: center;">
+			<ul id="myTab" class="nav nav-tabs" style="width: 85%; margin: auto;">
 				<li><a href="#main" data-toggle="tab"><strong>Main Information</strong></a></li>
 				<li><a href="#mobile" data-toggle="tab"><strong>Mobile Application</strong></a></li>
 				<li><a href="#website" data-toggle="tab"><strong>WebSite</strong></a></li>
