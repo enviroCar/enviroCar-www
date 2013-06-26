@@ -141,7 +141,7 @@ include('header.php');
 		              	}else if(activity.type == "FRIENDED_USER"){
 		                	addGroupActivities(getAvatar(activity.user.name,30),getAvatar(activity.other.name,30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_TRACK"){
-		                	addGroupActivities("./assets/img/route.svg",getAvatar(activity.user.name,30), "route.php?id="+activity.track.id, "<? echo $created ?>: "+activity.track.name, convertToLocalTime(activity.time));
+		                	addGroupActivities("./assets/img/route.svg",getAvatar(activity.user.name,30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "LEFT_GROUP"){
 		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CHANGED_PROFILE"){

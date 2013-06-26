@@ -27,7 +27,10 @@ include('header.php');
   <div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
   </div>
   <p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><? echo $routeoverview ?></a></p>
+  <div class="row-fluid" id="legend"></div>
 </div>
+
+
 
 <style type="text/css">
   .olControlAttribution{
@@ -105,6 +108,7 @@ var chosenSensor = null;
     }
     routes.redraw();
     $('#sensor_headline').html(property);
+    drawLegend(property, chosenSensor.phenomenon.unit);
 
   }
 
@@ -144,6 +148,21 @@ var chosenSensor = null;
     else if(property < chosenSensor.min + steps * 3) return "#E0C61B";
     else if(property < chosenSensor.min + steps * 4) return "#E08B1B";
     else return "#E01B1B";
+  }
+
+  function drawLegend(property, unit){
+    var range = chosenSensor.max - chosenSensor.min;
+      var steps = range/5;
+    var step1 = Math.round(chosenSensor.min + steps);
+    var step2 = Math.round(chosenSensor.min + steps * 2);
+    var step3 = Math.round(chosenSensor.min + steps * 3);
+    var step4 = Math.round(chosenSensor.min + steps * 4);
+    
+    document.getElementById('legend').innerHTML='<div class="span2"><img src="assets/img/legend/legend1.png">'+' 0 - ' + step1 + ' ' + unit +'</div>'+ 
+      '<div class="span2"><img src="assets/img/legend/legend2.png">'+ ' ' + step1 + ' - '+ step2 + ' ' + unit +'</div>'+
+      '<div class="span2"><img src="assets/img/legend/legend3.png">'+ ' ' + step2 + ' - '+ step3 + ' ' + unit +'</div>'+
+      '<div class="span2"><img src="assets/img/legend/legend4.png">'+ ' ' + step3 + ' - '+ step4 + ' ' + unit +'</div>'+
+      '<div class="span2"><img src="assets/img/legend/legend5.png">'+ ' ' + step4 + ' - '+ Math.round(chosenSensor.max) + ' ' + unit +'</div>';
   }
 
   $.get('../data-aggregation/statistics.php', function(data) {
