@@ -33,7 +33,9 @@ include('header.php');
     bottom:0px;
 
   }
+  #map img{max-width:none;}
 </style>
+
 
 <script type="text/javascript">
 

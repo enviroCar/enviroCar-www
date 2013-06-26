@@ -52,9 +52,6 @@ $freg_empty_password="Passwort kann nicht leer sein";
 $freg_notidentic_password="Passwörter sind nicht identisch";
 
 
-
-
-
 $created ="Erstellte";
 $yourroutes = "Deine Routen";
 $yourstatistics = "Deine Statistiken";
@@ -68,6 +65,7 @@ $groups = "Gruppen";
 $help = "Hilfe";
 $community ="Gemeinschaft";
 $logout = "Abmelden";
+$comparison ="Vergleich";
 
 
 $logoutsuccess = "Erfolgreich abgemeldet";
