@@ -159,12 +159,11 @@ var chosenSensor = null;
 	var step3 = Math.round(chosenSensor.min + steps * 3);
 	var step4 = Math.round(chosenSensor.min + steps * 4);
 	
-	document.getElementById('legend').innerHTML='<img src="assets/img/legend/legend1.png">'+' 0 - ' + step1 + ' ' + unit +'<br>'+ 
-		'<img src="assets/img/legend/legend2.png">'+ ' ' + step1 + ' - '+ step2 + ' ' + unit +'<br>'+
-		'<img src="assets/img/legend/legend3.png">'+ ' ' + step2 + ' - '+ step3 + ' ' + unit +'<br>'+
-		'<img src="assets/img/legend/legend4.png">'+ ' ' + step3 + ' - '+ step4 + ' ' + unit +'<br>'+
-		'<img src="assets/img/legend/legend5.png">'+ ' ' + step4 + ' - '+ chosenSensor.max + ' ' + unit
-		;
+	document.getElementById('legend').innerHTML='<div class="span2"><img src="assets/img/legend/legend1.png">'+' 0 - ' + step1 + ' ' + unit +'</div>'+ 
+      '<div class="span2"><img src="assets/img/legend/legend2.png">'+ ' ' + step1 + ' - '+ step2 + ' ' + unit +'</div>'+
+      '<div class="span2"><img src="assets/img/legend/legend3.png">'+ ' ' + step2 + ' - '+ step3 + ' ' + unit +'</div>'+
+      '<div class="span2"><img src="assets/img/legend/legend4.png">'+ ' ' + step3 + ' - '+ step4 + ' ' + unit +'</div>'+
+      '<div class="span2"><img src="assets/img/legend/legend5.png">'+ ' ' + step4 + ' - '+ Math.round(chosenSensor.max) + ' ' + unit +'</div>';
   }
   
   $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
