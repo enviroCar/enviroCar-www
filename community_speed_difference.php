@@ -18,7 +18,13 @@ include('header.php');
   <div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
   </div>
   <p style="float:right; z-index:5000;"><a class="btn" href="informationproduct.php">Back to Products</a></p>
-  <div class="row-fluid" id="legend"></div>
+  <div class="row-fluid" id="legend">
+    <div class="span2"><img src="assets/img/legend/legend1.png"> 5 km/h difference</div>
+    <div class="span2"><img src="assets/img/legend/legend2.png"> 10 km/h difference</div>
+    <div class="span2"><img src="assets/img/legend/legend3.png"> 20 km/h difference</div>
+    <div class="span2"><img src="assets/img/legend/legend4.png"> 30 km/h difference</div>
+    <div class="span2"><img src="assets/img/legend/legend5.png"> > 30 km/h difference</div>
+  </div>
 </div>
 
 
@@ -96,7 +102,6 @@ var chosenSensor = null;
     }
     routes.redraw();
     $('#sensor_headline').html('Speed difference between OSM max-speed and enviroCar averaged speed');
-    drawLegend(property, chosenSensor.phenomenon.unit);
 
   }
 
@@ -127,11 +132,14 @@ var chosenSensor = null;
   }
 
 
+
   function getColor(property){
-    if(property  > 0) return "#1BE01B";
+    if( Math.abs(property) < 5) return "#1BE01B";
+    else if(Math.abs(property) < 10) return "#B5E01B";
+    else if(Math.abs(property) < 20) return "#E0C61B";
+    else if(Math.abs(property) < 30) return "#E08B1B";
     else return "#E01B1B";
   }
-
 
   //GET the information about the specific track
   $.get('../data-aggregation/speedDifference.php', function(data) {
