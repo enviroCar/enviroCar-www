@@ -19,17 +19,27 @@ include('header.php');
   </div>
   <p style="float:right; z-index:5000;"><a class="btn" href="informationproduct.php">Back to Products</a></p>
   <div class="row-fluid" id="legend">
-    <div class="span2"><img src="assets/img/legend/legend1.png"> 5 km/h difference</div>
-    <div class="span2"><img src="assets/img/legend/legend2.png"> 10 km/h difference</div>
-    <div class="span2"><img src="assets/img/legend/legend3.png"> 20 km/h difference</div>
-    <div class="span2"><img src="assets/img/legend/legend4.png"> 30 km/h difference</div>
-    <div class="span2"><img src="assets/img/legend/legend5.png"> > 30 km/h difference</div>
+    <div class="span2"><div class="legend" style="background-color:#f5f500"></div> 0-5 km/h difference</div>
+    <div class="span2"><div class="legend" style="background-color:#f4b600"></div> 6-10 km/h difference</div>
+    <div class="span2"><div class="legend" style="background-color:#f57700"></div> 11-20 km/h difference</div>
+    <div class="span2"><div class="legend" style="background-color:#f53800"></div> 21-30 km/h difference</div>
+    <div class="span2"><div class="legend" style="background-color:#f50000"></div> > 30 km/h difference</div>
   </div>
 </div>
 
 
 
 <style type="text/css">
+  .legend{
+    height:10px; 
+    width:10px; 
+    float:left; 
+    margin-top:10px;
+    margin-right:5px;
+    border-style: solid;
+    border-width: 1px;
+  }
+
   .olControlAttribution{
     bottom:0px;
 
@@ -134,11 +144,11 @@ var chosenSensor = null;
 
 
   function getColor(property){
-    if( Math.abs(property) < 5) return "#1BE01B";
-    else if(Math.abs(property) < 10) return "#B5E01B";
-    else if(Math.abs(property) < 20) return "#E0C61B";
-    else if(Math.abs(property) < 30) return "#E08B1B";
-    else return "#E01B1B";
+    if( Math.abs(property) < 5) return "#f5f500";
+    else if(Math.abs(property) < 10) return "#f4b600";
+    else if(Math.abs(property) < 20) return "#f57700";
+    else if(Math.abs(property) < 30) return "#f53800";
+    else return "#f50000";
   }
 
   //GET the information about the specific track
