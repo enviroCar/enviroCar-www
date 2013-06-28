@@ -245,10 +245,10 @@ include('header.php');
       data = JSON.parse(data);
       addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
       if(data.properties.sensor.properties != null){
-        $('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
-        $('#routeInformation').append('<p><? echo $fuelType ?>: '+data.properties.sensor.properties.fuelType+'<br>');
-        $('#routeInformation').append('<p><? echo $constructionYear ?>: '+data.properties.sensor.properties.constructionYear+'<br>');
-        $('#routeInformation').append('<p><? echo $manufacturer ?>: '+manufacturer+'/p><br>');
+        if(data.properties.sensor.properties.model)$('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
+        if(data.properties.sensor.properties.fuelType)$('#routeInformation').append('<p><? echo $fuelType ?>: '+data.properties.sensor.properties.fuelType+'<br>');
+        if(data.properties.sensor.properties.constructionYear)$('#routeInformation').append('<p><? echo $constructionYear ?>: '+data.properties.sensor.properties.constructionYear+'<br>');
+        if(data.properties.sensor.properties.manufacturer)$('#routeInformation').append('<p><? echo $manufacturer ?>: '+manufacturer+'/p><br>');
       }
 
       $('#loadingIndicator').hide();
