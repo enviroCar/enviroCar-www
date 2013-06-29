@@ -216,4 +216,11 @@ $deletemyaccount ="Account löschen";
 $editaccount = "Editieren";
 
 $avatarGravatar ="Dein Profilbild basiert auf deiner E-Mail-Adresse. Ändere es jetzt auf ";
+
+$interactivemap = "Interaktive Karten";
+$interactivemap_text = 'Schaue dir unsere <a href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
+		<br>
+
+		Du kannst dir auch unsere <a href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br>
+		<i>(Es kann manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
 ?>
