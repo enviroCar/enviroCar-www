@@ -101,6 +101,36 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 </div>
 
 
+<div class="container rightband" style="padding-left:20px">
+	<div>
+		<h2>A multitude of visualization are possible</h2>
+		
+	</div>
+	<br>
+	<div>
+		<h4>Speed visualization in Google Earth</h4>
+		<div class="row-fluid">
+			<div class="span5">
+		
+				<a href="javascript:newWin('./assets/img/marketing/GE_speedmap1.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/GE_speedmap1.jpg" width="100%" height="250" /></a>
+			</div>	
+			<div class="span5">
+				
+				<a href="javascript:newWin('./assets/img/marketing/GE_speedmap2.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/GE_speedmap2.jpg" width="100%" height="250" /></a>
+			</div>
+		</div>
+	</div>
+	<br>
+	<p>
+		You are able to explore the data from your own ride. There are a multitude of possibilities to analyse and visualize.
+		Explore the world of your own data!<br>
+		
+	<p>
+
+
+</div>
+
+
 
 <?
 include('footer.php');
