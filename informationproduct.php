@@ -67,7 +67,7 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	 The measurement of coordinates and attribute values from the car that is collected through the mobile application like CO2 emission or speed values make further visualizations possible.
 	 In this example the speed or CO2 values along the measurement route are visualized with an interpolation tool that just creates a continuous surface from sampled point values. 
 	<br>
-	<p>
+	</p>
 	     <div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
 				<p><b>Comparison of Speed and CO2 visualization</b></p>
@@ -79,7 +79,7 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	<p>
 		Visualization of the measurement data is a useful tool for getting an overview or for making comparisons. Here for example you can easily see that high CO2 values are in the same area of the route as high speed values. 
 		
-	<p>
+	</p>
 	<br>
 		     <div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
@@ -90,12 +90,12 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	<br></br>
 	<p>
 		Moreover, the analysis of the measurement can visualize details like speed-up and slow-down areas.
-	<p>
-	
-	
-
+	</p>
     </div>
 </div>
+</div>
+</div>
+
 
 
 <?
