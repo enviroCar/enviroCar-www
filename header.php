@@ -109,7 +109,7 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("viewandcompare")?>><a href="viewandcompare.php"><? echo $comparison ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("informationproduct")?>><a href="informationproduct.php"><? echo $informationproduct ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("informationproduct")?>><a href="https://github.com/enviroCar/enviroCar-server/wiki" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="https://github.com/enviroCar/enviroCar-server/wiki" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
