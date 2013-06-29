@@ -2,6 +2,13 @@
 include('header.php');
 ?>
 
+
+
+<script type="text/javascript">
+function newWin(url,name, width, height) { 
+window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='+height);
+}</script>
+
 <div class="container rightband" style="padding-left:20px">
 	<div>
 		<h2>Interactive map</h2>
@@ -15,12 +22,12 @@ include('header.php');
 		<h2>Data Analysis</h2>
 		<div class="row-fluid">
 			<div class="span5">
-				<p><b>Overview measurement points</b></p>
-				<img style= "width:100%; height:250px;" src="./assets/img/marketing/measurepoints_overview.jpg" />
+				<p><b>Overview measurement points</b></p>		
+				<a href="javascript:newWin('./assets/img/marketing/measurepoints_overview.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/measurepoints_overview.jpg" width="100%" height="250" /></a>
 			</div>	
 			<div class="span5">
 				<p><b>Detail of a measurement point</b></p>
-				<img style="width:100%; height: 250px;"  src="./assets/img/marketing/measurepoints_detail.jpg" />
+				<a href="javascript:newWin('./assets/img/marketing/measurepoints_detail.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/measurepoints_detail.jpg" width="100%" height="250" /></a>
 			</div>
 		</div>
 	</div>
@@ -44,7 +51,7 @@ include('header.php');
 			<div class="span" style="padding-right: 1ex">
 				<p><b>CO2 emission map</b></p>
 				<br>
-				<img class="offset2" style= "width:50%; height:200px;" src="./assets/img/marketing/co2_1.jpg"/>
+				<a href="javascript:newWin('./assets/img/marketing/co2_1.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/co2_1.jpg" width="50%" height="200" /></a>
 			</div>
 		</div>
             <br>
@@ -52,7 +59,7 @@ include('header.php');
 			<div class="span" style="padding-right: 1ex">
 				<p><b>Speed map</b></p>
 				<br>
-				<img class="offset2" style= "width:50%; height:200px;" src="./assets/img/marketing/speed1.jpg"/>
+				<a href="javascript:newWin('./assets/img/marketing/speed1.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/speed1.jpg" width="50%" height="200" /></a>
 			</div>
 		</div>
 	<br></br>
@@ -65,7 +72,7 @@ include('header.php');
 			<div class="span" style="padding-right: 1ex">
 				<p><b>Comparison of Speed and CO2 visualization</b></p>
 				<br>
-				<img class="offset2" style= "width:50%; height:200px;" src="./assets/img/marketing/co2_speed_compare.jpg"/>
+				<a href="javascript:newWin('./assets/img/marketing/co2_speed_compare.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/co2_speed_compare.jpg" width="50%" height="250" /></a>
 			</div>
 	<br>		
 	<br>
@@ -78,7 +85,7 @@ include('header.php');
 			<div class="span" style="padding-right: 1ex">
 				<p><b>Speed map detail</b></p>
 				<br>
-				<img class="offset2" style= "width:50%; height:200px;" src="./assets/img/marketing/speed_detail.jpg"/>
+				<a href="javascript:newWin('./assets/img/marketing/speed_detail.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/speed_detail.jpg" width="50%" height="200" /></a>
 			</div>
 	<br></br>
 	<p>
