@@ -66,6 +66,7 @@ $help = "Hilfe";
 $community ="Gemeinschaft";
 $logout = "Abmelden";
 $comparison ="Vergleich";
+$informationproduct = "Informationsprodukte";
 
 
 $logoutsuccess = "Erfolgreich abgemeldet";

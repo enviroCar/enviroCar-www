@@ -66,6 +66,7 @@ $help = "Help";
 $community ="Community";
 $logout = "Logout";
 $comparison ="Comparison";
+$informationproduct ="Information Products";
 
 $logoutsuccess = "Successfully logged out";
 $currentlynotloggedin = "You are currently not logged in.";
