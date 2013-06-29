@@ -42,6 +42,7 @@ include('header.php');
 	var time = [];
 	var phen = [];
 	var phenName = [];
+	var tracks;
 	
 	var trackID = '<?php echo $_GET["id"]; ?>';
 	
@@ -60,14 +61,14 @@ include('header.php');
 			error_msg("Routes couldn't be loaded successfully.");
 			$('#loadingIndicator').hide();
 		}else{
+			tracks = data;
 			for(var i=0;i<phenName.length;i++){
-				$('#graphs').append('<div class="span5"><h2>'+phenName[i]+'</h2><div id="chart'+i+'" style="width: 500px; height: 400px;"></div></div>');
-	
-				phen[0] = ['time', eval('data.features[0].properties.phenomenons.'+phenName[i]+'.unit')];
+				$('#graphs').append('<div class="span5"><h2>'+phenName[i]+'</h2><div id="chart'+i+'" style="width: 500px; height: 400px;"></div><a class="btn" onclick="zoomIn('+i+')">Zoom in</a></div>');
+				phen[0] = ['time', eval('data.features[0].properties.phenomenons["'+phenName[i]+'"].unit')];
 				for(var j=0;j<data.features.length;j++){
 					serverTime[j] = data.features[j].properties.time;
 					time[j] = convertToLocalTime(serverTime[j]);
-					phen[j+1] = [time[j], eval('data.features['+j+'].properties.phenomenons.'+phenName[i]+'.value')];
+					phen[j+1] = [time[j], eval('data.features['+j+'].properties.phenomenons["'+phenName[i]+'"].value')];
 					}
 				chartName = 'chart'+i;
 				drawChart(phen, chartName);
@@ -89,7 +90,23 @@ include('header.php');
         var speedChart = new google.visualization.LineChart(document.getElementById(chart));
         speedChart.draw(data, options);
       }
-	  
+	
+	function zoomIn(number){
+		$('.span5').remove();
+		$('#graphs').append('<div class="largeGraph"><h2>'+phenName[number]+'</h2><div id="bigChart"></div><a class="btn" onclick="zoomOut()">Go back</a></div>');
+
+		for(var j=0;j<tracks.features.length;j++){
+					serverTime[j] = tracks.features[j].properties.time;
+					time[j] = convertToLocalTime(serverTime[j]);
+					phen[j+1] = [time[j], eval('tracks.features['+j+'].properties.phenomenons["'+phenName[number]+'"].value')];
+		}
+		drawChart(phen, 'bigChart');
+	}
+	
+	function zoomOut(){
+		$('.largeGraph').remove();
+		callData();
+		}
 
 </script>
 <?

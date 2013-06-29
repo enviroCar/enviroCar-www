@@ -67,6 +67,8 @@ $community ="Community";
 $logout = "Logout";
 $comparison ="Comparison";
 $informationproduct ="Information Products";
+$api = "API";
+$showapiongithub = "Show API-definition on github.com";
 
 $logoutsuccess = "Successfully logged out";
 $currentlynotloggedin = "You are currently not logged in.";
@@ -217,4 +219,11 @@ $deletemyaccount ="Delete account";
 $editaccount = "Edit";
 
 $avatarGravatar ="Your profile picture is based on your email adress. You can change it at ";
+
+$interactivemap = "Interactive Maps";
+$interactivemap_text = 'Get the <a href="community_lines.php">interactive map</a> showing the aggregated measurements of the enviroCar routes and see where ou contributed to the information products! <br><br>
+
+		You can also check out our <a href="community_speed_difference.php">speed-map</a>. We calculated the differences between the maximum speed (based on OpenStreetMap) and the averaged speed (measured via enviroCar), which allows us to analyze, if the traffic flows as planned.<br>
+		<i>(It may can take a while until your uploaded route has been integrated into the map.)</i>';
+
 ?>

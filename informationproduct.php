@@ -1,8 +1,15 @@
 <?
-include('header.php');
+require_once('./assets/includes/authentification.php');
+
+$logged_in = false; 
+if(!is_logged_in()){
+	$logged_in = false; 
+	include('header-start.php');
+}else{
+	$logged_in = true;
+	include('header.php');
+}
 ?>
-
-
 
 <script type="text/javascript">
 function newWin(url,name, width, height) { 
@@ -11,11 +18,8 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 
 <div class="container rightband" style="padding-left:20px">
 	<div>
-		<h2>Interactive map</h2>
-		Get the <a href="community_lines.php">interactive map</a> showing the aggregated measurements of the enviroCar routes and see where ou contributed to the information products! <br>
-		<i>(It may can take a while until your uploaded route has been integrated into the map.)</i><br><br>
-
-		You can also check out our <a href="community_speed_difference.php">speed-map</a>. We calculated the differences between the maximum speed (based on OpenStreetMap) and the averaged speed (measured via enviroCar), which allows us to analyze, if the traffic flows as planned.
+		<h2><? echo $interactivemap ?></h2>
+		<? echo $interactivemap_text ?>
 	</div>
 	<br>
 	<div>
@@ -94,6 +98,36 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
     </div>
 </div>
 </div>
+</div>
+
+
+<div class="container rightband" style="padding-left:20px">
+	<div>
+		<h2>A multitude of visualization are possible</h2>
+		
+	</div>
+	<br>
+	<div>
+		<h4>Speed visualization in Google Earth</h4>
+		<div class="row-fluid">
+			<div class="span5">
+		
+				<a href="javascript:newWin('./assets/img/marketing/GE_speedmap1.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/GE_speedmap1.jpg" width="100%" height="250" /></a>
+			</div>	
+			<div class="span5">
+				
+				<a href="javascript:newWin('./assets/img/marketing/GE_speedmap2.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/GE_speedmap2.jpg" width="100%" height="250" /></a>
+			</div>
+		</div>
+	</div>
+	<br>
+	<p>
+		You are able to explore the data from your own ride. There are a multitude of possibilities to analyse and visualize.
+		Explore the world of your own data!<br>
+		
+	<p>
+
+
 </div>
 
 
