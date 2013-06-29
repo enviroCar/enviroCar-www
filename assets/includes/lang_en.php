@@ -67,6 +67,8 @@ $community ="Community";
 $logout = "Logout";
 $comparison ="Comparison";
 $informationproduct ="Information Products";
+$api = "API";
+$showapiongithub = "Show API-definition on github.com"
 
 $logoutsuccess = "Successfully logged out";
 $currentlynotloggedin = "You are currently not logged in.";

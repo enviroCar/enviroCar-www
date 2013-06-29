@@ -67,6 +67,8 @@ $community ="Gemeinschaft";
 $logout = "Abmelden";
 $comparison ="Vergleich";
 $informationproduct = "Informationsprodukte";
+$api = "API";
+$showapiongithub = "Zeige die API-Definition auf github.com"
 
 
 $logoutsuccess = "Erfolgreich abgemeldet";
