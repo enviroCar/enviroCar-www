@@ -18,11 +18,8 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 
 <div class="container rightband" style="padding-left:20px">
 	<div>
-		<h2>Interactive map</h2>
-		Get the <a href="community_lines.php">interactive map</a> showing the aggregated measurements of the enviroCar routes and see where ou contributed to the information products! <br>
-		<i>(It may can take a while until your uploaded route has been integrated into the map.)</i><br><br>
-
-		You can also check out our <a href="community_speed_difference.php">speed-map</a>. We calculated the differences between the maximum speed (based on OpenStreetMap) and the averaged speed (measured via enviroCar), which allows us to analyze, if the traffic flows as planned.
+		<h2><? echo $interactivemap ?></h2>
+		<? echo $interactivemap_text ?>
 	</div>
 	<br>
 	<div>
