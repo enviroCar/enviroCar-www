@@ -219,6 +219,11 @@ $editaccount = "Editieren";
 
 $avatarGravatar ="Dein Profilbild basiert auf deiner E-Mail-Adresse. Ändere es jetzt auf ";
 
+$pickfriends = "Wähle einen Freund";
+$statisticsOf = "Statistiken von";
+$noDataYet = "hat noch keine Daten geteilt.";
+$statistics = "Statistiken";
+
 $interactivemap = "Interaktive Karten";
 $interactivemap_text = 'Schaue dir unsere <a href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
 		<br>
