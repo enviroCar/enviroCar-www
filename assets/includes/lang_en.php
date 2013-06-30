@@ -106,7 +106,7 @@ $signing_in="Signing In";
 $register="Register";
 $comparing_steps="comparing steps and options";
 $sharing_options="sharing options";
-$cookies_text="<strong> What are cookies?</strong>
+$cookies_text='<strong> What are cookies?</strong>
 								<br/>
 								Cookies are textfiles that contain certain settings information of the website.
 								The website places cookies on your browser software in order to store personal settings for example
@@ -129,7 +129,7 @@ $cookies_text="<strong> What are cookies?</strong>
 								<strong>Where can i find more information about cookies?</strong>
 								<br/>";
 $language_text="1- Until Now; Envirocar supports two languages in our website: English and German language.
-2- You can toggle between the languages by pressing the flag symbol as seen in the picture below.";
+2- You can toggle between the languages by pressing the flag symbol as seen in the picture below.';
 
 
 $created ="Created";
@@ -305,10 +305,36 @@ $statisticsOf = "Statistics of";
 $noDataYet = "did not share any data yet.";
 $statistics = "Statistics";
 
+
+//informationproduct
 $interactivemap = "Interactive Maps";
 $interactivemap_text = 'Get the <a href="community_lines.php">interactive map</a> showing the aggregated measurements of the enviroCar routes and see where ou contributed to the information products! <br><br>
 
 		You can also check out our <a href="community_speed_difference.php">speed-map</a>. We calculated the differences between the maximum speed (based on OpenStreetMap) and the averaged speed (measured via enviroCar), which allows us to analyze, if the traffic flows as planned.<br>
 		<i>(It may can take a while until your uploaded route has been integrated into the map.)</i>';
 
+		
+$data_analysis="Data Analysis";
+$points_overview="Overview measurement points";
+$points_detail="Detail of a measurement point";
+$analysis_info='The collected data through the mobile application allow further analysis for example with a GIS program.
+		To learn more about how to get access to the enviroCar data, visit the <a href="">developer documentation</a> and create your own products!<br>
+		For making your own analysis here you can download an example data set as shape file format.<br>';
+$data_visualization="Data Visualization";
+$co2_map="CO2 emission map";
+$speed_map="Speed map";
+$interpolation_info="The measurement of coordinates and attribute values from the car that is collected through the mobile application like CO2 emission or speed values make further visualizations possible.";
+$comparison_visualization="	 In this example the speed or CO2 values along the measurement route are visualized with an interpolation tool that just creates a continuous surface from sampled point values.";
+$comparison_info="Comparison of Speed and CO2 visualization";
+$detail_info="Visualization of the measurement data is a useful tool for getting an overview or for making comparisons. Here for example you can easily see that high CO2 values are in the same area of the route as high speed values.";
+$speed_map_detail="Speed map detail";
+$visualization_multitude="Moreover, the analysis of the measurement can visualize details like speed-up and slow-down areas.";
+$GE_visualization="Speed visualization in Google Earth";
+$multitude_possibilities="You are able to explore the data from your own ride. There are a multitude of possibilities to analyse and visualize.
+		Explore the world of your own data!";	 
+	 
+	 
+	 
+	 
+	 
 ?>

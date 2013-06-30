@@ -304,10 +304,36 @@ $statisticsOf = "Statistiken von";
 $noDataYet = "hat noch keine Daten geteilt.";
 $statistics = "Statistiken";
 
+
+//informationproduct
+
 $interactivemap = "Interaktive Karten";
 $interactivemap_text = 'Schaue dir unsere <a href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
 		<br>
 
 		Du kannst dir auch unsere <a href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br>
 		<i>(Es kann manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
+
+$data_analysis="Datenanalyse";
+$points_overview="Übersicht der Messpunkte";
+$points_detail="Detailansicht einer Messung";
+$analysis_info='Die Daten, die von der App gesammelt wurden, erlauben weitere Analysen z.B mit einem GIS Programm.
+		Um zu erfahren wie Du an die Daten kommst, besuche die <a href="">Entwickler-Dokumentation</a> und erschaffe deine eigenen Informationsprodukte!<br>
+		Für deine eigenen Analysen kannst Du dir hier auch einen Beispielmessdatensatz als shape-Datei downloaden:<br>';
+$data_visualization="Datenvisualisierung";
+$co2_map="CO2 Emission Karte";
+$speed_map="Geschwindigkeit Karte";
+$interpolation_info="Das Messen von Koordinaten und Attributwerten des Fahrzeugs wie z.B CO2- oder Geschwindikeitswerte, die durch die App erfasst werden, erlauben weitere Visualisierungen.";
+$comparison_visualization="In diesem Beispiel sind die CO2- und Geschwindigkeitswerte entlang der Messroute mit einer Interpolationsanwendung visualisiert worden, das einen kontinuierlichen Wertebereich aus den einzelnen Punktmessungen erschaffen hat.";	
+$comparison_info="Vergleich der CO2- und Geschwindigkeitsvisualisierung";
+$detail_info="Das Visualisieren der Messdaten ist eine geeignete Vorgehensweise um einen Überblick über die Daten zu bekommen. Außerdem können die visualisierten Daten optisch besser verglichen werden.";
+$speed_map_detail="Detail der Geschwindigkeitskarte";
+$visualization_multitude="Darüber hinaus kann die Auswertung der Messdaten Details wie z.B. Beschleunigungs- und Verzögerungsbereiche darstellen.";
+$GE_visualization="Darstellung der Geschwindigkeitswerte in Google Earth";
+$multitude_possibilities="Du bist somit in der Lage die Daten deiner eigenen Fahrt zu erforschen. Es gibt eine Vielzahl an Analyse- und Visualisierungsmöglichkeiten. Erforsche die Welt deiner eigenen Messdaten!";
+
+
+
+	
+		
 ?>
