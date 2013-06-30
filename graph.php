@@ -94,7 +94,7 @@ include('header.php');
 	function zoomIn(number){
 		$('.span5').remove();
 		$('#graphs').append('<div class="largeGraph"><h2>'+phenName[number]+'</h2><div id="bigChart"></div><a class="btn" onclick="zoomOut()">Go back</a></div>');
-
+		phen[0] = ['time', eval('tracks.features[0].properties.phenomenons["'+phenName[number]+'"].unit')];
 		for(var j=0;j<tracks.features.length;j++){
 					serverTime[j] = tracks.features[j].properties.time;
 					time[j] = convertToLocalTime(serverTime[j]);
