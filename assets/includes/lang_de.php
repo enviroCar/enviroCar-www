@@ -52,6 +52,86 @@ $freg_empty_password="Passwort kann nicht leer sein";
 $freg_notidentic_password="Passwörter sind nicht identisch";
 
 
+
+// Support
+$main_information="Allgemeine Information";
+$mobile_app="Mobile Anwendung";
+$website="Webseite";
+$what_enviro="Was ist Envirocar?";
+$how_enviro="Wie funktioniert Envirocar?";
+$enviro_description=" Ein System, um Fahrzeugdaten in Verbindung mit deinem Smartphone und einem OBD2-Bluetooth-Adapter, auszulesen. Diese Daten tragen dazu bei deine Stadt mit Wissen zu bereichern.<br/>
+Envirocar ermöglicht es dein Fahrverhalten effizienter zu gestalten, indem es dir Einblick in Verbrauch und den verbundenen Kosten ermöglicht. Außerdem ist es
+ermöglicht deine Fahrstatistik mit Freunden zu vergleichen. Und Spaß daran zu haben zu sehen wer der effizienteste Fahrer ist. Des weiteren ist es möglich mit Envirocar deine
+gesammelten Daten der Envirocar Community beizutragen.<br/><br/> Aus diesen Daten gewinnt Envirocar Informationen über den Verkehr in deiner Stadt und den Emissionen auf unseren Straßen.
+Die Informationen können z. B. Stadtplaner bei Angelegenheiten wie Ampelphasen oder bei der Beobachtung der Auswirkungen von Verkehrsberuhigungsmaßnahmen unterstützen.<br/>
+Envirocar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
+Trete der Community bei und helfe unsere Welt ein wenig klüger, den Verkehr etwas erholsamer und ökonomisches Fahrverhalten mit mehr Spass zu gestalten."; 
+$back_top="Zum Seitenanfang";
+$enviro_description_detail="Envirocar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
+von den verschiedenen Fahrzeugsensoren kommen. Die Envirocar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
+aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann Envirocar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
+den Lärmpegel, der von deinem Fahrzeug produziert wird, abschätzen.";
+$enviro_description_detail2="Envirocar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD2-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der Envirocar Webseite zu betrachten.";
+
+//Support_mobile_application
+$how_register="Wie kann ich mich mit meinem Smartphone registrieren?";
+$how_download="Wie kann ich die Envirocar App downloaden?";
+$how_synchronize="Wie kann ich meine Daten synchronisieren?";
+$registration="Registrierung";
+$registration_steps="Registrierungsschritte";
+$downloading="Download";
+$download_steps="Download Schritte";
+$synchronization="Synchronisierung";
+$synchronization_steps="Synchronisierungsschritte";
+
+//Support_webseite
+
+$register_signin_logout="Wie kann man sich registrieren, anmelden oder ausloggen?";
+$how_compare_data="Wie kann ich meine Daten vergleichen?";
+$how_share_data="Wie kann ich meine Daten teilen?";
+$why_use_cookies="Wieso verwendet die Webseite Cookies?";
+$supported_languages="Welche Sprachen werden unterstützt?";
+$description_register='1- Auf der Startseite betätige den "Register" Button (siehe Bild).
+								<br/>
+								2- Fülle die Eingabefelder mit deinen Informationen und betätige den "Register" Button um ein neues Benutzerkonto zu erstellen.
+								<br/>
+								3- Falls Du deine Eingaben zurücksetzen möchtest betätige den "Reset" Button.';
+								
+$description_signin='1-Auf der Startseite gebe deinen Benutzernamen und dein Passwort an und betätige den "SignIn" Button.';
+$description_logout="1- Du kannst dich auf jeder Seite ausloggen. Der Menü Button hierfür befindet sich im oberen rechten Bereich der Webseite.";
+$logging_out="Ausloggen";
+$signing_in="Anmelden";
+$register="Registrieren";
+$comparing_steps="Vergleich und Optionen";
+$sharing_options="Möglichkeiten des Datenaustausches";
+$cookies_text="<strong> Was sind Cookies?</strong>
+								<br/>
+								Cookies sind Textdateien, die bestimmte Einstellungsinformationen einer Webseite enthalten.
+								Die Webseite platziert Cookies in deiner Browsersoftware um persönliche Einstellungen zu speichern. Dadurch wird es z. B. ermöglicht,dass
+								man während einer Sitzung dauerhaft angemeldet bleibt.
+								<br/>
+								<br/>
+								<strong>Und wieso Cookies?</strong>
+								<br/>
+								Cookies machen eine Webseite benutzerfreundlicher und funktionaler.
+								Cookies helfen dabei deinen Besuch auf unserer Webseite angenehmer zu gestalten, da z. B. Einstellungen/Angaben temporär gespeichert werden können.
+								Für uns Webseitenentwickler sind Cookies eine Hilfe die Programmierung und Datenverwaltung einfacher zu gestalten.
+								<br/>
+								<br/>
+								<strong>Sollte ich Cookies deaktivieren?</strong>
+								<br/>
+								Die Anwendung von Cookies ist mit bestimmten Funktionalitäten auf der Webseite verbunden.
+								Falls Du Cookies deaktivierst können einige Funktionen nicht mehr richtig arbeiten oder die Handhabung gestaltet sich umständlicher.
+								<br/>
+								<br/>
+								<strong>Wo finde ich mehr Informationen über Cookies?</strong>
+								<br/>";
+$language_text="1- Bis jetzt unterstützt Envirocar zwei Sprachen: Deutsch und Englisch.
+2- Du kannst durch betätigen des entsprechenden Flaggensymboles die Sprache wechseln (siehe Bilder).";
+
+
+
+
 $created ="Erstellte";
 $yourroutes = "Deine Routen";
 $yourstatistics = "Deine Statistiken";
@@ -218,6 +298,11 @@ $deletemyaccount ="Account löschen";
 $editaccount = "Editieren";
 
 $avatarGravatar ="Dein Profilbild basiert auf deiner E-Mail-Adresse. Ändere es jetzt auf ";
+
+$pickfriends = "Wähle einen Freund";
+$statisticsOf = "Statistiken von";
+$noDataYet = "hat noch keine Daten geteilt.";
+$statistics = "Statistiken";
 
 $interactivemap = "Interaktive Karten";
 $interactivemap_text = 'Schaue dir unsere <a href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>

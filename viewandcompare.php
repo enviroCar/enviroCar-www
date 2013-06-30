@@ -9,7 +9,7 @@ include('header.php');
 <div class="container leftband">
  <div class="span5 offset6">
   <div class="btn-group" style="float:right">
-      <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong>Pick Friends to Compare with..</strong> <span class="caret"></span>
+      <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong><? echo $pickfriends ?></strong> <span class="caret"></span>
       </button>
       <ul id="friendsDropdown" class="dropdown-menu" style=" max-height: 300px; width:200px; overflow-y: scroll;">
 
@@ -22,7 +22,7 @@ include('header.php');
  
   <div class="span5">
       <div id="userStatistics" style="max-height:400px; overflow:auto;">
-    <p style="font-size:25px">Statistics of  <? echo $_SESSION['name'] ?> :</p> 
+    <p style="font-size:25px"><? echo $statisticsOf ?> <? echo $_SESSION['name'] ?>:</p> 
   </div>
         
   </div>
@@ -53,7 +53,7 @@ include('header.php');
 
   $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
     if(data >= 400){
-        error_msg("user statistics couldn't be loaded successfully.2");
+        error_msg("<? echo $statisticsError ?>");
         $('#loadingIndicator').hide();
     }else{
       data = JSON.parse(data);
@@ -106,8 +106,8 @@ google.load("visualization", "1", {packages:["corechart"]});
     fname = friend;
     $.get('assets/includes/users.php?friendStatistics='+friend, function(data) {
       if(data >= 400){
-          if(data == 401 || data == 403) error_msg("Permission denied. "+friend+" hasn't added you as a friend yet.");
-          else error_msg("Statistics could not be found");
+          if(data == 401 || data == 403) error_msg(friend+" <? echo $noFriendsYet ?>.");
+          else error_msg("<? echo $statisticsNotFound ?>");
       }else{
         $('#fStatistics').text("");
         data = JSON.parse(data);
@@ -115,7 +115,7 @@ google.load("visualization", "1", {packages:["corechart"]});
         for (h=0; h<count; h++ ){
           values2[h]=0;
         }
-        $('#friendHeadline').html("Statistics of  "+friend+":");
+        $('#friendHeadline').html("<? echo $statisticsOf ?> "+friend+":");
         for(i = 0; i < data.statistics.length; i++){ 
           $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
           for (j=0; j<count; j++ ){
@@ -126,7 +126,7 @@ google.load("visualization", "1", {packages:["corechart"]});
           }
         }
         if(data.statistics.length==0){
-          $('#fStatistics').text("Sorry; "+friend+" did not share any data yet !!");
+          $('#fStatistics').text(friend+" <? echo $noDataYet ?>");
           values2 = [0,0,0,0];
 
         }
@@ -142,7 +142,7 @@ google.load("visualization", "1", {packages:["corechart"]});
 
   $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
     if(data >= 400){
-      error_msg("Friends couldn't be loaded successfully.");
+      error_msg("<? echo $friendsError ?>");
     }else{
       data = JSON.parse(data);
       if(data.users.length > 0 ){
@@ -184,7 +184,7 @@ function drawChart()
       }
  
         var options = {
-          title: 'Statistics',
+          title: '<? echo $statistics ?>',
           vAxis: {title: '',  titleTextStyle: {color: 'red'}}
         };
 
