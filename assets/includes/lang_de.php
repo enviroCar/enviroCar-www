@@ -66,7 +66,7 @@ gesammelten Daten der Envirocar Community beizutragen.<br/><br/> Aus diesen Date
 Die Informationen können z. B. Stadtplaner bei Angelegenheiten wie Ampelphasen oder bei der Beobachtung der Auswirkungen von Verkehrsberuhigungsmaßnahmen unterstützen.<br/>
 Envirocar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
 Trete der Community bei und helfe unsere Welt ein wenig klüger, den Verkehr etwas erholsamer und ökonomisches Fahrverhalten mit mehr Spass zu gestalten."; 
-$back_top="Zum Seitenanfang";
+$back_top="Nach Oben";
 $enviro_description_detail="Envirocar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
 von den verschiedenen Fahrzeugsensoren kommen. Die Envirocar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
 aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann Envirocar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
