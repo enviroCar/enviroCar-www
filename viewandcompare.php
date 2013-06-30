@@ -102,7 +102,6 @@ google.load("visualization", "1", {packages:["corechart"]});
   function getFriendStatistics(friend){
     $('#loadingIndicator_graph').show();
     $('#loadingIndicator_friend_statistics').show();
-    $('#fStatistics').text("");
 
     fname = friend;
     $.get('assets/includes/users.php?friendStatistics='+friend, function(data) {
@@ -110,6 +109,7 @@ google.load("visualization", "1", {packages:["corechart"]});
           if(data == 401 || data == 403) error_msg("Permission denied. "+friend+" hasn't added you as a friend yet.");
           else error_msg("Statistics could not be found");
       }else{
+        $('#fStatistics').text("");
         data = JSON.parse(data);
         if(data.length)
         for (h=0; h<count; h++ ){
@@ -130,8 +130,9 @@ google.load("visualization", "1", {packages:["corechart"]});
           values2 = [0,0,0,0];
 
         }
+        google.setOnLoadCallback(drawChart());
       }
-      google.setOnLoadCallback(drawChart());
+      
 
       $('#loadingIndicator_graph').hide();
       $('#loadingIndicator_friend_statistics').hide();
