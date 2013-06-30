@@ -91,13 +91,13 @@ $how_compare_data="Wie kann ich meine Daten vergleichen?";
 $how_share_data="Wie kann ich meine Daten teilen?";
 $why_use_cookies="Wieso verwendet die Webseite Cookies?";
 $supported_languages="Welche Sprachen werden unterstützt?";
-$description_register="1- Auf der Startseite betätige den "Register" Button (siehe Bild).
+$description_register='1- Auf der Startseite betätige den "Register" Button (siehe Bild).
 								<br/>
 								2- Fülle die Eingabefelder mit deinen Informationen und betätige den "Register" Button um ein neues Benutzerkonto zu erstellen.
 								<br/>
-								3- Falls Du deine Eingaben zurücksetzen möchtest betätige den "Reset" Button.";
+								3- Falls Du deine Eingaben zurücksetzen möchtest betätige den "Reset" Button.';
 								
-$description_signin="1-Auf der Startseite gebe deinen Benutzernamen und dein Passwort an und betätige den "SignIn" Button.";
+$description_signin='1-Auf der Startseite gebe deinen Benutzernamen und dein Passwort an und betätige den "SignIn" Button.';
 $description_logout="1- Du kannst dich auf jeder Seite ausloggen. Der Menü Button hierfür befindet sich im oberen rechten Bereich der Webseite.";
 $logging_out="Ausloggen";
 $signing_in="Anmelden";
@@ -128,22 +128,6 @@ $cookies_text="<strong> Was sind Cookies?</strong>
 								<br/>";
 $language_text="1- Bis jetzt unterstützt Envirocar zwei Sprachen: Deutsch und Englisch.
 2- Du kannst durch betätigen des entsprechenden Flaggensymboles die Sprache wechseln (siehe Bilder).";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

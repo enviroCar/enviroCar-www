@@ -93,11 +93,11 @@ $how_compare_data="How to compare your data?";
 $how_share_data="How to share your data?";
 $why_use_cookies="Why does this website use cookies?";
 $supported_languages="What are the supported languages?";
-$description_register="1- From the start page; press "Register" as seen in the picture.
+$description_register='1- From the start page; press "Register" as seen in the picture.
 								<br/>
 								2- Fill your information inside the input fields, and then press "Register" to create a new account of the entered information.
 								<br/>
-								3- If you want to reset the information inside the input fields; press "Reset".";
+								3- If you want to reset the information inside the input fields; press "Reset".';
 								
 $description_signin="1-From the start page; fill in your user name and password and press “SignIn”.";
 $description_logout="1- You can log out from any page; notice the image in the top right corner of each page header.";
