@@ -58,25 +58,25 @@ $freg_notidentic_password="Passwörter sind nicht identisch";
 $main_information="Allgemeine Information";
 $mobile_app="Mobile Anwendung";
 $website="Webseite";
-$what_enviro="Was ist Envirocar?";
-$how_enviro="Wie funktioniert Envirocar?";
+$what_enviro="Was ist enviroCar?";
+$how_enviro="Wie funktioniert enviroCar?";
 $enviro_description=" Ein System, um Fahrzeugdaten in Verbindung mit deinem Smartphone und einem OBD2-Bluetooth-Adapter, auszulesen. Diese Daten tragen dazu bei deine Stadt mit Wissen zu bereichern.<br/>
-Envirocar ermöglicht es dein Fahrverhalten effizienter zu gestalten, indem es dir Einblick in Verbrauch und den verbundenen Kosten ermöglicht. Außerdem ist es
-ermöglicht deine Fahrstatistik mit Freunden zu vergleichen. Und Spaß daran zu haben zu sehen wer der effizienteste Fahrer ist. Des weiteren ist es möglich mit Envirocar deine
-gesammelten Daten der Envirocar Community beizutragen.<br/><br/> Aus diesen Daten gewinnt Envirocar Informationen über den Verkehr in deiner Stadt und den Emissionen auf unseren Straßen.
+enviroCar ermöglicht es dein Fahrverhalten effizienter zu gestalten, indem es dir Einblick in Verbrauch und den verbundenen Kosten ermöglicht. Außerdem ist es
+ermöglicht deine Fahrstatistik mit Freunden zu vergleichen. Und Spaß daran zu haben zu sehen wer der effizienteste Fahrer ist. Des weiteren ist es möglich mit enviroCar deine
+gesammelten Daten der enviroCar Community beizutragen.<br/><br/> Aus diesen Daten gewinnt enviroCar Informationen über den Verkehr in deiner Stadt und den Emissionen auf unseren Straßen.
 Die Informationen können z. B. Stadtplaner bei Angelegenheiten wie Ampelphasen oder bei der Beobachtung der Auswirkungen von Verkehrsberuhigungsmaßnahmen unterstützen.<br/>
-Envirocar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
+enviroCar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
 Trete der Community bei und helfe unsere Welt ein wenig klüger, den Verkehr etwas erholsamer und ökonomisches Fahrverhalten mit mehr Spass zu gestalten."; 
 $back_top="Nach Oben";
-$enviro_description_detail="Envirocar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
-von den verschiedenen Fahrzeugsensoren kommen. Die Envirocar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
-aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann Envirocar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
+$enviro_description_detail="enviroCar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
+von den verschiedenen Fahrzeugsensoren kommen. Die enviroCar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
+aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann enviroCar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
 den Lärmpegel, der von deinem Fahrzeug produziert wird, abschätzen.";
-$enviro_description_detail2="Envirocar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD2-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der Envirocar Webseite zu betrachten.";
+$enviro_description_detail2="enviroCar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD2-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der enviroCar Webseite zu betrachten.";
 
 //Support_mobile_application
 $how_register="Wie kann ich mich mit meinem Smartphone registrieren?";
-$how_download="Wie kann ich die Envirocar App downloaden?";
+$how_download="Wie kann ich die enviroCar App downloaden?";
 $how_synchronize="Wie kann ich meine Daten synchronisieren?";
 $registration="Registrierung";
 $registration_steps="Registrierungsschritte";
@@ -127,7 +127,7 @@ $cookies_text="<strong> Was sind Cookies?</strong>
 								<br/>
 								<strong>Wo finde ich mehr Informationen über Cookies?</strong>
 								<br/>";
-$language_text="1- Bis jetzt unterstützt Envirocar zwei Sprachen: Deutsch und Englisch.
+$language_text="1- Bis jetzt unterstützt enviroCar zwei Sprachen: Deutsch und Englisch.
 2- Du kannst durch betätigen des entsprechenden Flaggensymboles die Sprache wechseln (siehe Bilder).";
 
 
