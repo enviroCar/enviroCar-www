@@ -67,10 +67,13 @@ include('header.php');
      
 				else if (data.statistics[i].phenomenon.name=="MAF")
 				
-					{				
-						$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
-					}
-				else
+					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+					
+				else if (data.statistics[i].phenomenon.name=="Intake Temperature")
+				
+					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Temperature"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Temperature.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+
+					else
 	   				$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Gasoline Consumption"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 		
 	    values[i]= Math.round(data.statistics[i].avg*100)/100;
@@ -138,7 +141,10 @@ google.load("visualization", "1", {packages:["corechart"]});
 				else if (data.statistics[i].phenomenon.name=="MAF")
 				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 		
-				else
+				else if (data.statistics[i].phenomenon.name=="Intake Temperature")
+				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Temperature"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Temperature.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+		
+         		else
 				$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Gasoline Consumption"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
 
           for (j=0; j<count; j++ ){
