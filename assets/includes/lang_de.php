@@ -66,7 +66,7 @@ gesammelten Daten der Envirocar Community beizutragen.<br/><br/> Aus diesen Date
 Die Informationen können z. B. Stadtplaner bei Angelegenheiten wie Ampelphasen oder bei der Beobachtung der Auswirkungen von Verkehrsberuhigungsmaßnahmen unterstützen.<br/>
 Envirocar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
 Trete der Community bei und helfe unsere Welt ein wenig klüger, den Verkehr etwas erholsamer und ökonomisches Fahrverhalten mit mehr Spass zu gestalten."; 
-$back_top="Zum Seitenanfang";
+$back_top="Nach Oben";
 $enviro_description_detail="Envirocar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
 von den verschiedenen Fahrzeugsensoren kommen. Die Envirocar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
 aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann Envirocar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
@@ -304,10 +304,57 @@ $statisticsOf = "Statistiken von";
 $noDataYet = "hat noch keine Daten geteilt.";
 $statistics = "Statistiken";
 
+
+//informationproduct
+
 $interactivemap = "Interaktive Karten";
 $interactivemap_text = 'Schaue dir unsere <a href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
 		<br>
 
 		Du kannst dir auch unsere <a href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br>
 		<i>(Es kann manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
+
+$data_analysis="Datenanalyse";
+$points_overview="Übersicht der Messpunkte";
+$points_detail="Detailansicht einer Messung";
+$analysis_info='Die Daten, die von der App gesammelt wurden, erlauben weitere Analysen z.B mit einem GIS Programm.
+		Um zu erfahren wie Du an die Daten kommst, besuche die <a href="">Entwickler-Dokumentation</a> und erschaffe deine eigenen Informationsprodukte!<br>
+		Für deine eigenen Analysen kannst Du dir hier auch einen Beispielmessdatensatz als shape-Datei downloaden:<br>';
+$data_visualization="Datenvisualisierung";
+$co2_map="CO2 Emission Karte";
+$speed_map="Geschwindigkeit Karte";
+$interpolation_info="Das Messen von Koordinaten und Attributwerten des Fahrzeugs wie z.B CO2- oder Geschwindikeitswerte, die durch die App erfasst werden, erlauben weitere Visualisierungen.";
+$comparison_visualization="In diesem Beispiel sind die CO2- und Geschwindigkeitswerte entlang der Messroute mit einer Interpolationsanwendung visualisiert worden, das einen kontinuierlichen Wertebereich aus den einzelnen Punktmessungen erschaffen hat.";	
+$comparison_info="Vergleich der CO2- und Geschwindigkeitsvisualisierung";
+$detail_info="Das Visualisieren der Messdaten ist eine geeignete Vorgehensweise um einen Überblick über die Daten zu bekommen. Außerdem können die visualisierten Daten optisch besser verglichen werden.";
+$speed_map_detail="Detail der Geschwindigkeitskarte";
+$visualization_multitude="Darüber hinaus kann die Auswertung der Messdaten Details wie z.B. Beschleunigungs- und Verzögerungsbereiche darstellen.";
+$GE_visualization="Darstellung der Geschwindigkeitswerte in Google Earth";
+$multitude_possibilities="Du bist somit in der Lage die Daten deiner eigenen Fahrt zu erforschen. Es gibt eine Vielzahl an Analyse- und Visualisierungsmöglichkeiten. Erforsche die Welt deiner eigenen Messdaten!";
+
+$faq_q1 = "Wie funktioniert es?";
+$faq_q2 = "Wie kann man starten? Was wird benötigt?";
+$faq_q3 = "Welche OBD2-Adapter sind mit enviroCar kompatibel?";
+$faq_q4 = "Wird mein Auto unterstützt?";
+$faq_q5 = "Wozu brauchen wir die Unterstützung von Indiegogo?";
+$faq_q6 = "Wie steht es mit Privatsphäre und Sicherheit?";
+$faq_q7 = "Ich bin ein Entwickler und interessiere mich für das Projekt? Kann ich etwas zum Projekt beitragen?";
+$faq_q8 = "Wie geht es weiter?";
+$faq_q9 = "Wann wird enviroCar veröffentlicht?";
+$faq_q10 = "Welche Länder werden beliefert?";
+
+$faq_a1 = "Mit Hilfe eines OBD2-Adapters empfängt enviroCar die Daten deines Autos, indem dein Smartphone über Bluetooth mit dem Adapter verbunden wird. Die Smartphone-App sendet die Daten zum Server, wo sie analysiert und verarbeitet werden. Die Daten können sowohl in der App als auch auf der Website betrachtet werden.";
+$faq_a2 = "Stecke den OBD2-Adapter in den OBD2-Anschluss deines Autos. Lade die App herunter und installiere sie, verbinde sie mit dem Adapter und du kannst ein Teil von enviroCar werden.";
+$faq_a3 = "Es gibt viele verschiedene OBD2-Adapter in unterschiedlichen Preisklassen. Sie können unter anderem auf eBay oder Amazon erworben werden. Bitte bedenke, dass es einige Modelle gibt, die nicht für enviroCar funktionieren, also achte bitte auf Rezensionen. Ein wichtiger Punkt für den Einsatz von OBD2-Adaptern in Deutschland: Nur OBD2-Adapter mit dem CE-Zertifikat dürfen verwendet werden. Es ist verboten, nicht zertifizierte Adapter während einer Autofahrt zu verwenden. Wenn du sichergehen willst, dass du einen geeigneten Adapter hast, kontaktiere uns oder unterstütze uns mit 199€ (enviroCar device (early bird)) auf Indiegogo, was den richtigen Adapter beinhaltet.";
+$faq_a4 = "OBD2-Anschlüsse wurden zu unterschiedlichen Zeiten eingeführt, je nach Land und Fahrzeugtyp. In den USA sind sie in allen Fahrzeugen vorhanden, die am 01.01.1996 oder später gebaut wurden. In Europa sind alle Autos mit einem Otto-Motor (Benzin) seit dem 01.01.2001 und der EURO-3 Norm damit ausgestattet. Diesel-Fahrzeuge haben den Anschluss seit dem 01.01.2003 und LKWs seit dem 01.01.2005.";
+$faq_a5 = "Mit Hilfe von Indiegogo wollen wir 10.000€ für unsere zukünftige Arbeit sammeln. Mit deiner Spende kannst du die Zukunft des enviroCar-Projekts unterstützen. Wir wollen langfristig die Möglichkeit anbieten, deine Daten und andere zu betrachten und die Städte smarter zu machen. Hilf uns, damit Studenten und andere Leute weiter an dem Projekt arbeiten und es verbessern können.";
+$faq_a6 = "Natürlich achten wir auf Privatsphäre. All deine Daten werden anonymisiert, damit niemand sensible, spezifische oder personenbezogene Daten über deine Nutzung sammeln kann. Deine Sicherheit ist ein sehr wichtiges Thema für uns und du musst dir keine Sorgen darüber machen, wenn du enviroCar benutzt.";
+$faq_a7 = "Das Projekt besteht aus Open-Source-Software, also kann jeder daran mitarbeiten. Bitte kontaktiere uns, jede Unterstützung ist willkommen.";
+$faq_a8 = "Für unser Ziel, deinen Ort ein bisschen smarter zu machen, bist Du die wichtigste Person. Die nächsten Schritte sind unter anderem die weitere Entwicklung von neuen Features und der Ausbau der enviroCar-Community.";
+$faq_a9 = "Wir arbeiten hart am enviroCar-System. Bisher haben wir einen ersten Prototyp für die App und die Website entwickelt. Die weitere Arbeit beinhaltet die Entwicklung von neuen Features und nützlichen Funktionen für dich. EnviroCar wird bald veröffentlicht. Bitte hab Geduld und achte auf unsere Updates.";
+$faq_a10 = "Wir liefern in alle Länder.";
+
+
+	
+		
 ?>

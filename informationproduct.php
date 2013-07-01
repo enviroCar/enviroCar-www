@@ -23,23 +23,21 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	</div>
 	<br>
 	<div>
-		<h2>Data Analysis</h2>
+		<h2><? echo $data_analysis ?></h2>
 		<div class="row-fluid">
 			<div class="span5">
-				<p><b>Overview measurement points</b></p>		
+				<p><b><? echo $points_overview ?></b></p>		
 				<a href="javascript:newWin('./assets/img/marketing/measurepoints_overview.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/measurepoints_overview.jpg" width="100%" height="250" /></a>
 			</div>	
 			<div class="span5">
-				<p><b>Detail of a measurement point</b></p>
+				<p><b><? echo $points_detail ?></b></p>
 				<a href="javascript:newWin('./assets/img/marketing/measurepoints_detail.jpg', 'Bigger Image', '900', '600')"><img src="./assets/img/marketing/measurepoints_detail.jpg" width="100%" height="250" /></a>
 			</div>
 		</div>
 	</div>
 	<br>
 	<p>
-		The collected data through the mobile application allow further analysis for example with a GIS program.
-		To learn more about how to get access to the enviroCar data, visit the <a href="">developer documentation</a> and create your own products!<br>
-		For making your own analysis here you can download an example data set as shape file format.<br>
+		<? echo $analysis_info ?>
 		<a class="btn" target="_blank" href="assets/download/testdata.shp">Download (Shape)</a>
 	<p>
 
@@ -50,10 +48,10 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	<br>
 <div class="container rightband" style="padding-left:20px">
 	<div>
-		<h2>Data Visualization</h2>
+		<h2><? echo $data_visualization ?></h2>
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<p><b>CO2 emission map</b></p>
+				<p><b><? echo $co2_map ?></b></p>
 				<br>
 				<a href="javascript:newWin('./assets/img/marketing/co2_1.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/co2_1.jpg" width="50%" height="200" /></a>
 			</div>
@@ -61,39 +59,38 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
             <br>
         <div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<p><b>Speed map</b></p>
+				<p><b><? echo $speed_map ?></b></p>
 				<br>
 				<a href="javascript:newWin('./assets/img/marketing/speed1.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/speed1.jpg" width="50%" height="200" /></a>
 			</div>
 		</div>
 	<br></br>
 	<p>
-	 The measurement of coordinates and attribute values from the car that is collected through the mobile application like CO2 emission or speed values make further visualizations possible.
-	 In this example the speed or CO2 values along the measurement route are visualized with an interpolation tool that just creates a continuous surface from sampled point values. 
+	 <? echo $interpolation_info ?>
 	<br>
 	</p>
 	     <div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<p><b>Comparison of Speed and CO2 visualization</b></p>
+				<p><b><? echo $comparison_visualization ?></b></p>
 				<br>
 				<a href="javascript:newWin('./assets/img/marketing/co2_speed_compare.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/co2_speed_compare.jpg" width="50%" height="250" /></a>
 			</div>
 	<br>		
 	<br>
 	<p>
-		Visualization of the measurement data is a useful tool for getting an overview or for making comparisons. Here for example you can easily see that high CO2 values are in the same area of the route as high speed values. 
+		<? echo $comparison_info ?>
 		
 	</p>
 	<br>
 		     <div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<p><b>Speed map detail</b></p>
+				<p><b><? echo $speed_map_detail ?></b></p>
 				<br>
 				<a href="javascript:newWin('./assets/img/marketing/speed_detail.jpg', 'Bigger Image', '1100', '500')"><img class="offset2" src="./assets/img/marketing/speed_detail.jpg" width="50%" height="200" /></a>
 			</div>
 	<br></br>
 	<p>
-		Moreover, the analysis of the measurement can visualize details like speed-up and slow-down areas.
+		<? echo $detail_info ?>
 	</p>
     </div>
 </div>
@@ -103,12 +100,12 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 
 <div class="container rightband" style="padding-left:20px">
 	<div>
-		<h2>A multitude of visualization are possible</h2>
+		<h2><? echo $visualization_multitude ?></h2>
 		
 	</div>
 	<br>
 	<div>
-		<h4>Speed visualization in Google Earth</h4>
+		<h4><? echo $GE_visualization ?></h4>
 		<div class="row-fluid">
 			<div class="span5">
 		
@@ -122,8 +119,7 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	</div>
 	<br>
 	<p>
-		You are able to explore the data from your own ride. There are a multitude of possibilities to analyse and visualize.
-		Explore the world of your own data!<br>
+		<? echo $multitude_possibilities ?><br>
 		
 	<p>
 
