@@ -49,7 +49,6 @@ include('header.php');
   var fname;
   var count=0;
   var phen=[];
-  var image="";
 
   $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
     if(data >= 400){
@@ -59,14 +58,24 @@ include('header.php');
       data = JSON.parse(data);
       count=data.statistics.length;
       for(i = 0; i < data.statistics.length; i++){
-        $('#userStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
       
-        values[i]= Math.round(data.statistics[i].avg*100)/100;
+  		if (data.statistics[i].phenomenon.name=="Speed")
+				$('#userStatistics').append('<p><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');    
+
+				else if (data.statistics[i].phenomenon.name=="CO2")
+					$('#userStatistics').append('<p><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/CO2.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+     
+				else if (data.statistics[i].phenomenon.name=="MAF")
+					$('#userStatistics').append('<p><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+		
+				else
+	   				$('#userStatistics').append('<p><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+		
+	    values[i]= Math.round(data.statistics[i].avg*100)/100;
         phen[i]=data.statistics[i].phenomenon.name;
-      }
-      $('#loadingIndicator').hide();
+		$('#loadingIndicator').hide();
     }
-    
+    }
   });
 
 
@@ -117,7 +126,19 @@ google.load("visualization", "1", {packages:["corechart"]});
         }
         $('#friendHeadline').html("<? echo $statisticsOf ?> "+friend+":");
         for(i = 0; i < data.statistics.length; i++){ 
-          $('#fStatistics').append('<p> '+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+    			if (data.statistics[i].phenomenon.name=="Speed")
+				$('#fStatistics').append('<p> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+
+				
+				else if (data.statistics[i].phenomenon.name=="CO2")
+     				$('#fStatistics').append('<p> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/CO2.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+
+				else if (data.statistics[i].phenomenon.name=="MAF")
+				    $('#fStatistics').append('<p> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+		
+				else
+				$('#fStatistics').append('<p> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+
           for (j=0; j<count; j++ ){
             if ((data.statistics[i].phenomenon.name)==phen[j]){ 
               values2[j]= Math.round(data.statistics[i].avg*100)/100;
