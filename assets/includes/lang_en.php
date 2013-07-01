@@ -36,6 +36,7 @@ $reg_password="Password";
 $reg_repeat_password="Repeat Password";
 $reg_btn_register="Register";
 $reg_btn_reset="Reset";
+$invalid_input ="Invalid input. Please check the hints and try again.";
 
 
 // dashboard.php

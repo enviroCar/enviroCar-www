@@ -24,20 +24,24 @@ include('header-start.php');
 <script type="text/javascript">
 	$(function(){
         $('#contact-form').submit(function(){
-          	$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
-	        function(response){
-	        	if(response === 'status:ok'){
-	              	window.location.href = "index.php?registration_successful";
-	            }else{
-	            	toggle_visibility('registration_fail');
-	            }
-	    	});
+        	var invalid_inputs = $('#contact-form').validate(validation_rules).invalid;
+        	if(Object.keys(invalid_inputs).length == 0){
+          		$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val()	, name: $('#name').val()}, 
+	        	function(response){
+	        		if(response === 'status:ok'){
+	        	      	window.location.href = "index.php?registration_successful";
+	        	    }else{
+	        	    	toggle_visibility('registration_fail');
+	        	    }
+	    		});
+          	}else{
+          		alert('<? echo $invalid_input ?>');
+          	}
           return false;
         });
     });
-        
-    $(document).ready(function(){
-		$('#contact-form').validate({
+    
+	var validation_rules = {
 		    rules: {
 		      name: {
 		        minlength: 4,
@@ -65,7 +69,10 @@ include('header-start.php');
 					.text('OK!').addClass('valid')
 					.closest('.control-group').removeClass('error').addClass('success');
 				}
-		  });
+		  };
+
+    $(document).ready(function(){
+		$('#contact-form').validate(validation_rules);
 
 	});
 </script>

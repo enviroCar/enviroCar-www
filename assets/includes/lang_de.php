@@ -37,6 +37,7 @@ $reg_password="Passwort";
 $reg_repeat_password="Passwort wiederholen";
 $reg_btn_register="Registrieren";
 $reg_btn_reset="Löschen";
+$invalid_input ="Ungültige Eingabe. Bitte überprüfe die Hinweise und versuche es erneut.";
 
 // dashboard.php
 $dashboard_recent_avtivities="Letzte Aktivitäten";
