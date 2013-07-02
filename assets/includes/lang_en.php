@@ -235,7 +235,7 @@ $bothFieldsFilled = "Both input fiels have to be filled";
 
 
 $privacy_website_head = "Data collected with this website";
-$privacy_website_text_01 = "When using this website, the following data is collected, and stored for a period of XXX YYY.:"; //todo
+$privacy_website_text_01 = "When using this website, the following data can be collected, and stored for a limited period:"; //todo
 $privacy_website_text_02 = "If you register to our services or while you use our services, the following information about you may be collected and stored. The information is deleted when you decide to delete your account.";
 $privacy_website_text_03 = "You can delete (with delete we mean delete, there is no way back!) your account and the data associated to it at anytime you feel convenient. Read the FAQ if you want to know how to delete your data and / or your account";
 $privacy_website_text_use_datalist = "<li>your ip-address, within our servers access log and error log file</li>";
