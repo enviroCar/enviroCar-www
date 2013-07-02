@@ -107,7 +107,7 @@ include('header-start.php');
 				</div>
 			</div>
 	        <button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button> 
-			<button style="float:right;" class="btn btn-medium btn-primary" type="reset"><?php echo $reg_btn_reset;?></button>
+			<button style="float:right;" class="btn btn-medium btn-primary" type="reset" value="Reset" onClick="window.location.reload()"><?php echo $reg_btn_reset;?></button>
 		</form>
 		</div>
 
