@@ -241,7 +241,7 @@ $bothFieldsFilled = "Beide Eingabefelder müssen ausgefüllt sein.";
 
 
 $privacy_website_head = "Gesammelte Daten in dieser Webseite";
-$privacy_website_text_01 = "Beim Benutzen dieser Webseite werden können die folgenden Daten gesammelt und für einen limitierten Zeitraum gespeichert werden.";
+$privacy_website_text_01 = "Beim Benutzen dieser Webseite können die folgenden Daten gesammelt und für einen limitierten Zeitraum gespeichert werden.";
 $privacy_website_text_02 = "Bei der Registrierung an unseren Diensten und bei der Benutzung unserer Dienste können die folgenden Informationen gesammelt und gespeichert werden. Wenn du deinen Zugang löschet, werden auch diese Information gelöscht.";
 $privacy_website_text_03 = "Du kannst deinen Benutzernamen löschen (mit Löschen meinen wir Löschen, das kann nicht rückgängig gemacht werden) und die Daten die damit zusammenhängen, wann immer du willst. Lese die FAQ, wenn du erfahren willst, wie du deine Daten und deinen Benutzernamen löschst.";
 $privacy_website_text_use_datalist = "<li>Deine IP-Adresse im Zugangs- und Fehler-Protokoll unseres Servers</li>";
