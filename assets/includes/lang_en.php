@@ -38,6 +38,8 @@ $reg_btn_register="Register";
 $reg_btn_reset="Reset";
 $invalid_input ="Invalid input. Please check the hints and try again.";
 
+$underTheHood = "Look under the hood";
+
 
 // dashboard.php
 $dashboard_recent_avtivities="Recent Activities";

@@ -28,6 +28,7 @@ $index_wrong_name="Moment, das ist nicht meine Name!";
 $index_continue_dashboard="Weiter zum Armaturenbrett";
 $index_welcome="Willkommen";
 
+$underTheHood = "Schau unter die Haube";
 
 // registration.php
 $reg_registration="Registration";

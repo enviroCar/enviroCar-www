@@ -79,10 +79,28 @@ if(!is_logged_in()){
           </a>
         </div>
       </div>
+  	</div>
 
+  	<div class="container rightband">
+      <div class="row-fluid">       
+      	<div class="span4">
+      		<h2><? echo $underTheHood ?></h2>
+      		<a href="https://github.com/enviroCar" target="_blank" style="padding-left: 40px; padding-top: 20px;">
+      			<img src="assets/img/GitHub-Mark-64px.png" />
+      		</a> View on Github
+      	</div>
+        <div class="span4">	
+        	<h2>enviroCar <? echo $statistics ?></h2>
+        	<div id="enviroCarStatistics" style="max-height: 200px; overflow:auto"></div>
+        </div>      	
+      	<div class="span4">
+      		<script type="text/javascript" src="https://www.ohloh.net/p/642497/widgets/project_factoids_stats.js"></script>
+      	</div>
+      </div>
 	</div>
 
-	<div class="container rightband">
+
+	<div class="container leftband">
       <div class="featurette" style="margin-left: 2%">
 		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_make_smarter;?></span></h2>
@@ -100,6 +118,26 @@ if(!is_logged_in()){
 		</p>
       </div>
 	</div>
+
+
+
+	<script type="text/javascript">
+	var test;
+		$.get('https://giv-cario.uni-muenster.de/assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/statistics', function(data){
+			if(data >= 400){
+				//error
+			}else{
+				var statistics = JSON.parse(data);
+				test = statistics;
+				if(statistics.statistics){
+					$('#enviroCarStatistics').append('<b>Number of Phenomenons:</b> '+statistics.statistics.length+'<br>');
+					for(i = 0; i < statistics.statistics.length; i++){
+						$('#enviroCarStatistics').append('<b>&Oslash; '+statistics.statistics[i].phenomenon.name+': </b>'+Math.round(statistics.statistics[i].avg)+' '+statistics.statistics[i].phenomenon.unit+'<br>');
+					}
+				}
+			}
+		})
+	</script>
   <?
   include('footer.php');
   ?>
