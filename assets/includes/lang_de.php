@@ -279,6 +279,10 @@ $groupMemberNotAllowed = "Es ist dir nicht erlaubt die Mitglieder dieser Gruppe 
 $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.";
 $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
 
+$registrationError = "Der Server ist zur Zeit nicht verfügbar. Versuche es später erneut";
+$registrationNotAllowed = "Deine Emailadresse ist aktuell nicht für die Beta-Phase freigeschalten.";
+$registrationInvalid = "Deine Eingaben waren nicht valide. Bitte überprüfe die Formfelder und versuche es erneut.";
+
 $noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
 
 

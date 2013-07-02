@@ -28,8 +28,14 @@ include('header-start.php');
         	if(Object.keys(invalid_inputs).length == 0){
           		$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val()	, name: $('#name').val()}, 
 	        	function(response){
-	        		if(response === 'status:ok'){
+	        		if(response == 201){
 	        	      	window.location.href = "index.php?registration_successful";
+	        	    }else if(response == 400){
+	        	    	error_msg("<? echo $registrationError ?>");
+	        	    }else if(response == 401){
+	        	    	error_msg("<? echo $registrationInvalid ?>");
+	        	    }else if(response == 403){
+	        	    	error_msg("<? echo $registrationNotAllowed ?>");
 	        	    }else{
 	        	    	toggle_visibility('registration_fail');
 	        	    }
@@ -40,6 +46,7 @@ include('header-start.php');
           return false;
         });
     });
+
     
 	var validation_rules = {
 		    rules: {

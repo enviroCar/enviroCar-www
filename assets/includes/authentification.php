@@ -36,9 +36,9 @@ else if(isset($_GET['registration'])){
 	if($response["status"] == 201){
 		$_SESSION['name'] = $_POST['name'];
 		$_SESSION['password'] = $_POST['password'];
-		echo 'status:ok';
+		echo $response['status'];
 	}else{
-		echo 'status:error';
+		echo $response['status'];
 	}
 
 }

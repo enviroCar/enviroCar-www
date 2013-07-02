@@ -280,6 +280,10 @@ $groupMemberNotAllowed = "You are not allowed to view the member of the group.";
 $groupOfError ="The groups of the requested person couldn't be loaded successfully.";
 $joinGroupNotAllowed = "You are not allowed to join this group.";
 
+$registrationError = "The server is currently not available. Please try again later.";
+$registrationNotAllowed = "Your email address is not registered for our beta-phase.";
+$registrationInvalid = "Your inputs are not valid. Please check the form field and try again.";
+
 $noFriendsYet = "hasn't added you as a friend yet.";
 
 
