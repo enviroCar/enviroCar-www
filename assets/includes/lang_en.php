@@ -212,16 +212,23 @@ $leavegroup = "Leave Group";
 $joingroup ="Join Group";
 $deletegroup ="Delete Group";
 
+$deletedgroup = "Deleted the Group";
+$deletegroupsuccess = "Group successfully deleted";
+$creategroup = "Create Group";
+$searchgroups = "Search Groups";
+$groupname = "Group name";
+$groupdescription = "Description";
+
 $norecentactivities = "No recent activities";
-$joined ="joined a group:";
-$friended ="made friends with ";
+$joined ="joined a group";
+$friended ="made friends with";
 $left ="has left the group";
 $created ="Created";
 $deleted = "Deleted";
 $changedProfile = "has changed his profile";
 $changedGroup = "has changed a group";
 $updated = "Updated";
-$createdGroup = "has created a new group:";
+$createdGroup = "has created a new group";
 $createdRoute = "has created a new route";
 
 $userNotExist = "The requested user doesn't exist...";

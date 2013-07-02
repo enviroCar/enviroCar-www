@@ -214,15 +214,22 @@ $leavegroup = "Gruppe verlassen";
 $joingroup ="Gruppe beitreten";
 $deletegroup ="Gruppe löschen";
 
+$deletedgroup = "Gruppe gelöscht";
+$deletegroupsuccess = "Gruppe erfolgreich gelöscht";
+$creategroup = "Gruppe erstellen";
+$searchgroups = "Gruppen suchen";
+$groupname = "Gruppenname";
+$groupdescription = "Beschreibung";
+
 $norecentactivities = "Keine neuen Aktivitäten";
-$joined ="ist einer Gruppe beigetreten:";
-$friended ="hat einen Freund hinzugefügt:";
-$left ="hat eine Gruppe verlassen:";
+$joined ="ist einer Gruppe beigetreten";
+$friended ="hat einen Freund hinzugefügt";
+$left ="hat eine Gruppe verlassen";
 $deleted = "Löschte";
 $changedProfile = "hat sein Profil bearbeitet";
 $changedGroup = "hat eine Gruppe bearbeitet";
 $updated =" Aktualisierte";
-$createdGroup = "hat eine neue Gruppe gegründet:";
+$createdGroup = "hat eine neue Gruppe gegründet";
 $createdRoute = "hat eine neue Route erstellt";
 
 $userNotExist = "Der angeforderte Benutzer existiert nicht...";
