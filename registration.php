@@ -87,14 +87,20 @@ include('header-start.php');
 				<div class="controls">
 				    <input type="text" class="input-xlarge" name="name" id="name" placeholder="Nick-Name">
 				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="registrationemail"><?php echo $reg_email;?></label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" name="email" id="registrationemail" placeholder="<?php echo $reg_email;?>">
 				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="password1"><?php echo $reg_password;?></label>
 				<div class="controls">
 					<input class="input-xlarge" name="password1" type="password" id="password1" placeholder="<?php echo $reg_password;?>">
 				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="password2"><?php echo $reg_repeat_password;?></label>
 				<div class="controls">
 					<input class="input-xlarge" name="password2" type="password" id="password2" placeholder="<?php echo $reg_repeat_password;?>">
@@ -105,6 +111,7 @@ include('header-start.php');
 		</form>
 		</div>
 
+    </div>
 </div>
 
 <?
