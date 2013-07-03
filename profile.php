@@ -285,8 +285,9 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     <div class="span4">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
-          <img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
-          <li class="nav-header"></li>
+			<li class="nav-header">
+			<img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
+			</li>
           <li><b id="username"></b></li>
         </ul>
         <ul id="userInformation" class="nav nav-list">
