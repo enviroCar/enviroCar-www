@@ -103,9 +103,9 @@ if(isset($_GET['group_deleted'])){
 		  </div>
 		  <div class="modal-body">
 		  	<form id="createGroupForm" action="./assets/includes/groups.php?createGroup" method="post">
-				<label for="group_name"><? echo $groupname; ?></label><br/>
+				<label for="group_name"><? echo $groupname; ?></label>
 		    	<input id="group_name" type="text" class="input-block-level" placeholder="<? echo $groupname; ?>">
-		    	<label for="group_description"><? echo $groupdescription; ?></label><br/>
+		    	<label for="group_description"><? echo $groupdescription; ?></label>
 		    	<input id="group_description" type="text" class="input-block-level" placeholder="<? echo $groupdescription; ?>">
 		    	<input type="submit" class="btn btn-primary" value="<? echo $creategroup;?>">
 		    </form>
