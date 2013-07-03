@@ -285,8 +285,8 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     <div class="span4">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
-			<li class="nav-header">
-			<img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
+			<li class="nav-header" style="align:center;">
+				<img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: 100px;" alt="<? echo $user;?>"/>
 			</li>
           <li><b id="username"></b></li>
         </ul>
@@ -296,15 +296,12 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           <?
             if($user == $loggedInUser){
           ?>
-            <br>
-              <p>
-				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small">
-					<? echo $deletemyaccount; ?>
-				</a>
-				<a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">
-					<? echo $editaccount; ?>
-				</a>
-			</p>
+			<a href="javascript:deleteAccount();" class="btn btn-primary btn-small">
+				<? echo $deletemyaccount; ?>
+			</a>
+			<a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">
+				<? echo $editaccount; ?>
+			</a>
           <?
             }else{
           ?>
