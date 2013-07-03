@@ -290,6 +290,8 @@ $fuelType = "Treibstoff";
 $constructionYear ="Baujahr";
 $manufacturer = "Hersteller";
 
+$changeprofile = "Profil Bearbeiten";
+$email = "E-Mail";
 $firstname = "Vorname";
 $lastname = "Nachname";
 $birthday = "Geburtstag";

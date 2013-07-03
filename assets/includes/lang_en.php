@@ -286,7 +286,8 @@ $registrationInvalid = "Your inputs are not valid. Please check the form field a
 
 $noFriendsYet = "hasn't added you as a friend yet.";
 
-
+$changeprofile = "Change Profile";
+$email = "e-mail";
 $firstname = "First name";
 $lastname = "Last name";
 $birthday = "Birthday";
