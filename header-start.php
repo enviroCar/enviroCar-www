@@ -16,8 +16,8 @@ $login_fail = false;
 if ($login_name != "" && $login_password != ""){
 	
 	require_once('./assets/includes/authentification.php');
-	
-	if (login($login_name, $login_password, false)){
+
+	if (login($login_name, $login_password, true)){
 		//successfully logged in
 		header('Location: '.$login_referer);
 	}else{
@@ -68,6 +68,13 @@ if ($login_name != "" && $login_password != ""){
           $('#'+id).slideUp("fast");
         }
       }
+      
+      function error_msg(msg){
+        if ($('#error_div').is(":hidden")) {
+          $('#error_div').append(msg);
+          toggle_visibility("error_div");
+        }
+      }
 
       function changeLanguage(lang){
         $.get('assets/includes/language.php?lang='+lang, function(data) {
@@ -108,6 +115,11 @@ if ($login_name != "" && $login_password != ""){
           </div><!--/.nav-collapse -->      </div>
         </div>
     </div>
+    
+ <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+      <a class="close" data-dismiss="alert">×</a>  
+      <h4 class="alert-heading">Error</h4>  
+ </div>
  
 <?
 if(isset($_GET['accessdenied'])){

@@ -37,6 +37,7 @@ $reg_password="Passwort";
 $reg_repeat_password="Passwort wiederholen";
 $reg_btn_register="Registrieren";
 $reg_btn_reset="Löschen";
+$invalid_input ="Ungültige Eingabe. Bitte überprüfe die Hinweise und versuche es erneut.";
 
 // dashboard.php
 $dashboard_recent_avtivities="Letzte Aktivitäten";
@@ -57,25 +58,25 @@ $freg_notidentic_password="Passwörter sind nicht identisch";
 $main_information="Allgemeine Information";
 $mobile_app="Mobile Anwendung";
 $website="Webseite";
-$what_enviro="Was ist Envirocar?";
-$how_enviro="Wie funktioniert Envirocar?";
+$what_enviro="Was ist enviroCar?";
+$how_enviro="Wie funktioniert enviroCar?";
 $enviro_description=" Ein System, um Fahrzeugdaten in Verbindung mit deinem Smartphone und einem OBD2-Bluetooth-Adapter, auszulesen. Diese Daten tragen dazu bei deine Stadt mit Wissen zu bereichern.<br/>
-Envirocar ermöglicht es dein Fahrverhalten effizienter zu gestalten, indem es dir Einblick in Verbrauch und den verbundenen Kosten ermöglicht. Außerdem ist es
-ermöglicht deine Fahrstatistik mit Freunden zu vergleichen. Und Spaß daran zu haben zu sehen wer der effizienteste Fahrer ist. Des weiteren ist es möglich mit Envirocar deine
-gesammelten Daten der Envirocar Community beizutragen.<br/><br/> Aus diesen Daten gewinnt Envirocar Informationen über den Verkehr in deiner Stadt und den Emissionen auf unseren Straßen.
+enviroCar ermöglicht es dein Fahrverhalten effizienter zu gestalten, indem es dir Einblick in Verbrauch und den verbundenen Kosten ermöglicht. Außerdem ist es
+ermöglicht deine Fahrstatistik mit Freunden zu vergleichen. Und Spaß daran zu haben zu sehen wer der effizienteste Fahrer ist. Des weiteren ist es möglich mit enviroCar deine
+gesammelten Daten der enviroCar Community beizutragen.<br/><br/> Aus diesen Daten gewinnt enviroCar Informationen über den Verkehr in deiner Stadt und den Emissionen auf unseren Straßen.
 Die Informationen können z. B. Stadtplaner bei Angelegenheiten wie Ampelphasen oder bei der Beobachtung der Auswirkungen von Verkehrsberuhigungsmaßnahmen unterstützen.<br/>
-Envirocar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
+enviroCar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
 Trete der Community bei und helfe unsere Welt ein wenig klüger, den Verkehr etwas erholsamer und ökonomisches Fahrverhalten mit mehr Spass zu gestalten."; 
 $back_top="Nach Oben";
-$enviro_description_detail="Envirocar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
-von den verschiedenen Fahrzeugsensoren kommen. Die Envirocar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
-aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann Envirocar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
+$enviro_description_detail="enviroCar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
+von den verschiedenen Fahrzeugsensoren kommen. Die enviroCar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
+aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann enviroCar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
 den Lärmpegel, der von deinem Fahrzeug produziert wird, abschätzen.";
-$enviro_description_detail2="Envirocar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD2-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der Envirocar Webseite zu betrachten.";
+$enviro_description_detail2="enviroCar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD2-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der enviroCar Webseite zu betrachten.";
 
 //Support_mobile_application
 $how_register="Wie kann ich mich mit meinem Smartphone registrieren?";
-$how_download="Wie kann ich die Envirocar App downloaden?";
+$how_download="Wie kann ich die enviroCar App downloaden?";
 $how_synchronize="Wie kann ich meine Daten synchronisieren?";
 $registration="Registrierung";
 $registration_steps="Registrierungsschritte";
@@ -126,7 +127,7 @@ $cookies_text="<strong> Was sind Cookies?</strong>
 								<br/>
 								<strong>Wo finde ich mehr Informationen über Cookies?</strong>
 								<br/>";
-$language_text="1- Bis jetzt unterstützt Envirocar zwei Sprachen: Deutsch und Englisch.
+$language_text="1- Bis jetzt unterstützt enviroCar zwei Sprachen: Deutsch und Englisch.
 2- Du kannst durch betätigen des entsprechenden Flaggensymboles die Sprache wechseln (siehe Bilder).";
 
 
@@ -213,15 +214,22 @@ $leavegroup = "Gruppe verlassen";
 $joingroup ="Gruppe beitreten";
 $deletegroup ="Gruppe löschen";
 
+$deletedgroup = "Gruppe gelöscht";
+$deletegroupsuccess = "Gruppe erfolgreich gelöscht";
+$creategroup = "Gruppe erstellen";
+$searchgroups = "Gruppen suchen";
+$groupname = "Gruppenname";
+$groupdescription = "Beschreibung";
+
 $norecentactivities = "Keine neuen Aktivitäten";
-$joined ="ist einer Gruppe beigetreten:";
-$friended ="hat einen Freund hinzugefügt:";
-$left ="hat eine Gruppe verlassen:";
+$joined ="ist einer Gruppe beigetreten";
+$friended ="hat einen Freund hinzugefügt";
+$left ="hat eine Gruppe verlassen";
 $deleted = "Löschte";
 $changedProfile = "hat sein Profil bearbeitet";
 $changedGroup = "hat eine Gruppe bearbeitet";
 $updated =" Aktualisierte";
-$createdGroup = "hat eine neue Gruppe gegründet:";
+$createdGroup = "hat eine neue Gruppe gegründet";
 $createdRoute = "hat eine neue Route erstellt";
 
 $userNotExist = "Der angeforderte Benutzer existiert nicht...";
@@ -233,7 +241,7 @@ $bothFieldsFilled = "Beide Eingabefelder müssen ausgefüllt sein.";
 
 
 $privacy_website_head = "Gesammelte Daten in dieser Webseite";
-$privacy_website_text_01 = "Beim Benutzen dieser Webseite werden die folgenden Daten gesammelt und für einen Zeitraum von XXX YYY gespeichert.";
+$privacy_website_text_01 = "Beim Benutzen dieser Webseite können die folgenden Daten gesammelt und für einen limitierten Zeitraum gespeichert werden.";
 $privacy_website_text_02 = "Bei der Registrierung an unseren Diensten und bei der Benutzung unserer Dienste können die folgenden Informationen gesammelt und gespeichert werden. Wenn du deinen Zugang löschet, werden auch diese Information gelöscht.";
 $privacy_website_text_03 = "Du kannst deinen Benutzernamen löschen (mit Löschen meinen wir Löschen, das kann nicht rückgängig gemacht werden) und die Daten die damit zusammenhängen, wann immer du willst. Lese die FAQ, wenn du erfahren willst, wie du deine Daten und deinen Benutzernamen löschst.";
 $privacy_website_text_use_datalist = "<li>Deine IP-Adresse im Zugangs- und Fehler-Protokoll unseres Servers</li>";
@@ -271,6 +279,10 @@ $groupMemberNotAllowed = "Es ist dir nicht erlaubt die Mitglieder dieser Gruppe 
 $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.";
 $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
 
+$registrationError = "Der Server ist zur Zeit nicht verfügbar. Versuche es später erneut";
+$registrationNotAllowed = "Deine Emailadresse ist aktuell nicht für die Beta-Phase freigeschaltet. Bitte kontaktiere envirocar@52north.org für einen Beta-tester Account.";
+$registrationInvalid = "Deine Eingaben waren nicht valide. Bitte überprüfe die Formfelder und versuche es erneut.";
+
 $noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
 
 
@@ -278,6 +290,8 @@ $fuelType = "Treibstoff";
 $constructionYear ="Baujahr";
 $manufacturer = "Hersteller";
 
+$changeprofile = "Profil Bearbeiten";
+$email = "E-Mail";
 $firstname = "Vorname";
 $lastname = "Nachname";
 $birthday = "Geburtstag";
@@ -308,10 +322,10 @@ $statistics = "Statistiken";
 //informationproduct
 
 $interactivemap = "Interaktive Karten";
-$interactivemap_text = 'Schaue dir unsere <a href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
+$interactivemap_text = 'Schaue dir unsere <a class="btn btn-primary" href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
 		<br>
 
-		Du kannst dir auch unsere <a href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br>
+		Du kannst dir auch unsere <a class="btn btn-primary" href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br>
 		<i>(Es kann manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
 
 $data_analysis="Datenanalyse";

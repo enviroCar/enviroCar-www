@@ -5,8 +5,8 @@ if(isset($_GET['group_deleted'])){
 ?>
 <div id="deleted" class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading">Group deleted</h4>  
-  	Group successfully deleted
+  <h4 class="alert-heading"><? echo $deletedgroup; ?></h4>  
+  	<? echo $deletegroupsuccess; ?>
 </div> 
 <?
 }
@@ -99,17 +99,19 @@ if(isset($_GET['group_deleted'])){
   		<div id="create_group_modal" class="modal hide fade">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		    <h3>Create Group</h3>
+		    <h3><? echo $creategroup; ?></h3>
 		  </div>
 		  <div class="modal-body">
 		  	<form id="createGroupForm" action="./assets/includes/groups.php?createGroup" method="post">
-		    	<input id="group_name" type="text" class="input-block-level" placeholder="Group name">
-		    	<input id="group_description" type="text" class="input-block-level" placeholder="Description">
-		    	<input type="submit" class="btn btn-primary">
+				<label for="group_name"><? echo $groupname; ?></label>
+		    	<input id="group_name" type="text" class="input-block-level" placeholder="<? echo $groupname; ?>">
+		    	<label for="group_description"><? echo $groupdescription; ?></label>
+		    	<input id="group_description" type="text" class="input-block-level" placeholder="<? echo $groupdescription; ?>">
+		    	<input type="submit" class="btn btn-primary" value="<? echo $creategroup;?>">
 		    </form>
 		  </div>
 		  <div class="modal-footer">
-		    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		    <button class="btn" data-dismiss="modal" aria-hidden="true"><? echo $close; ?></button>
 		  </div>
 		</div>
 
@@ -119,18 +121,18 @@ if(isset($_GET['group_deleted'])){
 				<h2 id="groups_headline"></h2> 
 			</div>
 			<div class="span3 offset1">
-				<div id="create_group" style="float:right"><a href="#create_group_modal" role="button" class="btn" data-toggle="modal">Create Group</a></div>
+				<div id="create_group" style="float:right"><a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a></div>
 			</div>
 				
 			</div>
 		</div>
 	
 		<div class="container rightband"> 
-			<input id="searchgroups" type="text" name="text" placeholder="Search Groups" style="float:right" data-provide="typeahead"/>
+			<input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
 
 
 			<div class="span6">
-				<h2>Groups</h2>
+				<h2><? echo $groups; ?></h2>
 				 <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">	
 

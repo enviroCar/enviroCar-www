@@ -224,8 +224,8 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   }
 
   $(function(){
-        $('#changeProfilForm').submit(function(){
-          changeData = getFormData($('#changeProfilForm'));
+        $('#changeProfileForm').submit(function(){
+          changeData = getFormData($('#changeProfileForm'));
           if($('#dayOfBirth').val() != ''){
             if(!validateDate($('#dayOfBirth').val())){
               alert("Birthday has to be in the format YYYY-MM-DD");
@@ -250,29 +250,42 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 
 </script>
  
-<div id="changeProfil" class="modal hide fade">
+<div id="changeProfile" class="modal hide fade">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Change Profil</h3>
+    <h3><? echo $changeprofile; ?></h3>
   </div>
   <div class="modal-body">
-      <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
-    <form id="changeProfilForm" action="./assets/includes/users.php?updateUser" method="post">
-      Email: <input id="mail" name="mail" type="text" class="input-block-level" placeholder="Email">
-      <? echo $firstname ?>: <input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="First Name">
-      <? echo $lastname ?>:<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="Last Name">
-      <? echo $country ?>:<input id="country" name="country" type="text" class="input-block-level" placeholder="Country">
-      <? echo $birthday ?> (yyyy-mm-dd):<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="Birthday">
-      <? echo $gender ?>:<br>
-      <select id="gender" name="gender">
-        <option value="m"><? echo $male ?></option>
-        <option value="f"><? echo $female ?></option>
-      </select><br>
-      <? echo $language ?>:<br>
-      <select id="language" name="language">
-        <option value="de-DE">Deutsch</option>
-        <option value="en-EN">English</option>
-      </select><br>
+    <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
+    <form id="changeProfileForm" action="./assets/includes/users.php?updateUser" method="post">
+		<label for="mail"><? echo $email; ?></label>
+		<input id="mail" name="mail" type="text" class="input-block-level" placeholder="<? echo $email; ?>">
+		
+		<label for="firstName"><? echo $firstname; ?></label>
+		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>">
+		
+		<label for="lastName"><? echo $lastname; ?></label>
+		<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="<? echo $lastname; ?>">
+		
+		<label for="country"><? echo $country; ?></label>
+		<input id="country" name="country" type="text" class="input-block-level" placeholder="<? echo $country; ?>">
+		
+		<label for="dayOfBirth"><? echo $birthday; ?> (2000-12-31)</label>
+		<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>">
+		
+		<label for="gender"><? echo $gender; ?></label>
+		<select id="gender" name="gender" class="input-block-level">
+			<option value="m"><? echo $male ?></option>
+			<option value="f"><? echo $female ?></option>
+		</select>
+		
+		<label for="language"><? echo $language; ?></label>
+		<select id="language" name="language" class="input-block-level">
+			<option value="de-DE">Deutsch</option>
+			<option value="en-EN">English</option>
+		</select>
+		
+		<input type="submit" class="btn btn-primary" value="<? echo $changeprofile;?>"/>
     </form>
   </div>
   <div class="modal-footer">
@@ -284,34 +297,32 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   <div class="row-fluid">
     <div class="span4">
       <div class="well sidebar-nav">
+		<span style="text-align: center; display: block">
+			<img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+		</span>
         <ul class="nav nav-list">
-          <img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&auth=true" align="center" style="height: 200px; width:200px; margin-right: 100px; "/>
-          <li class="nav-header"></li>
           <li><b id="username"></b></li>
         </ul>
-        <ul id="userInformation" class="nav nav-list">
-        </ul>
-        <ul class="nav nav-list">
-          <?
-            if($user == $loggedInUser){
-          ?>
-            <br>
-              <p>
-				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small">
+        
+        <ul id="userInformation" class="nav nav-list"></ul>
+		<?
+			if($user == $loggedInUser){
+		?>
+			<span style="text-align: center; display: block">
+				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small" style="margin-top: 1em">
 					<? echo $deletemyaccount; ?>
 				</a>
-				<a href="#changeProfil" class="btn btn-primary btn-small" data-toggle="modal">
+				<a href="#changeProfile" class="btn btn-primary btn-small" style="margin-top: 1em" data-toggle="modal">
 					<? echo $editaccount; ?>
 				</a>
-			</p>
-          <?
-            }else{
-          ?>
-              <li id="addAsFriendLink"></li>
-           <?
+			</span>
+		<?
+			}else{
+		?>
+			<span id="addAsFriendLink"></span>
+		<?
             }
-          ?>
-        </ul>
+		?>
       </div><!--/.well -->
     </div><!--/span-->
 
@@ -333,16 +344,3 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 <?
 include('footer.php');
 ?>
-      
-         
-        
-        
-
-     
-
-     
-    
-
-
-    
-

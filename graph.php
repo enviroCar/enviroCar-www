@@ -52,6 +52,9 @@ include('header.php');
 				phenName[i] = data.statistics[i].phenomenon.name;
 				}
 			callData();
+			}).fail(function (){
+				error_msg("<? echo $statisticsError ?>");
+				$('#loadingIndicator').hide();
 			});
 		}
 	
@@ -75,6 +78,9 @@ include('header.php');
 				}
 			}
 			$('#loadingIndicator').hide();
+			}).fail(function (){
+				error_msg("<? echo $routeError ?>");
+				$('#loadingIndicator').hide();
 			});
 		}
 		

@@ -24,20 +24,31 @@ include('header-start.php');
 <script type="text/javascript">
 	$(function(){
         $('#contact-form').submit(function(){
-          	$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val(), name: $('#name').val()}, 
-	        function(response){
-	        	if(response === 'status:ok'){
-	              	window.location.href = "index.php?registration_successful";
-	            }else{
-	            	toggle_visibility('registration_fail');
-	            }
-	    	});
+        	var invalid_inputs = $('#contact-form').validate(validation_rules).invalid;
+        	if(Object.keys(invalid_inputs).length == 0){
+          		$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val()	, name: $('#name').val()}, 
+	        	function(response){
+	        		if(response == 201){
+	        	      	window.location.href = "index.php?registration_successful";
+	        	    }else if(response == 400){
+	        	    	error_msg("<? echo $registrationError ?>");
+	        	    }else if(response == 401){
+	        	    	error_msg("<? echo $registrationInvalid ?>");
+	        	    }else if(response == 403 || response == 405){
+	        	    	error_msg("<? echo $registrationNotAllowed ?>");
+	        	    }else{
+	        	    	toggle_visibility('registration_fail');
+	        	    }
+	    		});
+          	}else{
+          		alert('<? echo $invalid_input ?>');
+          	}
           return false;
         });
     });
-        
-    $(document).ready(function(){
-		$('#contact-form').validate({
+
+    
+	var validation_rules = {
 		    rules: {
 		      name: {
 		        minlength: 4,
@@ -65,7 +76,10 @@ include('header-start.php');
 					.text('OK!').addClass('valid')
 					.closest('.control-group').removeClass('error').addClass('success');
 				}
-		  });
+		  };
+
+    $(document).ready(function(){
+		$('#contact-form').validate(validation_rules);
 
 	});
 </script>
@@ -80,24 +94,31 @@ include('header-start.php');
 				<div class="controls">
 				    <input type="text" class="input-xlarge" name="name" id="name" placeholder="Nick-Name">
 				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="registrationemail"><?php echo $reg_email;?></label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" name="email" id="registrationemail" placeholder="<?php echo $reg_email;?>">
 				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="password1"><?php echo $reg_password;?></label>
 				<div class="controls">
 					<input class="input-xlarge" name="password1" type="password" id="password1" placeholder="<?php echo $reg_password;?>">
 				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="password2"><?php echo $reg_repeat_password;?></label>
 				<div class="controls">
 					<input class="input-xlarge" name="password2" type="password" id="password2" placeholder="<?php echo $reg_repeat_password;?>">
 				</div>
 			</div>
 	        <button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button> 
-			<button style="float:right;" class="btn btn-medium btn-primary" type="reset"><?php echo $reg_btn_reset;?></button>
+			<button style="float:right;" class="btn btn-medium btn-primary" type="reset" value="Reset" onClick="window.location.reload()"><?php echo $reg_btn_reset;?></button>
 		</form>
 		</div>
 
+    </div>
 </div>
 
 <?
