@@ -16,8 +16,8 @@ $login_fail = false;
 if ($login_name != "" && $login_password != ""){
 	
 	require_once('./assets/includes/authentification.php');
-	
-	if (login($login_name, $login_password, false)){
+
+	if (login($login_name, $login_password, true)){
 		//successfully logged in
 		header('Location: '.$login_referer);
 	}else{
