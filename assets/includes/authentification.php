@@ -73,13 +73,13 @@ function is_logged_in(){
 
 function login($name, $password, $permanent){
 
-	$baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
+	//$baseUrl = 'giv-car.uni-muenster.de:8080/stable/rest/';
 	if (!isset($_SESSION)) session_start();
 	
 	$_SESSION['name'] = $name;
 	$_SESSION['password'] = $password;
 		
-	$response = get_request($baseUrl.'users/'.$name, true);
+	$response = get_request($serverurl.'/users/'.$name, true);
 
 	if($response["status"] == 200){
 		$response = json_decode($response["response"],true);
