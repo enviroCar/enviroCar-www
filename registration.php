@@ -34,7 +34,7 @@ include('header-start.php');
 	        	    	error_msg("<? echo $registrationError ?>");
 	        	    }else if(response == 401){
 	        	    	error_msg("<? echo $registrationInvalid ?>");
-	        	    }else if(response == 403){
+	        	    }else if(response == 403 || response == 405){
 	        	    	error_msg("<? echo $registrationNotAllowed ?>");
 	        	    }else{
 	        	    	toggle_visibility('registration_fail');
