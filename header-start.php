@@ -115,6 +115,11 @@ if ($login_name != "" && $login_password != ""){
           </div><!--/.nav-collapse -->      </div>
         </div>
     </div>
+    
+ <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+      <a class="close" data-dismiss="alert">×</a>  
+      <h4 class="alert-heading">Error</h4>  
+ </div>
  
 <?
 if(isset($_GET['accessdenied'])){
