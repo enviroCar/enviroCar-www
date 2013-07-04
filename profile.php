@@ -285,7 +285,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 			<option value="en-EN">English</option>
 		</select>
 		
-		<input type="submit" class="btn btn-primary" value="<? echo $changeprofile;?>">
+		<input type="submit" class="btn btn-primary" value="<? echo $changeprofile;?>"/>
     </form>
   </div>
   <div class="modal-footer">
