@@ -68,6 +68,13 @@ if ($login_name != "" && $login_password != ""){
           $('#'+id).slideUp("fast");
         }
       }
+      
+      function error_msg(msg){
+        if ($('#error_div').is(":hidden")) {
+          $('#error_div').append(msg);
+          toggle_visibility("error_div");
+        }
+      }
 
       function changeLanguage(lang){
         $.get('assets/includes/language.php?lang='+lang, function(data) {
