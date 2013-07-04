@@ -280,7 +280,7 @@ $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.
 $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
 
 $registrationError = "Der Server ist zur Zeit nicht verfügbar. Versuche es später erneut";
-$registrationNotAllowed = "Deine Emailadresse ist aktuell nicht für die Beta-Phase freigeschalten.";
+$registrationNotAllowed = "Deine Emailadresse ist aktuell nicht für die Beta-Phase freigeschaltet. Bitte kontaktiere envirocar@52north.org für einen Beta-tester Account.";
 $registrationInvalid = "Deine Eingaben waren nicht valide. Bitte überprüfe die Formfelder und versuche es erneut.";
 
 $noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
