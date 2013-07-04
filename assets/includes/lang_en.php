@@ -321,9 +321,9 @@ $statistics = "Statistics";
 
 //informationproduct
 $interactivemap = "Interactive Maps";
-$interactivemap_text = 'Get the <a href="community_lines.php">interactive map</a> showing the aggregated measurements of the enviroCar routes and see where ou contributed to the information products! <br><br>
+$interactivemap_text = 'Get the <a class="btn btn-primary" href="community_lines.php">interactive map</a> showing the aggregated measurements of the enviroCar routes and see where ou contributed to the information products! <br><br>
 
-		You can also check out our <a href="community_speed_difference.php">speed-map</a>. We calculated the differences between the maximum speed (based on OpenStreetMap) and the averaged speed (measured via enviroCar), which allows us to analyze, if the traffic flows as planned.<br>
+		You can also check out our <a class="btn btn-primary" href="community_speed_difference.php">speed-map</a>. We calculated the differences between the maximum speed (based on OpenStreetMap) and the averaged speed (measured via enviroCar), which allows us to analyze, if the traffic flows as planned.<br>
 		<i>(It may can take a while until your uploaded route has been integrated into the map.)</i>';
 
 		
