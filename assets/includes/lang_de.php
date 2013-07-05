@@ -29,6 +29,7 @@ $index_continue_dashboard="Weiter zum Armaturenbrett";
 $index_welcome="Willkommen";
 
 
+
 // registration.php
 $reg_registration="Registration";
 $reg_username="Benutzername";
@@ -285,6 +286,7 @@ $registrationInvalid = "Deine Eingaben waren nicht valide. Bitte überprüfe die
 
 $noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
 
+$madeNoFriends = "Du hast noch keine Personen als Freunde hinzugefügt. Verwende das Eingabefeld in der rechten, oberen Ecke um nach Personen zu suchen.";
 
 $fuelType = "Treibstoff";
 $constructionYear ="Baujahr";

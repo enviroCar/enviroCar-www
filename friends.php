@@ -31,11 +31,13 @@ include('header.php');
             $('#loadingIndicator_friends').hide();
           }else{
 		        data = JSON.parse(data);
-		        if(data.users.length > 0 ){
+            if(data.users.length > 0 ){
 		        	for(i = 0; i < data.users.length; i++){
 		            	addFriendToList(data.users[i].name);
 		          	}
-		        }
+		        }else{
+              $('#friendsList').html("<? echo $madeNoFriends ?>");
+            }
 	      	}
           $('#loadingIndicator_friends').hide();
 	  	});
@@ -132,9 +134,11 @@ function convertToLocalTime(serverDate) {
     }
   	</script>
 	
-		<div class="container rightband"> 
-			<input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" style="float:right" data-provide="typeahead"/>
-
+		<div class="container rightband">
+      <div style="float:right"> 
+        <label for="text"><? echo $searchfriends ?></label>
+			  <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
+      </div>
 
 			<div class="span5">
 				<h2> <? echo $friends ?></h2>

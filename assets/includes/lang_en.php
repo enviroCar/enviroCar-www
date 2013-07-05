@@ -285,6 +285,7 @@ $registrationNotAllowed = "Your email address is not registered for our beta-pha
 $registrationInvalid = "Your inputs are not valid. Please check the form field and try again.";
 
 $noFriendsYet = "hasn't added you as a friend yet.";
+$madeNoFriends ="You haven't made any friends yet. You can search for friends in the search-field in the upper right corner.";
 
 $changeprofile = "Change Profile";
 $email = "e-mail";
