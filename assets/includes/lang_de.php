@@ -334,7 +334,7 @@ $data_analysis="Datenanalyse";
 $points_overview="Übersicht der Messpunkte";
 $points_detail="Detailansicht einer Messung";
 $analysis_info='Die Daten, die von der App gesammelt wurden, erlauben weitere Analysen z.B mit einem GIS Programm.
-		Um zu erfahren wie Du an die Daten kommst, besuche die <a href="">Entwickler-Dokumentation</a> und erschaffe deine eigenen Informationsprodukte!<br>
+		Um zu erfahren wie Du an die Daten kommst, besuche die <a href="http://envirocar.github.io/" target="_blank">Entwickler-Dokumentation</a> und erschaffe deine eigenen Informationsprodukte!<br>
 		Für deine eigenen Analysen kannst Du dir hier auch einen Beispielmessdatensatz als shape-Datei downloaden:<br>';
 $data_visualization="Datenvisualisierung";
 $co2_map="CO2 Emission Karte";
