@@ -115,27 +115,25 @@ if(isset($_GET['group_deleted'])){
 		  </div>
 		</div>
 
-
-		<div class="container leftband">
-			<div class="span7">
-				<h2 id="groups_headline"></h2> 
+		<div class="container rightband">
+			<div style="float:right">
+				<label for="searchgroups"><? echo $searchgroups ?></label>
+				<input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
 			</div>
-			<div class="span3 offset1">
-				<div id="create_group" style="float:right"><a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a></div>
+			<div style="clear: all">
 			</div>
-				
-			</div>
-		</div>
-	
-		<div class="container rightband"> 
-			<input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
-
 
 			<div class="span6">
-				<h2><? echo $groups; ?></h2>
-				 <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">	
-
+				<h2 style="display: inline"><? echo $groups; ?></h2>
+				<div id="create_group" style="float: right">
+					<a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a>
+				</div>
+				
+				<div style="clear: all">
+				</div>
+				
+				<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">
 				</ul>          
 	        </div>
 			

@@ -135,29 +135,27 @@ function convertToLocalTime(serverDate) {
   	</script>
 	
 		<div class="container rightband">
-      <div style="float:right"> 
-        <label for="text"><? echo $searchfriends ?></label>
-			  <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
-      </div>
-
+			<div style="float:right"> 
+				<label for="searchfriends"><? echo $searchfriends ?></label>
+				<input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
+			</div>
+			<div style="clear: all">
+			</div>
 			<div class="span5">
 				<h2> <? echo $friends ?></h2>
-        <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+				<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
+				</div>
 				<ul id="friendsList" style="max-height: 400px; overflow-y: auto;">	
-
 				</ul>          
-	        </div>
-			
+			</div>
 			<div class="span4">
-			          <h2><?php echo $dashboard_friend_activities; ?></h2>
-                <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-					  <ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">
-			              
-					  </ul>
+				<h2><?php echo $dashboard_friend_activities; ?></h2>
+                <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
+                </div>
+				<ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">       
+				</ul>
 			</div>
 		</div>
-
-
 <?
 include('footer.php');
 ?>
