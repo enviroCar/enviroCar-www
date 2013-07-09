@@ -140,7 +140,7 @@ $noroutesavailable = "No routes available";
 
 $profile = "Profil";
 $activities = "Dashboard";
-$routes = "Routes";
+$routes = "My Routes";
 $friends ="Friends";
 $groups = "Groups";
 $help = "Help";
