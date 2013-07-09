@@ -57,26 +57,40 @@ include('header.php');
     }else{
       data = JSON.parse(data);
       count=data.statistics.length;
+	
       for(i = 0; i < data.statistics.length; i++){
       
 			if (data.statistics[i].phenomenon.name=="Speed")
-				$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Driving Speed"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');    
+				{
+				if(Math.round(data.statistics[i].avg*100)/100==0)
+				$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Driving Speed"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': '+"Not Calculated"+'</p>');    
 
+				else
+				$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Driving Speed"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');    
+				}
 				else if (data.statistics[i].phenomenon.name=="CO2")
-					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="CO2 Emission"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/CO2.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="CO2 Emission"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/CO2.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
      
 				else if (data.statistics[i].phenomenon.name=="MAF")
-				
-					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 					
-				else if (data.statistics[i].phenomenon.name=="Intake Temperature")
-				
-					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Temperature"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Temperature.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+				else if (data.statistics[i].phenomenon.name=="Calculated MAF")
+					$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Calculated Mass Air Flow"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Calculated MAF.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 
+				else if (data.statistics[i].phenomenon.name=="Intake Temperature")
+				$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Air Temperature"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Temperature.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+
+				else if (data.statistics[i].phenomenon.name=="Consumption")
+				{				if(Math.round(data.statistics[i].avg*100)/100==0)
+			      $('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Gasoline Consumption"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+':  '+'<strong>Not Calculated</strong>'+'</p>');
 					else
-	   				$('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Gasoline Consumption"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+			      $('#userStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Gasoline Consumption"><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+				}
+				else
+	   				$('#userStatistics').append('<p><img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/others.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 		
-	    values[i]= Math.round(data.statistics[i].avg*100)/100;
+	  
+	  values[i]= Math.round(data.statistics[i].avg*100)/100;
         phen[i]=data.statistics[i].phenomenon.name;
 		$('#loadingIndicator').hide();
     }
@@ -132,20 +146,29 @@ google.load("visualization", "1", {packages:["corechart"]});
         $('#friendHeadline').html("<? echo $statisticsOf ?> "+friend+":");
         for(i = 0; i < data.statistics.length; i++){ 
     			if (data.statistics[i].phenomenon.name=="Speed")
-				$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Driving Speed"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+				$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Average Driving Speed"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Speed.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 
 				
 				else if (data.statistics[i].phenomenon.name=="CO2")
-     				$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="CO2 Emission"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/CO2.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+     				$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="CO2 Emission"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/CO2.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 
 				else if (data.statistics[i].phenomenon.name=="MAF")
-				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Mass Air Flow"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/MAF.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 		
+				else if (data.statistics[i].phenomenon.name=="Calculated MAF")
+				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Calculated Mass Air Flow"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Calculated MAF.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+
 				else if (data.statistics[i].phenomenon.name=="Intake Temperature")
-				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Temperature"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Temperature.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
-		
+				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Air Temperature"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Temperature.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+				
+				else if (data.statistics[i].phenomenon.name=="Intake Pressure")
+				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Air Pressure"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Pressure.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+			
+      			else if (data.statistics[i].phenomenon.name=="Consumption")
+				    $('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Aerage Gasoline Consumption"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+
          		else
-				$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Gasoline Consumption"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': &Oslash '+Math.round(data.statistics[i].avg*100)/100+'</p>');
+				$('#fStatistics').append('<p"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/others.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 
           for (j=0; j<count; j++ ){
             if ((data.statistics[i].phenomenon.name)==phen[j]){ 
