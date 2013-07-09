@@ -371,7 +371,7 @@ $faq_a8 = "Für unser Ziel, deinen Ort ein bisschen smarter zu machen, bist Du d
 $faq_a9 = "Wir arbeiten hart am enviroCar-System. Bisher haben wir einen ersten Prototyp für die App und die Website entwickelt. Die weitere Arbeit beinhaltet die Entwicklung von neuen Features und nützlichen Funktionen für dich. EnviroCar wird bald veröffentlicht. Bitte hab Geduld und achte auf unsere Updates.";
 $faq_a10 = "Wir liefern in alle Länder.";
 
-$phen_header = 'Was bedeuten die Phenomene?'; 
+$phen_header = 'Was bedeuten die Phänomene?'; 
 $phen_description ='<p>
 <b>MAF (Mass air flow)</b><br>
 Der MAF Sensor misst die Masse der Luft in l/s welche in den Motor fließt. Das Luft/Benzin Verhältnis im Motor muss jeweils konstant bleiben um eine Verbrennung zu ermöglichen. Basierend auf dem MAF Sensor kann der Spritverbrauch berechnet werden.
