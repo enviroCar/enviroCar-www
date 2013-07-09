@@ -46,7 +46,7 @@ include('header.php');
               }else if(activity.type == "FRIENDED_USER"){
                 addRecentActivities(getAvatar(activity.other.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_TRACK"){
-                addRecentActivities("./assets/img/route.svg", "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
+                if(typeof activity.track != 'undefined') addRecentActivities("./assets/img/route.svg", "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
               }else if(activity.type == "LEFT_GROUP"){
                 if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_GROUP"){
@@ -88,7 +88,7 @@ include('header.php');
               }else if(activity.type == "FRIENDED_USER"){
                 addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_TRACK"){
-                addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?> "+activity.track.name, convertToLocalTime(activity.time));
+                if(typeof activity.track != 'undefined') addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?> "+activity.track.name, convertToLocalTime(activity.time));
               }else if(activity.type == "LEFT_GROUP"){
                 if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_GROUP"){
