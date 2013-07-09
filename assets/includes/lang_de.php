@@ -324,13 +324,14 @@ $statistics = "Statistiken";
 //informationproduct
 
 $interactivemap = "Interaktive Karten";
-$interactivemap_text = 'Schaue dir unsere <a class="btn btn-primary" href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen und schaue dir an, wo du zu der Enstehung beigetragen hast! <br>
-		<br>
+$interactivemap_text = 'Schaue dir unsere <a class="btn btn-primary" href="community_lines.php">interaktiven Karten</a> an, welche die aggregierten Messungen der enviroCar Routen anzeigen. <br><br>
 
-		Du kannst dir auch unsere <a class="btn btn-primary" href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br>
-		<i>(Es kann manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
+		Du kannst dir auch unsere <a class="btn btn-primary" href="community_speed_difference.php">Geschwindigkeits-Karte</a> ansehen. Wir haben die Unterschiede zwischen der vorgegebenen Geschwindigkeit (basierend auf OpenStreetMap) mit den gemittelten Geschwindigkeiten (gemessen mit enviroCar) berechnet. Die Karte erlaubt eine Betrachtung, in wieweit der Verkehr wirklich dem geplanten Verlauf entspricht. <br><br>
+		Auf Grund der großen Datenmengen werden die Messwerte zur Darstellung in den interaktiven Karten aggregiert. Hierfür wird ein <i>Inverse Distance Weighting</i>-Algorithmus durchgeführt, wobei Messwerte innerhalb einer von 20m zu einem Straßensegment (basierend auf OpenStreetMap) zusammengeführt werden.
+		<i>(Es kann daher manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
 
 $data_analysis="Datenanalyse";
+$informationproduct_info = "Die folgenden Analysen zeigen Beispielhafte Darstellung basierend auf der Datengrundlage von enviroCar. Die Karten zeigen keine aktuellen Messwerte!";
 $points_overview="Übersicht der Messpunkte";
 $points_detail="Detailansicht einer Messung";
 $analysis_info='Die Daten, die von der App gesammelt wurden, erlauben weitere Analysen z.B mit einem GIS Programm.

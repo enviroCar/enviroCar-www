@@ -24,6 +24,7 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	<br>
 	<div>
 		<h2><? echo $data_analysis ?></h2>
+		<? echo $informationproduct_info ?>
 		<div class="row-fluid">
 			<div class="span5">
 				<p><b><? echo $points_overview ?></b></p>		
