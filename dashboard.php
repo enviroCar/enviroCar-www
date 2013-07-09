@@ -188,7 +188,7 @@ include('header.php');
         </div>
 
         <div class="span4">
-          <h2><?php echo $dashboard_overview; ?></h2>
+          <h2><?php echo $dashboard_overview; ?> (<a href="support.php#phen">?</a>)</h2>
           <div id="loadingIndicator_overview">
             <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           </div>

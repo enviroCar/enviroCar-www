@@ -366,12 +366,35 @@ $faq_a3 = "Es gibt viele verschiedene OBD2-Adapter in unterschiedlichen Preiskla
 $faq_a4 = "OBD2-Anschlüsse wurden zu unterschiedlichen Zeiten eingeführt, je nach Land und Fahrzeugtyp. In den USA sind sie in allen Fahrzeugen vorhanden, die am 01.01.1996 oder später gebaut wurden. In Europa sind alle Autos mit einem Otto-Motor (Benzin) seit dem 01.01.2001 und der EURO-3 Norm damit ausgestattet. Diesel-Fahrzeuge haben den Anschluss seit dem 01.01.2003 und LKWs seit dem 01.01.2005.";
 $faq_a5 = "Mit Hilfe von Indiegogo wollen wir 10.000€ für unsere zukünftige Arbeit sammeln. Mit deiner Spende kannst du die Zukunft des enviroCar-Projekts unterstützen. Wir wollen langfristig die Möglichkeit anbieten, deine Daten und andere zu betrachten und die Städte smarter zu machen. Hilf uns, damit Studenten und andere Leute weiter an dem Projekt arbeiten und es verbessern können.";
 $faq_a6 = "Natürlich achten wir auf Privatsphäre. All deine Daten werden anonymisiert, damit niemand sensible, spezifische oder personenbezogene Daten über deine Nutzung sammeln kann. Deine Sicherheit ist ein sehr wichtiges Thema für uns und du musst dir keine Sorgen darüber machen, wenn du enviroCar benutzt.";
-$faq_a7 = "Das Projekt besteht aus Open-Source-Software, also kann jeder daran mitarbeiten. Bitte kontaktiere uns, jede Unterstützung ist willkommen.";
+$faq_a7 = "enviroCar ist eine offene Community für jedermann. Sie können Daten hoch- oder herunterladen und somit für Ihre eigenen statistischen Analysen nutzen. Unser Server stellt die folgenden Rohdaten zur Verfügung: Gaspedalposition, Umdrehungen pro Minute, Geschwindigkeit, Kraftstoffart, Kraftstoffverbrauch, Ansaugdruck, Ansaugtemperatur, Luftmassenmessdaten, Motorlast, Fahrzeugtyp und Messzeitpunkt. <br> Die enviroCar API bietet Ihnen darüber hinaus alle wichtigen Funktionalitäten: <a href='https://github.com/enviroCar/enviroCar-server/wiki'>https://github.com/enviroCar/enviroCar-server/wiki</a> <br> Die Daten sind als JSON Dateien oder Linked Data öffentlich verfügbar, wodurch sich die enviroCar Daten in zahlreichen Services nutzen lassen. <br> Natürlich sind Sie herzlich dazu eingeladen, mit dem enviroCar Team in Kontakt zu treten und Ihre Vorschläge, Gedanken und Ideen zu unserem Projekt mit uns zu diskutieren. <br> Da enviroCar ein Open Source Projekt ist, finden Sie ALLES auf github: <a href='https://github.com/enviroCar'>https://github.com/enviroCar</a> <br> Nun liegt es an Ihnen, weitere Komponenten zu implementieren! :)";
 $faq_a8 = "Für unser Ziel, deinen Ort ein bisschen smarter zu machen, bist Du die wichtigste Person. Die nächsten Schritte sind unter anderem die weitere Entwicklung von neuen Features und der Ausbau der enviroCar-Community.";
 $faq_a9 = "Wir arbeiten hart am enviroCar-System. Bisher haben wir einen ersten Prototyp für die App und die Website entwickelt. Die weitere Arbeit beinhaltet die Entwicklung von neuen Features und nützlichen Funktionen für dich. EnviroCar wird bald veröffentlicht. Bitte hab Geduld und achte auf unsere Updates.";
 $faq_a10 = "Wir liefern in alle Länder.";
 
-
-	
+$phen_header = 'Was bedeuten die Phenomene?'; 
+$phen_description ='<p>
+<b>MAF (Mass air flow)</b><br>
+Der MAF Sensor misst die Masse der Luft in l/s welche in den Motor fließt. Das Luft/Benzin Verhältnis im Motor muss jeweils konstant bleiben um eine Verbrennung zu ermöglichen. Basierend auf dem MAF Sensor kann der Spritverbrauch berechnet werden.
+<br>
+Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Mass_air_flow_sensor" target="_blank">Wikipedia</a>
+</p>
+<p>
+<b>Geschwindigkeit</b><br>
+Die Geschwindigkeit des Fahrzeuges<br>
+</p>
+<p>
+<b>Verbrauch</b><br>
+Spritverbrauch welcher durch den MAF (Mass air flow) Wert berechnet wird.
+</p>
+<p>
+<b>RPM (Revelations per Minute)</b><br>
+Umdrehungen pro Minute. Dieser Wert beschreibt die Geschwindigkeit des Motors.<br>
+Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Revolutions_per_minute" target="_blank">Wikipedia</a>
+</p>
+<p>
+<b>CO2</b><br>
+Kohlenstoffdioxid ist ein Treibhausgas, welches als Nebenprodukt der Spritverbrennung entsteht.<br>
+Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_blank">Wikipedia</a>
+</p>';	
 		
 ?>

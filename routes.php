@@ -115,7 +115,7 @@ include('header.php');
         	</ul>
       </div>
       <div class="span5 ">
-        <h2><? echo $yourstatistics ?></h2>
+        <h2><? echo $yourstatistics ?> (<a href="support.php#phen">?</a>)</h2>
         <div id="loadingIndicator_statistics" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
         <div style="max-height: 400px; overflow-y: auto;">
           <ul id="overallStatistics">

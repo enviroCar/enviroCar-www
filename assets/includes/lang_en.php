@@ -355,7 +355,7 @@ $faq_q3 = "Which OBD2 adapters are compatible with enviroCar?";
 $faq_q4 = "Is my car supported?";
 $faq_q5 = "Why do we need Indiegogo backers?";
 $faq_q6 = "What about privacy and security?";
-$faq_q7 = "I’m a developer and very interested in this project. Is it possible to make further implementations?";
+$faq_q7 = "I’m a developer and very interested in this project. Is there a way to make some further implementations?";
 $faq_q8 = "What’s next?";
 $faq_q9 = "When will enviroCar be published?";
 $faq_q10 = "Can we ship to your country?";
@@ -366,11 +366,34 @@ $faq_a3 = "There are quite a lot OBD2 adapters for using enviroCar in different 
 $faq_a4 = "The use of OBD2 interfaces was introduced at different times, depending on country and vehicle type.	In the USA all cars built on 01.01.1996 or later have it. In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles it was supported beginning on 01.01.2003. For trucks the OBD2 support started on 01.01.2005";
 $faq_a5 = "With the help of Indiegogo we want to collect 10.000€ for our future work. With your donation, you can support the future of the enviroCar project. We want to offer the possibility to review your and other data for a long time, and to make your city smarter. Help us, that students and other people can extend and work on this project.";
 $faq_a6 = "Of course we are aware of privacy issues. All your data will be anonymized, so nobody will be able to collect sensitive, specific or person-related data about your usage. Your security is a very important topic for us and you won't have to worry about it by using enviroCar.";
-$faq_a7 = "The project is open source software, so everybody can participate. Please contact us, any support is welcome.";
+$faq_a7 = "enviroCar is an open community to everyone. You can download/upload data and use it for your own purpose of statistical analysis. Our server has the raw data in the form of throttle position, rpm, speed, fuel type, fuel consumption, intake pressure, intake temperature, short term trim bank, long term trim bank, maf, measurement time, engine load, car. <br> enviroCar offers a API, especially created for others purpose: <br> <a href='https://github.com/enviroCar/enviroCar-server/wiki'>https://github.com/enviroCar/enviroCar-server/wiki</a><br>The data is publicly available as JSON and as Linked Data, which makes it possible to include enviroCar's data in different services.<br>Of course, you are welcome to get in contact with us sending your suggestions, thoughts and ideas to discus on these.Because of the fact that envioCar is fully open source: All! is available on github: <a href='https://github.com/enviroCar'>https://github.com/enviroCar</a> It’s open to you to make further implementations :)";
 $faq_a8 = "For our goal to make your place a little bit smarter, you’re the most important person. The next steps include further implementation of new features, as well as building up the enviroCar community.";
 $faq_a9 = "We are working hard on the enviroCar system. For now we have implemented first prototypes for app and website. Further work will be on adding more features and implementing useful functions for you. We plan to release enviroCar soon. Please be patient and look for our updates.";
 $faq_a10 = "We will ship to all countries";	 
-	 
-	 
+
+$phen_header = 'What are the phenomenons all about?'; 
+$phen_description ='<p>
+<b>MAF (Mass air flow)</b><br>
+The MAF sensor measures the amount of air that is flowing into the engine in l/s. The air/fuel-ratio in the engine has to remain constant in order to allow a combustion of the air/fuel-mixture. We therefore measure how much air is used to estimate the current fuel consumption.<br>
+Further reading: <a href="http://en.wikipedia.org/wiki/Mass_air_flow_sensor" target="_blank">Wikipedia</a>
+</p>
+<p>
+<b>Speed</b><br>
+The speed of the vehicle<br>
+</p>
+<p>
+<b>Consumption</b><br>
+Fuel consumption which is caluclated based on the MAF (Mass air flow) value
+</p>
+<p>
+<b>RPM</b><br>
+Revelations per minute. This value describes the speed of your engine.<br>
+Further reading: <a href="http://en.wikipedia.org/wiki/Revolutions_per_minute" target="_blank">Wikipedia</a>
+</p>
+<p>
+<b>CO2</b><br>
+Carbon Dioxide is a gas which gets emitted as a byproduct of the fuel-combustion. <br>
+Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_blank">Wikipedia</a>
+</p>';	 
 	 
 ?>
