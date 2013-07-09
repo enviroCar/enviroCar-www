@@ -329,6 +329,7 @@ $interactivemap_text = 'Get the <a class="btn btn-primary" href="community_lines
 
 		
 $data_analysis="Data Analysis";
+$informationproduct_info = "The following pictures show examplary representations based on the enviroCar data. The maps don't show the current measurements!";
 $points_overview="Overview measurement points";
 $points_detail="Detail of a measurement point";
 $analysis_info='The collected data through the mobile application allow further analysis for example with a GIS program.

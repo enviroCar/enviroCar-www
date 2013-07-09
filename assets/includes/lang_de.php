@@ -331,6 +331,7 @@ $interactivemap_text = 'Schaue dir unsere <a class="btn btn-primary" href="commu
 		<i>(Es kann manchmal ein wenig dauern, bis deine hochgeladene Routen in die Karten integriert wurden)</i>';
 
 $data_analysis="Datenanalyse";
+$informationproduct_info = "Die folgenden Analysen zeigen Beispielhafte Darstellung basierend auf der Datengrundlage von enviroCar. Die Karten zeigen keine aktuellen Messwerte!";
 $points_overview="Übersicht der Messpunkte";
 $points_detail="Detailansicht einer Messung";
 $analysis_info='Die Daten, die von der App gesammelt wurden, erlauben weitere Analysen z.B mit einem GIS Programm.
