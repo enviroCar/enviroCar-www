@@ -229,7 +229,7 @@ google.load("visualization", "1", {packages:["corechart"]});
 				else
 					$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Air Pressure"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Pressure.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 				}
-      		else if (data.statistics[i].phenomenon.name=="Consumption")
+      	         	else if (data.statistics[i].phenomenon.name=="Consumption")
 				{				
 				if(Math.round(data.statistics[i].avg*100)/100==0)
 					$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Aerage Gasoline Consumption"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': '+'<strong>Not Calculated</strong>'+'</p>');
