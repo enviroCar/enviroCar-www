@@ -35,6 +35,7 @@ if(!is_logged_in()){
 							<ul id="mainList" class="neutralList">
 								<li><a href="#what"><? echo $what_enviro ?></a></li>
 								<li><a href="#how"><? echo $how_enviro ?></a></li>
+								<li><a href="#phen"><? echo $phen_header ?></a></li>
 							</ul>
 						</div>
 					</div>
@@ -72,6 +73,17 @@ if(!is_logged_in()){
 							</p>
 						</div>  
 					</div>
+				</div>
+				<div class="container leftband">
+					<div class="row-fluid">
+						<div class="span" style="padding-right: 1ex">
+							<h2><span class="anchor" id="phen"></span><? echo $phen_header?></h2>
+							<? echo $phen_description ?>
+							<p class="pull-right">
+								<a href="#"><? echo $back_top ?></a>
+							</p>
+						</div>  
+					</div>    
 				</div>
 			</div><!--end of div id="main"-->
 			<div class="tab-pane fade in" id="mobile">

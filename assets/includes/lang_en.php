@@ -370,7 +370,30 @@ $faq_a7 = "The project is open source software, so everybody can participate. Pl
 $faq_a8 = "For our goal to make your place a little bit smarter, you’re the most important person. The next steps include further implementation of new features, as well as building up the enviroCar community.";
 $faq_a9 = "We are working hard on the enviroCar system. For now we have implemented first prototypes for app and website. Further work will be on adding more features and implementing useful functions for you. We plan to release enviroCar soon. Please be patient and look for our updates.";
 $faq_a10 = "We will ship to all countries";	 
-	 
-	 
+
+$phen_header = 'What are the phenomenons all about?'; 
+$phen_description ='<p>
+<b>MAF (Mass air flow)</b><br>
+The MAF sensor measures the amount of air that is flowing into the engine in l/s. The air/fuel-ratio in the engine has to remain constant in order to allow a combustion of the air/fuel-mixture. We therefore measure how much air is used to estimate the current fuel consumption.<br>
+Further reading: <a href="http://en.wikipedia.org/wiki/Mass_air_flow_sensor" target="_blank">Wikipedia</a>
+</p>
+<p>
+<b>Speed</b><br>
+The speed of the vehicle<br>
+</p>
+<p>
+<b>Consumption</b><br>
+Fuel consumption which is caluclated based on the MAF (Mass air flow) value
+</p>
+<p>
+<b>RPM</b><br>
+Revelations per minute. This value describes the speed of your engine.<br>
+Further reading: <a href="http://en.wikipedia.org/wiki/Revolutions_per_minute" target="_blank">Wikipedia</a>
+</p>
+<p>
+<b>CO2</b><br>
+Carbon Dioxide is a gas which gets emitted as a byproduct of the fuel-combustion. <br>
+Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_blank">Wikipedia</a>
+</p>';	 
 	 
 ?>
