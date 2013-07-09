@@ -141,7 +141,7 @@ $noroutesavailable = "Keine Routen verfügbar";
 
 $profile = "Profil";
 $activities = "Armaturenbrett";
-$routes = "Routen";
+$routes = "Meine Routen";
 $friends ="Freunde";
 $groups = "Gruppen";
 $help = "Hilfe";
