@@ -39,7 +39,7 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	<br>
 	<p>
 		<? echo $analysis_info ?>
-		<a class="btn" target="_blank" href="assets/download/testdata.shp">Download (Shape)</a>
+		<a class="btn" target="_blank" href="assets/download/testdata.zip">Download (Shape)</a>
 	<p>
 
 
