@@ -332,7 +332,7 @@ $data_analysis="Data Analysis";
 $points_overview="Overview measurement points";
 $points_detail="Detail of a measurement point";
 $analysis_info='The collected data through the mobile application allow further analysis for example with a GIS program.
-		To learn more about how to get access to the enviroCar data, visit the <a href="">developer documentation</a> and create your own products!<br>
+		To learn more about how to get access to the enviroCar data, visit the <a href="http://envirocar.github.io/" target="_blank">developer documentation</a> and create your own products!<br>
 		For making your own analysis here you can download an example data set as shape file format.<br>';
 $data_visualization="Data Visualization";
 $co2_map="CO2 emission map";

@@ -302,8 +302,8 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   <div class="row-fluid">
     <div class="span3">
       <div class="well sidebar-nav">
+      <h2 id="username"></h2>
 		<span style="text-align: center; display: block">
-      <h2><p id="username"></p></h2>
 			<img src="./assets/includes/get.php?url=https://giv-car.uni-muenster.de/stable/rest/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
 		</span>
     <br>
@@ -477,22 +477,20 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     </div>
 </div>
 
-  <div class="container leftband" id="friendsgroups">
-      <div class="span4">
-        <h2><? echo $friends ?></h2>
-         <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-        <ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
-        </ul>
-      </div>
-      <div class="span4">
-        <h2><? echo $groups ?></h2>
-        <ul id="groups" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
-        </ul>
-         <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-    </div>
-  </div>
+	<div class="container leftband" id="friendsgroups">
+		<div class="span4">
+			<h2><? echo $friends ?></h2>
+			<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+			<ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
+			</ul>
+		</div>
+		<div class="span4">
+			<h2><? echo $groups ?></h2>
+			<ul id="groups" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
+			</ul>
+		<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+	</div>
 </div>
-      
 <?
 include('footer.php');
 ?>
