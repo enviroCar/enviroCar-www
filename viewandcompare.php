@@ -48,7 +48,7 @@ include('header.php');
   var values2 = []; // friend statistical data
   var fname;
   var count=0; // count of statsical values according to the user 
-  var phen=[];
+  var phen=[]; //global phenomenon names
 
  //Display the user Statistics.. Append the statistics values, icons, tooltips.... if any statistical value equal to Zero, do not display 0 display '<strong>Not Calculated</strong>'
 //fetch the statiscial values from the server
@@ -166,7 +166,9 @@ google.load("visualization", "1", {packages:["corechart"]});
   function getAvatar(name){
      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
   }
-  
+   //Display the friend Statistics.. Append the statistics values, icons, tooltips.... if any statistical value equal to Zero, do not display 0 display '<strong>Not Calculated</strong>'
+//fetch the statiscial values from the server
+
   function getFriendStatistics(friend){
     $('#loadingIndicator_graph').show();
     $('#loadingIndicator_friend_statistics').show();
@@ -229,7 +231,7 @@ google.load("visualization", "1", {packages:["corechart"]});
 				else
 					$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Intake Air Pressure"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Intake Pressure.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 				}
-      	         	else if (data.statistics[i].phenomenon.name=="Consumption")
+      		else if (data.statistics[i].phenomenon.name=="Consumption")
 				{				
 				if(Math.round(data.statistics[i].avg*100)/100==0)
 					$('#fStatistics').append('<p data-toggle="tooltip" data-placement="left" title="Aerage Gasoline Consumption"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/Consumption.png"/>'+data.statistics[i].phenomenon.name+': '+'<strong>Not Calculated</strong>'+'</p>');
@@ -247,12 +249,14 @@ google.load("visualization", "1", {packages:["corechart"]});
 				
 			else
 				{
-					if(Math.round(data.statistics[i].avg*100)/100==0)
-						$('#fStatistics').append('<p"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/others.png"/>'+data.statistics[i].phenomenon.name+': '+'<strong>Not Calculated</strong>'+'</p>');
-					else
-						$('#fStatistics').append('<p"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/others.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
+				if(Math.round(data.statistics[i].avg*100)/100==0)
+					$('#fStatistics').append('<p"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/others.png"/>'+data.statistics[i].phenomenon.name+': '+'<strong>Not Calculated</strong>'+'</p>');
+				else
+					$('#fStatistics').append('<p"> <img  style="height: 30px; width: 30px; padding-right:15px " src="./assets/img/others.png"/>'+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+" "+data.statistics[i].phenomenon.unit+'</p>');
 				}
-          for (j=0; j<count; j++ ){
+          //insert the friend statistics values with referance to user statistics 
+		  for (j=0; j<count; j++ )
+		    {
             if ((data.statistics[i].phenomenon.name)==phen[j]){ 
               values2[j]= Math.round(data.statistics[i].avg*100)/100;
               break;
@@ -299,22 +303,30 @@ google.load("visualization", "1", {packages:["corechart"]});
   }())
 
 
-
+//chart drawing
 function drawChart() 
     {
     var data = new google.visualization.DataTable();
-      data.addColumn('string','Measurement');
-      data.addColumn('number', '<? echo $_SESSION['name'] ?>');
-      data.addColumn('number', fname);
+	
+      data.addColumn('string','Measurement'); //y-axis values
+      data.addColumn('number', '<? echo $_SESSION['name'] ?>'); //user chart seriese 
+      data.addColumn('number', fname);  // friend chart seriese
 
       data.addRows(count);
       
       
    for(i = 0; i < count; i++)
       {
+	  
+	   if(phen[i] == 'Rpm') //Rpm values are very big comparing with other values, so adjust the value on the chart by dividing 100
+		{
+				phen[i] = phen[i]+' (100/min)';
+				values[i] = values[i]/100;
+				values2[i] = values2[i]/100;
+		}
       data.setValue(i, 0, phen[i]);
       data.setValue(i, 1, values[i]);
-        data.setValue(i, 2, values2[i]);
+      data.setValue(i, 2, values2[i]);
       }
  
         var options = {
