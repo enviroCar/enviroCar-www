@@ -103,7 +103,7 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="reg"></span><? echo $registration ?></h2>
 							<p style="text-align: justify;">  
-								<? echo $registration_steps ?> ... <br/> .. <br/> ... <br/> .. <br/>... <br/> .. <br/>
+								<? echo $registration_steps ?>
 							</p>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
@@ -116,7 +116,7 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="down"></span><? echo $downloading ?></h2>
 							<p style="text-align: justify;">  
-								<? echo $download_steps ?> ... <br/> .. <br/> ... <br/> .. <br/>... <br/> .. <br/>
+								<? echo $download_steps ?>
 							</p>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
@@ -129,7 +129,7 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor"  id="sync"></span><? echo $synchronization ?></h2>
 							<p style="text-align: justify;">  
-									<? echo $synchronization_steps ?> ... <br/> .. <br/> ... <br/> .. <br/>... <br/> .. <br/>
+									<? echo $synchronization_steps ?>
 							</p>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
