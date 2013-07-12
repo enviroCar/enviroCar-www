@@ -146,6 +146,7 @@ if(!is_logged_in()){
 								<li><a href="#sign"><? echo $register_signin_logout ?></a></li>
 								<li><a href="#compare"><? echo $how_compare_data ?></a></li>
 								<li><a href="#share"><? echo $how_share_data ?></a></li>
+								<li><a href="#review"><? echo $how_review ?></a></li>
 								<li><a href="#Cookies"><? echo $why_use_cookies ?></a></li>
 								<li><a href="#lang"><? echo $supported_languages ?></a></li>
 							</ul>
@@ -190,7 +191,10 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="compare"></span><? echo $how_compare_data ?></h2>
 							<p style="text-align: justify;">  
-								<? echo $comparing_steps ?>... <br/> .. <br/> ... <br/> .. <br/>... <br/> .. <br/>
+								<? echo $comparing_steps ?><br/>
+								<br/>
+								<img class="offset2" src="./assets/img/howtocomparedata.jpg"  height="800" width="850" alt="Depiction: how to compare data"/>
+								<br/>
 							</p>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
@@ -203,14 +207,74 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="share"></span><? echo $how_share_data ?></h2>
 							<p style="text-align: justify;">  
-								<? echo $sharing_options ?>... <br/> .. <br/> ... <br/> .. <br/>... <br/> .. <br/>
-							</p>
+								<? echo $sharing_options ?><br/>
+								<br/>
+								<img class="offset2" src="./assets/img/share_friends.jpg"  height="600" width="650" alt="Depiction: how to compare data"/>
+								<br/>
+								<br/>
+								<br/>
+							</p>																					
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
 							</p>  
 						</div>    
 					</div>    
 				</div>
+				
+				<div class="container leftband">
+					<div class="row-fluid">
+						<div class="span" style="padding-right: 1ex">
+							<h2><span class="anchor" id="review"></span><? echo $how_review ?></h2>
+							<p style="text-align: justify;">  
+								<? echo $review_data ?><br/>
+								<br/>
+								<img class="offset2" src="./assets/img/review_routes.jpg"  height="600" width="650" alt="Overview"/>
+								<br/>
+								<br/>
+								<br/>
+							</p>
+							<p style="text-align: justify;">  
+								<? echo $track_information ?><br/>
+								<br/>
+								<img class="offset2" src="./assets/img/review_map.jpg"  height="600" width="650" alt="track information"/>
+								<br/>
+								<br/>
+								<br/>
+							</p>
+							<p style="text-align: justify;">  
+								<? echo $graph_information ?><br/>
+								<br/>
+								<img class="offset2" src="./assets/img/review_graph.jpg"  height="500" width="500" alt="graph information"/>
+								<br/>
+								<br/>
+								<br/>
+							</p>
+							<p style="text-align: justify;">  
+								<? echo $thematic_information ?><br/>
+								<br/>
+								<img class="offset2" src="./assets/img/review_mapzoom.jpg"  height="600" width="650" alt="thematic information"/>
+								<br/>
+								<br/>
+								<br/>
+							</p>		
+							<p class="pull-right">
+								<a href="#"><? echo $back_top ?></a>
+							</p>  
+						</div>    
+					</div>    
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">

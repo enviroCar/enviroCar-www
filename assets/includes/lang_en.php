@@ -105,8 +105,42 @@ $description_logout="1- You can log out from any page; notice the image in the t
 $logging_out="Logging Out";
 $signing_in="Signing In";
 $register="Register";
-$comparing_steps="comparing steps and options";
-$sharing_options="sharing options";
+//
+$comparing_steps='You vs. your friend! With enviroCar it’s easy to compare your data and results with these of your friends. To allow the comparison of your data both of you have to accept each other as a “friend”. 
+Login at the enviroCar platform, navigate to “Comparison” and pick one of your friends from your list.';
+$sharing_options='To share your data, there are different ways.<br/>
+1. Download your track as a GeoJSON. You can use programm like Quantum GIS to make some analysis. <br/>
+2. Sharing data is one of the core concepts of the enviroCar community. On the enviroCar platform, navigate to “Friends” to have a detailed overview about the ongoing activities: Who created new tracks, new friendships, group actions and more.
+';
+$how_review="How to review your data?";
+$review_data='Once you’ve uploaded your generated tracks, you can have a detailed overview about your data by clicking on “Tracks” . <br/>
+There you have:<br/>
+1. An overall summary of your tracks (Your statistics)<br/>
+2. An listed view of your generated tracks. Ordered by the date and time.';
+$track_information='Click on one of these tracks to get more information. There you have different options<br/>
+1. At the left: Some statistics about the generated track.<br/>
+2. At the right: Click on one of the points within your track to have selective information at a specific position.';
+$graph_information='You have even more options to review your data<br/>
+We put your data into graphs. Click on “Graphs” to have a nice visualization of your data. To have selective information at a specific time, click on the graph itself and zoom in or out to get a better overview.';
+$thematic_information='Click on “Thematic maps” to have a look on your data displayed on a map. There you can choose the aspects you are interested in like speed, CO2 emissions, MAF or fuel consumption.
+You can navigate in the map by zooming in or out (mousewheel) or pressing you left mouse button and moving it around.';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $cookies_text='<strong> What are cookies?</strong>
 								<br/>
 								Cookies are textfiles that contain certain settings information of the website.
