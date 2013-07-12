@@ -131,6 +131,38 @@ $cookies_text="<strong> Was sind Cookies?</strong>
 $language_text="1- Bis jetzt unterstützt enviroCar zwei Sprachen: Deutsch und Englisch.
 2- Du kannst durch betätigen des entsprechenden Flaggensymboles die Sprache wechseln (siehe Bilder).";
 
+//
+$comparing_steps='Sie gegen Ihre Freunde! Mit enviroCar wird der Vergleich der Fahrleistungen im Freundeskreis zum Kinderspiel. Um den Datenvergleich zu erlauben, müssen beide Nutzer einander als “Freund” akzeptieren. 
+Melden Sie sich auf der enviroCar Plattform an, navigieren Sie zum Menüpunkt “Vergleich” und wählen Sie einen Ihrer Freunde von der Liste aus.';
+$sharing_options='Um Ihre Daten mit anderen Leuten zu teilen, gibt es mehrere Wege.<br/>
+1. Laden Sie Ihre Strecke als GeoJSON herunter, um im Anschluss Programme wie z.B. Quantum GIS zu nutzen, um die Strecken zu analysieren, um die Daten auf anderer Weise zu visualisieren oder weitere detaillierte Informationen über die Tracks zu bekommen. <br/>
+2. Das Teilen der Daten ist eines der Kernkonzepte der enviroCar Community. Navigieren Sie zum Menüpunkt “Freunde”, um einen detaillierten Überblick über aktuelle Aktivitäten zu erhalten: Wer hat neue Strecken erstellt, wer ist mit wem befreundet und vieles mehr.';
+$how_review="Wie kann ich die Daten betrachten?";
+$review_data='Sobald Sie Ihre erstellten Strecken hochgeladen haben, können Sie über den Menüpunkt “Strecken” einen detaillierten Überblick über Ihre Daten erhalten. 
+<br/>
+Dort finden Sie:<br/>
+1. Eine Übersicht Ihrer Strecken (Ihre Statistiken).<br/>
+2. Eine Liste Ihrer erstellten Strecken, geordnet nach Datum und Uhrzeit.';
+$track_information='Um weitere Informationen über bestimmte Streckenabschnitte zu erhalten, klicken Sie auf eine dieser. Dort haben Sie mehrere Möglichkeiten<br/>
+1. Auf der linken Seite finden Sie einige Statistiken über die erstellte Strecke.<br/>
+2. Auf der rechte Seite klicken Sie auf einen der Punkte auf Ihrer Strecke, um genaue Informationen über diese Position zu erhalten.';
+$graph_information='Sie haben auch noch weitere Optionen zur Anzeige Ihrer Daten<br/>
+Graphen: Klicken Sie auf “Graphen”, um eine ansprechende Visualisierung Ihrer Daten zu erhalten. Detailinformationen zu bestimmten Zeitpunkten und Streckenabschnitten erhalten Sie durch einen Klick auf den entsprechenden Teil des Graphen. Für eine bessere Erkennbarkeit lässt sich der Graph zudem heranzoomen.';
+$thematic_information='Thematische Karten: Klicken Sie auf “Thematische Karten”, um einen Blick auf Ihre auf der Karte angezeigten Daten zu werfen. Dort können Sie die für Sie interessanten Aspekte, wie Geschwindigkeit, CO2 Emissionen, MAF oder Kraftstoffverbrauch, auswählen.Sie können in der Karte navigieren, indem Sie herein- oder herauszoomen (per Mausrad) oder den Kartenausschnitt mit gedrückter linker Maustaste verschieben.';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
