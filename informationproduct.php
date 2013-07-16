@@ -39,7 +39,7 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 	<br>
 	<p>
 		<? echo $analysis_info ?>
-		<a class="btn" target="_blank" href="assets/download/testdata.shp">Download (Shape)</a>
+		<a class="btn" target="_blank" href="assets/download/testdata.zip">Download (Shape)</a>
 	<p>
 
 
@@ -101,12 +101,12 @@ window.open(url,name,'scrollbars=yes,resizable=yes, width=' + width + ',height='
 
 <div class="container rightband" style="padding-left:20px">
 	<div>
-		<h2><? echo $visualization_multitude ?></h2>
 		
+	<h2><? echo $GE_visualization ?></h2>
 	</div>
 	<br>
 	<div>
-		<h4><? echo $GE_visualization ?></h4>
+		<? echo $visualization_multitude ?>
 		<div class="row-fluid">
 			<div class="span5">
 		

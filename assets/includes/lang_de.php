@@ -80,11 +80,16 @@ $how_register="Wie kann ich mich mit meinem Smartphone registrieren?";
 $how_download="Wie kann ich die enviroCar App downloaden?";
 $how_synchronize="Wie kann ich meine Daten synchronisieren?";
 $registration="Registrierung";
-$registration_steps="Registrierungsschritte";
+$registration_steps="Neben der Registrierung auf der Website, können Sie diese ebenfalls bequem von der enviroCar App vornehmen.<br><ol><li>Nach erfolgreicher Installation der enviroCar App auf Ihrem Smartphone starten Sie die Anwendung. Öffnen Sie im Menü den Eintrag “Einloggen/Registrierung”.</li><li>Betätigen Sie die Schaltfläche im oberen rechten Bildschirmbereich, um einen neuen Benutzerzugang anzulegen.</li><li>Tragen Sie die geforderten Benutzerdaten in die vorgesehenden Felder ein. Ein Klick auf die Schaltfläche “Registrierung” schließt die Registrierung ab und Ihr neues Benutzerprofil wird erstellt.<br><img src='assets/img/support_app/img1.png' alt='Registration step 1' width='20%'><img src='assets/img/support_app/img2.png' alt='Registration step 2' width='20%'><img src='assets/img/support_app/img3.png' alt='Registration step 3' width='20%'></li></ol>";
 $downloading="Download";
-$download_steps="Download Schritte";
+$download_steps="Die enviroCar App ist mit Smartphones (basierend auf dem Android Betriebssystem (Versionen 2.3 - 4.2.2) kompatibel. Für die Installation können Sie entweder den <a href='https://play.google.com/store'>Google Play Webstore</a> oder ganz einfach den auf Ihrem Smartphone vorinstallierten Playstore nutzen. Suchen Sie im Playstore nach “enviroCar” und installieren Sie die App. Nach Download, Installation und Registrierung können Sie alle Funktionen des Systems nutzen und die vielfältigen Möglichkeiten, die enviroCar bietet, genießen.";
 $synchronization="Synchronisierung";
-$synchronization_steps="Synchronisierungsschritte";
+$synchronization_steps="Sie haben zwei Möglichkeiten die von Ihnen erzeugten Daten hochzuladen.<br><ol><li>Automatischer Upload Ihrer Daten:<br>Sie können dazu entweder eine WLAN Verbindung oder Ihre mobile Internetverbindung nutzen. Die Entsprechenden Einstellungen finden Sie in der enviroCar App unter dem Menüpunkt “Einstellungen”.<br><img src='assets/img/support_app/img4.png' alt='Upload Step 1' width='20%'></li>
+<li>Manueller Upload Ihrer Daten:<br>Alternativ zum automatischen Datenupload in Echtzeit, können Sie Ihre generierten Daten auch manuell auf die enviroCar Plattform hochladen. Navigieren Sie dazu im Menü zu “Meine Fahrten”, wo Sie am oberen rechten Bildschirmrand die Upload-Schalfläche finden. Nach Betätigen der Schaltfläche erhalten Sie eine Rückmeldung über den erfolgreichen Upload Ihrer Daten in der Benachrichtigungsleiste Ihres Smartphones.<br><img src='assets/img/support_app/img5.png' alt='Upload Step 2' width='20%'></li></ol><br>
+<ul><li>Auswahl Ihres Fahrzeuges und Anlegen eines neuen Fahrzeuges:<br>Das “Dashboard” (Hauptmenu) der enviroCar App erlaubt es Ihnen auf unkomplizierte Weise zwischen verschiedenen Fahrzeugen zu wechseln oder neue Fahrzeuge anzulegen. Betätigen Sie dazu die “Bearbeiten” Schaltfläche, wodurch sich die Ansicht zur “Garagenansicht” ändert.<br><img src='assets/img/support_app/img6.png' alt='Upload Step 3' width='20%'><br>Scrollen Sie durch diese Liste, um zu prüfen, ob Ihr Fahrzeugtyp bereits existiert<br><img src='assets/img/support_app/img7.png' alt='Upload Step 4' width='20%'><br>Ist dem nicht so, können Sie problemlos einen neuen Fahrzeugtyp hinzufügen. Füllen Sie dazu die angebotenen Eingabefelder aus und beenden Sie die Eingabe mit der “Fahrzeug registrieren” Schaltfläche. Der neue Fahrzeugtyp wird daraufhin in die “Garage” aufgenommen.<br><img src='assets/img/support_app/img8.png' alt='Upload Step 5' width='20%'></li>
+<li>Verbinden des Smartphones mit dem OBD-II Adapter:<br>Um die Bluetooth-Verbindung zwischen Ihrem Smartphone und dem OBD-II Adapter herzustellen, wechseln Sie zu den Bluetooth-Verbindungseinstellungen Ihres Gerätes. Aktivieren Sie Bluetooth und starten Sie die Suche nach neuen Geräten. Nach wenigen Sekunden sollte der OBD-II Adapter gefunden werden. Wählen Sie den Adapter und stellen Sie die Verbindung durch Eingabe des korrekten Passwortschlüssels her. Sie sollten in etwa die folgende Anzeige erhalten<br><img src='assets/img/support_app/img9.png' alt='Upload Step 6' width='20%'><br></li>
+<li>Die Verbindung sollte nun erfolgreich hergestellt sein. Starten Sie im Anschluss die enviroCar App. Wechseln Sie in den Menüpunkt “Einstellungen” und wählen Sie dort den zuvor verbundenen OBD-II Adapter aus. Die Einstellung müssen Sie nur einmal vornehmen und ist ab jetzt gespeichert. Sollten Sie einen anderen Adapter nutzen, wiederholen Sie die oben genannten Schritte.<br><img src='assets/img/support_app/img10.png' alt='Upload Step 7' width='20%'></li>
+<li>Aufzeichnung eines neuen Tracks:<br>Öffnen Sie das Hauptmenü der enviroCar App und wählen den Menüpunkt “Start”.<br>Die enviroCar App ist aktiv und Ihre Fahrzeugdaten werden aufgezeichnet.<br><img src='assets/img/support_app/img11.png' alt='Upload Step 7' width='20%'></li></ul>";
 
 //Support_webseite
 
@@ -130,6 +135,38 @@ $cookies_text="<strong> Was sind Cookies?</strong>
 								<br/>";
 $language_text="1- Bis jetzt unterstützt enviroCar zwei Sprachen: Deutsch und Englisch.
 2- Du kannst durch betätigen des entsprechenden Flaggensymboles die Sprache wechseln (siehe Bilder).";
+
+//
+$comparing_steps='Sie gegen Ihre Freunde! Mit enviroCar wird der Vergleich der Fahrleistungen im Freundeskreis zum Kinderspiel. Um den Datenvergleich zu erlauben, müssen beide Nutzer einander als “Freund” akzeptieren. 
+Melden Sie sich auf der enviroCar Plattform an, navigieren Sie zum Menüpunkt “Vergleich” und wählen Sie einen Ihrer Freunde von der Liste aus.';
+$sharing_options='Um Ihre Daten mit anderen Leuten zu teilen, gibt es mehrere Wege.<br/>
+1. Laden Sie Ihre Strecke als GeoJSON herunter, um im Anschluss Programme wie z.B. Quantum GIS zu nutzen, um die Strecken zu analysieren, um die Daten auf anderer Weise zu visualisieren oder weitere detaillierte Informationen über die Tracks zu bekommen. <br/>
+2. Das Teilen der Daten ist eines der Kernkonzepte der enviroCar Community. Navigieren Sie zum Menüpunkt “Freunde”, um einen detaillierten Überblick über aktuelle Aktivitäten zu erhalten: Wer hat neue Strecken erstellt, wer ist mit wem befreundet und vieles mehr.';
+$how_review="Wie kann ich die Daten betrachten?";
+$review_data='Sobald Sie Ihre erstellten Strecken hochgeladen haben, können Sie über den Menüpunkt “Strecken” einen detaillierten Überblick über Ihre Daten erhalten. 
+<br/>
+Dort finden Sie:<br/>
+1. Eine Übersicht Ihrer Strecken (Ihre Statistiken).<br/>
+2. Eine Liste Ihrer erstellten Strecken, geordnet nach Datum und Uhrzeit.';
+$track_information='Um weitere Informationen über bestimmte Streckenabschnitte zu erhalten, klicken Sie auf eine dieser. Dort haben Sie mehrere Möglichkeiten<br/>
+1. Auf der linken Seite finden Sie einige Statistiken über die erstellte Strecke.<br/>
+2. Auf der rechte Seite klicken Sie auf einen der Punkte auf Ihrer Strecke, um genaue Informationen über diese Position zu erhalten.';
+$graph_information='Sie haben auch noch weitere Optionen zur Anzeige Ihrer Daten<br/>
+Graphen: Klicken Sie auf “Graphen”, um eine ansprechende Visualisierung Ihrer Daten zu erhalten. Detailinformationen zu bestimmten Zeitpunkten und Streckenabschnitten erhalten Sie durch einen Klick auf den entsprechenden Teil des Graphen. Für eine bessere Erkennbarkeit lässt sich der Graph zudem heranzoomen.';
+$thematic_information='Thematische Karten: Klicken Sie auf “Thematische Karten”, um einen Blick auf Ihre auf der Karte angezeigten Daten zu werfen. Dort können Sie die für Sie interessanten Aspekte, wie Geschwindigkeit, CO2 Emissionen, MAF oder Kraftstoffverbrauch, auswählen.Sie können in der Karte navigieren, indem Sie herein- oder herauszoomen (per Mausrad) oder den Kartenausschnitt mit gedrückter linker Maustaste verschieben.';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -355,7 +392,7 @@ $faq_q3 = "Welche OBD2-Adapter sind mit enviroCar kompatibel?";
 $faq_q4 = "Wird mein Auto unterstützt?";
 $faq_q5 = "Wozu brauchen wir die Unterstützung von Indiegogo?";
 $faq_q6 = "Wie steht es mit Privatsphäre und Sicherheit?";
-$faq_q7 = "Ich bin ein Entwickler und interessiere mich für das Projekt? Kann ich etwas zum Projekt beitragen?";
+$faq_q7 = "Ich bin Entwickler und sehr interessiert am Projekt. Ist es möglich, weitere Programmteile beizutragen? ";
 $faq_q8 = "Wie geht es weiter?";
 $faq_q9 = "Wann wird enviroCar veröffentlicht?";
 $faq_q10 = "Welche Länder werden beliefert?";
@@ -371,7 +408,7 @@ $faq_a8 = "Für unser Ziel, deinen Ort ein bisschen smarter zu machen, bist Du d
 $faq_a9 = "Wir arbeiten hart am enviroCar-System. Bisher haben wir einen ersten Prototyp für die App und die Website entwickelt. Die weitere Arbeit beinhaltet die Entwicklung von neuen Features und nützlichen Funktionen für dich. EnviroCar wird bald veröffentlicht. Bitte hab Geduld und achte auf unsere Updates.";
 $faq_a10 = "Wir liefern in alle Länder.";
 
-$phen_header = 'Was bedeuten die Phenomene?'; 
+$phen_header = 'Was bedeuten die Phänomene?'; 
 $phen_description ='<p>
 <b>MAF (Mass air flow)</b><br>
 Der MAF Sensor misst die Masse der Luft in l/s welche in den Motor fließt. Das Luft/Benzin Verhältnis im Motor muss jeweils konstant bleiben um eine Verbrennung zu ermöglichen. Basierend auf dem MAF Sensor kann der Spritverbrauch berechnet werden.

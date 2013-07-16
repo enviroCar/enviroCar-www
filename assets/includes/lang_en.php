@@ -81,11 +81,14 @@ $how_register="How to register from your mobile phone?";
 $how_download="How to download enviroCar application?";
 $how_synchronize="How to synchronize your data?";
 $registration="Registration";
-$registration_steps="Registration steps";
+$registration_steps="Of course you can register a new user account via the enviroCar app.<br><ol><li>After installing and starting the app on your smartphone, open the menu and click on “Sign in/Register”.</li><li>Click on the upper right button to create a new user account.</li><li>Fill in your user credentials. Click on “Register” to create a new user account.<br><img src='assets/img/support_app/img1.png' alt='Registration step 1' width='20%'><img src='assets/img/support_app/img2.png' alt='Registration step 2' width='20%'><img src='assets/img/support_app/img3.png' alt='Registration step 3' width='20%'></li></ol>";
 $downloading="Downloading";
-$download_steps="Downloading steps";
+$download_steps="The enviroCar App is available for Android 2.3 to the latest version 4.2.2. To install the app on your smartphone, you can use the <a href='https://play.google.com/store'>Google Play Webstore</a> or the Play Store, which is installed on your Android smartphone.<br>You can find us with the name “enviroCar”. Download and install this app on your smartphone and enjoy all the features enviroCar system offers.";
 $synchronization="Synchronization";
-$synchronization_steps="Synchronization steps";
+$synchronization_steps="To upload your generated data, you have two options.<br><ol><li>Upload your data automatically. Either while using a wlan network or by using your mobile internet connection. You can set these options in the enviroCar app settings.</li><br><img src='assets/img/support_app/img4.png' alt='Upload Step 1' width='20%'><li>If you don’t want to upload you data in real time, you can upload your generated tracks by clicking on the “Upload button”. Navigate to “My tracks” and click on the button in the upper right corner. After uploading the tracks, a message will be displayed in your notification bar.<br><img src='assets/img/support_app/img5.png' alt='Upload Step 2' width='20%'></li></ol>
+<br><ul><li>How to select your car or create a new one:<br>Once you are on the dashboard, you can easily switch to another car or even create a new one. Click on the small “Edit” button to switch to your garage.<br><img src='assets/img/support_app/img6.png' alt='Upload Step 3' width='20%'><br>Scroll through the existing car list, to see, if your car type already exists:<br><img src='assets/img/support_app/img7.png' alt='Upload Step 4' width='20%'><br>Of course, it’s no problem to create a new car type. After completing all lines, click on “Register Car” to create a new entry in the car list.<br><img src='assets/img/support_app/img8.png' alt='Upload Step 5' width='20%'></li>
+<li>How to connect your smartphone with your OBD-II adapter:<br>To connect you smartphone with your OBD-II adapter, switch to the BT settings of your smartphone. Enable Bluetooth and search for the new devices. The adapter should be visible within a few seconds. Click on the device and connect it with your smartphone by typing in the correct passkey. It should look like the following:<br><img src='assets/img/support_app/img9.png' alt='Upload Step 6' width='20%'><br>When you’re done, start the enviroCar app, switch to settings and select your OBD-II adapter.<br><img src='assets/img/support_app/img10.png' alt='Upload Step 7' width='20%'></li>
+<li>How to start generating a new track:<br>Open the enviroCar menu and click on “Start”. That’s all. The enviroCar app is now ready to collect your car's data.<br><img src='assets/img/support_app/img11.png' alt='Upload Step 7' width='20%'></li></ul>";
 
 //Support_webseite
 
@@ -105,8 +108,42 @@ $description_logout="1- You can log out from any page; notice the image in the t
 $logging_out="Logging Out";
 $signing_in="Signing In";
 $register="Register";
-$comparing_steps="comparing steps and options";
-$sharing_options="sharing options";
+//
+$comparing_steps='You vs. your friend! With enviroCar it’s easy to compare your data and results with these of your friends. To allow the comparison of your data both of you have to accept each other as a “friend”. 
+Login at the enviroCar platform, navigate to “Comparison” and pick one of your friends from your list.';
+$sharing_options='To share your data, there are different ways.<br/>
+1. Download your track as a GeoJSON. You can use programm like Quantum GIS to make some analysis. <br/>
+2. Sharing data is one of the core concepts of the enviroCar community. On the enviroCar platform, navigate to “Friends” to have a detailed overview about the ongoing activities: Who created new tracks, new friendships, group actions and more.
+';
+$how_review="How to review your data?";
+$review_data='Once you’ve uploaded your generated tracks, you can have a detailed overview about your data by clicking on “Tracks” . <br/>
+There you have:<br/>
+1. An overall summary of your tracks (Your statistics)<br/>
+2. An listed view of your generated tracks. Ordered by the date and time.';
+$track_information='Click on one of these tracks to get more information. There you have different options<br/>
+1. At the left: Some statistics about the generated track.<br/>
+2. At the right: Click on one of the points within your track to have selective information at a specific position.';
+$graph_information='You have even more options to review your data<br/>
+We put your data into graphs. Click on “Graphs” to have a nice visualization of your data. To have selective information at a specific time, click on the graph itself and zoom in or out to get a better overview.';
+$thematic_information='Click on “Thematic maps” to have a look on your data displayed on a map. There you can choose the aspects you are interested in like speed, CO2 emissions, MAF or fuel consumption.
+You can navigate in the map by zooming in or out (mousewheel) or pressing you left mouse button and moving it around.';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $cookies_text='<strong> What are cookies?</strong>
 								<br/>
 								Cookies are textfiles that contain certain settings information of the website.

@@ -6,6 +6,25 @@ $loggedInUser = $_SESSION["name"];
 $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 ?>
 
+<style type="text/css">
+  .badges{
+    padding: 3px;
+    background: #8CBF3F;
+    max-width: 200px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+  }
+</style>
+
 <script type="text/javascript">
   //Javascript function to receive GET variables (Syntax: $_GET(['variableName']) ) 
   (function(){
@@ -48,7 +67,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
          }
         if(data.mail){
            $('#mail').val(data.mail);
-         }
+        }
         if(data.lastName){
            $('#userInformation').append('<li><? echo $lastname ?>: <b>'+data.lastName+'</b></li>');
            $('#lastName').val(data.lastName);
@@ -79,6 +98,27 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }
         if(data.aboutMe){
           $('#aboutMe').val(data.aboutMe);
+        }
+        if(data.badges){
+          for(var i = 0; i < data.badges.length; i++){
+            if(data.badges[i] === "contributor"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
+            }else if(data.badges[i] === "friend"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
+            }else if(data.badges[i] === "support"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
+            }else if(data.badges[i] === "local-stakeholder"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
+            }else if(data.badges[i] === "fan"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
+            }else if(data.badges[i] === "regional-stakeholder"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
+            }else if(data.badges[i] === "early-bid"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
+            }else if(data.badges[i] === "partner"){
+              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
+            }
+          }
         }
       }
     });
@@ -308,6 +348,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 		</span>
     <br>
         <ul id="userInformation" class="nav nav-list" style="text-align:center"></ul>
+        <ul id="badges" class="nav nav-list" style="text-align:center"></ul>
 		<?
 			if($user == $loggedInUser){
 		?>
