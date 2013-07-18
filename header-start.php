@@ -107,7 +107,7 @@ if ($login_name != "" && $login_password != ""){
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?=echoActiveClassIfRequestMatches("informationproduct")?>><a href="informationproduct.php"><? echo $informationproduct ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="https://github.com/enviroCar/enviroCar-server/wiki" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="http://envirocar.github.io/" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
             </ul>
 
