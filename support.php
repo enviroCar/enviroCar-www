@@ -79,9 +79,6 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="phen"></span><? echo $phen_header?></h2>
 							<? echo $phen_description ?>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>
 						</div>  
 					</div>    
 				</div>
@@ -130,9 +127,6 @@ if(!is_logged_in()){
 							<h2><span class="anchor"  id="sync"></span><? echo $synchronization ?></h2>
 							<p style="text-align: justify;">  
 									<? echo $synchronization_steps ?>
-							</p>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div> 
 					</div>    
@@ -299,9 +293,6 @@ if(!is_logged_in()){
 							<br/>
 							<img src="./assets/img/languages.jpg" height="400" width="600" alt="Depiction: How to change languages"/><br/>
 							</p>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>
 						</div>
 					</div>
 				</div>
@@ -333,7 +324,7 @@ if(!is_logged_in()){
 								<? echo $faq_a1 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div>
 					</div>    
@@ -346,7 +337,7 @@ if(!is_logged_in()){
 								<? echo $faq_a2 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>    
 						</div>    
 					</div>    
@@ -359,7 +350,7 @@ if(!is_logged_in()){
 								<? echo $faq_a3 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>   
 						</div>    
 					</div>    
@@ -371,7 +362,7 @@ if(!is_logged_in()){
 							<p style="text-align: justify;">
 								<? echo $faq_a4 ?></p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>    
 						</div>    
 					</div>    
@@ -384,7 +375,7 @@ if(!is_logged_in()){
 								<? echo $faq_a5 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div>    
 					</div>    
@@ -396,7 +387,7 @@ if(!is_logged_in()){
 							<p style="text-align: justify;">
 								<? echo $faq_a6 ?>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div>    
 					</div>    
@@ -409,7 +400,7 @@ if(!is_logged_in()){
 								<? echo $faq_a7 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div>
 					</div>    
@@ -422,7 +413,7 @@ if(!is_logged_in()){
 								<? echo $faq_a8 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div>    
 					</div>    
@@ -435,7 +426,7 @@ if(!is_logged_in()){
 								<? echo $faq_a9 ?>
 							</p>
 							<p class="pull-right">
-								<a href="#">Back to top</a>
+								<a href="#"><? echo $back_top ?></a>
 							</p>
 						</div>    
 					</div>    
@@ -446,9 +437,6 @@ if(!is_logged_in()){
 							<h2><span  class="anchor" id="q10"></span><? echo $faq_q10 ?></h2>
 							<p style="text-align: justify;">
 								<? echo $faq_a10 ?>
-							</p>
-							<p class="pull-right">
-								<a href="#">Back to top</a>
 							</p>
 						</div>    
 					</div>    
