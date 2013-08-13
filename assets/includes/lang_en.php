@@ -31,7 +31,7 @@ $index_welcome="Welcome";
 // registration.php
 $reg_registration="Registration";
 $reg_username="User name";
-$reg_email="Email Adress";
+$reg_email="Email Address";
 $reg_password="Password";
 $reg_repeat_password="Repeat Password";
 $reg_btn_register="Register";
@@ -58,7 +58,7 @@ $main_information="Main information";
 $mobile_app="Mobile application";
 $website="Website";
 $what_enviro="What is EnviroCar?";
-$how_enviro="How does EnviroCar works?";
+$how_enviro="How does EnviroCar work?";
 $enviro_description="A community based system for gathering your car’s data with your smartphone bluetooth-paired OBD2 adapter to 
 								make your city smarter.	<br/>enviroCar allows you to drive more efficiently by giving you for example full 
 								insight in consumption and costs. It allows you to compare your driving statistics with friends and to enjoy 
@@ -78,7 +78,7 @@ $enviro_description_detail2="By using OBD2 adapter, enviroCar is able to receive
 
 //Support_mobile_application
 $how_register="How to register from your mobile phone?";
-$how_download="How to download enviroCar application?";
+$how_download="How to download the enviroCar application?";
 $how_synchronize="How to synchronize your data?";
 $registration="Registration";
 $registration_steps="Of course you can register a new user account via the enviroCar app.<br><ol><li>After installing and starting the app on your smartphone, open the menu and click on “Sign in/Register”.</li><li>Click on the upper right button to create a new user account.</li><li>Fill in your user credentials. Click on “Register” to create a new user account.<br><img src='assets/img/support_app/img1.png' alt='Registration step 1' width='20%'><img src='assets/img/support_app/img2.png' alt='Registration step 2' width='20%'><img src='assets/img/support_app/img3.png' alt='Registration step 3' width='20%'></li></ol>";
@@ -112,7 +112,7 @@ $register="Register";
 $comparing_steps='You vs. your friend! With enviroCar it’s easy to compare your data and results with these of your friends. To allow the comparison of your data both of you have to accept each other as a “friend”. 
 Login at the enviroCar platform, navigate to “Comparison” and pick one of your friends from your list.';
 $sharing_options='To share your data, there are different ways.<br/>
-1. Download your track as a GeoJSON. You can use programm like Quantum GIS to make some analysis. <br/>
+1. Download your track as a GeoJSON. You can use programms like Quantum GIS to make some analysis. <br/>
 2. Sharing data is one of the core concepts of the enviroCar community. On the enviroCar platform, navigate to “Friends” to have a detailed overview about the ongoing activities: Who created new tracks, new friendships, group actions and more.
 ';
 $how_review="How to review your data?";
@@ -175,7 +175,7 @@ $yourroutes = "Your Routes";
 $yourstatistics = "Your Statistics";
 $noroutesavailable = "No routes available";
 
-$profile = "Profil";
+$profile = "Profile";
 $activities = "Dashboard";
 $routes = "My Routes";
 $friends ="Friends";
@@ -185,7 +185,10 @@ $community ="Community";
 $logout = "Logout";
 $comparison ="Comparison";
 $informationproduct ="Information Products";
+$mapsandstatistics = "Maps & Statistics";
+$gettinginvolved = "Getting Involved";
 $api = "API";
+$data = "Data";
 $showapiongithub = "Show API-definition on github.com";
 
 $logoutsuccess = "Successfully logged out";

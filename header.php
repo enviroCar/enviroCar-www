@@ -30,7 +30,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="root" >
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
@@ -103,13 +103,9 @@ function echoActiveClassIfRequestMatches($requestUri)
 		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php"><? echo $routes ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php"><? echo $friends ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("viewandcompare")?>><a href="viewandcompare.php"><? echo $comparison ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("informationproduct")?>><a href="informationproduct.php"><? echo $informationproduct ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="http://envirocar.github.io/" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $_SESSION["name"];?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="http://envirocar.github.io/" target="_blank" title="<? echo $showapiongithub ?>"><? echo $data ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
             </ul>
           </div><!--/.nav-collapse -->

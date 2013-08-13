@@ -186,7 +186,10 @@ $community ="Gemeinschaft";
 $logout = "Abmelden";
 $comparison ="Vergleich";
 $informationproduct = "Informationsprodukte";
+$mapsandstatistics = "Karten & Statistiken";
+$gettinginvolved = "Beteiligen";
 $api = "API";
+$data = "Daten";
 $showapiongithub = "Zeige die API-Definition auf github.com";
 
 
