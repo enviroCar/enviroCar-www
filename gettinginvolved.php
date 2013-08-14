@@ -14,9 +14,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_datalicensing_head"><?echo $licensing_datalicensing; ?></h2>
+				<h2 id="licensing_datalicensing_head"><?echo $aboutEnviroCarHead; ?></h2>
 				<p style="text-align: justify">
-				<?echo $licensing_datalicensingtext; ?>
+				<?echo $aboutEnviroCarText; ?>
 				</p>
 			</div>
 		</div>
@@ -25,9 +25,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_allowed_head"><?echo $licensing_allowed; ?></h2>
+				<h2 id="licensing_allowed_head"><?echo $asACitizenHead; ?></h2>
 				<p style="text-align: justify">
-				<?echo $licensing_allowedtext; ?>
+				<?echo $asACitizenText; ?>
 				</p>
 			</div>
 		</div>
@@ -36,9 +36,31 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_aslongas_head"><?echo $licensing_aslongas; ?></h2>
+				<h2 id="licensing_aslongas_head"><?echo $asAScientistHead; ?></h2>
 				<p style="text-align: justify">
-				<?echo $licensing_aslongastext; ?>
+				<?echo $asAScientistText; ?>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container leftband">
+		<div class="row-fluid">
+			<div class="span" style="padding-right: 1ex">
+				<h2 id="licensing_aslongas_head"><?echo $asAPlannerHead; ?></h2>
+				<p style="text-align: justify">
+				<?echo $asAPlannerText; ?>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container leftband">
+		<div class="row-fluid">
+			<div class="span" style="padding-right: 1ex">
+				<h2 id="licensing_aslongas_head"><?echo $asADeveloperHead; ?></h2>
+				<p style="text-align: justify">
+				<?echo $asADeveloperText; ?>
 				</p>
 			</div>
 		</div>

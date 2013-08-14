@@ -311,9 +311,12 @@ $activityError ="Activities couldn't be loaded successfully.";
 $groupNotFound = "The requested group couldn't be found.";
 $friendNotFound = "The requested friends couldn't be found.";
 $activityNotFound = "The requested activities couldn't be found.";
-$statisticsNotFound = "The requested statistics couldn't be loadel successfully.";
+$statisticsNotFound = "The requested statistics couldn't be loaded successfully.";
 $statisticsNotAllowed = "You are not allowed to view the requested statistics.";
 $statisticsError ="Statistics couldn't be loaded successfully.";
+$mapsNotFound = "The requested maps couldn't be loaded successfully.";
+$mapsNotAllowed = "You are not allowed to view the requested maps.";
+$mapsError ="Maps couldn't be loaded successfully.";
 $groupOfNotFound = "The groups of the requested person couldn't be found.";
 $groupOfNotAllowed = "You are not allowed to view the groups of the requested person.";
 $groupMemberNotAllowed = "You are not allowed to view the member of the group.";
@@ -435,5 +438,33 @@ Further reading: <a href="http://en.wikipedia.org/wiki/Revolutions_per_minute" t
 Carbon Dioxide is a gas which gets emitted as a byproduct of the fuel-combustion. <br>
 Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_blank">Wikipedia</a>
 </p>';	 
-	 
+	
+//mapsandstatistics.php
+$noDescription = "No description available.";
+$map = "Map";
+$details = "Details";
+
+//gettinginvolved.php
+$aboutEnviroCarHead = "About the enviroCar Project.";
+$aboutEnviroCarText = "enviroCar allows you to use your car’s sensor data to investigate the impact that your driving style has on environmental factors such as fuel consumption, CO2 levels, and noise emissions. You and your friends can compare your driving statistics and you can compete to become the most efficient driver while also reducing your car’s running costs!
+
+Share your data with the enviroCar Citizen Science Community and collaborate with other citizens, scientists and urban planners investigating such questions as what the effective spatial characteristics of fuel consumption are in your city, how traffic planning can be optimized to reduce emissions effectively and what we can learn from average speed maps.
+
+enviroCar is an extremely valuable new environmental information resource. Join the community and help to make our world a little smarter, the flow of traffic smoother and less stressful, and economic driving more fun!";
+$asACitizenHead = "A a Citizen.";
+$asACitizenText = "Keine Beschreibung verfügbar.";
+$asAScientistHead = "As a Scientist.";
+$asAScientistText = "Keine Beschreibung verfügbar.";
+$asAPlannerHead = "As a Planner.";
+$asAPlannerText = "Keine Beschreibung verfügbar.";
+$asADeveloperHead = "As a Developer.";
+$asADeveloperText = "Keine Beschreibung verfügbar.";
+
+//dataaccess.php
+$viaAPIHead = "Via the API";
+$viaAPIText = 'The enviroCar-dataserver offers a REST-interface for data-queries. You can find more information here: <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">enviroCar-server API.</a>';
+$viaDownloadHead = "Via Download";
+$viaDownloadText = "Keine Beschreibung verfügbar.";
+
+
 ?>

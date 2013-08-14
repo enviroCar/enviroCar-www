@@ -312,8 +312,11 @@ $groupNotFound = "Die Gruppe konnte nicht gefunden werden.";
 $friendNotFound = "Die Freunde konnte nicht gefunden werden.";
 $activityNotFound = "Die Aktivitäten konnte nicht gefunden werden.";
 $statisticsNotFound = "Die Statistiken konnte nicht gefunden werden.";
-$statisticsNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Statistiken zu betrachten.";
+$statisticsNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Statistiken zu betrachten.";
 $statisticsError ="Statistiken konnte nicht erfolgreich geladen werden.";
+$mapsNotFound = "Die Karte konnte nicht gefunden werden.";
+$mapsNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Karten zu betrachten.";
+$mapsError ="Karten konnte nicht erfolgreich geladen werden.";
 $groupOfNotFound = "Es konnten keine Gruppen von der gewünschten Person gefunden werden.";
 $groupOfNotAllowed = "Es ist dir nicht erlaubt, die Gruppen der angefragten Person zu betrachten.";
 $groupMemberNotAllowed = "Es ist dir nicht erlaubt die Mitglieder dieser Gruppe zu betrachten.";
@@ -436,5 +439,28 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Revolutions_per_min
 Kohlenstoffdioxid ist ein Treibhausgas, welches als Nebenprodukt der Spritverbrennung entsteht.<br>
 Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_blank">Wikipedia</a>
 </p>';	
-		
+
+//mapsandstatistics.php
+$noDescription = "Keine Beschreibung verfügbar.";
+$map = "Karte";
+$details = "Details";
+
+//gettinginvolved.php
+$aboutEnviroCarHead = "Über das enviroCar Projekt.";
+$aboutEnviroCarText = "Keine Beschreibung verfügbar.";
+$asACitizenHead = "Als Bürger.";
+$asACitizenText = "Keine Beschreibung verfügbar.";
+$asAScientistHead = "Als Wissenschaftler.";
+$asAScientistText = "Keine Beschreibung verfügbar.";
+$asAPlannerHead = "Als Planer.";
+$asAPlannerText = "Keine Beschreibung verfügbar.";
+$asADeveloperHead = "Als Entwickler.";
+$asADeveloperText = "Keine Beschreibung verfügbar.";
+
+//dataaccess.php
+$viaAPIHead = "Über die API";
+$viaAPIText = 'Der enviroCar-Datenserver bietet für Datenabfragen eine REST-Schnittstelle an. Mehr informationen findest Du hier: <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">enviroCar-server API.</a>';
+$viaDownloadHead = "Als Download";
+$viaDownloadText = "Keine Beschreibung verfügbar.";
+
 ?>
