@@ -10,60 +10,33 @@ if(!is_logged_in()){
 	include('header.php');
 }
 ?>
-
-
-<script type="text/javascript">
-
-//adds a new item to the gallery
-function addMap(img, titel, abstrakt, id){
-  $('#thumbnails').append('<li class="span3"><div class="thumbnail"><img src="'+img+'" style="width: 133; height: 200px; margin-left: 0px; "/><h3>'+titel+'</h3><p>'+abstrakt+'</p><p><a class="btn btn-primary" href="javascript:newMapWin(' + "'" + id + "', '" + titel + "'" + ')"><? echo $map ?></a> <a class="btn" href="javascript:newDetailsWin(' + "'" + id + "', '" + titel + "'" + ')"><? echo $details ?></a></p></div></li>');
-}
-function newMapWin(id,name) { 
-window.open('http://www.arcgis.com/home/webmap/viewer.html?webmap='+id,name,'scrollbars=yes,resizable=yes, width=800,height=600');
-}
-function newDetailsWin(id,name) { 
-window.open('http://www.arcgis.com/home/item.html?id='+id,name,'scrollbars=yes,resizable=yes, width=800,height=600');
-}
-   $.get('./assets/includes/maps.php?maps', function(data) {
-      if(data >= 400){
-        console.log(data);
-        if(data == 400){
-            error_msg("<? echo $mapsError ?>");
-        }else if(data == 401 || data == 403){
-          error_msg("<? echo $mapsNotAllowed ?>")
-        }else if(data == 404){
-          error_msg("<? echo $mapsNotFound ?>")
-        }
-        $('#loadingIndicator_maps').hide();
-      }else{
-          data = JSON.parse(data);
-          if(data.results.length > 0){
-            for(i = 0; i < data.results.length; i++){
-            	if(data.results[i].type == "Web Map"){
-               	addMap('http://envirocar.maps.arcgis.com/sharing/rest/content/items/' + data.results[i].id + '/info/' + data.results[i].thumbnail, data.results[i].title, data.results[i].description ? data.results[i].description : "<? echo $noDescription ?>", data.results[i].id);
-               }	
-            }
-
-          }else{
-            $('#loadingIndicator_maps').hide();
-          }
-      }
-      $('#loadingIndicator_maps').hide();
-	});
-</script>
-
-<div class="container leftband" style="padding-left:20px">
-	<div>
-		<h2><? echo $interactivemap ?></h2>
-		<div id="loadingIndicator_maps">
-            <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-      </div>
-      <div class="row-fluid">
-		<ul id="thumbnails">
-    	</ul>
-    	</div>
+	<div class="container rightband">
+	<div class="row-fluid">
+			<h2> <? echo $hotspot_titel ?></h2>
+			<div class="span3">
+				<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=d0a4bb0dd1d943d19ab7f66fd5a2cfb2" class="thumbnail" target="_blank">
+					<img src="http://www.arcgis.com/sharing/rest/content/items/d0a4bb0dd1d943d19ab7f66fd5a2cfb2/info/thumbnail/ago_downloaded.png" alt="">
+				</a>
+			</div>
+        <div class="span5">
+          <?php echo $hotspot_description ?>       
+        </div>
+		</div>
 	</div>
-</div>
+
+	<div class="container rightband">
+	<div class="row-fluid">
+			<h2> <? echo $speed_titel ?></h2>
+			<div class="span3">
+				<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=56f3d72eb2034b4ca2975bba3b2ba0b1" class="thumbnail" target="_blank">
+					<img src="http://www.arcgis.com/sharing/rest/content/items/56f3d72eb2034b4ca2975bba3b2ba0b1/info/thumbnail/ago_downloaded.png" alt="">
+				</a>
+			</div>
+        <div class="span5">
+          <?php echo $speed_description ?>       
+        </div>
+		</div>
+	</div>
 
 <?
 include('footer.php');

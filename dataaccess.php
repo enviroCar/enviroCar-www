@@ -14,9 +14,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_datalicensing_head"><?echo $viaAPIHead; ?></h2>
+				<h2 id="licensing_allowed_head"><?echo $viaDownloadHead; ?></h2>
 				<p style="text-align: justify">
-				<?echo $viaAPIText; ?>
+				<?echo $viaDownloadText; ?>
 				</p>
 			</div>
 		</div>
@@ -25,9 +25,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_allowed_head"><?echo $viaDownloadHead; ?></h2>
+				<h2 id="licensing_datalicensing_head"><?echo $viaAPIHead; ?></h2>
 				<p style="text-align: justify">
-				<?echo $viaDownloadText; ?>
+				<?echo $viaAPIText; ?>
 				</p>
 			</div>
 		</div>

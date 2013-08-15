@@ -25,7 +25,7 @@ $index_credentials_invalid="Netter Versuch, aber keine Anmeldedaten anzugeben hi
 $index_having_account="Bist du dir sicher, dass du bereits einen Account besitzt?";
 $index_create_new_one="Erstell dir einen neuen, es ist kostenlos.";
 $index_wrong_name="Moment, das ist nicht meine Name!";
-$index_continue_dashboard="Weiter zum Armaturenbrett";
+$index_continue_dashboard="Weiter zu deinem Profil";
 $index_welcome="Willkommen";
 
 
@@ -177,7 +177,7 @@ $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
 
 $profile = "Profil";
-$activities = "Armaturenbrett";
+$activities = "Mein Profil";
 $routes = "Meine Routen";
 $friends ="Freunde";
 $groups = "Gruppen";
@@ -187,7 +187,7 @@ $logout = "Abmelden";
 $comparison ="Vergleich";
 $informationproduct = "Informationsprodukte";
 $mapsandstatistics = "Karten & Statistiken";
-$gettinginvolved = "Beteiligen";
+$gettinginvolved = "Mitwirken";
 $api = "API";
 $data = "Daten";
 $showapiongithub = "Zeige die API-Definition auf github.com";
@@ -443,7 +443,10 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" tar
 //mapsandstatistics.php
 $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
-$details = "Details";
+$hotspot_titel = "CO2 Hot Spots Münster";
+$hotspot_description = "Hot Spots Analyse der CO2 Werte gesammelt von enviroCar Nutzern.";
+$speed_titel = "Geschwindigkeit";
+$speed_description = "Auf dieser Karte werden Geschwindigkeitswerte von enviroCar Strecken angezeigt.";
 
 //gettinginvolved.php
 $aboutEnviroCarHead = "Über das enviroCar Projekt.";

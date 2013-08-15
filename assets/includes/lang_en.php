@@ -22,10 +22,10 @@ $index_make_smarter="Make our cities smarter!";
 $index_empty_password="sorry, but you can't have an empty password.";
 $index_name_missing="everybody should have a name, even you.";
 $index_credentials_invalid="nice try, but empty credentials are invalid.";
-$index_having_account="Are you sure, of having an account?";
+$index_having_account="Are you sure of having an account?";
 $index_create_new_one="You can create a new one. It's free";
 $index_wrong_name="Wait, that's not my name!";
-$index_continue_dashboard="Continue to your dashboard";
+$index_continue_dashboard="Continue to your profile";
 $index_welcome="Welcome";
 
 // registration.php
@@ -176,7 +176,7 @@ $yourstatistics = "Your Statistics";
 $noroutesavailable = "No routes available";
 
 $profile = "Profile";
-$activities = "Dashboard";
+$activities = "My Profile";
 $routes = "My Routes";
 $friends ="Friends";
 $groups = "Groups";
@@ -443,6 +443,10 @@ Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_
 $noDescription = "No description available.";
 $map = "Map";
 $details = "Details";
+$hotspot_titel = "CO2 Hot Spots Münster";
+$hotspot_description = "Hot Spots Analysis of CO2 values gathered by enviroCar users.";
+$speed_titel = "Speed tracks";
+$speed_description = "enviroCar tracks showing the measured speed.";
 
 //gettinginvolved.php
 $aboutEnviroCarHead = "About the enviroCar Project.";
