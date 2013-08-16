@@ -81,8 +81,8 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
                 if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_GROUP"){
                 if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "CHANGED_PROFILE"){
-                addRecentActivities(getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_PROFILE"){         		
+                addRecentActivities(getAvatar(activity.user.name, 30), "<? echo $user ?>" == "<? echo $loggedInUser ?>" ? "editprofile.php?user="+activity.user.name : "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
               }
             }
         }else{
@@ -472,7 +472,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 		</div>
 
         <div class="span4">
-          <h2><?php echo $dashboard_overview; ?> (<a href="support.php#phen">?</a>)</h2>
+          <h2><?php echo $dashboard_overview; ?> </h2>
           <div id="loadingIndicator_overview">
             <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           </div>
@@ -544,14 +544,13 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	</div>
 
 	<div class="container rightband">
-	<div class="row-fluid">
 		<div style="float:right">
 			<input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
 		</div>
 		<div style="clear: all">
 		</div>
 		<div class="span6">
-			<h2><? echo $groups; ?></h2>
+			<h2 style="display: inline"><? echo $groups; ?></h2>
 			<div id="create_group" style="float: right">
 				<a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a>
 			</div>
@@ -563,7 +562,6 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 			<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">
 			</ul>          
 		</div>
-	</div>
 	</div>
 
 <?

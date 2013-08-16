@@ -125,9 +125,9 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   }
 
   function noFriend(){
-/*    $('#comparison').hide();
+ $('#comparison').hide();
     $('#friendsgroups').hide();
-    $('#nofriends').show();*/
+    $('#nofriends').show();
 
   }
 
@@ -289,7 +289,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         });
     });
  
-
+//gets activities of current friend ($user)
  $.get('./assets/includes/users.php?friendActivities', function(data) {
       if(data >= 400){
         console.log(data);
@@ -308,6 +308,10 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 
             for(i = 0; i < data.activities.length; i++){
               var activity = data.activities[i];
+             	console.log(activity.user.name);
+             	console.log("<? echo $user ?>");        
+             	console.log(activity.user.name == "<? echo $user ?>");    	
+              if(activity.user.name == $user){
               if(activity.type == "JOINED_GROUP"){
                 if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_GROUP"){
@@ -322,6 +326,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
                 if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_PROFILE"){
                 addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
+              }
               }
             }
             
@@ -579,7 +584,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	<div class="container rightband">
 	<div class="row-fluid">
         <div class="span5">
-          <h2><?php echo $dashboard_friend_activities; ?></h2>
+          <h2><?php echo $dashboard_activities_of; ?> <? echo $user ?></h2>
             <div id="loadingIndicator_friend_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
             </div>
 		  <ul id="friendActivities" style="min-height: 93px; max-height: 400px; overflow-y:auto">
