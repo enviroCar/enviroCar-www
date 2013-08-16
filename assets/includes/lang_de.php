@@ -177,11 +177,11 @@ $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
 
 $profile = "Profil";
-$activities = "Mein Profil";
+$dashboard = "Mein Profil";
 $routes = "Meine Routen";
 $friends ="Freunde";
 $groups = "Gruppen";
-$help = "Hilfe";
+$about = "Über enviroCar";
 $community ="Gemeinschaft";
 $logout = "Abmelden";
 $comparison ="Vergleich";
@@ -465,5 +465,10 @@ $viaAPIHead = "Über die API";
 $viaAPIText = 'Der enviroCar-Datenserver bietet für Datenabfragen eine REST-Schnittstelle an. Mehr informationen findest Du hier: <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">enviroCar-server API.</a>';
 $viaDownloadHead = "Als Download";
 $viaDownloadText = "Keine Beschreibung verfügbar.";
+
+//about.php
+$about_aboutHead = "Über enviroCar";
+$about_gettinginvolvedHead = "Mitwirken";
+$about_faqHead = "Häufig gestellte Fragen";
 
 ?>

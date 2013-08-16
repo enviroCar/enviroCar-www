@@ -125,9 +125,9 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   }
 
   function noFriend(){
-    $('#comparison').hide();
+/*    $('#comparison').hide();
     $('#friendsgroups').hide();
-    $('#nofriends').show();
+    $('#nofriends').show();*/
 
   }
 

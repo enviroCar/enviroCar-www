@@ -106,10 +106,9 @@ if ($login_name != "" && $login_password != ""){
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-            <li <?=echoActiveClassIfRequestMatches("gettinginvolved")?>><a href="gettinginvolved.php"><? echo $gettinginvolved ?></a></li>
+            <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
             </ul>
 				<!-- The drop down menu -->
         		<ul class="nav pull-right">

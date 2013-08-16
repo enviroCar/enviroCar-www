@@ -1,7 +1,7 @@
 <!-- FOOTER -->  
 	<footer>
 		<div class="container leftband">
-        <p class="pull-right"><a href="#"><? echo $footer_backtotop; ?></a></p>
+        <p class="pull-right"  style="padding-right: 1ex"><a href="#"><? echo $footer_backtotop; ?></a></p>
         <span>2013 <?echo $envirocar; ?></span>
         <span> &middot; <a href="imprint.php"><? echo $footer_imprint; ?></a></span>
         <!-- <span> &middot; <a href="#"><? echo $footer_terms; ?></a></span> -->
