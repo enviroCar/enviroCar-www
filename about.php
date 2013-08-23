@@ -40,9 +40,9 @@ if(!is_logged_in()){
 						<div class="span" style="padding-right: 1ex">
 							<p style="text-align: justify;">  
 								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" height="400" width="600" alt="The architecture of envirocar" />
-								<br/>
-								<? echo $about_aboutText2 ?>
+								<br/>								
 							</p>	
+							<? echo $about_aboutText2 ?>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
 							</p>
@@ -66,7 +66,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign"></span><? echo $asACitizenHead ?></h2>
+							<h2><span class="anchor" id="sign1"></span><? echo $asACitizenHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asACitizenText ?>
 							</p>							
@@ -79,7 +79,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign"></span><? echo $asAScientistHead ?></h2>
+							<h2><span class="anchor" id="sign2"></span><? echo $asAScientistHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asAScientistText ?>
 							</p>							
@@ -92,7 +92,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign"></span><? echo $asAPlannerHead ?></h2>
+							<h2><span class="anchor" id="sign3"></span><? echo $asAPlannerHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asAPlannerText ?>
 							</p>							
@@ -105,7 +105,7 @@ if(!is_logged_in()){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign"></span><? echo $asADeveloperHead ?></h2>
+							<h2><span class="anchor" id="sign4"></span><? echo $asADeveloperHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asADeveloperText ?>
 							</p>
@@ -142,9 +142,7 @@ if(!is_logged_in()){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span  class="anchor" id="q2"></span><? echo $faq_q2 ?></h2>
-							<p style="text-align: justify;">
 								<? echo $faq_a2 ?>
-							</p>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
 							</p>    

@@ -438,9 +438,9 @@ $viaDownloadText = "Keine Beschreibung verfügbar.";
 //about.php
 $about_aboutHead = "About enviroCar";
 $about_aboutText1 = '<strong>enviroCar</strong> allows you to use your car’s sensor data to investigate the impact that your driving style has on environmental factors such as <strong>fuel consumption</strong>, <strong>CO2</strong>, or <strong>noise</strong> emissions. You and your friends can <strong>compare</strong> your driving statistics and you can compete to become the most efficient driver while also reducing your car’s running costs!
-
+<br/>
 Share your data with the enviroCar <strong>citizen science</strong> community and collaborate with others to investigate questions as:
-<ul type="disc">
+<ul>
 <li>What are the effective spatial characteristics of fuel consumption in your city?</li>
 <li>How can traffic planning be optimized to reduce emissions effectively?</li>
 <li>What can we learn from average speed maps?</li>
@@ -448,9 +448,9 @@ Share your data with the enviroCar <strong>citizen science</strong> community an
 The urban planners of your city, environmental scientists, as well as other citizens are highly interested in building up a database to solve those kind of questions. With enviroCar we can all contribute to a <strong>new environmental information resource</strong>.
 Join the community and help to make our world a little smarter, the flow of traffic smoother and less stressful, and economic driving more fun!';
 $about_aboutText2 = 'enviroCar is a community based platform for gathering car-borne sensor data and for producing environmental information. You can access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The Smartphone provides you with a lot of information about your driving characteristics. By uploading the data to the enviroCar server you’re contributing anonymized data to the open enviroCar citizen science community.
-<br/><br/>
+<br/>
 The enviroCar website allows you to:
-<ul type="disc">
+<ul>
 <li>access your data</li>
 <li>compare your driving characteristics with others</li>
 <li>explore maps and statistics</li>
@@ -461,13 +461,13 @@ $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen (Scientist)";
 $asACitizenText = 'All you need to join the community is a Bluetooth <strong>OBD-II Adapter</strong> and an <strong>Android Smart Phone</strong>.
 <br/><br/>
-There are many OBD-II adapters on the market and their prices range from about 18 EUR (23 USD) up to 150 EUR (200 USD). The OBD-II community has a lot of experience with these adapters, and theoretically most of them should work fine (take a look <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">>here<</a> for more details). Please be aware that national laws require products to have appropriate certificates (CE, ECE in Europe). Unfortunately most of these adapters are sold without such certificates. 
+There are many OBD-II adapters on the market and their prices range from about 18 EUR (23 USD) up to 150 EUR (200 USD). The OBD-II community has a lot of experience with these adapters, and theoretically most of them should work fine (take a look <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">here</a> for more details). Please be aware that national laws require products to have appropriate certificates (CE, ECE in Europe). Unfortunately most of these adapters are sold without such certificates. 
 As for the European regulations: currently the only adapter which is legaly usable while driving is the Drivedec W4 adapter.
 Plug in the adapter to the OBD-II socket within your car. Typically you find this socket in the leg room or below the dashboard of your car. If you cannot find it on your own, you can do a web search for your car type and OBD-II. Once the adapter is plugged in, you just need to pair it with your smartphone. 
 <br/><br/>
-The enviroCar App is tested for Android 2.3 to version 4.2.2. To install the app on your smartphone, you can use the Play Store and search for <a href="https://play.google.com/store/apps/details?id=org.envirocar.app&hl=en" target="_blank">>enviroCar<</a>.
+The enviroCar App is tested for Android 2.3 to version 4.2.2. To install the app on your smartphone, you can use the Play Store and search for <a href="https://play.google.com/store/apps/details?id=org.envirocar.app&amp;hl=en" target="_blank">enviroCar</a>.
 <br/><br/>
-You can use the app to register for enviroCar. Check your settings, register your car type, select the bluetooth device, and start collecting your first tracks while driving your car. Upload your data to the envirocar server and use the website to connect to friends and groups and explore the <a href="./mapsandstatistics.php">>maps & statistics<</a> to which you are now contributing to.
+You can use the app to register for enviroCar. Check your settings, register your car type, select the bluetooth device, and start collecting your first tracks while driving your car. Upload your data to the envirocar server and use the website to connect to friends and groups and explore the <a href="./mapsandstatistics.php">maps & statistics</a> to which you are now contributing to.
 <br/><br/>
 Use enviroCar and its data to discuss mobility and environment related issues with your friends and with researchers and experts from public authorities. Develop ideas how to gain mobility and to reduce negative impacts on the environment. Join the community and become a <strong>citizen scientist</strong>!';
 $asAScientistHead = "As a Scientist";
@@ -475,7 +475,7 @@ $asAScientistText = 'You are interested in using the enviroCar platform and  its
 <br/><br/>
 We recommend to start as a citizen scientist and to get familiar with the enviroCar platform, its data and its features.
 <br/><br/>
-If you’re interested in the data “as is” you can visit the <a href="./dataaccess.php">>data access page<</a> where you can either use the <strong>download facilities</strong> or the <strong>Web API</strong> to bring the data into your computing environment for further analysis.
+If you’re interested in the data “as is” you can visit the <a href="./dataaccess.php">data access page</a> where you can either use the <strong>download facilities</strong> or the <strong>Web API</strong> to bring the data into your computing environment for further analysis.
 <br/><br/>
 If you need special parameters, a community of volunteers, a special quality of data, or simply more information about this citizen science approach we might be able to support. We’d be happy to get in contact with you, to complement your expertise with our experience and network, and to go for joint activities.';
 $asAPlannerHead = "As a public authority";
@@ -483,7 +483,7 @@ $asAPlannerText = 'You are interested in using the enviroCar approach to interac
 <br/><br/>
 You may use the enviroCar platform “as is” for this purpose. Your IT department and  your domain experts will be able to do the job.  However, we’d be happy to provide you with any support needed, such as consultancy, data analysis, software development,  systems integration, service level agreements, organizing public workshops, etc';
 $asADeveloperHead = "As a Developer.";
-$asADeveloperText = 'You’d like to develop an application and use the enviroCar platform as a public data source? Check out the <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">>enviroCar API<</a> and software at the <a href="https://github.com/enviroCar" target="_blank">>enviroCar Github repository<</a>. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data. 
+$asADeveloperText = 'You’d like to develop an application and use the enviroCar platform as a public data source? Check out the <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">enviroCar API</a> and software at the <a href="https://github.com/enviroCar" target="_blank">enviroCar Github repository</a>. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data. 
 <br/><br/>
 You’re invited to join the enviroCar developer community. You may subscribe to the enviroCar@52north.org mailing list  as to get the  latest  infos about the development process and upcoming features.';
 $about_faqHead = "Frequently Asked Questions";
@@ -493,20 +493,21 @@ $faq_q3 = "What about privacy issues?";
 $faq_q4 = "I’m a developer and I’m very interested in this project. Is there a way to  make further implementations?";
 $faq_q5 = "When will enviroCar be published?";
 
-$faq_a1 = 'There are several OBD2 adapters available in different price ranges (see a list <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">>here<</a>). You can buy those adapters on eBay, Amazon, or other shops. Currently, enviroCar is tested with the ELM327 protocol, e.g. used by the low-cost <a href="http://www.amazon.de/Tinxi-Bluetooth-Interface-Diagnose-Testger%C3%A4t/dp/B004YG7J2I/ref=sr_1_7?ie=UTF8&qid=1376651235&sr=8-7&keywords=ELM327+obd2" target="_blank">>Tinxi OBD2 adapter<</a>, as well as the proprietary Drivedeck protocol, used by the Drivedeck W4 adapter. However, please be aware, that we’re not able to guarantee, that all combinations of adapters / car types / smartphones are working well.  Please check the Web for known compatibility problems. 
+$faq_a1 = 'There are several OBD2 adapters available in different price ranges (see a list <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">here</a>). You can buy those adapters on eBay, Amazon, or other shops. Currently, enviroCar is tested with the ELM327 protocol, e.g. used by the low-cost <a href="http://www.amazon.de/Tinxi-Bluetooth-Interface-Diagnose-Testger%C3%A4t/dp/B004YG7J2I/ref=sr_1_7?ie=UTF8&amp;qid=1376651235&amp;sr=8-7&amp;keywords=ELM327+obd2" target="_blank">Tinxi OBD2 adapter</a>, as well as the proprietary Drivedeck protocol, used by the Drivedeck W4 adapter. However, please be aware, that we’re not able to guarantee, that all combinations of adapters / car types / smartphones are working well.  Please check the Web for known compatibility problems. 
 <br/><br/>
 A very important fact about using OBD2 adapters in Germany is that it’s only allowed to use ECE-certified OBD2 adapters. While driving your car, the usage of adapters without such a certificate is prohibited. Currently the Drivedeck W4 adapter is the only one, which is equipped with all certificates required in Germany. Please check out the national regulations as to be sure that the adapter of your choice can be used without restrictions in your country.';
 $faq_a2 = 'The presence of an OBD2 interface within today’s cars is mandated by law in the US as well as Europe. Depending on country and vehicle type, OBD2 was introduced at different times.<br/>
 In the US:
-<ul type="disc">
+<ul>
 <li>All cars built after 01.01.1996 have it.</li>
 </ul> 
 In Europe:
-<ul type="disc">
+<ul>
 <li>All cars with gasoline engine built after 01.01.2001 and with EURO-3 norm (or better) have the OBD2 interface.</li>
 <li>All diesel vehicles built after 01.01.2003 have it.</li>
 <li>For trucks, the OBD2 support started on 01.01.2005.</li>
-</ul>';
+</ul>
+';
 $faq_a3 = 'The data which is uploaded to the enviroCar server is anonymized. I.e., the data do not contain a direct reference to the car or the contributor.  Consequently, data downloaded from the enviroCar server do not contain any references to you.
 <br/><br/>
 Furthermore, the app allows you to opt for cutting off the first and the last minutes of the tracks as to obfuscate the start and destination of your tracks. This function prevents linking tracks to specific home or business addresses.
@@ -514,9 +515,9 @@ Furthermore, the app allows you to opt for cutting off the first and the last mi
 Of course, the communication between website/app and envirocar server is encrypted and only the authorized database administrator is able to connect uploaded sensor data to a certain user. Only the users themselves are authorized to access their profile data (only the user name and the email address are mandatory).
 <br/><br/>
 We are sure these measures are an appropriate answer to your privacy concerns.  However, there is no means to achieve a 100% level of security.';
-$faq_a4 = 'enviroCar is a community, which is open to everyone. You can download/upload data and use it for your own purpose of statistical analysis. enviroCar offers a <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">>Web API<</a>, specifically designed for this purpose.<br/>
+$faq_a4 = 'enviroCar is a community, which is open to everyone. You can download/upload data and use it for your own purpose of statistical analysis. enviroCar offers a <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a>, specifically designed for this purpose.<br/>
 The data is publicly available as JSON and as Linked Data, which makes it possible to include enviroCar’s data in any services.<br/>
-You are welcome to get in contact with us discussing your suggestions, thoughts and ideas. enviroCar is fully open source and all components are available on <a href="https://github.com/enviroCar" target="_blank">>our Github repository<</a>. We’d be happy to see you as a contributor!';
+You are welcome to get in contact with us discussing your suggestions, thoughts and ideas. enviroCar is fully open source and all components are available on <a href="https://github.com/enviroCar" target="_blank">our Github repository</a>. We’d be happy to see you as a contributor!';
 $faq_a5 = "Currently the project is open to beta testers, i.e. people who are ready to accept, that we’re still in a development phase, where we have to change the software continuously as to get it ready for public use.  We are happy about critical feedback of beta testers in this phase. Our goal is to create a cool, usable, and fun platform up and running. We expect to get a stable release of all components available to the public by the end of this year (2013).";
 
 ?>

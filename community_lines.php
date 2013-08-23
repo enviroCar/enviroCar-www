@@ -11,7 +11,7 @@ if(!is_logged_in()){
 }
 ?> 
 
-<link rel="stylesheet" href="./assets/OpenLayers/theme/default/style.css" type="text/css">
+<style href="./assets/OpenLayers/theme/default/style.css" type="text/css"></style>
 
 
 <script src="./assets/OpenLayers/OpenLayers.js"></script>
