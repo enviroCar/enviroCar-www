@@ -38,6 +38,20 @@ if(!is_logged_in()){
 		</div>
 	</div>
 
+	<div class="container rightband">
+	<div class="row-fluid">
+			<h2> <? echo $speedcomparison_titel ?></h2>
+			<div class="span3">
+				<a href="./community_speed_difference2.php" class="thumbnail">
+					<img src="./assets/img/speed_comparison_thumb.png" alt="">
+				</a>
+			</div>
+        <div class="span5">
+          <?php echo $speedcomparison_description ?>       
+        </div>
+		</div>
+	</div>
+
 <?
 include('footer.php');
 ?>

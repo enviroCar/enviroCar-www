@@ -428,6 +428,8 @@ $hotspot_titel = "CO2 Hot Spots Münster";
 $hotspot_description = "Hot Spots Analysis of CO2 values gathered by enviroCar users.";
 $speed_titel = "Speed tracks";
 $speed_description = "enviroCar tracks showing the measured speed.";
+$speedcomparison_titel = "Speed comparison";
+$speedcomparison_description = "Speed difference between OpenStreetMap max-speed and enviroCar averaged speed.";
 
 //dataaccess.php
 $viaAPIHead = "Via the API";
