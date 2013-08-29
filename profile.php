@@ -37,6 +37,34 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }
       window.$_GET = function(name){return name ? c[name] : c;}
   }())
+
+  function addFriendActivities(actionImg, friendImg, id, titel, date){
+     $('#friendActivities').append('<li class="customLi"><img src="'+actionImg+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><img src="'+friendImg+'" style="height: 30px; margin-right: 10px; float:right; "/><br><div>'+date+'</div></li>');
+  }
+  
+  function convertToLocalTime(serverDate) {
+      var dt = new Date(Date.parse(serverDate));
+      var localDate = dt;
+
+
+      var gmt = localDate;
+          var min = gmt.getTime() / 1000 / 60; // convert gmt date to minutes
+          var localNow = new Date().getTimezoneOffset(); // get the timezone
+          // offset in minutes
+          var localTime = min - localNow; // get the local time
+
+      var dateStr = new Date(localTime * 1000 * 60);
+      var d = dateStr.getDate();
+      var m = dateStr.getMonth() + 1;
+      var y = dateStr.getFullYear();
+
+      var totalSec = dateStr.getTime() / 1000;
+      var hours = parseInt( totalSec / 3600 ) % 24;
+      var minutes = parseInt( totalSec / 60 ) % 60;
+
+
+      return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + hours +':'+ (minutes <= 9 ? '0' + minutes : minutes);
+  }
   
   function init(){
     loggedInUser = '<?php echo $_SESSION["name"] ?>';
@@ -307,11 +335,8 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           if(data.activities.length > 0){
 
             for(i = 0; i < data.activities.length; i++){
-              var activity = data.activities[i];
-             	console.log(activity.user.name);
-             	console.log("<? echo $user ?>");        
-             	console.log(activity.user.name == "<? echo $user ?>");    	
-              if(activity.user.name == $user){
+              var activity = data.activities[i]; 	
+              if(activity.user.name == "<? echo $user ?>"){
               if(activity.type == "JOINED_GROUP"){
                 if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_GROUP"){

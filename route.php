@@ -271,7 +271,10 @@ include('header.php');
       data = JSON.parse(data);
 
       for(i = 0; i < data.statistics.length; i++){
-        $('#routeStatistics').append('<p>&Oslash;  '+data.statistics[i].phenomenon.name+': '+Math.round(data.statistics[i].avg*100)/100+'  '+data.statistics[i].phenomenon.unit+'</p');
+      	var phenoName = data.statistics[i].phenomenon.name;
+      	if(phenoName == 'Speed' || phenoName == 'Consumption' || phenoName == 'Rpm' || phenoName == 'CO2'){
+        		$('#routeStatistics').append('<p>&Oslash;  '+phenoName+': '+Math.round(data.statistics[i].avg*100)/100+'  '+data.statistics[i].phenomenon.unit+'</p');
+        	}
       }
       
     }
