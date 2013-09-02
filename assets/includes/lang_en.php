@@ -52,7 +52,7 @@ $freg_invalidemail="Invalid Email";
 $freg_empty_nickname="Nickname cannot be empty";
 $freg_empty_password="Password cannot be empty";
 $freg_notidentic_password='Passwords are not identic';
-
+$allUsers=Alle Nutzer
 
 // Support
 $main_information="Main information";
@@ -323,6 +323,8 @@ $groupOfNotAllowed = "You are not allowed to view the groups of the requested pe
 $groupMemberNotAllowed = "You are not allowed to view the member of the group.";
 $groupOfError ="The groups of the requested person couldn't be loaded successfully.";
 $joinGroupNotAllowed = "You are not allowed to join this group.";
+
+$allUsers = "All users";
 
 $registrationError = "The server is currently not available. Please try again later.";
 $registrationNotAllowed = "Your email address is not registered for our beta-phase. Please contact envirocar@52north.org for a beta-account";

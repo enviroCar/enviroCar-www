@@ -152,6 +152,14 @@ if(isset($_GET['atrackStatistics'])){
 	}
 }
 
+if(isset($_GET['allStatistics'])){
+	$response = get_request($baseURL.'/statistics', false);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
 
 if(isset($_GET['userStatistics'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/statistics', true);

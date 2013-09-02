@@ -413,7 +413,9 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
  
    <script type="text/javascript">
+       var friend = "<? echo $user?>";
       var values = [];
+      var values2 = [];
       var count=0;
       var phen=[];
 
@@ -426,12 +428,40 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           data = JSON.parse(data);
           count=data.statistics.length;
           for(i = 0; i < data.statistics.length; i++){
-            values[i]= Math.round(data.statistics[i].avg*100)/100;
-            phen[i]=data.statistics[i].phenomenon.name;
+          	if(data.statistics[i].phenomenon.name == 'Speed' || data.statistics[i].phenomenon.name == 'Consumption' || data.statistics[i].phenomenon.name == 'CO2'){
+            	values.push(Math.round(data.statistics[i].avg*100)/100);
+            	phen.push(data.statistics[i].phenomenon.name);
+            }
+          }
+          count=phen.length;
+        }
+      });
+
+      $.get('assets/includes/users.php?allStatistics', function(data) {
+        if(data >= 400){
+            if(data == 401 || data == 403) noFriend();
+            else error_msg("<? echo $statisticsNotFound ?>");
+            $('#loadingIndicator_graph').hide();
+        }else{
+          data = JSON.parse(data);
+          for (h=0; h<count; h++ ){
+            values2[h]=0;
+          }
+          for(i = 0; i < data.statistics.length; i++){ 
+            for (j=0; j<count; j++ ){
+            if ((data.statistics[i].phenomenon.name)==phen[j]){ 
+              values2[j]= Math.round(data.statistics[i].avg*100)/100;
+              break;
+            }
+          }
+          }
+          if(data.statistics.length==0){
+            values2 = [0,0,0,0];
           }
           google.setOnLoadCallback(drawChart());
         }
       });
+
 
       google.load("visualization", "1", {packages:["corechart"]});
 
@@ -439,6 +469,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         var data = new google.visualization.DataTable();
           data.addColumn('string','Measurement');
           data.addColumn('number', '<? echo $_SESSION['name'] ?>');
+          data.addColumn('number', '<? echo $allUsers ?>');
 
           data.addRows(count);
                
@@ -446,9 +477,11 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           if(phen[i] == 'Rpm'){
             phen[i] = phen[i]+' (100/min)';
             values[i] = values[i]/100;
+            values2[i] = values2[i]/100;
           }
           data.setValue(i, 0, phen[i]);
           data.setValue(i, 1, values[i]);
+          data.setValue(i, 2, values2[i]);
         }
      
         var options = {
