@@ -135,6 +135,9 @@ if(!is_logged_in()){
 							<p style="text-align: justify;">
 								<? echo $faq_a1 ?>
 							</p>
+							<p class="pull-right">
+								<a href="#"><? echo $back_top ?></a>
+							</p>
 						</div>
 					</div>    
 				</div> 
@@ -183,10 +186,20 @@ if(!is_logged_in()){
 							</p>
 							<p class="pull-right">
 								<a href="#"><? echo $back_top ?></a>
+							</p>  
+						</div>    
+					</div>    
+				</div> 
+				<div class="container leftband">
+					<div class="row-fluid">
+						<div class="span" style="padding-right: 1ex">
+							<h2><span  class="anchor" id="q6"></span><? echo $faq_q6 ?></h2>
+							<p style="text-align: justify;"> 
+								<? echo $faq_a6 ?>
 							</p>
 						</div>    
 					</div>    
-				</div>  
+				</div>   
 			</div><!--end of div id="faqs"-->   
 		</div><!--end tab content-->
 <?
