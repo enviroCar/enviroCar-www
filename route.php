@@ -113,7 +113,7 @@ include('header.php');
     }
 
   function addRouteInformation(name, start, end){
-      $('#routeInformation').append('<h2>'+name+'</h2><p>Start: '+start+'</p><p>End: '+end+'</p>');
+      $('#routeInformation').append('<h2>'+name+'</h2>');
       $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'"><? echo $graphs ?></a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'"><? echo $thematicmaps ?></a><a class="btn" target="_blank" href="https://giv-car.uni-muenster.de/stable/rest/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">Download (GeoJSON)</a></p>');
   }
 
@@ -250,12 +250,6 @@ include('header.php');
       
       var fuelType = data.properties.sensor.properties.fuelType;		
       addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
-      if(data.properties.sensor.properties != null){
-        if(data.properties.sensor.properties.model)$('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
-        if(fuelType)$('#routeInformation').append('<p><? echo $fuelType ?>: '+fuelType+'<br>');
-        if(data.properties.sensor.properties.constructionYear)$('#routeInformation').append('<p><? echo $constructionYear ?>: '+data.properties.sensor.properties.constructionYear+'<br>');
-        if(data.properties.sensor.properties.manufacturer)$('#routeInformation').append('<p><? echo $manufacturer ?>: '+data.properties.sensor.properties.manufacturer+'</p><br>');
-      }
 
 		var distance = 0.0;
 		var startTime;
@@ -289,21 +283,22 @@ include('header.php');
 		
 		lengthOfTrack = distance;
 		
-		console.log(duration);
-		console.log(distance);
-		console.log(fuelConsumptionPerHour);
-		
 		fuelConsumptionPer100KM = fuelConsumptionPerHour * duration / (1000 * 60 * 60) / lengthOfTrack * 100;
-		
-		console.log(fuelConsumptionPer100KM);
 		
 		if (fuelType == "gasoline") {
 			gramsCO2PerKM = fuelConsumptionPer100KM * 23.3;
 		} else if (fuelType == "diesel") {
 			gramsCO2PerKM = fuelConsumptionPer100KM * 26.4;
 		} 
-
-		console.log(gramsCO2PerKM);
+		
+		$('#routeInformation').append('<p>' + Math.round(lengthOfTrack*100)/100 + ' km in ' + convertMilisecondsToTime(duration) + '<br>');
+		
+		if(data.properties.sensor.properties != null){
+        if(data.properties.sensor.properties.model)$('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
+        if(fuelType)$('#routeInformation').append('<p><? echo $fuelType ?>: '+fuelType+'<br>');
+        if(data.properties.sensor.properties.constructionYear)$('#routeInformation').append('<p><? echo $constructionYear ?>: '+data.properties.sensor.properties.constructionYear+'<br>');
+        if(data.properties.sensor.properties.manufacturer)$('#routeInformation').append('<p><? echo $manufacturer ?>: '+data.properties.sensor.properties.manufacturer+'</p><br>');
+      }
 		
       $('#loadingIndicator').hide();
       
@@ -382,6 +377,17 @@ include('header.php');
 		}
 
 	}
+	
+	function convertMilisecondsToTime(miliseconds) {
+
+      var totalSec = miliseconds / 1000;
+      var hours = parseInt( totalSec / 3600 ) % 24;
+      var minutes = parseInt( totalSec / 60 ) % 60;
+	
+		totalSec = totalSec %  60;
+
+      return (hours > 0 ? hours + ' h' : '') + ' ' + (minutes > 0 ? minutes + " m" : "") + ' ' + (totalSec > 0 ? totalSec + " s" : "");
+    }
 
 </script>   
 
