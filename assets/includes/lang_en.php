@@ -52,7 +52,6 @@ $freg_invalidemail="Invalid Email";
 $freg_empty_nickname="Nickname cannot be empty";
 $freg_empty_password="Password cannot be empty";
 $freg_notidentic_password='Passwords are not identic';
-$allUsers=Alle Nutzer
 
 // Support
 $main_information="Main information";
