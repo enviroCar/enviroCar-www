@@ -24,7 +24,7 @@ fclose($ba_file);
     bottom:0px;
     }
 </style>
-<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>  
+<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.js"></script>  
 <script src="./assets/js/jquery.cookie.js"></script>
 <script src="./assets/js/bootstrap-tour.js"></script>
 <script src="./assets/js/community_engine.js" type="text/javascript"></script>
@@ -550,7 +550,24 @@ function initMap() {
             //postAnalytics();
         });
 
-  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>');
+  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', null, {
+    eventListeners: {
+        tileloaded: function(evt) {
+            var ctx = evt.tile.getCanvasContext();
+            if (ctx) {
+                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
+                var pix = imgd.data;
+                for (var i = 0, n = pix.length; i < n; i += 4) {
+                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
+                }
+                ctx.putImageData(imgd, 0, 0);
+                evt.tile.imgDiv.removeAttribute("crossorigin");
+                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
+            }
+        }
+    }
+  });
+  
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
   map.addLayers([osm, vectorLayer]);
 
