@@ -20,11 +20,14 @@ fclose($ba_file);
 <link rel="stylesheet" href="./assets/css/trip_static.css" type="text/css">
 <link rel="stylesheet" href="./assets/css/layout.css" type="text/css">
 <style>
+    img.olTileImage {
+        max-width: none;
+      }
     .olControlAttribution{
     bottom:0px;
     }
 </style>
-<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.js"></script>  
+<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>  
 <script src="./assets/js/jquery.cookie.js"></script>
 <script src="./assets/js/bootstrap-tour.js"></script>
 <script src="./assets/js/community_engine.js" type="text/javascript"></script>
@@ -545,11 +548,7 @@ function initChart(){
 }
 
 function initMap() {
-
-  map.events.register("move", map, function() {
-            //postAnalytics();
-        });
-
+	
   var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', null, {
     eventListeners: {
         tileloaded: function(evt) {
@@ -567,9 +566,9 @@ function initMap() {
         }
     }
   });
-  
+  map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
-  map.addLayers([osm, vectorLayer]);
+  map.addLayer(vectorLayer);
 
   //map.addControl(new OpenLayers.Control.PanZoomBar());
   map.addControl(new OpenLayers.Control.LayerSwitcher());
