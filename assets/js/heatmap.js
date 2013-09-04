@@ -1,3 +1,4 @@
+//= require ../OpenLayers/OpenLayers.light
 var raster = new OpenLayers.Layer.OSM("osm");
 
 var vector = new OpenLayers.Layer.Vector("heatmap", {

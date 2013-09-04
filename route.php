@@ -1,73 +1,48 @@
 <?
 include('header.php');
 ?>
-
-<div id="loadingIndicator" class="loadingIndicator">
-  <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-</div>
-
-<script src="./assets/OpenLayers/OpenLayers.light.js"></script>
-<script src="./assets/js/geojsontools.js"></script>
-<style>
-    img.olTileImage {
-        max-width: none;
-      }
-
-
-    .olControlAttribution{
-    bottom:0px;
-    }
-
-
-      .mapContainer{
-          height:300px; 
-          width:300px;
-      }
-      @media (min-width: 500px) {
-      .mapContainer{
-          height:500px; 
-          width:500px;
-      }
-
-    .olPopup{
-      font-size: 16px;
-      padding: 5px 0;
-      margin: 2px 0 0;
-      border: 1px solid #ccc;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
-      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      -webkit-background-clip: padding-box;
-      -moz-background-clip: padding;
-      background-clip: padding-box;
-    }
-    
-
-</style>
-
+<link rel="stylesheet" href="./assets/css/bootstrap-tour.css" type="text/css">
+<link rel="stylesheet" href="./assets/css/trip_single.css" type="text/css">
+<link rel="stylesheet" href="./assets/css/trip_show.css" type="text/css">
+<link rel="stylesheet" href="./assets/css/trip_static.css" type="text/css">
+<link rel="stylesheet" href="./assets/css/layout.css" type="text/css">
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+<!--<script src="./assets/OpenLayers/OpenLayers.light.js"></script>-->
+<!--<script src="./assets/js/OpenLayers.js"></script>-->
+<!--<script src="./assets/js/openlayers_custom.js"></script>-->
 <div class="container">
-
-  <div class="span5">
-  <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-    <div style="max-height:400px; overflow:auto;">
-      <div id="routeInformation"></div>
-      <div id="routeStatistics"></div>
-    </div>
-    <div id="furtherInformation"></div>
-
-          
-  </div>
-    <div class="span7 mapContainer">
-      <div id="map" style="height: 100%; width:100%;">
+<div class="row">
+  <div class="span6">
+    <div class="map" id="map">
+      <div class="btn-group sensorswitch dropup">
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" id="sensorswitch">
+          Sensor
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+              <a id="change-sensor-consumption" href="#">Verbrauch</a>
+            </li>
+            <li>
+              <a id="change-sensor-rpm" href="#">U/min</a>
+            </li>
+            <li>
+              <a id="change-sensor-speed" href="#">Geschwindigkeit</a>
+            </li>
+        </ul>
       </div>
-    </div>  
+    </div>
+    <img src="./assets/img/legend_green.png" class="legend"><p style="display:inline" id="legend1"></p></img>
+    <img src="./assets/img/legend_dark_green.png" class="legend"><p style="display:inline" id="legend2"></p></img>
+    <img src="./assets/img/legend_orange.png" class="legend"><p style="display:inline" id="legend3"></p></img>
+    <img src="./assets/img/legend_light_red.png" class="legend"><p style="display:inline" id="legend4"></p></img>
+    <img src="./assets/img/legend_red.png" class="legend"><p style="display:inline" id="legend5"></p></img>
   </div>
-
-  
+  <div class="span6">
+    <div id="chartContainer" style="height: 100%; width: 100%;"></div>
+  </div>
+</div>
+</div>
 <script type="text/javascript">
 
   var popup;
@@ -76,6 +51,8 @@ include('header.php');
   var fuelConsumptionPerHour;
   var fuelConsumptionPer100KM;
   var gramsCO2PerKM;
+  var track;
+  var gon = {};
 
   (function(){
     var s = window.location.search.substring(1).split('&');
@@ -115,117 +92,7 @@ include('header.php');
   function addRouteInformation(name, start, end){
       $('#routeInformation').append('<h2>'+name+'</h2>');
       $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'"><? echo $graphs ?></a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'"><? echo $thematicmaps ?></a><a class="btn" target="_blank" href="https://giv-car.uni-muenster.de/stable/rest/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">Download (GeoJSON)</a></p>');
-  }
-
-  function onFeatureSelect(feature){
-    popup = new OpenLayers.Popup("chicken",
-                       feature.geometry.getBounds().getCenterLonLat(),
-                       new OpenLayers.Size(200,200),
-                       getContent(),
-                       true);
-
-    map.addPopup(popup);
-
-    function getContent(){
-      var output = "<b>"+convertToLocalTime(feature.attributes.time)+"</b><br>";
-      for(property in feature.attributes.phenomenons){
-        output += property+": "+feature.attributes.phenomenons[property].value+"<br>";
-      }
-      return output;
-    }
-
-  }
-
-
-  function onFeatureUnselect(feature){
-      popup.destroy();
-      popup = null;
-  }
-
-
-    var map = new OpenLayers.Map('map');
-    //var mapnik = new OpenLayers.Layer.OSM();
-    //map.addLayer(mapnik);
-
-
-    var grey = new OpenLayers.Layer.OSM('Simple OSM Map', null, {
-    eventListeners: {
-        tileloaded: function(evt) {
-            var ctx = evt.tile.getCanvasContext();
-            if (ctx) {
-                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
-                var pix = imgd.data;
-                for (var i = 0, n = pix.length; i < n; i += 4) {
-                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
-                }
-                ctx.putImageData(imgd, 0, 0);
-                evt.tile.imgDiv.removeAttribute("crossorigin");
-                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
-            }
-        }
-    }
-  });
-
-    map.addLayer(grey);
-
-
-
-    map.setCenter(new OpenLayers.LonLat(7.9,51,9) // Center of the map
-      .transform(
-        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-        new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
-      ),8
-    );
-    
-  
-  //var styleMap = new OpenLayers.StyleMap({pointRadius: 10});
-  var co2_style = new OpenLayers.StyleMap(
-    { 
-            "default": new OpenLayers.Style({ 
-                fillColor: "${getColor}",
-                strokeWidth: 1,             
-                strokeColor: "#000", 
-                fillOpacity: 1,
-                pointRadius: 10//"${getSize}"
-                //label: "${getLabel}"                  
-            },
-            {
-                context: {
-                    getColor : function (feature) {
-                        return feature.attributes.phenomenons.testphenomenon1.value > 20 ? '#FF0000' :
-                               feature.attributes.phenomenons.testphenomenon1.value > 10 ? '#FF5A08' :
-                                                                  '#08FF41' ;
-                    },
-          getSize: function(feature) {
-            console.log(100 / feature.layer.map.getResolution());
-            return 100 / feature.layer.map.getResolution();
-          }
-                } 
-            })
-    }
-  );
-  var geojson_layer = new OpenLayers.Layer.Vector("Measurements");
-  var geojson_line = new OpenLayers.Layer.Vector("lines");
-                  
-    
-    var geojson_format = new OpenLayers.Format.GeoJSON({
-                'internalProjection': new OpenLayers.Projection("EPSG:900913"),
-                'externalProjection': new OpenLayers.Projection("EPSG:4326")
-            });
- 
-
-  map.addLayer(geojson_line);
-  map.addLayer(geojson_layer);
-
-
-
-    selectControl = new OpenLayers.Control.SelectFeature(geojson_layer, {
-            onSelect: onFeatureSelect,
-            onUnselect: onFeatureUnselect
-        });
-    map.addControl(selectControl);
-    selectControl.activate();
-      
+  }     
 
 
   //GET the information about the specific track
@@ -241,70 +108,78 @@ include('header.php');
       }
       $('#loadingIndicator').hide();
     }else{
-      geojson_layer.addFeatures(geojson_format.read(data));
-      map.zoomToExtent(geojson_layer.getDataExtent());
-
-      geojson_line.addFeatures(geojson_format.read(JSON.stringify(GeoJSONTools.points_to_lineString(data).features)));
 	
       data = JSON.parse(data);
       
-      var fuelType = data.properties.sensor.properties.fuelType;		
-      addRouteInformation(data.properties.name, convertToLocalTime(data.features[0].properties.time), convertToLocalTime(data.features[data.features.length - 1].properties.time));
-
-		var distance = 0.0;
-		var startTime;
-		var endTime;		
-		fuelConsumptionPerHour = 0.0;
+      var fuelType = data.properties.sensor.properties.fuelType;	
+		
+		var measurements = [];
 		
 		if (data.features.length > 1) {
 			for (var i = 0; i < data.features.length - 1; i++) {
+				
+				var feature = data.features[i];		
+				
 				if(i == 0){
 					startTime = new Date(data.features[i].properties.time);
 				}else if(i == data.features.length - 2){
 					endTime = new Date(data.features[i + 1].properties.time);	
 				}
-				var lat1 = data.features[i].geometry.coordinates[0];
-				var lng1 = data.features[i].geometry.coordinates[1];
-				var lat2 = data.features[i+1].geometry.coordinates[0];
-				var lng2 = data.features[i+1].geometry.coordinates[1];
 				
-				distance = distance + getDistance(lat1, lng1, lat2, lng2);
+				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
+        		var rpm = feature.properties.phenomenons['Rpm'].value;
+        		var iat = feature.properties.phenomenons['Intake Temperature'].value;
+        		var map = feature.properties.phenomenons['Intake Pressure'].value;
+        		var speed = feature.properties.phenomenons['Speed'].value;
+
+				var maf = feature.properties.phenomenons["MAF"];
+
+				if(maf){
+					 maf = feature.properties.phenomenons["MAF"].value;
+				}else if (!maf || maf <= 0) {
+					maf = feature.properties.phenomenons["Calculated MAF"].value;		
+				}		
 				
-				var tmpFuelConsumption = getFuelConsumptionOfMeasurement(data.features[i], fuelType);				
+				var consumption = 0;				
+				var co2 = 0;
+        		
+        		if (speed > 0){
+          		consumption = (maf * 3355) / (speed * 100);
+        		}else{
+          		consumption = (maf * 3355) / 10000;
+        		}
+        
+				if (consumption > 50){
+          		consumption = 50;
+       		}
+
+        		co2 = consumption * 2.35 //gets kg/100 km        
+        
+				var recorded_at = feature.properties.time;				
 				
-				fuelConsumptionPerHour = fuelConsumptionPerHour + tmpFuelConsumption;
+        		var m = {
+          		recorded_at : recorded_at,
+          		speed : speed,
+          		rpm : rpm,
+          		maf : maf,
+          		iat : iat,
+          		map : map,
+          		consumption : consumption,
+          		co2 : co2,
+          		latlon : coords
+          	};
+				
+				measurements.push(m);
 				
 			}
-		}
-		
-		fuelConsumptionPerHour = fuelConsumptionPerHour / data.features.length;		
-		
-		duration = endTime.getTime() - startTime.getTime();
-		
-		lengthOfTrack = distance;
-		
-		fuelConsumptionPer100KM = fuelConsumptionPerHour * duration / (1000 * 60 * 60) / lengthOfTrack * 100;
-		
-		if (fuelType == "gasoline") {
-			gramsCO2PerKM = fuelConsumptionPer100KM * 23.3;
-		} else if (fuelType == "diesel") {
-			gramsCO2PerKM = fuelConsumptionPer100KM * 26.4;
-		} 
-		
-		$('#routeInformation').append('<p>' + Math.round(lengthOfTrack*100)/100 + ' km in ' + convertMilisecondsToTime(duration) + '<br>');
-		
-		if(data.properties.sensor.properties != null){
-        if(data.properties.sensor.properties.model)$('#routeInformation').append('<p>Model: '+data.properties.sensor.properties.model+'<br>');
-        if(fuelType)$('#routeInformation').append('<p><? echo $fuelType ?>: '+fuelType+'<br>');
-        if(data.properties.sensor.properties.constructionYear)$('#routeInformation').append('<p><? echo $constructionYear ?>: '+data.properties.sensor.properties.constructionYear+'<br>');
-        if(data.properties.sensor.properties.manufacturer)$('#routeInformation').append('<p><? echo $manufacturer ?>: '+data.properties.sensor.properties.manufacturer+'</p><br>');
-      }
-		
-      $('#loadingIndicator').hide();
+			
+			gon.measurements = measurements;					
+			
+		}     
+    	fillStatistics()
       
-      fillStatistics();
+      
     }
-    
   });
 	
 	function fillStatistics(){
@@ -323,27 +198,28 @@ include('header.php');
       }else{
       data = JSON.parse(data);
 
+		
+		var maxSpeed = 0;
+		var maxConsumption = 0;
+		var maxRPM = 0;
+
       for(i = 0; i < data.statistics.length; i++){
       	var phenoName = data.statistics[i].phenomenon.name;
-      	if(phenoName == 'Speed' || phenoName == 'Consumption' || phenoName == 'Rpm' || phenoName == 'CO2'){
-				var phenoValue = data.statistics[i].avg;
-				var phenoUnit = data.statistics[i].phenomenon.unit;     		
-      		if(phenoName == 'Consumption'){
-					 phenoValue = fuelConsumptionPer100KM;
-					 phenoUnit = 'l/100km';
-      		}else if(phenoName == 'CO2'){
-					 phenoValue = gramsCO2PerKM;
-					 phenoUnit = 'g/km';      			
-      		}
-      		console.log(phenoValue + ' ' + phenoUnit);
-      		phenoValue = Math.round(phenoValue*100)/100;
-      		
-        		$('#routeStatistics').append('<p>&Oslash;  '+phenoName+': '+phenoValue+'  '+phenoUnit+'</p>');
+      	if(phenoName == 'Speed'){
+      		maxSpeed = data.statistics[i].max;				
+        	}else if(phenoName == 'Consumption'){
+        		maxConsumption = data.statistics[i].max;
+        	}else if(phenoName == 'Rpm'){
+        		maxRPM = data.statistics[i].max;
         	}
       }
-      
+      gon.statistics = {max_speed : maxSpeed, 
+      						max_rpm : maxRPM, 
+     							 max_consumption : maxConsumption
+      						};
+
     }
-   $('#loadingIndicator_route').hide(); 
+   //$('#loadingIndicator_route').hide(); 
   });
   }
   function getDistance(lat1, lng1, lat2, lng2){
@@ -390,6 +266,26 @@ include('header.php');
     }
 
 </script>   
+<script src="./assets/js/jquery.cookie.js"></script>
+<!--<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+<!--<script src="./assets/OpenLayers/OpenLayers.light.js"></script>-->
+<!--<script src="./assets/js/OpenLayers.js"></script>
+<script src="./assets/js/openlayers_custom.js"></script>-->
+<script src="./assets/js/bootstrap-tour.js"></script>
+<!--<script src="./assets/js/builder.js"></script>
+<script src="./assets/js/calendarview.js"></script>
+<script src="./assets/js/cropper.js"></script>
+<script src="./assets/js/forum.js"></script>
+<script src="./assets/js/lightbox.js"></script>
+<script src="./assets/js/prototip-min.js"></script>
+<script src="./assets/js/rails.js"></script>-->
+<script src="./assets/js/community_engine.js" type="text/javascript"></script>
+<script src="./assets/js/geojsontools.js"></script>
+<!--<script src="./assets/js/heatmap.js" type="text/javascript"></script>
+<script src="./assets/js/heatmap-openlayers-renderer.js" type="text/javascript"></script>-->
+<script src="./assets/js/canvasjs.js" type="text/javascript"></script>
+<!--<script src="./assets/js/show_abstract_trip.js"></script>-->
+<script src="./assets/js/show_single_trip.js" type="text/javascript"></script>
 
 <?
 include('footer.php');
