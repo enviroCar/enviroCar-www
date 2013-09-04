@@ -24,30 +24,16 @@ fclose($ba_file);
     bottom:0px;
     }
 </style>
-<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
-<!--<script src="./assets/OpenLayers/OpenLayers.debug.js"></script>-->
-<!--<script src="./assets/js/OpenLayers.js"></script>-->
-<!--<script src="./assets/js/openlayers_custom.js"></script>-->   
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>  
 <script src="./assets/js/jquery.cookie.js"></script>
 <script src="./assets/js/bootstrap-tour.js"></script>
-<!--<script src="./assets/js/builder.js"></script>
-<script src="./assets/js/calendarview.js"></script>
-<script src="./assets/js/cropper.js"></script>
-<script src="./assets/js/forum.js"></script>
-<script src="./assets/js/lightbox.js"></script>
-<script src="./assets/js/prototip-min.js"></script>
-<script src="./assets/js/rails.js"></script>-->
 <script src="./assets/js/community_engine.js" type="text/javascript"></script>
 <script src="./assets/js/geojsontools.js"></script>
-<!--<script src="./assets/js/heatmap.js" type="text/javascript"></script>-->
-<!--<script src="./assets/js/heatmap-openlayers-renderer.js" type="text/javascript"></script>-->
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
-<!--<script src="./assets/js/show_abstract_trip.js"></script>-->
-<!--<script src="./assets/js/show_single_trip.js" type="text/javascript"></script>-->
 <div class="container" style="width:1270px">
-<div id="routeInformation"></div>
+<div id="routeInformation" style="margin-left: 30px;"></div>
 <div class="row" id="statistics">
-  <div class="span2" id="distTime">
+  <div class="span2" id="distTime" style="margin-left: 30px;">
     <h4 class="muted" ><?php echo $route_distance; ?></h4>
   </div>
   <div class="span2" id="fuelConsum">
@@ -95,7 +81,7 @@ fclose($ba_file);
     <div id="chartContainer" style="height: 100%; width: 100%;"></div>
   </div>
 </div>
-<div id="furtherInformation"></div>
+<div id="furtherInformation" style="margin-left: 30px;"></div>
 </div>
 <script type="text/javascript">
 
