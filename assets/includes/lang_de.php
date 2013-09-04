@@ -540,5 +540,19 @@ The data is publicly available as JSON and as Linked Data, which makes it possib
 You are welcome to get in contact with us discussing your suggestions, thoughts and ideas. enviroCar is fully open source and all components are available on github: https://github.com/enviroCar. We’d be happy to see you as a contributor! ";
 $faq_a6 = "Currently the project is open to beta testers, i.e. people who are ready to accept, that we’re still in a development phase, where we have to change the software continuously as to get it ready for public use.  And we need the critical feedback of beta testers in this phase as to get a really cool platform up and running. We expect to get a stable release of all components available to the public by end of this year (2013).";
 
+//route.php
 
+$route_distance = "DISTANZ";
+$route_fuelConsumption = "BENZINVERBRAUCH";
+$route_CO2 = "CO2";
+$route_idleTime = "STANDZEIT";
+$route_avgSpeed = "DURCHSCHNITTLICHE GESCHWINDIGKEIT";
+$route_minutes = "m";
+$route_fuelGas = "Benzin";
+$route_fuelDiesel = "Diesel";
+$route_dropup_fuelConsumption = "Verbrauch";
+$route_dropup_speed = "Geschwindigkeit";
+$route_requestFuelPriceStart = "Frage aktuelle Benzinpreise ab...";
+$route_drivenRoute = "Gefahrene Strecke";
+$route_baseLayer = "Basis Karte";
 ?>
