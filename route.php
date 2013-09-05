@@ -258,8 +258,8 @@ fclose($ba_file);
 			$('#idleTime').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
 			$('#distTime').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
 			$('#distTime').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
-			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(avgFuelConsumption*100)/100 + ' liter ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
-			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' liter ' + fuelPrice + ' €</p>');
+			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(avgFuelConsumption*100)/100 + ' l ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
+			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + fuelPrice + ' €</p>');
 			$('#co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
 			
@@ -474,12 +474,6 @@ function initChart(){
       y: gon.measurements[i].speed,
       label: "km/h"
     }
-    //rpm
-    seriesData[1][i] = {
-      x: date,
-      y: gon.measurements[i].rpm,
-      label: "U/min"
-    }
     //consumption
     seriesData[2][i] = {
       x: date,
@@ -506,7 +500,7 @@ function initChart(){
         titleFontSize: 15
     },
     axisY2: {
-        title: "U/min",
+        title: "<?php echo $route_dropup_fuelConsumption; ?>",
         titleFontSize: 15
         //valueFormatString: " "
     },
@@ -524,22 +518,12 @@ function initChart(){
     { //dataSeries object
 
       /*** Change type "column" to "bar", "area", "line" or "pie"***/
-      axisYType: "primary",
+      axisYType: "secondary",
       type: "spline",
       name: "<?php echo $route_dropup_fuelConsumption; ?> in l/100 km",
       showInLegend: true,
       xValueType: "dateTime",
       dataPoints: seriesData[2]
-    },
-    { //dataSeries object
-
-      /*** Change type "column" to "bar", "area", "line" or "pie"***/
-      axisYType: "secondary",
-      type: "spline",
-      name: "U/min",
-      showInLegend: true,
-      xValueType: "dateTime",
-      dataPoints: seriesData[1]
     }
     ]
   });
