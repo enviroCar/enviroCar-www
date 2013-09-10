@@ -354,7 +354,7 @@ include('header.php');
 	
 	function getFuelPrice(totalFuelConsumption, fuelType){
 		$.get('assets/includes/fuelprices.php?fuelType='+fuelType, function(data) {
-			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + data + ' €</p>');
+			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + Math.round(totalFuelConsumption * data*100)/100 + ' €</p>');
 		});
 	}
 			
