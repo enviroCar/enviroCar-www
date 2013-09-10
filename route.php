@@ -1,18 +1,5 @@
 <?
 include('header.php');
-/* Benzinpreis-Aktuell.de PHP API 1.0
-by Christoph Drahn (drahn at benzinpreis-aktuell.de) */
-$ba_file = fopen("http://export.benzinpreis-aktuell.de/exportdata.txt?code=69T36ft7QDY70L4", "r") or die ("Datei kann nicht gelesen werden!");
-$ba_read = fgets($ba_file); 
-$ba_data = explode(";",$ba_read);
-$ba_datum = $ba_data[0]; // date (z.B. 05.09.2011)
-$ba_uhrzeit = $ba_data[1]; // time (z.B. 11:50)
-$ba_price_super = $ba_data[2]; // current price 1 l Super gasoline in Euro 
-$ba_price_e10 = $ba_data[3]; // current price 1 l Super E10 gasoline in Euro
-$ba_price_plus = $ba_data[4]; // current price 1 l Super Plus gasoline in Euro
-$ba_price_diesel = $ba_data[5]; // current price 1 l Diesel in Euro
-$ba_price_lpg = $ba_data[6]; // current price 1 l LPG-Autogas in Euro 
-fclose($ba_file); 
 ?>
 <link rel="stylesheet" href="./assets/css/bootstrap-tour.css" type="text/css">
 <link rel="stylesheet" href="./assets/css/trip_single.css" type="text/css">
@@ -163,8 +150,12 @@ fclose($ba_file);
 		
 		var distance = 0;		
 		
+		// total fuel consumption in liter
+		var totalFuelConsumption = 0;		
+		var totalFuelConsumption2 = 0;		
+		
 		if (data.features.length > 1) {
-			for (var i = 0; i < data.features.length - 1; i++) {
+			for (var i = 0; i < data.features.length; i++) {
 				
 				var feature = data.features[i];		
 				
@@ -175,11 +166,12 @@ fclose($ba_file);
 				}
 				var lat1 = feature.geometry.coordinates[1];
 				var lng1 = feature.geometry.coordinates[0];
+				if(i < data.features.length-1){				
 				var lat2 = data.features[i+1].geometry.coordinates[1];
 				var lng2 = data.features[i+1].geometry.coordinates[0];
 				
 				distance = distance + getDistance(lat1, lng1, lat2, lng2);
-				
+				}
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
         		var rpm = feature.properties.phenomenons['Rpm'].value;
         		var iat = feature.properties.phenomenons['Intake Temperature'].value;
@@ -189,7 +181,7 @@ fclose($ba_file);
 				if(speed == 0){
 					//add five thousand miliseconds of idle time for each measurement with speed = 0
 					idleTime = idleTime + 5000;	
-				}				
+				}
 				
 				var maf = feature.properties.phenomenons["MAF"];
 
@@ -201,17 +193,23 @@ fclose($ba_file);
 				
 				var consumption = 0;				
 				var co2 = 0;
-        		
+				var fuelConsumptionOfMeasurement = feature.properties.phenomenons['Consumption'].value;;        		
+
         		if (speed > 0){
-          		consumption = (maf * 3355) / (speed * 100);
+          		//consumption = (maf * 3355) / (speed * 100);
+          		consumption = (fuelConsumptionOfMeasurement / speed) * 100;
         		}else{
-          		consumption = (maf * 3355) / 10000;
+          		//consumption = (maf * 3355) / 10000;
+          		consumption = fuelConsumptionOfMeasurement / 10000;//??
         		}
         
 				if (consumption > 50){
           		consumption = 50;
        		}
 
+
+				totalFuelConsumption2 += consumption;
+				
         		co2 = consumption * 2.35 //gets kg/100 km        
         
 				var recorded_at = feature.properties.time;				
@@ -230,6 +228,22 @@ fclose($ba_file);
 				
 				measurements.push(m);
 				
+				// add consumption to total consumption in liter
+				//get fuel consumption in seconds
+				var fuelConsumptionInSeconds = fuelConsumptionOfMeasurement / 3600;
+				
+				var secondsBtwnMeasurements = 0;				
+
+				if(i == (data.features.length - 1)){				
+					secondsBtwnMeasurements = 1;
+					
+				}else{				
+					//multiply with seconds between measurements
+					secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;		
+									
+				}		
+				
+				totalFuelConsumption += secondsBtwnMeasurements * fuelConsumptionInSeconds;		
 			}	
 			
 			gon.measurements = measurements;	
@@ -240,28 +254,28 @@ fclose($ba_file);
 			
 			var totalCO2 = getTotalCO2(); 			
 			
-			var totalFuelConsumption = getTotalFuelConsumption();	
+			//var totalFuelConsumption = getTotalFuelConsumption();				
 			
-			var currentFuelPrice = 0;		
-			
-			if (fuelType == "gasoline") {
+/*			if (fuelType == "gasoline") {
 				currentFuelPrice = currentFuelPrice  + '<?php echo $ba_price_super; ?>';
 			} else if (fuelType == "diesel") {	
 				currentFuelPrice = currentFuelPrice  + '<?php echo $ba_price_diesel; ?>';			
-			}		
+			}*/		
 			
-			var fuelPrice = Math.round(totalFuelConsumption * currentFuelPrice*100)/100;
+			//var fuelPrice = Math.round(totalFuelConsumption * currentFuelPrice*100)/100;
 			
-			var avgFuelConsumption = totalFuelConsumption / (lengthOfTrack / 100);
+			var avgFuelConsumption = (totalFuelConsumption / lengthOfTrack) * 100;
 			
+			var avgFuelConsumption2 = totalFuelConsumption2 / data.features.length;			
+
 			$('#routeInformation').append('<h2>'+name+'</h2>');
 			$('#idleTime').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
 			$('#distTime').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
 			$('#distTime').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
 			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(avgFuelConsumption*100)/100 + ' l ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
-			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + fuelPrice + ' €</p>');
 			$('#co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
+			getFuelPrice(totalFuelConsumption, fuelType);	
 			
 		}    	
 		
@@ -338,17 +352,10 @@ fclose($ba_file);
 		return sum;		
 	}	
 	
-	function getFuelPrice(){	
-	
-		var url = 'http://export.benzinpreis-aktuell.de/exportdata.txt?';		
-		
-		$.get(
-    		url,
-    		{code : '69T36ft7QDY70L4'},
-    		function(data) {
-      	 	alert('page content: ' + data);
-  		  	}
-		);
+	function getFuelPrice(totalFuelConsumption, fuelType){
+		$.get('assets/includes/fuelprices.php?fuelType='+fuelType, function(data) {
+			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + data + ' €</p>');
+		});
 	}
 			
 	function getTotalFuelConsumption(){
@@ -371,7 +378,7 @@ fclose($ba_file);
 		var maf = feature.properties.phenomenons["MAF"];
 		var calculatedMaf = feature.properties.phenomenons["Calculated MAF"];
 
-		if (maf > 0) {
+		if (maf && maf.value > 0) {
 			if (fuelType == "gasoline") {
 				return (maf.value / 14.7) / 747 * 3600;
 			} else if (fuelType == "diesel") {
