@@ -30,7 +30,7 @@ include('header.php');
     <h4 class="muted"><?php echo $route_fuelConsumption; ?></h4>
   </div>
   <div class="span2" id="co2">
-    <h4 class="muted"><?php echo $route_CO2; ?></h4><br>
+    <h4 class="muted"><?php echo $route_CO2; ?></h4>
   </div>
   <div class="span2" id="idleTime">
     <h4 class="muted"><?php echo $route_idleTime; ?></h4><br>    
@@ -150,9 +150,8 @@ include('header.php');
 		
 		var distance = 0;		
 		
-		// total fuel consumption in liter
-		var totalFuelConsumption = 0;		
-		var totalFuelConsumption2 = 0;		
+		// total fuel consumption in liter per hour
+		var totalFuelConsumptionLiterPerHour = 0;		
 		
 		if (data.features.length > 1) {
 			for (var i = 0; i < data.features.length; i++) {
@@ -166,11 +165,16 @@ include('header.php');
 				}
 				var lat1 = feature.geometry.coordinates[1];
 				var lng1 = feature.geometry.coordinates[0];
+ 				
+ 				var trackPartDistance = 0;				
+				
 				if(i < data.features.length-1){				
 				var lat2 = data.features[i+1].geometry.coordinates[1];
 				var lng2 = data.features[i+1].geometry.coordinates[0];
 				
-				distance = distance + getDistance(lat1, lng1, lat2, lng2);
+				trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
+				
+				distance = distance + trackPartDistance;
 				}
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
         		var rpm = feature.properties.phenomenons['Rpm'].value;
@@ -181,7 +185,7 @@ include('header.php');
 				if(speed == 0){
 					//add five thousand miliseconds of idle time for each measurement with speed = 0
 					idleTime = idleTime + 5000;	
-				}
+				}	
 				
 				var maf = feature.properties.phenomenons["MAF"];
 
@@ -189,11 +193,22 @@ include('header.php');
 					 maf = feature.properties.phenomenons["MAF"].value;
 				}else if (!maf || maf <= 0) {
 					maf = feature.properties.phenomenons["Calculated MAF"].value;		
+				}	
+				
+				var secondsBtwnMeasurements = 0;				
+
+				if(i == (data.features.length - 1)){				
+					secondsBtwnMeasurements = 1;
+					
+				}else{				
+					//multiply with seconds between measurements
+					secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;		
+									
 				}		
 				
 				var consumption = 0;				
 				var co2 = 0;
-				var fuelConsumptionOfMeasurement = feature.properties.phenomenons['Consumption'].value;;        		
+				var fuelConsumptionOfMeasurement = feature.properties.phenomenons['Consumption'].value;       		
 
         		if (speed > 0){
           		//consumption = (maf * 3355) / (speed * 100);
@@ -206,9 +221,12 @@ include('header.php');
 				if (consumption > 50){
           		consumption = 50;
        		}
-
-
-				totalFuelConsumption2 += consumption;
+       		
+				//this does not work as the distance between measurment points can be 0 sometimes
+				//if(trackPartDistance != 0){
+				//	consumption = fuelConsumptionOfMeasurement * secondsBtwnMeasurements / 3600 / trackPartDistance * 100;
+				//}
+				totalFuelConsumptionLiterPerHour += fuelConsumptionOfMeasurement;			
 				
         		co2 = consumption * 2.35 //gets kg/100 km        
         
@@ -227,23 +245,6 @@ include('header.php');
           	};
 				
 				measurements.push(m);
-				
-				// add consumption to total consumption in liter
-				//get fuel consumption in seconds
-				var fuelConsumptionInSeconds = fuelConsumptionOfMeasurement / 3600;
-				
-				var secondsBtwnMeasurements = 0;				
-
-				if(i == (data.features.length - 1)){				
-					secondsBtwnMeasurements = 1;
-					
-				}else{				
-					//multiply with seconds between measurements
-					secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;		
-									
-				}		
-				
-				totalFuelConsumption += secondsBtwnMeasurements * fuelConsumptionInSeconds;		
 			}	
 			
 			gon.measurements = measurements;	
@@ -252,30 +253,31 @@ include('header.php');
 		
 			lengthOfTrack = distance;
 			
-			var totalCO2 = getTotalCO2(); 			
+			// in liter per 100 km
+			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / distance * 100;			
+						
+			//calculate grams of CO2 per km
+			var co2inGramsPerKm	= 0;
 			
-			//var totalFuelConsumption = getTotalFuelConsumption();				
+			if(fuelType == "gasoline"){
+				co2inGramsPerKm = avgFuelConsumption * 23.3;
+			}else if(fuelType == "diesel"){
+				co2inGramsPerKm = avgFuelConsumption * 26.4;
+			}
 			
-/*			if (fuelType == "gasoline") {
-				currentFuelPrice = currentFuelPrice  + '<?php echo $ba_price_super; ?>';
-			} else if (fuelType == "diesel") {	
-				currentFuelPrice = currentFuelPrice  + '<?php echo $ba_price_diesel; ?>';			
-			}*/		
+			var totalCO2 = co2inGramsPerKm * distance / 1000;
 			
-			//var fuelPrice = Math.round(totalFuelConsumption * currentFuelPrice*100)/100;
-			
-			var avgFuelConsumption = (totalFuelConsumption / lengthOfTrack) * 100;
-			
-			var avgFuelConsumption2 = totalFuelConsumption2 / data.features.length;			
-
 			$('#routeInformation').append('<h2>'+name+'</h2>');
 			$('#idleTime').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
 			$('#distTime').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
 			$('#distTime').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
-			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(avgFuelConsumption*100)/100 + ' l ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
+			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
+			$('#co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
 			$('#co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
-			getFuelPrice(totalFuelConsumption, fuelType);	
+			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * distance;		
+			
+			getFuelPrice(totalFuelConsumptionInLiter, fuelType);	
 			
 		}    	
 		
@@ -372,27 +374,6 @@ include('header.php');
 		}
 		return sum;
 	}	
-	
-	function getFuelConsumptionOfMeasurement(feature, fuelType){
-
-		var maf = feature.properties.phenomenons["MAF"];
-		var calculatedMaf = feature.properties.phenomenons["Calculated MAF"];
-
-		if (maf && maf.value > 0) {
-			if (fuelType == "gasoline") {
-				return (maf.value / 14.7) / 747 * 3600;
-			} else if (fuelType == "diesel") {
-				return (maf.value / 14.5) / 832 * 3600;
-			}
-		} else {
-			if (fuelType == "gasoline") {
-				return (calculatedMaf.value / 14.7) / 747 * 3600;
-			} else if (fuelType == "diesel") {
-				return (calculatedMaf.value / 14.5) / 832 * 3600;
-			} 
-		}
-
-	}
 	
 	function convertMilisecondsToTime(miliseconds) {
 

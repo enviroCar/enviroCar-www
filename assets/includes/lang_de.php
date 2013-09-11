@@ -543,7 +543,7 @@ $faq_a6 = "Currently the project is open to beta testers, i.e. people who are re
 //route.php
 
 $route_distance = "DISTANZ";
-$route_fuelConsumption = "BENZINVERBRAUCH";
+$route_fuelConsumption = "TREIBSTOFFVERBRAUCH";
 $route_CO2 = "CO2";
 $route_idleTime = "STANDZEIT";
 $route_avgSpeed = "DURCHSCHNITTLICHE GESCHWINDIGKEIT";
