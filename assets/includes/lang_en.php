@@ -527,7 +527,7 @@ $faq_a5 = "Currently the project is open to beta testers, i.e. people who are re
 
 $route_distance = "DISTANCE";
 $route_fuelConsumption = "FUEL CONSUMPTION";
-$route_CO2 = "CO2";
+$route_CO2 = "CO2 EMISSION";
 $route_idleTime = "IDLE TIME";
 $route_avgSpeed = "AVERAGE SPEED";
 $route_minutes = "m";
