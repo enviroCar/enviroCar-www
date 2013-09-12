@@ -177,10 +177,11 @@ include('header.php');
 				distance = distance + trackPartDistance;
 				}
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
-        		var rpm = feature.properties.phenomenons['Rpm'].value;
-        		var iat = feature.properties.phenomenons['Intake Temperature'].value;
-        		var map = feature.properties.phenomenons['Intake Pressure'].value;
-        		var speed = feature.properties.phenomenons['Speed'].value;
+        		
+        		var rpm = checkPhenomenonValue('Rpm', feature).value;
+        		var iat = checkPhenomenonValue('Intake Temperature', feature);
+        		var map = checkPhenomenonValue('Intake Pressure', feature);
+        		var speed = checkPhenomenonValue('Speed', feature);
 				
 				if(speed == 0){
 					//add five thousand miliseconds of idle time for each measurement with speed = 0
@@ -190,9 +191,9 @@ include('header.php');
 				var maf = feature.properties.phenomenons["MAF"];
 
 				if(maf){
-					 maf = feature.properties.phenomenons["MAF"].value;
+					 maf = checkPhenomenonValue("MAF", feature);
 				}else if (!maf || maf <= 0) {
-					maf = feature.properties.phenomenons["Calculated MAF"].value;		
+					maf = checkPhenomenonValue("Calculated MAF", feature);		
 				}	
 				
 				var secondsBtwnMeasurements = 0;				
@@ -208,7 +209,7 @@ include('header.php');
 				
 				var consumption = 0;				
 				var co2 = 0;
-				var fuelConsumptionOfMeasurement = feature.properties.phenomenons['Consumption'].value;       		
+				var fuelConsumptionOfMeasurement = checkPhenomenonValue('Consumption', feature);       		
 
         		if (speed > 0){
           		//consumption = (maf * 3355) / (speed * 100);
@@ -285,6 +286,18 @@ include('header.php');
       
     }
   });
+	
+	function checkPhenomenonValue(phenomenomName, feature){
+		
+		var phenomenom = feature.properties.phenomenons[phenomenomName];
+		
+		if(phenomenom){
+			return phenomenom.value;		
+		}else{
+			return 0;		
+		}
+		
+	}	
 	
 	function fillStatistics(){
 	
