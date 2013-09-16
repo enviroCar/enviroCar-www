@@ -14,7 +14,7 @@ if(!is_logged_in()){
 	<div class="row-fluid">
 			<h2> <? echo $hotspot_titel ?></h2>
 			<div class="span3">
-				<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=d0a4bb0dd1d943d19ab7f66fd5a2cfb2" class="thumbnail" target="_blank">
+				<a href="http://www.arcgis.com/home/webmap/viewer.html?url=http://services1.arcgis.com/ecnyldh8f7JBEFEA/ArcGIS/rest/services/Hot%20Spots%20CO2/FeatureServer/0&source=sd" class="thumbnail" target="_blank">
 					<img src="http://www.arcgis.com/sharing/rest/content/items/d0a4bb0dd1d943d19ab7f66fd5a2cfb2/info/thumbnail/ago_downloaded.png" alt="">
 				</a>
 			</div>
@@ -24,7 +24,7 @@ if(!is_logged_in()){
 		</div>
 	</div>
 
-	<div class="container rightband">
+	<!--div class="container rightband">
 	<div class="row-fluid">
 			<h2> <? echo $speed_titel ?></h2>
 			<div class="span3">
@@ -36,7 +36,7 @@ if(!is_logged_in()){
           <?php echo $speed_description ?>       
         </div>
 		</div>
-	</div>
+	</div-->
 
 	<div class="container rightband">
 	<div class="row-fluid">
