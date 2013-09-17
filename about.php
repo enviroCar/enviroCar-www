@@ -51,11 +51,11 @@ if(!is_logged_in()){
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
-						<div class="span" style="padding-right: 1ex">
+        			<div class="span4">
+        			<img class="offset3" src="./assets/img/drivedeck1.jpg" width="60%" alt="An ODB II Adapter">
+        			</div>
+					<div class="span6">
 							<p style="text-align: justify;">
-								<br/>								
-								<img class="offset3" src="./assets/img/obd_adapter.png" height="200" width="400" alt="An ODB II Adapter">
-								<br/>
 								<? echo $about_aboutText3 ?>
 							</p>
 						</div>  
