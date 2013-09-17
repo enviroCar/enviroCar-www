@@ -64,19 +64,10 @@ if(!is_logged_in()){
 
 	<div class="container rightband">
       <div class="featurette" style="margin-left: 2%">
-		<img class="featurette-image pull-right" src="./assets/img/heatmap.PNG" style="width: 50%; padding: 3%" alt=""/>
-		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_make_smarter;?></span></h2>
+		<img class="featurette-image pull-left" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>
+		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
 		<p class="lead" style="text-align: justify">
 			<? echo $index_this_is_community;?>
-		</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette" style="margin-right: 2%">
-		<img class="featurette-image pull-left" src="./assets/img/enviroCar_architecture.svg"  style="width: 50%; padding: 3%" alt=""/>
-		<h2 class="featurette-heading"><? echo $index_how_it_works;?><span class="muted"><? echo ' '.$index_three_steps_to;?></span></h2>
-		<p class="lead" style="text-align: justify">
 		</p>
       </div>
 	</div>
