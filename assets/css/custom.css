@@ -225,7 +225,6 @@ h5{
 	background-image: -o-linear-gradient(top, #048abf, #0065a0);
 	background-image: linear-gradient(to bottom, #048abf, #0065a0);
 	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#048abf', endColorstr='#0065a0', GradientType=0);
 	border: 0px solid #003e63;
 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
