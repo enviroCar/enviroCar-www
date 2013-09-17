@@ -16,9 +16,9 @@ $index_help_the_world='Help the world become a better place
 <li>Collaborate with other citizens, urban planners and scientists world-wide.</li>
 </ul>';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community='The enviroCar app enables you to read out your car’s sensor data, to learn about your car and to explore your driving stile.</br>
+$index_this_is_community='The enviroCar app enables you to read out your car’s sensor data, to learn about your car and to explore your driving stile.</br></br>
  
-You may upload your tracks as open data to the enviroCar server and provide this data anonymized to researchers and planners in the field of mobility and environment.</br>
+You may upload your tracks as open data to the enviroCar server and provide this data anonymized to researchers and planners in the field of mobility and environment.</br></br>
  
 Use the enviroCar website to analyze your data and to learn about further enviroCar projects and activities.';
 $index_how_it_works="How does it work?";
