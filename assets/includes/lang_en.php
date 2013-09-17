@@ -527,7 +527,7 @@ $faq_a5 = "Currently the project is open to beta testers, i.e. people who are re
 
 $route_distance = "DISTANCE";
 $route_fuelConsumption = "FUEL CONSUMPTION";
-$route_CO2 = "CO2 EMISSION";
+$route_CO2 = "CO2";
 $route_idleTime = "IDLE TIME";
 $route_avgSpeed = "AVERAGE SPEED";
 $route_minutes = "m";
@@ -538,4 +538,7 @@ $route_dropup_speed = "speed";
 $route_requestFuelPrice = "Requesting current fuel prices...";
 $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
+
+//temporary
+$under_construction = "This website is currently under construction..";
 ?>
