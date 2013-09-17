@@ -35,7 +35,7 @@ if ($login_name != "" && $login_password != ""){
     <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="root" >
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
@@ -106,11 +106,32 @@ if ($login_name != "" && $login_password != ""){
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("informationproduct")?>><a href="informationproduct.php"><? echo $informationproduct ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="http://envirocar.github.io/" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
+            <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
             </ul>
-
+				<!-- The drop down menu -->
+        		<ul class="nav pull-right">
+          		<li><a href="./registration.php"><? echo $index_register;?></a></li>
+          		<!--<li class="divider-vertical"></li>-->
+          		<li class="dropdown">
+            	<a class="dropdown-toggle" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
+            	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+               <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
+            		<form name="login" action="index.php" method="post" style="display: inline;">
+						<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+						<input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
+						<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+						<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_password;?>" />
+						<input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
+						<!--span title="this places a cookie on your device">
+							<input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
+							<label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
+						</span-->
+           			</form>
+            	</div>
+          		</li>
+       	 	</ul>
 
           </div><!--/.nav-collapse -->      </div>
         </div>
@@ -207,6 +228,14 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
+	<div style="clear:both"></div>
+	<?
+		if ($login_form_attempt >= 5){
+	?>
+		<? echo $index_having_account;?><br/> <? echo $index_create_new_one;?><br/>
+	<?
+		}
+	?>
 </div> 
 
 <div id="registration_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
@@ -220,6 +249,14 @@ if ($login_fail) {
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
  <? echo $usernameorpasswordwrong ?>
+	<div style="clear:both"></div>
+	<?
+		if ($login_form_attempt >= 5){
+	?>
+		<? echo $index_having_account;?><br/> <? echo $index_create_new_one;?><br/>
+	<?
+		}
+	?>
 </div> 
 <?
 }

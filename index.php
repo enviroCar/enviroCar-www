@@ -14,33 +14,8 @@ if(!is_logged_in()){
   <div class="container rightband">
     <div class="row-fluid">
 <? if ($logged_in == false) { ?>
-      <div class="span8" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+      <div class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
       </div>
-      <div class="span4">
-            <h2 class="form-signin-heading"><? echo $index_Please_sign_in;?></h2>
-            <form name="login" action="index.php" method="post" style="display: inline;">
-				<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-				<input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
-				<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
-				<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_password;?>" />
-				<input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
-				<!--span title="this places a cookie on your device">
-					<input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
-					<label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
-				</span-->
-            </form>
-			<a href="registration.php">
-				<button class="btn btn-medium btn-primary" name="login_register" value="register" style="float: right;"><? echo $index_register;?></button>
-			</a>
-			<div style="clear:both"></div>
-	<?
-		if ($login_form_attempt >= 5){
-	?>
-		<? echo $index_having_account;?><br/> <? echo $index_create_new_one;?><br/>
-	<?
-		}
-	?>
-    </div>
 <? 	} else { ?>
 	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
 		<div style="margin-right: 1%; margin-top 60%; float:right; text-align: center">
@@ -64,20 +39,20 @@ if(!is_logged_in()){
 	<div class="container leftband">
 	<div class="row-fluid">
         <div class="span4">
-<a class="twitter-timeline" href="https://twitter.com/enviroCar_org" data-widget-id="335068168525578241">Tweets von @enviroCar_org</a>
+<a class="twitter-timeline" href="https://twitter.com/enviroCar_org" data-chrome="noscrollbar" data-widget-id="335068168525578241">Tweets von @enviroCar_org</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
        </div>
-        <div class="span4">
+        <div class="span7">
           <h2><? echo $index_be_a_citizen_scientist;?></h2>
           <p style="text-align: justify;"><? echo $index_help_the_world;?></p>
         </div>
-        <div class="span4">
+  <!--      <div class="span4">
           <h2><? echo $index_support_indiegogo;?></h2>
           <a href="http://www.indiegogo.com/projects/envirocar" target='_blank'>
             <img style="width:70%;" src="http://www.indiegogo.com/assets/igg_logo_color_print_black_h.jpg"/>
           </a>
-        </div>
+        </div>-->
       </div>
 
 	</div>

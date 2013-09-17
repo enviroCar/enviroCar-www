@@ -24,8 +24,8 @@ $index_name_missing="Jeder sollte einen Namen haben, auch Du.";
 $index_credentials_invalid="Netter Versuch, aber keine Anmeldedaten anzugeben hilft nicht.";
 $index_having_account="Bist du dir sicher, dass du bereits einen Account besitzt?";
 $index_create_new_one="Erstell dir einen neuen, es ist kostenlos.";
-$index_wrong_name="Moment, das ist nicht meine Name!";
-$index_continue_dashboard="Weiter zum Armaturenbrett";
+$index_wrong_name="Moment, das ist nicht mein Name!";
+$index_continue_dashboard="Weiter zu deinem Profil";
 $index_welcome="Willkommen";
 
 
@@ -46,6 +46,7 @@ $dashboard_view_details="Details anzeigen";
 $dashboard_overview="Übersicht";
 $dashboard_friend_activities="Aktivitäten deiner Freunde";
 $dashboard_group_activities="Aktivitäten der Gruppe";
+$dashboard_activities_of="Aktivitäten von ";
 
 //function registration
 $freg_invalidemail="Ungültige Email";
@@ -177,16 +178,19 @@ $yourstatistics = "Deine Statistiken";
 $noroutesavailable = "Keine Routen verfügbar";
 
 $profile = "Profil";
-$activities = "Armaturenbrett";
+$dashboard = "Mein Profil";
 $routes = "Meine Routen";
 $friends ="Freunde";
 $groups = "Gruppen";
-$help = "Hilfe";
+$about = "Über";
 $community ="Gemeinschaft";
 $logout = "Abmelden";
 $comparison ="Vergleich";
 $informationproduct = "Informationsprodukte";
+$mapsandstatistics = "Karten & Statistiken";
+$gettinginvolved = "Mitwirken";
 $api = "API";
+$data = "Daten";
 $showapiongithub = "Zeige die API-Definition auf github.com";
 
 
@@ -309,13 +313,18 @@ $groupNotFound = "Die Gruppe konnte nicht gefunden werden.";
 $friendNotFound = "Die Freunde konnte nicht gefunden werden.";
 $activityNotFound = "Die Aktivitäten konnte nicht gefunden werden.";
 $statisticsNotFound = "Die Statistiken konnte nicht gefunden werden.";
-$statisticsNotAllowed = "Es ist dir nicht erlaubt, die gewünschte Statistiken zu betrachten.";
+$statisticsNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Statistiken zu betrachten.";
 $statisticsError ="Statistiken konnte nicht erfolgreich geladen werden.";
+$mapsNotFound = "Die Karte konnte nicht gefunden werden.";
+$mapsNotAllowed = "Es ist dir nicht erlaubt, die gewünschten Karten zu betrachten.";
+$mapsError ="Karten konnte nicht erfolgreich geladen werden.";
 $groupOfNotFound = "Es konnten keine Gruppen von der gewünschten Person gefunden werden.";
 $groupOfNotAllowed = "Es ist dir nicht erlaubt, die Gruppen der angefragten Person zu betrachten.";
 $groupMemberNotAllowed = "Es ist dir nicht erlaubt die Mitglieder dieser Gruppe zu betrachten.";
 $groupOfError ="Die Gruppen der angefragten Person konnten nicht geladen werden.";
 $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
+
+$allUsers = "Alle Nutzer";
 
 $registrationError = "Der Server ist zur Zeit nicht verfügbar. Versuche es später erneut";
 $registrationNotAllowed = "Deine Emailadresse ist aktuell nicht für die Beta-Phase freigeschaltet. Bitte kontaktiere envirocar@52north.org für einen Beta-tester Account.";
@@ -348,7 +357,7 @@ $male = "männlich";
 $female ="weiblich";
 
 $deletemyaccount ="Account löschen";
-$editaccount = "Editieren";
+$editaccount = "Änderungen speichern";
 
 $avatarGravatar ="Dein Profilbild basiert auf deiner E-Mail-Adresse. Ändere es jetzt auf ";
 
@@ -433,5 +442,117 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Revolutions_per_min
 Kohlenstoffdioxid ist ein Treibhausgas, welches als Nebenprodukt der Spritverbrennung entsteht.<br>
 Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_blank">Wikipedia</a>
 </p>';	
-		
+
+//mapsandstatistics.php
+$noDescription = "Keine Beschreibung verfügbar.";
+$map = "Karte";
+$hotspot_titel = "CO2 Hot Spots Münster";
+$hotspot_description = "Hot Spots Analyse der CO2 Werte gesammelt von enviroCar Nutzern.";
+$speed_titel = "Geschwindigkeit";
+$speed_description = "Auf dieser Karte werden Geschwindigkeitswerte von enviroCar Strecken angezeigt.";
+$speedcomparison_titel = "Geschwindigkeitsvergleich";
+$speedcomparison_description = "Geschwindigkeitsvergleich zwischen OpenStreetMap Maximalgeschwindigkeit und von enviroCar ermittelten Durchschnittswerten der Geschwindigkeit.";
+
+//dataaccess.php
+$viaAPIHead = "Über die API";
+$viaAPIText = 'Der enviroCar-Datenserver bietet für Datenabfragen eine REST-Schnittstelle an. Mehr informationen findest Du hier: <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">enviroCar-server API.</a>';
+$viaDownloadHead = "Als Download";
+$viaDownloadText = "Keine Beschreibung verfügbar.";
+
+//about.php
+$about_aboutHead = "Über enviroCar";
+$about_aboutText1 = '<strong>enviroCar</strong> bietet die Möglichkeit, auf Sensordaten von Fahrzeugen zuzugreifen und den Einfluss des Fahrens auf Faktoren wie beispielsweise den Energieverbrauch, die CO2-Produktion oder die Lärmentwicklung zu erkunden.
+<br/>
+Sie können Ihr Umweltprofil mit dem Ihrer Freunde oder auch dem ganzer Gruppen von enviroCar-Nutzern vergleichen und die sportliche Herausforderung annehmen, effizienter als andere zu fahren. Gleichzeitig werden Sie die laufenden Kosten für jeden gefahrenen Kilometer reduzieren.
+<br/>
+Information, die geteilt wird, vermehrt sich dabei! Teilen Sie Ihre Daten mit allen Nutzern von enviroCar und befassen Sie sich mit interessanten Forschungsfragen wie beispielsweise:
+<ul>
+<li>Auf welchen Straßenabschnitten wird besonders viel Kraftstoff verbraucht?</li>
+<li>Wie lässt sich die Verkehrssteuerung verbessern, um den Energieverbrauch und Emissionen zu verringern?</li>
+<li>Was zeigt uns eine Karte der gemessenen Durchschnittsgeschwindigkeiten?</li>
+</ul>
+Verkehrsplaner, Wissenschaftler, die Industrie und viele Bürger sind sehr daran interessiert, eine Datenquelle aufzubauen, mit der diese und ähnliche Fragen beantwortet werden können. Wir bezeichnen enviroCar daher als eine Citizen Science Plattform, da Sie die offene Zusammenarbeit dieser Akteure bei der Bearbeitung wissenschaftlicher Fragestellungen unterstützt.
+<br/>
+Machen Sie mit! Helfen Sie, Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
+$about_aboutText2 = 'enviroCar ist eine Community Plattform für die Gewinnung von Umweltinformationen aus den Daten der Fahrzeugsensorik. Mit Hilfe eines OBD2-Adapters, Ihrem Android Smartphone und der enviroCar App können Sie auf die Daten der Sensorik Ihres Fahrzeuges zugreifen. Die App stellt Ihnen bereits viele Informationen über die Charakteristik ihres Fahrzeuges und über Ihren Fahrstil zur Verfügung.
+<br/> 
+Sie haben die Möglichkeit, ihre Daten anonymisiert auf den enviroCar Server zu laden, wo sie als offene Daten für die Citizen Science Community von enviroCar zur Verfügung stehen.
+<br/>
+Die enviroCar Website ermöglicht Ihnen
+<ul>
+<li>Auf Ihre Daten zuzugreifen</li>
+<li>Die Charakteristik Ihrer Fahrten mit anderen zu vergleichen</li>
+<li>Interaktive Karten und Statistiken zu nutzen</li>
+<li>Daten für weitere Auswertungen herunterzuladen</li>
+</ul>';
+$about_aboutText3 = "enviroCar nutzt marktübliche OBD-II Adaper, die Sie ganz einfach auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken können. Die enviroCar App ist in der Lage, sich automatisch mit dem OBD-II Adapter zu verbinden und aus den ermittelten Daten Informationen wie die Motordrehzahl, den Kraftstoffverbrauch oder die Geschwindigkeit abzuleiten.";
+$about_gettinginvolvedHead = "Getting Involved";
+$asACitizenHead = "As a Citizen (Scientist)";
+$asACitizenText = "All you need to join the community is a Bluetooth OBD2 Adapter and an Android Smart Phone.
+
+There are many OBD-II adapters on the market and their prices range from about 18 EUR (23 USD) up to 150 EUR (200 USD). The OBD-II community has a lot of experience with these adapters, and theoretically most of them should work fine (take a look >here< for more details). Please be aware that national laws require products to have appropriate certificates (CE, ECE in Europe). Unfortunately most of these adapters are sold without such certificates. 
+As for the European regulations: currently the only adapter which is legaly usable while driving is the Drivedec W4 adapter.
+Plug in the adapter to the OBD2 socket within your car (as for the position you can check the web for your car type and OBD2) and pair it with your smart phone following the instructions of the adapter. 
+
+The enviroCar App is available for Android 2.3 to the latest version 4.2.2. To install the app on your smartphone, you can use the Play Store, which is installed on your Android smartphone. Just search for “enviroCar”, download and install this app on your smartphone and enjoy all the features of the enviroCar system.
+
+You can use the app to register for enviroCar. Check your settings, register your car type, select the bluetooth device and start collecting your first tracks while driving your car. Upload your data to the envirocar server and use the website to connect to friends and groups and explore the maps & statistics the website is providing you with.
+
+Use enviroCar and its data to discuss  mobility and environment related issues with your friends, with researchers and experts from public authorities. Develop ideas how to gain mobility and to reduce negative impacts on the environment. Join the community and be a citizen scientist!
+";
+$asAScientistHead = "As a Scientist";
+$asAScientistText = "You are interested in using the enviroCar platform and its data for research projects?
+
+We recommend to start as a citizen scientist and to get familiar with the enviroCar platform, its data and its features.
+
+If you’re interested in the data “as is” you may use  either the download  facilities or the  API to bring the data into your computing environment for further analysis.
+
+If you need special parameters, a community of volunteers or a special quality of data or simply more information about this citizen science approach we might be able to support. We’d be happy to get in contact with you, to complement your expertise with our experience and network, and to go for joint activities.";
+$asAPlannerHead = "As a public authority";
+$asAPlannerText = "You are interested in using the enviroCar approach to interact with the citizens of your  region as to develop new concepts and sustainable change in the field of mobility and environment? 
+
+You may use the enviroCar platform “as is” for this purpose. Your IT department and  your domain experts will be able to do the job. However, we’d be happy  to provide you with any support needed, such as consultancy, data analysis, software development,  systems integration, service level agreements, organizing public workshops, etc.";
+$asADeveloperHead = "As a Developer.";
+$asADeveloperText = "You’d like to develop an application and use the enviroCar platform as a public data source? Check out the enviroCar APIs and software at Github: https://github.com/enviroCar. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data. 
+
+You’re invited to join the enviroCar developer community. You may subscribe to the enviroCar@52north.org mailing list as to get the latest infos about the development process and upcoming features.";
+$about_faqHead = "Frequently Asked Questions";
+$faq_q1 = "Which OBD2 adapters are compatible with enviroCar?";
+$faq_q2 = "Is my car supported?";
+$faq_q3 = "What about privacy issues? ";
+$faq_q4 = "Is my car supported?";
+$faq_q5 = "I’m a developer and I’m very interested in this project. Is there a way to  make further implementations?";
+$faq_q6 = "When will enviroCar be published?";
+
+$faq_a1 = "There are quite a lot OBD2 adapters for using enviroCar in different price ranges. You can buy these adapters on eBay, Amazon or other shops. currently enviroCar supports  the ELM327 protocol and the proprietary Drivedeck protocoll which is used  by the Drivedeck W4 adapter. However, please be aware, that we’re not able to guarantee, that all combinations of adapters / car types / smartphones are working well.  Please check 
+the web for known compatibility problems. 
+A very important fact about using OBD2 adapters in Germany is that it’s only allowed to use ECE-certified OBD2 adapters. While driving your car, the usage of adapters without such a certificate is prohibited. Currently the drivedeck W4 adapter is the only one, which is equipped with all certificates required in Germany. Please check out the national regulations as to be sure that the adaptor of your choice can be used without restrictions in your country.";
+$faq_a2 = "The use of OBD2 interfaces was introduced at different times, depending on the country and the vehicle type. In the US all cars built on 01.01.1996 or later have it. In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles it was supported beginning on 01.01.2003. For trucks the OBD2 support started on 01.01.2005.";
+$faq_a3 = "The data which is uploaded to the enviroCar server is anonymized. I.e. it doesn’t contain  a direct reference to the car or the contributor.  I.e. any data download doesn’t contain any references to you.
+Furthermore you can opt to cut the first and the last minutes of the tracks as to obfuscate the start and destination of your routes, which makes it hard to identify your tracks by  linking it to your home or business address.
+
+The communication between website/app and envirocar server is encrypted and only authorized users are able to connect the sensor data to a certain user. Only the users themselves are authorized to access their profile data (only the user name and the email address are mandatory). 
+
+We’re quite sure that this method is a very appropriate answer to your privacy concerns.  However, there is no means to achieve a 100% level of security.";
+$faq_a4 = "The use of OBD2 interfaces was introduced at different times, depending on country and vehicle type.	In the USA all cars built on 01.01.1996 or later have it. In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles it was supported beginning on 01.01.2003. For trucks the OBD2 support started on 01.01.2005";
+$faq_a5 = "enviroCar is a community, which is open to everyone. You can download/upload data and use it for your own purpose of statistical analysis. enviroCar offers an API, especially created for this purpose: http://envirocar.github.io/enviroCar-server/
+The data is publicly available as JSON and as Linked Data, which makes it possible to include enviroCar's data in any services.
+You are welcome to get in contact with us discussing your suggestions, thoughts and ideas. enviroCar is fully open source and all components are available on github: https://github.com/enviroCar. We’d be happy to see you as a contributor! ";
+$faq_a6 = "Currently the project is open to beta testers, i.e. people who are ready to accept, that we’re still in a development phase, where we have to change the software continuously as to get it ready for public use.  And we need the critical feedback of beta testers in this phase as to get a really cool platform up and running. We expect to get a stable release of all components available to the public by end of this year (2013).";
+
+//route.php
+
+$route_distance = "DISTANZ";
+$route_fuelConsumption = "TREIBSTOFFVERBRAUCH";
+$route_CO2 = "CO2 AUSSTOß";
+$route_idleTime = "STANDZEIT";
+$route_avgSpeed = "DURCHSCHNITTLICHE GESCHWINDIGKEIT";
+$route_minutes = "m";
+$route_fuelGas = "Benzin";
+$route_fuelDiesel = "Diesel";
+$route_dropup_fuelConsumption = "Verbrauch";
+$route_dropup_speed = "Geschwindigkeit";
+$route_requestFuelPriceStart = "Frage aktuelle Benzinpreise ab...";
+$route_drivenRoute = "Gefahrene Strecke";
+$route_baseLayer = "Basis Karte";
 ?>
