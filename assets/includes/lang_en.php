@@ -10,10 +10,19 @@ $index_register="Register";
 $index_get_App="Get our App soon!";
 $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";
-$index_help_the_world="Help the world become a better place by sharing your data with scientists from all over the world! Or use existing data for your own research!";
+$index_help_the_world='Help the world become a better place
+<ul>
+<li>Share your data with the enviroCar Citizen Science Community</li>
+<li>Collaborate with other citizens, urban planners and scientists world-wide.</li>
+</ul>';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community="This is a community, it's an app and it's a website.<br> enviroCar is our contribution to a smarter world.<br> We will generate knowledge about car traffic and its emissions on our streets and we will raise awareness of environmental consequences of our driving behaviour.";
+$index_this_is_community='The enviroCar app enables you to read out your car’s sensor data, to learn about your car and to explore your driving stile.</br>
+ 
+You may upload your tracks as open data to the enviroCar server and provide this data anonymized to researchers and planners in the field of mobility and environment.</br>
+ 
+Use the enviroCar website to analyze your data and to learn about further enviroCar projects and activities.';
 $index_how_it_works="How does it work?";
+$index_here_we_go="enviroCar - here we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
 $index_register="Register";
 $index_sign_in="Sign in";
