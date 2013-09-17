@@ -15,8 +15,8 @@ if(!is_logged_in()){
     <div class="row-fluid">
 <? if ($logged_in == false) { ?>
       <div class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-    	<div style="margin-right: 1%; margin-top : 15%; float:right;">	
-    		<p style="color: white;"><img src="./assets/img/under_construction.png" style="height:70px"/><?echo $under_construction;?></p>
+    	<div style="margin-right:1%;margin-top:15%;float:right">	
+    		<img src="./assets/img/under_construction.png" style="height:70px"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
 		</div>	
       </div>
 <? 	} else { ?>
@@ -31,12 +31,13 @@ if(!is_logged_in()){
 			<br/>
 			<a href="dashboard.php">
 				<button class="btn btn-medium btn-inversed" name="dashboard" value="dashboard" style="margin-top: 2em"><? echo  $index_continue_dashboard;?></button>
-			</a>				
-    		<p style="color: white;"><img src="./assets/img/under_construction.png" style="height:70px"/><?echo $under_construction;?></p>
+			</a>
+			<br/>
+			<br/>
+			<img src="./assets/img/under_construction.png" style="height:70px"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
 		</div>
 	 </div>
 <? } ?>
-
     </div>
   </div> <!-- /container -->
 
