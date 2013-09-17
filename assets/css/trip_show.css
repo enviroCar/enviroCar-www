@@ -1,0 +1,94 @@
+.legend {
+  width: 20px;
+  height: 20px;
+}
+
+.affix {
+    top: 50%;
+}
+
+a { display: inline-block; }
+
+.progress {
+  margin: 0px;
+}
+
+td.vmid {
+  vertical-align: middle;
+}
+tr.h {
+  height: 116px;
+}
+
+.trip_info {
+	border-right: 1px solid #eeeeee;
+}
+
+.table th, .table td { 
+     border-top: none; 
+ }
+
+li {
+    list-style-type: none;
+}
+
+.well {
+	padding: 10px;
+	margin-left: 0px;
+}
+
+.row {
+	margin-left: 0px;
+}
+
+.listing {
+	margin-left: 0px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+    	margin-bottom: 0px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+      color: black;
+    }
+
+    .carousel-control:hover {
+    	color: black;
+    }
+
+    .carousel .item {
+      height: 200px;
+    }
+
+
+    .carousel-caption {
+      background-color: transparent;
+      position: relative;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }

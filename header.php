@@ -30,7 +30,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="root" >
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
@@ -100,26 +100,32 @@ function echoActiveClassIfRequestMatches($requestUri)
           echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
         }
       ?>
-		  <img src="./assets/img/settings.png" onClick="toggle_visibility('settings');" class="brand" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
+
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $activities ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("routes")?>><a href="routes.php"><? echo $routes ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("friends")?>><a href="friends.php"><? echo $friends ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("groups")?>><a href="groups.php"><? echo $groups ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("viewandcompare")?>><a href="viewandcompare.php"><? echo $comparison ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("informationproduct")?>><a href="informationproduct.php"><? echo $informationproduct ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("api")?>><a href="http://envirocar.github.io/" target="_blank" title="<? echo $showapiongithub ?>"><? echo $api ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("support")?>><a href="support.php"><? echo $help ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $dashboard ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
             </ul>
+				<!-- The drop down menu -->
+				<ul class="nav pull-right">          	
+          	<li class="dropdown">
+          	<img src="./assets/img/settings.png" class="brand dropdown-toggle" data-toggle="dropdown" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
+          	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+      			<h4><a style="padding-left:15px;" href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></h4><br>
+     				 <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
+     			</div>   		
+          	</li>  
+				</ul>     	 	
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-    <div id="settings" class="settings">
+<!--    <div id="settings" class="settings">
       <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
       <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
-    </div>
+    </div>-->
 
     <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
       <a class="close" data-dismiss="alert">×</a>  
