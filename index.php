@@ -49,7 +49,7 @@ if(!is_logged_in()){
 
        </div>
         <div class="span7">
-          <h2><? echo $index_be_a_citizen_scientist;?></h2>
+          <h2 class="featurette-heading"><? echo $index_be_a_citizen_scientist;?></h2>
           <p style="text-align: justify;"><? echo $index_help_the_world;?></p>
         </div>
   <!--      <div class="span4">

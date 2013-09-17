@@ -17,7 +17,7 @@ $index_this_is_community='Mit der enviroCar App können sie Sensordaten aus der 
 Sie können die Daten als Open Data auf den enviroCar Server hochladen und anonymisiert für die Verkehrs- und Umweltforschung zur Verfügung stellen. </br></br>
 Nutzen Sie die enviroCar Website, um Ihre Daten  zu verwalten und enviroCar Projekte kennenzulernen.';
 $index_how_it_works="Wie funktioniert das Ganze?";
-$index_here_we_go="enviroCar - so gehts!"; 
+$index_here_we_go=" - so gehts!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
 $index_register="Registrieren";
 $index_sign_in="Anmelden";

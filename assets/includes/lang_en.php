@@ -22,7 +22,7 @@ You may upload your tracks as open data to the enviroCar server and provide this
  
 Use the enviroCar website to analyze your data and to learn about further enviroCar projects and activities.';
 $index_how_it_works="How does it work?";
-$index_here_we_go="enviroCar - here we go!"; 
+$index_here_we_go=" - here we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
 $index_register="Register";
 $index_sign_in="Sign in";
