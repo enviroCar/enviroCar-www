@@ -64,7 +64,7 @@ if(!is_logged_in()){
 
 	<div class="container rightband">
       <div class="featurette" style="margin-left: 2%">
-		<img class="featurette-image pull-left" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>
+		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>
 		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
 		<p class="lead" style="text-align: justify">
 			<? echo $index_this_is_community;?>
