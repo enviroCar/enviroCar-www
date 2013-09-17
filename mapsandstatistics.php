@@ -24,11 +24,11 @@ if(!is_logged_in()){
 		</div>
 	</div>
 
-	<!--div class="container rightband">
+	<div class="container rightband">
 	<div class="row-fluid">
 			<h2> <? echo $speed_titel ?></h2>
 			<div class="span3">
-				<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=56f3d72eb2034b4ca2975bba3b2ba0b1" class="thumbnail" target="_blank">
+				<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" class="thumbnail" target="_blank">
 					<img src="http://www.arcgis.com/sharing/rest/content/items/56f3d72eb2034b4ca2975bba3b2ba0b1/info/thumbnail/ago_downloaded.png" alt="">
 				</a>
 			</div>
@@ -36,7 +36,7 @@ if(!is_logged_in()){
           <?php echo $speed_description ?>       
         </div>
 		</div>
-	</div-->
+	</div>
 
 	<div class="container rightband">
 	<div class="row-fluid">
