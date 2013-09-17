@@ -428,7 +428,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           data = JSON.parse(data);
           count=data.statistics.length;
           for(i = 0; i < data.statistics.length; i++){
-          	if(data.statistics[i].phenomenon.name == 'Speed' || data.statistics[i].phenomenon.name == 'Consumption' || data.statistics[i].phenomenon.name == 'CO2'){
+          	if(data.statistics[i].phenomenon.name == 'Speed' || data.statistics[i].phenomenon.name == 'CO2'){
             	values.push(Math.round(data.statistics[i].avg*100)/100);
             	phen.push(data.statistics[i].phenomenon.name);
             }
@@ -468,31 +468,35 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       function drawChart() {
         var data = new google.visualization.DataTable();
           data.addColumn('string','Measurement');
-          data.addColumn('number', '<? echo $_SESSION['name'] ?>');
-          data.addColumn('number', '<? echo $allUsers ?>');
-
-          data.addRows(count);
-               
-        for(i = 0; i < count; i++){
-          if(phen[i] == 'Rpm'){
-            phen[i] = phen[i]+' (100/min)';
-            values[i] = values[i]/100;
-            values2[i] = values2[i]/100;
-          }
-          data.setValue(i, 0, phen[i]);
-          data.setValue(i, 1, values[i]);
-          data.setValue(i, 2, values2[i]);
-        }
+			
+			var speedIndex = 0;
+			var co2Index = 1;
+			
+			if(phen[0] == 'CO2'){
+				speedIndex = 1;
+				co2Index = 0;
+			}                
+          
+          data.addColumn('number', 'Speed');
+          data.addColumn('number', 'CO2');  
+          
+			data.addRow(['<? echo $_SESSION['name'] ?>', values[speedIndex], values[co2Index]]);     
+			data.addRow(['<? echo $allUsers ?>', values2[speedIndex], values2[co2Index]]);
      
         var options = {
           title: '<? echo $statistics ?>',
-          vAxis: {title: '',  titleTextStyle: {color: 'red'}}
+          vAxes: {0: {title:'km/h', logScale: false, minValue:0}, 1: {title:'kg/h', logScale: false, minValue:0}},
+          series: {
+            0:{targetAxisIndex: 0 },
+            1: {targetAxisIndex: 1}
+        		}
         };
 
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')).
+            draw(data, options);
         $('#loadingIndicator_graph').hide();
       }
+      
     </script>  
     
     </div>
