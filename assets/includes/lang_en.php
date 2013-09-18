@@ -55,6 +55,9 @@ $dashboard_overview="Overview";
 $dashboard_friend_activities="Friend Activities";
 $dashboard_group_activities="Group Activities";
 $dashboard_activities_of="Activities of ";
+$dashboard_my_tracks="My Tracks";
+
+
 
 //function registration
 $freg_invalidemail="Invalid Email";
@@ -182,7 +185,7 @@ $language_text="1- Until Now; enviroCar supports two languages in our website: E
 $created ="Created";
 $yourroutes = "Your Routes";
 $yourstatistics = "Your Statistics";
-$noroutesavailable = "No routes available";
+$noroutesavailable = "No Tracks available";
 
 $profile = "Profile";
 $dashboard = "My Profile";
