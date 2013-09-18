@@ -511,10 +511,11 @@ $faq_q5 = "When will enviroCar be published?";
 $faq_a1 = 'There are several OBD2 adapters available in various price ranges (see a list <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">here</a>). You can buy those adapters on eBay, Amazon, or other shops. Please be aware that we are not able to guarantee that all combinations of smartphones / adapters work well. Also the car type can have an influence. The enviroCar community maintains a matrix of working combinations <a href="https://wiki.52north.org/bin/view/Projects/EnviroCar#App_Compatibility" target="_blank">here</a>. Please report your experiences on smartphone / adapter combinations to us!
 <br/><br/>
 IMPORTANT for OBD2 adapters in Germany: The use of adapters without certain ECE certificates is prohibited while driving your car.  Currently, the Drivedeck W4 adapter is the only one equipped with all certificates required in Germany. Please check national regulations to be sure that the adapter of your choice can be used without restrictions in your country.';
-$faq_a2 = 'The presence of an OBD2 interface within today’s cars is mandated by law in the US as well as Europe. Depending on country and vehicle type, OBD2 was introduced at different times.<br/>
+$faq_a2 = 'The presence of an OBD2 interface within today’s cars is mandated by law in the US as well as Europe. Depending on country and vehicle type, OBD2 was introduced at different times.
+<br/>
 In the US:
 <ul>
-<li>All cars built after 01.01.1996 have it.</li>
+<li>All cars built after 01.01.1996 are equipped with an ODB2 interface.</li>
 </ul> 
 In Europe:
 <ul>
@@ -553,12 +554,21 @@ $route_baseLayer = "base layer";
 
 //terms
 $terms_general = "";
-$terms_cookies_heading = "";
-$terms_cookies_text = "";
-$terms_local_track_data_heading = "";
-$terms_local_track_data_text = "";
-$terms_remote_track_data_heading = "";
-$terms_remote_track_data_text = "";
+$terms_cookies_heading = "Use of cookies";
+$terms_cookies_text = 'When you use this website, you agree to the use of cookies. The cookies will be used strictly for the purpose of enabling you to log in to our services and select the language of preference for our website. The cookie stores a combination of numbers and characters to identify you during a browser session.
+<br/><br/>
+We promise not to use cookies for tracking purposes. Our cookies are valid for one (1) browser session. Thus you can log out, restart your browser and our website will not recognize you';
+$terms_local_track_data_heading = "Saving data during a drive";
+$terms_local_track_data_text = "During your test drive (after the START button has been pushed until the STOP button has been pushed), the following data is collected and saved:
+<ul>
+<li>Location of measurement</li>
+<li>Time and date of measurement</li>
+<li>Data from the engine control system, for example speed, revolutions per minute, throttle pedal position</li>
+<li>Derived data, such as fuel consumption, CO2 emission</li>
+</ul>
+This data is linked via an encrypted key to your user account, which enables you to view your own data in the enviroCar App, as well as in the website. Communication between the enviroCar App, the enviroCar server and the enviroCar website is encrypted so that no third party can access your data.";
+$terms_remote_track_data_heading = "Upload Data to enviroCar server";
+$terms_remote_track_data_text = '';
 
 //temporary
 $under_construction = "This website is currently under construction..";

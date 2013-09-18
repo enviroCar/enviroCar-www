@@ -56,9 +56,6 @@ if(!is_logged_in()){
 				<p style="text-align: justify;">
 					<?echo $terms_remote_track_data_text; ?>
 				</p>
-				<p class="pull-right">
-					<a href="#"><? echo $back_top ?></a>
-				</p>
 			</div>
 		</div>
 	</div>

@@ -500,9 +500,9 @@ $asADeveloperHead = "As a Developer.";
 $asADeveloperText = "You’d like to develop an application and use the enviroCar platform as a public data source? Check out the enviroCar APIs and software at Github: https://github.com/enviroCar. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data. 
 
 You’re invited to join the enviroCar developer community. You may subscribe to the enviroCar@52north.org mailing list as to get the latest infos about the development process and upcoming features.";
-$about_faqHead = "Frequently Asked Questions";
+$about_faqHead = "Häufig gestellte Fragen";
 $faq_q1 = "Welche OBD2 adapter sind kompatibel mit enviroCar?";
-$faq_q2 = "Is my car supported?";
+$faq_q2 = "Wird mein Auto unterstützt?";
 $faq_q3 = "What about privacy issues? ";
 $faq_q4 = "Is my car supported?";
 $faq_q5 = "I’m a developer and I’m very interested in this project. Is there a way to  make further implementations?";
@@ -511,7 +511,18 @@ $faq_q6 = "When will enviroCar be published?";
 $faq_a1 = 'Es gibt zahlreiche OBD2 Adapter in unterschiedlichen Preisen (siehe Liste <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a>). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir nicht für das Funktionieren einer Smartphone / Adapter Kombination garantieren können. Die enviroCar Community pflegt <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a> eine Matrix von getesteten Kombinationen. Um diese Matrix weiter zu pflegen, bitten wir Sie uns Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
 <br/><br/>
 WICHITG für die Nutzung von OBD2 Adaptern in Deutschland: Die Nutzung von Adaptern ohne ECE Zertifikat während der Fahrt ist nicht gestattet. Derzeit ist lediglich der DriveDeck Sport (W4) Adapter mit einem solchen Zertifikat ausgestattet.';
-$faq_a2 = "The use of OBD2 interfaces was introduced at different times, depending on the country and the vehicle type. In the US all cars built on 01.01.1996 or later have it. In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles it was supported beginning on 01.01.2003. For trucks the OBD2 support started on 01.01.2005.";
+$faq_a2 = 'Heute wird das Vorhandensein der OBD2 Schnittstelle im Auto per Gesetzt vorgeschrieben. Abhängig vom Land und Fahrzeugtyp wurde OBD2 zu unterschiedlichen Zeiten Pflicht:
+<br/>
+In den USA sind folgende Fahrzeuge mit einer OBD2 Schnittstelle ausgestattet:
+<ul>
+<li>alle Autos mit Baujahr 01.01.1996 oder später</li>
+</ul>
+In Europa sind folgende Fahrzeuge mit einer OBD2 Schnittstelle ausgestattet:
+<ul>
+<li>alle Benzin Autos mit Baujahr 01.01.2001 und EURO-3 Norm (oder besser)</li>
+<li>alle Diesel Autos mit Bauhjar 01.01.2003 oder später</li>
+<li>alle LKWs mit Baujahr 01.01.2005 oder später</li>
+</ul>';
 $faq_a3 = "The data which is uploaded to the enviroCar server is anonymized. I.e. it doesn’t contain  a direct reference to the car or the contributor.  I.e. any data download doesn’t contain any references to you.
 Furthermore you can opt to cut the first and the last minutes of the tracks as to obfuscate the start and destination of your routes, which makes it hard to identify your tracks by  linking it to your home or business address.
 
@@ -579,7 +590,7 @@ $terms_local_track_data_text = 'Im Rahmen der von Ihnen durchgeführten Messfahr
 </ul>
 Diese Daten werden intern über eine verschlüsselte Kennung mit Ihren Benutzerdaten gekoppelt, So dass Sie sowohl in der enviroCar App, als auch in der WebSite in der Lage sind, Ihre eigenen Daten zu betrachten. Die Kommunikation zwischen der enviroCar App, dem enviroCar Server und der enviroCar WebSite ist verschlüsselt, so dass Dritte keinen Zugang zu Ihren Daten haben.';
 $terms_remote_track_data_heading = "Hochladen von Daten auf den enviroCar Server";
-$terms_remote_track_data_text = 'Mit dem Hochladen von Daten aus der enviroCar App  auf den  enviroCar Server  (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (OBDL) von Dritten genutzt werden dürfen.</br>
+$terms_remote_track_data_text = 'Mit dem Hochladen von Daten aus der enviroCar App  auf den  enviroCar Server  (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (ODbL) von Dritten genutzt werden dürfen.</br>
 Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Benutzer-Information mehr. In den Einstellungen der enviroCar App haben Sie zudem die Möglichkeit, Beginn und Ende der Tracks zu beschneiden, so dass  der Start- und Zielort Ihrer Tracks verschleiert sind.</br></br>
 <h2 class="featurette-heading">Lizenzierung der Gemessenen Daten</h2>       
 Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (ODbL)  genutzt werden. Das heißt:</br>
