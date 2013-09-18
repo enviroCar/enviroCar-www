@@ -501,7 +501,7 @@ $asADeveloperText = "You’d like to develop an application and use the enviroCa
 
 You’re invited to join the enviroCar developer community. You may subscribe to the enviroCar@52north.org mailing list as to get the latest infos about the development process and upcoming features.";
 $about_faqHead = "Frequently Asked Questions";
-$faq_q1 = "Which OBD2 adapters are compatible with enviroCar?";
+$faq_q1 = "Welche OBD2 adapter sind kompatibel mit enviroCar?";
 $faq_q2 = "Is my car supported?";
 $faq_q3 = "What about privacy issues? ";
 $faq_q4 = "Is my car supported?";
