@@ -434,12 +434,12 @@ Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_
 $noDescription = "No description available.";
 $map = "Map";
 $details = "Details";
-$hotspot_titel = "CO2 Hot Spots Münster";
-$hotspot_description = "Hot Spots Analysis of CO2 values gathered by enviroCar users.";
-$speed_titel = "Speed tracks";
-$speed_description = "enviroCar tracks showing the measured speed.";
-$speedcomparison_titel = "Speed comparison";
-$speedcomparison_description = "Speed difference between OpenStreetMap max-speed and enviroCar averaged speed.";
+$hotspot_titel = "enviroCar Hot-Spot Analysis";
+$hotspot_description = "This map presents a CO2 hot-spot analysis for the city of Münster. Red dots indicate regions where cars produced significantly high values. Blue dots are regions with low values.";
+$speed_titel = "enviroCar Speed Map";
+$speed_description = "This map provides an overview on all enviroCar tracks. It show the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. This map can be accessed though the ArcGIS app on your tablet pc or your smart phone if you look for enviroCar.";
+$speedcomparison_titel = "Speed Analysis";
+$speedcomparison_description = "This map shows the difference between the measured average speed data from enviroCar and the speed limits as stored in the Openstreetmap database. It indicates those street segments where slow moving traffic occurs frequently. This map was produced by students of the Institute for Geoinformatics at Münster University (2013/07).";
 
 //dataaccess.php
 $viaAPIHead = "Via the API";
@@ -505,9 +505,9 @@ $faq_q3 = "What about privacy issues?";
 $faq_q4 = "I’m a developer and I’m very interested in this project. Is there a way to  make further implementations?";
 $faq_q5 = "When will enviroCar be published?";
 
-$faq_a1 = 'There are several OBD2 adapters available in different price ranges (see a list <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">here</a>). You can buy those adapters on eBay, Amazon, or other shops. Currently, enviroCar is tested with the ELM327 protocol, e.g. used by the low-cost <a href="http://www.amazon.de/Tinxi-Bluetooth-Interface-Diagnose-Testger%C3%A4t/dp/B004YG7J2I/ref=sr_1_7?ie=UTF8&amp;qid=1376651235&amp;sr=8-7&amp;keywords=ELM327+obd2" target="_blank">Tinxi OBD2 adapter</a>, as well as the proprietary Drivedeck protocol, used by the Drivedeck W4 adapter. However, please be aware, that we’re not able to guarantee, that all combinations of adapters / car types / smartphones are working well.  Please check the Web for known compatibility problems. 
+$faq_a1 = 'There are several OBD2 adapters available in various price ranges (see a list here). You can buy those adapters on eBay, Amazon, or other shops. Currently, enviroCar is tested with the ELM327 protocol, e.g. used by the low-cost Tinxi OBD2 adapter, as well as the proprietary Drivedeck protocol, used by the Drivedeck W4 adapter. However, please be aware, that we’re not able to guarantee, that all combinations of adapters / car types / smartphones are working well. Please check the Web for known compatibility problems.
 <br/><br/>
-A very important fact about using OBD2 adapters in Germany is that it’s only allowed to use ECE-certified OBD2 adapters. While driving your car, the usage of adapters without such a certificate is prohibited. Currently the Drivedeck W4 adapter is the only one, which is equipped with all certificates required in Germany. Please check out the national regulations as to be sure that the adapter of your choice can be used without restrictions in your country.';
+A very important fact about OBD2 adapters in Germany is that - while driving your car -  the usage of adapters without certain ECE certificates is prohibited. Currently the Drivedeck W4 adapter is the only one, which is equipped with all certificates required in Germany. Please check out the national regulations as to be sure that the adapter of your choice can be used without restrictions in your country.    ';
 $faq_a2 = 'The presence of an OBD2 interface within today’s cars is mandated by law in the US as well as Europe. Depending on country and vehicle type, OBD2 was introduced at different times.<br/>
 In the US:
 <ul>
@@ -547,6 +547,15 @@ $route_dropup_speed = "speed";
 $route_requestFuelPrice = "Requesting current fuel prices...";
 $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
+
+//terms
+$terms_general = "";
+$terms_cookies_heading = "";
+$terms_cookies_text = "";
+$terms_local_track_data_heading = "";
+$terms_local_track_data_text = "";
+$terms_remote_track_data_heading = "";
+$terms_remote_track_data_text = "";
 
 //temporary
 $under_construction = "This website is currently under construction..";
