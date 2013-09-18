@@ -51,6 +51,21 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	
     function getAvatar(name, size){
       return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
+    }    
+    
+    function addTrack(name, id){
+      $('#tracks').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a></li>');
+    }
+    
+    function addTracks(data){
+          if(data.tracks.length > 0){
+            for(i = 0; i < data.tracks.length; i++){
+            	var track = data.tracks[i];
+            	addTrack(track.name, track.id);
+            }
+        }else{
+          $('#tracks').append("<? echo $noroutesavailable ?>");
+        }
     }
 
     $.get('./assets/includes/users.php?userActivities', function(data) {
@@ -132,9 +147,11 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           if(data.tracks != null){
             numberofTracks = data.tracks.length;
             addOverallStatistics("Tracks", numberofTracks);
+            addTracks(data);
           }
 
-      }
+      }    		
+      $('#loadingIndicator_tracks').hide();
     });
 
     function convertToLocalTime(serverDate) {
@@ -502,7 +519,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     </div>
 </div>  
 	
-	<div class="container rightband">
+	<!--div class="container rightband">
 	<div class="row-fluid">
 			<div style="float:right"></div>
 		<div style="clear: all">
@@ -522,7 +539,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
        </div>
       </div>
 
-	</div>	
+	</div-->	
   
   
 	<div class="container rightband">
@@ -531,9 +548,9 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 		<div style="clear: all">
 		</div>
         <div class="span6">        
-          <h2><?php echo $dashboard_recent_avtivities; ?></h2>
-          <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-		      <ul id="recentActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
+          <h2 class="featurette-heading"><?php echo $dashboard_my_tracks; ?></h2>
+          <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+		      <ul id="tracks" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
 		      </ul>
         </div>
       </div>
@@ -548,7 +565,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 			<div style="clear: all">
 			</div>
 			<div class="span6">
-				<h2> <? echo $friends ?></h2>
+				<h2 class="featurette-heading"> <? echo $friends ?></h2>
 				<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
 				</div>
 				<ul id="friendsList" style="max-height: 400px; overflow-y: auto;">	
@@ -587,7 +604,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 		<div style="clear: all">
 		</div>
 		<div class="span6">
-			<h2 style="display: inline"><? echo $groups; ?></h2>
+			<h2 class="featurette-heading" style="display: inline"><? echo $groups; ?></h2>
 			<div id="create_group" style="float: right">
 				<a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a>
 			</div>

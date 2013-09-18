@@ -51,6 +51,7 @@ $dashboard_overview="Übersicht";
 $dashboard_friend_activities="Aktivitäten deiner Freunde";
 $dashboard_group_activities="Aktivitäten der Gruppe";
 $dashboard_activities_of="Aktivitäten von ";
+$dashboard_my_tracks="Meine Fahrten";
 
 //function registration
 $freg_invalidemail="Ungültige Email";
@@ -179,7 +180,7 @@ $thematic_information='Thematische Karten: Klicken Sie auf “Thematische Karten
 $created ="Erstellte";
 $yourroutes = "Deine Routen";
 $yourstatistics = "Deine Statistiken";
-$noroutesavailable = "Keine Routen verfügbar";
+$noroutesavailable = "Keine Fahrten verfügbar";
 
 $profile = "Profil";
 $dashboard = "Mein Profil";
