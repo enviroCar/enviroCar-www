@@ -400,28 +400,6 @@ $visualization_multitude="Darüber hinaus kann die Auswertung der Messdaten Deta
 $GE_visualization="Darstellung der Geschwindigkeitswerte in Google Earth";
 $multitude_possibilities="Du bist somit in der Lage die Daten deiner eigenen Fahrt zu erforschen. Es gibt eine Vielzahl an Analyse- und Visualisierungsmöglichkeiten. Erforsche die Welt deiner eigenen Messdaten!";
 
-$faq_q1 = "Wie funktioniert es?";
-$faq_q2 = "Wie kann man starten? Was wird benötigt?";
-$faq_q3 = "Welche OBD2-Adapter sind mit enviroCar kompatibel?";
-$faq_q4 = "Wird mein Auto unterstützt?";
-$faq_q5 = "Wozu brauchen wir die Unterstützung von Indiegogo?";
-$faq_q6 = "Wie steht es mit Privatsphäre und Sicherheit?";
-$faq_q7 = "Ich bin Entwickler und sehr interessiert am Projekt. Ist es möglich, weitere Programmteile beizutragen? ";
-$faq_q8 = "Wie geht es weiter?";
-$faq_q9 = "Wann wird enviroCar veröffentlicht?";
-$faq_q10 = "Welche Länder werden beliefert?";
-
-$faq_a1 = "Mit Hilfe eines OBD2-Adapters empfängt enviroCar die Daten deines Autos, indem dein Smartphone über Bluetooth mit dem Adapter verbunden wird. Die Smartphone-App sendet die Daten zum Server, wo sie analysiert und verarbeitet werden. Die Daten können sowohl in der App als auch auf der Website betrachtet werden.";
-$faq_a2 = "Stecke den OBD2-Adapter in den OBD2-Anschluss deines Autos. Lade die App herunter und installiere sie, verbinde sie mit dem Adapter und du kannst ein Teil von enviroCar werden.";
-$faq_a3 = "Es gibt viele verschiedene OBD2-Adapter in unterschiedlichen Preisklassen. Sie können unter anderem auf eBay oder Amazon erworben werden. Bitte bedenke, dass es einige Modelle gibt, die nicht für enviroCar funktionieren, also achte bitte auf Rezensionen. Ein wichtiger Punkt für den Einsatz von OBD2-Adaptern in Deutschland: Nur OBD2-Adapter mit dem CE-Zertifikat dürfen verwendet werden. Es ist verboten, nicht zertifizierte Adapter während einer Autofahrt zu verwenden. Wenn du sichergehen willst, dass du einen geeigneten Adapter hast, kontaktiere uns oder unterstütze uns mit 199€ (enviroCar device (early bird)) auf Indiegogo, was den richtigen Adapter beinhaltet.";
-$faq_a4 = "OBD2-Anschlüsse wurden zu unterschiedlichen Zeiten eingeführt, je nach Land und Fahrzeugtyp. In den USA sind sie in allen Fahrzeugen vorhanden, die am 01.01.1996 oder später gebaut wurden. In Europa sind alle Autos mit einem Otto-Motor (Benzin) seit dem 01.01.2001 und der EURO-3 Norm damit ausgestattet. Diesel-Fahrzeuge haben den Anschluss seit dem 01.01.2003 und LKWs seit dem 01.01.2005.";
-$faq_a5 = "Mit Hilfe von Indiegogo wollen wir 10.000€ für unsere zukünftige Arbeit sammeln. Mit deiner Spende kannst du die Zukunft des enviroCar-Projekts unterstützen. Wir wollen langfristig die Möglichkeit anbieten, deine Daten und andere zu betrachten und die Städte smarter zu machen. Hilf uns, damit Studenten und andere Leute weiter an dem Projekt arbeiten und es verbessern können.";
-$faq_a6 = "Natürlich achten wir auf Privatsphäre. All deine Daten werden anonymisiert, damit niemand sensible, spezifische oder personenbezogene Daten über deine Nutzung sammeln kann. Deine Sicherheit ist ein sehr wichtiges Thema für uns und du musst dir keine Sorgen darüber machen, wenn du enviroCar benutzt.";
-$faq_a7 = "enviroCar ist eine offene Community für jedermann. Sie können Daten hoch- oder herunterladen und somit für Ihre eigenen statistischen Analysen nutzen. Unser Server stellt die folgenden Rohdaten zur Verfügung: Gaspedalposition, Umdrehungen pro Minute, Geschwindigkeit, Kraftstoffart, Kraftstoffverbrauch, Ansaugdruck, Ansaugtemperatur, Luftmassenmessdaten, Motorlast, Fahrzeugtyp und Messzeitpunkt. <br> Die enviroCar API bietet Ihnen darüber hinaus alle wichtigen Funktionalitäten: <a href='https://github.com/enviroCar/enviroCar-server/wiki'>https://github.com/enviroCar/enviroCar-server/wiki</a> <br> Die Daten sind als JSON Dateien oder Linked Data öffentlich verfügbar, wodurch sich die enviroCar Daten in zahlreichen Services nutzen lassen. <br> Natürlich sind Sie herzlich dazu eingeladen, mit dem enviroCar Team in Kontakt zu treten und Ihre Vorschläge, Gedanken und Ideen zu unserem Projekt mit uns zu diskutieren. <br> Da enviroCar ein Open Source Projekt ist, finden Sie ALLES auf github: <a href='https://github.com/enviroCar'>https://github.com/enviroCar</a> <br> Nun liegt es an Ihnen, weitere Komponenten zu implementieren! :)";
-$faq_a8 = "Für unser Ziel, deinen Ort ein bisschen smarter zu machen, bist Du die wichtigste Person. Die nächsten Schritte sind unter anderem die weitere Entwicklung von neuen Features und der Ausbau der enviroCar-Community.";
-$faq_a9 = "Wir arbeiten hart am enviroCar-System. Bisher haben wir einen ersten Prototyp für die App und die Website entwickelt. Die weitere Arbeit beinhaltet die Entwicklung von neuen Features und nützlichen Funktionen für dich. EnviroCar wird bald veröffentlicht. Bitte hab Geduld und achte auf unsere Updates.";
-$faq_a10 = "Wir liefern in alle Länder.";
-
 $phen_header = 'Was bedeuten die Phänomene?'; 
 $phen_description ='<p>
 <b>MAF (Mass air flow)</b><br>
@@ -530,9 +508,9 @@ $faq_q4 = "Is my car supported?";
 $faq_q5 = "I’m a developer and I’m very interested in this project. Is there a way to  make further implementations?";
 $faq_q6 = "When will enviroCar be published?";
 
-$faq_a1 = "There are quite a lot OBD2 adapters for using enviroCar in different price ranges. You can buy these adapters on eBay, Amazon or other shops. currently enviroCar supports  the ELM327 protocol and the proprietary Drivedeck protocoll which is used  by the Drivedeck W4 adapter. However, please be aware, that we’re not able to guarantee, that all combinations of adapters / car types / smartphones are working well.  Please check 
-the web for known compatibility problems. 
-A very important fact about using OBD2 adapters in Germany is that it’s only allowed to use ECE-certified OBD2 adapters. While driving your car, the usage of adapters without such a certificate is prohibited. Currently the drivedeck W4 adapter is the only one, which is equipped with all certificates required in Germany. Please check out the national regulations as to be sure that the adaptor of your choice can be used without restrictions in your country.";
+$faq_a1 = 'Es gibt zahlreiche OBD2 Adapter in unterschiedlichen Preisen (siehe Liste <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a>). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir nicht für das Funktionieren einer Smartphone / Adapter Kombination garantieren können. Die enviroCar Community pflegt <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a> eine Matrix von getesteten Kombinationen. Um diese Matrix weiter zu pflegen, bitten wir Sie uns Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
+<br/><br/>
+WICHITG für die Nutzung von OBD2 Adaptern in Deutschland: Die Nutzung von Adaptern ohne ECE Zertifikat während der Fahrt ist nicht gestattet. Derzeit ist lediglich der DriveDeck Sport (W4) Adapter mit einem solchen Zertifikat ausgestattet.';
 $faq_a2 = "The use of OBD2 interfaces was introduced at different times, depending on the country and the vehicle type. In the US all cars built on 01.01.1996 or later have it. In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles it was supported beginning on 01.01.2003. For trucks the OBD2 support started on 01.01.2005.";
 $faq_a3 = "The data which is uploaded to the enviroCar server is anonymized. I.e. it doesn’t contain  a direct reference to the car or the contributor.  I.e. any data download doesn’t contain any references to you.
 Furthermore you can opt to cut the first and the last minutes of the tracks as to obfuscate the start and destination of your routes, which makes it hard to identify your tracks by  linking it to your home or business address.
@@ -564,7 +542,7 @@ $route_baseLayer = "Basis Karte";
 
 //terms
 $terms_general = 'Durch die Bestätigung der Nutzungsbedingungen erklären Sie sich mit folgenden Regelungen einverstanden:</br></br>
-Umgang mit Nutzer-Daten</br>
+<h2 class="featurette-heading">Umgang mit Nutzer-Daten</h2>
 Bei der Benutzung der enviroCar Webseite dürfen folgende Daten gesammelt und für einen limitierten Zeitraum gespeichert werden:</br>
 <ul>
 <li>die IP-Adresse des Nutzers im Zugangs- und Fehler-Protokoll des enviroCar Servers</li>
@@ -603,7 +581,7 @@ Diese Daten werden intern über eine verschlüsselte Kennung mit Ihren Benutzerd
 $terms_remote_track_data_heading = "Hochladen von Daten auf den enviroCar Server";
 $terms_remote_track_data_text = 'Mit dem Hochladen von Daten aus der enviroCar App  auf den  enviroCar Server  (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (OBDL) von Dritten genutzt werden dürfen.</br>
 Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Benutzer-Information mehr. In den Einstellungen der enviroCar App haben Sie zudem die Möglichkeit, Beginn und Ende der Tracks zu beschneiden, so dass  der Start- und Zielort Ihrer Tracks verschleiert sind.</br></br>
-Lizenzierung der Gemessenen Daten</br></br>        
+<h2 class="featurette-heading">Lizenzierung der Gemessenen Daten</h2>       
 Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (ODbL)  genutzt werden. Das heißt:</br>
 Es ist erlaubt:
 <ul>
