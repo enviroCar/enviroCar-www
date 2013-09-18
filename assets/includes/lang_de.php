@@ -450,12 +450,13 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" tar
 //mapsandstatistics.php
 $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
-$hotspot_titel = "CO2 Hot Spots Münster";
-$hotspot_description = "Hot Spots Analyse der CO2 Werte gesammelt von enviroCar Nutzern.";
-$speed_titel = "Geschwindigkeit";
-$speed_description = "Auf dieser Karte werden Geschwindigkeitswerte von enviroCar Strecken angezeigt.";
-$speedcomparison_titel = "Geschwindigkeitsvergleich";
-$speedcomparison_description = "Geschwindigkeitsvergleich zwischen OpenStreetMap Maximalgeschwindigkeit und von enviroCar ermittelten Durchschnittswerten der Geschwindigkeit.";
+$hotspot_titel = "enviroCar Hot-Spot Analyse";
+$hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster. Rote Punkte signalisieren Regionen mit  signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen Werten an.";
+$speed_titel = "enviroCar Tracks";
+$speed_description = "Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.";
+$speedcomparison_titel = "Geschwindigkeits-Analyse";
+$speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetmap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckeneabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
+Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster. 2013/07.";
 
 //dataaccess.php
 $viaAPIHead = "Über die API";
@@ -559,6 +560,58 @@ $route_dropup_speed = "Geschwindigkeit";
 $route_requestFuelPriceStart = "Frage aktuelle Benzinpreise ab...";
 $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
+
+//terms
+$terms_general = 'Durch die Bestätigung der Nutzungsbedingungen erklären Sie sich mit folgenden Regelungen einverstanden:</br></br>
+Umgang mit Nutzer-Daten</br>
+Bei der Benutzung der enviroCar Webseite dürfen folgende Daten gesammelt und für einen limitierten Zeitraum gespeichert werden:</br>
+<ul>
+<li>die IP-Adresse des Nutzers im Zugangs- und Fehler-Protokoll des enviroCar Servers</li>
+</ul>
+
+Bei der Registrierung und Nutzung der enviroCar-Dienste dürfen folgende Informationen gesammelt und so lange gespeichert werden, bis Sie als Nutzer Ihren Benutzernamen wieder löschen:</br>
+<ul>
+<li>Der selbst gewählte Benutzername</li>
+<li>Die angegebene E-Mail-Adresse</li>
+<li>Das angegebene Passwort</li>
+<li>Die Benutzernamen der Personen, die Sie als Freunde hinzugefügt haben</li>
+<li>Die Namen der Gruppen, deren Mitglied Sie geworden sind</li>
+<li>Weitere freiwillige Angaben, sofern Sie diese gemacht haben: 
+<ul>
+<li>Vorname, Nachname</li>
+<li>Land und Ort, in dem sie leben</li>
+<li>Ihre Webseite</li>
+<li>Ihr Geschlecht</li>
+<li>Die bevorzugte Sprache für die Nutzung der enviroCar Webseite</li>
+</ul>
+<li>Weitere Informationen, die Sie ggf als Freitextfeld eingegeben haben</li>
+</ul>
+
+Jeder Benutzer kann seinen Benutzernamen und alle Daten, die damit zusammen hängen  (siehe oben)  jederzeit löschen. Die als Open Data hochgeladenen und öffentlich verfügbaren Tracks werden hierbei allerdings nicht gelöscht. Sofern auch die Tracks des Nutzers gelöscht werden sollen, muss dies vor der Löschung des Benutzernamens geschehen, da dieser Zusammenhang später nicht mehr herstellbar ist. Weitere Hinweise zum Löschen der Tracks und des Benutzernamens finden sich in der FAQ-Liste. ';
+$terms_cookies_heading = "Nutzung von Cookies";
+$terms_cookies_text = "Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies einverstanden. Der Cookie speichert eine Kombination aus Zahlen und Buchstaben, zur Identifikation des Nutzers im Rahmen einer  Browser-Sitzung. Diese Cookies werden ausschließlich verwendet, um das Einloggen für den Service und die Sprachauswahl zu unterstützen. Unsere Cookies sind nur für die Dauer einer (1) Browsersitzung gültig. Dadurch ist es möglich, dass die enviroCar Webseite Sie nach dem Logout und Neustart des Browsers nicht wiedererkennt.";
+$terms_local_track_data_heading = "Speicherung von Daten während der Fahrt";
+$terms_local_track_data_text = 'Im Rahmen der von Ihnen durchgeführten Messfahrten (nach dem Drücken des START-Knopfes bis zum Drücken des STOP Knopfes) werden folgende Daten aufgenommen und gespeichert:
+<ul>
+<li>Ort der Messung</li>
+<li>Datum und Uhrzeit der Messung</li>
+<li>Gemessene Daten aus der Motorsteuerung Ihres Fahrzeuges, wie beispielsweise Geschwindigkeit, Umdrehungen pro Minute, Gaspedal-Stellung</li> 
+<li>Daraus abgeleitete Daten, wie beispielsweise Kraftstoffverbrauch, CO2-Emission</li>
+</ul>
+Diese Daten werden intern über eine verschlüsselte Kennung mit Ihren Benutzerdaten gekoppelt, So dass Sie sowohl in der enviroCar App, als auch in der WebSite in der Lage sind, Ihre eigenen Daten zu betrachten. Die Kommunikation zwischen der enviroCar App, dem enviroCar Server und der enviroCar WebSite ist verschlüsselt, so dass Dritte keinen Zugang zu Ihren Daten haben.';
+$terms_remote_track_data_heading = "Hochladen von Daten auf den enviroCar Server";
+$terms_remote_track_data_text = 'Mit dem Hochladen von Daten aus der enviroCar App  auf den  enviroCar Server  (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (OBDL) von Dritten genutzt werden dürfen.</br>
+Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Benutzer-Information mehr. In den Einstellungen der enviroCar App haben Sie zudem die Möglichkeit, Beginn und Ende der Tracks zu beschneiden, so dass  der Start- und Zielort Ihrer Tracks verschleiert sind.</br></br>
+Lizenzierung der Gemessenen Daten</br></br>        
+Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (ODbL)  genutzt werden. Das heißt:</br>
+Es ist erlaubt:
+<ul>
+<li style="list-style-type: none;">Die Daten dieser Datenbank zu kopieren und zu verteilen, neue Daten aus dieser Datenbank abzuleiten.</li>
+</ul>    
+Dabei ist Folgendes einzuhalten:
+<ul>
+<li style="list-style-type: none;">Bei der Weitergabe dieser Daten an Dritte ist anzugeben, woher die Daten stammen (Benennung der Quelle in der Form “Quelle: 52°North enviroCar Server”). Jede kopierte, veränderte oder ergänzte Fassung der Datenbank muss selbst ebenfalls nach Maßgabe der ODbL zugänglich gemacht werden. Wenn die abgeleitete Datenbank verteilt wird, darf sie nicht durch DRM-Maßnahmen (Digital Rights Management) geschützt werden, sofern sie nicht gleichzeitig auch als DRM-freie Version verfügbar ist.</li>
+</ul>';
 
 //temporary
 $under_construction = "Die WebSite wird gerade neu gestaltet..";
