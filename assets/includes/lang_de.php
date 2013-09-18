@@ -438,8 +438,10 @@ $speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mi
 Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster. 2013/07.";
 
 //dataaccess.php
-$viaAPIHead = "Über die API";
-$viaAPIText = 'Der enviroCar-Datenserver bietet für Datenabfragen eine REST-Schnittstelle an. Mehr informationen findest Du hier: <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">enviroCar-server API.</a>';
+$viaAPIHead = "Nutzung der enviroCar API";
+$viaAPIText = 'Die REST API des enviroCar Servers ist offen zugänglich und klar definiert. Sie erlaubt es flexibel Daten herunterzuladen, z.B. durch räumliches und zeitliches Filtern. Via HTTP kann z.B. auf Tracks, Messungen und Statistiken zugegriffen werden. Die Daten sind abgesichert, und daher ist für die Abfrage ein Login über HTTP Authorization notwendig.
+<br/><br/>
+Ein detaillierte Beschreibung der enviroCar Server API kann <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">hier</a> gefunden werden.';
 $viaDownloadHead = "Als Download";
 $viaDownloadText = "Keine Beschreibung verfügbar.";
 
@@ -503,10 +505,10 @@ You’re invited to join the enviroCar developer community. You may subscribe to
 $about_faqHead = "Häufig gestellte Fragen";
 $faq_q1 = "Welche OBD2 adapter sind kompatibel mit enviroCar?";
 $faq_q2 = "Wird mein Auto unterstützt?";
-$faq_q3 = "What about privacy issues? ";
-$faq_q4 = "Is my car supported?";
-$faq_q5 = "I’m a developer and I’m very interested in this project. Is there a way to  make further implementations?";
-$faq_q6 = "When will enviroCar be published?";
+$faq_q3 = "Wie wird der Datenschutz berücksichtigt?";
+$faq_q4 = "Ich bin ein Entwickler und interessiert an enviroCar. Kann ich zusätzliche Informationsprodukte beisteuern?";
+$faq_q5 = "Wie kann ich als Entwickler zu den enviroCar Komponenten beitragen?";
+$faq_q6 = "Was ist der Entwicklungsstatus von enviroCar?";
 
 $faq_a1 = 'Es gibt zahlreiche OBD2 Adapter in unterschiedlichen Preisen (siehe Liste <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a>). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir nicht für das Funktionieren einer Smartphone / Adapter Kombination garantieren können. Die enviroCar Community pflegt <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a> eine Matrix von getesteten Kombinationen. Um diese Matrix weiter zu pflegen, bitten wir Sie uns Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
 <br/><br/>
@@ -523,17 +525,16 @@ In Europa sind folgende Fahrzeuge mit einer OBD2 Schnittstelle ausgestattet:
 <li>alle Diesel Autos mit Bauhjar 01.01.2003 oder später</li>
 <li>alle LKWs mit Baujahr 01.01.2005 oder später</li>
 </ul>';
-$faq_a3 = "The data which is uploaded to the enviroCar server is anonymized. I.e. it doesn’t contain  a direct reference to the car or the contributor.  I.e. any data download doesn’t contain any references to you.
-Furthermore you can opt to cut the first and the last minutes of the tracks as to obfuscate the start and destination of your routes, which makes it hard to identify your tracks by  linking it to your home or business address.
-
-The communication between website/app and envirocar server is encrypted and only authorized users are able to connect the sensor data to a certain user. Only the users themselves are authorized to access their profile data (only the user name and the email address are mandatory). 
-
-We’re quite sure that this method is a very appropriate answer to your privacy concerns.  However, there is no means to achieve a 100% level of security.";
-$faq_a4 = "The use of OBD2 interfaces was introduced at different times, depending on country and vehicle type.	In the USA all cars built on 01.01.1996 or later have it. In Europe, all new cars with an Otto-motor (using benzine) from 01.01.2001 and with the EURO-3 Norm have the OBD2 interface. For diesel vehicles it was supported beginning on 01.01.2003. For trucks the OBD2 support started on 01.01.2005";
-$faq_a5 = "enviroCar is a community, which is open to everyone. You can download/upload data and use it for your own purpose of statistical analysis. enviroCar offers an API, especially created for this purpose: http://envirocar.github.io/enviroCar-server/
-The data is publicly available as JSON and as Linked Data, which makes it possible to include enviroCar's data in any services.
-You are welcome to get in contact with us discussing your suggestions, thoughts and ideas. enviroCar is fully open source and all components are available on github: https://github.com/enviroCar. We’d be happy to see you as a contributor! ";
-$faq_a6 = "Currently the project is open to beta testers, i.e. people who are ready to accept, that we’re still in a development phase, where we have to change the software continuously as to get it ready for public use.  And we need the critical feedback of beta testers in this phase as to get a really cool platform up and running. We expect to get a stable release of all components available to the public by end of this year (2013).";
+$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passort authentifizieren. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.
+</br></br>
+Weiterhin erlaubt die App die Verschleierung von Start und Ziel Ihrer Tracks. Ist diese Funktion in der App aktiviert so werden die ersten und letzten 250 Meter eines Tracks abgeschnitten (bzw. die erste und letzte Minute des Messvorgangs). So wird verhindert, dass Tracks mit bestimmten Addressen verbunden werden können.
+</br></br>
+Wir sind sicher, dass diese Maßnahmen eine angemessene Antwort auf Ihre Datenschutz Bedürfnisse sind. Nichtsdestotrotz kann mit keiner Web-basierten Anwendung eine 100 %ige Sicherheit garantiert werden.";
+$faq_a4 = 'enviroCar ist ein Community-basiertes Vorhaben. Jedermann ist eingeladen beizutragen! Die offene <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> erlaubt es Daten flexibel hoch- und herunterzuladen. Die Daten sind öffentlich als JSON und Linked Data öffentlich zugänglich und können so flexibel genutzt werden, um Informationsprodukte wie Karten oder statistische Analysen zu erzeugen.';
+$faq_a5 = 'Das enviroCar Team is dankbar für gute Ideen und Verbesserungsvorschläge! Ebenso heißen wir neue Entwickler als Beitragende willkommen und können immer ein paar weitere Hände gebrauchen. enviroCar ist vollständig open source - alle Komponenten sind verfügbar über unser <a href="https://github.com/enviroCar" target="_blank">Github Repository</a>. Kontaktiere das enviroCar Team falls du interessiert bist!';
+$faq_a6 = "Derzeit ist enviroCar in einer geschlossenen Beta Phase. Wir sind noch im Entwicklungsprozess und dabei die Software marktreif zu machen. Wir suchen nach Nutzern die bereit sind die Software zu testen und uns ihr Feedback mitzuteilen. Bitte lassen Sie uns wissen, falls Sie als Beta Tester agieren möchten!
+</br></br>
+Wir planen für Ende 2013 die Veröffentlichung einen stabilen Release";
 
 //route.php
 
