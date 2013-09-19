@@ -103,14 +103,14 @@ function echoActiveClassIfRequestMatches($requestUri)
 
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><img src="./assets/img/under_construction.png" style="height:50px" title="<?echo $under_construction;?>"/></li>
               <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $dashboard ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
             </ul>
 				<!-- The drop down menu -->
-				<ul class="nav pull-right">          	
+				<ul class="nav pull-right">
+              <li><img src="./assets/img/under_construction.png" style="height:50px; margin-right:5px;" title="<?echo $under_construction;?>"/></li>
           	<li class="dropdown">
           	<img src="./assets/img/settings.png" class="brand dropdown-toggle" data-toggle="dropdown" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
           	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">

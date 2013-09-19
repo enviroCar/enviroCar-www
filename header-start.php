@@ -106,13 +106,13 @@ if ($login_name != "" && $login_password != ""){
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><img src="./assets/img/under_construction.png" style="height:50px" title="<?echo $under_construction;?>"/></li>
             <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
             </ul>
 				<!-- The drop down menu -->
         		<ul class="nav pull-right">
+              <li><img src="./assets/img/under_construction.png" style="height:50px" title="<?echo $under_construction;?>"/></li>
           		<li><a href="./registration.php"><? echo $index_register;?></a></li>
           		<!--<li class="divider-vertical"></li>-->
           		<li class="dropdown">
