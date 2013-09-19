@@ -38,7 +38,7 @@ if ($login_name != "" && $login_password != ""){
     <meta name="author" content="root" >
 
     <!-- Le styles -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <style>
       body {
@@ -106,6 +106,7 @@ if ($login_name != "" && $login_password != ""){
           ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
+              <li><img src="./assets/img/under_construction.png" style="height:50px" title="<?echo $under_construction;?>"/></li>
             <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
