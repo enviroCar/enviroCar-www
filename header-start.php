@@ -38,7 +38,7 @@ if ($login_name != "" && $login_password != ""){
     <meta name="author" content="root" >
 
     <!-- Le styles -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <style>
       body {
@@ -112,6 +112,7 @@ if ($login_name != "" && $login_password != ""){
             </ul>
 				<!-- The drop down menu -->
         		<ul class="nav pull-right">
+              <li><img src="./assets/img/under_construction.png" style="height:50px" title="<?echo $under_construction;?>"/></li>
           		<li><a href="./registration.php"><? echo $index_register;?></a></li>
           		<!--<li class="divider-vertical"></li>-->
           		<li class="dropdown">

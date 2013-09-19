@@ -67,7 +67,7 @@ $mobile_app="Mobile Anwendung";
 $website="Webseite";
 $what_enviro="Was ist enviroCar?";
 $how_enviro="Wie funktioniert enviroCar?";
-$enviro_description=" Ein System, um Fahrzeugdaten in Verbindung mit deinem Smartphone und einem OBD2-Bluetooth-Adapter, auszulesen. Diese Daten tragen dazu bei deine Stadt mit Wissen zu bereichern.<br/>
+$enviro_description=" Ein System, um Fahrzeugdaten in Verbindung mit deinem Smartphone und einem OBD-II-Bluetooth-Adapter, auszulesen. Diese Daten tragen dazu bei deine Stadt mit Wissen zu bereichern.<br/>
 enviroCar ermöglicht es dein Fahrverhalten effizienter zu gestalten, indem es dir Einblick in Verbrauch und den verbundenen Kosten ermöglicht. Außerdem ist es
 ermöglicht deine Fahrstatistik mit Freunden zu vergleichen. Und Spaß daran zu haben zu sehen wer der effizienteste Fahrer ist. Des weiteren ist es möglich mit enviroCar deine
 gesammelten Daten der enviroCar Community beizutragen.<br/><br/> Aus diesen Daten gewinnt enviroCar Informationen über den Verkehr in deiner Stadt und den Emissionen auf unseren Straßen.
@@ -75,11 +75,11 @@ Die Informationen können z. B. Stadtplaner bei Angelegenheiten wie Ampelphasen 
 enviroCar ist die erste Plattform, die Informationen über die aktuellen Emissionen sammelt. Die Daten sind hochaktuell, da die Daten direkt während der Fahrt von den Fahrzeugsensoren erfasst werden.
 Trete der Community bei und helfe unsere Welt ein wenig klüger, den Verkehr etwas erholsamer und ökonomisches Fahrverhalten mit mehr Spass zu gestalten."; 
 $back_top="Nach Oben";
-$enviro_description_detail="enviroCar benutzt einen OBD2-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
-von den verschiedenen Fahrzeugsensoren kommen. Die enviroCar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD2 Adapter und kann Werte wie z.B. den
+$enviro_description_detail="enviroCar benutzt einen OBD-II-Adapter, den Du einfach nur in dein Auto anschließen musst, um Zugang zu den Daten zu bekommen, die 
+von den verschiedenen Fahrzeugsensoren kommen. Die enviroCar App, die auf deinem Smartphone installiert ist verbindet sich automatisch mit dem OBD-II Adapter und kann Werte wie z.B. den
 aktuellen Treibstoffverbrauch oder Drehzahlwerte auslesen. Auf diese Weise kann enviroCar deine Fahrtkosten und emittierten CO2 Werte ermitteln oder sogar
 den Lärmpegel, der von deinem Fahrzeug produziert wird, abschätzen.";
-$enviro_description_detail2="enviroCar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD2-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der enviroCar Webseite zu betrachten.";
+$enviro_description_detail2="enviroCar gewinnt die Daten des Fahrzeugs über eine Bluetooth Verbindung zwischen OBD-II-Adapter und Smartphone App. Die Smartphone Anwendung parst und analysiert die empfangenen Daten. Damit ist es Dir ermöglicht die Daten in der App und auf der enviroCar Webseite zu betrachten.";
 
 //Support_mobile_application
 $how_register="Wie kann ich mich mit meinem Smartphone registrieren?";
@@ -439,7 +439,7 @@ Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster. 
 
 //dataaccess.php
 $viaAPIHead = "Nutzung der enviroCar API";
-$viaAPIText = 'Die REST API des enviroCar Servers ist offen zugänglich und klar definiert. Sie erlaubt es flexibel Daten herunterzuladen, z.B. durch räumliches und zeitliches Filtern. Via HTTP kann z.B. auf Tracks, Messungen und Statistiken zugegriffen werden. Die Daten sind abgesichert, und daher ist für die Abfrage ein Login über HTTP Authorization notwendig.
+$viaAPIText = 'Die REST API des enviroCar Servers ist in anonymisierter Form offen zugänglich und klar definiert. Sie erlaubt es flexibel Daten herunterzuladen, z.B. durch räumliches und zeitliches Filtern. Via HTTP kann z.B. auf Tracks, Messungen und Statistiken zugegriffen werden. Die Daten sind dabei anonymisiert, d.h. die Referenzen zum Nutzer sind nicht zugänglich. Nutzer-spezifische Daten sind abgesichert, d.h. ihre Abfrage erfordert ein Login über HTTP Authorization.
 <br/><br/>
 Ein detaillierte Beschreibung der enviroCar Server API kann <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">hier</a> gefunden werden.';
 $viaDownloadHead = "Als Download";
@@ -460,7 +460,7 @@ Information, die geteilt wird, vermehrt sich dabei! Teilen Sie Ihre Daten mit al
 Verkehrsplaner, Wissenschaftler, die Industrie und viele Bürger sind sehr daran interessiert, eine Datenquelle aufzubauen, mit der diese und ähnliche Fragen beantwortet werden können. Wir bezeichnen enviroCar daher als eine Citizen Science Plattform, da Sie die offene Zusammenarbeit dieser Akteure bei der Bearbeitung wissenschaftlicher Fragestellungen unterstützt.
 <br/>
 Machen Sie mit! Helfen Sie, Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
-$about_aboutText2 = 'enviroCar ist eine Community Plattform für die Gewinnung von Umweltinformationen aus den Daten der Fahrzeugsensorik. Mit Hilfe eines OBD2-Adapters, Ihrem Android Smartphone und der enviroCar App können Sie auf die Daten der Sensorik Ihres Fahrzeuges zugreifen. Die App stellt Ihnen bereits viele Informationen über die Charakteristik ihres Fahrzeuges und über Ihren Fahrstil zur Verfügung.
+$about_aboutText2 = 'enviroCar ist eine Community Plattform für die Gewinnung von Umweltinformationen aus den Daten der Fahrzeugsensorik. Mit Hilfe eines OBD-II-Adapters, Ihrem Android Smartphone und der enviroCar App können Sie auf die Daten der Sensorik Ihres Fahrzeuges zugreifen. Die App stellt Ihnen bereits viele Informationen über die Charakteristik ihres Fahrzeuges und über Ihren Fahrstil zur Verfügung.
 <br/> 
 Sie haben die Möglichkeit, ihre Daten anonymisiert auf den enviroCar Server zu laden, wo sie als offene Daten für die Citizen Science Community von enviroCar zur Verfügung stehen.
 <br/>
@@ -474,11 +474,11 @@ Die enviroCar Website ermöglicht Ihnen
 $about_aboutText3 = "enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Sie können diese Adapter auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden. Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.";
 $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "As a Citizen (Scientist)";
-$asACitizenText = "All you need to join the community is a Bluetooth OBD2 Adapter and an Android Smart Phone.
+$asACitizenText = "All you need to join the community is a Bluetooth OBD-II Adapter and an Android Smart Phone.
 
 There are many OBD-II adapters on the market and their prices range from about 18 EUR (23 USD) up to 150 EUR (200 USD). The OBD-II community has a lot of experience with these adapters, and theoretically most of them should work fine (take a look >here< for more details). Please be aware that national laws require products to have appropriate certificates (CE, ECE in Europe). Unfortunately most of these adapters are sold without such certificates. 
 As for the European regulations: currently the only adapter which is legaly usable while driving is the Drivedec W4 adapter.
-Plug in the adapter to the OBD2 socket within your car (as for the position you can check the web for your car type and OBD2) and pair it with your smart phone following the instructions of the adapter. 
+Plug in the adapter to the OBD-II socket within your car (as for the position you can check the web for your car type and OBD-II) and pair it with your smart phone following the instructions of the adapter. 
 
 The enviroCar App is available for Android 2.3 to the latest version 4.2.2. To install the app on your smartphone, you can use the Play Store, which is installed on your Android smartphone. Just search for “enviroCar”, download and install this app on your smartphone and enjoy all the features of the enviroCar system.
 
@@ -503,29 +503,29 @@ $asADeveloperText = "You’d like to develop an application and use the enviroCa
 
 You’re invited to join the enviroCar developer community. You may subscribe to the enviroCar@52north.org mailing list as to get the latest infos about the development process and upcoming features.";
 $about_faqHead = "Häufig gestellte Fragen";
-$faq_q1 = "Welche OBD2 adapter sind kompatibel mit enviroCar?";
+$faq_q1 = "Welche OBD-II adapter sind kompatibel mit enviroCar?";
 $faq_q2 = "Wird mein Auto unterstützt?";
 $faq_q3 = "Wie wird der Datenschutz berücksichtigt?";
 $faq_q4 = "Ich bin ein Entwickler und interessiert an enviroCar. Kann ich zusätzliche Informationsprodukte beisteuern?";
 $faq_q5 = "Wie kann ich als Entwickler zu den enviroCar Komponenten beitragen?";
 $faq_q6 = "Was ist der Entwicklungsstatus von enviroCar?";
 
-$faq_a1 = 'Es gibt zahlreiche OBD2 Adapter in unterschiedlichen Preisen (siehe Liste <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a>). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir nicht für das Funktionieren einer Smartphone / Adapter Kombination garantieren können. Die enviroCar Community pflegt <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a> eine Matrix von getesteten Kombinationen. Um diese Matrix weiter zu pflegen, bitten wir Sie uns Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
+$faq_a1 = 'Es gibt zahlreiche OBD-II Adapter in unterschiedlichen Preisen (siehe Liste <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a>). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir nicht für das Funktionieren einer Smartphone / Adapter Kombination garantieren können. Die enviroCar Community pflegt <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a> eine Matrix von getesteten Kombinationen. Um diese Matrix weiter zu pflegen, bitten wir Sie uns Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
 <br/><br/>
-WICHITG für die Nutzung von OBD2 Adaptern in Deutschland: Die Nutzung von Adaptern ohne ECE Zertifikat während der Fahrt ist nicht gestattet. Derzeit ist lediglich der DriveDeck Sport (W4) Adapter mit einem solchen Zertifikat ausgestattet.';
-$faq_a2 = 'Heute wird das Vorhandensein der OBD2 Schnittstelle im Auto per Gesetzt vorgeschrieben. Abhängig vom Land und Fahrzeugtyp wurde OBD2 zu unterschiedlichen Zeiten Pflicht:
+WICHITG für die Nutzung von OBD-II Adaptern in Deutschland: Die Nutzung von Adaptern ohne ECE Zertifikat während der Fahrt ist nicht gestattet. Derzeit ist lediglich der DriveDeck Sport (W4) Adapter mit einem solchen Zertifikat ausgestattet.';
+$faq_a2 = 'Heute wird das Vorhandensein der OBD-II Schnittstelle im Auto per Gesetzt vorgeschrieben. Abhängig vom Land und Fahrzeugtyp wurde OBD-II zu unterschiedlichen Zeiten Pflicht:
 <br/>
-In den USA sind folgende Fahrzeuge mit einer OBD2 Schnittstelle ausgestattet:
+In den USA sind folgende Fahrzeuge mit einer OBD-II Schnittstelle ausgestattet:
 <ul>
 <li>alle Autos mit Baujahr 01.01.1996 oder später</li>
 </ul>
-In Europa sind folgende Fahrzeuge mit einer OBD2 Schnittstelle ausgestattet:
+In Europa sind folgende Fahrzeuge mit einer OBD-II Schnittstelle ausgestattet:
 <ul>
 <li>alle Benzin Autos mit Baujahr 01.01.2001 und EURO-3 Norm (oder besser)</li>
 <li>alle Diesel Autos mit Bauhjar 01.01.2003 oder später</li>
 <li>alle LKWs mit Baujahr 01.01.2005 oder später</li>
 </ul>';
-$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passort authentifizieren. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.
+$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passort authentifizieren. Um die Analyse der Daten und das Erzeugen von Informationsprodukten zu ermöglichen, können alles Tracks auch offen, allerdings in anonymisierter Form, heruntergeladen werden. Die Daten sind in diesem Fall anonymisiert - alle Referenzen zum Nutzer (Ihnen) sind nicht zugänglich. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt. Freunde sich per Passort authentifizieren. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.
 </br></br>
 Weiterhin erlaubt die App die Verschleierung von Start und Ziel Ihrer Tracks. Ist diese Funktion in der App aktiviert so werden die ersten und letzten 250 Meter eines Tracks abgeschnitten (bzw. die erste und letzte Minute des Messvorgangs). So wird verhindert, dass Tracks mit bestimmten Addressen verbunden werden können.
 </br></br>

@@ -13,10 +13,26 @@ if(!is_logged_in()){
 
 
 <script type="text/javascript">
-	$('#myTab a').click(function(e) {
+	$('#myTab').click(function(e) {
 		e.preventDefault();
 		$(this).tab('show');
-	})
+	});
+
+$(function(){ 
+    $('.nav-tabs a').on('click', function (e) {
+        e.preventDefault();
+        if(e.currentTarget.href.indexOf('#website') != -1){
+        	document.getElementById("title_image_container").style = 'display:block';
+        	document.getElementById("title_image").style.backgroundImage = 'url(./assets/img/image00.jpg)';
+        }else if(e.currentTarget.href.indexOf('#main') != -1){
+        	document.getElementById("title_image_container").style = 'display:block';
+        	document.getElementById("title_image").style.backgroundImage = 'url(./assets/img/image03.jpg)';
+        }else if(e.currentTarget.href.indexOf('#faqs') != -1){
+        	document.getElementById("title_image_container").style = 'display:none';
+        }
+        $(this).tab('show');
+    });  
+});
 </script>
 
 		<div class="tabbable" style="text-align: center;">
@@ -25,7 +41,13 @@ if(!is_logged_in()){
 				<li><a href="#website" data-toggle="tab"><strong><? echo $about_gettinginvolvedHead ?></strong></a></li>
 				<li><a href="#faqs" data-toggle="tab"><strong><? echo $about_faqHead ?></strong></a></li>
 			</ul>
-		</div>
+		</div>		
+		  <div id="title_image_container" class="container rightband">
+   		 <div class="row-fluid">
+      		<div id="title_image" class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/image03.jpg); height: 250px; width 100%; background-size: cover;">
+      		</div>
+      	</div>
+      </div>
 		<div class="tab-content">
 			<div class="tab-pane fade in active" id="main">
 				<div class="container leftband">
@@ -39,7 +61,7 @@ if(!is_logged_in()){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<p style="text-align: justify;">  
-								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" height="400" width="600" alt="The architecture of envirocar" />
+								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" height="400px" width="600px" alt="The architecture of envirocar" />
 								<br/>								
 							</p>	
 							<? echo $about_aboutText2 ?>

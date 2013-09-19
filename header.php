@@ -33,7 +33,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <meta name="author" content="root" >
 
     <!-- Le styles -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <style>
       body {
@@ -93,7 +93,7 @@ function echoActiveClassIfRequestMatches($requestUri)
           </button>
           <a class="brand" href="index.php" style="padding:0px;">
 		  <img src="./assets/img/enviroCar_logo_white_beta.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
-          </a>
+          </a>          
       <?
         if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
         }else{
@@ -109,7 +109,8 @@ function echoActiveClassIfRequestMatches($requestUri)
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
             </ul>
 				<!-- The drop down menu -->
-				<ul class="nav pull-right">          	
+				<ul class="nav pull-right">
+              <li><img src="./assets/img/under_construction.png" style="height:50px; margin-right:5px;" title="<?echo $under_construction;?>"/></li>
           	<li class="dropdown">
           	<img src="./assets/img/settings.png" class="brand dropdown-toggle" data-toggle="dropdown" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
           	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
