@@ -443,7 +443,7 @@ $hotspot_description = "This map presents a CO2 hot spot analysis for the city o
 $speed_titel = "enviroCar Speed Map";
 $speed_description = "This map provides an overview on all enviroCar tracks. It show the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. This map can be accessed though the ArcGIS app on your tablet pc or your smart phone if you look for enviroCar.";
 $speedcomparison_titel = "Speed Analysis";
-$speedcomparison_description = "This map shows the difference between the measured average speed data from enviroCar and the speed limits as stored in the Openstreetmap database. It indicates those street segments where slow moving traffic occurs frequently. This map was produced by students of the Institute for Geoinformatics at Münster University (2013/07).";
+$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database. It indicates street segments on which slow moving traffic occurs frequently. This map was produced by students of the Institue for Geoinformatics at Münster University (2013/07).";
 
 //dataaccess.php
 $viaAPIHead = "Using the enviroCar REST API";
@@ -464,7 +464,7 @@ $about_aboutText1 = 'Use <strong>enviroCar</strong> to investigate the impact yo
 </ul>
 Help <strong>build</strong> a database to help solve these kind of questions. 
 <br/><br/>
-With enviroCar we can all contribute to a <strong>new environmental information</strong> resource. Join the community and help make our world a little smarter.    ';
+With enviroCar we can all contribute to a <strong>new environmental information</strong> resource. Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<strong>enviroCar</strong> is a community based platform for gathering car-borne sensor data and producing environmental information. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The <strong>enviroCar app</strong> provides information about your car and your driving characteristics. Upload the data to the <strong>enviroCar server</strong> and contribute anonymized data to the open enviroCar citizen science community. The <strong>enviroCar website</strong> allows you to:
 <ul>
 <li>access your data,</li>
