@@ -412,7 +412,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   
 <div class="container rightband">
   <div class="row-fluid">
-    <div class="span3">
+    <div class="span4">
       <div class="well sidebar-nav">
       <h2 id="username"></h2>
 		<span style="text-align: center; display: block">
