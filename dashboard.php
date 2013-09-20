@@ -46,7 +46,13 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     }
 
     function addOverallStatistics(name, value){
-        $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+':  '+value);
+  
+		$.get('assets/includes/tracks.php', function(data) {
+						
+			 $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+':  '+value + '(' + data + ')');
+			
+		});  
+
     }
 	
     function getAvatar(name, size){
@@ -397,7 +403,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       }
     });
   }
-  
+
   $(function () {
     init();
 	});
@@ -415,11 +421,12 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     <br>
         <ul id="userInformation" class="nav nav-list" style="text-align:center"></ul>
         <ul id="badges" class="nav nav-list" style="text-align:center"></ul>
+
       </div><!--/.well -->
+       <ul id="overallStatistics">
+       </ul>
     </div><!--/span-->
 
-
-    <div id="nofriends" style="display:none" class="span3 offset2"><? echo $user.' '.$noFriendsYet ?></div>
     <div id="comparison" class="span5">
         <div id="chart_div" style="width: 700px; height: 400px;">   
           <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
