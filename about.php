@@ -61,7 +61,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<p style="text-align: justify;">  
-								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" height="400px" width="600px" alt="The architecture of envirocar" />
+								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" style="height:400px; width:600px;" alt="The architecture of envirocar" />
 								<br/>								
 							</p>	
 							<? echo $about_aboutText2 ?>
