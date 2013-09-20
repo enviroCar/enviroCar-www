@@ -56,6 +56,7 @@ $dashboard_friend_activities="Friend Activities";
 $dashboard_group_activities="Group Activities";
 $dashboard_activities_of="Activities of ";
 $dashboard_my_tracks="My Tracks";
+$dashboard_number_of_tracks="Number of Tracks";
 
 
 
@@ -256,7 +257,7 @@ $imprint_content = "Content";
 $imprint_contenttext = "The ".$envirocar." project team makes every effort to ensure that the material contained in its web site is current, complete and correct. Despite this, errors cannot be completely ruled out. ".$envirocar." does not accept liability for the relevance, accuracy or completeness of the information and material offered in its web site unless the mistake occurred intentionally or through gross negligence. This refers to any loss, additional costs or damage of any kind suffered as a result of any use of any material in this web site. <br/><br>".$envirocar." has no influence on the contents or reliability of the web sites of third party information providers. The following therefore applies to all links: ".$envirocar." has no influence on the design and contents of third party Internet web sites and therefore expressly distances itself from the material of all third party Internet web sites. The declaration is valid for all links given on our web site and the material of all sites reached via banners and links on the ".$envirocar." web site.";
 
 $imprint_copyright = "Copyright";
-$imprint_copyrighttext = "The graphics on this website are, licensed as ".$license_ccby.", unless stated otherwise, all texts of this website is licensed as ".$license_ccby.", unless stated otherwise. All data which is accessible with the ".$envirocar." API is licensed under the ".$license_odbl.".";
+$imprint_copyrighttext = "The graphics on this website are licensed as ".$license_ccby.", unless stated otherwise. All texts on this website are licensed as ".$license_ccby.", unless stated otherwise. All data which is accessible with the ".$envirocar." API is licensed under the ".$license_odbl.".";
 
 $member = "Member";
 $foundedby = "Founded by";
@@ -437,8 +438,8 @@ Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_
 $noDescription = "No description available.";
 $map = "Map";
 $details = "Details";
-$hotspot_titel = "enviroCar Hot-Spot Analysis";
-$hotspot_description = "This map presents a CO2 hot-spot analysis for the city of Münster. Red dots indicate regions where cars produced significantly high values. Blue dots are regions with low values.";
+$hotspot_titel = "enviroCar Hot Spot Analysis";
+$hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster. Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
 $speed_titel = "enviroCar Speed Map";
 $speed_description = "This map provides an overview on all enviroCar tracks. It show the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. This map can be accessed though the ArcGIS app on your tablet pc or your smart phone if you look for enviroCar.";
 $speedcomparison_titel = "Speed Analysis";
@@ -471,7 +472,7 @@ $about_aboutText2 = '<strong>enviroCar</strong> is a community based platform fo
 <li>explore maps and statistics and</li>
 <li>download data to process and analyze.</li>
 </ul>';
-$about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar App and off you go collecting data for a new track! The enviroCar App automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions. ';
+$about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions. ';
 $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen (Scientist)";
 $asACitizenText = 'All you need to join the community is a Bluetooth <strong>OBD-II Adapter</strong> and an <strong>Android Smart Phone</strong>.
@@ -532,7 +533,7 @@ Furthermore, the app allows you to obfuscate the start and destination of your t
 We are sure these measures are an appropriate answer to your privacy concerns. Nevertheless, as with all Web content, there is no means to achieve a 100% level of security.';
 $faq_a4 = 'enviroCar is a community - open to everyone. A <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> enables you to download/upload data and use it to create information products, such as maps or statistical analyses. The data is publicly available as JSON and as Linked Data, which makes it possible to flexibly include enviroCar’s data in any services.';
 $faq_a5 = 'The enviroCar team is grateful for your thoughts, suggestions and ideas! We are also happy to welcome you as a software contributor. We can always use extra hands. enviroCar is completely open source - all components are avalaible in our <a href="https://github.com/enviroCar" target="_blank">Github Repository</a>. Contact the enviroCar Team!';
-$faq_a6 = "In its current phase, envirocar is in a closed beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester!
+$faq_a6 = "In its current phase, enviroCar is in a closed beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
 <br/><br/>
 We expect to have a stable release of all components by the end of 2013.";
 

@@ -49,7 +49,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   
 		$.get('assets/includes/tracks.php', function(data) {
 						
-			 $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/>'+name+':  '+value + '(' + data + ')');
+			 $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><?php echo $dashboard_number_of_tracks; ?>: '+value + '(' + data + ')');
 			
 		});  
 
