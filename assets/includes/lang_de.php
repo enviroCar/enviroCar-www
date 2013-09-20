@@ -52,6 +52,7 @@ $dashboard_friend_activities="Aktivitäten deiner Freunde";
 $dashboard_group_activities="Aktivitäten der Gruppe";
 $dashboard_activities_of="Aktivitäten von ";
 $dashboard_my_tracks="Meine Fahrten";
+$dashboard_number_of_tracks="Anzahl der Tracks";
 
 //function registration
 $freg_invalidemail="Ungültige Email";
@@ -434,7 +435,7 @@ $hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2
 $speed_titel = "enviroCar Tracks";
 $speed_description = "Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.";
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
-$speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetmap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckeneabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
+$speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckeneabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
 Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster. 2013/07.";
 
 //dataaccess.php
@@ -525,9 +526,9 @@ In Europa sind folgende Fahrzeuge mit einer OBD-II Schnittstelle ausgestattet:
 <li>alle Diesel Autos mit Bauhjar 01.01.2003 oder später</li>
 <li>alle LKWs mit Baujahr 01.01.2005 oder später</li>
 </ul>';
-$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passort authentifizieren. Um die Analyse der Daten und das Erzeugen von Informationsprodukten zu ermöglichen, können alles Tracks auch offen, allerdings in anonymisierter Form, heruntergeladen werden. Die Daten sind in diesem Fall anonymisiert - alle Referenzen zum Nutzer (Ihnen) sind nicht zugänglich. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt. Freunde sich per Passort authentifizieren. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.
+$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passwort authentifizieren. Um die Analyse der Daten und das Erzeugen von Informationsprodukten zu ermöglichen, können alles Tracks auch offen, allerdings in anonymisierter Form, heruntergeladen werden. Die Daten sind in diesem Fall anonymisiert - alle Referenzen zum Nutzer (Ihnen) sind nicht zugänglich. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.
 </br></br>
-Weiterhin erlaubt die App die Verschleierung von Start und Ziel Ihrer Tracks. Ist diese Funktion in der App aktiviert so werden die ersten und letzten 250 Meter eines Tracks abgeschnitten (bzw. die erste und letzte Minute des Messvorgangs). So wird verhindert, dass Tracks mit bestimmten Addressen verbunden werden können.
+Weiterhin erlaubt die App die Verschleierung von Start und Ziel Ihrer Tracks. Ist diese Funktion in der App aktiviert so werden die ersten und letzten 250 Meter eines Tracks abgeschnitten (bzw. die erste und letzte Minute des Messvorgangs). So wird verhindert, dass Tracks mit bestimmten Adressen verbunden werden können.
 </br></br>
 Wir sind sicher, dass diese Maßnahmen eine angemessene Antwort auf Ihre Datenschutz Bedürfnisse sind. Nichtsdestotrotz kann mit keiner Web-basierten Anwendung eine 100 %ige Sicherheit garantiert werden.";
 $faq_a4 = 'enviroCar ist ein Community-basiertes Vorhaben. Jedermann ist eingeladen beizutragen! Die offene <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> erlaubt es Daten flexibel hoch- und herunterzuladen. Die Daten sind öffentlich als JSON und Linked Data öffentlich zugänglich und können so flexibel genutzt werden, um Informationsprodukte wie Karten oder statistische Analysen zu erzeugen.';
