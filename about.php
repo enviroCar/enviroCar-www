@@ -52,23 +52,23 @@ $(function(){
 			<div class="tab-pane fade in active" id="main">
 				<div class="container leftband">
 					<div class="row-fluid">
-						<div class="span" style="padding-right: 1ex">
+						<div class="span11" style="padding-right: 1ex; text-align: justify;">
 							<? echo $about_aboutText1 ?>
 						</div>  
 					</div>    
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
-						<div class="span" style="padding-right: 1ex">
+						<div class="span11" style="padding-right: 1ex">
 							<p style="text-align: justify;">  
 								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" style="height:400px; width:600px;" alt="The architecture of envirocar" />
-								<br/>								
-							</p>	
-							<? echo $about_aboutText2 ?>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>
-						</div>  
+								<br/>			
+								<? echo $about_aboutText2 ?>					
+							</p>						 	
+						<p class="pull-right">
+							<a href="#"><? echo $back_top ?></a>
+						</p> 
+						</div>
 					</div>    
 				</div>
 				<div class="container leftband">

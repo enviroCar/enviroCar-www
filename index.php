@@ -71,8 +71,8 @@ if(!is_logged_in()){
 			<? echo $index_this_is_community;?>
 		</p>
 		</div>
-      <div class="span4">
-      <iframe width="480" height="320" src="//www.youtube.com/embed/LTSuUEOfWa0" frameborder="0" allowfullscreen></iframe>
+      <div class="span3">
+      <iframe width="440" height="280" src="//www.youtube.com/embed/LTSuUEOfWa0" frameborder="0" allowfullscreen></iframe>
       </div>
       </div>
 	</div>
