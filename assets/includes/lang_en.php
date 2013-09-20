@@ -10,17 +10,19 @@ $index_register="Register";
 $index_get_App="Get our App soon!";
 $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";
-$index_help_the_world='Use the enviroCar app to read your car’s sensor data, learn about your car and explore your driving style.
-</br></br>
+$index_help_the_world='Help make mobility sustainable and our cities a little smarter.
+</br>
+<ul>
+<li>Learn about mobility & envionment!</li>
+<li>Share your data with the enviroCar Citizen Science Community!</li>
+<li>Collaborate with other citizens, urban planners and scientists worldwide.!</li>
+</ul>';
+$index_support_indiegogo="Support us on Indiegogo";
+$index_this_is_community='Use the enviroCar app to read your car’s sensor data, learn about your car and explore your driving style.
+ </br></br>
 Upload your tracks as Open Data to the enviroCar server and provide this anonymized data to researchers and planners in the field of mobility and environment.
  </br></br>
 Analyze your data and learn about further enviroCar projects and activities via the enviroCar website.';
-$index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community='The enviroCar app enables you to read out your car’s sensor data, to learn about your car and to explore your driving stile.</br></br>
- 
-You may upload your tracks as open data to the enviroCar server and provide this data anonymized to researchers and planners in the field of mobility and environment.</br></br>
- 
-Use the enviroCar website to analyze your data and to learn about further enviroCar projects and activities.';
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
@@ -443,7 +445,7 @@ $hotspot_description = "This map presents a CO2 hot spot analysis for the city o
 $speed_titel = "enviroCar Speed Map";
 $speed_description = "This map provides an overview on all enviroCar tracks. It show the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. This map can be accessed though the ArcGIS app on your tablet pc or your smart phone if you look for enviroCar.";
 $speedcomparison_titel = "Speed Analysis";
-$speedcomparison_description = "This map shows the difference between the measured average speed data from enviroCar and the speed limits as stored in the Openstreetmap database. It indicates those street segments where slow moving traffic occurs frequently. This map was produced by students of the Institute for Geoinformatics at Münster University (2013/07).";
+$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institue for Geoinformatics at Münster University (2013/07).";
 
 //dataaccess.php
 $viaAPIHead = "Using the enviroCar REST API";
@@ -464,7 +466,7 @@ $about_aboutText1 = 'Use <strong>enviroCar</strong> to investigate the impact yo
 </ul>
 Help <strong>build</strong> a database to help solve these kind of questions. 
 <br/><br/>
-With enviroCar we can all contribute to a <strong>new environmental information</strong> resource. Join the community and help make our world a little smarter.    ';
+With enviroCar we can all contribute to a <strong>new environmental information</strong> resource. Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<strong>enviroCar</strong> is a community based platform for gathering car-borne sensor data and producing environmental information. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The <strong>enviroCar app</strong> provides information about your car and your driving characteristics. Upload the data to the <strong>enviroCar server</strong> and contribute anonymized data to the open enviroCar citizen science community. The <strong>enviroCar website</strong> allows you to:
 <ul>
 <li>access your data,</li>
