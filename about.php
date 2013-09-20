@@ -22,13 +22,13 @@ $(function(){
     $('.nav-tabs a').on('click', function (e) {
         e.preventDefault();
         if(e.currentTarget.href.indexOf('#website') != -1){
-        	document.getElementById("title_image_container").style = 'display:block';
+        	document.getElementById("title_image_container").style.display = 'block';
         	document.getElementById("title_image").style.backgroundImage = 'url(./assets/img/image00.jpg)';
         }else if(e.currentTarget.href.indexOf('#main') != -1){
-        	document.getElementById("title_image_container").style = 'display:block';
+        	document.getElementById("title_image_container").style.display = 'block';
         	document.getElementById("title_image").style.backgroundImage = 'url(./assets/img/image03.jpg)';
         }else if(e.currentTarget.href.indexOf('#faqs') != -1){
-        	document.getElementById("title_image_container").style = 'display:none';
+        	document.getElementById("title_image_container").style.display = 'none';
         }
         $(this).tab('show');
     });  
@@ -42,7 +42,7 @@ $(function(){
 				<li><a href="#faqs" data-toggle="tab"><strong><? echo $about_faqHead ?></strong></a></li>
 			</ul>
 		</div>		
-		  <div id="title_image_container" class="container rightband">
+		  <div id="title_image_container" class="container rightband" style="display:block;">
    		 <div class="row-fluid">
       		<div id="title_image" class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/image03.jpg); height: 250px; width 100%; background-size: cover;">
       		</div>
