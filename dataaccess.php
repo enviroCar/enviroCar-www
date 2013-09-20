@@ -11,7 +11,7 @@ if(!is_logged_in()){
 }
 ?> 
 
-	<div class="container leftband">
+<!--	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
 				<h2 id="licensing_allowed_head"><? echo $viaDownloadHead ?></h2>
@@ -20,7 +20,7 @@ if(!is_logged_in()){
 				</p>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="container leftband">
 		<div class="row-fluid">
