@@ -477,11 +477,11 @@ Die enviroCar Website ermöglicht Ihnen
 </ul>';
 $about_aboutText3 = "enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Sie können diese Adapter auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden. Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.";
 $about_the_people_behind_head = "Wer steckt dahinter";
-$about_the_people_behind_text = "enviroCar ist ein Projekt des Forschungsnetzwerkes 52°North und des Institutes für Geoinformatik der Universität Münster. Projektpartner sind die Technische Universität Dresden - Professur für Geoinformatik und die con terra GmbH.
+$about_the_people_behind_text = 'enviroCar ist ein Projekt des Forschungsnetzwerkes <a href="http://52north.org" target="_blank">52°North</a> und des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>. Projektpartner sind die <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis" target="_blank">Technische Universität Dresden - Professur für Geoinformatik</a> und die <a href="http://www.conterra.de" target="_blank">con terra GmbH</a>.
 <br/><br/> 
-Das Environmental Systems Research Institute Esri Inc unterstützt das Projekt als globaler Sponsor.
+Das Environmental Systems Research Institute <a href="http://www.esri.com" target="_blank">Esri Inc</a> unterstützt das Projekt als globaler Sponsor.
 <br/><br/> 
-Das Projekt ist offen für weitere Partner, Entwickler, Forscher.";
+Das Projekt ist offen für weitere Partner, Entwickler, Forscher.';
 $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "Als wissenschaftlich interessierter /engagierter Bürger (Citizen Scientist)";
 $asACitizenText = 'Derzeit befindet sich enviroCar noch in einer geschlossenen beta-Phase, in der die Software ergänzt, getestet und für die breitere Anwendung vorbereitet wird. Sofern Sie als Entwickler interessiert sind, an den Tests teilzunehmen, wenden Sie sich bitte an enviroCar@52north.org.
