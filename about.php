@@ -62,28 +62,29 @@ $(function(){
 					</div>    
 				</div>
 				<div class="container leftband">
-					<div class="row-fluid">
-						<div class="span11" style="padding-right: 1ex">
-							<p style="text-align: justify;">  
-								<img class="offset2" src="./assets/img/enviroCarConceptOverview.png" style="height:400px; width:600px;" alt="The architecture of envirocar" />
-								<br/>			
-								<? echo $about_aboutText2 ?>					
-							</p>						 	
-						<p class="pull-right">
-							<a href="#"><? echo $back_top ?></a>
-						</p> 
+					<div class="row-fluid">	
+						<div class="span6">
+						<p style="text-align: justify;">  		 	
+						<? echo $about_aboutText2 ?>	
+						</p>
 						</div>
+						<div class="span5" style="padding-right: 1ex">
+							<img src="./assets/img/enviroCarConceptOverview.png" style="height:300px; width:487px;" alt="The architecture of envirocar" />
+						</div>		
 					</div>    
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
-        			<div class="span4">
-        			<img class="offset3" src="./assets/img/drivedeck1.jpg" width="60%" alt="An ODB II Adapter">
+        			<div class="span5">
+        			<img class="offset3" src="./assets/img/drivedeck1.jpg" width="50%" alt="An ODB II Adapter">
         			</div>
 					<div class="span6">
 							<p style="text-align: justify;">
 								<? echo $about_aboutText3 ?>
-							</p>
+							</p>	
+						<p class="pull-right">
+							<a href="#"><? echo $back_top ?></a>
+						</p> 
 						</div>  
 					</div>
 				</div>

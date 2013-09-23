@@ -472,11 +472,11 @@ $about_aboutText2 = '<strong>enviroCar</strong> is a community based platform fo
 </ul>';
 $about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions. ';
 $about_the_people_behind_head = "The People behind";
-$about_the_people_behind_text = "enviroCar is a project of the 52°North research and development network and the Institute for Geoinformatics at Münster University. The Technical University of Dresden - Professorship of Geoinformation Systems and con terra GmbH are project partners.
+$about_the_people_behind_text = 'enviroCar is a project of the <a href="http://52north.org" target="_blank">52°North research and development network and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>. The <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">Technical University of Dresden - Professorship of Geoinformation Systems</a> and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a> are project partners.
 <br/><br/>
-Esri Inc supports this project as a global sponsor.
+<a href="http://www.esri.com" target="_blank">Esri Inc</a> supports this project as a global sponsor.
 <br/><br/>
-This project is open for additional partners, developers and researchers.";
+This project is open for additional partners, developers and researchers.';
 $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen (Scientist)";
 $asACitizenText = 'All you need to join the community is a Bluetooth <strong>OBD-II Adapter</strong> and an <strong>Android Smart Phone</strong>.
