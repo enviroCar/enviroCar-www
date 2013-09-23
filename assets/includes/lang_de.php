@@ -616,6 +616,6 @@ Dabei ist Folgendes einzuhalten:
 </ul>';
 
 //temporary
-$under_construction = "Die WebSite wird gerade neu gestaltet..";
+$under_construction = "Die Website wird gerade neu gestaltet..";
 
 ?>
