@@ -27,6 +27,9 @@ $(function(){
         }else if(e.currentTarget.href.indexOf('#main') != -1){
         	document.getElementById("title_image_container").style.display = 'block';
         	document.getElementById("title_image").style.backgroundImage = 'url(./assets/img/image03.jpg)';
+        }else if(e.currentTarget.href.indexOf('#behind') != -1){
+        	document.getElementById("title_image_container").style.display = 'block';
+        	document.getElementById("title_image").style.backgroundImage = 'url(./assets/img/image04.jpg)';
         }else if(e.currentTarget.href.indexOf('#faqs') != -1){
         	document.getElementById("title_image_container").style.display = 'none';
         }
@@ -38,6 +41,7 @@ $(function(){
 		<div class="tabbable" style="text-align: center;">
 			<ul id="myTab" class="nav nav-tabs" style="width: 85%; margin: auto;">
 				<li><a href="#main" data-toggle="tab"><strong><? echo $about_aboutHead ?></strong></a></li>
+				<li><a href="#behind" data-toggle="tab"><strong><? echo $about_the_people_behind_head ?></strong></a></li>
 				<li><a href="#website" data-toggle="tab"><strong><? echo $about_gettinginvolvedHead ?></strong></a></li>
 				<li><a href="#faqs" data-toggle="tab"><strong><? echo $about_faqHead ?></strong></a></li>
 			</ul>
@@ -84,6 +88,15 @@ $(function(){
 					</div>
 				</div>
 			</div><!--end of div id="main"-->		
+			<div class="tab-pane fade in active" id="behind">
+				<div class="container leftband">
+					<div class="row-fluid">
+						<div class="span11" style="padding-right: 1ex; text-align: justify;">
+							<? echo $about_the_people_behind_text ?>
+						</div>  
+					</div>    
+				</div>
+			</div><!--end of div id="behind"-->	
 			<div class="tab-pane fade in" id="website">
 				<div class="container leftband">
 					<div class="row-fluid">
