@@ -490,7 +490,7 @@ Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Versi
 <br/><br/>
 Es gibt viele ODB-II-Adapter im Handel. Der Preis liegt zwischen 15 Euro für Billig-Produkte aus China und ca. 90-200 Euro für sehr hochwertige Systeme. Bitte beachten Sie, dass in Europa bestimmte Zertifikate für den Handel von Systemen (EC) und für den Betrieb im fahrenden Fahrzeug (ECE) gesetzlich vorgeschrieben sind. Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
 <br/><br/>
-Die enviroCar App ist derzeit für die Android-Versionen 2.3 - 4.2.2 verfügbar. Installieren Sie die App einfach über Google Play auf Ihrem Smartphone. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen. 
+Die enviroCar App ist derzeit für die Android-Versionen 2.3 - 4.2.2 verfügbar. Installieren Sie die App einfach über Google Play auf Ihrem Smartphone. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc.) und anschließend Ihre ersten Tracks aufnehmen. 
 <br/><br/>
 Sie können Ihre Daten aus der App zum enviroCar-Server hochladen und die enviroCar Webseite verwenden, um Ihre Fahrten zu analysieren und in einer Karte zu betrachten. Außerdem können Sie sich hier mit Freunden und Gruppen vernetzen.
 <br/><br/>
@@ -500,7 +500,7 @@ $asAScientistText = 'Interessieren Sie sich für die enviroCar-Plattform und die
 <br/><br/>
 Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen wenden wollen, verwenden Sie die offene mailing-Liste <a href="mailto:enviroCar@52north.org">enviroCar@52north.org</a>. 
 <br/><br/>
-Sofern Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie generell an gemeinsamen Aktivitäten mit 52°North interessiert sind, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
+Sofern Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie generell an gemeinsamen Aktivitäten mit 52°North interessiert sind, können Sie auch gern <a id="recaptcha1" href="http://www.google.com/recaptcha/mailhide/d?k=01Qtns6TQQ6uM2lsWVvqiNXw==&amp;c=AlAN9GfqguUKseK43rBxu5sgVbdfcQSF_R1aO0mbw_8=" title="e-mail" target="_blank">direkt mit uns in Kontakt treten</a>.';
 $asAPlannerHead = "Als öffentliche Einrichtung";
 $asAPlannerText = 'Möchten Sie die Bürger für das Thema Mobilität und Umwelt sensibilisieren? Möchten Sie die aktive Auseinandersetzung von Bürgern mit dem Thema und die Entwicklung eines umfassenden Verständnisses für die Thematik fördern? Möchten Sie die Bürger aktiv in den Prozess der Gestaltung einer nachhaltigen Verkehrsentwicklung einbeziehen? 
 <br/><br/>
@@ -508,7 +508,7 @@ Nutzen Sie die enviroCar Plattform als Basis für Citizen Science Projekte mit W
 <br/><br/>
 Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen von enviroCar wenden möchten, verwenden Sie die offene mailing-Liste <a href="mailto:enviroCar@52north.org">enviroCar@52north.org</a>. 
 <br/><br/>
-Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
+Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern <a id="recaptcha2" href="http://www.google.com/recaptcha/mailhide/d?k=01Qtns6TQQ6uM2lsWVvqiNXw==&amp;c=AlAN9GfqguUKseK43rBxu5sgVbdfcQSF_R1aO0mbw_8=" title="e-mail" target="_blank">direkt mit uns in Kontakt treten</a>.';
 $asADeveloperHead = "Als Softwareentwickler";
 $asADeveloperText = 'Sie möchten eine Anwendung auf Basis der öffentlichen Daten von enviroCar entwickeln? Prima! Schauen Sie sich das existierende <a href="https://github.com/enviroCar" target="_blank">Open Source Software Repository auf GitHub</a> an. Dort finden Sie auch die sehr einfache REST-Schnittstelle des enviroCar-Servers, die Ihnen freien Zugriff auf die Daten ermöglicht. 
 <br/><br/>

@@ -36,6 +36,22 @@ $(function(){
         $(this).tab('show');
     });  
 });
+
+$(function(){
+document.getElementById("recaptcha1").onclick = function (e) {
+	e.preventDefault();
+	openCaptcha()
+	}
+document.getElementById("recaptcha2").onclick = function (e) {
+	e.preventDefault();
+	openCaptcha()
+	}
+});
+
+function openCaptcha(){
+		window.open('http://www.google.com/recaptcha/mailhide/d?k\07501Qtns6TQQ6uM2lsWVvqiNXw\75\75\46c\75AlAN9GfqguUKseK43rBxu5sgVbdfcQSF_R1aO0mbw_8\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;
+}
+
 </script>
 
 		<div class="tabbable" style="text-align: center;">
