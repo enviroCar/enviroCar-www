@@ -34,7 +34,7 @@ if(!is_logged_in()){
 			</a>
 			<br/>
 			<br/>
-			<img src="./assets/img/under_construction.png" style="height:70px"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
+			<img src="./assets/img/under_construction.png" style="height:70px" alt="under_construction"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
 		</div>
 	 </div>
 <? } ?>
@@ -72,7 +72,7 @@ if(!is_logged_in()){
 		</p>
 		</div>
       <div class="span3">
-      <iframe width="440" height="280" src="//www.youtube.com/embed/LTSuUEOfWa0" frameborder="0" allowfullscreen></iframe>
+      <iframe width="440" height="280" src="//www.youtube.com/embed/LTSuUEOfWa0" allowfullscreen></iframe>
       </div>
       </div>
 	</div>

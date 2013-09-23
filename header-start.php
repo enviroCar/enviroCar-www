@@ -112,7 +112,7 @@ if ($login_name != "" && $login_password != ""){
             </ul>
 				<!-- The drop down menu -->
         		<ul class="nav pull-right">
-              <li><img src="./assets/img/under_construction.png" style="height:50px" title="<?echo $under_construction;?>"/></li>
+              <li><img src="./assets/img/under_construction.png" alt="under_construction" style="height:50px" title="<?echo $under_construction;?>"/></li>
           		<li><a href="./registration.php"><? echo $index_register;?></a></li>
           		<!--<li class="divider-vertical"></li>-->
           		<li class="dropdown">
