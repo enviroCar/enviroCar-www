@@ -10,15 +10,15 @@ $index_register="Register";
 $index_get_App="Hol dir unsere App!";
 $index_get_it_on_google="Besuch Google Play!";
 $index_be_a_citizen_scientist="Machen Sie mit..";
-$index_help_the_world='Wer fährt umweltfreundlicher, Sie oder die Kollegen Ihrer Arbeitsstelle? Wieviel CO2 produziert Ihr Fahrzeug? Was müssten Sie unternehmen, um klimaneutral zu fahren? </br> Welche Strecken benötigen besonders viel Kraftstoff? Sind Fahrbahnschwellen umweltfreundlicher als Tempo-Zonen? Ließe sich die Situation durch eine andere Verkehrsführung optimieren?
+$index_help_the_world='Wer fährt umweltfreundlicher, Sie oder die Kollegen Ihrer Arbeitsstelle? Wieviel CO2 produziert Ihr Fahrzeug? Was müssten Sie unternehmen, um klimaneutral zu fahren? <br> Welche Strecken benötigen besonders viel Kraftstoff? Sind Fahrbahnschwellen umweltfreundlicher als Tempo-Zonen? Ließe sich die Situation durch eine andere Verkehrsführung optimieren?
 <br><br> 
-Nutzen Sie enviroCar, um diese und ähnliche Fragen zu beantworten. Stellen Sie Forschern und Planern Daten aus der Sensorik Ihres Fahrzeuges zur Verfügung. Helfen Sie mit, den Straßenverkehr sicherer und umweltfreundlichen zu gestalten.';
+Nutzen Sie enviroCar, um diese und ähnliche Fragen zu beantworten. Stellen Sie Forschern und Planern Daten aus der Sensorik Ihres Fahrzeuges zur Verfügung. Helfen Sie mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
 $index_support_indiegogo="Unterstütze uns auf Indiegogo";
 $index_this_is_community='Mit der enviroCar App können sie Sensordaten aus der Motorsteuerung auslesen und mehr über Ihr Fahrzeug und Ihren Fahrstil erfahren.
 <br><br>
 Sie können die Daten als Open Data auf den enviroCar Server hochladen und anonymisiert für die Verkehrs- und Umweltforschung zur Verfügung stellen.
 <br><br>
-Nutzen Sie die enviroCar Website, um Ihre Daten  zu verwalten und enviroCar Projekte kennenzulernen.';
+Nutzen Sie die enviroCar Website, um Ihre Daten zu verwalten und enviroCar Projekte kennenzulernen.';
 $index_how_it_works="Wie funktioniert das Ganze?";
 $index_here_we_go=" - so gehts!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
@@ -150,7 +150,7 @@ $language_text="1- Bis jetzt unterstützt enviroCar zwei Sprachen: Deutsch und E
 $comparing_steps='Sie gegen Ihre Freunde! Mit enviroCar wird der Vergleich der Fahrleistungen im Freundeskreis zum Kinderspiel. Um den Datenvergleich zu erlauben, müssen beide Nutzer einander als “Freund” akzeptieren. 
 Melden Sie sich auf der enviroCar Plattform an, navigieren Sie zum Menüpunkt “Vergleich” und wählen Sie einen Ihrer Freunde von der Liste aus.';
 $sharing_options='Um Ihre Daten mit anderen Leuten zu teilen, gibt es mehrere Wege.<br/>
-1. Laden Sie Ihre Strecke als GeoJSON herunter, um im Anschluss Programme wie z.B. Quantum GIS zu nutzen, um die Strecken zu analysieren, um die Daten auf anderer Weise zu visualisieren oder weitere detaillierte Informationen über die Tracks zu bekommen. <br/>
+1. Laden Sie Ihre Strecke als GeoJSON herunter, um im Anschluss Programme wie z.B. Quantum GIS zu nutzen, um die Strecken zu analysieren, um die Daten auf anderer Weise zu visualisieren oder weitere detaillierte Informationen über die Tracks zu bekommen. <br>
 2. Das Teilen der Daten ist eines der Kernkonzepte der enviroCar Community. Navigieren Sie zum Menüpunkt “Freunde”, um einen detaillierten Überblick über aktuelle Aktivitäten zu erhalten: Wer hat neue Strecken erstellt, wer ist mit wem befreundet und vieles mehr.';
 $how_review="Wie kann ich die Daten betrachten?";
 $review_data='Sobald Sie Ihre erstellten Strecken hochgeladen haben, können Sie über den Menüpunkt “Strecken” einen detaillierten Überblick über Ihre Daten erhalten. 
@@ -434,7 +434,7 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" tar
 $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
 $hotspot_titel = "enviroCar Hot-Spot Analyse";
-$hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster. Rote Punkte signalisieren Regionen mit  signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen Werten an.";
+$hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster. Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen Werten an.";
 $speed_titel = "enviroCar Tracks";
 $speed_description = "Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.";
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
@@ -484,31 +484,31 @@ Das Environmental Systems Research Institute Esri Inc unterstützt das Projekt a
 Das Projekt ist offen für weitere Partner, Entwickler, Forscher.";
 $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "Als wissenschaftlich interessierter /engagierter Bürger (Citizen Scientist)";
-$asACitizenText = 'Derzeit befindet sich enviroCar noch in einer geschlossenen beta-Phase, in der die Software  ergänzt, getestet und für die breitere Anwendung vorbereitet  wird. Sofern Sie als Entwickler  interessiert sind, an den Tests teilzunehmen, wenden Sie sich bitte an  enviroCar@52north.org.
+$asACitizenText = 'Derzeit befindet sich enviroCar noch in einer geschlossenen beta-Phase, in der die Software ergänzt, getestet und für die breitere Anwendung vorbereitet wird. Sofern Sie als Entwickler interessiert sind, an den Tests teilzunehmen, wenden Sie sich bitte an enviroCar@52north.org.
 <br/><br/>
 Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Version 2.3), ein Bluetooth OBD-II-Adapter und ein Fahrzeug, das den OBD-II Standard unterstützt. 
 <br/><br/>
-Es gibt viele ODB-II-Adapter im Handel. Der Preis liegt zwischen 15  Euro für Billig-Produkte aus China und ca. 90-200 Euro für sehr hochwertige Systeme. Bitte beachten Sie, dass in Europa bestimmte Zertifikate für den Handel von Systemen (EC) und für den Betrieb im fahrenden Fahrzeug (ECE)  gesetzlich vorgeschrieben sind.  Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
+Es gibt viele ODB-II-Adapter im Handel. Der Preis liegt zwischen 15 Euro für Billig-Produkte aus China und ca. 90-200 Euro für sehr hochwertige Systeme. Bitte beachten Sie, dass in Europa bestimmte Zertifikate für den Handel von Systemen (EC) und für den Betrieb im fahrenden Fahrzeug (ECE) gesetzlich vorgeschrieben sind. Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
 <br/><br/>
-Die enviroCar App ist  derzeit für die Android-Versionen 2.3 - 4.2.2 verfügbar. Installieren  Sie die App einfach über Google Play auf Ihrem Smartphone. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen. 
+Die enviroCar App ist derzeit für die Android-Versionen 2.3 - 4.2.2 verfügbar. Installieren Sie die App einfach über Google Play auf Ihrem Smartphone. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen. 
 <br/><br/>
-Sie können Ihre Daten aus der App zum enviroCar-Server hochladen und die enviroCar  Webseite verwenden, um Ihre Fahrten zu analysieren und in einer Karte  zu betrachten. Außerdem können Sie sich hier mit Freunden und Gruppen vernetzen.
+Sie können Ihre Daten aus der App zum enviroCar-Server hochladen und die enviroCar Webseite verwenden, um Ihre Fahrten zu analysieren und in einer Karte zu betrachten. Außerdem können Sie sich hier mit Freunden und Gruppen vernetzen.
 <br/><br/>
-Nutzen Sie die mit enviroCar gesammelten Daten, um mit Freunden,  Wissenschaftlern und  den Experten der öffentlichen Verwaltung fundiert über die Umweltaspekte des Autofahrens zu diskutieren. Entwickeln Sie eigene Ideen, wie wir unsere Mobiltität sichern und nachhaltig gestalten können.';
+Nutzen Sie die mit enviroCar gesammelten Daten, um mit Freunden, Wissenschaftlern und den Experten der öffentlichen Verwaltung fundiert über die Umweltaspekte des Autofahrens zu diskutieren. Entwickeln Sie eigene Ideen, wie wir unsere Mobiltität sichern und nachhaltig gestalten können.';
 $asAScientistHead = "Als Wissenschaftler";
-$asAScientistText =  'Interessieren Sie sich für die enviroCar-Plattform und die dort vorhandenen Daten als Basis für Ihre Forschungsvorhaben? Wir empfehlen Ihnen, enviroCar zunächst in der Rolle eines Bürgers kennen zu lernen (s.o.). Wenn Sie die Rohdaten analysieren wollen, nutzen Sie die enviroCar <a href="./dataaccess.php">Webschnittstelle</a>, um die Daten in Ihre Anwendungen zu importieren und  dort weiter zu verarbeiten.
+$asAScientistText = 'Interessieren Sie sich für die enviroCar-Plattform und die dort vorhandenen Daten als Basis für Ihre Forschungsvorhaben? Wir empfehlen Ihnen, enviroCar zunächst in der Rolle eines Bürgers kennen zu lernen (s.o.). Wenn Sie die Rohdaten analysieren wollen, nutzen Sie die enviroCar <a href="./dataaccess.php">Webschnittstelle</a>, um die Daten in Ihre Anwendungen zu importieren und dort weiter zu verarbeiten.
 <br/><br/>
 Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen wenden wollen, verwenden Sie die offene mailing-Liste <a href="mailto:enviroCar@52north.org">enviroCar@52north.org</a>. 
 <br/><br/>
-Sofern Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität  oder zu den verwendeten Methoden und Technologien haben, wenn Sie  besondere Anpassungen benötigen oder wenn Sie generell an gemeinsamen Aktivitäten mit 52°North interessiert sind, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
+Sofern Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie generell an gemeinsamen Aktivitäten mit 52°North interessiert sind, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
 $asAPlannerHead = "Als öffentliche Einrichtung";
 $asAPlannerText = 'Möchten Sie die Bürger für das Thema Mobilität und Umwelt sensibilisieren? Möchten Sie die aktive Auseinandersetzung von Bürgern mit dem Thema und die Entwicklung eines umfassenden Verständnisses für die Thematik fördern? Möchten Sie die Bürger aktiv in den Prozess der Gestaltung einer nachhaltigen Verkehrsentwicklung einbeziehen? 
 <br/><br/>
-Nutzen Sie die enviroCar Plattform als Basis für Citizen Science Projekte mit Wissenschaftlern, Fachleuten und den Bürgern in Ihrer Region. Gern unterstützen wir Sie  mit unseren Partnern bei der Vorbereitung und Durchführung solcher Projekte. 
+Nutzen Sie die enviroCar Plattform als Basis für Citizen Science Projekte mit Wissenschaftlern, Fachleuten und den Bürgern in Ihrer Region. Gern unterstützen wir Sie mit unseren Partnern bei der Vorbereitung und Durchführung solcher Projekte. 
 <br/><br/>
 Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen von enviroCar wenden möchten, verwenden Sie die offene mailing-Liste <a href="mailto:enviroCar@52north.org">enviroCar@52north.org</a>. 
 <br/><br/>
-Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität  oder zu den verwendeten Methoden und Technologien haben, wenn Sie  besondere Anpassungen benötigen oder wenn Sie  sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
+Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
 $asADeveloperHead = "Als Softwareentwickler";
 $asADeveloperText = 'Sie möchten eine Anwendung auf Basis der öffentlichen Daten von enviroCar entwickeln? Prima! Schauen Sie sich das existierende <a href="https://github.com/enviroCar" target="_blank">Open Source Software Repository auf GitHub</a> an. Dort finden Sie auch die sehr einfache REST-Schnittstelle des enviroCar-Servers, die Ihnen freien Zugriff auf die Daten ermöglicht. 
 <br/><br/>
@@ -537,14 +537,14 @@ In Europa:
 <li>alle LKWs mit Baujahr 01.01.2005 oder später</li>
 </ul>';
 $faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passwort authentifizieren. Um die Analyse der Daten und das Erzeugen von Informationsprodukten zu ermöglichen, können alles Tracks auch offen, allerdings in anonymisierter Form, heruntergeladen werden. Die Daten sind in diesem Fall anonymisiert - alle Referenzen zum Nutzer (Ihnen) sind nicht zugänglich. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.
-</br></br>
+<br/><br/>
 Weiterhin erlaubt die App die Verschleierung von Start und Ziel Ihrer Tracks. Ist diese Funktion in der App aktiviert so werden die ersten und letzten 250 Meter eines Tracks abgeschnitten (bzw. die erste und letzte Minute des Messvorgangs). So wird verhindert, dass Tracks mit bestimmten Adressen verbunden werden können.
-</br></br>
+<br/><br/>
 Wir sind sicher, dass diese Maßnahmen eine angemessene Antwort auf Ihre Datenschutz Bedürfnisse sind. Nichtsdestotrotz kann mit keiner Web-basierten Anwendung eine 100 %ige Sicherheit garantiert werden.";
 $faq_a4 = 'enviroCar ist ein Community-basiertes Vorhaben. Jedermann ist eingeladen beizutragen! Die offene <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> erlaubt es Daten flexibel hoch- und herunterzuladen. Die Daten sind öffentlich als JSON und Linked Data öffentlich zugänglich und können so flexibel genutzt werden, um Informationsprodukte wie Karten oder statistische Analysen zu erzeugen.';
 $faq_a5 = 'Das enviroCar Team is dankbar für gute Ideen und Verbesserungsvorschläge! Ebenso heißen wir neue Entwickler als Beitragende willkommen und können immer ein paar weitere Hände gebrauchen. enviroCar ist vollständig open source - alle Komponenten sind verfügbar über unser <a href="https://github.com/enviroCar" target="_blank">Github Repository</a>. Kontaktiere das enviroCar Team falls du interessiert bist!';
 $faq_a6 = "Derzeit ist enviroCar in einer geschlossenen Beta Phase. Wir sind noch im Entwicklungsprozess und dabei die Software marktreif zu machen. Wir suchen nach Nutzern die bereit sind die Software zu testen und uns ihr Feedback mitzuteilen. Bitte lassen Sie uns wissen, falls Sie als Beta Tester agieren möchten!
-</br></br>
+<br/><br/>
 Wir planen für Ende 2013 die Veröffentlichung einen stabilen Release";
 
 //route.php
@@ -564,14 +564,14 @@ $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
 
 //terms
-$terms_general = 'Durch die Bestätigung der Nutzungsbedingungen erklären Sie sich mit folgenden Regelungen einverstanden:</br></br>
+$terms_general = 'Durch die Bestätigung der Nutzungsbedingungen erklären Sie sich mit folgenden Regelungen einverstanden:<br/><br/>
 <h2 class="featurette-heading">Umgang mit Nutzer-Daten</h2>
-Bei der Benutzung der enviroCar Webseite dürfen folgende Daten gesammelt und für einen limitierten Zeitraum gespeichert werden:</br>
+Bei der Benutzung der enviroCar Webseite dürfen folgende Daten gesammelt und für einen limitierten Zeitraum gespeichert werden:<br/>
 <ul>
 <li>die IP-Adresse des Nutzers im Zugangs- und Fehler-Protokoll des enviroCar Servers</li>
 </ul>
 
-Bei der Registrierung und Nutzung der enviroCar-Dienste dürfen folgende Informationen gesammelt und so lange gespeichert werden, bis Sie als Nutzer Ihren Benutzernamen wieder löschen:</br>
+Bei der Registrierung und Nutzung der enviroCar-Dienste dürfen folgende Informationen gesammelt und so lange gespeichert werden, bis Sie als Nutzer Ihren Benutzernamen wieder löschen:<br/>
 <ul>
 <li>Der selbst gewählte Benutzername</li>
 <li>Die angegebene E-Mail-Adresse</li>
@@ -589,9 +589,9 @@ Bei der Registrierung und Nutzung der enviroCar-Dienste dürfen folgende Informa
 <li>Weitere Informationen, die Sie ggf als Freitextfeld eingegeben haben</li>
 </ul>
 
-Jeder Benutzer kann seinen Benutzernamen und alle Daten, die damit zusammen hängen  (siehe oben)  jederzeit löschen. Die als Open Data hochgeladenen und öffentlich verfügbaren Tracks werden hierbei allerdings nicht gelöscht. Sofern auch die Tracks des Nutzers gelöscht werden sollen, muss dies vor der Löschung des Benutzernamens geschehen, da dieser Zusammenhang später nicht mehr herstellbar ist. Weitere Hinweise zum Löschen der Tracks und des Benutzernamens finden sich in der FAQ-Liste. ';
+Jeder Benutzer kann seinen Benutzernamen und alle Daten, die damit zusammen hängen (siehe oben) jederzeit löschen. Die als Open Data hochgeladenen und öffentlich verfügbaren Tracks werden hierbei allerdings nicht gelöscht. Sofern auch die Tracks des Nutzers gelöscht werden sollen, muss dies vor der Löschung des Benutzernamens geschehen, da dieser Zusammenhang später nicht mehr herstellbar ist. Weitere Hinweise zum Löschen der Tracks und des Benutzernamens finden sich in der FAQ-Liste. ';
 $terms_cookies_heading = "Nutzung von Cookies";
-$terms_cookies_text = "Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies einverstanden. Der Cookie speichert eine Kombination aus Zahlen und Buchstaben, zur Identifikation des Nutzers im Rahmen einer  Browser-Sitzung. Diese Cookies werden ausschließlich verwendet, um das Einloggen für den Service und die Sprachauswahl zu unterstützen. Unsere Cookies sind nur für die Dauer einer (1) Browsersitzung gültig. Dadurch ist es möglich, dass die enviroCar Webseite Sie nach dem Logout und Neustart des Browsers nicht wiedererkennt.";
+$terms_cookies_text = "Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies einverstanden. Der Cookie speichert eine Kombination aus Zahlen und Buchstaben, zur Identifikation des Nutzers im Rahmen einer Browser-Sitzung. Diese Cookies werden ausschließlich verwendet, um das Einloggen für den Service und die Sprachauswahl zu unterstützen. Unsere Cookies sind nur für die Dauer einer (1) Browsersitzung gültig. Dadurch ist es möglich, dass die enviroCar Webseite Sie nach dem Logout und Neustart des Browsers nicht wiedererkennt.";
 $terms_local_track_data_heading = "Speicherung von Daten während der Fahrt";
 $terms_local_track_data_text = 'Im Rahmen der von Ihnen durchgeführten Messfahrten (nach dem Drücken des START-Knopfes bis zum Drücken des STOP Knopfes) werden folgende Daten aufgenommen und gespeichert:
 <ul>
@@ -602,14 +602,14 @@ $terms_local_track_data_text = 'Im Rahmen der von Ihnen durchgeführten Messfahr
 </ul>
 Diese Daten werden intern über eine verschlüsselte Kennung mit Ihren Benutzerdaten gekoppelt, So dass Sie sowohl in der enviroCar App, als auch in der WebSite in der Lage sind, Ihre eigenen Daten zu betrachten. Die Kommunikation zwischen der enviroCar App, dem enviroCar Server und der enviroCar WebSite ist verschlüsselt, so dass Dritte keinen Zugang zu Ihren Daten haben.';
 $terms_remote_track_data_heading = "Hochladen von Daten auf den enviroCar Server";
-$terms_remote_track_data_text = 'Mit dem Hochladen von Daten aus der enviroCar App  auf den  enviroCar Server  (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (ODbL) von Dritten genutzt werden dürfen.</br>
-Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Benutzer-Information mehr. In den Einstellungen der enviroCar App haben Sie zudem die Möglichkeit, Beginn und Ende der Tracks zu beschneiden, so dass  der Start- und Zielort Ihrer Tracks verschleiert sind.</br></br>
-<h2 class="featurette-heading">Lizenzierung der Gemessenen Daten</h2>       
-Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (ODbL)  genutzt werden. Das heißt:</br>
+$terms_remote_track_data_text = 'Mit dem Hochladen von Daten aus der enviroCar App auf den enviroCar Server (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (ODbL) von Dritten genutzt werden dürfen.<br/>
+Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Benutzer-Information mehr. In den Einstellungen der enviroCar App haben Sie zudem die Möglichkeit, Beginn und Ende der Tracks zu beschneiden, so dass der Start- und Zielort Ihrer Tracks verschleiert sind.<br/><br/>
+<h2 class="featurette-heading">Lizenzierung der Gemessenen Daten</h2>
+Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (ODbL) genutzt werden. Das heißt:<br/>
 Es ist erlaubt:
 <ul>
 <li style="list-style-type: none;">Die Daten dieser Datenbank zu kopieren und zu verteilen, neue Daten aus dieser Datenbank abzuleiten.</li>
-</ul>    
+</ul>
 Dabei ist Folgendes einzuhalten:
 <ul>
 <li style="list-style-type: none;">Bei der Weitergabe dieser Daten an Dritte ist anzugeben, woher die Daten stammen (Benennung der Quelle in der Form “Quelle: 52°North enviroCar Server”). Jede kopierte, veränderte oder ergänzte Fassung der Datenbank muss selbst ebenfalls nach Maßgabe der ODbL zugänglich gemacht werden. Wenn die abgeleitete Datenbank verteilt wird, darf sie nicht durch DRM-Maßnahmen (Digital Rights Management) geschützt werden, sofern sie nicht gleichzeitig auch als DRM-freie Version verfügbar ist.</li>
