@@ -188,7 +188,7 @@ $dashboard = "Mein Profil";
 $routes = "Meine Routen";
 $friends ="Freunde";
 $groups = "Gruppen";
-$about = "Über";
+$about = "Über enviroCar";
 $community ="Gemeinschaft";
 $logout = "Abmelden";
 $comparison ="Vergleich";
@@ -473,57 +473,64 @@ Die enviroCar Website ermöglicht Ihnen
 <li>Daten für weitere Auswertungen herunterzuladen</li>
 </ul>';
 $about_aboutText3 = "enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Sie können diese Adapter auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden. Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.";
+$about_the_people_behind_head = "Wer steckt dahinter";
+$about_the_people_behind_text = "enviroCar ist ein Projekt des Forschungsnetzwerkes 52°North und des Institutes für Geoinformatik der Universität Münster. Projektpartner sind die Technische Universität Dresden - Professur für Geoinformatik und die con terra GmbH.
+<br/><br/> 
+Das Environmental Systems Research Institute Esri Inc unterstützt das Projekt als globaler Sponsor.
+<br/><br/> 
+Das Projekt ist offen für weitere Partner, Entwickler, Forscher.";
 $about_gettinginvolvedHead = "Mitmachen";
-$asACitizenHead = "As a Citizen (Scientist)";
-$asACitizenText = "All you need to join the community is a Bluetooth OBD-II Adapter and an Android Smart Phone.
-
-There are many OBD-II adapters on the market and their prices range from about 18 EUR (23 USD) up to 150 EUR (200 USD). The OBD-II community has a lot of experience with these adapters, and theoretically most of them should work fine (take a look >here< for more details). Please be aware that national laws require products to have appropriate certificates (CE, ECE in Europe). Unfortunately most of these adapters are sold without such certificates. 
-As for the European regulations: currently the only adapter which is legaly usable while driving is the Drivedec W4 adapter.
-Plug in the adapter to the OBD-II socket within your car (as for the position you can check the web for your car type and OBD-II) and pair it with your smart phone following the instructions of the adapter. 
-
-The enviroCar App is available for Android 2.3 to the latest version 4.2.2. To install the app on your smartphone, you can use the Play Store, which is installed on your Android smartphone. Just search for “enviroCar”, download and install this app on your smartphone and enjoy all the features of the enviroCar system.
-
-You can use the app to register for enviroCar. Check your settings, register your car type, select the bluetooth device and start collecting your first tracks while driving your car. Upload your data to the envirocar server and use the website to connect to friends and groups and explore the maps & statistics the website is providing you with.
-
-Use enviroCar and its data to discuss  mobility and environment related issues with your friends, with researchers and experts from public authorities. Develop ideas how to gain mobility and to reduce negative impacts on the environment. Join the community and be a citizen scientist!
-";
-$asAScientistHead = "As a Scientist";
-$asAScientistText = "You are interested in using the enviroCar platform and its data for research projects?
-
-We recommend to start as a citizen scientist and to get familiar with the enviroCar platform, its data and its features.
-
-If you’re interested in the data “as is” you may use  either the download  facilities or the  API to bring the data into your computing environment for further analysis.
-
-If you need special parameters, a community of volunteers or a special quality of data or simply more information about this citizen science approach we might be able to support. We’d be happy to get in contact with you, to complement your expertise with our experience and network, and to go for joint activities.";
-$asAPlannerHead = "As a public authority";
-$asAPlannerText = "You are interested in using the enviroCar approach to interact with the citizens of your  region as to develop new concepts and sustainable change in the field of mobility and environment? 
-
-You may use the enviroCar platform “as is” for this purpose. Your IT department and  your domain experts will be able to do the job. However, we’d be happy  to provide you with any support needed, such as consultancy, data analysis, software development,  systems integration, service level agreements, organizing public workshops, etc.";
-$asADeveloperHead = "As a Developer.";
-$asADeveloperText = "You’d like to develop an application and use the enviroCar platform as a public data source? Check out the enviroCar APIs and software at Github: https://github.com/enviroCar. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data. 
-
-You’re invited to join the enviroCar developer community. You may subscribe to the enviroCar@52north.org mailing list as to get the latest infos about the development process and upcoming features.";
+$asACitizenHead = "Als wissenschaftlich interessierter /engagierter Bürger (Citizen Scientist)";
+$asACitizenText = 'Derzeit befindet sich enviroCar noch in einer geschlossenen beta-Phase, in der die Software  ergänzt, getestet und für die breitere Anwendung vorbereitet  wird. Sofern Sie als Entwickler  interessiert sind, an den Tests teilzunehmen, wenden Sie sich bitte an  enviroCar@52north.org.
+<br/><br/>
+Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Version 2.3), ein Bluetooth OBD-II-Adapter und ein Fahrzeug, das den OBD-II Standard unterstützt. 
+<br/><br/>
+Es gibt viele ODB-II-Adapter im Handel. Der Preis liegt zwischen 15  Euro für Billig-Produkte aus China und ca. 90-200 Euro für sehr hochwertige Systeme. Bitte beachten Sie, dass in Europa bestimmte Zertifikate für den Handel von Systemen (EC) und für den Betrieb im fahrenden Fahrzeug (ECE)  gesetzlich vorgeschrieben sind.  Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
+<br/><br/>
+Die enviroCar App ist  derzeit für die Android-Versionen 2.3 - 4.2.2 verfügbar. Installieren  Sie die App einfach über Google Play auf Ihrem Smartphone. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen. 
+<br/><br/>
+Sie können Ihre Daten aus der App zum enviroCar-Server hochladen und die enviroCar  Webseite verwenden, um Ihre Fahrten zu analysieren und in einer Karte  zu betrachten. Außerdem können Sie sich hier mit Freunden und Gruppen vernetzen.
+<br/><br/>
+Nutzen Sie die mit enviroCar gesammelten Daten, um mit Freunden,  Wissenschaftlern und  den Experten der öffentlichen Verwaltung fundiert über die Umweltaspekte des Autofahrens zu diskutieren. Entwickeln Sie eigene Ideen, wie wir unsere Mobiltität sichern und nachhaltig gestalten können.';
+$asAScientistHead = "Als Wissenschaftler";
+$asAScientistText =  'Interessieren Sie sich für die enviroCar-Plattform und die dort vorhandenen Daten als Basis für Ihre Forschungsvorhaben? Wir empfehlen Ihnen, enviroCar zunächst in der Rolle eines Bürgers kennen zu lernen (s.o.). Wenn Sie die Rohdaten analysieren wollen, nutzen Sie die enviroCar <a href="./dataaccess.php">Webschnittstelle</a>, um die Daten in Ihre Anwendungen zu importieren und  dort weiter zu verarbeiten.
+<br/><br/>
+Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen wenden wollen, verwenden Sie die offene mailing-Liste <a href="mailto:enviroCar@52north.org">enviroCar@52north.org</a>. 
+<br/><br/>
+Sofern Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität  oder zu den verwendeten Methoden und Technologien haben, wenn Sie  besondere Anpassungen benötigen oder wenn Sie generell an gemeinsamen Aktivitäten mit 52°North interessiert sind, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
+$asAPlannerHead = "Als öffentliche Einrichtung";
+$asAPlannerText = 'Möchten Sie die Bürger für das Thema Mobilität und Umwelt sensibilisieren? Möchten Sie die aktive Auseinandersetzung von Bürgern mit dem Thema und die Entwicklung eines umfassenden Verständnisses für die Thematik fördern? Möchten Sie die Bürger aktiv in den Prozess der Gestaltung einer nachhaltigen Verkehrsentwicklung einbeziehen? 
+<br/><br/>
+Nutzen Sie die enviroCar Plattform als Basis für Citizen Science Projekte mit Wissenschaftlern, Fachleuten und den Bürgern in Ihrer Region. Gern unterstützen wir Sie  mit unseren Partnern bei der Vorbereitung und Durchführung solcher Projekte. 
+<br/><br/>
+Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen von enviroCar wenden möchten, verwenden Sie die offene mailing-Liste <a href="mailto:enviroCar@52north.org">enviroCar@52north.org</a>. 
+<br/><br/>
+Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität  oder zu den verwendeten Methoden und Technologien haben, wenn Sie  besondere Anpassungen benötigen oder wenn Sie  sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern <a href="mailto:info@envirocar.org">direkt mit uns in Kontakt treten</a>.';
+$asADeveloperHead = "Als Softwareentwickler";
+$asADeveloperText = 'Sie möchten eine Anwendung auf Basis der öffentlichen Daten von enviroCar entwickeln? Prima! Schauen Sie sich das existierende <a href="https://github.com/enviroCar" target="_blank">Open Source Software Repository auf GitHub</a> an. Dort finden Sie auch die sehr einfache REST-Schnittstelle des enviroCar-Servers, die Ihnen freien Zugriff auf die Daten ermöglicht. 
+<br/><br/>
+Natürlich sind Sie herzlich eingeladen, der enviroCar-Entwicklergemeinde beizutreten. Abonnieren die Mailingliste envirocar@52north.org, um die neuesten Informationen über den Entwicklungsprozess und neue Funktionalitäten zu erhalten.';
 $about_faqHead = "Häufig gestellte Fragen";
-$faq_q1 = "Welche OBD-II adapter sind kompatibel mit enviroCar?";
+$faq_q1 = "Welche OBD-II Adapter sind kompatibel mit enviroCar?";
 $faq_q2 = "Wird mein Auto unterstützt?";
 $faq_q3 = "Wie wird der Datenschutz berücksichtigt?";
 $faq_q4 = "Ich bin ein Entwickler und interessiert an enviroCar. Kann ich zusätzliche Informationsprodukte beisteuern?";
 $faq_q5 = "Wie kann ich als Entwickler zu den enviroCar Komponenten beitragen?";
 $faq_q6 = "Was ist der Entwicklungsstatus von enviroCar?";
 
-$faq_a1 = 'Es gibt zahlreiche OBD-II Adapter in unterschiedlichen Preisen (siehe Liste <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a>). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir nicht für das Funktionieren einer Smartphone / Adapter Kombination garantieren können. Die enviroCar Community pflegt <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">hier</a> eine Matrix von getesteten Kombinationen. Um diese Matrix weiter zu pflegen, bitten wir Sie uns Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
+$faq_a1 = 'Es gibt zahlreiche OBD-II Adapter in unterschiedlichen Preiskategorien (siehe Liste hier). Die Adapter können z.B. auf eBay oder Amazon erworben werden. Bitte beachten Sie, dass wir das Funktionieren jeglicher Smartphone/Adapter-Kombinationen nicht garantieren können. Die enviroCar Community hat begonnen, <a href="https://wiki.52north.org/bin/view/Projects/EnviroCar#App_Compatibility" target="_blank">eine Liste getesteter Kombinationen</a> im enviroCar wiki zu dokumentieren. Um diese Matrix weiter zu pflegen, bitten wir Sie, in der <a href="mailto:enviroCar@52north.org">enviroCar Mailing-Liste</a> über Ihre Erfahrungen zu Smartphone / Adapter Kombinationen zu berichten.
 <br/><br/>
-WICHITG für die Nutzung von OBD-II Adaptern in Deutschland: Die Nutzung von Adaptern ohne ECE Zertifikat während der Fahrt ist nicht gestattet. Derzeit ist lediglich der DriveDeck Sport (W4) Adapter mit einem solchen Zertifikat ausgestattet.';
-$faq_a2 = 'Heute wird das Vorhandensein der OBD-II Schnittstelle im Auto per Gesetzt vorgeschrieben. Abhängig vom Land und Fahrzeugtyp wurde OBD-II zu unterschiedlichen Zeiten Pflicht:
+Wichtig für die Nutzung von OBD-II Adaptern in Deutschland: Die Nutzung von Adaptern ohne ECE Zertifikat während der Fahrt ist nicht gestattet. Derzeit ist lediglich der DriveDeck Sport (W4) Adapter mit einem solchen Zertifikat ausgestattet.';
+$faq_a2 = 'Das Vorhandensein der OBD-II Schnittstelle in Fahrzeugen ist gesetzlich vorgeschrieben.
 <br/>
-In den USA sind folgende Fahrzeuge mit einer OBD-II Schnittstelle ausgestattet:
+In den USA:
 <ul>
 <li>alle Autos mit Baujahr 01.01.1996 oder später</li>
 </ul>
-In Europa sind folgende Fahrzeuge mit einer OBD-II Schnittstelle ausgestattet:
+In Europa:
 <ul>
-<li>alle Benzin Autos mit Baujahr 01.01.2001 und EURO-3 Norm (oder besser)</li>
-<li>alle Diesel Autos mit Bauhjar 01.01.2003 oder später</li>
+<li>alle Benzinfahrzeuge mit Baujahr 01.01.2001 und EURO-3 Norm (oder besser)</li>
+<li>alle Dieselfahrzeuge mit Bauhjar 01.01.2003 oder später</li>
 <li>alle LKWs mit Baujahr 01.01.2005 oder später</li>
 </ul>';
 $faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind abgesichert. D.h. nur Sie und die von Ihnen hinzugefügten Freunde haben Zugriff zu Ihren Track Daten. Um auf die Daten zuzugreifen, müssen Sie und Ihre Freunde sich per Passwort authentifizieren. Um die Analyse der Daten und das Erzeugen von Informationsprodukten zu ermöglichen, können alles Tracks auch offen, allerdings in anonymisierter Form, heruntergeladen werden. Die Daten sind in diesem Fall anonymisiert - alle Referenzen zum Nutzer (Ihnen) sind nicht zugänglich. Natürlich ist die Kommunikation zwischen Website/App und dem enviroCar Server verschlüsselt.

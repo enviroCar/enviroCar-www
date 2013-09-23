@@ -11,12 +11,8 @@ $index_get_App="Get our App soon!";
 $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";
 $index_help_the_world='Help make mobility sustainable and our cities a little smarter.
-</br>
-<ul>
-<li>Learn about mobility & envionment!</li>
-<li>Share your data with the enviroCar Citizen Science Community!</li>
-<li>Collaborate with other citizens, urban planners and scientists worldwide.!</li>
-</ul>';
+</br></br>
+Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
 $index_this_is_community='Use the enviroCar app to read your car’s sensor data, learn about your car and explore your driving style.
  </br></br>
@@ -475,6 +471,12 @@ $about_aboutText2 = '<strong>enviroCar</strong> is a community based platform fo
 <li>download data to process and analyze.</li>
 </ul>';
 $about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions. ';
+$about_the_people_behind_head = "The People behind";
+$about_the_people_behind_text = "enviroCar is a project of the 52°North research and development network and the Institute for Geoinformatics at Münster University. The Technical University of Dresden - Professorship of Geoinformation Systems and con terra GmbH are project partners.
+<br/><br/>
+Esri Inc supports this project as a global sponsor.
+<br/><br/>
+This project is open for additional partners, developers and researchers.";
 $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen (Scientist)";
 $asACitizenText = 'All you need to join the community is a Bluetooth <strong>OBD-II Adapter</strong> and an <strong>Android Smart Phone</strong>.
@@ -515,17 +517,15 @@ $faq_q6 = "What is the current state of enviroCar?";
 $faq_a1 = 'There are several OBD-II adapters available in various price ranges (see a list <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">here</a>). You can buy those adapters on eBay, Amazon, or other shops. Please be aware that we are not able to guarantee that all combinations of smartphones / adapters work well. The car type can also have an influence. The enviroCar community maintains a matrix of working combinations <a href="https://wiki.52north.org/bin/view/Projects/EnviroCar#App_Compatibility" target="_blank">here</a>.  Please report your experience regarding smartphone / adapter combinations!
 <br/><br/>
 IMPORTANT for OBD-II adapters in Germany: The use of adapters without certain ECE certificates is prohibited while driving your car.  Currently, the Drivedeck W4 adapter is the only one equipped with all certificates required in Germany. Please check national regulations to be sure that the adapter of your choice can be used without restrictions in your country.';
-$faq_a2 = 'The presence of an OBD-II interface within today’s cars is mandated by law in the US as well as Europe. Depending on country and vehicle type, OBD-II was introduced at different times.
-<br/>
-In the US:
+$faq_a2 = 'The presence of an OBD-II interface within today’s cars is mandated by law in the US, as well as Europe. 
+<br/><br/>
+In the US, all cars built 01.01.1996 or later are equipped with an OBD-II interface.
+<br/><br/>
+In Europe, the following cars are equipped with an OBD-II interface:
 <ul>
-<li>All cars built after 01.01.1996 are equipped with an ODB2 interface.</li>
-</ul> 
-In Europe:
-<ul>
-<li>All cars with gasoline engine built after 01.01.2001 and with EURO-3 norm (or better) have the OBD-II interface.</li>
-<li>All diesel vehicles built after 01.01.2003 have it.</li>
-<li>For trucks, the OBD-II support started on 01.01.2005.</li>
+<li>All cars with a gasoline engine built 01.01.2001 or later and with a EURO-3 norm (or better)</li>
+<li>All diesel vehicles built 01.01.2003 or later</li>
+<li>All trucks built 01.01.2005 or later</li>
 </ul>
 ';
 $faq_a3 = 'The track data which is uploaded to the enviroCar server is protected. I.e., only you and users you have added as friends can view your track data. To access those data, you and your friends need to authenticate via password login. To enable analysis of data and the creation of information products, all tracks can also be accessed openly in an anonymized form, i.e., the reference to the user (you) is not accessible. Of course, all communication between website/app and the enviroCar server is encrypted to prevent eavesdropping.
