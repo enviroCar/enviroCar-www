@@ -11,13 +11,13 @@ $index_get_App="Get our App soon!";
 $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";
 $index_help_the_world='Help make mobility sustainable and our cities a little smarter.
-</br></br>
+<br><br>
 Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
 $index_this_is_community='Use the enviroCar app to read your car’s sensor data, learn about your car and explore your driving style.
- </br></br>
+<br><br>
 Upload your tracks as Open Data to the enviroCar server and provide this anonymized data to researchers and planners in the field of mobility and environment.
- </br></br>
+<br><br>
 Analyze your data and learn about further enviroCar projects and activities via the enviroCar website.';
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
