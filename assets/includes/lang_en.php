@@ -563,22 +563,78 @@ $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
 
 //terms
-$terms_general = "";
-$terms_cookies_heading = "Use of cookies";
-$terms_cookies_text = 'When you use this website, you agree to the use of cookies. The cookies will be used strictly for the purpose of enabling you to log in to our services and select the language of preference for our website. The cookie stores a combination of numbers and characters to identify you during a browser session.
+$terms_general = '<h2 class="featurette-heading">Terms of Use</h2>
+<p style="text-align: justify">
+When you accept our Terms of Use, you agree to comply with the following regulations.
 <br/><br/>
-We promise not to use cookies for tracking purposes. Our cookies are valid for one (1) browser session. Thus you can log out, restart your browser and our website will not recognize you';
-$terms_local_track_data_heading = "Saving data during a drive";
-$terms_local_track_data_text = "During your test drive (after the START button has been pushed until the STOP button has been pushed), the following data is collected and saved:
+<strong>1. What happens to User Data</strong> 
+<br/>
+When using this website, your IP address will be stored  in our server’s access log and error log file.
+<br/><br/>
+When you register for or use the enviroCar services, the following information will be collected and stored. This information is deleted when you delete your account.
+</p>
+<ul>
+<li>The user name you chose</li>
+<li>The email address you provided</li>
+<li>The password you provided</li>
+<li>The user name of persons who added your user name as a friend</li>
+<li>The user name of the person you added as a friend</li>
+<li>The name of the groups you joined</li>
+<li>Other optional information (if provided):
+<ul>
+<li>First Name, Last Name</li>
+<li>The country and city in which you live</li>
+<li>Your website</li>
+<li>Your gender</li>
+<li>The language of preference for the enviroCar website</li>
+</ul>
+Any other information you provided in a free text form</li>
+</ul>
+<p style="text-align: justify">
+You can delete (there is no way back!) your account and the data associated with it (see above) at anytime. Tracks that have been uploaded as Open Data and published to the public are NOT deleted. If you would like to delete your tracks as well, you must do this before you delete your account. Once your account is gone, it is not possible to find out which tracks were yours. Please read the FAQ <LINK> for more information about how to delete your data and/or your account.
+</p>       
+<br/>
+<strong>2. Saving data during a drive</strong> 
+<br/>
+<p style="text-align: justify">
+During your test drive (after the START button has been pushed until the STOP button has been pushed), the following data is collected and saved:
+</p>
 <ul>
 <li>Location of measurement</li>
-<li>Time and date of measurement</li>
-<li>Data from the engine control system, for example speed, revolutions per minute, throttle pedal position</li>
-<li>Derived data, such as fuel consumption, CO2 emission</li>
+Time and date of measurement</li>
+Data from the engine control system, for example speed, revolutions per minute, throttle pedal position</li>
+Derived data, such as fuel consumption, CO2 emission</li>
 </ul>
-This data is linked via an encrypted key to your user account, which enables you to view your own data in the enviroCar App, as well as in the website. Communication between the enviroCar App, the enviroCar server and the enviroCar website is encrypted so that no third party can access your data.";
-$terms_remote_track_data_heading = "Upload Data to enviroCar server";
-$terms_remote_track_data_text = '';
+<p style="text-align: justify">
+This data is linked via an encrypted key to your user account, which enables you to view your own data in the enviroCar App and on the website. Communication between the enviroCar App, the enviroCar server and the enviroCar website is encrypted so that no third party can access your data.
+</p>
+<br/>
+<strong>3. Upload data to enviroCar server</strong> 
+<br/>
+<p style="text-align: justify">
+When you upload your data to the enviroCar server (option: “upload data as Open Data“), you agree to publish the measured data as anonymous Open Data and allow third parties to use the data in accordance with the Open Database License (ODbL).
+Data which is downloaded from the enviroCar server contains no user information. The enviroCar App has an option in “settings” with which you can cut off the beginning and end of your tracks so that the point of departure and the destination are obscured.
+</p>
+<br/>
+<strong>4. Licensing</strong> 
+<br/>
+<p style="text-align: justify">
+Data available via the enviroCar API can be used by third parties in accordance with the Open Database License <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>. This means
+</p>
+<ul>
+<li style="list-style-type: none;">
+a) you are allowed to copy and redistribute this database, create works from this database and modify copies of this database
+</li>
+<li style="list-style-type: none;">
+b) as long as you mention the source of the data (use “Source: 52°North enviroCar Server”), share copies or modified copies of this database in accordance with the <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a> and keep your database open and accessible (you are not allowed to protect it with Digital Rights Managements (DRM) measures if it is not simultaneously available as a DRM free version).
+</li>
+</ul>
+<br/>
+<strong>5. Use of cookies</strong> 
+<br/>
+<p style="text-align: justify">
+When you use this website, you agree to the use of cookies. The cookies will be used strictly for the purpose of enabling you to log in to our services and select the language of preference for our website. The cookie stores a combination of numbers and characters to identify you during a browser session. Our cookies are valid for one (1) browser session. 
+</p>';
 
 //temporary
 $under_construction = "This website is currently under construction..";

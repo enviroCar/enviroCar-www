@@ -642,14 +642,14 @@ Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Verweise
 <strong>4. Lizenzierung der gemessenen Daten</strong> 
 <br/>
 <p style="text-align: justify">
-Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (ODbL)  genutzt werden. Das heißt:
+Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (<a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>)  genutzt werden. Das heißt:
 </p>
 <ul>
 <li style="list-style-type: none;">
 a) Es ist erlaubt, die Daten dieser Datenbank zu kopieren und zu verteilen, neue Daten aus dieser Datenbank abzuleiten.
 </li>
 <li style="list-style-type: none;">
-b) Bei der Weitergabe der Daten an Dritte ist anzugeben, woher die Daten stammen (Benennung der Quelle in der Form “Quelle: 52°North enviroCar Server”). Jede kopierte, veränderte oder ergänzte Fassung der Datenbank muss selbst ebenfalls nach Maßgabe der ODbL zugänglich gemacht werden. Wenn die abgeleitete Datenbank verteilt wird, darf sie nicht durch DRM-Maßnahmen (Digital Rights Management) geschützt werden, sofern sie nicht gleichzeitig auch als DRM-freie Version verfügbar ist.
+b) Bei der Weitergabe der Daten an Dritte ist anzugeben, woher die Daten stammen (Benennung der Quelle in der Form “Quelle: 52°North enviroCar Server”). Jede kopierte, veränderte oder ergänzte Fassung der Datenbank muss selbst ebenfalls nach Maßgabe der <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a> zugänglich gemacht werden. Wenn die abgeleitete Datenbank verteilt wird, darf sie nicht durch DRM-Maßnahmen (Digital Rights Management) geschützt werden, sofern sie nicht gleichzeitig auch als DRM-freie Version verfügbar ist.
 </li>
 </ul>
 <br/>
