@@ -64,15 +64,15 @@ if(!is_logged_in()){
 
 	<div class="container rightband">
       <div class="row-fluid">
-       <div class="span7">
+       <div class="span6" style="margin-left:10px;">
 <!--		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>-->
 		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
-		<p style="text-align: justify; font-size:21px">
+		<p style="text-align: justify; font-size:21px;">
 			<? echo $index_this_is_community;?>
 		</p>
 		</div>
-      <div class="span3">
-      <iframe width="440" height="280" src="//www.youtube.com/embed/LTSuUEOfWa0" allowfullscreen></iframe>
+      <div class="span5">
+      <iframe width="480" height="340" src="//www.youtube.com/embed/LTSuUEOfWa0" allowfullscreen></iframe>
       </div>
       </div>
 	</div>

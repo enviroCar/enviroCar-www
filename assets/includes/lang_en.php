@@ -437,11 +437,11 @@ $noDescription = "No description available.";
 $map = "Map";
 $details = "Details";
 $hotspot_titel = "enviroCar Hot Spot Analysis";
-$hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster. Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
+$hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
 $speed_titel = "enviroCar Speed Map";
-$speed_description = "This map provides an overview on all enviroCar tracks. It show the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. This map can be accessed though the ArcGIS app on your tablet pc or your smart phone if you look for enviroCar.";
+$speed_description = "This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.";
 $speedcomparison_titel = "Speed Analysis";
-$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institue for Geoinformatics at Münster University (2013/07).";
+$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institute for Geoinformatics at Münster University (2013/07).";
 
 //dataaccess.php
 $viaAPIHead = "Using the enviroCar REST API";
@@ -453,7 +453,8 @@ $viaDownloadText = "Keine Beschreibung verfügbar.";
 
 //about.php
 $about_aboutHead = "About enviroCar";
-$about_aboutText1 = 'Use <strong>enviroCar</strong> to investigate the impact your driving has on environmental factors, such as <strong>fuel consumption</strong>, <strong>CO2</strong>, or <strong>noise</strong> emissions. <strong>Compare</strong> your driving statistics with friends and compete to become the most efficient driver while reducing your car’s running costs!
+$about_aboutText1 = '<h2>enviroCar & Citizen Science</h2>
+Use <strong>enviroCar</strong> to investigate the impact your driving has on environmental factors, such as <strong>fuel consumption</strong>, <strong>CO2</strong>, or <strong>noise</strong> emissions. <strong>Compare</strong> your driving statistics with friends and compete to become the most efficient driver while reducing your car’s running costs!
 <strong>Share</strong> your data with the enviroCar <strong>citizen science</strong> community and collaborate with others to investigate questions such as:
 <ul>
 <li>What are the spatial characteristics of fuel consumption in your city?</li>
@@ -463,41 +464,47 @@ $about_aboutText1 = 'Use <strong>enviroCar</strong> to investigate the impact yo
 Help <strong>build</strong> a database to help solve these kind of questions. 
 <br/><br/>
 With enviroCar we can all contribute to a <strong>new environmental information</strong> resource. Join the community and help make our world a little smarter.';
-$about_aboutText2 = '<strong>enviroCar</strong> is a community based platform for gathering car-borne sensor data and producing environmental information. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The <strong>enviroCar app</strong> provides information about your car and your driving characteristics. Upload the data to the <strong>enviroCar server</strong> and contribute anonymized data to the open enviroCar citizen science community. The <strong>enviroCar website</strong> allows you to:
+$about_aboutText2 = '<h2>The enviroCar Platform</h2>
+<strong>enviroCar</strong> is a community based platform for gathering car-borne sensor data and producing environmental information. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The <strong>enviroCar app</strong> provides information about your car and your driving characteristics. Upload the data to the <strong>enviroCar server</strong> and contribute anonymized data to the open enviroCar citizen science community. The <strong>enviroCar website</strong> allows you to:
 <ul>
 <li>access your data,</li>
 <li>compare your driving characteristics with others,</li>
 <li>explore maps and statistics and</li>
 <li>download data to process and analyze.</li>
-</ul>';
-$about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions. ';
+</ul>
+';
+$about_aboutText3 = '<h2>OBD II Adapter</h2>
+enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
 $about_the_people_behind_head = "The People behind";
-$about_the_people_behind_text = 'enviroCar is a project of the <a href="http://52north.org" target="_blank">52°North research and development network and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>. The <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">Technical University of Dresden - Professorship of Geoinformation Systems</a> and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a> are project partners.
-<br/><br/>
-<a href="http://www.esri.com" target="_blank">Esri Inc</a> supports this project as a global sponsor.
-<br/><br/>
-This project is open for additional partners, developers and researchers.';
+$about_the_people_behind_text = 'enviroCar is a project of 
+<ul>
+<li style="list-style-type: none;"><a href="http://52north.org" target="_blank">the 52°North</a> research and development network</li> 
+<li style="list-style-type: none;">and the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
+</ul>
+Partners are
+<ul>
+<li style="list-style-type: none;">sind die <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">the Technical University of Dresden - Professorship of Geoinformation Systems</a></li> 
+<li style="list-style-type: none;">and <a href="http://www.conterra.de" target="_blank">con terra GmbH</a>.</li>
+</ul>
+Global Sponsor
+<ul>
+<li style="list-style-type: none;">This project is sponsored by Esri - the Environmental Systems Research Institute - as a global sponsor (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Germany</a>)</li>
+</ul>
+This project is open for additional partners, researchers and developers.';
 $about_gettinginvolvedHead = "Getting Involved";
-$asACitizenHead = "As a Citizen (Scientist)";
-$asACitizenText = 'All you need to join the community is a Bluetooth <strong>OBD-II Adapter</strong> and an <strong>Android Smart Phone</strong>.
+$asACitizenHead = "As a citizen, who is interested  and engaged in research (citizen scientist)";
+$asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
-There are many OBD-II adapters on the market and their prices range from about 18 EUR (23 USD) up to 150 EUR (200 USD). The OBD-II community has a lot of experience with these adapters, and theoretically most of them should work fine (take a look <a href="http://torque-bhp.com/wiki/Bluetooth_Adapters" target="_blank">here</a> for more details). Please be aware that national laws require products to have appropriate certificates (CE, ECE in Europe). Unfortunately most of these adapters are sold without such certificates. 
-As for the European regulations: currently the only adapter which is legaly usable while driving is the Drivedec W4 adapter.
-Plug in the adapter to the OBD-II socket within your car. Typically you find this socket in the leg room or below the dashboard of your car. If you cannot find it on your own, you can do a web search for your car type and OBD-II. Once the adapter is plugged in, you just need to pair it with your smartphone. 
+The enviroCar app is available for<strong>Android 2.3 - 4.2.2</strong>. After the closed beta phase ends (scheduled for mid october), the app will be available for the public at Google Play.  Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
 <br/><br/>
-The enviroCar App is tested for Android 2.3 to version 4.2.2. To install the app on your smartphone, you can use the Play Store and search for <a href="https://play.google.com/store/apps/details?id=org.envirocar.app&amp;hl=en" target="_blank">enviroCar</a>.
-<br/><br/>
-You can use the app to register for enviroCar. Check your settings, register your car type, select the bluetooth device, and start collecting your first tracks while driving your car. Upload your data to the envirocar server and use the website to connect to friends and groups and explore the <a href="./mapsandstatistics.php">maps & statistics</a> to which you are now contributing to.
-<br/><br/>
-Use enviroCar and its data to discuss mobility and environment related issues with your friends and with researchers and experts from public authorities. Develop ideas how to gain mobility and to reduce negative impacts on the environment. Join the community and become a <strong>citizen scientist</strong>!';
+Upload your data to the enviroCar server, use the website to explore the maps & statistics, and connect with friends and groups. Discuss issues related to mobility and environment based on enviroCar data with your friends, researchers and experts from public authorities. Develop your own ideas on how to increase mobility, improve sustainability and reduce negative impacts on the environment. ';
 $asAScientistHead = "As a Scientist";
-$asAScientistText = 'You are interested in using the enviroCar platform and  its data for research projects?
+$asAScientistText = 'Are you interested in using the enviroCar platform and its data for research projects? We recommend you start as a citizen scientist (see above) and get familiar with the enviroCar platform, its data and its features. If you’re interested in the data “as is”, download the data via the <a href="./dataaccess.php">download facilities</a> to your computing environment for further analysis. 
 <br/><br/>
-We recommend to start as a citizen scientist and to get familiar with the enviroCar platform, its data and its features.
+If you would like to share your questions and comments with all enviroCar users and project groups, join the public enviroCar <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">Forum</a>.
 <br/><br/>
-If you’re interested in the data “as is” you can visit the <a href="./dataaccess.php">data access page</a> where you can either use the <strong>download facilities</strong> or the <strong>Web API</strong> to bring the data into your computing environment for further analysis.
-<br/><br/>
-If you need special parameters, a community of volunteers, a special quality of data, or simply more information about this citizen science approach we might be able to support. We’d be happy to get in contact with you, to complement your expertise with our experience and network, and to go for joint activities.';
+If you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North directly</a>. 
+';
 $asAPlannerHead = "As a public authority";
 $asAPlannerText = 'You are interested in using the enviroCar approach to interact with the citizens of your  region as to develop new concepts and sustainable change in the field of mobility and environment? 
 <br/><br/>
