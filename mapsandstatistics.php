@@ -54,6 +54,21 @@ if(!is_logged_in()){
 		</div>
 	</div>
 
+
+	<div class="container rightband">
+	<div class="row-fluid">
+			<h2 class="featurette-heading"> <? echo $analyzing_with_R_titel ?></h2>
+			<div class="span3">
+				<a href="http://rpubs.com/edzer/enviroCar" target="_blank" class="thumbnail">
+					<img src="./assets/img/analyzing_with_R_thumb.jpg" alt="">
+				</a>
+			</div>
+        <div class="span6">
+          <?php echo $analyzing_with_R_description ?>       
+        </div>
+		</div>
+	</div>
+
 <?
 include('footer.php');
 ?>
