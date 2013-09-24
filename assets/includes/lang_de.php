@@ -443,9 +443,11 @@ Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster. 
 
 //dataaccess.php
 $viaAPIHead = "Nutzung der enviroCar API";
-$viaAPIText = 'Die REST API des enviroCar Servers ist in anonymisierter Form offen zugänglich und klar definiert. Sie erlaubt es flexibel Daten herunterzuladen, z.B. durch räumliches und zeitliches Filtern. Via HTTP kann z.B. auf Tracks, Messungen und Statistiken zugegriffen werden. Die Daten sind dabei anonymisiert, d.h. die Referenzen zum Nutzer sind nicht zugänglich. Nutzer-spezifische Daten sind abgesichert, d.h. ihre Abfrage erfordert ein Login über HTTP Authorization.
+$viaAPIText = 'Die REST API des enviroCar Servers unterstützt den selektiven  Zugriff auf anonymisierte Messfahrten (Tracks). Sie können per HTTP auf die Tracks, die Messungen und zugehörige Statistiken zugreifen. Für die Selektion können räumliche und zeitliche Filter verwendet werden.
 <br/><br/>
-Ein detaillierte Beschreibung der enviroCar Server API kann <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">hier</a> gefunden werden.';
+Die Daten sind anonymisiert, d.h. eine Verbindung zu den Nutzerdaten kann nicht mehr hergestellt werden. Der Zugriff auf Nutzer-spezifische Daten ist nur durch den Nutzer selbst möglich, und erfordert ein Login über HTTP Authorization.
+<br/><br/>
+Ein detaillierte Beschreibung der enviroCar Server API findet sich <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">hier</a>.';
 $viaDownloadHead = "Als Download";
 $viaDownloadText = "Keine Beschreibung verfügbar.";
 
