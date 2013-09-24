@@ -37,21 +37,6 @@ $(function(){
     });  
 });
 
-$(function(){
-document.getElementById("recaptcha1").onclick = function (e) {
-	e.preventDefault();
-	openCaptcha()
-	}
-document.getElementById("recaptcha2").onclick = function (e) {
-	e.preventDefault();
-	openCaptcha()
-	}
-});
-
-function openCaptcha(){
-		window.open('http://www.google.com/recaptcha/mailhide/d?k\07501Qtns6TQQ6uM2lsWVvqiNXw\75\75\46c\75AlAN9GfqguUKseK43rBxu5sgVbdfcQSF_R1aO0mbw_8\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;
-}
-
 </script>
 
 		<div class="tabbable" style="text-align: center;">
@@ -82,7 +67,6 @@ function openCaptcha(){
 						<div class="span6">
 						<p style="text-align: justify;">  		 	
 						<? echo $about_aboutText2 ?>	
-						</p>
 						</div>
 						<div class="span5" style="padding-right: 1ex">
 							<img src="./assets/img/enviroCarConceptOverview.png" style="height:300px; width:487px;" alt="The architecture of envirocar" />
@@ -92,7 +76,7 @@ function openCaptcha(){
 				<div class="container leftband">
 					<div class="row-fluid">
         			<div class="span5">
-        			<img class="offset3" src="./assets/img/drivedeck1.jpg" width="50%" alt="An ODB II Adapter">
+        			<img class="offset3" src="./assets/img/drivedeck1.jpg" style="width:50%;" alt="An ODB II Adapter">
         			</div>
 					<div class="span6">
 							<p style="text-align: justify;">
@@ -105,7 +89,7 @@ function openCaptcha(){
 					</div>
 				</div>
 			</div><!--end of div id="main"-->		
-			<div class="tab-pane fade in active" id="behind">
+			<div class="tab-pane fade in" id="behind">
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span11" style="padding-right: 1ex; text-align: justify;">
@@ -174,8 +158,7 @@ function openCaptcha(){
 								<li><a href="#q2"><? echo $faq_q2 ?></a></li>
 								<li><a href="#q3"><? echo $faq_q3 ?></a></li>		
 								<li><a href="#q4"><? echo $faq_q4 ?></a></li>
-								<li><a href="#q5"><? echo $faq_q5 ?></a></li>		
-								<li><a href="#q6"><? echo $faq_q6 ?></a></li>
+								<li><a href="#q5"><? echo $faq_q5 ?></a></li>	
 							</ul>
 						</div>
 					</div> 
@@ -241,17 +224,7 @@ function openCaptcha(){
 							</p>  
 						</div>    
 					</div>    
-				</div> 
-				<div class="container leftband">
-					<div class="row-fluid">
-						<div class="span" style="padding-right: 1ex">
-							<h2><span  class="anchor" id="q6"></span><? echo $faq_q6 ?></h2>
-							<p style="text-align: justify;"> 
-								<? echo $faq_a6 ?>
-							</p>
-						</div>    
-					</div>    
-				</div>   
+				</div>  
 			</div><!--end of div id="faqs"-->   
 		</div><!--end tab content-->
 <?
