@@ -437,11 +437,11 @@ $noDescription = "No description available.";
 $map = "Map";
 $details = "Details";
 $hotspot_titel = "enviroCar Hot Spot Analysis";
-$hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster. Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
+$hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
 $speed_titel = "enviroCar Speed Map";
-$speed_description = "This map provides an overview on all enviroCar tracks. It show the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. This map can be accessed though the ArcGIS app on your tablet pc or your smart phone if you look for enviroCar.";
+$speed_description = "This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.";
 $speedcomparison_titel = "Speed Analysis";
-$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institue for Geoinformatics at Münster University (2013/07).";
+$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institute for Geoinformatics at Münster University (2013/07).";
 
 //dataaccess.php
 $viaAPIHead = "Using the enviroCar REST API";
@@ -469,10 +469,11 @@ $about_aboutText2 = '<strong>enviroCar</strong> is a community based platform fo
 <li>compare your driving characteristics with others,</li>
 <li>explore maps and statistics and</li>
 <li>download data to process and analyze.</li>
-</ul>';
-$about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions. ';
+</ul>
+';
+$about_aboutText3 = 'enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
 $about_the_people_behind_head = "The People behind";
-$about_the_people_behind_text = 'enviroCar is a project of the <a href="http://52north.org" target="_blank">52°North research and development network and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>. The <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">Technical University of Dresden - Professorship of Geoinformation Systems</a> and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a> are project partners.
+$about_the_people_behind_text = 'enviroCar is a project of the <a href="http://52north.org" target="_blank">52°North</a> research and development network and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>. The <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">Technical University of Dresden - Professorship of Geoinformation Systems</a> and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a> are project partners.
 <br/><br/>
 <a href="http://www.esri.com" target="_blank">Esri Inc</a> supports this project as a global sponsor.
 <br/><br/>

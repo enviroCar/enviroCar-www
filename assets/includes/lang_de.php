@@ -434,12 +434,12 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" tar
 $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
 $hotspot_titel = "enviroCar Hot-Spot Analyse";
-$hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster. Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen Werten an.";
+$hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster (August 2013). Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen  Werten an.";
 $speed_titel = "enviroCar Tracks";
 $speed_description = "Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.";
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
-$speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckeneabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
-Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster. 2013/07.";
+$speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckenabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
+Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster (2013/07).";
 
 //dataaccess.php
 $viaAPIHead = "Nutzung der enviroCar API";
