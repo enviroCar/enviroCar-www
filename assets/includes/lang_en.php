@@ -447,9 +447,11 @@ $analyzing_with_R_description = 'R is a free programming language for (geo) stat
 
 //dataaccess.php
 $viaAPIHead = "Using the enviroCar REST API";
-$viaAPIText = 'The REST API of the enviroCar server is, in anonymized form, openly accessible and clearly defined. This allows a flexible accessing of the uploaded data, e.g., through temporal and spatial filtering. You can query through HTTP e.g. for tracks, measurements, or statistics. Thereby, all data are anonymized, i.e., the references to the user are not accessible. User specific data are protected, i.e., a user login via HTTP authorization is required to access them.
+$viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
 <br/><br/>
-A detailed description of the enviroCar-server API can be found <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">here</a>.';
+The data is anonymized, i.e. it is not possible to connect it to the driver. Access to user related  data is protected and requires the user to login via HTTP authorization.
+<br/><br/>
+Find a detailed description of the enviroCar-server API <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">here</a>.';
 $viaDownloadHead = "Via Download";
 $viaDownloadText = "Keine Beschreibung verfügbar.";
 
@@ -481,12 +483,12 @@ $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = 'enviroCar is a project of 
 <ul>
 <li style="list-style-type: none;"><a href="http://52north.org" target="_blank">the 52°North</a> research and development network</li> 
-<li style="list-style-type: none;">and the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
+<li style="list-style-type: none;">and <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
 </ul>
 Partners are
 <ul>
-<li style="list-style-type: none;">sind die <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">the Technical University of Dresden - Professorship of Geoinformation Systems</a></li> 
-<li style="list-style-type: none;">and <a href="http://www.conterra.de" target="_blank">con terra GmbH</a>.</li>
+<li style="list-style-type: none;">the <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">the Technical University of Dresden - Professorship of Geoinformation Systems</a></li> 
+<li style="list-style-type: none;">and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a>.</li>
 </ul>
 Global Sponsor
 <ul>
@@ -613,9 +615,9 @@ During your test drive (after the START button has been pushed until the STOP bu
 </p>
 <ul>
 <li>Location of measurement</li>
-Time and date of measurement</li>
-Data from the engine control system, for example speed, revolutions per minute, throttle pedal position</li>
-Derived data, such as fuel consumption, CO2 emission</li>
+<li>Time and date of measurement</li>
+<li>Data from the engine control system, for example speed, revolutions per minute, throttle pedal position</li>
+<li>Derived data, such as fuel consumption, CO2 emission</li>
 </ul>
 <p style="text-align: justify">
 This data is linked via an encrypted key to your user account, which enables you to view your own data in the enviroCar App and on the website. Communication between the enviroCar App, the enviroCar server and the enviroCar website is encrypted so that no third party can access your data.
