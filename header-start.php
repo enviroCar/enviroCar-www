@@ -54,7 +54,7 @@ if ($login_name != "" && $login_password != ""){
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
-    <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
+    <link rel="icon" href="./assets/ico/favicon.ico" type="image/png" />
 
     <script src="./assets/js/jquery.js"></script>
 
