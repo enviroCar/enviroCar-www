@@ -440,6 +440,7 @@ $speed_description = "Die Karte gibt einen Überblick über alle Tracks, die bis
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
 $speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckenabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
 Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster (2013/07).";
+$speedcomparison_page_headline = "Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen";
 $analyzing_with_R_titel = "enviroCar Tracks analysieren mit R";
 $analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)statistische Berechnungen. In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.';
 
@@ -644,7 +645,7 @@ Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Verweise
 <strong>4. Lizenzierung der gemessenen Daten</strong> 
 <br/>
 <p style="text-align: justify">
-Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (<a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>)  genutzt werden. Das heißt:
+Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Fahrt als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (<a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>)  genutzt werden. Das heißt:
 </p>
 <ul>
 <li style="list-style-type: none;">
