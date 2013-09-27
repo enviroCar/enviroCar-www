@@ -48,7 +48,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="./assets/ico/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
