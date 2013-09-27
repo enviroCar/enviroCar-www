@@ -121,7 +121,7 @@ var chosenSensor = null;
         routes.features[i].style = style;
     }
     routes.redraw();
-    $('#sensor_headline').html('Speed difference between OSM max-speed and enviroCar averaged speed');
+    $('#sensor_headline').html('<?php echo $speedcomparison_page_headline ?>');
 
   }
 
