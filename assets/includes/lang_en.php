@@ -438,11 +438,12 @@ $map = "Map";
 $details = "Details";
 $hotspot_titel = "enviroCar Hot Spot Analysis";
 $hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
-$speed_titel = "enviroCar Speed Map";
+$speed_titel = "enviroCar Tracks";
 $speed_description = "This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.";
 $speedcomparison_titel = "Speed Analysis";
 $speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institute for Geoinformatics at Münster University (2013/07).";
-$analyzing_with_R_titel = "Analyzing enviroCar trajectory data with R";
+$speedcomparison_page_headline = "Speed difference between OSM maximum speed and enviroCar averaged speed";
+$analyzing_with_R_titel = "Analyzing enviroCar Trajectory Data with R";
 $analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.';
 
 //dataaccess.php
@@ -496,10 +497,10 @@ Global Sponsor
 </ul>
 This project is open for additional partners, researchers and developers.';
 $about_gettinginvolvedHead = "Getting Involved";
-$asACitizenHead = "As a citizen, who is interested  and engaged in research (citizen scientist)";
+$asACitizenHead = "As a Citizen, who is interested  and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
-The enviroCar app is available for<strong>Android 2.3 - 4.2.2</strong>. After the closed beta phase ends (scheduled for mid october), the app will be available for the public at Google Play.  Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
+The enviroCar app is available for <strong>Android 2.3 - 4.2.2</strong>. After the closed beta phase ends (scheduled for mid october), the app will be available for the public at Google Play.  Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
 <br/><br/>
 Upload your data to the enviroCar server, use the website to explore the maps & statistics, and connect with friends and groups. Discuss issues related to mobility and environment based on enviroCar data with your friends, researchers and experts from public authorities. Develop your own ideas on how to increase mobility, improve sustainability and reduce negative impacts on the environment. ';
 $asAScientistHead = "As a Scientist";
@@ -509,7 +510,7 @@ If you would like to share your questions and comments with all enviroCar users 
 <br/><br/>
 If you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North directly</a>. 
 ';
-$asAPlannerHead = "As a public authority";
+$asAPlannerHead = "As a Public Authority";
 $asAPlannerText = 'Would you like to raise awareness about mobility and environment among “your” citizens? 
 Would you like to have citizens actively discuss this topic and stimulate the development of a comprehensive understanding of the subject?
 <br/>
@@ -538,7 +539,7 @@ $faq_a2 = 'The presence of an OBD-II interface within today’s cars is mandated
 <br/><br/>
 In the US, all cars built 01.01.1996 or later are equipped with an OBD-II interface.
 <br/><br/>
-In Europe, the following cars are equipped with an OBD-II interface:
+In Europe, the following vehicles are equipped with an OBD-II interface:
 <ul>
 <li>All cars with a gasoline engine built 01.01.2001 or later and with a EURO-3 norm (or better)</li>
 <li>All diesel vehicles built 01.01.2003 or later</li>
