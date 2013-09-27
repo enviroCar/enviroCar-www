@@ -645,7 +645,7 @@ Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Verweise
 <strong>4. Lizenzierung der gemessenen Daten</strong> 
 <br/>
 <p style="text-align: justify">
-Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Daten als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (<a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>)  genutzt werden. Das heißt:
+Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Fahrt als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (<a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>)  genutzt werden. Das heißt:
 </p>
 <ul>
 <li style="list-style-type: none;">

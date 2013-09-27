@@ -627,8 +627,8 @@ This data is linked via an encrypted key to your user account, which enables you
 <strong>3. Upload data to enviroCar server</strong> 
 <br/>
 <p style="text-align: justify">
-When you upload your data to the enviroCar server (option: “upload data as Open Data“), you agree to publish the measured data as anonymous Open Data and allow third parties to use the data in accordance with the Open Database License (ODbL).
-Data which is downloaded from the enviroCar server contains no user information. The enviroCar App has an option in “settings” with which you can cut off the beginning and end of your tracks so that the point of departure and the destination are obscured.
+When you upload your data to the enviroCar server (option: “Upload Track as Open Data“), you agree to publish the measured data as anonymous Open Data and allow third parties to use the data in accordance with the Open Database License (ODbL).
+Data which is downloaded from the enviroCar server contains no user information. The enviroCar App has an option in “Settings” with which you can cut off the beginning and end of your tracks so that the point of departure and the destination are obscured.
 </p>
 <br/>
 <strong>4. Licensing</strong> 
