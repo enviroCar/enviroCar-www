@@ -46,6 +46,8 @@ $reg_repeat_password="Passwort wiederholen";
 $reg_btn_register="Registrieren";
 $reg_btn_reset="Löschen";
 $invalid_input ="Ungültige Eingabe. Bitte überprüfe die Hinweise und versuche es erneut.";
+$terms_check = 'Ich habe die <a href="./terms.php" target="_blank">Nutzungsbedingungen</a> gelesen und verstanden.';
+$terms_check_alert = 'Bitte lesen und akzeptieren Sie die Nutzungsbedingungen um fortzufahren.';
 
 // dashboard.php
 $dashboard_recent_avtivities="Letzte Aktivitäten";

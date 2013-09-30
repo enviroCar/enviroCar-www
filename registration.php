@@ -33,9 +33,17 @@ if(!is_logged_in()){
 <script type="text/javascript">
 	$(function(){
         $('#contact-form').submit(function(){
+        	
+        	//check if terms of use checkbox was checked
+        	if(!document.getElementById("accept_terms").checked){
+        		alert('<? echo $terms_check_alert ?>');
+        		return false;
+        	}
+        	
         	var invalid_inputs = $('#contact-form').validate(validation_rules).invalid;
-        	if(Object.keys(invalid_inputs).length == 0){
-          		$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val()	, name: $('#name').val()}, 
+        	if($('#contact-form').valid()){
+        		//TODO add flag for accepted terms
+          	$.post('./assets/includes/authentification.php?registration', {email: $('#registrationemail').val(), password: $('#password1').val()	, name: $('#name').val()}, 
 	        	function(response){
 	        		if(response == 201){
 	        	      	window.location.href = "index.php?registration_successful";
@@ -125,6 +133,7 @@ if(!is_logged_in()){
 	        <button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button> 
 			<button style="float:right;" class="btn btn-medium btn-primary" type="reset" value="Reset" onClick="window.location.reload()"><?php echo $reg_btn_reset;?></button>
 		</form>
+		<input type="checkbox" id="accept_terms" name="accept_terms" value="accept_terms"> <?php echo $terms_check ?>
 		</div>
 
     </div>

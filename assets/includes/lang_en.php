@@ -44,6 +44,8 @@ $reg_repeat_password="Repeat Password";
 $reg_btn_register="Register";
 $reg_btn_reset="Reset";
 $invalid_input ="Invalid input. Please check the hints and try again.";
+$terms_check = 'I have read and understood the <a href="./terms.php" target="_blank">Terms of Use</a>.';
+$terms_check_alert = 'Please read and accept the Terms of Use.';
 
 
 // dashboard.php
