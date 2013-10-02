@@ -46,6 +46,8 @@ $reg_repeat_password="Passwort wiederholen";
 $reg_btn_register="Registrieren";
 $reg_btn_reset="Löschen";
 $invalid_input ="Ungültige Eingabe. Bitte überprüfe die Hinweise und versuche es erneut.";
+$terms_check = 'Ich habe die <a href="./terms.php" target="_blank">Nutzungsbedingungen</a> gelesen und verstanden.';
+$terms_check_alert = 'Bitte lesen und akzeptieren Sie die Nutzungsbedingungen um fortzufahren.';
 
 // dashboard.php
 $dashboard_recent_avtivities="Letzte Aktivitäten";
@@ -56,6 +58,10 @@ $dashboard_group_activities="Aktivitäten der Gruppe";
 $dashboard_activities_of="Aktivitäten von ";
 $dashboard_my_tracks="Meine Fahrten";
 $dashboard_number_of_tracks="Anzahl der Tracks";
+
+//accept terms
+$please_accept_terms = 'Bitte lesen und akzeptieren Sie die aktuellen <a href="./terms.php">Nutzungsbedingungen</a>.';
+$confirm_accept_terms = 'Ich akzeptiere.';
 
 //function registration
 $freg_invalidemail="Ungültige Email";
@@ -569,9 +575,9 @@ Die offene <a href="http://envirocar.github.io/enviroCar-server/api" target="_bl
 <br/><br/>
 Kontaktieren Sie gern das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, um weitere Fragen zu klären.
 ';
-$faq_a5 = "Derzeit ist enviroCar in einer geschlossenen Beta Phase. Wir sind noch im Entwicklungsprozess und dabei die Software marktreif zu machen. Wir suchen nach Nutzern die bereit sind die Software zu testen und uns ihr Feedback mitzuteilen. Bitte lassen Sie uns wissen, falls Sie als Beta Tester agieren möchten!
+$faq_a5 = 'Derzeit befindet sich enviroCar in einer geschlossenen Beta Phase. Mit den Teilnehmern an dieser Phase sind wir dabei, die Software für die breite Anwendung fit zu machen. Wir suchen nach Nutzern, die bereit sind, die Software zu testen und uns ihr Feedback mitzuteilen. Bitte kontaktieren Sie das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, falls Sie als Beta Tester teilnehmen möchten!
 <br/><br/>
-Wir planen für Ende 2013 die Veröffentlichung einen stabilen Release";
+Für Dezember 2013 planen die Veröffentlichung einer ersten Vollversion.';
 
 //route.php
 
