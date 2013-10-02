@@ -35,10 +35,10 @@ if(!is_logged_in()){
         $('#contact-form').submit(function(){
         	
         	//check if terms of use checkbox was checked
-        	if(!document.getElementById("accept_terms").checked){
-        		alert('<? echo $terms_check_alert ?>');
-        		return false;
-        	}
+        	//if(!document.getElementById("accept_terms").checked){
+        	//	alert('<? echo $terms_check_alert ?>');
+        	//	return false;
+        	//}
         	
         	var invalid_inputs = $('#contact-form').validate(validation_rules).invalid;
         	if($('#contact-form').valid()){
@@ -133,7 +133,7 @@ if(!is_logged_in()){
 	        <button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button> 
 			<button style="float:right;" class="btn btn-medium btn-primary" type="reset" value="Reset" onClick="window.location.reload()"><?php echo $reg_btn_reset;?></button>
 		</form>
-		<input type="checkbox" id="accept_terms" name="accept_terms" value="accept_terms"> <?php echo $terms_check ?>
+		//<input type="checkbox" id="accept_terms" name="accept_terms" value="accept_terms"> <?php echo $terms_check ?>
 		</div>
 
     </div>
