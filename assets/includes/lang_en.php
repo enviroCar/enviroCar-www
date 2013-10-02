@@ -58,7 +58,9 @@ $dashboard_activities_of="Activities of ";
 $dashboard_my_tracks="My Tracks";
 $dashboard_number_of_tracks="Number of Tracks";
 
-
+//accept terms
+$please_accept_terms = 'Please read and accept the current <a href="./terms.php">Terms of Use</a>.';
+$confirm_accept_terms = 'I accept.';
 
 //function registration
 $freg_invalidemail="Invalid Email";
