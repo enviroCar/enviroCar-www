@@ -34,11 +34,11 @@ if(!is_logged_in()){
 	$(function(){
         $('#contact-form').submit(function(){
         	
-        	//check if terms of use checkbox was checked
-        	//if(!document.getElementById("accept_terms").checked){
-        	//	alert('<? echo $terms_check_alert ?>');
-        	//	return false;
-        	//}
+/*        	//check if terms of use checkbox was checked
+        	if(!document.getElementById("accept_terms").checked){
+        		alert('<? echo $terms_check_alert ?>');
+        		return false;
+        	}*/
         	
         	var invalid_inputs = $('#contact-form').validate(validation_rules).invalid;
         	if($('#contact-form').valid()){
