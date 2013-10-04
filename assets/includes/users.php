@@ -199,7 +199,8 @@ if(isset($_GET['friendActivities'])){
 }
 
 if(isset($_GET['updateUser'])){
-	$changeData = array("firstName" => ''.$_POST['firstName'], "lastName" => ''.$_POST['lastName'], "country" => ''.$_POST['country'], "gender" => ''.$_POST['gender'], "language" => ''.$_POST['language'], "dayOfBirth" => ''.$_POST['dayOfBirth']); 
+	$changeData = array("firstName" => ''.$_POST['firstName'], "lastName" => ''.$_POST['lastName'], "country" => ''.$_POST['country'], "gender" => ''.$_POST['gender'], "language" => ''.$_POST['language'], "dayOfBirth" => ''.$_POST['dayOfBirth']);
+	//$changeData = array("firstName" => ''.$_GET['firstName'], "lastName" => ''.$_GET['lastName'], "country" => ''.$_GET['country'], "gender" => ''.$_GET['gender'], "language" => ''.$_GET['language'], "dayOfBirth" => ''.$_GET['dayOfBirth']);  
 	$response = put_request($baseURL.'/users/'.rawurlencode($_SESSION['name']), $changeData);
 	if($response['status'] == 204){
 		echo $response['response'];
@@ -208,7 +209,15 @@ if(isset($_GET['updateUser'])){
 	}
 }
 
-
+if(isset($_GET['updateAcceptedTermsofUse'])){
+	$changeData = array("acceptedTermsOfUseVersion" => ''.$_GET['date']);
+	$response = put_request($baseURL.'/users/'.rawurlencode($_SESSION['name']), $changeData);
+	if($response['status'] == 204){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
 
 
 ?>

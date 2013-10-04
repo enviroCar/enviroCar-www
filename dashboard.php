@@ -25,7 +25,10 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 </style>  
   
   <script type="text/javascript">
-    
+  	
+  	var acceptedTermsOfUseIssuedDate;  
+  	var serverTermsOfUseIssuedDate;	
+
   	function init(){
     	loggedInUser = '<?php echo $_SESSION["name"] ?>';
     	user = '<?php echo $user; ?>';
@@ -399,9 +402,45 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
               $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
             }
           }
-        }
+        }if(!data.acceptedTermsOfUseVersion){
+        	}else{
+				acceptedTermsOfUseIssuedDate = data.acceptedTermsOfUseVersion;
+        	}
+        	
+        	getTerms();
+        	
       }
     });
+  }
+    
+    
+  function getTerms(){ 
+  	$.get('./assets/includes/terms.php?getTerms', function(data){
+  			data = JSON.parse(data);
+  			
+  	serverTermsOfUseIssuedDate = data.termsOfUse[0].issuedDate;			
+  
+	if(acceptedTermsOfUseIssuedDate){
+		if(serverTermsOfUseIssuedDate != acceptedTermsOfUseIssuedDate){
+			toggle_visibility('accept_terms_div');
+		}
+	}else{  			
+        toggle_visibility('accept_terms_div');
+	}		
+  	});
+  }
+
+  function acceptTerms(){   
+    $.get('./assets/includes/users.php?updateAcceptedTermsofUse&date=' + serverTermsOfUseIssuedDate, function(data){		
+  	 if(data >= 400){
+        
+        error_msg("<? echo $error_setting_terms_on_server ?>");
+        
+      }else{  			
+ 	 		toggle_visibility('accept_terms_div');      	
+      }
+  				
+  	});
   }
 
   $(function () {
@@ -409,6 +448,12 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	});
 
   </script>
+
+    <div id="accept_terms_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+      <? echo $please_accept_terms ?> 
+      <input type="button" name="Text 2" value="<? echo $confirm_accept_terms ?>"
+      onclick="acceptTerms()"> 
+    </div> 
   
 <div class="container rightband">
   <div class="row-fluid">
