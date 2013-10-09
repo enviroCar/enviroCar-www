@@ -115,7 +115,7 @@ function echoActiveClassIfRequestMatches($requestUri)
           	<img src="./assets/img/settings.png" class="brand dropdown-toggle" data-toggle="dropdown" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
           	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
       			<h4><a style="padding-left:15px;" href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></h4><br>
-     				 <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
+     				 <h4><a style="padding-left:15px;" href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></h4>
      			</div>   		
           	</li>  
 				</ul>     	 	
