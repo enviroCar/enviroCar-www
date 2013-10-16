@@ -42,21 +42,6 @@ if(!is_logged_in()){
 
 	<div class="container rightband">
 	<div class="row-fluid">
-			<h2 class="featurette-heading"> <? echo $speedcomparison_titel ?></h2>
-			<div class="span3">
-				<a href="./community_speed_difference2.php" class="thumbnail">
-					<img src="./assets/img/speed_comparison_thumb.png" alt="">
-				</a>
-			</div>
-        <div class="span6">
-          <?php echo $speedcomparison_description ?>       
-        </div>
-		</div>
-	</div>
-
-
-	<div class="container rightband">
-	<div class="row-fluid">
 			<h2 class="featurette-heading"> <? echo $analyzing_with_R_titel ?></h2>
 			<div class="span3">
 				<a href="http://rpubs.com/edzer/enviroCar" target="_blank" class="thumbnail">
