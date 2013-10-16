@@ -62,129 +62,126 @@ if(!is_logged_in()){
 var statistics = null;
 var chosenSensor = null;
 
-  (function(){
-    var s = window.location.search.substring(1).split('&');
-      if(!s.length) return;
-        var c = {};
-        for(var i  = 0; i < s.length; i++)  {
-          var parts = s[i].split('=');
-          c[unescape(parts[0])] = unescape(parts[1]);
-        }
-      window.$_GET = function(name){return name ? c[name] : c;}
-  }())
+(function(){
+	var s = window.location.search.substring(1).split('&');
+	if(!s.length) return;
+	var c = {};
+	for(var i  = 0; i < s.length; i++)  {
+		var parts = s[i].split('=');
+		c[unescape(parts[0])] = unescape(parts[1]);
+	}
+	window.$_GET = function(name){return name ? c[name] : c;}
+}());
 
-  function onFeatureUnselect(feature){
-      popup.destroy();
-      popup = null;
-  }
-
-
-    var map = new OpenLayers.Map('map');
-    //var mapnik = new OpenLayers.Layer.OSM();
-    //map.addLayer(mapnik);
-
-    var grey = new OpenLayers.Layer.OSM('Simple OSM Map', null, {
-    eventListeners: {
-        tileloaded: function(evt) {
-            var ctx = evt.tile.getCanvasContext();
-            if (ctx) {
-                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
-                var pix = imgd.data;
-                for (var i = 0, n = pix.length; i < n; i += 4) {
-                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
-                }
-                ctx.putImageData(imgd, 0, 0);
-                evt.tile.imgDiv.removeAttribute("crossorigin");
-                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
-            }
-        }
-    }
-  });
-
-    map.addLayer(grey);
+function onFeatureUnselect(feature){
+	popup.destroy();
+	popup = null;
+}
 
 
-    map.setCenter(new OpenLayers.LonLat(7.9,51,9),8);
-    
-    var routes = new OpenLayers.Layer.Vector("Routes");
-    map.addLayer(routes);
+var map = new OpenLayers.Map({div: 'map'});
 
-      
+//var mapnik = new OpenLayers.Layer.OSM();
+//map.addLayer(mapnik);
 
-  function changeSensor(property){
-    for(i = 0; i < routes.features.length; i++){
-        var style = {
-          strokeColor: getColor(routes.features[i].attributes.speed_difference), 
-          strokeOpacity: 0.8,
-          strokeWidth: 5
-        };
-        routes.features[i].style = style;
-    }
-    routes.redraw();
-    $('#sensor_headline').html('<?php echo $speedcomparison_page_headline ?>');
+var grey = new OpenLayers.Layer.OSM('Simple OSM Map', null, {
+	eventListeners: {
+		tileloaded: function(evt) {
+			var ctx = evt.tile.getCanvasContext();
+			if (ctx) {
+				var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
+				var pix = imgd.data;
+				for (var i = 0, n = pix.length; i < n; i += 4) {
+					pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
+				}
+				ctx.putImageData(imgd, 0, 0);
+				evt.tile.imgDiv.removeAttribute("crossorigin");
+				evt.tile.imgDiv.src = ctx.canvas.toDataURL();
+			}
+		}
+	}
+});
 
-  }
-
-
-  function createThematicRoutes(track){
-    features = track.features;
-    for(i = 0; i < features.length-1; i++){
-      if(features[i].properties.osm_id == features[i+1].properties.osm_id){
-        var points = new Array(
-           new OpenLayers.Geometry.Point(features[i].geometry.coordinates[0], features[i].geometry.coordinates[1]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject()),
-           new OpenLayers.Geometry.Point(features[i+1].geometry.coordinates[0],features[i+1].geometry.coordinates[1]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject())
-        );
-        var line = new OpenLayers.Geometry.LineString(points);
-
-          var style = { 
-            strokeColor: '#0008FF', 
-            strokeOpacity: 0.5,
-            strokeWidth: 5
-          };
-        //}
-        var lineFeature = new OpenLayers.Feature.Vector(line, null, style);
-        lineFeature.attributes['speed_difference'] = (features[i].properties.speed_difference+features[i+1].properties.speed_difference)/2;
-
-        routes.addFeatures([lineFeature]);    
-      }
-    }
-  map.zoomToExtent(routes.getDataExtent());
-  }
+map.addLayer(grey);
 
 
+var center = new OpenLayers.LonLat(7.62, 51.96);
+center.transform(new OpenLayers.Projection('EPSG:4326'), map.getProjectionObject());
+map.setCenter(center, 13);
 
-  function getColor(property){
-    if( property < -20 ) return "#8c510a";
-    else if( property < 15 ) return "#d8b365";
-    else if( property < 10 ) return "#f6e8c3";
-    else if( property < 5 && property > -5 ) return "#4d9221";
-    else if( property > 20 ) return "#c7eae5";
-    else if( property > 15 ) return "#5ab4ac";
-    else if( property > 10 ) return "#01665e";
-    /*
+var routes = new OpenLayers.Layer.Vector("Routes");
+map.addLayer(routes);
+
+function changeSensor(property){
+	for(i = 0; i < routes.features.length; i++){
+		var style = {
+				strokeColor: getColor(routes.features[i].attributes.speed_difference), 
+				strokeOpacity: 0.8,
+				strokeWidth: 5
+		};
+		routes.features[i].style = style;
+	}
+	routes.redraw();
+	$('#sensor_headline').html('<?php echo $speedcomparison_page_headline ?>');
+
+}
+
+
+function createThematicRoutes(track){
+	features = track.features;
+	for(i = 0; i < features.length-1; i++){
+		if(features[i].properties.osm_id == features[i+1].properties.osm_id){
+			var points = new Array(
+					new OpenLayers.Geometry.Point(features[i].geometry.coordinates[0], features[i].geometry.coordinates[1]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject()),
+					new OpenLayers.Geometry.Point(features[i+1].geometry.coordinates[0],features[i+1].geometry.coordinates[1]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject())
+			);
+			var line = new OpenLayers.Geometry.LineString(points);
+
+			var style = { 
+					strokeColor: '#0008FF', 
+					strokeOpacity: 0.5,
+					strokeWidth: 5
+			};
+			//}
+			var lineFeature = new OpenLayers.Feature.Vector(line, null, style);
+			lineFeature.attributes['speed_difference'] = (features[i].properties.speed_difference+features[i+1].properties.speed_difference)/2;
+
+			routes.addFeatures([lineFeature]);    
+		}
+	}
+	map.zoomToExtent(routes.getDataExtent());
+}
+
+
+
+function getColor(property){
+	if( property < -20 ) return "#8c510a";
+	else if( property < 15 ) return "#d8b365";
+	else if( property < 10 ) return "#f6e8c3";
+	else if( property < 5 && property > -5 ) return "#4d9221";
+	else if( property > 20 ) return "#c7eae5";
+	else if( property > 15 ) return "#5ab4ac";
+	else if( property > 10 ) return "#01665e";
+	/*
     if( Math.abs(property) < 5) return "#f5f500";
     else if(Math.abs(property) < 10) return "#f4b600";
     else if(Math.abs(property) < 20) return "#f57700";
     else if(Math.abs(property) < 30) return "#f53800";
     else return "#f50000";
-    */
-  }
+	 */
+}
 
-  //GET the information about the specific track
-  $.get('../data-aggregation/speedDifference.php', function(data) {
-    if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
-        console.log('error in getting tracks');
-        error_msg("Route couldn't be loaded successfully.");
-        $('#loadingIndicator').hide();
-    }else{
-      
-      data = JSON.parse(data);
-      createThematicRoutes(data);
-      changeSensor('speed_difference');
-      $('#loadingIndicator').hide();
-    }
-    
-  });
+//GET the information about the specific track
+$.get('../data-aggregation/speedDifference.php', function(data) {
+	data = JSON.parse(data);
+	createThematicRoutes(data);
+	changeSensor('speed_difference');
+	$('#loadingIndicator').hide();
+}).fail(function() {
+	console.log('error in getting tracks');
+	error_msg("Map data could not be loaded.");
+	$('#loadingIndicator').hide();	
+});
 
 
 </script>
