@@ -2,14 +2,14 @@
 if (!isset($_SESSION)) session_start();
 
 /*Example Usage:
-$uri = 'giv-car.uni-muenster.de:8080/stable/rest/users/website';
+$uri = 'example.com:80/api/stable/users/website';
 
 echo get_request($uri, true);
 echo '<br>';
-echo get_request('giv-car.uni-muenster.de:8080/stable/rest/users/', false);
+echo get_request('example.com:80/api/stable/users/', false);
 */
 
-$serverurl = "https://giv-car.uni-muenster.de/stable/rest";
+$serverurl = "https://envirocar.org/api/stable";
 $chainfile = "wwuca_chain.pem";
 
 
@@ -74,11 +74,6 @@ function post_request($url, $data, $isAuthRequired){
     return array("status" => $http_status, "response" => $result);
 }
 
-
-
-// Update user: $user = array("mail" => "test@dennismail.com");
-// put_request('http://giv-car.uni-muenster.de:8080/stable/rest/users/dennis', $user);
-
 //Method to perform a PUT request
 function put_request($url, $data){
     $data_string = json_encode($data);                                                                                   
@@ -101,9 +96,6 @@ function put_request($url, $data){
 
     return array("status" => $http_status, "response" => $result);
 }
-
-
-//delete_request('giv-car.uni-muenster.de:8080/stable/rest/users/blablub');
 
 //Method to perform a DELETE request
 function delete_request($url){                                                                                

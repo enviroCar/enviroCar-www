@@ -5,7 +5,7 @@ require('connection.php');
 if(isset($_GET['registration'])){
 
 	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
-	$response = post_request('https://giv-car.uni-muenster.de/stable/rest/users', $newUser, false);
+	$response = post_request('https://envirocar.org/api/stable/users', $newUser, false);
 
 
 	if($response["status"] == 201){
@@ -27,7 +27,7 @@ else if(isset($_GET['logout'])){
 else if(isset($_GET['delete'])){
 	if(isset($_POST['delete'])){
 		if($_POST['delete']){
-			$response = delete_request('https://giv-car.uni-muenster.de/stable/rest/users/'.$_SESSION['name']);
+			$response = delete_request('https://envirocar.org/api/stable/users/'.$_SESSION['name']);
 			if($response['status'] == 204){
 				echo 'status:ok';
 				session_destroy();
@@ -57,7 +57,7 @@ function login($name, $password, $permanent){
 
 	error_log($_SESSION['name'].' '.$_SESSION['password']);
 
-	$response = get_request('https://giv-car.uni-muenster.de/stable/rest/users/'.$name, true);
+	$response = get_request('https://envirocar.org/api/stable/users/'.$name, true);
 	if($response["status"] == 200){
 		$response = json_decode($response["response"],true);
 		$_SESSION['mail'] = $response['mail'];
