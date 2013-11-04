@@ -2,14 +2,14 @@
 if (!isset($_SESSION)) session_start();
 
 /*Example Usage:
-$uri = 'giv-car.uni-muenster.de:8080/stable/rest/users/website';
+$uri = 'example.com:80/api/stable/users/website';
 
 echo get_request($uri, true);
 echo '<br>';
 echo get_request('example.com:80/api/stable/users/', false);
 */
 
-$serverurl = "https://giv-car.uni-muenster.de/stable/rest";
+$serverurl = "https://envirocar.org/api/stable";
 $chainfile = "wwuca_chain.pem";
 
 

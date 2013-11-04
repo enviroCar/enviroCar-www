@@ -7,7 +7,7 @@ include('header.php');
   		var loggedInUser = '<? echo $_SESSION["name"] ?>';
 		
     function getAvatar(name, size){
-      return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
+      return './assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/'+name+'/avatar&auth=true';
     }
 
   		function addMemberToList(name){
