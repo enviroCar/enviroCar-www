@@ -489,7 +489,7 @@ $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = 'enviroCar is a project of 
 <ul>
 <li style="list-style-type: none;"><a href="http://52north.org" target="_blank">the 52°North</a> research and development network</li> 
-<li style="list-style-type: none;">and <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
+<li style="list-style-type: none;">and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
 </ul>
 Partners are
 <ul>
