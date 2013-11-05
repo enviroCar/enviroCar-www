@@ -29,8 +29,8 @@ if(!is_logged_in()){
 	<div class="row-fluid">
 			<h2 class="featurette-heading"> <? echo $hotspot_titel ?></h2>
 			<div class="span3">
-				<a href="http://52north.maps.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" class="thumbnail" target="_blank">
-					<img src="http://52north.maps.arcgis.com/sharing/rest/content/items/5db4e1ea445e4b4b8612443e7ba76119/info/thumbnail/ago_downloaded.png" alt="">
+				<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" class="thumbnail" target="_blank">
+					<img src="http://www.arcgis.com/sharing/rest/content/items/5db4e1ea445e4b4b8612443e7ba76119/info/thumbnail/ago_downloaded.png" alt="">
 				</a>
 			</div>
         <div class="span6">

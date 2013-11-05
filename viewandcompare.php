@@ -164,7 +164,7 @@ google.load("visualization", "1", {packages:["corechart"]});
 
   
   function getAvatar(name){
-     return './assets/includes/get.php?redirectUrl=https://giv-car.uni-muenster.de/stable/rest/users/'+name+'/avatar&auth=true';
+     return './assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/'+name+'/avatar&auth=true';
   }
    //Display the friend Statistics.. Append the statistics values, icons, tooltips.... if any statistical value equal to Zero, do not display 0 display '<strong>Not Calculated</strong>'
 //fetch the statiscial values from the server
