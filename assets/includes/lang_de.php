@@ -14,7 +14,7 @@ $index_help_the_world='Wer fährt umweltfreundlicher, Sie oder die Kollegen Ihre
 <br><br> 
 Nutzen Sie enviroCar, um diese und ähnliche Fragen zu beantworten. Stellen Sie Forschern und Planern Daten aus der Sensorik Ihres Fahrzeuges zur Verfügung. Helfen Sie mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
 $index_support_indiegogo="Unterstütze uns auf Indiegogo";
-$index_this_is_community='Mit der enviroCar App können sie Sensordaten aus der Motorsteuerung auslesen und mehr über Ihr Fahrzeug und Ihren Fahrstil erfahren.
+$index_this_is_community='Mit der enviroCar App können Sie Sensordaten aus der Motorsteuerung auslesen und mehr über Ihr Fahrzeug und Ihren Fahrstil erfahren.
 <br><br>
 Sie können die Daten als Open Data auf den enviroCar Server hochladen und anonymisiert für die Verkehrs- und Umweltforschung zur Verfügung stellen.
 <br><br>
@@ -511,7 +511,7 @@ $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "Als wissenschaftlich interessierter und engagierter Bürger (Citizen Scientist)";
 $asACitizenText = 'Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Version 2.3), ein Bluetooth OBD-II-Adapter und ein Fahrzeug, das den OBD-II Standard unterstützt. Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
 <br/><br/> 
-Die enviroCar App ist im Rahmen des  aktuellen Beta-Tests für die Android-Versionen 2.3 - 4.2.2 verfügbar und wird voraussichtlich ab Mitte Oktober auch über Google Play zum Download zur Verfügung stehen.  Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen. 
+Die enviroCar App ist im Rahmen des  aktuellen Beta-Tests für die Android-Versionen 2.3 - 4.2.2 verfügbar und steht über <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a> zur Verfügung. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen.
 <br/><br/> 
 Sie können Ihre Daten aus der App zum enviroCar-Server hochladen und die enviroCar  Webseite verwenden, um Ihre Fahrten zu analysieren und in einer Karte  zu betrachten. Außerdem können Sie sich hier mit Freunden und Gruppen vernetzen.
 <br/><br/> 
@@ -533,7 +533,7 @@ Nutzen Sie die enviroCar Plattform als Basis für Citizen Science Projekte mit W
 <br/><br/>
 Sofern Sie sich mit Fragen und Anregungen an alle Nutzer und Projektgruppen von enviroCar wenden möchten, nutzen Sie die englischsprachige <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">Forum</a> der enviroCar Community. 
 <br/><br/>
-Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität  oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie  sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern direkt <a href="mailto:enviroCar@52north.org">mit dem enviroCar Team bei 52°North in Kontakt treten</a>.
+Wenn Sie speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität  oder zu den verwendeten Methoden und Technologien haben, wenn Sie besondere Anpassungen benötigen oder wenn Sie sich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchten, können Sie auch gern direkt <a href="mailto:enviroCar@52north.org">mit dem enviroCar Team bei 52°North in Kontakt treten</a>.
 ';
 $asADeveloperHead = "Als Softwareentwickler";
 $asADeveloperText = 'Sie möchten eine Anwendung auf Basis der öffentlichen Daten von enviroCar entwickeln? Prima! Das <a href="https://github.com/enviroCar" target="_blank">enviroCar Open Source Software Repository</a> finden Sie auf GitHub. Dort finden Sie auch die sehr einfache REST-Schnittstelle des enviroCar-Servers, die Ihnen freien Zugriff auf die Daten ermöglicht. 
