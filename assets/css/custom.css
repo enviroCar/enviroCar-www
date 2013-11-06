@@ -441,10 +441,30 @@ display:inline;
 	background-clip: padding-box;
 }
 
+/* Overwriting Bootstrap CSS ------------------------- */
+
 .brand{
 	padding-left: 80px;
 }
 
 .dropdown-toggle .sign_in{
 	padding-right: 0px;
+}
+
+.navbar-inner{
+	border-bottom: 2px solid #8CBF3F;
+}
+
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+  border-width: 0 0 2px;
+}
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+  border-top-color: #8CBF3F;
+  border-bottom-color: #8CBF3F;
+}
+
+.caret {
+  border-top: 6px solid #000000;
 }
