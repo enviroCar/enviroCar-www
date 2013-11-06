@@ -11,14 +11,10 @@ if(!is_logged_in()){
 }
 ?>    
 
-  <div class="container rightband">
+  <!-- <div class="container">
     <div class="row-fluid">
 <? if ($logged_in == false) { ?>
-      <div class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-    	<div style="margin-right:1%;margin-top:15%;float:right">	
-    		<img src="./assets/img/under_construction.png" style="height:70px" alt="under_construction"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
-		</div>	
-      </div>
+       <div class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;"></div> 
 <? 	} else { ?>
 	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
 		<div style="margin-right: 1%; float:right; text-align: center">
@@ -39,9 +35,9 @@ if(!is_logged_in()){
 	 </div>
 <? } ?>
     </div>
-  </div> <!-- /container -->
+  </div> -->
 
-	<div class="container leftband">
+	<div class="container custom">
 	<div class="row-fluid">
         <div class="span4">
 <a class="twitter-timeline" href="https://twitter.com/enviroCar_org" data-chrome="noscrollbar" data-widget-id="335068168525578241">Tweets von @enviroCar_org</a>
@@ -62,7 +58,7 @@ if(!is_logged_in()){
 
 	</div>
 
-	<div class="container rightband">
+	<div class="container custom">
       <div class="row-fluid">
        <div class="span6" style="margin-left:10px;">
 <!--		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>-->

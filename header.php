@@ -110,7 +110,6 @@ function echoActiveClassIfRequestMatches($requestUri)
             </ul>
 				<!-- The drop down menu -->
 				<ul class="nav pull-right">
-              <li><img src="./assets/img/under_construction.png" alt="under_construction" style="height:50px; margin-right:5px;" title="<?echo $under_construction;?>"/></li>
           	<li class="dropdown">
           	<img src="./assets/img/settings.png" class="brand dropdown-toggle" data-toggle="dropdown" style="height: 20px; float:right; cursor:hand;cursor:pointer" alt="">
           	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
