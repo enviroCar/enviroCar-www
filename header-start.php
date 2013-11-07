@@ -1,6 +1,8 @@
 <?
 require_once('assets/includes/commons.php');
 
+$current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
 //get the requested website, from request string
 $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 //overwrite if fwd_ref wad posted
@@ -58,6 +60,7 @@ if ($login_name != "" && $login_password != ""){
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/<?php echo $current_file_name ?>.js"></script>
 
     <script type="text/javascript">
 
@@ -132,7 +135,7 @@ if ($login_name != "" && $login_password != ""){
                     <li><a href="/users/martin/edit_account">Konto bearbeiten</a></li>
                     <li><a href="/users/martin/messages">Inbox</a></li>
                     <li class="divider"></li>
-                    <li><a href="/users/martin">Mein Profil</a></li>
+                    <li><a href="dashboard.php"><? echo $dashboard ?></a></li>
                     <li><a href="/users/martin/friendships/accepted">Meine Freunde</a></li>
                     <li class="divider"></li>
                     <li><a href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></li>

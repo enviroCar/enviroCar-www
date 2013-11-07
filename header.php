@@ -53,7 +53,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
-
+    
     <script type="text/javascript">
 
       //Used slide down/up to toggle the visibility of a given element

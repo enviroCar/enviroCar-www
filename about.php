@@ -38,15 +38,25 @@ $(function(){
 });
 
 </script>
+		
+		
 
-		<div class="tabbable" style="text-align: center;">
-			<ul id="myTab" class="nav nav-tabs" style="width: 85%; margin: auto;">
-				<li><a href="#main" data-toggle="tab"><strong><? echo $about_aboutHead ?></strong></a></li>
-				<li><a href="#behind" data-toggle="tab"><strong><? echo $about_the_people_behind_head ?></strong></a></li>
-				<li><a href="#website" data-toggle="tab"><strong><? echo $about_gettinginvolvedHead ?></strong></a></li>
-				<li><a href="#faqs" data-toggle="tab"><strong><? echo $about_faqHead ?></strong></a></li>
-			</ul>
-		</div>		
+<header class="container" id="about-menu">
+  <div class="row">
+
+    </div>
+  </div>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#main" data-toggle="tab"><? echo $about_aboutHead ?></a></li>
+			<li><a href="#behind" data-toggle="tab"><? echo $about_the_people_behind_head ?></a></li>
+			<li><a href="#website" data-toggle="tab"><? echo $about_gettinginvolvedHead ?></a></li>
+			<li><a href="#faqs" data-toggle="tab"><? echo $about_faqHead ?></a></li>
+    </ul>
+  </div>
+</header>
+
+
 		  <div id="title_image_container" class="container rightband" style="display:block;">
    		 <div class="row-fluid">
       		<div id="title_image" class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/image03.jpg); height: 250px; width 100%; background-size: cover;">
@@ -57,7 +67,10 @@ $(function(){
 			<div class="tab-pane fade in active" id="main">
 				<div class="container leftband">
 					<div class="row-fluid">
-						<div class="span11" style="padding-right: 1ex; text-align: justify;">
+						<div class="span6" style="text-align: center;">
+							<img src="http://blogs.scientificamerican.com/media/inline/blog/Image/Citizen-Science-logo.jpg">
+						</div> 
+						<div class="span6" style="padding-right: 1ex;">
 							<? echo $about_aboutText1 ?>
 						</div>  
 					</div>    
@@ -65,13 +78,14 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">	
 						<div class="span6">
-						<p style="text-align: justify;">  		 	
+						<p>  		 	
 						<? echo $about_aboutText2 ?>	
 						</div>
 						<div class="span5" style="padding-right: 1ex">
 							<img src="./assets/img/enviroCarConceptOverview.png" style="height:300px; width:487px;" alt="The architecture of envirocar" />
 						</div>		
-					</div>    
+					</div> 
+					   
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
@@ -82,9 +96,6 @@ $(function(){
 							<p style="text-align: justify;">
 								<? echo $about_aboutText3 ?>
 							</p>	
-						<p class="pull-right">
-							<a href="#"><? echo $back_top ?></a>
-						</p> 
 						</div>  
 					</div>
 				</div>
@@ -105,10 +116,7 @@ $(function(){
 							<h2><span class="anchor" id="sign1"></span><? echo $asACitizenHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asACitizenText ?>
-							</p>							
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>    
+							</p>							    
 						</div>    
 					</div>    
 				</div>
@@ -118,10 +126,7 @@ $(function(){
 							<h2><span class="anchor" id="sign2"></span><? echo $asAScientistHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asAScientistText ?>
-							</p>							
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>    
+							</p>							   
 						</div>    
 					</div>    
 				</div>
@@ -131,10 +136,7 @@ $(function(){
 							<h2><span class="anchor" id="sign3"></span><? echo $asAPlannerHead ?></h2>
 							<p style="text-align: justify;">
 								<? echo $asAPlannerText ?>
-							</p>							
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>    
+							</p>							    
 						</div>    
 					</div>    
 				</div>
@@ -170,9 +172,6 @@ $(function(){
 							<p style="text-align: justify;">
 								<? echo $faq_a1 ?>
 							</p>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>
 						</div>
 					</div>    
 				</div> 
@@ -180,10 +179,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span  class="anchor" id="q2"></span><? echo $faq_q2 ?></h2>
-								<? echo $faq_a2 ?>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>    
+								<? echo $faq_a2 ?>  
 						</div>    
 					</div>    
 				</div>
@@ -193,10 +189,7 @@ $(function(){
 							<h2><span  class="anchor" id="q3"></span><? echo $faq_q3 ?></h2>
 							<p style="text-align: justify;"> 
 								<? echo $faq_a3 ?>
-							</p>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>   
+							</p> 
 						</div>    
 					</div>    
 				</div> 
@@ -205,10 +198,7 @@ $(function(){
 						<div class="span" style="padding-right: 1ex">
 							<h2><span  class="anchor" id="q4"></span><? echo $faq_q4 ?></h2>
 							<p style="text-align: justify;">
-								<? echo $faq_a4 ?></p>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>    
+								<? echo $faq_a4 ?></p>    
 						</div>    
 					</div>    
 				</div>
@@ -218,10 +208,7 @@ $(function(){
 							<h2><span  class="anchor" id="q5"></span><? echo $faq_q5 ?></h2>
 							<p style="text-align: justify;"> 
 								<? echo $faq_a5 ?>
-							</p>
-							<p class="pull-right">
-								<a href="#"><? echo $back_top ?></a>
-							</p>  
+							</p> 
 						</div>    
 					</div>    
 				</div>  
