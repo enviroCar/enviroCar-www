@@ -121,6 +121,7 @@
 
 html{
 	height: 100%;
+	overflow-y: scroll; 
 }
 
 body{
@@ -215,6 +216,7 @@ border-left: 1px solid #048ABF;
 
 .rightband{
 	padding-right: 20px;
+	padding-left: 20px;
 	border-right: 15px solid #8CBF3F;
 
 }
@@ -224,9 +226,9 @@ border-left: 1px solid #048ABF;
 	border-left: 15px solid #8CBF3F;
 }
 
-.span2, .span3, .span4, .span5, .span6{
+.span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12{
 	padding: 10px;
-	margin-top: 20px;
+	margin: 20px;
 }
 
 .customNav{
@@ -470,8 +472,12 @@ h2,
 h3,
 h4,
 h5{
-        font-family:  'Droid Sans';
-        position: relative;
+    font-family:  'Droid Sans';
+    position: relative;
+}
+
+.dashboard-list{
+	margin-left: 0px;
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */

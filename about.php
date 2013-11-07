@@ -67,7 +67,7 @@ $(function(){
 			<div class="tab-pane fade in active" id="main">
 				<div class="container leftband">
 					<div class="row-fluid">
-						<div class="span6" style="text-align: center;">
+						<div class="span5" style="text-align: center;">
 							<img src="http://blogs.scientificamerican.com/media/inline/blog/Image/Citizen-Science-logo.jpg">
 						</div> 
 						<div class="span6" style="padding-right: 1ex;">
