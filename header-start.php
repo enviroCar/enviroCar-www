@@ -11,7 +11,6 @@ $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
 $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
 
 $login_fail = false;
-
 //Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
 if ($login_name != "" && $login_password != ""){
 	
@@ -103,24 +102,43 @@ if ($login_name != "" && $login_password != ""){
           </a>
           
           <div class="nav-collapse collapse">
-            <ul class="nav pull-right">
+            <ul id="main-nav" class="nav pull-right">
               <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
-              <li><a href="./registration.php"><? echo $index_register;?></a></li>
-              <li class="dropdown">
-              <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
-              <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-               <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
-                <form name="login" action="index.php" method="post" style="display: inline;">
-                  <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-                  <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
-                  <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
-                  <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
-                  <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
-                </form>
-              </div>
-              </li>
+              <?php if(!is_logged_in()){ ?>
+                <li><a href="./registration.php"><? echo $index_register;?></a></li>
+                <li class="dropdown">
+                <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                 <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
+                  <form name="login" action="index.php" method="post" style="display: inline;">
+                    <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+                    <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
+                    <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                    <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
+                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
+                  </form>
+                </div>
+                </li>
+              <?php }else{ ?>
+                <li class="dropdown-toggle sign_in" hidefocus="hidefocus">
+                  <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" href="/users/martin/dashboard" hidefocus="hidefocus">
+                    <?php echo $signedin; ?>: <?php echo $_SESSION["name"];?> 
+                    <strong class="caret"></strong>
+                  </a>
+                  <ul id="session-menu" class="dropdown-menu">
+                    <li><a href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></li>
+                    <li><a href="/users/martin/edit_account">Konto bearbeiten</a></li>
+                    <li><a href="/users/martin/messages">Inbox</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/users/martin">Mein Profil</a></li>
+                    <li><a href="/users/martin/friendships/accepted">Meine Freunde</a></li>
+                    <li class="divider"></li>
+                    <li><a href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></li>
+                  </ul>
+                </li>
+              <?php } ?>
             </ul>
           </div> 
       </div>

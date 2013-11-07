@@ -7,7 +7,7 @@ if(!is_logged_in()){
 	include('header-start.php');
 }else{
 	$logged_in = true;
-	include('header.php');
+	include('header-start.php');
 }
 ?> 
 

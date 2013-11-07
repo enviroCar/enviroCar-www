@@ -208,7 +208,7 @@ $gettinginvolved = "Mitwirken";
 $api = "API";
 $data = "Daten";
 $showapiongithub = "Zeige die API-Definition auf github.com";
-
+$signedin = "Angemeldet";
 
 $logoutsuccess = "Erfolgreich abgemeldet";
 $currentlynotloggedin = "Du bist derzeit nicht angemeldet.";

@@ -454,6 +454,14 @@ display:inline;
 	color: white;
 }
 
+#main-nav > li{
+	line-height: 10px;
+}
+
+#session-menu{
+	border-radius: 0px;
+	margin-top: 5px;
+}
 /* Overwriting Bootstrap CSS ------------------------- */
 
 .brand{
@@ -473,12 +481,24 @@ display:inline;
   border-width: 0 0 2px;
 }
 
-.navbar .nav li.dropdown > .dropdown-toggle .caret {
+.navbar .nav li.dropdown > .dropdown-toggle .caret, .navbar .nav .dropdown-toggle .caret {
   border-top-color: #8CBF3F;
   border-bottom-color: #8CBF3F;
+  margin-top: 3px;
 }
 
 .caret {
   border-top: 6px solid #000000;
 }
 
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	background-color: #8CBF3F;
+	color: #048abf;
+}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+	outline: none;
+	background-color: transparent;
+	color: white;
+	text-decoration: none;
+}
