@@ -23,7 +23,7 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span" style="padding-right: 1ex">
+			<div class="span12">
 				<h2 id="licensing_datalicensing_head"><? echo $viaAPIHead ?></h2>
 				<p style="text-align: justify">
 				<? echo $viaAPIText ?>

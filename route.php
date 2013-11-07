@@ -20,10 +20,10 @@ include('header.php');
 <script src="./assets/js/community_engine.js" type="text/javascript"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
-<div class="container" style="width:1270px">
+<div class="container leftband">
 <div id="routeInformation" style="margin-left: 30px;"></div>
 <div class="row" id="statistics">
-  <div class="span2" id="distTime" style="margin-left: 30px;">
+  <div class="span2" id="distTime">
     <h4 class="muted" ><?php echo $route_distance; ?></h4>
   </div>
   <div class="span2" id="fuelConsum">
@@ -39,9 +39,9 @@ include('header.php');
     <h4 class="muted"><?php echo $route_avgSpeed; ?></h4>   
   </div>
 </div>
-<div class="row" id="mapAndChart">
 <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
- <div class="span6">
+<div class="row" id="mapAndChart">
+<div class="span6">
     <div class="map" id="map">
       <div class="btn-group sensorswitch dropup">
         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" id="sensorswitch">

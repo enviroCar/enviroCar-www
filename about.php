@@ -67,7 +67,7 @@ $(function(){
 			<div class="tab-pane fade in active" id="main">
 				<div class="container leftband">
 					<div class="row-fluid">
-						<div class="span5" style="text-align: center;">
+						<div class="span6" style="text-align: center;">
 							<img src="http://blogs.scientificamerican.com/media/inline/blog/Image/Citizen-Science-logo.jpg">
 						</div> 
 						<div class="span6" style="padding-right: 1ex;">
@@ -81,7 +81,7 @@ $(function(){
 						<p>  		 	
 						<? echo $about_aboutText2 ?>	
 						</div>
-						<div class="span5" style="padding-right: 1ex">
+						<div class="span6" style="padding-right: 1ex">
 							<img src="./assets/img/enviroCarConceptOverview.png" style="height:300px; width:487px;" alt="The architecture of envirocar" />
 						</div>		
 					</div> 
@@ -89,11 +89,11 @@ $(function(){
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
-        			<div class="span5">
+        			<div class="span6">
         			<img class="offset3" src="./assets/img/drivedeck1.jpg" style="width:50%;" alt="An ODB II Adapter">
         			</div>
 					<div class="span6">
-							<p style="text-align: justify;">
+							<p>
 								<? echo $about_aboutText3 ?>
 							</p>	
 						</div>  
@@ -114,7 +114,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="sign1"></span><? echo $asACitizenHead ?></h2>
-							<p style="text-align: justify;">
+							<p>
 								<? echo $asACitizenText ?>
 							</p>							    
 						</div>    
@@ -124,7 +124,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="sign2"></span><? echo $asAScientistHead ?></h2>
-							<p style="text-align: justify;">
+							<p>
 								<? echo $asAScientistText ?>
 							</p>							   
 						</div>    
@@ -134,7 +134,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="sign3"></span><? echo $asAPlannerHead ?></h2>
-							<p style="text-align: justify;">
+							<p>
 								<? echo $asAPlannerText ?>
 							</p>							    
 						</div>    
@@ -144,7 +144,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="sign4"></span><? echo $asADeveloperHead ?></h2>
-							<p style="text-align: justify;">
+							<p>
 								<? echo $asADeveloperText ?>
 							</p>
 						</div>    
@@ -169,7 +169,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span class="anchor" id="q1"></span><? echo $faq_q1 ?></h2>
-							<p style="text-align: justify;">
+							<p>
 								<? echo $faq_a1 ?>
 							</p>
 						</div>
@@ -187,7 +187,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span  class="anchor" id="q3"></span><? echo $faq_q3 ?></h2>
-							<p style="text-align: justify;"> 
+							<p> 
 								<? echo $faq_a3 ?>
 							</p> 
 						</div>    
@@ -197,7 +197,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span  class="anchor" id="q4"></span><? echo $faq_q4 ?></h2>
-							<p style="text-align: justify;">
+							<p>
 								<? echo $faq_a4 ?></p>    
 						</div>    
 					</div>    
@@ -206,7 +206,7 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<h2><span  class="anchor" id="q5"></span><? echo $faq_q5 ?></h2>
-							<p style="text-align: justify;"> 
+							<p> 
 								<? echo $faq_a5 ?>
 							</p> 
 						</div>    

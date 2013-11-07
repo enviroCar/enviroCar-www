@@ -455,7 +455,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       onclick="acceptTerms()"> 
     </div> 
   
-<div class="container rightband">
+<div class="container leftband">
   <div class="row-fluid">
     <div class="span4">
       <div class="well sidebar-nav">
@@ -594,7 +594,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	</div-->	
   
   
-	<div class="container rightband">
+	<div class="container leftband">
 	<div class="row-fluid">
     <div class="span6">        
       <h2><?php echo $dashboard_my_tracks; ?></h2>
@@ -606,7 +606,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 
 	</div>
 
-	<div class="container rightband">
+	<div class="container leftband">
 	<div class="row-fluid">
 			<div class="span6">
 				<h2><? echo $friends ?></h2>
@@ -644,7 +644,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	  </div>
 	</div>
 
-	<div class="container rightband">
+	<div class="container leftband">
     <div class="row-fluid">
   		<div class="span6">
   			<h2><? echo $groups; ?></h2>
