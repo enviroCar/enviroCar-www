@@ -60,7 +60,14 @@ if ($login_name != "" && $login_password != ""){
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
     <script src="./assets/js/jquery.js"></script>
-    <script src="./assets/js/<?php echo $current_file_name ?>.js"></script>
+    <?php 
+      $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+      $file = "./assets/js/$current_file_name.js";
+
+      if (file_exists($file)) {
+          echo "<script src='$file'></script>";
+      }
+    ?>
 
     <script type="text/javascript">
 

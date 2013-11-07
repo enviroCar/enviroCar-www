@@ -35,6 +35,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    <link href="./assets/css/flags.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -52,7 +53,14 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
+    <?php 
+      $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+      $file = "./assets/js/$current_file_name.js";
 
+      if (file_exists($file)) {
+          echo "<script src='$file'></script>";
+      }
+    ?>
     <script type="text/javascript">
 
       //Used slide down/up to toggle the visibility of a given element
@@ -138,7 +146,7 @@ function echoActiveClassIfRequestMatches($requestUri)
       </div>
     </div>
   </div> <!-- Navbar -->
-    
+
 <!--    <div id="settings" class="settings">
       <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
       <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
