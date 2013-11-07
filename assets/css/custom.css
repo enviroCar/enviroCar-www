@@ -121,12 +121,10 @@
 
 html{
 	height: 100%;
-	font-family: 'Droid Sans';
 }
 
 body{
 	background-color: #F2F2F2;
-	font-family: 'Droid Sans';
 	/*
 	background-image: -moz-linear-gradient(top, #F2F2F2, #048ABF);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#048ABF));
@@ -462,6 +460,20 @@ display:inline;
 	border-radius: 0px;
 	margin-top: 5px;
 }
+
+.droid-text{
+	font-family: 'Droid Sans';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+        font-family:  'Droid Sans';
+        position: relative;
+}
+
 /* Overwriting Bootstrap CSS ------------------------- */
 
 .brand{

@@ -3,11 +3,11 @@ require_once('./assets/includes/authentification.php');
 
 $logged_in = false; 
 if(!is_logged_in()){
-	$logged_in = false; 
-	include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-	$logged_in = true;
-	include('header-start.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?> 
 
@@ -46,7 +46,7 @@ $(function(){
 
     </div>
   </div>
-  <div class="subnav">
+  <div class="subnav droid-text">
     <ul class="nav nav-pills">
       <li class="active"><a href="#main" data-toggle="tab"><? echo $about_aboutHead ?></a></li>
 			<li><a href="#behind" data-toggle="tab"><? echo $about_the_people_behind_head ?></a></li>

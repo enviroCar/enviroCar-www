@@ -1,13 +1,12 @@
 <?
 require_once('./assets/includes/authentification.php');
-
 $logged_in = false; 
 if(!is_logged_in()){
-	$logged_in = false; 
-	include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-	$logged_in = true;
-	include('header-start.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?>    
 
@@ -21,7 +20,7 @@ if(!is_logged_in()){
 				<a data-toggle="modal" href="#myModal" data-youtube-id="_AyXNeRbpRk"><img id="youtube-thumb" src="./assets/img/youtube_thumb.jpg" style="width: 275px; height: 156px;"></a>
 			  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div id="myModal-body" class="modal-body">
-				    <iframe width="560" height="315" src="http://www.youtube.com/embed/30Pjl31cyDY?rel=0" frameborder="0" allowfullscreen></iframe>
+				    <iframe width="560" height="315" src="http://www.youtube.com/embed/LTSuUEOfWa0?rel=0" frameborder="0" allowfullscreen></iframe>
 				  </div>
 				</div>
 			</div>

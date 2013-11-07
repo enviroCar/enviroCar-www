@@ -1,13 +1,12 @@
 <?
 require_once('./assets/includes/authentification.php');
-
 $logged_in = false; 
 if(!is_logged_in()){
-  $logged_in = false; 
-  include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-  $logged_in = true;
-  include('header.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?> 
 <link rel="stylesheet" href="./assets/OpenLayers/theme/default/style.css" type="text/css">
