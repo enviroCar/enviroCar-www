@@ -35,6 +35,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    <link href="./assets/css/flags.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -95,9 +96,9 @@ function echoActiveClassIfRequestMatches($requestUri)
 		  <img src="./assets/img/enviroCar_logo_white_beta.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
           </a>          
       <?
-        if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
+        if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="flag" alt="">';
         }else{
-          echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
+          echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="flag" alt="">';
         }
       ?>
 

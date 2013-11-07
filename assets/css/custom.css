@@ -121,12 +121,12 @@
 
 html{
 	height: 100%;
-	font-family: 'Open Sans';
+	font-family: 'Droid Sans';
 }
 
 body{
 	background-color: #F2F2F2;
-	font-family: 'Open Sans';
+	font-family: 'Droid Sans';
 	/*
 	background-image: -moz-linear-gradient(top, #F2F2F2, #048ABF);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#048ABF));
@@ -175,15 +175,6 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 border-left: 1px solid #048ABF;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5{
-	font-family:  RalewayThin;
-	position: relative;
-}
-
 .anchor{
 	position:absolute;
 	top:-50px;
@@ -211,6 +202,7 @@ h5{
 
 .footer{
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .footer .container-fluid{
@@ -256,7 +248,7 @@ h5{
 	font-size: 16px;
 }
 
-.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+.navbar-inner .nav .active > a, .navbar-inner .nav .active > a:hover, .navbar-inner .nav .active > a:focus {
 color: #ffffff;
 background-color: #8CBF3F;
 }
@@ -441,6 +433,27 @@ display:inline;
 	background-clip: padding-box;
 }
 
+#myModal{
+	background-color: transparent;
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+	border: 0px;
+}
+
+#myModal-body{
+	overflow-y: visible;
+}
+
+#youtube-thumb{
+	border:4px solid #FFFFFF;
+	border-radius:5px;
+}
+
+#cover-text{
+	color: white;
+}
+
 /* Overwriting Bootstrap CSS ------------------------- */
 
 .brand{
@@ -468,3 +481,4 @@ display:inline;
 .caret {
   border-top: 6px solid #000000;
 }
+

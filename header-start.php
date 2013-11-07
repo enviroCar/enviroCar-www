@@ -41,7 +41,7 @@ if ($login_name != "" && $login_password != ""){
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-
+    <link href="./assets/css/flags.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -122,13 +122,7 @@ if ($login_name != "" && $login_password != ""){
               </div>
               </li>
             </ul>
-          </div>
-          <!-- <?
-            if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
-            }else{
-              echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
-            }
-          ?> -->
+          </div> 
       </div>
     </div>
   </div> <!-- Navbar -->
