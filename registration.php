@@ -1,14 +1,13 @@
 <?
 
 require_once('./assets/includes/authentification.php');
-
 $logged_in = false; 
 if(!is_logged_in()){
-	$logged_in = false; 
-	include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-	$logged_in = true;
-	include('header.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?>
 
@@ -130,8 +129,12 @@ if(!is_logged_in()){
 					<input class="input-xlarge" name="password2" type="password" id="password2" placeholder="<?php echo $reg_repeat_password;?>">
 				</div>
 			</div>
-	        <button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button> 
-			<button style="float:right;" class="btn btn-medium btn-primary" type="reset" value="Reset" onClick="window.location.reload()"><?php echo $reg_btn_reset;?></button>
+			<div class="control-group">
+				<div class="controls">
+					<!-- <button class="btn btn-medium btn-primary" type="reset" value="Reset" onClick="window.location.reload()"><?php echo $reg_btn_reset;?></button> -->
+        			<button type="submit" class="btn btn-medium btn-primary"><?php echo $reg_btn_register;?></button>
+      			</div>
+			</div>
 		</form>
 <!--		<input type="checkbox" id="accept_terms" name="accept_terms" value="accept_terms"> <?php echo $terms_check ?>-->
 		</div>

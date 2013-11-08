@@ -455,7 +455,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       onclick="acceptTerms()"> 
     </div> 
   
-<div class="container rightband">
+<div class="container leftband">
   <div class="row-fluid">
     <div class="span4">
       <div class="well sidebar-nav">
@@ -594,35 +594,30 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	</div-->	
   
   
-	<div class="container rightband">
+	<div class="container leftband">
 	<div class="row-fluid">
-			<div style="float:right"></div>
-		<div style="clear: all">
-		</div>
-        <div class="span6">        
-          <h2 class="featurette-heading"><?php echo $dashboard_my_tracks; ?></h2>
-          <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-		      <ul id="tracks" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
-		      </ul>
-        </div>
-      </div>
+    <div class="span6">        
+      <h2><?php echo $dashboard_my_tracks; ?></h2>
+      <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+      <ul class="dashboard-list" id="tracks" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
+      </ul>
+    </div>
+  </div>
 
 	</div>
 
-	<div class="container rightband">
+	<div class="container leftband">
 	<div class="row-fluid">
-			<div style="float:right"> 
-				<input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
-			</div>
-			<div style="clear: all">
-			</div>
 			<div class="span6">
-				<h2 class="featurette-heading"> <? echo $friends ?></h2>
+				<h2><? echo $friends ?></h2>
 				<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
 				</div>
-				<ul id="friendsList" style="max-height: 400px; overflow-y: auto;">	
+				<ul class="dashboard-list" id="friendsList" style="max-height: 400px; overflow-y: auto;">	
 				</ul>          
 			</div>
+      <div class="span6" style="text-align: right;"> 
+        <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
+      </div>
 		</div>
 	</div>
 		
@@ -649,25 +644,19 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	  </div>
 	</div>
 
-	<div class="container rightband">
-		<div style="float:right">
-			<input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
-		</div>
-		<div style="clear: all">
-		</div>
-		<div class="span6">
-			<h2 class="featurette-heading" style="display: inline"><? echo $groups; ?></h2>
-			<div id="create_group" style="float: right">
-				<a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a>
-			</div>
-			
-			<div style="clear: all">
-			</div>
-			
-			<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-			<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">
-			</ul>          
-		</div>
+	<div class="container leftband">
+    <div class="row-fluid">
+  		<div class="span6">
+  			<h2><? echo $groups; ?></h2>
+  			<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+  			<ul class="dashboard-list" id="groupsList" style="max-height: 400px; overflow-y: auto;">
+  			</ul>
+        <a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a>          
+  		</div>
+      <div class="span6" style="text-align: right">
+        <input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
+      </div>
+    </div>
 	</div>
 
 <?

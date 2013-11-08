@@ -1,9 +1,12 @@
 <?
 require_once('./assets/includes/authentification.php');
+$logged_in = false; 
 if(!is_logged_in()){
-	include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-	include('header.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?>
 
