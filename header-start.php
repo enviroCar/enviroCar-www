@@ -1,6 +1,8 @@
 <?
 require_once('assets/includes/commons.php');
 
+$current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
 //get the requested website, from request string
 $login_referer = (isset($_GET["fwdref"])) ? $_GET["fwdref"] : "dashboard.php";
 //overwrite if fwd_ref wad posted
@@ -11,7 +13,6 @@ $login_name = (isset($_POST["login_name"])) ? $_POST["login_name"] : "";
 $login_password = (isset($_POST["login_password"])) ? $_POST["login_password"] : "";
 
 $login_fail = false;
-
 //Login Mechanism based on http Post and authentication PHP, instead of the java-script thing
 if ($login_name != "" && $login_password != ""){
 	
@@ -40,6 +41,8 @@ if ($login_name != "" && $login_password != ""){
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href="./assets/css/flags.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -57,6 +60,14 @@ if ($login_name != "" && $login_password != ""){
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
     <script src="./assets/js/jquery.js"></script>
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $file = "./assets/js/$current_file_name.js";
+
+      if (file_exists($file)) {
+          echo "<script src='$file'></script>";
+      }
+    ?>
 
     <script type="text/javascript">
 
@@ -87,56 +98,58 @@ if ($login_name != "" && $login_password != ""){
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top customNav">
-      <div class="customNav">
-        <div class="customNav">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="index.php" style="padding:0px;">
-          <img src="./assets/img/enviroCar_logo_white_beta.png" class="brand" style="height: 50px; padding:0; margin:0; padding-right:15px;" alt="" />
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <div class="container">
+          <a  class="brand" href="index.php" >
+            <img style="height:25px;" src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" />
           </a>
-          <?
-            if($lang == 'en'){ echo '<img src="./assets/img/deutschland-flagge.jpg" onClick="changeLanguage(\'de\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
-            }else{
-              echo '<img src="./assets/img/england-flagge.jpg" onClick="changeLanguage(\'en\')" class="brand" style="height: 20px; width: 35px; float:right; cursor:hand;cursor:pointer" alt="">';
-            }
-          ?>
+          
           <div class="nav-collapse collapse">
-            <ul class="nav">
-            <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
+            <ul id="main-nav" class="nav pull-right droid-text">
+              <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
+              <?php if(!is_logged_in()){ ?>
+                <li><a href="./registration.php"><? echo $index_register;?></a></li>
+                <li class="dropdown">
+                <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="padding: 15px;">
+                 <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
+                  <form name="login" action="index.php" method="post" style="display: inline;">
+                    <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
+                    <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
+                    <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                    <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
+                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
+                  </form>
+                </div>
+                </li>
+              <?php }else{ ?>
+                <li class="dropdown-toggle sign_in" hidefocus="hidefocus">
+                  <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" href="/users/martin/dashboard" hidefocus="hidefocus">
+                    <?php echo $signedin; ?>: <?php echo $_SESSION["name"];?> 
+                    <strong class="caret"></strong>
+                  </a>
+                  <ul id="session-menu" class="dropdown-menu">
+                    <li><a href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></li>
+                    <li><a href="dashboard.php"><? echo $dashboard ?></a></li>
+                    <li class="divider"></li>
+                    <li><a href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></li>
+                  </ul>
+                </li>
+              <?php } ?>
             </ul>
-				<!-- The drop down menu -->
-        		<ul class="nav pull-right">
-              <li><img src="./assets/img/under_construction.png" alt="under_construction" style="height:50px" title="<?echo $under_construction;?>"/></li>
-          		<li><a href="./registration.php"><? echo $index_register;?></a></li>
-          		<!--<li class="divider-vertical"></li>-->
-          		<li class="dropdown">
-            	<a class="dropdown-toggle" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
-            	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-               <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
-            		<form name="login" action="index.php" method="post" style="display: inline;">
-						<input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-						<input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
-						<input type="text" 	id="login_name" 	name="login_name" 	class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
-						<input type="password" 	id="login_password" 	name="login_password" 	class="input-block-level" placeholder="<? echo $index_password;?>" />
-						<input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
-						<!--span title="this places a cookie on your device">
-							<input type="checkbox" id="login_remember" name="login_remember" class="input-block-level" style="float: left; margin-left: 2%" />
-							<label for="login_remember" style="float: left; margin-left: 2%" > &larr; remember me</label>
-						</span-->
-           			</form>
-            	</div>
-          		</li>
-       	 	</ul>
-
-          </div><!--/.nav-collapse -->      </div>
-        </div>
+          </div> 
+      </div>
     </div>
+  </div> <!-- Navbar -->
     
  <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
       <a class="close" data-dismiss="alert">×</a>  

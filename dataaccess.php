@@ -1,13 +1,12 @@
 <?
 require_once('./assets/includes/authentification.php');
-
 $logged_in = false; 
 if(!is_logged_in()){
-	$logged_in = false; 
-	include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-	$logged_in = true;
-	include('header.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?> 
 
@@ -24,7 +23,7 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span" style="padding-right: 1ex">
+			<div class="span12">
 				<h2 id="licensing_datalicensing_head"><? echo $viaAPIHead ?></h2>
 				<p style="text-align: justify">
 				<? echo $viaAPIText ?>

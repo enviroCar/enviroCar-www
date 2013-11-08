@@ -1,47 +1,51 @@
 <?
 require_once('./assets/includes/authentification.php');
-
 $logged_in = false; 
 if(!is_logged_in()){
-	$logged_in = false; 
-	include('header-start.php');
+        $logged_in = false; 
+        include('header-start.php');
 }else{
-	$logged_in = true;
-	include('header.php');
+        $logged_in = true;
+        include('header.php');
 }
 ?>    
 
-  <div class="container rightband">
-    <div class="row-fluid">
-<? if ($logged_in == false) { ?>
-      <div class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-    	<div style="margin-right:1%;margin-top:15%;float:right">	
-    		<img src="./assets/img/under_construction.png" style="height:70px" alt="under_construction"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
-		</div>	
-      </div>
-<? 	} else { ?>
-	<div class="span" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-		<div style="margin-right: 1%; float:right; text-align: center">
-			<h2 style="color:WhiteSmoke; text-shadow: 0.1em 0.1em 0.1em black; margin-bottom: 0em; padding-bottom: 0em;">
-				<? echo  $index_welcome;?>, <?echo $_SESSION["name"];?>
-			</h2>
-			<a href="./assets/includes/authentification?logout" style="color: white; font-size: small">
-				<? echo  $index_wrong_name;?>
-			</a>
-			<br/>
-			<a href="dashboard.php">
-				<button class="btn btn-medium btn-inversed" name="dashboard" value="dashboard" style="margin-top: 2em"><? echo  $index_continue_dashboard;?></button>
-			</a>
-			<br/>
-			<br/>
-			<img src="./assets/img/under_construction.png" style="height:70px" alt="under_construction"/><span style="color: white;background-color:black;"><?echo $under_construction;?> </span>
+  <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+    <div class="row" style="height: 100%">
+			<div id="cover-text" class="span4 offset8">
+				<h1>
+				</h1>
+				<h2>
+				</h2>
+				<a data-toggle="modal" href="#myModal" data-youtube-id="_AyXNeRbpRk"><img id="youtube-thumb" src="./assets/img/youtube_thumb.jpg" style="width: 275px; height: 156px;"></a>
+			  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div id="myModal-body" class="modal-body">
+				    <iframe width="560" height="315" src="http://www.youtube.com/embed/LTSuUEOfWa0?rel=0" frameborder="0" allowfullscreen></iframe>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+    <!--<div class="row-fluid">
+     	<div class="span12" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;"></div> 
+     	<a class="video-thumbnail" data-toggle="modal" href="#myModal" data-youtube-id="_AyXNeRbpRk"><img src="http://d1ncmx5azicmvc.cloudfront.net/website/img/video-thumbnail.79e01a2f7bb8.png" style="display:none;" onload="imageLoad()"></a>
+		  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			  <div class="modal-body">
+			    <iframe width="560" height="315" src="http://www.youtube.com/embed/30Pjl31cyDY?rel=0" frameborder="0" allowfullscreen></iframe>
+			  </div>
+			</div>
+	<div class="container" style="margin: 0; padding: 0; background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
+		<div class="row">
+			<div class="span4 offset6 well">
+			<p>asddas</p>
+			</div>
 		</div>
 	 </div>
-<? } ?>
     </div>
-  </div> <!-- /container -->
+  </div> -->
 
-	<div class="container leftband">
+	<div class="container custom leftband">
 	<div class="row-fluid">
         <div class="span4">
 <a class="twitter-timeline" href="https://twitter.com/enviroCar_org" data-chrome="noscrollbar" data-widget-id="335068168525578241">Tweets von @enviroCar_org</a>
@@ -49,8 +53,9 @@ if(!is_logged_in()){
 
        </div>
         <div class="span7">
-          <h2 class="featurette-heading"><? echo $index_be_a_citizen_scientist;?></h2>
-          <p style="text-align: justify; font-size:21px"><? echo $index_help_the_world;?></p>
+          <h2><? echo $index_be_a_citizen_scientist;?></h2>
+          
+          <p><? echo $index_help_the_world;?></p>
         </div>
   <!--      <div class="span4">
           <h2><? echo $index_support_indiegogo;?></h2>
@@ -62,17 +67,17 @@ if(!is_logged_in()){
 
 	</div>
 
-	<div class="container rightband">
+	<div class="container custom leftband">
       <div class="row-fluid">
        <div class="span6" style="margin-left:10px;">
 <!--		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>-->
-		<h2 class="featurette-heading"><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
-		<p style="text-align: justify; font-size:21px;">
+		<h2><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
+		<p>
 			<? echo $index_this_is_community;?>
 		</p>
 		</div>
       <div class="span5">
-      <iframe width="480" height="340" src="//www.youtube.com/embed/LTSuUEOfWa0" allowfullscreen></iframe>
+      <iframe width="480" height="340" style="z-index:-9999;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen frameborder="0" ></iframe>
       </div>
       </div>
 	</div>

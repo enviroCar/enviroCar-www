@@ -1,0 +1,12 @@
+/* Flags generated with flag-sprites.com, if more languages are needed generate the flags there */
+
+.flag {
+	width: 18px;
+	height: 12px;
+	background:url(../img/flags.png) no-repeat;
+	padding-bottom: 4px;
+	cursor: pointer;cursor: hand;
+}
+
+.flag.flag-de {background-position: -18px 0}
+.flag.flag-gb {background-position: 0 -12px}
