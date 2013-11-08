@@ -358,6 +358,9 @@ $country = "Country";
 $location = "Location";
 $language = "Language";
 $aboutme ="About me";
+$newPassword = "New Password";
+$passwordRepeat = "Repeat";
+$password_change_info = "If you do not want to change your password leave these fields blank:";
 
 $fuelType = "Fuel type";
 $constructionYear ="Construction Year";
