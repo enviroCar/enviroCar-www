@@ -205,6 +205,7 @@ textarea {
 }
 body {
   margin: 0;
+  font-family: 'Droid Sans';
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -1213,6 +1214,7 @@ input,
 button,
 select,
 textarea {
+  font-family: 'Droid Sans';
 }
 label {
   display: block;
@@ -3569,6 +3571,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   margin-bottom: 0;
   padding: 4px 14px;
+  font-family: 'Droid Sans';
   font-size: 13px;
   font-weight: normal;
   line-height: 1;

@@ -9,7 +9,7 @@ $index_user_details="Benutzerangaben";
 $index_register="Register";
 $index_get_App="Hol dir unsere App!";
 $index_get_it_on_google="Besuch Google Play!";
-$index_be_a_citizen_scientist="Machen Sie mit..";
+$index_be_a_citizen_scientist="Machen Sie mit ...";
 $index_help_the_world='Wer fährt umweltfreundlicher, Sie oder die Kollegen Ihrer Arbeitsstelle? Wieviel CO2 produziert Ihr Fahrzeug? Was müssten Sie unternehmen, um klimaneutral zu fahren? <br> Welche Strecken benötigen besonders viel Kraftstoff? Sind Fahrbahnschwellen umweltfreundlicher als Tempo-Zonen? Ließe sich die Situation durch eine andere Verkehrsführung optimieren?
 <br><br> 
 Nutzen Sie enviroCar, um diese und ähnliche Fragen zu beantworten. Stellen Sie Forschern und Planern Daten aus der Sensorik Ihres Fahrzeuges zur Verfügung. Helfen Sie mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
@@ -20,7 +20,7 @@ Sie können die Daten als Open Data auf den enviroCar Server hochladen und anony
 <br><br>
 Nutzen Sie die enviroCar Website, um Ihre Daten zu verwalten und enviroCar Projekte kennenzulernen.';
 $index_how_it_works="Wie funktioniert das Ganze?";
-$index_here_we_go=" - so gehts!"; 
+$index_here_we_go=" - so geht's!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
 $index_register="Registrieren";
 $index_sign_in="Anmelden";
@@ -582,11 +582,11 @@ Für Dezember 2013 planen die Veröffentlichung einer ersten Vollversion.';
 
 //route.php
 
-$route_distance = "DISTANZ";
-$route_fuelConsumption = "TREIBSTOFFVERBRAUCH";
-$route_CO2 = "CO2";
-$route_idleTime = "STANDZEIT";
-$route_avgSpeed = "DURCHSCHNITTLICHE GESCHWINDIGKEIT";
+$route_distance = "Distanz";
+$route_fuelConsumption = "Treibstoffverbrauch";
+$route_CO2 = "CO<sub>2</sub>";
+$route_idleTime = "Standzeit";
+$route_avgSpeed = "Durchschnittl. Geschwindigkeit";
 $route_minutes = "m";
 $route_fuelGas = "Benzin";
 $route_fuelDiesel = "Diesel";

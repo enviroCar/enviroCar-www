@@ -22,22 +22,14 @@ include('header.php');
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 <div class="container leftband">
 <div id="routeInformation" style="margin-left: 30px;"></div>
-<div class="row" id="statistics">
-  <div class="span2" id="distTime">
-    <h4 class="muted" ><?php echo $route_distance; ?></h4>
-  </div>
-  <div class="span2" id="fuelConsum">
-    <h4 class="muted"><?php echo $route_fuelConsumption; ?></h4>
-  </div>
-  <div class="span2" id="co2">
-    <h4 class="muted"><?php echo $route_CO2; ?></h4>
-  </div>
-  <div class="span2" id="idleTime">
-    <h4 class="muted"><?php echo $route_idleTime; ?></h4><br>    
-  </div>
-  <div class="span2" id="avgSpeed">
-    <h4 class="muted"><?php echo $route_avgSpeed; ?></h4>   
-  </div>
+<div class="row-fluid" >
+  <ul class="inline-stats" id="statistics">
+      <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
+      <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
+      <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
+      <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
+      <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
+  </ul>
 </div>
 <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 <div class="row" id="mapAndChart">

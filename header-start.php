@@ -61,7 +61,7 @@ if ($login_name != "" && $login_password != ""){
 
     <script src="./assets/js/jquery.js"></script>
     <?php 
-      $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
       $file = "./assets/js/$current_file_name.js";
 
       if (file_exists($file)) {
@@ -120,7 +120,7 @@ if ($login_name != "" && $login_password != ""){
                 <li><a href="./registration.php"><? echo $index_register;?></a></li>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
-                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                <div class="dropdown-menu" style="padding: 15px;">
                  <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
@@ -139,11 +139,7 @@ if ($login_name != "" && $login_password != ""){
                   </a>
                   <ul id="session-menu" class="dropdown-menu">
                     <li><a href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></li>
-                    <li><a href="/users/martin/edit_account">Konto bearbeiten</a></li>
-                    <li><a href="/users/martin/messages">Inbox</a></li>
-                    <li class="divider"></li>
                     <li><a href="dashboard.php"><? echo $dashboard ?></a></li>
-                    <li><a href="/users/martin/friendships/accepted">Meine Freunde</a></li>
                     <li class="divider"></li>
                     <li><a href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></li>
                   </ul>

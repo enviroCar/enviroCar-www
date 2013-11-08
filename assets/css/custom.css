@@ -44,17 +44,16 @@ body{
 	background-color: #FFFFFF; 
 	box-shadow: 1px 2px 2px #D4D4D4;
 	margin-top: 20px;
-	font-size: 17px;
-	font-weight: 200;
-	line-height: 28px;
+	font-size: 16px;
+	line-height: 150%;
 }
 
-.navbar .container, #about-menu{
+
+.navbar .container, #about-menu, #data-preview{
 	background-color: transparent; 
 	box-shadow: 0px 0px 0px #D4D4D4;
 	margin-top: 0px;
 	font-size: 16px;
-	font-weight: 200;
 	line-height: 0;
 }
 
@@ -259,6 +258,16 @@ h5{
 
 /* Overwriting Bootstrap CSS ------------------------- */
 
+.data-preview {
+	background-color: white;
+	border-radius: 0px;
+	line-height: 150%;
+	padding: 0px;
+	margin-bottom: 30px;
+	border-bottom: 0px;
+	border-top: 0px;
+}
+
 .brand{
 	padding-left: 80px;
 }
@@ -396,4 +405,10 @@ h5{
 		-moz-border-radius: 0;
 		border-radius: 0;
 	}
+}
+
+.inline-stats > li {
+	float: left;
+	margin-right: 20px;
+	font-size: 14px;
 }
