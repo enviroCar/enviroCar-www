@@ -364,6 +364,9 @@ $country = "Land";
 $location = "Ort";
 $language = "Sprache";
 $aboutme ="Über mich";
+$newPassword = "Neues Passwort";
+$passwordRepeat = "Wiederholen";
+$password_change_info = "Wenn Sie Ihr Passwort nicht ändern wollen, lassen Sie die folgenden Felder frei:";
 
 $addasfriend ="Als Freund hinzufügen";
 $removeasfriend ="Als Freund löschen";
