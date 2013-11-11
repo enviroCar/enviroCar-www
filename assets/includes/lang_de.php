@@ -455,14 +455,19 @@ $analyzing_with_R_titel = "enviroCar Tracks analysieren mit R";
 $analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)statistische Berechnungen. In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.';
 
 //dataaccess.php
-$viaAPIHead = "Nutzung der enviroCar API";
-$viaAPIText = 'Die REST API des enviroCar Servers unterstützt den selektiven  Zugriff auf anonymisierte Messfahrten (Tracks). Sie können per HTTP auf die Tracks, die Messungen und zugehörige Statistiken zugreifen. Für die Selektion können räumliche und zeitliche Filter verwendet werden.
+$dataaccess_viaAPIHead = "Nutzung der enviroCar API";
+$dataaccess_viaAPIText = 'Die REST API des enviroCar Servers unterstützt den selektiven  Zugriff auf anonymisierte Messfahrten (Tracks). Sie können per HTTP auf die Tracks, die Messungen und zugehörige Statistiken zugreifen. Für die Selektion können räumliche und zeitliche Filter verwendet werden.
 <br/><br/>
-Die Daten sind anonymisiert, d.h. eine Verbindung zu den Nutzerdaten kann nicht mehr hergestellt werden. Der Zugriff auf Nutzer-spezifische Daten ist nur durch den Nutzer selbst möglich, und erfordert ein Login über HTTP Authorization.
+Die Daten sind anonymisiert, d.h. eine Verbindung zu den Nutzerdaten kann nicht mehr hergestellt werden. Der Zugriff auf Nutzer-spezifische Daten ist nur durch den Nutzer selbst möglich, und erfordert ein Login über HTTP Authorisation.
 <br/><br/>
-Ein detaillierte Beschreibung der enviroCar Server API findet sich <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">hier</a>.';
-$viaDownloadHead = "Als Download";
-$viaDownloadText = "Keine Beschreibung verfügbar.";
+Detaillierte <strong>Beschreibung der enviroCar Server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
+//$viaDownloadHead = "Als Download";
+//$viaDownloadText = "Keine Beschreibung verfügbar.";
+$dataaccess_endpointHead = "API URLs";
+$dataaccess_endpointText = '<ul>
+<li>Stabile API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>
+<li>Entwicklungs-API (bei Nutzung bitte GitHub repositories und Mailingliste verfolgen): <a href="https://envirocar.org/api/dev/">https://envirocar.org/api/dev/</a></li>
+</ul>';
 
 //about.php
 $about_aboutHead = "Über enviroCar";

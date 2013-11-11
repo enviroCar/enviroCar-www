@@ -24,9 +24,13 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span12">
-				<h2 id="licensing_datalicensing_head"><? echo $viaAPIHead ?></h2>
+				<h2 id="licensing_datalicensing_head"><? echo $dataaccess_viaAPIHead ?></h2>
 				<p style="text-align: justify">
-				<? echo $viaAPIText ?>
+					<? echo $dataaccess_viaAPIText ?>
+				</p>
+				<h3 id="licensing_datalicensing_head"><? echo $dataaccess_endpointHead ?></h3>
+				<p style="text-align: justify">
+					<? echo $dataaccess_endpointText ?>
 				</p>
 			</div>
 		</div>
