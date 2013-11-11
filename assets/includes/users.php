@@ -200,7 +200,8 @@ if(isset($_GET['friendActivities'])){
 
 if(isset($_GET['updateUser'])){
 	$changeData = array();
-	
+	$response = [];
+
 	if (!empty($_POST['firstName'])) {
 		$changeData['firstName'] = $_POST['firstName'];
 	}
@@ -223,11 +224,21 @@ if(isset($_GET['updateUser'])){
 		$changeData['dayOfBirth'] = $_POST['dayOfBirth'];
 	}
 	if (!empty($_POST['password'])) {
-		$changeData['token'] = $_POST['password'];
+		if(isset($_POST['oldPassword'])){
+			if($_SESSION['password'] == $_POST['oldPassword']){
+				$changeData['token'] = $_POST['password'];
+				$response = put_request($baseURL.'/users/'.rawurlencode($_SESSION['name']), $changeData);
+			}else{
+				$response['status'] = 401;
+			}
+		}
 	}
 
 	//$changeData = array("firstName" => ''.$_GET['firstName'], "lastName" => ''.$_GET['lastName'], "country" => ''.$_GET['country'], "gender" => ''.$_GET['gender'], "language" => ''.$_GET['language'], "dayOfBirth" => ''.$_GET['dayOfBirth']);  
-	$response = put_request($baseURL.'/users/'.rawurlencode($_SESSION['name']), $changeData);
+	if(empty($_POST['password'])){
+		$response = put_request($baseURL.'/users/'.rawurlencode($_SESSION['name']), $changeData);
+	}
+
 	if($response['status'] == 204){
 		if (!empty($_POST['password'])) {
 			//update the session password
