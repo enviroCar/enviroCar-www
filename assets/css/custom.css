@@ -226,13 +226,14 @@ display:inline;
 	color: white;
 }
 
-#main-nav > li{
-	line-height: 10px;
-}
-
 #session-menu{
 	border-radius: 0px;
 	margin-top: 5px;
+}
+
+@media (max-width: 979px)
+.nav-collapse .nav > li > a {
+margin-bottom: 0px;
 }
 
 #mapAndChart > .span6{
@@ -257,6 +258,67 @@ h5{
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */
+
+.navbar .btn-navbar {
+	margin-top: 2px;
+}
+
+.nav-collapse, .nav-collapse.collapse {
+	padding-top: 0px;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+	padding: 0px;
+}
+
+@media (min-width: 980px) {
+	div.nav-collapse.collapse > ul > li.active {
+		border-bottom: 5px solid #8CBF3F;
+		padding: 0px;
+	}
+	.dropdown-menu {
+		font-size: 14px;
+	}
+}
+
+
+div.nav-collapse.in.collapse > ul > li > a, div.nav-collapse.in.collapse.dropdown-menu a, div.nav-collapse.in.collapse > ul > li > ul > li > a{
+padding: 9px 15px;
+font-weight: bold;
+color:white;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+
+@media (max-width: 979px)
+.nav-collapse .nav > li > a {
+margin-bottom: 0px;
+}
+
+
+
+.nav-collapse .nav > li > a {
+	margin-bottom: 0px;
+}
+
+.navbar .brand {
+  padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.navbar .nav > li > a {
+  padding-bottom: 0px;
+	padding-top: 10px;
+}
+
+
+@media (min-width: 980px) {
+    body {
+      padding-top: 60px;
+      padding-bottom: 42px;
+    }
+}
 
 .data-preview {
 	background-color: white;
@@ -288,16 +350,21 @@ h5{
 .navbar .nav li.dropdown > .dropdown-toggle .caret, .navbar .nav .dropdown-toggle .caret {
   border-top-color: #8CBF3F;
   border-bottom-color: #8CBF3F;
-  margin-top: 3px;
 }
 
 .caret {
+  margin-top: 8px;
   border-top: 6px solid #000000;
 }
 
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret {
+	border-top-color: #8CBF3F;
+	border-bottom-color: #8CBF3F;
+}
+
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	background-color: #8CBF3F;
-	color: #048abf;
+	background-color: transparent;
+	color: white;
 }
 
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
@@ -411,4 +478,8 @@ h5{
 	float: left;
 	margin-right: 20px;
 	font-size: 14px;
+}
+
+ul.dropdown-menu li a {
+	color: black;
 }

@@ -37,12 +37,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <link href="./assets/css/flags.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -93,9 +88,9 @@ function echoActiveClassIfRequestMatches($requestUri)
 
   <body>
 
-  <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner" style="position: relative;">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style="position: relative;">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -105,7 +100,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <img style="height:25px;" src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" />
           </a>
           
-          <div class="nav-collapse collapse">
+          <div class="nav-collapse collapse" style="position: relative;">
             <ul id="main-nav" class="nav pull-right droid-text">
               <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $dashboard ?></a></li>
