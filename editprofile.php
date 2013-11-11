@@ -115,6 +115,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   }
 
 	function submitProfileChanges(){
+
 	        changeData = getFormData($('#changeProfileForm'));
           if($('#dayOfBirth').val() != ''){
             if(!validateDate($('#dayOfBirth').val())){
@@ -123,25 +124,31 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
             }
           }
           newPw = $('#password').val();
+
           if(newPw != '') {
-			if (newPw.length < 6) {
-				alert("Password too short. Please use more than five characters");
-				return false;
-			}
-			repeatePw = $('#passwordRepeat').val();
-			result = newPw.localeCompare(repeatePw);
-            if (result != 0) {
-				alert("Password mismatch");
-				return false;
-			}
+            if (newPw.length < 6) {
+              alert("Password too short. Please use more than five characters");
+              return false;
+            }
+            repeatePw = $('#passwordRepeat').val();
+            result = newPw.localeCompare(repeatePw);
+                  if (result != 0) {
+              alert("Password mismatch");
+              return false;
+            }
           }
+          var r = "";
           $.post('./assets/includes/users.php?updateUser', changeData, function(response){
+            r = response;
             if(response >= 400){
               console.log('error');
+              window.location.href = "index.php?registration_successful";
             }else{
               alert("Profile has been changed");
-              window.location.reload();
+              window.location.href = "index.php?registration_successful";
+              console.log('changed');
             }
+            console.log(response);
           });
       return false;	
 	}
@@ -244,6 +251,8 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 		<hr />
 		
 		<div><?php echo $password_change_info ?></div>
+    <label for="oldPassword"><? echo $oldPassword; ?></label>
+    <input id="oldPassword" name="oldPassword" type="password" class="input-block-level" placeholder="<? echo $oldPassword; ?>"/>
 		
 		<label for="password"><? echo $newPassword; ?></label>
 		<input id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>

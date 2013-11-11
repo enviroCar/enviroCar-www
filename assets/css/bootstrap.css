@@ -205,6 +205,7 @@ textarea {
 }
 body {
   margin: 0;
+  font-family: 'Droid Sans';
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -1213,6 +1214,7 @@ input,
 button,
 select,
 textarea {
+  font-family: 'Droid Sans';
 }
 label {
   display: block;
@@ -3569,6 +3571,7 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 0;
   padding: 4px 14px;
   font-size: 13px;
+  font-family: 'Droid Sans';
   font-weight: normal;
   line-height: 1;
   -webkit-border-radius: 15px;

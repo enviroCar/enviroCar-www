@@ -69,7 +69,9 @@ function login($name, $password, $permanent){
 		return true;
 	}else{
 		if (isset($_SESSION)) session_destroy();
-		
+		$_SESSION['name'] = null;
+		$_SESSION['password'] = null;
+
 		return false;
 	}
 }
