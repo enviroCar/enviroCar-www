@@ -239,7 +239,7 @@ $license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" targe
 $license_odbl_summary = "<a href=\"http://opendatacommons.org/licenses/odbl/summary/\" target=\"_blank\">ODbL Zusammenfassung</a>";
 
 
-$register_licensereminder = "Denk dran, alle Daten die wir von dir aufzeichnen werden anonymisiert (<a href=\"support.php\" target=\"_blank\">lern wie</a>), und werden veröffentlicht unter der ".$license_odbl.".";
+$register_licensereminder = "Denk dran, alle Daten die wir von dir aufzeichnen werden anonymisiert (<a href=\"terms.php\" target=\"_blank\">lern wie</a>), und werden veröffentlicht unter der ".$license_odbl.".";
 
 $licensing_datalicensing = "Lizenzierung der Daten";
 $licensing_datalicensingtext = "Die Daten die über die ".$envirocar." API abrufbar sind, sind lizensiert unter der ".$license_odbl.". Das heißt für dich: ";

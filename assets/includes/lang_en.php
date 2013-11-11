@@ -236,7 +236,7 @@ $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode
 $license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODbL</a>";
 $license_odbl_summary = "<a href=\"http://opendatacommons.org/licenses/odbl/summary/\" target=\"_blank\">ODbL Summary</a>";
 
-$register_licensereminder = "Remember, all data collected within this project will be anonymised (<a href=\"support.php\" target=\"_blank\">learn how</a>), and made publicly available under ".$license_odbl.".";
+$register_licensereminder = "Remember, all data collected within this project will be anonymised (<a href=\"terms.php\" target=\"_blank\">learn how</a>), and made publicly available under ".$license_odbl.".";
 
 $licensing_datalicensing = "Licensing of Data";
 $licensing_datalicensingtext = "Data which is available via the ".$envirocar." API is lizensed as ".$license_odbl.". This means: ";
