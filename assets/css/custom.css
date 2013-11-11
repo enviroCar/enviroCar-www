@@ -350,16 +350,21 @@ margin-bottom: 0px;
 .navbar .nav li.dropdown > .dropdown-toggle .caret, .navbar .nav .dropdown-toggle .caret {
   border-top-color: #8CBF3F;
   border-bottom-color: #8CBF3F;
-  margin-top: 3px;
 }
 
 .caret {
+  margin-top: 8px;
   border-top: 6px solid #000000;
 }
 
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret {
+	border-top-color: #8CBF3F;
+	border-bottom-color: #8CBF3F;
+}
+
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	background-color: #8CBF3F;
-	color: #048abf;
+	background-color: transparent;
+	color: white;
 }
 
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {

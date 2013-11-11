@@ -359,6 +359,7 @@ $country = "Country";
 $location = "Location";
 $language = "Language";
 $aboutme ="About me";
+$oldPassword = "Old Passwort";
 $newPassword = "New Password";
 $passwordRepeat = "Repeat";
 $password_change_info = "If you do not want to change your password leave these fields blank:";
