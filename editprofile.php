@@ -141,11 +141,11 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
           $.post('./assets/includes/users.php?updateUser', changeData, function(response){
             r = response;
             if(response >= 400){
+              alert("Something is wrong.");
               console.log('error');
-              window.location.href = "index.php?registration_successful";
             }else{
-              alert("Profile has been changed");
-              window.location.href = "index.php?registration_successful";
+              alert("Success!");
+              location.reload(true);
               console.log('changed');
             }
             console.log(response);
@@ -219,54 +219,50 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     </div><!--/span-->  
 	 <div class="span6">
         
-   <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
-    <form id="changeProfileForm" action="./assets/includes/users.php?updateUser" method="post">
-		<label for="mail"><? echo $email; ?></label>
-		<input id="mail" name="mail" type="text" class="input-block-level" placeholder="<? echo $email; ?>"/>
-		
-		<label for="firstName"><? echo $firstname; ?></label>
-		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>"/>
-		
-		<label for="lastName"><? echo $lastname; ?></label>
-		<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="<? echo $lastname; ?>"/>
-		
-		<label for="country"><? echo $country; ?></label>
-		<input id="country" name="country" type="text" class="input-block-level" placeholder="<? echo $country; ?>"/>
-		
-		<label for="dayOfBirth"><? echo $birthday; ?> (2000-12-31)</label>
-		<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>"/>
-		
-		<label for="gender"><? echo $gender; ?></label>
-		<select id="gender" name="gender" class="input-block-level">
-			<option value="m"><? echo $male ?></option>
-			<option value="f"><? echo $female ?></option>
-		</select>
-		
-		<label for="language"><? echo $language; ?></label>
-		<select id="language" name="language" class="input-block-level">
-			<option value="de-DE">Deutsch</option>
-			<option value="en-EN">English</option>
-		</select>
-		
-		<hr />
-		
-		<div><?php echo $password_change_info ?></div>
-    <label for="oldPassword"><? echo $oldPassword; ?></label>
-    <input id="oldPassword" name="oldPassword" type="password" class="input-block-level" placeholder="<? echo $oldPassword; ?>"/>
-		
-		<label for="password"><? echo $newPassword; ?></label>
-		<input id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>
-		
-		<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
-		<input id="passwordRepeat" name="passwordRepeat" type="password" class="input-block-level" placeholder="<? echo $passwordRepeat; ?>"/>
-			
-			<span style="text-align: center; display: block">
-				<a href="" onclick="submitProfileChanges()" class="btn btn-primary btn-small" style="margin-top: 1em">
-					<? echo $editaccount; ?>
-				</a>
-			</span>       
-    </div>      
-    </div>
+    <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
+    <form id="changeProfileForm">
+  		<label for="mail"><? echo $email; ?></label>
+  		<input id="mail" name="mail" type="text" class="input-block-level" placeholder="<? echo $email; ?>"/>
+  		
+  		<label for="firstName"><? echo $firstname; ?></label>
+  		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>"/>
+  		
+  		<label for="lastName"><? echo $lastname; ?></label>
+  		<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="<? echo $lastname; ?>"/>
+  		
+  		<label for="country"><? echo $country; ?></label>
+  		<input id="country" name="country" type="text" class="input-block-level" placeholder="<? echo $country; ?>"/>
+  		
+  		<label for="dayOfBirth"><? echo $birthday; ?> (2000-12-31)</label>
+  		<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>"/>
+  		
+  		<label for="gender"><? echo $gender; ?></label>
+  		<select id="gender" name="gender" class="input-block-level">
+  			<option value="m"><? echo $male ?></option>
+  			<option value="f"><? echo $female ?></option>
+  		</select>
+  		
+  		<label for="language"><? echo $language; ?></label>
+  		<select id="language" name="language" class="input-block-level">
+  			<option value="de-DE">Deutsch</option>
+  			<option value="en-EN">English</option>
+  		</select>
+  		
+  		<hr />
+  		
+  		<div><?php echo $password_change_info ?></div>
+      <label for="oldPassword"><? echo $oldPassword; ?></label>
+      <input id="oldPassword" name="oldPassword" type="password" class="input-block-level" placeholder="<? echo $oldPassword; ?>"/>
+  		
+  		<label for="password"><? echo $newPassword; ?></label>
+  		<input id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>
+  		
+  		<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
+  		<input id="passwordRepeat" name="passwordRepeat" type="password" class="input-block-level" placeholder="<? echo $passwordRepeat; ?>"/>
+
+  		<input type="button" class="btn btn-primary" value="<? echo $editaccount; ?>" onclick="submitProfileChanges()">
+    </form>      
+  </div>
 </div>
 <?
 include('footer.php');
