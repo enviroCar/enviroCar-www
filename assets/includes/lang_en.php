@@ -236,7 +236,7 @@ $license_ccby = "<a href=\"https://creativecommons.org/licenses/by/3.0/legalcode
 $license_odbl = "<a href=\"http://opendatacommons.org/licenses/odbl/1.0/\" target=\"_blank\">ODbL</a>";
 $license_odbl_summary = "<a href=\"http://opendatacommons.org/licenses/odbl/summary/\" target=\"_blank\">ODbL Summary</a>";
 
-$register_licensereminder = "Remember, all data collected within this project will be anonymised (<a href=\"support.php\" target=\"_blank\">learn how</a>), and made publicly available under ".$license_odbl.".";
+$register_licensereminder = "Remember, all data collected within this project will be anonymised (<a href=\"terms.php\" target=\"_blank\">learn how</a>), and made publicly available under ".$license_odbl.".";
 
 $licensing_datalicensing = "Licensing of Data";
 $licensing_datalicensingtext = "Data which is available via the ".$envirocar." API is lizensed as ".$license_odbl.". This means: ";
@@ -457,14 +457,19 @@ $analyzing_with_R_titel = "Analyzing enviroCar Trajectory Data with R";
 $analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.';
 
 //dataaccess.php
-$viaAPIHead = "Using the enviroCar REST API";
-$viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
+$dataaccess_viaAPIHead = 'Using the enviroCar API';
+$dataaccess_viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
 <br/><br/>
 The data is anonymized, i.e. it is not possible to connect it to the driver. Access to user related  data is protected and requires the user to login via HTTP authorization.
 <br/><br/>
-Find a detailed description of the enviroCar-server API <a href="http://envirocar.github.io/enviroCar-server/api/" target="_blank">here</a>.';
-$viaDownloadHead = "Via Download";
-$viaDownloadText = "Keine Beschreibung verfügbar.";
+Detailed <strong>description of the enviroCar-server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
+//$viaDownloadHead = "Via Download";
+//$viaDownloadText = "Keine Beschreibung verfügbar.";
+$dataaccess_endpointHead = 'API Endpoints';
+$dataaccess_endpointText = '<ul>
+<li>Stable API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>
+<li>Development API (follow GitHub repositories and mailing list if you use this): <a href="https://envirocar.org/api/dev/">https://envirocar.org/api/dev/</a></li>
+</ul>';
 
 //about.php
 $about_aboutHead = "About enviroCar";
