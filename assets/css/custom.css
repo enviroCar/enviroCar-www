@@ -257,6 +257,13 @@ h5{
 	margin-left: 0px;
 }
 
+#chart_div {
+	padding-top: 60px;
+	margin-left: -60px;
+	width: 400px; 
+	height: 200px;
+}
+
 /* Overwriting Bootstrap CSS ------------------------- */
 
 .navbar .btn-navbar {

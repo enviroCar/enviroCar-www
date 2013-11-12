@@ -48,6 +48,8 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="./assets/js/jquery.js"></script>
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], '.php');;

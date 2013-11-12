@@ -10,13 +10,12 @@ if(!is_logged_in()){
 }
 ?>    
 
-  <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto13.jpg); height: 250px; width 100%; background-size: cover;">
-    <div class="row" style="height: 100%">
-			<div id="cover-text" class="span4 offset8">
-				<h1>
-				</h1>
-				<h2>
-				</h2>
+  <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); height: 250px; width 100%; background-size: cover;">
+    <div class="row">
+			<div class="span4">
+				<div id="chart_div"></div>
+			</div>
+			<div id="cover-text" class="span4 offset3">
 				<a data-toggle="modal" href="#myModal" data-youtube-id="_AyXNeRbpRk"><img id="youtube-thumb" src="./assets/img/youtube_thumb.jpg" style="width: 275px; height: 156px;"></a>
 			  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div id="myModal-body" class="modal-body">
@@ -52,7 +51,7 @@ if(!is_logged_in()){
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
        </div>
-        <div class="span7">
+        <div class="span6">
           <h2><? echo $index_be_a_citizen_scientist;?></h2>
           
           <p><? echo $index_help_the_world;?></p>
