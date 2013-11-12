@@ -5,6 +5,7 @@ $index_empty_password="Password cannot be empty";
 $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
+$index_lost_password="Lost password?";
 $index_user_details="User details";
 $index_register="Register";
 $index_get_App="Get our App soon!";

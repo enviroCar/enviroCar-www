@@ -226,9 +226,9 @@ display:inline;
 	color: white;
 }
 
-#session-menu{
+#session-menu, #sign-in-menu{
 	border-radius: 0px;
-	margin-top: 5px;
+	margin-top: 12px;
 }
 
 @media (max-width: 979px)
@@ -267,6 +267,16 @@ h5{
 
 
 /* Overwriting Bootstrap CSS ------------------------- */
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: /*your box-shadow*/,0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+} 
 
 .label-envirocar,
 .badge-envirocar {

@@ -54,7 +54,10 @@ if ($login_name != "" && $login_password != ""){
     <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-tooltip.js"></script>
+
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
       $file = "./assets/js/$current_file_name.js";
@@ -115,15 +118,15 @@ if ($login_name != "" && $login_password != ""){
                 <li><a href="./registration.php"><? echo $index_register;?></a></li>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
-                <div class="dropdown-menu" style="padding: 15px;">
-                 <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
+                <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px;">
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
                     <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
                     <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
-                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
+                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
+                  <a href="#"><?php echo $index_lost_password ?></a>
                 </div>
                 </li>
               <?php }else{ ?>
@@ -237,6 +240,7 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
+  <a href="#"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
@@ -257,7 +261,8 @@ if ($login_fail) {
 ?>
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
- <? echo $usernameorpasswordwrong ?>
+ <? echo $usernameorpasswordwrong ?><br>
+ <a href="#"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
