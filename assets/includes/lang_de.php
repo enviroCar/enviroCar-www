@@ -676,4 +676,7 @@ Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies
 //temporary
 $under_construction = "Die Website wird gerade neu gestaltet..";
 
+//Badges
+$availableBadges = "Verfügbare Badges";
+$badges = "Badges";
 ?>

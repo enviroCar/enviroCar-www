@@ -264,7 +264,21 @@ h5{
 	height: 200px;
 }
 
+
+
 /* Overwriting Bootstrap CSS ------------------------- */
+
+.label-envirocar,
+.badge-envirocar {
+  background-color: #8CBF3F;
+  cursor: pointer;
+  cursor: hand;
+  padding: 4px 8px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+
 
 .navbar .btn-navbar {
 	margin-top: 2px;

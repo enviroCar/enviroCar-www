@@ -51,6 +51,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-tooltip.js"></script>
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], '.php');;
       $file = "./assets/js/$current_file_name.js";

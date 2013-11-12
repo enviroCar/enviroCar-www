@@ -663,4 +663,8 @@ When you use this website, you agree to the use of cookies. The cookies will be 
 
 //temporary
 $under_construction = "This website is currently under construction..";
+
+//Badges
+$availableBadges = "Available Badges";
+$badges = "Badges";
 ?>
