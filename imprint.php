@@ -12,7 +12,7 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span12">
 				<h2 id="ImprintHead"><? echo $imprint_imprint;?></h2>
 				<p style="margin-right: 1%">
 					52&deg; North Initiative for Geospatial Open Source Software GmbH<br/>
@@ -36,7 +36,7 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span12">
 				<h2 id="ContentHead"><? echo $imprint_content;?></h2>
 				<p style="text-align: justify; margin-right: 1%">
 					<? echo $imprint_contenttext;?>
@@ -47,7 +47,7 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span">
+			<div class="span12">
 				<h2 id="CopyrightHead"><? echo $imprint_copyright;?></h2>
 				<p style="text-align: justify; margin-right: 1%">
 					<? echo $imprint_copyrighttext;?>
