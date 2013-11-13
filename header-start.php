@@ -56,6 +56,7 @@ if ($login_name != "" && $login_password != ""){
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap-tooltip.js"></script>
+    <script src="./assets/js/jqBootstrapValidation.js"></script>
 
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
@@ -76,6 +77,8 @@ if ($login_name != "" && $login_password != ""){
     ?>
 
     <script type="text/javascript">
+      //enable form validation
+      $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
 
       //Used slide down/up to toggle the visibility of a given element
       function toggle_visibility(id) {
@@ -103,7 +106,22 @@ if ($login_name != "" && $login_password != ""){
   </head>
 
   <body>
-
+    <div class="modal hide fade" id="lost_password_modal">
+      <div class="modal-header">
+          <h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
+      </div>
+      <div class="modal-body form-horizontal">
+          <div class="control-group">
+              <label for="email" class="control-label">E-Mail</label>
+              <div class="controls">
+                  <input type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
+              </div>
+          </div>    
+      </div>
+      <div class="modal-footer">
+          <button href="#" class="btn btn-primary" id="submit_mail">Submit</button>
+      </div>
+    </div>
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -134,7 +152,7 @@ if ($login_name != "" && $login_password != ""){
                     <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <a href="#"><?php echo $index_lost_password ?></a>
+                  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
                 </div>
                 </li>
               <?php }else{ ?>

@@ -50,7 +50,8 @@ function echoActiveClassIfRequestMatches($requestUri)
     
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap-tooltip.js"></script>
-
+    <script src="./assets/js/jqBootstrapValidation.js"></script>
+    
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
       $jsfile = "./assets/js/$current_file_name.js";
@@ -70,7 +71,6 @@ function echoActiveClassIfRequestMatches($requestUri)
     ?>
     
     <script type="text/javascript">
-
       //Used slide down/up to toggle the visibility of a given element
       function toggle_visibility(id) {
         if ($('#'+id).is(":hidden")) {

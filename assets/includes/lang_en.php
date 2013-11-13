@@ -6,6 +6,7 @@ $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
 $index_lost_password="Lost password?";
+$index_reset_password="Reset Password";
 $index_user_details="User details";
 $index_register="Register";
 $index_get_App="Get our App soon!";
@@ -48,7 +49,11 @@ $invalid_input ="Invalid input. Please check the hints and try again.";
 $terms_check = 'I have read and understood the <a href="./terms.php" target="_blank">Terms of Use</a>.';
 $terms_check_alert = 'Please read and accept the Terms of Use.';
 $error_setting_terms_on_server="An error occured while trying to update user information.";
-
+$email_validation_message="Please enter a valid email address.";
+$password_validation_message="The password must contain at least 6 characters.";
+$password_match_validation_message="The passwords do not match.";
+$date_validation_message="Please enter the date in the format <code>YYYY-MM-DD</code>.";
+$required_validation_message="This is required.";
 
 // dashboard.php
 $dashboard_recent_avtivities="Recent Activities";

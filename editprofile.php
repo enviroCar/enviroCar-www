@@ -221,49 +221,88 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         
     <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
     <form id="changeProfileForm">
-  		<label for="mail"><? echo $email; ?></label>
-  		<input id="mail" name="mail" type="text" class="input-block-level" placeholder="<? echo $email; ?>"/>
-  		
+      <div class="control-group">
+        <label class="control-label" for="mail"><?php echo $email;?></label>
+        <div class="controls">
+      		<input id="mail" name="mail" type="email" class="input-block-level" placeholder="<? echo $email; ?>" required aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
+  		  </div>
+      </div>
+      <div class="control-group">
   		<label for="firstName"><? echo $firstname; ?></label>
+      <div class="controls">
   		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>"/>
   		
+      <div class="control-group">
   		<label for="lastName"><? echo $lastname; ?></label>
+      <div class="controls">
   		<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="<? echo $lastname; ?>"/>
-  		
+  		  </div>
+      </div>
+      
+      <div class="control-group">
   		<label for="country"><? echo $country; ?></label>
+      <div class="controls">
   		<input id="country" name="country" type="text" class="input-block-level" placeholder="<? echo $country; ?>"/>
-  		
+  		  </div>
+      </div>
+      
+      <div class="control-group">
   		<label for="dayOfBirth"><? echo $birthday; ?> (2000-12-31)</label>
-  		<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>"/>
-  		
+      <div class="controls">
+  		<input data-validation-regex-message="<?php echo $date_validation_message ?>" data-validation-regex-regex="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>"/>
+  		  </div>
+      </div>
+      
+      <div class="control-group">
   		<label for="gender"><? echo $gender; ?></label>
+      <div class="controls">
   		<select id="gender" name="gender" class="input-block-level">
   			<option value="m"><? echo $male ?></option>
   			<option value="f"><? echo $female ?></option>
   		</select>
-  		
+  		  </div>
+      </div>
+      
+      <div class="control-group">
   		<label for="language"><? echo $language; ?></label>
+      <div class="controls">
   		<select id="language" name="language" class="input-block-level">
   			<option value="de-DE">Deutsch</option>
   			<option value="en-EN">English</option>
   		</select>
-  		
+  		  </div>
+      </div>
+      
   		<hr />
   		
   		<div><?php echo $password_change_info ?></div>
+      <div class="control-group">
       <label for="oldPassword"><? echo $oldPassword; ?></label>
+      <div class="controls">
       <input id="oldPassword" name="oldPassword" type="password" class="input-block-level" placeholder="<? echo $oldPassword; ?>"/>
-  		
+  		  </div>
+      </div>
+      
+      <div class="control-group">
   		<label for="password"><? echo $newPassword; ?></label>
-  		<input id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>
-  		
+      <div class="controls">
+  		<input data-validation-minlength-message="<?php echo $password_validation_message ?>" minlength="6" id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>
+  		</div>
+      </div>
+      
+      <div class="control-group">
   		<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
-  		<input id="passwordRepeat" name="passwordRepeat" type="password" class="input-block-level" placeholder="<? echo $passwordRepeat; ?>"/>
-
+      <div class="controls">
+  		<input data-validation-match-message="<?php echo $password_match_validation_message ?>" data-validation-match-match="password" id="passwordRepeat" name="passwordRepeat" type="password" class="input-block-level" placeholder="<? echo $passwordRepeat; ?>"/>
+        </div>
+      </div>
+      
   		<input type="button" class="btn btn-primary" value="<? echo $editaccount; ?>" onclick="submitProfileChanges()">
     </form>      
   </div>
 </div>
+
+
 <?
-include('footer.php');
+  include('footer.php');
 ?>

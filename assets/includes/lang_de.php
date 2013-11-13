@@ -6,6 +6,7 @@ $index_access_denied="Zugriff verweigert!";
 $index_Please_sign_in="Bitte melde dich an";
 $index_password="Passwort";
 $index_lost_password="Passwort verloren?";
+$index_reset_password="Passwort Zurücksetzen";
 $index_user_details="Benutzerangaben";
 $index_register="Register";
 $index_get_App="Hol dir unsere App!";
@@ -50,6 +51,11 @@ $invalid_input ="Ungültige Eingabe. Bitte überprüfe die Hinweise und versuche
 $terms_check = 'Ich habe die <a href="./terms.php" target="_blank">Nutzungsbedingungen</a> gelesen und verstanden.';
 $terms_check_alert = 'Bitte lesen und akzeptieren Sie die Nutzungsbedingungen um fortzufahren.';
 $error_setting_terms_on_server="Leider gab es einen Fehler beim Versuch, die Nutzerinformationen zu aktualisieren.";
+$email_validation_message="Bitte gib eine gültige Email Adresse an.";
+$password_validation_message="Das Passwort muss mindestens 6 Zeichen enthalten.";
+$password_match_validation_message="Die Passwörter müssen übereinstimmen.";
+$date_validation_message="Bitte gib das Datum in dem Format <code>JJJJ-MM-TT</code> an.";
+$required_validation_message="Dies ist ein Pflichtfeld.";
 
 // dashboard.php
 $dashboard_recent_avtivities="Letzte Aktivitäten";

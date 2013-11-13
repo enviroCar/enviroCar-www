@@ -8,7 +8,7 @@ if(!is_logged_in()){
         $logged_in = true;
         include('header.php');
 }
-?>    
+?>
 
 <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; background-size: cover;">
     <div class="row">
@@ -84,6 +84,6 @@ if(!is_logged_in()){
       </div>
       </div>
 	</div>
-  <?
+<?
   include('footer.php');
-  ?>
+?>
