@@ -48,16 +48,24 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
-
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap-tooltip.js"></script>
+
     <?php 
-      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], '.php');;
-      $file = "./assets/js/$current_file_name.js";
-      
-      if (file_exists($file)) {
-          echo "<script src='$file'></script>";
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $jsfile = "./assets/js/$current_file_name.js";
+
+      if (file_exists($jsfile)) {
+          echo "<script src='$jsfile'></script>";
+      }
+    ?><br>
+    
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $cssfile = "./assets/css/$current_file_name.css";
+
+      if (file_exists($cssfile)) {
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
       }
     ?>
     

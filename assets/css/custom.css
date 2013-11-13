@@ -344,9 +344,16 @@ margin-bottom: 0px;
 }
 
 
+@media (max-width: 980px) {
+    body {
+    	margin-top: -20px;
+      padding-bottom: 42px;
+    }
+}
+
 @media (min-width: 980px) {
     body {
-      padding-top: 60px;
+      margin-top: 20px;
       padding-bottom: 42px;
     }
 }

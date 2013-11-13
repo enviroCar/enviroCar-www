@@ -40,10 +40,10 @@ if ($login_name != "" && $login_password != ""){
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="./assets/css/flags.css" rel="stylesheet">
-    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -54,16 +54,24 @@ if ($login_name != "" && $login_password != ""){
     <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap-tooltip.js"></script>
 
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-      $file = "./assets/js/$current_file_name.js";
+      $jsfile = "./assets/js/$current_file_name.js";
 
-      if (file_exists($file)) {
-          echo "<script src='$file'></script>";
+      if (file_exists($jsfile)) {
+          echo "<script src='$jsfile'></script>";
+      }
+    ?><br>
+    
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $cssfile = "./assets/css/$current_file_name.css";
+
+      if (file_exists($cssfile)) {
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
       }
     ?>
 
