@@ -29,6 +29,9 @@ if ($login_name != "" && $login_password != ""){
 
 ?>
 
+
+          
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,10 +43,11 @@ if ($login_name != "" && $login_password != ""){
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="./assets/css/flags.css" rel="stylesheet">
-    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -55,16 +59,67 @@ if ($login_name != "" && $login_password != ""){
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
 
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-tooltip.js"></script>
+    <script src="./assets/js/jqBootstrapValidation.js"></script>
+    
+    <?php
+      $captcha_incorrect_alert="";
+
+      if(isset($_POST['recaptcha_challenge_field'])) {
+        require_once('assets/includes/recaptchalib.php');
+        $privatekey = "6LcUPeoSAAAAAPLBog_XkUhyMVZ3n0-AD1ercddQ";
+        $resp = recaptcha_check_answer ($privatekey,
+                                      $_SERVER["REMOTE_ADDR"],
+                                      $_POST["recaptcha_challenge_field"],
+                                      $_POST["recaptcha_response_field"]);
+
+        if (!$resp->is_valid) {
+          // What happens when the CAPTCHA was entered incorrectly
+          $captcha_incorrect_alert='<div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div>';
+          echo '<script>$( document ).ready(function() { $("#lost_password_modal").modal("show");});</script>';
+        } else {
+          header('Location: mailto:envirocar@52north.org?subject=Reset%20Password&body='.$_POST['email']);
+        }
+      }
+    ?>
+
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-      $file = "./assets/js/$current_file_name.js";
+      $jsfile = "./assets/js/$current_file_name.js";
 
-      if (file_exists($file)) {
-          echo "<script src='$file'></script>";
+      if (file_exists($jsfile)) {
+          echo "<script src='$jsfile'></script>";
+      }
+    ?><br>
+    
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $cssfile = "./assets/css/$current_file_name.css";
+
+      if (file_exists($cssfile)) {
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
       }
     ?>
 
     <script type="text/javascript">
+
+      var RecaptchaOptions = {
+        custom_translations : {
+                      instructions_visual : "<?php echo $index_captcha_instructions_visual ?>",
+                      instructions_audio : "<?php echo $index_captcha_instructions_audio ?>",
+                      play_again : "<?php echo $index_captcha_play_again ?>",
+                      cant_hear_this : "<?php echo $index_captcha_cant_hear_this ?>",
+                      visual_challenge : "<?php echo $index_captcha_visual_challenge ?>",
+                      audio_challenge : "<?php echo $index_captcha_audio_challenge ?>",
+                      refresh_btn : "<?php echo $index_captcha_refresh_btn ?>",
+                      help_btn : "<?php echo $index_captcha_help_btn ?>",
+                      incorrect_try_again : "<?php echo $index_captcha_incorrect_try_again ?>",
+              },
+        theme : 'white'
+      };
+
+      //enable form validation
+      $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
 
       //Used slide down/up to toggle the visibility of a given element
       function toggle_visibility(id) {
@@ -85,15 +140,87 @@ if ($login_name != "" && $login_password != ""){
       function changeLanguage(lang){
         $.get('assets/includes/language.php?lang='+lang, function(data) {
           window.location.reload();
-        }); 
+        });
+
       }
 
+      
+      
+
     </script>
+    <style>
+      @media (min-width: 980px) {
+      body {
+              margin-top: -40px;
+              padding-top: 40px;
+              padding-bottom: 42px;
+            }
+          }
+
+      @media (max-width: 980px) {
+      body {
+              margin-top: -40px;
+              padding-top: 0px;
+              padding-bottom: 42px;
+            }
+          }
+
+      /* firefox specific */
+      @-moz-document url-prefix() {
+
+          @media (max-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+
+      }
+
+
+    </style>
+
   </head>
 
   <body>
+    <div class="modal hide fade" id="lost_password_modal">
+      <div class="modal-header">
+          <?php echo $captcha_incorrect_alert ?>
+          <h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
+      </div>
+      <form class="modal-body form-horizontal" id="reset-form" accept-charset="UTF-8" action="<?php echo basename($_SERVER['SCRIPT_FILENAME']); ?>" data-remote="true" method="post">
+          <div class="control-group">
+              <label for="email" class="control-label">E-Mail</label>
+              <div class="controls">
+                  <input id="reset-mail" type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
+              </div>
+          </div>
 
-
+            <label for="recaptcha" class="control-label"><?php echo $index_recaptcha ?></label>
+            <div class="controls">
+              <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli"></script>
+              <noscript>
+                <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli" height="300" width="500" frameborder="0"></iframe><br>
+                <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                </textarea>
+                <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+              </noscript>
+            </div><br>
+          <div class="control-group">
+            <div class="controls">    
+              <button href="#" type="submit" class="btn btn-primary" id="reset-form-submit"><?php echo $index_submit ?></button>
+            </div>
+          </div>
+      </form>
+    </div>
+    
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -115,15 +242,15 @@ if ($login_name != "" && $login_password != ""){
                 <li><a href="./registration.php"><? echo $index_register;?></a></li>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
-                <div class="dropdown-menu" style="padding: 15px;">
-                 <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
+                <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px;">
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
                     <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
                     <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
-                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
+                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
+                  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
                 </div>
                 </li>
               <?php }else{ ?>
@@ -166,10 +293,9 @@ if(isset($_GET['accessdenied'])){
 <?
 if(isset($_GET['lo'])){
 ?>
-  <div class="container alert alert-block fade in"> 
+  <div class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><? echo $logout; ?></h4>  
- <? echo $logoutsuccess; ?>
+  <? echo $logoutsuccess; ?>
 </div> 
 <?
 }
@@ -178,7 +304,7 @@ if(isset($_GET['lo'])){
 <?
 if(isset($_GET['registration_successful'])){
 ?>
-<div id="registration_successful" class="container alert alert-block fade in"> 
+<div id="registration_successful" class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading"><?echo $welcometoec;?></h4>  
   <? echo $regsuccessfull.' '.$logincontinue ?>
@@ -190,7 +316,7 @@ if(isset($_GET['registration_successful'])){
 <?
 if(isset($_GET['deleted'])){
 ?>
-<div id="deleted" class="container alert alert-block fade in"> 
+<div id="deleted" class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
   <?echo $accountdeletedsuccess?>
@@ -237,6 +363,7 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
+  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
@@ -257,7 +384,8 @@ if ($login_fail) {
 ?>
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
- <? echo $usernameorpasswordwrong ?>
+ <? echo $usernameorpasswordwrong ?><br>
+ <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){

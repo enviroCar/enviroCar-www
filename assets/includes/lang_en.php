@@ -5,6 +5,10 @@ $index_empty_password="Password cannot be empty";
 $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
+$index_lost_password="Lost password?";
+$index_recaptcha="Please verify that you are human";
+$index_submit="Submit";
+$index_reset_password="Reset Password";
 $index_user_details="User details";
 $index_register="Register";
 $index_get_App="Get our App soon!";
@@ -34,7 +38,15 @@ $index_create_new_one="You can create a new one. It's free";
 $index_wrong_name="Wait, that's not my name!";
 $index_continue_dashboard="Continue to your profile";
 $index_welcome="Welcome";
-
+$index_captcha_instructions_visual="Type the text";
+$index_captcha_instructions_audio="Type what you hear";
+$index_captcha_play_again="Replay audio";
+$index_captcha_cant_hear_this="Download audio as mp3";
+$index_captcha_visual_challenge="Get a visual challenge";
+$index_captcha_audio_challenge="Get an audio challenge";
+$index_captcha_refresh_btn="Get a new challenge";
+$index_captcha_help_btn="Help";
+$index_captcha_incorrect_try_again="Incorrect. Try again.";
 // registration.php
 $reg_registration="Registration";
 $reg_username="User name";
@@ -47,7 +59,11 @@ $invalid_input ="Invalid input. Please check the hints and try again.";
 $terms_check = 'I have read and understood the <a href="./terms.php" target="_blank">Terms of Use</a>.';
 $terms_check_alert = 'Please read and accept the Terms of Use.';
 $error_setting_terms_on_server="An error occured while trying to update user information.";
-
+$email_validation_message="Please enter a valid email address.";
+$password_validation_message="The password must contain at least 6 characters.";
+$password_match_validation_message="The passwords do not match.";
+$date_validation_message="Please enter the date in the format <code>YYYY-MM-DD</code>.";
+$required_validation_message="This is required.";
 
 // dashboard.php
 $dashboard_recent_avtivities="Recent Activities";
@@ -668,4 +684,8 @@ When you use this website, you agree to the use of cookies. The cookies will be 
 
 //temporary
 $under_construction = "This website is currently under construction..";
+
+//Badges
+$availableBadges = "Available Badges";
+$badges = "Badges";
 ?>

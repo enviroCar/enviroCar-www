@@ -211,8 +211,8 @@ if(isset($_GET['updateUser'])){
 	if (!empty($_POST['country'])) {
 		$changeData['country'] = $_POST['country'];
 	}
-	if (!empty($_POST['gender'])) {
-		$changeData['gender'] = $_POST['gender'];
+	if (!empty($_POST['mail'])) {
+		$changeData['mail'] = $_POST['mail'];
 	}
 	if (!empty($_POST['gender'])) {
 		$changeData['gender'] = $_POST['gender'];

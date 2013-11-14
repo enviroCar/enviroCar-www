@@ -1,9 +1,9 @@
 <!-- FOOTER -->  
 	<footer>
         <div class="footer">
-    		<div class="container-fluid">
+    		<div class="container">
                 <div class="row">
-                    <div class="span12">
+                    <div class="span12" style="text-align: center;">
                         <?
                             if($lang == 'en'){ echo '<img src="./assets/img/blank_flag.png" onClick="changeLanguage(\'de\')" class="flag flag-de" alt="German">';
                             }else{

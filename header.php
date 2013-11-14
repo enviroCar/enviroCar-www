@@ -49,17 +49,28 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-tooltip.js"></script>
+    <script src="./assets/js/jqBootstrapValidation.js"></script>
+    
     <?php 
-      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], '.php');;
-      $file = "./assets/js/$current_file_name.js";
-      
-      if (file_exists($file)) {
-          echo "<script src='$file'></script>";
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $jsfile = "./assets/js/$current_file_name.js";
+
+      if (file_exists($jsfile)) {
+          echo "<script src='$jsfile'></script>";
+      }
+    ?><br>
+    
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $cssfile = "./assets/css/$current_file_name.css";
+
+      if (file_exists($cssfile)) {
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
       }
     ?>
     
     <script type="text/javascript">
-
       //Used slide down/up to toggle the visibility of a given element
       function toggle_visibility(id) {
         if ($('#'+id).is(":hidden")) {
@@ -89,7 +100,7 @@ function echoActiveClassIfRequestMatches($requestUri)
   <body>
 
     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner" style="position: relative;">
+      <div class="navbar-inner">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style="position: relative;">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -100,7 +111,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <img style="height:25px;" src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" />
           </a>
           
-          <div class="nav-collapse collapse" style="position: relative;">
+          <div class="nav-collapse collapse">
             <ul id="main-nav" class="nav pull-right droid-text">
               <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $dashboard ?></a></li>
