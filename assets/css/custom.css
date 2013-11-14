@@ -406,7 +406,7 @@ margin-bottom: 0px;
 
 @media (min-width: 980px) {
     body {
-      margin-top: 20px;
+      margin-top: 0px;
       padding-bottom: 42px;
     }
 }
