@@ -303,6 +303,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     </form>      
   </div>
 </div>
+</div>
 
 
 <?
