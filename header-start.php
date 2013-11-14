@@ -43,8 +43,9 @@ if ($login_name != "" && $login_password != ""){
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
-    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="./assets/css/flags.css" rel="stylesheet">
 
