@@ -100,7 +100,7 @@ function echoActiveClassIfRequestMatches($requestUri)
   <body>
 
     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner" style="position: relative;">
+      <div class="navbar-inner">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style="position: relative;">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -111,7 +111,7 @@ function echoActiveClassIfRequestMatches($requestUri)
             <img style="height:25px;" src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" />
           </a>
           
-          <div class="nav-collapse collapse" style="position: relative;">
+          <div class="nav-collapse collapse">
             <ul id="main-nav" class="nav pull-right droid-text">
               <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $dashboard ?></a></li>

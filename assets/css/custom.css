@@ -399,21 +399,33 @@ margin-bottom: 0px;
 
 @media (max-width: 980px) {
     body {
-    	margin-top: -40px;
-      	padding-bottom: 42px;
-    }
-}
-
-@-moz-document url-prefix() {
-
-    @media (max-width: 980px) {
-    body {
     	margin-top: -20px;
       	padding-bottom: 42px;
     }
 }
 
+
+
+
+/* firefox specific */
+@-moz-document url-prefix() {
+
+    @media (max-width: 980px) {
+	    body {
+	    	margin-top: -20px;
+	      	padding-bottom: 42px;
+	    }
+	}
+
+	@media (min-width: 980px) {
+	    body {
+	      margin-top: 20px;
+	      padding-bottom: 42px;
+	    }
+	}
+
 }
+
 
 @media (min-width: 980px) {
     body {

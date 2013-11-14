@@ -43,9 +43,9 @@ if ($login_name != "" && $login_password != ""){
 
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
-    <link href="./assets/css/custom.css" rel="stylesheet">
-    
     <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./assets/css/custom.css" rel="stylesheet">
+
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="./assets/css/flags.css" rel="stylesheet">
 
@@ -148,7 +148,44 @@ if ($login_name != "" && $login_password != ""){
       
 
     </script>
-  
+    <style>
+      @media (min-width: 980px) {
+      body {
+              margin-top: -40px;
+              padding-top: 40px;
+              padding-bottom: 42px;
+            }
+          }
+
+      @media (max-width: 980px) {
+      body {
+              margin-top: -40px;
+              padding-top: 0px;
+              padding-bottom: 42px;
+            }
+          }
+
+      /* firefox specific */
+      @-moz-document url-prefix() {
+
+          @media (max-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+
+      }
+
+
+    </style>
 
   </head>
 
