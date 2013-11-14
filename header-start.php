@@ -206,10 +206,9 @@ if(isset($_GET['accessdenied'])){
 <?
 if(isset($_GET['lo'])){
 ?>
-  <div class="container alert alert-block fade in"> 
+  <div class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><? echo $logout; ?></h4>  
- <? echo $logoutsuccess; ?>
+  <? echo $logoutsuccess; ?>
 </div> 
 <?
 }
@@ -218,7 +217,7 @@ if(isset($_GET['lo'])){
 <?
 if(isset($_GET['registration_successful'])){
 ?>
-<div id="registration_successful" class="container alert alert-block fade in"> 
+<div id="registration_successful" class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading"><?echo $welcometoec;?></h4>  
   <? echo $regsuccessfull.' '.$logincontinue ?>
@@ -230,7 +229,7 @@ if(isset($_GET['registration_successful'])){
 <?
 if(isset($_GET['deleted'])){
 ?>
-<div id="deleted" class="container alert alert-block fade in"> 
+<div id="deleted" class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
   <?echo $accountdeletedsuccess?>
