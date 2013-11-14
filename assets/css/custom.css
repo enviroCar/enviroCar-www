@@ -271,7 +271,13 @@ h5{
 	height: 200px;
 }
 
+#recaptcha_area #recaptcha_table {
+line-height: 8px!important;
+}
 
+#recaptcha_widget_div {
+	margin-left: -2px;
+}
 
 /* Overwriting Bootstrap CSS ------------------------- */
 

@@ -6,6 +6,8 @@ $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
 $index_lost_password="Lost password?";
+$index_recaptcha="Please verify that you are human";
+$index_submit="Submit";
 $index_reset_password="Reset Password";
 $index_user_details="User details";
 $index_register="Register";
@@ -36,7 +38,15 @@ $index_create_new_one="You can create a new one. It's free";
 $index_wrong_name="Wait, that's not my name!";
 $index_continue_dashboard="Continue to your profile";
 $index_welcome="Welcome";
-
+$index_captcha_instructions_visual="Type the text";
+$index_captcha_instructions_audio="Type what you hear";
+$index_captcha_play_again="Replay audio";
+$index_captcha_cant_hear_this="Download audio as mp3";
+$index_captcha_visual_challenge="Get a visual challenge";
+$index_captcha_audio_challenge="Get an audio challenge";
+$index_captcha_refresh_btn="Get a new challenge";
+$index_captcha_help_btn="Help";
+$index_captcha_incorrect_try_again="Incorrect. Try again.";
 // registration.php
 $reg_registration="Registration";
 $reg_username="User name";

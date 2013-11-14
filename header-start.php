@@ -29,6 +29,9 @@ if ($login_name != "" && $login_password != ""){
 
 ?>
 
+
+          
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,6 +60,27 @@ if ($login_name != "" && $login_password != ""){
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap-tooltip.js"></script>
     <script src="./assets/js/jqBootstrapValidation.js"></script>
+    
+    <?php
+      $captcha_incorrect_alert="";
+
+      if(isset($_POST['recaptcha_challenge_field'])) {
+        require_once('assets/includes/recaptchalib.php');
+        $privatekey = "6LcUPeoSAAAAAPLBog_XkUhyMVZ3n0-AD1ercddQ";
+        $resp = recaptcha_check_answer ($privatekey,
+                                      $_SERVER["REMOTE_ADDR"],
+                                      $_POST["recaptcha_challenge_field"],
+                                      $_POST["recaptcha_response_field"]);
+
+        if (!$resp->is_valid) {
+          // What happens when the CAPTCHA was entered incorrectly
+          $captcha_incorrect_alert='<div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div>';
+          echo '<script>$( document ).ready(function() { $("#lost_password_modal").modal("show");});</script>';
+        } else {
+          header('Location: mailto:envirocar@52north.org?subject=Reset%20Password');
+        }
+      }
+    ?>
 
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
@@ -77,6 +101,22 @@ if ($login_name != "" && $login_password != ""){
     ?>
 
     <script type="text/javascript">
+
+      var RecaptchaOptions = {
+        custom_translations : {
+                      instructions_visual : "<?php echo $index_captcha_instructions_visual ?>",
+                      instructions_audio : "<?php echo $index_captcha_instructions_audio ?>",
+                      play_again : "<?php echo $index_captcha_play_again ?>",
+                      cant_hear_this : "<?php echo $index_captcha_cant_hear_this ?>",
+                      visual_challenge : "<?php echo $index_captcha_visual_challenge ?>",
+                      audio_challenge : "<?php echo $index_captcha_audio_challenge ?>",
+                      refresh_btn : "<?php echo $index_captcha_refresh_btn ?>",
+                      help_btn : "<?php echo $index_captcha_help_btn ?>",
+                      incorrect_try_again : "<?php echo $index_captcha_incorrect_try_again ?>",
+              },
+        theme : 'white'
+      };
+
       //enable form validation
       $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
 
@@ -99,41 +139,50 @@ if ($login_name != "" && $login_password != ""){
       function changeLanguage(lang){
         $.get('assets/includes/language.php?lang='+lang, function(data) {
           window.location.reload();
-        }); 
+        });
+
       }
+
+      
+      
+
     </script>
+  
+
   </head>
 
   <body>
     <div class="modal hide fade" id="lost_password_modal">
       <div class="modal-header">
+          <?php echo $captcha_incorrect_alert ?>
           <h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
       </div>
-      <form class="modal-body form-horizontal" id="reset-form" accept-charset="UTF-8" action="/tagging" data-remote="true" method="post">
+      <form class="modal-body form-horizontal" id="reset-form" accept-charset="UTF-8" action="<?php echo basename($_SERVER['SCRIPT_FILENAME']); ?>" data-remote="true" method="post">
           <div class="control-group">
               <label for="email" class="control-label">E-Mail</label>
               <div class="controls">
                   <input id="reset-mail" type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
               </div>
-          </div>    
+          </div>
+
+            <label for="recaptcha" class="control-label"><?php echo $index_recaptcha ?></label>
+            <div class="controls">
+              <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli"></script>
+              <noscript>
+                <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli" height="300" width="500" frameborder="0"></iframe><br>
+                <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                </textarea>
+                <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+              </noscript>
+            </div><br>
+          <div class="control-group">
+            <div class="controls">    
+              <button href="#" type="submit" class="btn btn-primary" id="reset-form-submit"><?php echo $index_submit ?></button>
+            </div>
+          </div>
       </form>
-      <div class="modal-footer">
-          <button href="#" class="btn btn-primary" id="reset-form-submit">Submit</button>
-      </div>
     </div>
-
-    <script>
-      $('#reset-form-submit').on('click', function(e){
-        console.log("submit");
-        // We don't want this to act as a link so cancel the link action
-        e.preventDefault();
-        //add address to mail and submit
-        $('#reset-form').attr("action", "mailto:envirocar@52north.org?subject=Reset%20Password");
-        $('#reset-form').submit();
-      });
-
-    </script>
-
+    
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -206,7 +255,7 @@ if(isset($_GET['accessdenied'])){
 <?
 if(isset($_GET['lo'])){
 ?>
-  <div class="container alert alert-block alert-success fade in"> 
+  <div class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
   <? echo $logoutsuccess; ?>
 </div> 
@@ -229,7 +278,7 @@ if(isset($_GET['registration_successful'])){
 <?
 if(isset($_GET['deleted'])){
 ?>
-<div id="deleted" class="container alert alert-block alert-success fade in"> 
+<div id="deleted" class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
   <?echo $accountdeletedsuccess?>
