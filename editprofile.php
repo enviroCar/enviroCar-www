@@ -92,21 +92,21 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         if(data.badges){
           for(var i = 0; i < data.badges.length; i++){
             if(data.badges[i] === "contributor"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
             }else if(data.badges[i] === "friend"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
             }else if(data.badges[i] === "support"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
             }else if(data.badges[i] === "local-stakeholder"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
             }else if(data.badges[i] === "fan"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
             }else if(data.badges[i] === "regional-stakeholder"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
             }else if(data.badges[i] === "early-bid"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
             }else if(data.badges[i] === "partner"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
             }
           }
         }
@@ -203,18 +203,18 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 <div class="container rightband">
   <div class="row-fluid">
     <div class="span3">
-      <div class="well sidebar-nav">
-      <h2 id="username"></h2>
-		<span style="text-align: center; display: block">
-			<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
-		</span>
-    <br>        
-        <ul id="badges" class="nav nav-list" style="text-align:center"></ul>
-       <span style="text-align: center; display: block">
-				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small" style="margin-top: 1em">
-					<? echo $deletemyaccount; ?>
-				</a>
-		</span>   
+      <div class="sidebar-nav">
+    		<span style="text-align: center; display: block">
+          <a href="javascript:deleteAccount();" class="btn btn-primary btn-small" style="margin-top: 1em">
+            <? echo $deletemyaccount; ?>
+          </a><br>
+          <br>
+    			<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+    		  <h2 id="username"></h2>
+          <br> 
+          <h3>Badges</h3>
+        </span>   
+        <ul id="badges" class="nav nav-list" style="text-align:center"></ul>   
       </div><!--/.well -->
     </div><!--/span-->  
 	 <div class="span6">
@@ -231,7 +231,9 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   		<label for="firstName"><? echo $firstname; ?></label>
       <div class="controls">
   		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>"/>
-  		
+  		  </div>
+      </div>
+
       <div class="control-group">
   		<label for="lastName"><? echo $lastname; ?></label>
       <div class="controls">
