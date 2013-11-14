@@ -49,10 +49,17 @@ body{
 }
 
 
-.navbar .container, #about-menu, #data-preview{
+.navbar .container, #about-menu{
 	background-color: transparent; 
 	box-shadow: 0px 0px 0px #D4D4D4;
 	margin-top: 0px;
+	font-size: 16px;
+	line-height: 0;
+}
+
+#data-preview {
+	background-color: transparent; 
+	box-shadow: 0px 0px 0px #D4D4D4;
 	font-size: 16px;
 	line-height: 0;
 }
