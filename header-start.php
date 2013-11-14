@@ -101,7 +101,6 @@ if ($login_name != "" && $login_password != ""){
           window.location.reload();
         }); 
       }
-
     </script>
   </head>
 
@@ -110,18 +109,30 @@ if ($login_name != "" && $login_password != ""){
       <div class="modal-header">
           <h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
       </div>
-      <div class="modal-body form-horizontal">
+      <form class="modal-body form-horizontal" id="reset-form" accept-charset="UTF-8" action="/tagging" data-remote="true" method="post">
           <div class="control-group">
               <label for="email" class="control-label">E-Mail</label>
               <div class="controls">
-                  <input type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
+                  <input id="reset-mail" type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
               </div>
           </div>    
-      </div>
+      </form>
       <div class="modal-footer">
-          <button href="#" class="btn btn-primary" id="submit_mail">Submit</button>
+          <button href="#" class="btn btn-primary" id="reset-form-submit">Submit</button>
       </div>
     </div>
+
+    <script>
+      $('#reset-form-submit').on('click', function(e){
+        console.log("submit");
+        // We don't want this to act as a link so cancel the link action
+        e.preventDefault();
+        //add address to mail and submit
+        $('#reset-form').attr("action", "mailto:envirocar@52north.org?subject=Reset%20Password");
+        $('#reset-form').submit();
+      });
+
+    </script>
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -266,7 +277,7 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
-  <a href="#"><?php echo $index_lost_password ?></a>
+  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
@@ -288,7 +299,7 @@ if ($login_fail) {
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
  <? echo $usernameorpasswordwrong ?><br>
- <a href="#"><?php echo $index_lost_password ?></a>
+ <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
