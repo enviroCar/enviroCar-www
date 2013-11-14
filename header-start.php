@@ -78,7 +78,7 @@ if ($login_name != "" && $login_password != ""){
           $captcha_incorrect_alert='<div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div>';
           echo '<script>$( document ).ready(function() { $("#lost_password_modal").modal("show");});</script>';
         } else {
-          header('Location: mailto:envirocar@52north.org?subject=Reset%20Password');
+          header('Location: mailto:envirocar@52north.org?subject=Reset%20Password&body='.$_POST['email']);
         }
       }
     ?>

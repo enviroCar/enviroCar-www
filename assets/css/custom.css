@@ -49,7 +49,7 @@ body{
 }
 
 
-.navbar .container, #about-menu{
+.navbar .container, #about-menu, .footer .container{
 	background-color: transparent; 
 	box-shadow: 0px 0px 0px #D4D4D4;
 	margin-top: 0px;
