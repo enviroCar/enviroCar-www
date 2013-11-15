@@ -459,18 +459,18 @@ Further reading: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" target="_
 </p>';	 
 	
 //mapsandstatistics.php
-$noDescription = "No description available.";
+$noDescription = "No description	 available.";
 $map = "Map";
 $details = "Details";
 $hotspot_titel = "enviroCar Hot Spot Analysis";
-$hotspot_description = "This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.";
+$hotspot_description = 'This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.<br /><br/>Open the map <a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" title="CO2 hot spot analysis Münster | enviroCar">here</a>.';
 $speed_titel = "enviroCar Tracks";
-$speed_description = "This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.";
+$speed_description = 'This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.<br /><br/>Open the map <a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" title="Live track overview map">here</a>.';
 $speedcomparison_titel = "Speed Analysis";
-$speedcomparison_description = "This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database.  It  indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institute for Geoinformatics at Münster University (2013/07).";
+$speedcomparison_description = 'This map shows the difference between the average speed data measured and the speed limits stored in the OpenStreetMap database. It indicates street segments on which slow moving traffic occurs frequently.  This map was produced  by students of the  Institute for Geoinformatics at Münster University (2013/07).';
 $speedcomparison_page_headline = "Speed difference between OSM maximum speed and enviroCar averaged speed";
 $analyzing_with_R_titel = "Analyzing enviroCar Trajectory Data with R";
-$analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.';
+$analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.<br /><br/>Open the script <a href="http://rpubs.com/edzer/enviroCar" title="RPubs script for analyzing enviroCar trajectory data with R">here</a>.';
 
 //dataaccess.php
 $dataaccess_viaAPIHead = 'Using the enviroCar API';
@@ -526,7 +526,7 @@ Global Sponsor
 <ul>
 <li style="list-style-type: none;">This project is sponsored by Esri - the Environmental Systems Research Institute - as a global sponsor (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Germany</a>)</li>
 </ul>
-This project is open for additional partners, researchers and developers.';
+This project is open for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
 $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen, who is interested  and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
