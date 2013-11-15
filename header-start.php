@@ -186,6 +186,23 @@ if ($login_name != "" && $login_password != ""){
 
 
     </style>
+    <!--[if IE]>
+      <style>
+          @media (max-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+      </style>
+      <![endif]-->
 
   </head>
 
@@ -246,11 +263,19 @@ if ($login_name != "" && $login_password != ""){
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
-                    <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
-                    <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
+                    <div class="control-group">
+                    <div class="input-prepend">
+                      <span class="add-on"><i class="icon-user"></i></span>
+                      <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                    </div>
+                    </div>
+                    <div class="input-prepend">
+                      <span class="add-on"><i class="icon-lock"></i></span>
+                      <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
+                    </div>
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
+                  <br><a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
                 </div>
                 </li>
               <?php }else{ ?>

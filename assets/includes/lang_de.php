@@ -10,7 +10,8 @@ $index_recaptcha="Bitte fülle das Captcha aus";
 $index_submit="Abschicken";
 $index_reset_password="Passwort Zurücksetzen";
 $index_user_details="Benutzerangaben";
-$index_register="Register";
+$index_register="Registrieren";
+$index_register_name_taken="Dieser Nick-Name ist bereits vergeben.";
 $index_get_App="Hol dir unsere App!";
 $index_get_it_on_google="Besuch Google Play!";
 $index_be_a_citizen_scientist="Machen Sie mit ...";
@@ -50,7 +51,7 @@ $index_captcha_incorrect_try_again="Unzutreffend. Erneut versuchen?";
 
 
 // registration.php
-$reg_registration="Registration";
+$reg_registration="Registrieren";
 $reg_username="Benutzername";
 $reg_email="Email";
 $reg_password="Passwort";

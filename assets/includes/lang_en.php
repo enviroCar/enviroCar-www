@@ -11,6 +11,7 @@ $index_submit="Submit";
 $index_reset_password="Reset Password";
 $index_user_details="User details";
 $index_register="Register";
+$index_register_name_taken="This Nick-Name is already taken.";
 $index_get_App="Get our App soon!";
 $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";

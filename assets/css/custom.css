@@ -608,3 +608,12 @@ margin-bottom: 0px;
 ul.dropdown-menu li a {
 	color: black;
 }
+
+.input-prepend {
+	white-space: normal;
+	display: -webkit-flex;
+}
+
+.input-prepend > input {
+	width: 100%;
+}
