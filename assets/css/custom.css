@@ -629,6 +629,13 @@ ul.dropdown-menu li a {
 	display: -webkit-flex;
 }
 
+@-moz-document url-prefix() {
+	.input-prepend {
+	    white-space: normal;
+	    display: -moz-box;
+	}
+}
+
 .input-prepend > input {
 	width: 100%;
 }
