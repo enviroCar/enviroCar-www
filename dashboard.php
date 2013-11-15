@@ -33,6 +33,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     	loggedInUser = '<?php echo $_SESSION["name"] ?>';
     	user = '<?php echo $user; ?>';
     	getUserInfo();
+      getBadges();
     	$('#username').html(user);
   	}    
     
@@ -402,13 +403,13 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
               $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
             }
           }
-        }if(!data.acceptedTermsOfUseVersion){
+        }
+        if(!data.acceptedTermsOfUseVersion){
         	}else{
 				acceptedTermsOfUseIssuedDate = data.acceptedTermsOfUseVersion;
         	}
         	
         	getTerms();
-        	
       }
     });
   }
@@ -417,16 +418,15 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   function getTerms(){ 
   	$.get('./assets/includes/terms.php?getTerms', function(data){
   			data = JSON.parse(data);
-  			
-  	serverTermsOfUseIssuedDate = data.termsOfUse[0].issuedDate;			
-  
-	if(acceptedTermsOfUseIssuedDate){
-		if(serverTermsOfUseIssuedDate != acceptedTermsOfUseIssuedDate){
-			toggle_visibility('accept_terms_div');
-		}
-	}else{  			
-        toggle_visibility('accept_terms_div');
-	}		
+      	serverTermsOfUseIssuedDate = data.termsOfUse[0].issuedDate;			
+      
+    	if(acceptedTermsOfUseIssuedDate){
+    		if(serverTermsOfUseIssuedDate != acceptedTermsOfUseIssuedDate){
+    			toggle_visibility('accept_terms_div');
+    		}
+    	}else{  			
+            toggle_visibility('accept_terms_div');
+	    }		
   	});
   }
 
@@ -443,6 +443,16 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   	});
   }
 
+  function getBadges(){ 
+    $.get('./assets/includes/badges.php?badges', function(data){
+        var lang = "<?php echo $_SESSION['lang'] ?>";
+        data = JSON.parse(data);
+        data.badges.forEach(function(badge){
+          $('#all-badges').append('<li><a class="label label-envirocar" rel="tooltip" data-placement="right" title="'+badge.description[lang]+'">'+badge.displayName[lang]+'</a></li>');
+        });
+    });
+  }
+
   $(function () {
     init();
 	});
@@ -455,11 +465,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       <h3 id="myModalLabel"><?php echo $availableBadges ?></h3>
     </div>
     <div class="modal-body">
-      <ul>
-          <li>
-            <a class="label label-envirocar" rel="tooltip" data-placement="right" title="Badge Description">Badge Name</a>
-          </li>
-    </ul>
+      <ul id="all-badges"></ul>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -467,7 +473,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   </div>
 
 
-    <div id="accept_terms_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+    <div id="accept_terms_div" class="container alert alert-block alert-info fade in" style="display:none"> 
       <? echo $please_accept_terms ?> 
       <input type="button" name="Text 2" value="<? echo $confirm_accept_terms ?>"
       onclick="acceptTerms()"> 
@@ -482,7 +488,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       <ul id="overallStatistics" class="nav nav-list"></ul>
       <hr class="featurette-divider">
       <h3><?php echo $badges ?></h3>
-      <ul id="badges" class="nav nav-list"></ul>
+      <ul id="badges"></ul>
       <small><a href="#" data-toggle="modal" data-target="#badgesModal" class="link"><i class="icon-plus-sign"></i><?php echo $availableBadges ?></a></small>
     </div>
     <div id="comparison" class="span8">

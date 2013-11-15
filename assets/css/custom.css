@@ -339,6 +339,16 @@ input:-webkit-autofill:focus {
   padding: 4px 8px;
   border-radius: 0px;
   -webkit-border-radius: 0px;
+  width: 150px;
+  text-align: center;
+}
+
+#all-badges {
+	list-style-type:none;
+}
+
+#all-badges > li{
+	padding: 5px;
 }
 
 
