@@ -258,7 +258,7 @@ if ($login_name != "" && $login_password != ""){
               <?php if(!is_logged_in()){ ?>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
-                <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px;">
+                <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px; min-width: 210px;">
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
