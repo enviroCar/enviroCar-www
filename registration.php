@@ -13,21 +13,17 @@ if(!is_logged_in()){
 
 <!-- Validate plugin -->
 <script src="./assets/js/jquery.validate.min.js"></script>
-<style type="text/css">
-	label.valid {
-	  width: 24px;
-	  height: 24px;
-	  background: url(assets/img/valid.png) center center no-repeat;
-	  display: inline-block;
-	  text-indent: -9999px;
-	}
-	label.error {
-		font-weight: bold;
-		color: red;
-		padding: 2px 8px;
-		margin-top: 2px;
-	}
-</style>
+
+<?
+if(isset($_GET['name_taken'])){
+?>
+  <div class="container alert alert-block alert-info fade in"> 
+  <a class="close" data-dismiss="alert">×</a>  
+  <? echo $index_register_name_taken; ?>
+</div> 
+<?
+}
+?>
 
 <div class="container rightband">
 	<div class="row-fluid">
@@ -76,3 +72,4 @@ if(!is_logged_in()){
 <?
 	include('footer.php');
 ?>
+

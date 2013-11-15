@@ -186,6 +186,23 @@ if ($login_name != "" && $login_password != ""){
 
 
     </style>
+    <!--[if IE]>
+      <style>
+          @media (max-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            body {
+              margin-top: -20px;
+              padding-bottom: 42px;
+            }
+        }
+      </style>
+      <![endif]-->
 
   </head>
 
@@ -239,18 +256,26 @@ if ($login_name != "" && $login_password != ""){
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
               <?php if(!is_logged_in()){ ?>
-                <li><a href="./registration.php"><? echo $index_register;?></a></li>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
                 <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px;">
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
-                    <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
-                    <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
+                    <div class="control-group">
+                    <div class="input-prepend">
+                      <span class="add-on"><i class="icon-user"></i></span>
+                      <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                    </div>
+                    </div>
+                    <div class="input-prepend">
+                      <span class="add-on"><i class="icon-lock"></i></span>
+                      <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
+                    </div>
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
+                  <p><a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a></p>
+                  <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
                 </div>
                 </li>
               <?php }else{ ?>

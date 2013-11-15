@@ -4,14 +4,16 @@ require('connection.php');
 //Registration
 if(isset($_GET['registration'])){
 
-	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password']);  
+	$newUser = array("name" => ''.$_POST['name'], "mail" => ''.$_POST['email'], "token" => ''.$_POST['password1']);  
 	$response = post_request('https://envirocar.org/api/stable/users', $newUser, false);
 
 
 	if($response["status"] == 201){
 		$_SESSION['name'] = $_POST['name'];
 		$_SESSION['password'] = $_POST['password'];
-		echo $response['status'];
+		header('Location: ../../index.php?registration_successful');
+	}elseif($response["status"] == 409){
+		header('Location: ../../registration.php?name_taken');
 	}else{
 		echo $response['status'];
 	}

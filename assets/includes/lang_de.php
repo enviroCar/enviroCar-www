@@ -10,7 +10,8 @@ $index_recaptcha="Bitte fülle das Captcha aus";
 $index_submit="Abschicken";
 $index_reset_password="Passwort Zurücksetzen";
 $index_user_details="Benutzerangaben";
-$index_register="Register";
+$index_register="Registrieren";
+$index_register_name_taken="Dieser Nick-Name ist bereits vergeben.";
 $index_get_App="Hol dir unsere App!";
 $index_get_it_on_google="Besuch Google Play!";
 $index_be_a_citizen_scientist="Machen Sie mit ...";
@@ -27,6 +28,7 @@ $index_how_it_works="Wie funktioniert das Ganze?";
 $index_here_we_go=" - so geht's!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
 $index_register="Registrieren";
+$index_register_here="Noch keinen Account? ";
 $index_sign_in="Anmelden";
 $index_user_name="Benutzername";
 $index_make_smarter="Mach unsere Städte ein bisschen schlauer!";
@@ -50,7 +52,7 @@ $index_captcha_incorrect_try_again="Unzutreffend. Erneut versuchen?";
 
 
 // registration.php
-$reg_registration="Registration";
+$reg_registration="Registrieren";
 $reg_username="Benutzername";
 $reg_email="Email";
 $reg_password="Passwort";
@@ -231,7 +233,7 @@ $logoutsuccess = "Erfolgreich abgemeldet";
 $currentlynotloggedin = "Du bist derzeit nicht angemeldet.";
 $welcometoex = "Willkommen bei enviroCar";
 $regsuccessfull = "Du hast dich erfolgreich registriert.";
-$logincontinue = "melde dich an um fortzufahren.";
+$logincontinue = "Melde dich an um fortzufahren.";
 $accountdeleted = "Zugang gelöscht";
 $accountdeletedsuccess ="Dein Account wurde erfolgreich gelöscht.";
 

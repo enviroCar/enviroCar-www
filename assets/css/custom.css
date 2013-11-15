@@ -280,6 +280,21 @@ line-height: 8px!important;
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */
+@media (min-width: 980px) {
+    .nav-collapse .dropdown-menu a:link, #register-btn {
+		color: #0088CC;
+	}
+}
+
+@media (max-width: 980px) {
+    .nav-collapse .dropdown-menu a:link, #register-btn, .nav-collapse .dropdown-menu p {
+		color: white;
+		padding-left: 0px;
+	}
+	.nav-collapse .dropdown-menu a:hover {
+		background-color: transparent;
+	}
+}
 
 .alert {
 	border-radius: 0px;
@@ -607,4 +622,13 @@ margin-bottom: 0px;
 
 ul.dropdown-menu li a {
 	color: black;
+}
+
+.input-prepend {
+	white-space: normal;
+	display: -webkit-flex;
+}
+
+.input-prepend > input {
+	width: 100%;
 }

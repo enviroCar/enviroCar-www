@@ -13,10 +13,10 @@ if(!is_logged_in()){
 <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; background-size: cover;">
     <div class="row">
 		<div class="span4">
-			<!-- <div class="chart">
+			<div class="chart">
 			  <div style="width: 25%;">23</div>
 			  <div style="width: 50%;">42</div>
-			</div> -->
+			</div>
 		</div>
 		<div id="cover-text" class="span4 offset3">
 			<a data-toggle="modal" href="#myModal" data-youtube-id="_AyXNeRbpRk"><img id="youtube-thumb" src="./assets/img/youtube_thumb.jpg" style="width: 275px; height: 156px;"></a>
