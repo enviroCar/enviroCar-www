@@ -49,10 +49,17 @@ body{
 }
 
 
-.navbar .container, #about-menu, #data-preview{
+.navbar .container, #about-menu, .footer .container{
 	background-color: transparent; 
 	box-shadow: 0px 0px 0px #D4D4D4;
 	margin-top: 0px;
+	font-size: 16px;
+	line-height: 0;
+}
+
+#data-preview {
+	background-color: transparent; 
+	box-shadow: 0px 0px 0px #D4D4D4;
 	font-size: 16px;
 	line-height: 0;
 }
@@ -226,13 +233,14 @@ display:inline;
 	color: white;
 }
 
-#main-nav > li{
-	line-height: 10px;
+#session-menu, #sign-in-menu{
+	border-radius: 0px;
+	margin-top: 12px;
 }
 
-#session-menu{
-	border-radius: 0px;
-	margin-top: 5px;
+@media (max-width: 979px)
+.nav-collapse .nav > li > a {
+margin-bottom: 0px;
 }
 
 #mapAndChart > .span6{
@@ -256,7 +264,175 @@ h5{
 	margin-left: 0px;
 }
 
+#chart_div {
+	padding-top: 60px;
+	margin-left: -60px;
+	width: 400px; 
+	height: 200px;
+}
+
+#recaptcha_area #recaptcha_table {
+line-height: 8px!important;
+}
+
+#recaptcha_widget_div {
+	margin-left: -2px;
+}
+
 /* Overwriting Bootstrap CSS ------------------------- */
+
+.alert {
+	border-radius: 0px;
+	padding: 8px 0px 8px 35px;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+.alert-success h4 {
+  color: #468847;
+}
+.alert-danger,
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
+.alert-danger h4,
+.alert-error h4 {
+  color: #b94a48;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #3a87ad;
+}
+.alert-info h4 {
+  color: #3a87ad;
+}
+
+.alert .close {
+	right: 10px;
+}
+
+.modal {
+	border-radius: 0px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: /*your box-shadow*/,0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+} 
+
+.label-envirocar,
+.badge-envirocar {
+  background-color: #8CBF3F;
+  cursor: pointer;
+  cursor: hand;
+  padding: 4px 8px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+
+
+.navbar .btn-navbar {
+	margin-top: 2px;
+}
+
+.nav-collapse, .nav-collapse.collapse {
+	padding-top: 0px;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+	padding: 0px;
+}
+
+@media (min-width: 980px) {
+	div.nav-collapse.collapse > ul > li.active {
+		border-bottom: 5px solid #8CBF3F;
+		padding: 0px;
+	}
+	.dropdown-menu {
+		font-size: 14px;
+	}
+}
+
+
+div.nav-collapse.in.collapse > ul > li > a, div.nav-collapse.in.collapse.dropdown-menu a, div.nav-collapse.in.collapse > ul > li > ul > li > a{
+padding: 9px 15px;
+font-weight: bold;
+color:white;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+
+@media (max-width: 979px)
+.nav-collapse .nav > li > a {
+margin-bottom: 0px;
+}
+
+
+
+.nav-collapse .nav > li > a {
+	margin-bottom: 0px;
+}
+
+.navbar .brand {
+  padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.navbar .nav > li > a {
+  padding-bottom: 0px;
+	padding-top: 10px;
+}
+
+
+@media (max-width: 980px) {
+    body {
+    	margin-top: -20px;
+      	padding-bottom: 42px;
+    }
+}
+
+
+
+
+/* firefox specific */
+@-moz-document url-prefix() {
+
+    @media (max-width: 980px) {
+	    body {
+	    	margin-top: -20px;
+	      	padding-bottom: 42px;
+	    }
+	}
+
+	@media (min-width: 980px) {
+	    body {
+	      margin-top: 20px;
+	      padding-bottom: 42px;
+	    }
+	}
+
+}
+
+
+@media (min-width: 980px) {
+    body {
+      margin-top: 20px;
+      padding-bottom: 42px;
+    }
+}
 
 .data-preview {
 	background-color: white;
@@ -288,16 +464,21 @@ h5{
 .navbar .nav li.dropdown > .dropdown-toggle .caret, .navbar .nav .dropdown-toggle .caret {
   border-top-color: #8CBF3F;
   border-bottom-color: #8CBF3F;
-  margin-top: 3px;
 }
 
 .caret {
+  margin-top: 8px;
   border-top: 6px solid #000000;
 }
 
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret {
+	border-top-color: #8CBF3F;
+	border-bottom-color: #8CBF3F;
+}
+
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	background-color: #8CBF3F;
-	color: #048abf;
+	background-color: transparent;
+	color: white;
 }
 
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
@@ -308,6 +489,7 @@ h5{
 }
 
 .subnav {
+	margin-top: 10px;
 	width: 100%;
 	height: 36px;
 	background-color: #eeeeee; /* Old browsers */
@@ -380,7 +562,7 @@ h5{
 @media (min-width: 980px) {
 	.subnav-fixed {
 		position: fixed;
-		top: 40px;
+		top: 27px;
 		left: 0;
 		right: 0;
 		z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
@@ -411,4 +593,8 @@ h5{
 	float: left;
 	margin-right: 20px;
 	font-size: 14px;
+}
+
+ul.dropdown-menu li a {
+	color: black;
 }

@@ -12,7 +12,7 @@ if(!is_logged_in()){
 
 	<div class="container leftband">
 		<div class="row-fluid">
-			<div class="span11" style="padding-right: 1ex">				
+			<div class="span12" style="padding-right: 1ex">				
 				<?echo $terms_general; ?>
 			</div>
 		</div>

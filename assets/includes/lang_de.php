@@ -5,6 +5,10 @@ $index_empty_password="Bitte trage ein Passwort ein";
 $index_access_denied="Zugriff verweigert!";
 $index_Please_sign_in="Bitte melde dich an";
 $index_password="Passwort";
+$index_lost_password="Passwort verloren?";
+$index_recaptcha="Bitte fülle das Captcha aus";
+$index_submit="Abschicken";
+$index_reset_password="Passwort Zurücksetzen";
 $index_user_details="Benutzerangaben";
 $index_register="Register";
 $index_get_App="Hol dir unsere App!";
@@ -34,7 +38,15 @@ $index_create_new_one="Erstell dir einen neuen, es ist kostenlos.";
 $index_wrong_name="Moment, das ist nicht mein Name!";
 $index_continue_dashboard="Weiter zu deinem Profil";
 $index_welcome="Willkommen";
-
+$index_captcha_instructions_visual="Geben Sie die Wörter ein";
+$index_captcha_instructions_audio="Geben Sie ein, was Sie hören";
+$index_captcha_play_again="CAPTCHA erneut abspielen";
+$index_captcha_cant_hear_this="<br>Als mp3 herunterladen<br>";
+$index_captcha_visual_challenge="Ein Bild-CAPTCHA anzeigen<br>";
+$index_captcha_audio_challenge="Ein Audio-CAPTCHA abspielen<br>";
+$index_captcha_refresh_btn="Ein anderes CAPTCHA anzeigen";
+$index_captcha_help_btn="Hilfe";
+$index_captcha_incorrect_try_again="Unzutreffend. Erneut versuchen?";
 
 
 // registration.php
@@ -49,6 +61,11 @@ $invalid_input ="Ungültige Eingabe. Bitte überprüfe die Hinweise und versuche
 $terms_check = 'Ich habe die <a href="./terms.php" target="_blank">Nutzungsbedingungen</a> gelesen und verstanden.';
 $terms_check_alert = 'Bitte lesen und akzeptieren Sie die Nutzungsbedingungen um fortzufahren.';
 $error_setting_terms_on_server="Leider gab es einen Fehler beim Versuch, die Nutzerinformationen zu aktualisieren.";
+$email_validation_message="Bitte gib eine gültige Email Adresse an.";
+$password_validation_message="Das Passwort muss mindestens 6 Zeichen enthalten.";
+$password_match_validation_message="Die Passwörter müssen übereinstimmen.";
+$date_validation_message="Bitte gib das Datum in dem Format <code>JJJJ-MM-TT</code> an.";
+$required_validation_message="Dies ist ein Pflichtfeld.";
 
 // dashboard.php
 $dashboard_recent_avtivities="Letzte Aktivitäten";
@@ -364,6 +381,7 @@ $country = "Land";
 $location = "Ort";
 $language = "Sprache";
 $aboutme ="Über mich";
+$oldPassword = "Altes Passwort";
 $newPassword = "Neues Passwort";
 $passwordRepeat = "Wiederholen";
 $password_change_info = "Wenn Sie Ihr Passwort nicht ändern wollen, lassen Sie die folgenden Felder frei:";
@@ -680,4 +698,7 @@ Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies
 //temporary
 $under_construction = "Die Website wird gerade neu gestaltet..";
 
+//Badges
+$availableBadges = "Verfügbare Badges";
+$badges = "Badges";
 ?>

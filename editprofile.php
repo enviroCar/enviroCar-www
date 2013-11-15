@@ -92,21 +92,21 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         if(data.badges){
           for(var i = 0; i < data.badges.length; i++){
             if(data.badges[i] === "contributor"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
             }else if(data.badges[i] === "friend"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
             }else if(data.badges[i] === "support"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
             }else if(data.badges[i] === "local-stakeholder"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
             }else if(data.badges[i] === "fan"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
             }else if(data.badges[i] === "regional-stakeholder"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
             }else if(data.badges[i] === "early-bid"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
             }else if(data.badges[i] === "partner"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
             }
           }
         }
@@ -115,6 +115,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   }
 
 	function submitProfileChanges(){
+
 	        changeData = getFormData($('#changeProfileForm'));
           if($('#dayOfBirth').val() != ''){
             if(!validateDate($('#dayOfBirth').val())){
@@ -123,25 +124,31 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
             }
           }
           newPw = $('#password').val();
+
           if(newPw != '') {
-			if (newPw.length < 6) {
-				alert("Password too short. Please use more than five characters");
-				return false;
-			}
-			repeatePw = $('#passwordRepeat').val();
-			result = newPw.localeCompare(repeatePw);
-            if (result != 0) {
-				alert("Password mismatch");
-				return false;
-			}
+            if (newPw.length < 6) {
+              alert("Password too short. Please use more than five characters");
+              return false;
+            }
+            repeatePw = $('#passwordRepeat').val();
+            result = newPw.localeCompare(repeatePw);
+                  if (result != 0) {
+              alert("Password mismatch");
+              return false;
+            }
           }
+          var r = "";
           $.post('./assets/includes/users.php?updateUser', changeData, function(response){
+            r = response;
             if(response >= 400){
+              alert("Something is wrong.");
               console.log('error');
             }else{
-              alert("Profile has been changed");
-              window.location.reload();
+              alert("Success!");
+              location.reload(true);
+              console.log('changed');
             }
+            console.log(response);
           });
       return false;	
 	}
@@ -196,69 +203,109 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 <div class="container rightband">
   <div class="row-fluid">
     <div class="span3">
-      <div class="well sidebar-nav">
-      <h2 id="username"></h2>
-		<span style="text-align: center; display: block">
-			<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
-		</span>
-    <br>        
-        <ul id="badges" class="nav nav-list" style="text-align:center"></ul>
-       <span style="text-align: center; display: block">
-				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small" style="margin-top: 1em">
-					<? echo $deletemyaccount; ?>
-				</a>
-		</span>   
+      <div class="sidebar-nav">
+    		<span style="text-align: center; display: block">
+          <a href="javascript:deleteAccount();" class="btn btn-primary btn-small" style="margin-top: 1em">
+            <? echo $deletemyaccount; ?>
+          </a><br>
+          <br>
+    			<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+    		  <h2 id="username"></h2>
+          <br> 
+          <h3>Badges</h3>
+        </span>   
+        <ul id="badges" class="nav nav-list" style="text-align:center"></ul>   
       </div><!--/.well -->
     </div><!--/span-->  
 	 <div class="span6">
         
-   <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
-    <form id="changeProfileForm" action="./assets/includes/users.php?updateUser" method="post">
-		<label for="mail"><? echo $email; ?></label>
-		<input id="mail" name="mail" type="text" class="input-block-level" placeholder="<? echo $email; ?>"/>
-		
-		<label for="firstName"><? echo $firstname; ?></label>
-		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>"/>
-		
-		<label for="lastName"><? echo $lastname; ?></label>
-		<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="<? echo $lastname; ?>"/>
-		
-		<label for="country"><? echo $country; ?></label>
-		<input id="country" name="country" type="text" class="input-block-level" placeholder="<? echo $country; ?>"/>
-		
-		<label for="dayOfBirth"><? echo $birthday; ?> (2000-12-31)</label>
-		<input id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>"/>
-		
-		<label for="gender"><? echo $gender; ?></label>
-		<select id="gender" name="gender" class="input-block-level">
-			<option value="m"><? echo $male ?></option>
-			<option value="f"><? echo $female ?></option>
-		</select>
-		
-		<label for="language"><? echo $language; ?></label>
-		<select id="language" name="language" class="input-block-level">
-			<option value="de-DE">Deutsch</option>
-			<option value="en-EN">English</option>
-		</select>
-		
-		<hr />
-		
-		<div><?php echo $password_change_info ?></div>
-		
-		<label for="password"><? echo $newPassword; ?></label>
-		<input id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>
-		
-		<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
-		<input id="passwordRepeat" name="passwordRepeat" type="password" class="input-block-level" placeholder="<? echo $passwordRepeat; ?>"/>
-			
-			<span style="text-align: center; display: block">
-				<a href="" onclick="submitProfileChanges()" class="btn btn-primary btn-small" style="margin-top: 1em">
-					<? echo $editaccount; ?>
-				</a>
-			</span>       
-    </div>      
-    </div>
+    <? echo $avatarGravatar ?> <a href="http://www.gravatar.com" target='_blank'>Gravatar</a><br>
+    <form id="changeProfileForm">
+      <div class="control-group">
+        <label class="control-label" for="mail"><?php echo $email;?></label>
+        <div class="controls">
+      		<input id="mail" name="mail" type="email" class="input-block-level" placeholder="<? echo $email; ?>" required aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
+  		  </div>
+      </div>
+      <div class="control-group">
+  		<label for="firstName"><? echo $firstname; ?></label>
+      <div class="controls">
+  		<input id="firstName" name="firstName" type="text" class="input-block-level" placeholder="<? echo $firstname; ?>"/>
+  		  </div>
+      </div>
+
+      <div class="control-group">
+  		<label for="lastName"><? echo $lastname; ?></label>
+      <div class="controls">
+  		<input id="lastName"  name="lastName" type="text" class="input-block-level" placeholder="<? echo $lastname; ?>"/>
+  		  </div>
+      </div>
+      
+      <div class="control-group">
+  		<label for="country"><? echo $country; ?></label>
+      <div class="controls">
+  		<input id="country" name="country" type="text" class="input-block-level" placeholder="<? echo $country; ?>"/>
+  		  </div>
+      </div>
+      
+      <div class="control-group">
+  		<label for="dayOfBirth"><? echo $birthday; ?> (2000-12-31)</label>
+      <div class="controls">
+  		<input data-validation-regex-message="<?php echo $date_validation_message ?>" data-validation-regex-regex="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" id="dayOfBirth" name="dayOfBirth" type="text" class="input-block-level" placeholder="<? echo $birthday; ?>"/>
+  		  </div>
+      </div>
+      
+      <div class="control-group">
+  		<label for="gender"><? echo $gender; ?></label>
+      <div class="controls">
+  		<select id="gender" name="gender" class="input-block-level">
+  			<option value="m"><? echo $male ?></option>
+  			<option value="f"><? echo $female ?></option>
+  		</select>
+  		  </div>
+      </div>
+      
+      <div class="control-group">
+  		<label for="language"><? echo $language; ?></label>
+      <div class="controls">
+  		<select id="language" name="language" class="input-block-level">
+  			<option value="de-DE">Deutsch</option>
+  			<option value="en-EN">English</option>
+  		</select>
+  		  </div>
+      </div>
+      
+  		<hr />
+  		
+  		<div><?php echo $password_change_info ?></div>
+      <div class="control-group">
+      <label for="oldPassword"><? echo $oldPassword; ?></label>
+      <div class="controls">
+      <input id="oldPassword" name="oldPassword" type="password" class="input-block-level" placeholder="<? echo $oldPassword; ?>"/>
+  		  </div>
+      </div>
+      
+      <div class="control-group">
+  		<label for="password"><? echo $newPassword; ?></label>
+      <div class="controls">
+  		<input data-validation-minlength-message="<?php echo $password_validation_message ?>" minlength="6" id="password" name="password" type="password" class="input-block-level" placeholder="<? echo $newPassword; ?>"/>
+  		</div>
+      </div>
+      
+      <div class="control-group">
+  		<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
+      <div class="controls">
+  		<input data-validation-match-message="<?php echo $password_match_validation_message ?>" data-validation-match-match="password" id="passwordRepeat" name="passwordRepeat" type="password" class="input-block-level" placeholder="<? echo $passwordRepeat; ?>"/>
+        </div>
+      </div>
+      
+  		<input type="button" class="btn btn-primary" value="<? echo $editaccount; ?>" onclick="submitProfileChanges()">
+    </form>      
+  </div>
 </div>
+</div>
+
+
 <?
-include('footer.php');
+  include('footer.php');
 ?>

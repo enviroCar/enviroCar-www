@@ -52,7 +52,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
   
 		$.get('assets/includes/tracks.php', function(data) {
 						
-			 $('#overallStatistics').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><?php echo $dashboard_number_of_tracks; ?>: '+value + '(' + data + ')');
+			 $('#overallStatistics').append('<li><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
 			
 		});  
 
@@ -385,21 +385,21 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         if(data.badges){
           for(var i = 0; i < data.badges.length; i++){
             if(data.badges[i] === "contributor"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
             }else if(data.badges[i] === "friend"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
             }else if(data.badges[i] === "support"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
             }else if(data.badges[i] === "local-stakeholder"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
             }else if(data.badges[i] === "fan"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
             }else if(data.badges[i] === "regional-stakeholder"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
             }else if(data.badges[i] === "early-bid"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
             }else if(data.badges[i] === "partner"){
-              $('#badges').append('<li class="badges" title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
+              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
             }
           }
         }if(!data.acceptedTermsOfUseVersion){
@@ -449,6 +449,24 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 
   </script>
 
+  <div id="badgesModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel"><?php echo $availableBadges ?></h3>
+    </div>
+    <div class="modal-body">
+      <ul>
+          <li>
+            <a class="label label-envirocar" rel="tooltip" data-placement="right" title="Badge Description">Badge Name</a>
+          </li>
+    </ul>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+
+
     <div id="accept_terms_div" class="container alert alert-block alert-error fade in" style="display:none"> 
       <? echo $please_accept_terms ?> 
       <input type="button" name="Text 2" value="<? echo $confirm_accept_terms ?>"
@@ -458,26 +476,22 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 <div class="container leftband">
   <div class="row-fluid">
     <div class="span4">
-      <div class="well sidebar-nav">
+  		<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
       <h2 id="username"></h2>
-		<span style="text-align: center; display: block">
-			<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
-		</span>
-    <br>
-        <ul id="userInformation" class="nav nav-list" style="text-align:center"></ul>
-        <ul id="badges" class="nav nav-list" style="text-align:center"></ul>
-
-      </div><!--/.well -->
-       <ul id="overallStatistics">
-       </ul>
-    </div><!--/span-->
-
-    <div id="comparison" class="span5">
+      <ul id="userInformation" class="nav nav-list"></ul>
+      <ul id="overallStatistics" class="nav nav-list"></ul>
+      <hr class="featurette-divider">
+      <h3><?php echo $badges ?></h3>
+      <ul id="badges" class="nav nav-list"></ul>
+      <small><a href="#" data-toggle="modal" data-target="#badgesModal" class="link"><i class="icon-plus-sign"></i><?php echo $availableBadges ?></a></small>
+    </div>
+    <div id="comparison" class="span8">
         <div id="chart_div" style="width: 700px; height: 400px;">   
           <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
-          </div>
         </div>
       </div>
+    </div>
+  </div>
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
  

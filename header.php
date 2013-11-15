@@ -37,12 +37,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
     <link href="./assets/css/flags.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -54,17 +49,28 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="icon" href="./assets/ico/favicon.png" type="image/png" />
     
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-tooltip.js"></script>
+    <script src="./assets/js/jqBootstrapValidation.js"></script>
+    
     <?php 
-      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], '.php');;
-      $file = "./assets/js/$current_file_name.js";
-      
-      if (file_exists($file)) {
-          echo "<script src='$file'></script>";
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $jsfile = "./assets/js/$current_file_name.js";
+
+      if (file_exists($jsfile)) {
+          echo "<script src='$jsfile'></script>";
+      }
+    ?><br>
+    
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $cssfile = "./assets/css/$current_file_name.css";
+
+      if (file_exists($cssfile)) {
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
       }
     ?>
     
     <script type="text/javascript">
-
       //Used slide down/up to toggle the visibility of a given element
       function toggle_visibility(id) {
         if ($('#'+id).is(":hidden")) {
@@ -93,9 +99,9 @@ function echoActiveClassIfRequestMatches($requestUri)
 
   <body>
 
-  <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style="position: relative;">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
