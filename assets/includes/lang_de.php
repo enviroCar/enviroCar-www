@@ -462,15 +462,15 @@ Weitere Informationen: <a href="http://en.wikipedia.org/wiki/Carbon_dioxide" tar
 $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
 $hotspot_titel = "enviroCar Hot-Spot Analyse";
-$hotspot_description = "Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster (August 2013). Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen  Werten an.";
+$hotspot_description = 'Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster (August 2013). Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen  Werten an.<br /><br/><a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" title="CO2 hot spot Analyse für Münster | enviroCar">Karte öffnen</a>';
 $speed_titel = "enviroCar Tracks";
-$speed_description = "Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.";
+$speed_description = 'Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.<br /><br/><a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" title="Live track Karte">Karte öffnen</a>';
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
 $speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen und gibt damit einen Hinweis auf Streckenabschnitte, in denen häufiger langsam fließender Verkehr anzutreffen ist.
 Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster (2013/07).";
 $speedcomparison_page_headline = "Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen";
 $analyzing_with_R_titel = "enviroCar Tracks analysieren mit R";
-$analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)statistische Berechnungen. In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.';
+$analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)statistische Berechnungen. In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.<br /><br/><a href="http://rpubs.com/edzer/enviroCar" title="RPubs Skript für Analyse von enviroCar Tracks mit R">Skript öffnen</a>';
 
 //dataaccess.php
 $dataaccess_viaAPIHead = "Nutzung der enviroCar API";
@@ -532,7 +532,7 @@ Global Sponsor
 <ul>
 <li style="list-style-type: none;">Das Projekt wird durch das Unternehmen Esri - Environmental Systems Research Institute - als Global Sponsor unterstützt (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Deutschland</a>).</li>
 </ul>
-Das enviroCar Projekt ist offen für weitere Projektpartner, Forscher und Entwickler.';
+Das enviroCar Projekt ist offen für weitere Projektpartner, Forscher und Entwickler. Kontakt: <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
 $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "Als wissenschaftlich interessierter und engagierter Bürger (Citizen Scientist)";
 $asACitizenText = 'Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Version 2.3), ein Bluetooth OBD-II-Adapter und ein Fahrzeug, das den OBD-II Standard unterstützt. Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
