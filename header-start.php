@@ -256,7 +256,6 @@ if ($login_name != "" && $login_password != ""){
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
               <?php if(!is_logged_in()){ ?>
-                <li><a href="./registration.php"><? echo $index_register;?></a></li>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
                 <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px;">
@@ -275,7 +274,8 @@ if ($login_name != "" && $login_password != ""){
                     </div>
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <br><a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
+                  <p><a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a></p>
+                  <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
                 </div>
                 </li>
               <?php }else{ ?>

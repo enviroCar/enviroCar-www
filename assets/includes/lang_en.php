@@ -28,6 +28,7 @@ $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
 $index_register="Register";
+$index_register_here="Don't have an account? ";
 $index_sign_in="Sign in";
 $index_user_name="User name";
 $index_make_smarter="Make our cities smarter!";

@@ -28,6 +28,7 @@ $index_how_it_works="Wie funktioniert das Ganze?";
 $index_here_we_go=" - so geht's!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
 $index_register="Registrieren";
+$index_register_here="Noch keinen Account? ";
 $index_sign_in="Anmelden";
 $index_user_name="Benutzername";
 $index_make_smarter="Mach unsere Städte ein bisschen schlauer!";
@@ -232,7 +233,7 @@ $logoutsuccess = "Erfolgreich abgemeldet";
 $currentlynotloggedin = "Du bist derzeit nicht angemeldet.";
 $welcometoex = "Willkommen bei enviroCar";
 $regsuccessfull = "Du hast dich erfolgreich registriert.";
-$logincontinue = "melde dich an um fortzufahren.";
+$logincontinue = "Melde dich an um fortzufahren.";
 $accountdeleted = "Zugang gelöscht";
 $accountdeletedsuccess ="Dein Account wurde erfolgreich gelöscht.";
 
