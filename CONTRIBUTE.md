@@ -1,4 +1,3 @@
-
 This is the contribute.md of enviroCar project [enviroCar-www](https://github.com/enviroCar/enviroCar-www). Great to have you here! Here are a few ways you can help!
 
 # Contribute.md
@@ -12,16 +11,19 @@ Best way to get started is to start with these:
 * Get involved in enviroCar: <hhttps://envirocar.org/about.php#getinvolved>
 
 ## Contributors
-* Dennis Wilhelm (@dwilhelm89)
-* Dustin Demuth (@dustindemuth)
-* Stephanie Walter ( stephanie.walter@uni-muenster.de ) ( <a href="https://github.com/StephanieWalter" target="_blank">@Github</a> ) </li>
-      <li>Friedrich Müller ( f_muel25@uni-muenster.de ) ( <a href="https://github.com/FriedrichMueller" target="_blank">@Github</a> ) </li>
-      <li>Oraib Megdadi ( o_megd01@uni-muenster.de ) ( <a href="https://github.com/oraibalmegdadi" target="_blank">@Github</a> )
-	  
-* Daniel Nüst [@nuest](https://github.com/nuest)
-* Name, [@github_account](http://github.com/github_account)
-* ...
-* 
+* Dennis Wilhelm [@dwilhelm89](https://github.com/dwilhelm89)
+* Dustin Demuth [@dustindemuth](https://github.com/dustindemuth)
+* Stephanie Walter [@StephanieWalter](https://github.com/StephanieWalter)
+* Friedrich Mller  [@FriedrichMueller](https://github.com/FriedrichMueller)
+* Oraib Megdadi [@oraibalmegdadi](https://github.com/oraibalmegdadi)
+* Daniel NÃ¼st [@nuest](https://github.com/nuest)
+* Martin DÃ¼ren [@github_account](http://github.com/github_account)
+* Benjamin Pross [@bpross-52n](https://github.com/bpross-52n)
+* Eike H. JÃ¼rrens [@EHJ-52n](https://github.com/EHJ-52n)
+* Matthes Rieke [@matthesrieke](https://github.com/matthesrieke)
+
+
+If this list is out of date be sure to check https://github.com/enviroCar/enviroCar-www/graphs/contributors
 
 ## Development
 
