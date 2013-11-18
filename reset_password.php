@@ -1,14 +1,24 @@
 <?
 require_once('./assets/includes/authentification.php');
-include('header-start.php');
+$logged_in = false; 
+if(!is_logged_in()){
+        $logged_in = false; 
+        include('header-start.php');
+}else{
+        $logged_in = true;
+        include('header.php');
+}
 ?>
-
 
 
 <div class="container rightband">
 	<div class="row-fluid">
 		<div class="span12">
+			<div class="alert alert-block alert-info fade in"><?php echo $password_reset_info ?></div>
 			<?php echo $captcha_incorrect_alert ?>
+		</div>
+		<div class="span6 offset2">
+
 			<h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
 
 		  <form class="form-horizontal" id="reset-form" accept-charset="UTF-8" action="<?php echo basename($_SERVER['SCRIPT_FILENAME']); ?>" data-remote="true" method="post">
@@ -43,3 +53,6 @@ include('header-start.php');
 </div>
 
 
+<?
+  include('footer.php');
+?>

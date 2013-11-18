@@ -108,7 +108,7 @@ function echoActiveClassIfRequestMatches($requestUri)
         </a>
         <div class="container">
           <a  class="brand" href="index.php" >
-            <img style="height:25px;" src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" />
+            <img style="height:25px;" src="./assets/img/enviroCar_logo_white_13-06-08_165x50.png" alt="enviroCar Logo"/>
           </a>
           
           <div class="nav-collapse collapse">
