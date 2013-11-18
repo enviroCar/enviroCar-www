@@ -80,7 +80,7 @@ if(!is_logged_in()){
 		</p>
 		</div>
       <div class="span5">
-      <iframe width="480" height="340" style="z-index:-9999;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen frameborder="0" ></iframe>
+      <iframe width="480" height="340" style="z-index:-9999; border:none;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen></iframe>
       </div>
       </div>
 	</div>

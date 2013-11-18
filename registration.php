@@ -29,7 +29,7 @@ if(isset($_GET['name_taken'])){
 	<div class="row-fluid">
 		<div class="span6 offset2">
 		<form action="./assets/includes/authentification.php?registration" id="contact-form" class="form-horizontal" method="post">
-			<h2 class="form-signin-heading"><?php echo $reg_registration;?></h2>
+			<h3 class="form-signin-heading"><?php echo $reg_registration;?></h3>
 		    <div class="control-group">
 				<label class="control-label" for="name">Nick-Name</label>
 				<div class="controls">

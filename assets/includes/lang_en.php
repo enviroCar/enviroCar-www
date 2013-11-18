@@ -9,6 +9,7 @@ $index_lost_password="Lost password?";
 $index_recaptcha="Please verify that you are human";
 $index_submit="Submit";
 $index_reset_password="Reset Password";
+$password_reset_info="This feature is not fully implemented, yet. After clicking on submit you are promted to send us an email to complete the process.";
 $index_user_details="User details";
 $index_register="Register";
 $index_register_name_taken="This Nick-Name is already taken.";

@@ -9,6 +9,7 @@ $index_lost_password="Passwort verloren?";
 $index_recaptcha="Bitte fülle das Captcha aus";
 $index_submit="Abschicken";
 $index_reset_password="Passwort Zurücksetzen";
+$password_reset_info="Dieses Feature ist noch nicht komplett implementiert. Nach einem Klick auf Abschicken musst du uns eine Email schicken, um das Passwort zurückzusetzen.";
 $index_user_details="Benutzerangaben";
 $index_register="Registrieren";
 $index_register_name_taken="Dieser Nick-Name ist bereits vergeben.";
