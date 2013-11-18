@@ -50,7 +50,7 @@ $(function(){
     <ul class="nav nav-pills">
       <li class="active"><a href="#main" data-toggle="tab"><? echo $about_aboutHead ?></a></li>
 			<li><a href="#behind" data-toggle="tab"><? echo $about_the_people_behind_head ?></a></li>
-			<li><a href="#website" data-toggle="tab"><? echo $about_gettinginvolvedHead ?></a></li>
+			<li><a href="#getinvolved" data-toggle="tab"><? echo $about_gettinginvolvedHead ?></a></li>
 			<li><a href="#faqs" data-toggle="tab"><? echo $about_faqHead ?></a></li>
     </ul>
   </div>
@@ -109,7 +109,7 @@ $(function(){
 					</div>    
 				</div>
 			</div><!--end of div id="behind"-->	
-			<div class="tab-pane fade in" id="website">
+			<div class="tab-pane fade in" id="getinvolved">
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
