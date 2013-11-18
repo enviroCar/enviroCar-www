@@ -10,7 +10,7 @@ if(!is_logged_in()){
 }
 ?>
 
-<div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; background-size: cover;">
+<div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; height: 250px; background-size: cover;">
     <div class="row">
 		<div class="span4">
 			<!-- <div class="chart">
@@ -18,15 +18,15 @@ if(!is_logged_in()){
 			  <div style="width: 50%;">42</div>
 			</div> -->
 		</div>
-		<div id="cover-text" class="span4 offset3">
+		<!--<div id="cover-text" class="span4 offset3">
 			<a data-toggle="modal" href="#myModal" data-youtube-id="_AyXNeRbpRk"><img id="youtube-thumb" src="./assets/img/youtube_thumb.jpg" style="width: 275px; height: 156px;"></a>
 		  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div id="myModal-body" class="modal-body">
 			    <iframe width="560" height="315" src="https://www.youtube.com/embed/LTSuUEOfWa0?rel=0" frameborder="0" allowfullscreen></iframe>
 			  </div>
 			</div>
-		</div>
-	</div>
+		</div>-->
+	</div> 
 </div>
 
     <!--<div class="row-fluid">
