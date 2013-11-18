@@ -59,14 +59,14 @@ function echoActiveClassIfRequestMatches($requestUri)
       if (file_exists($jsfile)) {
           echo "<script src='$jsfile'></script>";
       }
-    ?><br>
+    ?>
     
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
       $cssfile = "./assets/css/$current_file_name.css";
 
       if (file_exists($cssfile)) {
-          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css' />";
       }
     ?>
     

@@ -1,11 +1,11 @@
 <?
 include('header.php');
 ?>
-<link rel="stylesheet" href="./assets/css/bootstrap-tour.css" type="text/css">
+<!-- <link rel="stylesheet" href="./assets/css/bootstrap-tour.css" type="text/css">
 <link rel="stylesheet" href="./assets/css/trip_single.css" type="text/css">
 <link rel="stylesheet" href="./assets/css/trip_show.css" type="text/css">
 <link rel="stylesheet" href="./assets/css/trip_static.css" type="text/css">
-<link rel="stylesheet" href="./assets/css/layout.css" type="text/css">
+<link rel="stylesheet" href="./assets/css/layout.css" type="text/css"> -->
 <style>
     img.olTileImage {
         max-width: none;
@@ -20,18 +20,22 @@ include('header.php');
 <script src="./assets/js/community_engine.js" type="text/javascript"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
+
+
 <div class="container leftband">
-<div id="routeInformation" style="margin-left: 30px;"></div>
-<div class="row-fluid" >
-  <ul class="inline-stats" id="statistics">
-      <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
-      <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
-      <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
-      <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
-      <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
-  </ul>
-</div>
+  <div id="routeInformation" style="margin-left: 30px;"></div>
+  <div class="row-fluid" >
+    <ul class="inline-stats" id="statistics">
+        <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
+        <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
+        <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
+        <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
+        <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
+    </ul>
+  </div>
 <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+</div>
+<div class="container leftband">
 <div class="row" id="mapAndChart">
 <div class="span6">
     <div class="map" id="map">

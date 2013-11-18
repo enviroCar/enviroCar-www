@@ -76,7 +76,6 @@ if ($login_name != "" && $login_password != ""){
         if (!$resp->is_valid) {
           // What happens when the CAPTCHA was entered incorrectly
           $captcha_incorrect_alert='<div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div>';
-          echo '<script>$( document ).ready(function() { $("#lost_password_modal").modal("show");});</script>';
         } else {
           header('Location: mailto:envirocar@52north.org?subject=Reset%20Password&body='.$_POST['email']);
         }
@@ -90,14 +89,14 @@ if ($login_name != "" && $login_password != ""){
       if (file_exists($jsfile)) {
           echo "<script src='$jsfile'></script>";
       }
-    ?><br>
+    ?>
     
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
       $cssfile = "./assets/css/$current_file_name.css";
 
       if (file_exists($cssfile)) {
-          echo "<link href='$cssfile' rel='stylesheet' type='text/css'>";
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'/>";
       }
     ?>
 
@@ -148,7 +147,7 @@ if ($login_name != "" && $login_password != ""){
       
 
     </script>
-    <style>
+    <!-- <style>
       @media (min-width: 980px) {
       body {
               margin-top: -40px;
@@ -185,7 +184,7 @@ if ($login_name != "" && $login_password != ""){
       }
 
 
-    </style>
+    </style> -->
     <!--[if IE]>
       <style>
           @media (max-width: 980px) {
@@ -207,36 +206,6 @@ if ($login_name != "" && $login_password != ""){
   </head>
 
   <body>
-    <div class="modal hide fade" id="lost_password_modal">
-      <div class="modal-header">
-          <?php echo $captcha_incorrect_alert ?>
-          <h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
-      </div>
-      <form class="modal-body form-horizontal" id="reset-form" accept-charset="UTF-8" action="<?php echo basename($_SERVER['SCRIPT_FILENAME']); ?>" data-remote="true" method="post">
-          <div class="control-group">
-              <label for="email" class="control-label">E-Mail</label>
-              <div class="controls">
-                  <input id="reset-mail" type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
-              </div>
-          </div>
-
-            <label for="recaptcha" class="control-label"><?php echo $index_recaptcha ?></label>
-            <div class="controls">
-              <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli"></script>
-              <noscript>
-                <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli" height="300" width="500" frameborder="0"></iframe><br>
-                <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-                </textarea>
-                <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-              </noscript>
-            </div><br>
-          <div class="control-group">
-            <div class="controls">    
-              <button href="#" type="submit" class="btn btn-primary" id="reset-form-submit"><?php echo $index_submit ?></button>
-            </div>
-          </div>
-      </form>
-    </div>
     
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -274,7 +243,7 @@ if ($login_name != "" && $login_password != ""){
                     </div>
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <p><a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a></p>
+                  <p><a href="reset_password.php" class="link" ><?php echo $index_lost_password ?></a></p>
                   <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
                 </div>
                 </li>
@@ -297,7 +266,8 @@ if ($login_name != "" && $login_password != ""){
       </div>
     </div>
   </div> <!-- Navbar -->
-    
+  
+  
  <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
       <a class="close" data-dismiss="alert">×</a>  
       <h4 class="alert-heading">Error</h4>  
@@ -388,7 +358,7 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
-  <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
+  <a href="reset_password.php" class="link" ><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
@@ -410,7 +380,7 @@ if ($login_fail) {
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
  <? echo $usernameorpasswordwrong ?><br>
- <a href="#" class="link" data-target="#lost_password_modal" data-toggle="modal"><?php echo $index_lost_password ?></a>
+ <a href="reset_password.php" class="link"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){

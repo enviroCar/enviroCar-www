@@ -424,7 +424,7 @@ margin-bottom: 0px;
 
 @media (max-width: 980px) {
     body {
-    	margin-top: -20px;
+    	margin-top: 0px;
       	padding-bottom: 42px;
     }
 }
@@ -432,7 +432,7 @@ margin-bottom: 0px;
 
 
 
-/* firefox specific */
+/* firefox specific 
 @-moz-document url-prefix() {
 
     @media (max-width: 980px) {
@@ -449,13 +449,14 @@ margin-bottom: 0px;
 	    }
 	}
 
-}
+}*/
 
 
 @media (min-width: 980px) {
     body {
       margin-top: 20px;
       padding-bottom: 42px;
+      padding-top: 20px;
     }
 }
 
@@ -626,14 +627,12 @@ ul.dropdown-menu li a {
 
 .input-prepend {
 	white-space: normal;
-	display: -webkit-flex;
-}
-
-@-moz-document url-prefix() {
-	.input-prepend {
-	    white-space: normal;
-	    display: -moz-box;
-	}
+	/* DO NOT CHANGE THE ORDER HERE! */
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 .input-prepend > input {
