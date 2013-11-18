@@ -1,45 +1,41 @@
 <?
 include('header.php');
 ?>
-<!-- <link rel="stylesheet" href="./assets/css/bootstrap-tour.css" type="text/css">
-<link rel="stylesheet" href="./assets/css/trip_single.css" type="text/css">
-<link rel="stylesheet" href="./assets/css/trip_show.css" type="text/css">
-<link rel="stylesheet" href="./assets/css/trip_static.css" type="text/css">
-<link rel="stylesheet" href="./assets/css/layout.css" type="text/css"> -->
-<style>
-    img.olTileImage {
-        max-width: none;
-      }
-    .olControlAttribution{
-    bottom:0px;
-    }
-</style>
+
 <script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>  
-<script src="./assets/js/jquery.cookie.js"></script>
-<script src="./assets/js/bootstrap-tour.js"></script>
-<script src="./assets/js/community_engine.js" type="text/javascript"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 
 
-<div class="container leftband">
+<div class="container leftband" id="route-information-container">
   <div id="routeInformation" style="margin-left: 30px;"></div>
   <div class="row-fluid" >
-    <ul class="inline-stats" id="statistics">
-        <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
-        <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
-        <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
-        <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
-        <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
-    </ul>
+    <div class="span8">
+      <ul class="inline-stats" id="statistics">
+          <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
+          <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
+          <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
+          <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
+          <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
+      </ul>
+    </div>
+    <div class="span4">
+      <div id="furtherInformation" style="margin-left: 30px;"></div>
+    </div>
   </div>
 <div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
-<div class="container leftband">
-<div class="row" id="mapAndChart">
-<div class="span6">
-    <div class="map" id="map">
+
+  <div class="row-fluid" id="full-map-span">
+  </div>
+
+<div class="container leftband" id="map-and-chart-container">
+<div class="row-fluid" id="mapAndChart">
+<div class="span6" id="small-map-span">
+    <div class="simple-map" id="map">
+      
       <div class="btn-group sensorswitch dropup">
+        <a class="btn btn-primary btn-full-screen" id="btn-full-screen">Fullscreen</a>
         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" id="sensorswitch">
           Sensor
           <span class="caret"></span>
@@ -67,7 +63,7 @@ include('header.php');
     <div id="chartContainer" style="height: 100%; width: 100%;"></div>
   </div>
 </div>
-<div id="furtherInformation" style="margin-left: 30px;"></div>
+
 </div>
 <script type="text/javascript">
 
@@ -423,35 +419,10 @@ var feature;
 var vectorLayer;
 var heatmap;
 
-var tour = new Tour();
 
 function initShowTrack(){
  initMap();
  initChart();
- //addHeatmapLayer();
- //heatmap.setVisibility(false);
-
- 
-
- tour.addSteps([
-    {
-        element: "#map", // string (jQuery selector) - html element next to which the step popover should be shown
-        title: "Title of my popover", // string - title of the popover
-        content: "Content of my popover" // string - content of the popover
-    },
-    {
-        element: "#sensorswitch",
-        title: "Title of my popover",
-        content: "Content of my popover"
-    },
-    {
-        element: "#chartContainer",
-        title: "Title of my popover",
-        content: "Content of my popover"
-    }
-  ]);
-
- //tour.start();
 
 }
 
@@ -728,6 +699,54 @@ function getColor(sensor, value){
 $('a#change-sensor-speed').click(function(){ changeSensor("speed");});
 $('a#change-sensor-rpm').click(function(){ changeSensor("rpm");});
 $('a#change-sensor-consumption').click(function(){ changeSensor("consumption");});
+
+var scroll = 0;
+$(document).ready(function () {
+            $("#btn-full-screen").click(function () {
+
+                if ($("#btn-full-screen").hasClass("btn-full-screen")) {
+                    scroll = $(window).scrollTop();
+                    window.scrollTo(0,0);
+                    
+                    $("#route-information-container").hide();
+                    $("#map-and-chart-container").hide();
+                    $("footer").hide();
+                    $('html, body').css({
+                        'overflow': 'hidden',
+                        'height': '100%'
+                    });
+
+                    $("#map").appendTo("#full-map-span");
+                    $("#map").height($(window).height());
+                    $("#map").removeClass("simple-map");
+                    $("#map").addClass("full-map");
+                    $("#btn-full-screen").removeClass("btn-full-screen");
+                    $("#btn-full-screen").addClass("btn-partial-screen");
+                    $("#btn-full-screen").text("Minimize")
+                }
+                else {
+                    $("#route-information-container").show();
+                    $("#map-and-chart-container").show();
+                    $("footer").show();
+                    $('html, body').css({
+                        'overflow': 'visible'
+                    });
+
+                    
+
+                    $("#map").height("");
+                    $("#map").appendTo("#small-map-span");
+                    $("#map").removeClass("full-map");
+                    $("#map").addClass("simple-map");
+                    $("#btn-full-screen").removeClass("btn-partial-screen");
+                    $("#btn-full-screen").addClass("btn-full-screen");
+                    $("#btn-full-screen").attr('title', 'Fullscreen');                    
+                    $(window).scrollTop(scroll);
+                }
+                map.updateSize();
+            });
+        });
+
 
 </script>
 

@@ -57,7 +57,7 @@ function echoActiveClassIfRequestMatches($requestUri)
       $jsfile = "./assets/js/$current_file_name.js";
 
       if (file_exists($jsfile)) {
-          echo "<script src='$jsfile'></script>";
+          echo "<script type='text/javascript' src='$jsfile'></script>";
       }
     ?>
     

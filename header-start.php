@@ -142,8 +142,6 @@ if ($login_name != "" && $login_password != ""){
         });
 
       }
-
-      
       
 
     </script>
@@ -185,7 +183,7 @@ if ($login_name != "" && $login_password != ""){
 
 
     </style> -->
-    <!--[if IE]>
+    <!-- [if IE]>
       <style>
           @media (max-width: 980px) {
             body {
@@ -201,6 +199,9 @@ if ($login_name != "" && $login_password != ""){
             }
         }
       </style>
+      <script type="text/javascript">
+        $("#sign-in-user-icon").hide();
+      </script>
       <![endif]-->
 
   </head>
@@ -233,12 +234,12 @@ if ($login_name != "" && $login_password != ""){
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
                     <div class="control-group">
                     <div class="input-prepend">
-                      <span class="add-on"><i class="icon-user"></i></span>
+                      <!--<span class="add-on" id="sign-in-user-icon"><i class="icon-user"></i></span>-->
                       <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
                     </div>
                     </div>
                     <div class="input-prepend">
-                      <span class="add-on"><i class="icon-lock"></i></span>
+                      <!--<span class="add-on" id="sign-in-password-icon"><i class="icon-lock"></i></span>-->
                       <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
                     </div>
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
