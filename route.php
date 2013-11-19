@@ -50,6 +50,18 @@ include('header.php');
             <li>
               <a id="change-sensor-speed" href="#"><?php echo $route_dropup_speed; ?></a>
             </li>
+            <li>
+              <a id="change-sensor-intake-temp" href="#"><?php echo $route_dropup_intake_temp; ?></a>
+            </li>
+            <li>
+              <a id="change-sensor-intake-pressure" href="#"><?php echo $route_dropup_intake_pressure; ?></a>
+            </li>
+            <li>
+              <a id="change-sensor-co2" href="#"><?php echo $route_dropup_co2; ?></a>
+            </li>
+            <li>
+              <a id="change-sensor-maf" href="#"><?php echo $route_dropup_maf; ?></a>
+            </li>
         </ul>
       </div>
     </div>
@@ -113,7 +125,7 @@ include('header.php');
 
   function addRouteInformation(name){
       $('#routeInformation').append('<h2>'+name+'</h2>');
-      $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'"><? echo $graphs ?></a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'"><? echo $thematicmaps ?></a><a class="btn" target="_blank" href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">Download (GeoJSON)</a></p>');
+      $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'"><? echo $graphs ?></a><a class="btn" target="_blank" href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">Download (GeoJSON)</a></p>');
   }     
 
 
@@ -311,6 +323,10 @@ include('header.php');
 		var maxSpeed = 0;
 		var maxConsumption = 0;
 		var maxRPM = 0;
+    var maxIat = 0;
+    var maxMap = 0;
+    var maxCo2 = 0;
+    var maxMaf = 0;
 
       for(i = 0; i < data.statistics.length; i++){
       	var phenoName = data.statistics[i].phenomenon.name;
@@ -321,11 +337,23 @@ include('header.php');
         		maxConsumption = data.statistics[i].max;
         	}else if(phenoName == 'Rpm'){
         		maxRPM = data.statistics[i].max;
-        	}
+        	}else if(phenoName == 'Intake Temperature'){
+            maxIat = data.statistics[i].max;
+          }else if(phenoName == 'Intake Pressure'){
+            maxMap = data.statistics[i].max;
+          }else if(phenoName == 'CO2'){
+            maxCo2 = data.statistics[i].max;
+          }else if(phenoName == 'Calculated MAF' || phenoName == 'MAF'){
+            maxMaf = data.statistics[i].max;
+          }
       }
       gon.statistics = {max_speed : maxSpeed, 
       						max_rpm : maxRPM, 
-     							 max_consumption : maxConsumption
+     							 max_consumption : maxConsumption,
+                   max_iat : maxIat,
+                   max_map : maxMap,
+                   max_co2 : maxCo2,
+                   max_maf : maxMaf
       						};
 
     }
@@ -523,7 +551,7 @@ function initMap() {
   map.addLayer(vectorLayer);
 
   //map.addControl(new OpenLayers.Control.PanZoomBar());
-  map.addControl(new OpenLayers.Control.LayerSwitcher());
+  //map.addControl(new OpenLayers.Control.LayerSwitcher());
   //map.addControl(new OpenLayers.Control.MousePosition());
   //map.addControl(new OpenLayers.Control.OverviewMap());
   //map.addControl(new OpenLayers.Control.KeyboardDefaults());
@@ -627,6 +655,18 @@ function postAnalytics(){
 function changeSensor(sensor){
     var unit = "";
     switch (sensor) {
+      case "iat":
+          unit = " &deg;C";
+          break;
+      case "map":
+          unit = " kPa";
+          break;
+      case "co2":
+          unit = " g/sec";
+          break;
+      case "maf":
+          unit = " g/sec";
+          break;
       case "speed":
           unit = " km/h";
           break;
@@ -699,6 +739,10 @@ function getColor(sensor, value){
 $('a#change-sensor-speed').click(function(){ changeSensor("speed");});
 $('a#change-sensor-rpm').click(function(){ changeSensor("rpm");});
 $('a#change-sensor-consumption').click(function(){ changeSensor("consumption");});
+$('a#change-sensor-intake-temp').click(function(){ changeSensor("iat");});
+$('a#change-sensor-intake-pressure').click(function(){ changeSensor("map");});
+$('a#change-sensor-co2').click(function(){ changeSensor("co2");});
+$('a#change-sensor-maf').click(function(){ changeSensor("maf");});
 
 var scroll = 0;
 $(document).ready(function () {
