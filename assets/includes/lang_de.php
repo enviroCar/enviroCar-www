@@ -542,7 +542,7 @@ $about_contributors_text = '<p>enviroCar wird durch viele Personen unterstützt,
 <br/> 
 enviroCar bedankt sich ganz besonders bei den Studierenden des Institutes für Geoinformatik der Universität Münster, die mit ihren Konzepten, Entwicklungen und Aktivitäten den Grundstein für die enviroCar Plattform gelegt haben.
 <br/><br/>
-Besonderer Dank  gilt auch den “First Supporters” und “First Contributors” der Indiegogo Crowd-Funding Kampagne, die den Start des Projektes mit finanziellen Beiträgen gefördert haben: Thomas Bartoschek, Hermann-Peter Berlekamp, Professorship of Geoinformation Systems Faculty of Environmental Sciences, Technische Universität Dresden, Johannes Brauner, Andreas Brenk, Martin Düren, Christian Elfers, Theodor Foerster, Holger Fritze, D. Gueneysu, Ann Hitchcock, Pierre Karrasch, Rob Lemmens, Lovecars.com, Michi6, Tino Miegel, Daniel Nüst, Christian Paas, Lea Remke, Domink Schlarmann, Hansi Senaratne, Christoph Stasch, Martin der Techniker, xydiari
+Besonderer Dank  gilt auch den <strong>“First Supporters”</strong> und <strong>“First Contributors”</strong> der Indiegogo Crowd-Funding Kampagne, die den Start des Projektes mit finanziellen Beiträgen gefördert haben: Thomas Bartoschek, Hermann-Peter Berlekamp, "Professorship of Geoinformation Systems Faculty of Environmental Sciences, Technische Universität Dresden", Johannes Brauner, Andreas Brenk, Martin Düren, Christian Elfers, Theodor Foerster, Holger Fritze, D. Gueneysu, Ann Hitchcock, Pierre Karrasch, Rob Lemmens, Lovecars.com, Michi6, Tino Miegel, Daniel Nüst, Christian Paas, Lea Remke, Domink Schlarmann, Hansi Senaratne, Christoph Stasch, Martin der Techniker, xydiari
 </p>';
 
 $about_gettinginvolvedHead = "Mitmachen";
