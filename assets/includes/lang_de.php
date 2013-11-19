@@ -629,6 +629,8 @@ $route_avgSpeed = "Durchschnittl. Geschwindigkeit";
 $route_minutes = "m";
 $route_fuelGas = "Benzin";
 $route_fuelDiesel = "Diesel";
+$route_legend="Legende";
+$route_legend_title = "Zeige ";
 $route_dropup_fuelConsumption = "Verbrauch";
 $route_dropup_intake_temp = "Luftansaugtemperatur";
 $route_dropup_intake_pressure = "Luftansaugdruck";
@@ -638,7 +640,8 @@ $route_dropup_speed = "Geschwindigkeit";
 $route_requestFuelPriceStart = "Frage aktuelle Benzinpreise ab...";
 $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
-
+$route_fullscreen = "Vollbild";
+$route_minimize = "Verkleinern";
 //terms
 $terms_general = '<h2 class="featurette-heading">Nutzungsbedingungen</h2>
 <p style="text-align: justify">

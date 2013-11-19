@@ -4,7 +4,7 @@ padding-bottom: 42px;
 padding-top: 18px;
 }
 
-.sensorswitch{
+.sensorswitch {
   position:absolute; 
   left:10px; 
   bottom:10px; 
@@ -19,19 +19,64 @@ padding-top: 18px;
 img.olTileImage {
   max-width: none;
 }
-.olControlAttribution{
+.olControlAttribution {
   bottom:0px;
 }
 
-.full-map
-{
+.full-map {
     height: 500px;
     width: 100%;
 }
 
-.simple-map
-{
+.simple-map {
     position: relative;
     height: 400px;
     width: 100%;
+}
+
+#legend {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10000;  
+  font-size: 12px;
+  line-height: 100%;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+
+#legend > img {
+  display: table;
+}
+
+.legend {
+  width: 10px;
+  height: 10px;
+}
+
+#legend > p {
+  margin-bottom: 5px;
+}
+
+.olControlAttribution {
+  top: 0em;
+}
+
+.btn-group.btn {   border: 0;   padding: 0; }
+.btn-group.btn > .btn { border-radius: 0 }
+.btn-group.btn > .dropdown-menu {  text-align: left; }
+.btn-group.btn:first-child > .btn {
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.btn-group.btn:last-child > .btn {
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+.dropdown-menu {
+  border-radius: 0px;
 }

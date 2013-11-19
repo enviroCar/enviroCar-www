@@ -615,8 +615,10 @@ $route_avgSpeed = "AVERAGE SPEED";
 $route_minutes = "m";
 $route_fuelGas = "gasoline";
 $route_fuelDiesel = "diesel";
-$route_dropup_fuelConsumption = "consumption";
-$route_dropup_speed = "speed";
+$route_legend="Legend";
+$route_legend_title = "Showing ";
+$route_dropup_fuelConsumption = "Consumption";
+$route_dropup_speed = "Speed";
 $route_dropup_intake_temp = "Intake Air Temperature";
 $route_dropup_intake_pressure = "Intake Pressure";
 $route_dropup_co2 = "CO<sub>2</sub>";
@@ -624,6 +626,8 @@ $route_dropup_maf = "MAF";
 $route_requestFuelPrice = "Requesting current fuel prices...";
 $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
+$route_fullscreen = "Fullscreen";
+$route_minimize = "Minimize";
 
 //terms
 $terms_general = '<h2 class="featurette-heading">Terms of Use</h2>
