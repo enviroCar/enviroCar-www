@@ -515,21 +515,31 @@ $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
 enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
 $about_the_people_behind_head = "The People behind";
-$about_the_people_behind_text = 'enviroCar is a project of 
+$about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
 <ul>
 <li style="list-style-type: none;"><a href="http://52north.org" target="_blank">the 52°North</a> research and development network</li> 
 <li style="list-style-type: none;">and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
 </ul>
-Partners are
+<strong>Partners</strong> are
 <ul>
 <li style="list-style-type: none;"><a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">the Technical University of Dresden - Professorship of Geoinformation Systems</a></li> 
 <li style="list-style-type: none;">and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a>.</li>
 </ul>
-Global Sponsor
+<strong>Global Sponsor</strong>
 <ul>
-<li style="list-style-type: none;">This project is sponsored by Esri - the Environmental Systems Research Institute - as a global sponsor (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Germany</a>)</li>
+<li style="list-style-type: none;">This project is sponsored by Esri - the Environmental Systems Research Institute - as a global sponsor (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Germany</a>).</li>
 </ul>
-This project is open for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
+This project is <strong>open</strong> for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
+
+$about_contributors_head = 'Contributors';
+$about_contributors_text = '<p><strong>Indiegogo Contributors</strong><br />
+<ul>
+	<li>one</li>
+	<li>two</li>
+	<li>three</li>
+</ul>
+</p>';
+
 $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen, who is interested  and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 

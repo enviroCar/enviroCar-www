@@ -521,21 +521,31 @@ Die enviroCar Website ermöglicht Ihnen
 $about_aboutText3 = "<h2>OBD II - Adapter</h2>
 enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Sie können diese Adapter auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden. Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.";
 $about_the_people_behind_head = "Wer steckt dahinter";
-$about_the_people_behind_text = 'enviroCar ist ein Projekt des 
+$about_the_people_behind_text = '<strong>enviroCar</strong> ist ein Projekt des 
 <ul>
 <li style="list-style-type: none;">Forschungsnetzwerkes <a href="http://52north.org" target="_blank">52°North</a> und des</li> 
 <li style="list-style-type: none;"><a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.</li>
 </ul>
-Projektpartner 
+<strong>Projektpartner</strong>
 <ul>
 <li style="list-style-type: none;">sind die <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis" target="_blank">Technische Universität Dresden - Professur für Geoinformatik</a></li> 
 <li style="list-style-type: none;">und die <a href="http://www.conterra.de" target="_blank">con terra GmbH</a>.</li>
 </ul>
-Global Sponsor
+<strong>Global Sponsor</strong>
 <ul>
 <li style="list-style-type: none;">Das Projekt wird durch das Unternehmen Esri - Environmental Systems Research Institute - als Global Sponsor unterstützt (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Deutschland</a>).</li>
 </ul>
-Das enviroCar Projekt ist offen für weitere Projektpartner, Forscher und Entwickler. Kontakt: <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
+Das enviroCar Projekt ist <strong>offen</strong> für weitere Projektpartner, Forscher und Entwickler. Kontakt: <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
+
+$about_contributors_head = 'Unterstützer';
+$about_contributors_text = '<p><strong>Unterstützer aus der Indiegogo-Kampagne</strong><br />
+<ul>
+	<li>one</li>
+	<li>two</li>
+	<li>three</li>
+</ul>
+</p>';
+
 $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "Als wissenschaftlich interessierter und engagierter Bürger (Citizen Scientist)";
 $asACitizenText = 'Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Version 2.3), ein Bluetooth OBD-II-Adapter und ein Fahrzeug, das den OBD-II Standard unterstützt. Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
