@@ -622,7 +622,7 @@ Für Dezember 2013 planen die Veröffentlichung einer ersten Vollversion.';
 //route.php
 
 $route_distance = "Distanz";
-$route_fuelConsumption = "Treibstoffverbrauch";
+$route_fuelConsumption = "Verbrauch";
 $route_CO2 = "CO<sub>2</sub>";
 $route_idleTime = "Standzeit";
 $route_avgSpeed = "Durchschnittl. Geschwindigkeit";

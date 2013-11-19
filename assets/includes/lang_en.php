@@ -608,7 +608,7 @@ We expect to have a stable release of all components by the end of 2013.";
 //route.php
 
 $route_distance = "DISTANCE";
-$route_fuelConsumption = "FUEL CONSUMPTION";
+$route_fuelConsumption = "CONSUMPTION";
 $route_CO2 = "CO2";
 $route_idleTime = "IDLE TIME";
 $route_avgSpeed = "AVERAGE SPEED";

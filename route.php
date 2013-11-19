@@ -6,25 +6,27 @@ include('header.php');
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 
-
 <div class="container leftband" id="route-information-container">
-  <div id="routeInformation" style="margin-left: 30px;"></div>
-  <div class="row-fluid" >
-    <div class="span8">
+  <div class="row-fluid">
+    <div class="span12">
+      <div id="routeInformation" style="margin-left: 30px;">
+      </div>
       <ul class="inline-stats" id="statistics">
-          <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
-          <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
-          <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
-          <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
-          <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
+        <li><p id="dist"></p><p id="time"></p><span class="muted"><?php echo $route_distance; ?></span></li>
+        <li><p id="avg-consum"></p><p id="total-consum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
+        <li><p id="avg-co2"></p><p id="total-co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
+        <li><p><br></p><p id="idle-time"></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
+        <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
   </div>
-<div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
 
-  <div class="row-fluid" id="full-map-span">
-  </div>
+<div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+
+
+<div class="row-fluid" id="full-map-span">
+</div>
 
 <div class="container leftband" id="map-and-chart-container">
 <div class="row-fluid" id="mapAndChart">
@@ -98,7 +100,7 @@ include('header.php');
             <td id="legend4"></td>
           </tr>
           <tr>
-            <td><img src="./assets/img/legend_red.png" class="legend"></img>
+            <td><img src="./assets/img/legend_red.png" class="legend"></img></td>
             <td id="legend5"></td>
           </td>
         </table>
@@ -306,12 +308,12 @@ include('header.php');
 			var totalCO2 = co2inGramsPerKm * distance / 1000;
 			
 			$('#routeInformation').append('<h2>'+name+'</h2>');
-			$('#idleTime').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
-			$('#distTime').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
-			$('#distTime').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
-			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
-			$('#co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
-			$('#co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
+			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
+			$('#dist').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
+			$('#time').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
+			$('#avg-consum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km </p>');
+			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
+			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
 			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * distance;		
 			
@@ -365,7 +367,7 @@ include('header.php');
       	var phenoName = data.statistics[i].phenomenon.name;
       	if(phenoName == 'Speed'){
       		maxSpeed = data.statistics[i].max;
-      		$('#avgSpeed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');				
+      		$('#avg-speed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');				
         	}else if(phenoName == 'Consumption'){
         		maxConsumption = data.statistics[i].max;
         	}else if(phenoName == 'Rpm'){
@@ -422,7 +424,7 @@ include('header.php');
 	
 	function getFuelPrice(totalFuelConsumption, fuelType){
 		$.get('assets/includes/fuelprices.php?fuelType='+fuelType, function(data) {
-			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + Math.round(totalFuelConsumption * data*100)/100 + ' €</p>');
+			$('#total-consum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + Math.round(totalFuelConsumption * data*100)/100 + ' €</p>');
 		});
 	}
 			

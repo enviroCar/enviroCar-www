@@ -1,8 +1,14 @@
-body {
-margin-top: 18px;
-padding-bottom: 42px;
-padding-top: 18px;
+
+.navbar {
+  margin-bottom: 0px;
 }
+
+@media (min-width: 980px){
+  #full-map-span {
+    margin-top: -5px;
+  }
+}
+
 
 .sensorswitch {
   position:absolute; 
@@ -79,4 +85,12 @@ img.olTileImage {
 
 .dropdown-menu {
   border-radius: 0px;
+}
+
+#statistics {
+  list-style: none;
+}
+
+#statistics > li {
+  padding-top: 10px;
 }
