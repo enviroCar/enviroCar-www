@@ -532,7 +532,7 @@ $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of
 This project is <strong>open</strong> for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
 
 $about_contributors_head = 'enviroCar Supporter';
-$about_contributors_text = '<p>There are many enviroCar enthusiats who are committed to the enviroCar idea and support the project in a number of ways.
+$about_contributors_text = '<p>There are many enviroCar enthusiats who are committed to the enviroCar idea and support the project in a number of ways.<br />
 <br />
 In particular, enviroCar thanks the students of the Institute for Geoinformatics at the Münster University whose concepts, developments and activities laid the corner stone for the enviroCar platform.
 <br /><br />
