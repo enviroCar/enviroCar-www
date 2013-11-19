@@ -531,17 +531,16 @@ $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of
 </ul>
 This project is <strong>open</strong> for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
 
-$about_contributors_head = 'Contributors';
-$about_contributors_text = '<p><strong>Indiegogo Contributors</strong><br />
-<ul>
-	<li>one</li>
-	<li>two</li>
-	<li>three</li>
-</ul>
+$about_contributors_head = 'enviroCar Supporter';
+$about_contributors_text = '<p>There are many enviroCar enthusiats who are committed to the enviroCar idea and support the project in a number of ways.
+<br />
+In particular, enviroCar thanks the students of the Institute for Geoinformatics at the Münster University whose concepts, developments and activities laid the corner stone for the enviroCar platform.
+<br /><br />
+Special thanks goes to those “First Supporters” and “First Contributors” of the Indiegogo crowd funding campaign who provided financial support for the start of the project: Thomas Bartoschek, Hermann-Peter Berlekamp,Professorship of Geoinformation Systems Faculty of Environmental Sciences, Technische Universität Dresden, Johannes Brauner, Andreas Brenk, Martin Düren, Christian Elfers, Theodor Foerster, Holger Fritze, D. Gueneysu, Ann Hitchcock, Pierre Karrasch, Rob Lemmens,Lovecars.com, Michi6, Tino Miegel, Daniel Nüst, Christian Paas, Lea Remke, Domink Schlarmann, Hansi Senaratne, Christoph Stasch, Martin der Techniker, xydiari
 </p>';
 
 $about_gettinginvolvedHead = "Getting Involved";
-$asACitizenHead = "As a Citizen, who is interested  and engaged in research (Citizen Scientist)";
+$asACitizenHead = "As a Citizen interested  and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
 The enviroCar beta app is available for <strong>Android 2.3 - 4.4</strong>. It is now available for testing at <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a>. Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
