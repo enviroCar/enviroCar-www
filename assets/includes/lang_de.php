@@ -537,7 +537,7 @@ $about_the_people_behind_text = '<strong>enviroCar</strong> ist ein Projekt des
 </ul>
 Das enviroCar Projekt ist <strong>offen</strong> für weitere Projektpartner, Forscher und Entwickler. Kontakt: <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
 
-$about_contributors_head = 'enviroCar Supporters';
+$about_contributors_head = 'enviroCar Supporter';
 $about_contributors_text = '<p>enviroCar wird durch viele Personen unterstützt, die von der Idee begeistert sind und sich in unterschiedlichster Weise sehr engagiert für das Projekt einsetzen.<br />
 <br/> 
 enviroCar bedankt sich ganz besonders bei den Studierenden des Institutes für Geoinformatik der Universität Münster, die mit ihren Konzepten, Entwicklungen und Aktivitäten den Grundstein für die enviroCar Plattform gelegt haben.
