@@ -534,7 +534,7 @@ $about_gettinginvolvedHead = "Getting Involved";
 $asACitizenHead = "As a Citizen, who is interested  and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
-The enviroCar beta app is available for <strong>Android 2.3 - 4.4</strong>. It is now available for testing at <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a>. Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
+The enviroCar beta app is available for <strong>Android 2.3 - 4.4</strong>. Download it from <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a>, install it on your smartphone, test it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
 <br/><br/>
 Upload your data to the enviroCar server, use the website to explore the maps & statistics, and connect with friends and groups. Discuss issues related to mobility and environment based on enviroCar data with your friends, researchers and experts from public authorities. Develop your own ideas on how to increase mobility, improve sustainability and reduce negative impacts on the environment. ';
 $asAScientistHead = "As a Scientist";
@@ -591,7 +591,7 @@ $faq_a4 = 'enviroCar is a community based project and you are heartily welcome t
 A <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> enables you to download/upload data and use it to create information products, such as maps or statistical analyses. The data is publicly available as JSON and as Linked Data, which makes it possible to flexibly include enviroCar’s data in any services.
 <br/><br/>
 Please contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°North</a> to clarify any further questions.';
-$faq_a5 = "In its current phase, enviroCar is in a closed beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
+$faq_a5 = "enviroCar is curretnly in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
 <br/><br/>
 We expect to have a stable release of all components by the end of 2013.";
 
