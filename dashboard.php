@@ -4,6 +4,18 @@ require_once('assets/includes/connection.php');
 
 $loggedInUser = $_SESSION["name"];
 $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
+
+//language
+$lang = 'en';
+if(isSet($_GET['lang'])){
+  $lang = $_GET['lang'];
+}else if(isSet($_SESSION['lang'])){
+  $lang = $_SESSION['lang'];
+}else if(isSet($_COOKIE['lang'])){
+  $lang = $_COOKIE['lang'];
+}else{
+  $lang = 'en';
+}
 ?>
 <style type="text/css">
   .badges{
@@ -445,7 +457,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 
   function getBadges(){ 
     $.get('./assets/includes/badges.php?badges', function(data){
-        var lang = "<?php echo $_SESSION['lang'] ?>";
+        var lang = "<?php echo $lang ?>";
         data = JSON.parse(data);
         data.badges.forEach(function(badge){
           $('#all-badges').append('<li><a class="label label-envirocar" rel="tooltip" data-placement="right" title="'+badge.description[lang]+'">'+badge.displayName[lang]+'</a></li>');
