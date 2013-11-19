@@ -591,7 +591,7 @@ $faq_a4 = 'enviroCar is a community based project and you are heartily welcome t
 A <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> enables you to download/upload data and use it to create information products, such as maps or statistical analyses. The data is publicly available as JSON and as Linked Data, which makes it possible to flexibly include enviroCar’s data in any services.
 <br/><br/>
 Please contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°North</a> to clarify any further questions.';
-$faq_a5 = "enviroCar is curretnly in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
+$faq_a5 = "enviroCar is currently in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
 <br/><br/>
 We expect to have a stable release of all components by the end of 2013.";
 
