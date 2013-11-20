@@ -476,14 +476,17 @@ $analyzing_with_R_titel = "Analyzing enviroCar Trajectory Data with R";
 $analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.<br /><br/>Open the script <a href="http://rpubs.com/edzer/enviroCar" title="RPubs script for analyzing enviroCar trajectory data with R">here</a>.';
 
 //dataaccess.php
-$dataaccess_viaAPIHead = 'Using the enviroCar API';
+$dataaccess_head = 'enviroCar Data';
+$dataaccess_licenseHead = 'License';
+$dataaccess_licenseText = 'Data available via the enviroCar API can be used by third parties in accordance with the <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a>. For details see <a href="http://localhost/envirocar/terms.php#license">enviroCar terms</a>.';
+$dataaccess_viaAPIHead = 'API';
 $dataaccess_viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
 <br/><br/>
 The data is anonymized, i.e. it is not possible to connect it to the driver. Access to user related  data is protected and requires the user to login via HTTP authorization.
 <br/><br/>
 Detailed <strong>description of the enviroCar-server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
-//$viaDownloadHead = "Via Download";
-//$viaDownloadText = "Keine Beschreibung verfügbar.";
+$dataaccess_downloadHead = 'File download';
+$dataaccess_downloadText = 'Users can download their own tracks in several formats (e.g. GeoJSON) using the menu on the <a href="https://envirocar.org/routes.php">routes overview</a> page.';
 $dataaccess_endpointHead = 'API Endpoints';
 $dataaccess_endpointText = '<ul>
 <li>Stable API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>
@@ -621,11 +624,11 @@ $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
 
 //terms
-$terms_general = '<h2 class="featurette-heading">Terms of Use</h2>
+$terms_general = '<h2>Terms of Use</h2>
 <p style="text-align: justify">
 When you accept our Terms of Use, you agree to comply with the following regulations.
 <br/><br/>
-<strong>1. What happens to User Data</strong> 
+<h3 id="userdata">1. What happens to User Data</h3> 
 <br/>
 When using this website, your IP address will be stored  in our server’s access log and error log file.
 <br/><br/>
@@ -652,7 +655,7 @@ Any other information you provided in a free text form</li>
 You can delete (there is no way back!) your account and the data associated with it (see above) at anytime. Tracks that have been uploaded as Open Data and published to the public are NOT deleted. If you would like to delete your tracks as well, you must do this before you delete your account. Once your account is gone, it is not possible to find out which tracks were yours. Please read the FAQ <LINK> for more information about how to delete your data and/or your account.
 </p>       
 <br/>
-<strong>2. Saving data during a drive</strong> 
+<h3 id="duringdrive">2. Saving data during a drive</h3> 
 <br/>
 <p style="text-align: justify">
 During your test drive (after the START button has been pushed until the STOP button has been pushed), the following data is collected and saved:
@@ -667,14 +670,14 @@ During your test drive (after the START button has been pushed until the STOP bu
 This data is linked via an encrypted key to your user account, which enables you to view your own data in the enviroCar App and on the website. Communication between the enviroCar App, the enviroCar server and the enviroCar website is encrypted so that no third party can access your data.
 </p>
 <br/>
-<strong>3. Upload data to enviroCar server</strong> 
+<h3 id="upload">3. Upload data to enviroCar server</h3> 
 <br/>
 <p style="text-align: justify">
 When you upload your data to the enviroCar server (option: “Upload Track as Open Data“), you agree to publish the measured data as anonymous Open Data and allow third parties to use the data in accordance with the Open Database License (ODbL).
 Data which is downloaded from the enviroCar server contains no user information. The enviroCar App has an option in “Settings” with which you can cut off the beginning and end of your tracks so that the point of departure and the destination are obscured.
 </p>
 <br/>
-<strong>4. Licensing</strong> 
+<h3 id="license">4. Licensing</h3> 
 <br/>
 <p style="text-align: justify">
 Data available via the enviroCar API can be used by third parties in accordance with the Open Database License <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>. This means
@@ -688,14 +691,11 @@ b) as long as you mention the source of the data (use “Source: 52°North envir
 </li>
 </ul>
 <br/>
-<strong>5. Use of cookies</strong> 
+<h3 id="cookies">5. Use of cookies</h3> 
 <br/>
 <p style="text-align: justify">
 When you use this website, you agree to the use of cookies. The cookies will be used strictly for the purpose of enabling you to log in to our services and select the language of preference for our website. The cookie stores a combination of numbers and characters to identify you during a browser session. Our cookies are valid for one (1) browser session. 
 </p>';
-
-//temporary
-$under_construction = "This website is currently under construction..";
 
 //Badges
 $availableBadges = "Available Badges";
