@@ -476,14 +476,17 @@ $analyzing_with_R_titel = "Analyzing enviroCar Trajectory Data with R";
 $analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.<br /><br/>Open the script <a href="http://rpubs.com/edzer/enviroCar" title="RPubs script for analyzing enviroCar trajectory data with R">here</a>.';
 
 //dataaccess.php
-$dataaccess_viaAPIHead = 'Using the enviroCar API';
+$dataaccess_head = 'enviroCar Data';
+$dataaccess_licenseHead = 'License';
+$dataaccess_licenseText = 'Data available via the enviroCar API can be used by third parties in accordance with the <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a>. For details see <a href="http://localhost/envirocar/terms.php#license">enviroCar terms</a>.';
+$dataaccess_viaAPIHead = 'API';
 $dataaccess_viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
 <br/><br/>
 The data is anonymized, i.e. it is not possible to connect it to the driver. Access to user related  data is protected and requires the user to login via HTTP authorization.
 <br/><br/>
 Detailed <strong>description of the enviroCar-server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
-//$viaDownloadHead = "Via Download";
-//$viaDownloadText = "Keine Beschreibung verfügbar.";
+$dataaccess_downloadHead = 'File download';
+$dataaccess_downloadText = 'Users can download their own tracks in several formats (e.g. GeoJSON) using the menu on the <a href="https://envirocar.org/routes.php">routes overview</a> page.';
 $dataaccess_endpointHead = 'API Endpoints';
 $dataaccess_endpointText = '<ul>
 <li>Stable API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>

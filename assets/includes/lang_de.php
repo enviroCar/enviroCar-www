@@ -476,14 +476,17 @@ $analyzing_with_R_titel = "enviroCar Tracks analysieren mit R";
 $analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)statistische Berechnungen. In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.<br /><br/><a href="http://rpubs.com/edzer/enviroCar" title="RPubs Skript für Analyse von enviroCar Tracks mit R">Skript öffnen</a>';
 
 //dataaccess.php
-$dataaccess_viaAPIHead = "Nutzung der enviroCar API";
-$dataaccess_viaAPIText = 'Die REST API des enviroCar Servers unterstützt den selektiven  Zugriff auf anonymisierte Messfahrten (Tracks). Sie können per HTTP auf die Tracks, die Messungen und zugehörige Statistiken zugreifen. Für die Selektion können räumliche und zeitliche Filter verwendet werden.
+$dataaccess_head = 'enviroCar Daten';
+$dataaccess_licenseHead = 'Lizenz';
+$dataaccess_licenseText = 'Die Daten auf dem enviroCar Server dürfen von nach Maßgabe der <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a> genutzt werden, siehe <a href="http://localhost/envirocar/terms.php#license">Nutzungsbedingungen</a>.';
+$dataaccess_viaAPIHead = 'API';
+$dataaccess_viaAPIText = 'Die API des enviroCar Servers unterstützt den selektiven  Zugriff auf anonymisierte Messfahrten (Tracks). Sie können per HTTP auf die Tracks, die Messungen und zugehörige Statistiken zugreifen. Für die Selektion können räumliche und zeitliche Filter verwendet werden.
 <br/><br/>
 Die Daten sind anonymisiert, d.h. eine Verbindung zu den Nutzerdaten kann nicht mehr hergestellt werden. Der Zugriff auf Nutzer-spezifische Daten ist nur durch den Nutzer selbst möglich, und erfordert ein Login über HTTP Authorisation.
 <br/><br/>
-Detaillierte <strong>Beschreibung der enviroCar Server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
-//$viaDownloadHead = "Als Download";
-//$viaDownloadText = "Keine Beschreibung verfügbar.";
+Detaillierte <strong>Beschreibung der enviroCar API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
+$dataaccess_downloadHead = 'Dateidownload';
+$dataaccess_downloadText = 'Nutzer können ihre eigenen Tracks in verschiedenen Formaten (z.B. GeoJSON) über die Menüs in der <a href="https://envirocar.org/routes.php">Trackansicht</a> herunterladen.';
 $dataaccess_endpointHead = "API URLs";
 $dataaccess_endpointText = '<ul>
 <li>Stabile API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>
