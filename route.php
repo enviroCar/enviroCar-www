@@ -32,7 +32,7 @@ include('header.php');
 <div class="row-fluid" id="mapAndChart">
 <div class="span6" id="small-map-span">
     <div class="simple-map" id="map">
-      
+      <p id="enviroCar-license">Tracks ODbL by <a href="https://envirocar.org/terms.php">enviroCar</a></p>
       <div class="btn-group sensorswitch">
         <a class="btn btn-primary btn-full-screen" id="btn-full-screen"><?php echo $route_fullscreen ?></a>
         <div class="btn btn-group dropup">
@@ -41,8 +41,7 @@ include('header.php');
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-              <li>
-                <a id="download-geojson" >GeoJSON (*.json)</a>
+              <li id="download-geojson">
               </li>
               <li>
                 <a id="download-shape">Shape (*.shp)</a>
@@ -161,6 +160,7 @@ include('header.php');
 
   function addRouteInformation(name){
       $('#routeInformation').append('<h2>'+name+'</h2>');
+      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">GeoJSON (*.json)</a>');
   }     
 
 

@@ -276,6 +276,11 @@ line-height: 8px!important;
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */
+.btn-primary {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#048abf), to(#0065a0));
+}
+
+
 @media (min-width: 980px) {
     .nav-collapse .dropdown-menu a:link, #register-btn {
 		color: #0088CC;
