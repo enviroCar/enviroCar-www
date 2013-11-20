@@ -70,7 +70,6 @@ function post_request($url, $data, $isAuthRequired){
     curl_setopt($ch, CURLOPT_CAINFO, "wwuca_chain.pem");
     $result = curl_exec($ch);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    error_log(print_r($data_string." ---------- ".$result." ---------- ".$http_status, TRUE));
     return array("status" => $http_status, "response" => $result);
 }
 
