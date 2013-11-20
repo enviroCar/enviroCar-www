@@ -694,9 +694,6 @@ b) as long as you mention the source of the data (use “Source: 52°North envir
 When you use this website, you agree to the use of cookies. The cookies will be used strictly for the purpose of enabling you to log in to our services and select the language of preference for our website. The cookie stores a combination of numbers and characters to identify you during a browser session. Our cookies are valid for one (1) browser session. 
 </p>';
 
-//temporary
-$under_construction = "This website is currently under construction..";
-
 //Badges
 $availableBadges = "Available Badges";
 $badges = "Badges";

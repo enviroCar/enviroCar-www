@@ -707,9 +707,6 @@ b) Bei der Weitergabe der Daten an Dritte ist anzugeben, woher die Daten stammen
 Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies einverstanden. Der Cookie speichert eine Kombination aus Zahlen und Buchstaben, zur Identifikation des Nutzers im Rahmen einer Browser-Sitzung. Diese Cookies werden ausschließlich dazu verwendet, das Einloggen für den Service und die Sprachauswahl zu unterstützen. Unsere Cookies sind nur für die Dauer einer (1) Browsersitzung gültig.
 </p>';
 
-//temporary
-$under_construction = "Die Website wird gerade neu gestaltet..";
-
 //Badges
 $availableBadges = "Verfügbare Badges";
 $badges = "Badges";
