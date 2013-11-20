@@ -635,11 +635,11 @@ $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
 
 //terms
-$terms_general = '<h2 class="featurette-heading">Nutzungsbedingungen</h2>
+$terms_general = '<h2>Nutzungsbedingungen</h2>
 <p style="text-align: justify">
 Durch die Bestätigung der Nutzungsbedingungen erklären Sie sich mit folgenden Regelungen einverstanden:
 <br/><br/>
-<strong>1. Umgang mit Nutzer-Daten</strong> 
+<h3 id="userdata">1. Umgang mit Nutzer-Daten</h3> 
 <br/>
 Bei der Benutzung der enviroCar Webseite wird die IP-Adresse des Nutzers für einen limitierten Zeitraum im Zugangs- und Fehler-Protokoll des enviroCar Servers gespeichert.
 <br/><br/>
@@ -665,7 +665,7 @@ Bei der Registrierung und Nutzung der enviroCar-Dienste werden folgende Daten ge
 Jeder Benutzer kann sein Nutzerkonto und alle persönlichen Daten, die damit zusammenhängen  (siehe oben)  jederzeit löschen. Die als Open Data hochgeladenen und öffentlich verfügbaren Messfahrten (Tracks) werden hierbei nicht gelöscht. Sofern auch die Messfahrten gelöscht werden sollen, muss dies vor der Löschung des Nutzerkontos geschehen, da die Daten später keinem Nutzer mehr zugeordnet sind. Weitere Hinweise zum Löschen der Tracks und des Benutzernamens finden sich in der FAQ-Liste.
 </p>
 <br/>
-<strong>2. Speicherung von Daten während der Fahrt</strong> 
+<h3 id="duringdrive">2. Speicherung von Daten während der Fahrt</h3> 
 <br/>
 <p style="text-align: justify">
 Im Rahmen der von Ihnen durchgeführten Messfahrten (nach dem Drücken des START-Knopfes bis zum Drücken des STOP Knopfes)  werden folgende Daten aufgenommen und gespeichert:
@@ -680,14 +680,14 @@ Im Rahmen der von Ihnen durchgeführten Messfahrten (nach dem Drücken des START
 Diese Daten werden intern über eine verschlüsselte Kennung mit Ihren Benutzerdaten gekoppelt, So dass Sie sowohl in der enviroCar App, als auch in der WebSite in der Lage sind, Ihre eigenen Daten zu betrachten. Die Kommunikation zwischen der enviroCar App, dem enviroCar Server und der enviroCar WebSite ist verschlüsselt, so dass Dritte keinen Zugang zu Ihren Daten haben.
 </p>
 <br/>
-<strong>3. Hochladen von Daten auf den enviroCar Server</strong> 
+<h3 id="upload">3. Hochladen von Daten auf den enviroCar Server</h3> 
 <br/>
 <p style="text-align: justify">
 Mit dem Hochladen von Daten aus der enviroCar App  auf den  enviroCar Server  (Option: “Daten als Open Data hochladen”) erklären Sie sich einverstanden, dass die gemessenen Daten anonymisiert als Open Data publiziert und nach Maßgabe der Open Data License (ODbL) von Dritten genutzt werden dürfen. 
 Daten, die vom enviroCar Server heruntergeladen werden, enthalten keine Verweise auf den Benutzer, der diese Daten erzeugt hat. In den Einstellungen der enviroCar App haben Sie zudem die Möglichkeit, Beginn und Ende der Tracks zu beschneiden, so dass  der Start- und Zielort Ihrer Tracks verschleiert sind.
 </p>
 <br/>
-<strong>4. Lizenzierung der gemessenen Daten</strong> 
+<h3 id="license">4. Lizenzierung der gemessenen Daten</h3> 
 <br/>
 <p style="text-align: justify">
 Die Daten, die Sie auf den enviroCar Server hochgeladen haben (Option: “Fahrt als Open Data hochladen”) und die von dort über verschiedene Schnittstellen abrufbar sind, dürfen von Dritten nach Maßgabe der Open Database License (<a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>)  genutzt werden. Das heißt:
@@ -701,7 +701,7 @@ b) Bei der Weitergabe der Daten an Dritte ist anzugeben, woher die Daten stammen
 </li>
 </ul>
 <br/>
-<strong>5. Nutzung von Cookies</strong> 
+<h3 id="cookies">5. Nutzung von Cookies</h3> 
 <br/>
 <p style="text-align: justify">
 Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies einverstanden. Der Cookie speichert eine Kombination aus Zahlen und Buchstaben, zur Identifikation des Nutzers im Rahmen einer Browser-Sitzung. Diese Cookies werden ausschließlich dazu verwendet, das Einloggen für den Service und die Sprachauswahl zu unterstützen. Unsere Cookies sind nur für die Dauer einer (1) Browsersitzung gültig.
