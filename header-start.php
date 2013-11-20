@@ -62,26 +62,6 @@ if ($login_name != "" && $login_password != ""){
     <script src="./assets/js/bootstrap-tooltip.js"></script>
     <script src="./assets/js/jqBootstrapValidation.js"></script>
     
-    <?php
-      $captcha_incorrect_alert="";
-
-      if(isset($_POST['recaptcha_challenge_field'])) {
-        require_once('assets/includes/recaptchalib.php');
-        $privatekey = "6LcUPeoSAAAAAPLBog_XkUhyMVZ3n0-AD1ercddQ";
-        $resp = recaptcha_check_answer ($privatekey,
-                                      $_SERVER["REMOTE_ADDR"],
-                                      $_POST["recaptcha_challenge_field"],
-                                      $_POST["recaptcha_response_field"]);
-
-        if (!$resp->is_valid) {
-          // What happens when the CAPTCHA was entered incorrectly
-          $captcha_incorrect_alert='<div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div>';
-        } else {
-          header('Location: mailto:envirocar@52north.org?subject=Reset%20Password&body='.$_POST['email']);
-        }
-      }
-    ?>
-
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
       $jsfile = "./assets/js/$current_file_name.js";
@@ -97,6 +77,32 @@ if ($login_name != "" && $login_password != ""){
 
       if (file_exists($cssfile)) {
           echo "<link href='$cssfile' rel='stylesheet' type='text/css'/>";
+      }
+    ?>
+
+    <?php
+      $captcha_incorrect_alert="";
+
+      if(isset($_POST['recaptcha_challenge_field'])) {
+        require_once('assets/includes/recaptchalib.php');
+        $privatekey = "6LcUPeoSAAAAAPLBog_XkUhyMVZ3n0-AD1ercddQ";
+        $resp = recaptcha_check_answer ($privatekey,
+                                      $_SERVER["REMOTE_ADDR"],
+                                      $_POST["recaptcha_challenge_field"],
+                                      $_POST["recaptcha_response_field"]);
+        $user = $_POST['user'];
+        $mail = $_POST['email'];
+
+        if (!$resp->is_valid) {
+          // What happens when the CAPTCHA was entered incorrectly
+          $captcha_incorrect_alert='<div class="span12"><div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div></div>';
+        } else {
+    ?>
+    <script type="text/javascript">
+      submitForm("<?php echo $user; ?>", "<?php echo $mail; ?>");
+    </script>
+    <?php
+        }
       }
     ?>
 
@@ -253,7 +259,7 @@ if ($login_name != "" && $login_password != ""){
 
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <p><a href="reset_password.php" class="link" ><?php echo $index_lost_password ?></a></p>
+                  <p><a href="lost_password.php" class="link" ><?php echo $index_lost_password ?></a></p>
                   <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
                 </div>
                 </li>
@@ -368,7 +374,7 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
-  <a href="reset_password.php" class="link" ><?php echo $index_lost_password ?></a>
+  <a href="lost_password.php" class="link" ><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
@@ -390,7 +396,7 @@ if ($login_fail) {
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
  <? echo $usernameorpasswordwrong ?><br>
- <a href="reset_password.php" class="link"><?php echo $index_lost_password ?></a>
+ <a href="lost_password.php" class="link"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
