@@ -622,10 +622,17 @@ ul.dropdown-menu li a {
 	color: black;
 }
 
-.input-prepend {
-	width: 100%;
+.input-prepend.input-block-level {
+  display: table; 
 }
-.input-prepend > input {
-	width: 100%;
+.input-prepend.input-block-level .add-on {
+  display: table-cell;
+}
+.input-prepend.input-block-level > input {
+  width: 100%;
 }
 
+.input-prepend.input-block-level .add-on {
+    display: table-cell;
+    border-right: #fff;
+}
