@@ -81,7 +81,7 @@ $dashboard_group_activities="Group Activities";
 $dashboard_activities_of="Activities of ";
 $dashboard_my_tracks="My Tracks";
 $dashboard_number_of_tracks="Number of Tracks";
-
+$dashboard_show_all="Show all";
 //accept terms
 $please_accept_terms = 'Please read and accept the current <a href="./terms.php">Terms of Use</a>.';
 $confirm_accept_terms = 'I accept.';

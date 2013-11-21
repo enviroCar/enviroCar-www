@@ -83,6 +83,7 @@ $dashboard_group_activities="Aktivitäten der Gruppe";
 $dashboard_activities_of="Aktivitäten von ";
 $dashboard_my_tracks="Meine Fahrten";
 $dashboard_number_of_tracks="Anzahl der Tracks";
+$dashboard_show_all="Zeige alle";
 
 //accept terms
 $please_accept_terms = 'Bitte lesen und akzeptieren Sie die aktuellen <a href="./terms.php">Nutzungsbedingungen</a>.';

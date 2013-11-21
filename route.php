@@ -6,9 +6,10 @@ include('header.php');
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 
+
 <div class="container leftband" id="route-information-container">
-  <div class="row-fluid">
-    <div class="span12">
+  <div class="row-fluid" >
+    <div class="span10">
       <div id="routeInformation" style="margin-left: 30px;">
       </div>
       <ul class="inline-stats" id="statistics">
@@ -19,6 +20,7 @@ include('header.php');
         <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
+    <div class="share-buttons"></div>
   </div>
 </div>
 
@@ -113,6 +115,10 @@ include('header.php');
 
 </div>
 <script type="text/javascript">
+  $('.share-buttons').share({
+    url: window.location.href,
+    text: 'Check out my awesome track on enviroCar!'
+  });
 
   var popup;
   var lengthOfTrack;

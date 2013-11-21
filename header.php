@@ -51,6 +51,8 @@ function echoActiveClassIfRequestMatches($requestUri)
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap-tooltip.js"></script>
     <script src="./assets/js/jqBootstrapValidation.js"></script>
+    <script src="./assets/js/bootstrap-paginator.min.js"></script>
+    <script src="./assets/js/share.min.js"></script>
     
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
