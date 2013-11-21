@@ -108,8 +108,48 @@ include('header.php');
       </div>
   </div>
     </div>
-  <div class="span6">
-    <div id="chartContainer" style="height: 100%; width: 100%;"></div>
+  <div class="span6 graph-span">
+    <div id="chartContainer" style="position: relative, height: 100%; width: 100%;"></div>
+    <div class="dropdown" id="graph-dropdown">
+      <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" href="#">
+          Select Data
+          <b class="caret"></b>
+      </a>
+      <div class="dropdown-menu graph-selection">
+        <div class="span6">
+        <p>Primary Axis</p>
+              <label class="radio">
+                  <input type="radio" name="primary">
+                  Checkbox 1
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary">
+                  Checkbox 2
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary">
+                  Checkbox 3
+              </label>
+        </div>
+        <div class="span6">
+        <p>Secondary Axis</p>
+              <label class="radio">
+                  <input type="radio" name="secondary">
+                  Checkbox 1
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary">
+                  Checkbox 2
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary">
+                  Checkbox 3
+              </label>
+        </div>
+        
+        
+      </div>
+    </div>
   </div>
 </div>
 

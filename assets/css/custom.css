@@ -275,6 +275,9 @@ line-height: 8px!important;
 
 /* Overwriting Bootstrap CSS ------------------------- */
 
+.btn:focus {
+	outline: 0px;
+}
 .well {
 	border-radius: 0px;
 }

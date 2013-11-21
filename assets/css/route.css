@@ -1,3 +1,17 @@
+.graph-selection {
+  width:300px;
+  position: absolute;
+  left: -190px;
+}
+
+#graph-dropdown {
+  position: absolute;
+  right: 20px;
+}
+
+.graph-span {
+  position: relative;
+}
 .share-buttons {
   position: absolute;
   right: 10px;
