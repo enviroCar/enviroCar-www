@@ -45,6 +45,7 @@ if ($login_name != "" && $login_password != ""){
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    <link href="./assets/css/header-start.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="./assets/css/flags.css" rel="stylesheet">
@@ -259,7 +260,7 @@ if ($login_name != "" && $login_password != ""){
 
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <p><a href="lost_password.php" class="link" ><?php echo $index_lost_password ?></a></p>
+                  <p><a href="lost_password.php" class="link" id="lost-password-link"><?php echo $index_lost_password ?></a></p>
                   <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
                 </div>
                 </li>
@@ -331,6 +332,28 @@ if(isset($_GET['deleted'])){
   <a class="close" data-dismiss="alert">×</a>  
   <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
   <?echo $accountdeletedsuccess?>
+</div> 
+<?
+}
+?>
+
+<?
+if(isset($_GET['password_reset_submitted'])){
+?>
+<div id="password-reset-submitted" class="container alert alert-block alert-success fade in"> 
+  <a class="close" data-dismiss="alert">×</a>
+  <?echo $index_password_reset_submitted?>
+</div> 
+<?
+}
+?>
+
+<?
+if(isset($_GET['password_resetted'])){
+?>
+<div id="password-reset-submitted" class="container alert alert-block alert-success fade in"> 
+  <a class="close" data-dismiss="alert">×</a> 
+  <?echo $index_password_resetted?>
 </div> 
 <?
 }

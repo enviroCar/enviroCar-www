@@ -3,13 +3,11 @@ function submitForm(){
   changeData = getFormData($('#reset-password-form'));
   $.post('./assets/includes/users.php?resetPassword', changeData, function(response){
     r = response;
-    if(response >= 400){
-      alert("Something is wrong.");
-      console.log('error');
+    if(JSON.parse(r).status >= 400 >= 400){
+      $('#password-reset-error').show();
+      $('#password-reset-error').text(JSON.parse(JSON.parse(r).response).errors[0]);
     }else{
-      alert("Success!");
-      location.reload(true);
-      console.log('changed');
+      window.location.replace("./index.php?password_resetted");
     }
     console.log(response);
   });

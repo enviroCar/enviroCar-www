@@ -282,13 +282,13 @@ line-height: 8px!important;
 
 
 @media (min-width: 980px) {
-    .nav-collapse .dropdown-menu a:link, #register-btn {
+    .nav-collapse .dropdown-menu a:link, #register-btn, #lost-password-link {
 		color: #0088CC;
 	}
 }
 
 @media (max-width: 980px) {
-    .nav-collapse .dropdown-menu a:link, #register-btn, .nav-collapse .dropdown-menu p {
+    .nav-collapse .dropdown-menu a:link, #register-btn, #lost-password-link, .nav-collapse .dropdown-menu p {
 		color: white;
 		padding-left: 0px;
 	}

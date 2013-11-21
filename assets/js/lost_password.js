@@ -5,13 +5,11 @@ function submitForm(user, email){
   var r = "";
   $.post('./assets/includes/users.php?lostPassword', changeData, function(response){
     r = response;
-    if(response >= 400){
-      alert("Something is wrong.");
-      console.log(r);
+    if(JSON.parse(r).status >= 400){
+      $('#password-lost-error').show();
+      $('#password-lost-error').text(JSON.parse(JSON.parse(r).response).errors[0]);
     }else{
-      alert("Success!");
-      location.reload(true);
-      console.log('changed');
+      window.location.replace("./index.php?password_reset_submitted");
     }
     console.log(response);
   });

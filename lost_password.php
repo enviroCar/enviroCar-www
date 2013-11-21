@@ -10,6 +10,10 @@ if(!is_logged_in()){
 }
 ?>
 
+<div id="password-lost-error" class="container alert alert-block alert-error fade in" style="display: none;"> 
+  <a class="close" data-dismiss="alert">×</a>
+  <?echo $index_password_lost_error ?>
+</div>
 
 <div class="container rightband">
         <div class="row-fluid">

@@ -203,9 +203,9 @@ if(isset($_GET['lostPassword'])){
 	$response = post_request($baseURL.'/resetPassword', $changeData, false);
 
 	if($response['status'] == 200){
-		echo $response['response'];
+		echo json_encode($response);
 	}else{
-		echo $response['status'];
+		echo json_encode($response);
 	}
 }
 
@@ -214,9 +214,9 @@ if(isset($_GET['resetPassword'])){
 
 	$response = put_request($baseURL.'/resetPassword', $changeData);
 	if($response['status'] == 200){
-		echo $response['response'];
+		echo json_encode($response);
 	}else{
-		echo $response['status'];
+		echo json_encode($response);
 	}
 }
 
