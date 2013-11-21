@@ -17,24 +17,7 @@ if(isSet($_GET['lang'])){
   $lang = 'en';
 }
 ?>
-<style type="text/css">
-  .badges{
-    padding: 3px;
-    background: #8CBF3F;
-    max-width: 200px;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-  }
-</style>  
+ 
   
   <script type="text/javascript">
   	
@@ -76,7 +59,7 @@ if(isSet($_GET['lang'])){
     }    
     
     function addTrack(name, id){
-      $('#tracks').append('<li class="customLi"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a></li>');
+      $('#tracks').append('<div class="row row-narrow well"><div class="span12"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a></div></div>');
     }
     
     function addTracks(data){
@@ -204,7 +187,7 @@ if(isSet($_GET['lang'])){
 
   		function addFriendToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#friendsList').append('<li class="customLi"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a><a style="margin-left: 70px;" href="javascript:removeAsFriend(' + "'" + name + "'" + ');"><? echo $removeasfriend ?></a></li>');
+  			$('#friendsList').append('<dl><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></dl>');
   		}
 
   		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
@@ -258,7 +241,7 @@ if(isSet($_GET['lang'])){
 
   		function addGroupToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#groupsList').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="group.php?group='+name+'">'+name+'</a></li>');
+  			$('#groupsList').append('<dl><a href="group.php?group='+name+'"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px;"/></a><a href="group.php?group='+name+'">'+name+'</a></dl>');
   		}
 
   		$.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
@@ -484,32 +467,98 @@ if(isSet($_GET['lang'])){
     </div>
   </div>
 
+  <div id="accept_terms_div" class="container alert alert-block alert-info fade in" style="display:none"> 
+    <? echo $please_accept_terms ?> 
+    <input type="button" name="Text 2" value="<? echo $confirm_accept_terms ?>" onclick="acceptTerms()"> 
+  </div> 
 
-    <div id="accept_terms_div" class="container alert alert-block alert-info fade in" style="display:none"> 
-      <? echo $please_accept_terms ?> 
-      <input type="button" name="Text 2" value="<? echo $confirm_accept_terms ?>"
-      onclick="acceptTerms()"> 
-    </div> 
-  
 <div class="container leftband">
   <div class="row-fluid">
-    <div class="span4">
-  		<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
-      <h2 id="username"></h2>
-      <ul id="userInformation" class="nav nav-list"></ul>
-      <ul id="overallStatistics" class="nav nav-list"></ul>
-      <hr class="featurette-divider">
-      <h3><?php echo $badges ?></h3>
-      <ul id="badges"></ul>
-      <small><a href="#" data-toggle="modal" data-target="#badgesModal" class="link"><i class="icon-plus-sign"></i><?php echo $availableBadges ?></a></small>
+    <div class="span3">
+  		<div class="row">
+        <div class="span12">
+          <img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+          <h2 id="username"></h2>
+          <ul id="userInformation" class="nav nav-list"></ul>
+          <ul id="overallStatistics" class="nav nav-list"></ul>
+          <h3 class="muted"><?php echo $badges ?></h3>
+          <ul id="badges"></ul>
+          <small><a href="#" data-toggle="modal" data-target="#badgesModal" class="link"><i class="icon-plus-sign"></i><?php echo $availableBadges ?></a></small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h3 class="muted"><? echo $friends ?></h3>
+          <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
+          <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+          <ul class="nav nav-list" id="friendsList"> 
+          </ul>          
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h3 class="muted"><? echo $groups; ?></h3>
+          <input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" data-provide="typeahead"/>
+          <small><a href="#create_group_modal" class="link" data-toggle="modal"><i class="icon-plus-sign"></i><? echo $creategroup; ?></a></small>
+          <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+          <ul class="nav nav-list" id="groupsList">
+          </ul>         
+        </div>
+      </div>
     </div>
-    <div id="comparison" class="span8">
-        <div id="chart_div" style="width: 700px; height: 400px;">   
-          <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
+
+
+    <div class="span9">
+      <div class="row-fluid">
+        <div class="span12" id="comparison">
+          <div id="chart_div" style="width: 700px; height: 400px;">   
+            <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+      </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12" id="tracks-span">
+          <h2><?php echo $dashboard_my_tracks; ?></h2>
+          <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+          <div id="tracks">
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+
+  <div class="container leftband">
+
+  </div>
+    
+  <div id="loadingIndicator" class="loadingIndicator" style="display:none">
+    <div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px">
+    </div>
+  </div>
+  <div id="create_group_modal" class="modal hide fade">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3><? echo $creategroup; ?></h3>
+    </div>
+    <div class="modal-body">
+      <form id="createGroupForm" action="./assets/includes/groups.php?createGroup" method="post">
+      <label for="group_name"><? echo $groupname; ?></label>
+        <input id="group_name" type="text" class="input-block-level" placeholder="<? echo $groupname; ?>">
+        <label for="group_description"><? echo $groupdescription; ?></label>
+        <input id="group_description" type="text" class="input-block-level" placeholder="<? echo $groupdescription; ?>">
+        <input type="submit" class="btn btn-primary" value="<? echo $creategroup;?>">
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><? echo $close; ?></button>
+    </div>
+  </div>
+
+
+
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
  
@@ -586,6 +635,7 @@ if(isSet($_GET['lang'])){
      
         var options = {
           title: '<? echo $statistics ?>',
+          backgroundColor: 'white',
           vAxes: {0: {title:'km/h', logScale: false, minValue:0}, 1: {title:'kg/h', logScale: false, minValue:0}},
           series: {
             0:{targetAxisIndex: 0 },
@@ -626,70 +676,7 @@ if(isSet($_GET['lang'])){
 	</div-->	
   
   
-	<div class="container leftband">
-	<div class="row-fluid">
-    <div class="span6">        
-      <h2><?php echo $dashboard_my_tracks; ?></h2>
-      <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-      <ul class="dashboard-list" id="tracks" style="margin-bottom: 10px; max-height: 400px; overflow-y: auto;">
-      </ul>
-    </div>
-  </div>
-
-	</div>
-
-	<div class="container leftband">
-	<div class="row-fluid">
-			<div class="span6">
-				<h2><? echo $friends ?></h2>
-				<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
-				</div>
-				<ul class="dashboard-list" id="friendsList" style="max-height: 400px; overflow-y: auto;">	
-				</ul>          
-			</div>
-      <div class="span6" style="text-align: right;"> 
-        <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
-      </div>
-		</div>
-	</div>
-		
-	<div id="loadingIndicator" class="loadingIndicator" style="display:none">
-		<div style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px">
-		</div>
-	</div>
-	<div id="create_group_modal" class="modal hide fade">
-	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	    <h3><? echo $creategroup; ?></h3>
-	  </div>
-	  <div class="modal-body">
-	  	<form id="createGroupForm" action="./assets/includes/groups.php?createGroup" method="post">
-			<label for="group_name"><? echo $groupname; ?></label>
-	    	<input id="group_name" type="text" class="input-block-level" placeholder="<? echo $groupname; ?>">
-	    	<label for="group_description"><? echo $groupdescription; ?></label>
-	    	<input id="group_description" type="text" class="input-block-level" placeholder="<? echo $groupdescription; ?>">
-	    	<input type="submit" class="btn btn-primary" value="<? echo $creategroup;?>">
-	    </form>
-	  </div>
-	  <div class="modal-footer">
-	    <button class="btn" data-dismiss="modal" aria-hidden="true"><? echo $close; ?></button>
-	  </div>
-	</div>
-
-	<div class="container leftband">
-    <div class="row-fluid">
-  		<div class="span6">
-  			<h2><? echo $groups; ?></h2>
-  			<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-  			<ul class="dashboard-list" id="groupsList" style="max-height: 400px; overflow-y: auto;">
-  			</ul>
-        <a href="#create_group_modal" role="button" class="btn" data-toggle="modal"><? echo $creategroup; ?></a>          
-  		</div>
-      <div class="span6" style="text-align: right">
-        <input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
-      </div>
-    </div>
-	</div>
+	
 
 <?
 include('footer.php');

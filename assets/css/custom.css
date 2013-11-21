@@ -261,8 +261,6 @@ h5{
 }
 
 #chart_div {
-	padding-top: 60px;
-	margin-left: -60px;
 	width: 400px; 
 	height: 200px;
 }
@@ -276,6 +274,10 @@ line-height: 8px!important;
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */
+.well {
+	border-radius: 0px;
+}
+
 .btn-primary {
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#048abf), to(#0065a0));
 }
