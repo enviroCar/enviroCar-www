@@ -70,14 +70,12 @@ function post_request($url, $data, $isAuthRequired){
     curl_setopt($ch, CURLOPT_CAINFO, "wwuca_chain.pem");
     $result = curl_exec($ch);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
     return array("status" => $http_status, "response" => $result);
 }
 
 //Method to perform a PUT request
 function put_request($url, $data){
-    $data_string = json_encode($data);                                                                                   
-     
+    $data_string = json_encode($data);
     $ch = curl_init($url);                                                                      
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");                                                                     
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);   
@@ -90,10 +88,9 @@ function put_request($url, $data){
         'X-User: '.$_SESSION['name'], 
         'X-Token: '.$_SESSION['password'])                                                                       
     );                                                                                                                   
-     
+    
     $result = curl_exec($ch);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
     return array("status" => $http_status, "response" => $result);
 }
 

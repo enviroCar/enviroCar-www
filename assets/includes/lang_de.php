@@ -6,6 +6,10 @@ $index_access_denied="Zugriff verweigert!";
 $index_Please_sign_in="Bitte melde dich an";
 $index_password="Passwort";
 $index_lost_password="Passwort verloren?";
+$index_password_reset_error="Die Passwort-Änderung ist fehlgeschlagen.";
+$index_password_lost_error="Die Anfrage das Passwort zurückzusetzen ist fehlgeschlagen.";
+$index_password_reset_submitted="Die Anfrage dein Passwort zurückzusetzen wurde erfolgreich gesendet. In Kürze erhältst du eine Email von uns.";
+$index_password_resetted="Dein Password wurde erfolgreich geändert. Du kannst dich nun mit deinem neuen Passwort einloggen.";
 $index_recaptcha="Bitte fülle das Captcha aus";
 $index_submit="Abschicken";
 $index_reset_password="Passwort Zurücksetzen";
@@ -624,19 +628,26 @@ Für Dezember 2013 planen die Veröffentlichung einer ersten Vollversion.';
 //route.php
 
 $route_distance = "Distanz";
-$route_fuelConsumption = "Treibstoffverbrauch";
+$route_fuelConsumption = "Verbrauch";
 $route_CO2 = "CO<sub>2</sub>";
 $route_idleTime = "Standzeit";
 $route_avgSpeed = "Durchschnittl. Geschwindigkeit";
 $route_minutes = "m";
 $route_fuelGas = "Benzin";
 $route_fuelDiesel = "Diesel";
+$route_legend="Legende";
+$route_legend_title = "Zeige ";
 $route_dropup_fuelConsumption = "Verbrauch";
+$route_dropup_intake_temp = "Luftansaugtemperatur";
+$route_dropup_intake_pressure = "Luftansaugdruck";
+$route_dropup_co2 = "CO<sub>2</sub>";
+$route_dropup_maf = "MAF";
 $route_dropup_speed = "Geschwindigkeit";
 $route_requestFuelPriceStart = "Frage aktuelle Benzinpreise ab...";
 $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
-
+$route_fullscreen = "Vollbild";
+$route_minimize = "Verkleinern";
 //terms
 $terms_general = '<h2>Nutzungsbedingungen</h2>
 <p style="text-align: justify">

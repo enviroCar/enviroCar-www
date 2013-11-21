@@ -3,7 +3,7 @@
         <div class="footer">
     		<div class="container">
                 <div class="row">
-                    <div class="span12" style="text-align: center;">
+                    <div class="span12" style="text-align: center; line-height: 100%;">
                         <?
                             if($lang == 'en'){ echo '<img src="./assets/img/blank_flag.png" onClick="changeLanguage(\'de\')" class="flag flag-de" alt="German">';
                             }else{

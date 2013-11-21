@@ -6,6 +6,10 @@ $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
 $index_lost_password="Lost password?";
+$index_password_lost_error="Your password change request failed.";
+$index_password_reset_error="Your password change failed.";
+$index_password_reset_submitted="The password reset request has successfully been sent. You should receive an email from us soon.";
+$index_password_resetted="Your password has been changed. Please log in with your new credentials.";
 $index_recaptcha="Please verify that you are human";
 $index_submit="Submit";
 $index_reset_password="Reset Password";
@@ -610,18 +614,26 @@ We expect to have a stable release of all components by the end of 2013.";
 //route.php
 
 $route_distance = "DISTANCE";
-$route_fuelConsumption = "FUEL CONSUMPTION";
+$route_fuelConsumption = "CONSUMPTION";
 $route_CO2 = "CO2";
 $route_idleTime = "IDLE TIME";
 $route_avgSpeed = "AVERAGE SPEED";
 $route_minutes = "m";
 $route_fuelGas = "gasoline";
 $route_fuelDiesel = "diesel";
-$route_dropup_fuelConsumption = "consumption";
-$route_dropup_speed = "speed";
+$route_legend="Legend";
+$route_legend_title = "Showing ";
+$route_dropup_fuelConsumption = "Consumption";
+$route_dropup_speed = "Speed";
+$route_dropup_intake_temp = "Intake Air Temperature";
+$route_dropup_intake_pressure = "Intake Pressure";
+$route_dropup_co2 = "CO<sub>2</sub>";
+$route_dropup_maf = "MAF";
 $route_requestFuelPrice = "Requesting current fuel prices...";
 $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
+$route_fullscreen = "Fullscreen";
+$route_minimize = "Minimize";
 
 //terms
 $terms_general = '<h2>Terms of Use</h2>

@@ -198,6 +198,28 @@ if(isset($_GET['friendActivities'])){
 	}
 }
 
+if(isset($_GET['lostPassword'])){
+	$changeData = array("user" => array("name" => $_POST['user'], "mail" => $_POST['email']));
+	$response = post_request($baseURL.'/resetPassword', $changeData, false);
+
+	if($response['status'] == 200){
+		echo json_encode($response);
+	}else{
+		echo json_encode($response);
+	}
+}
+
+if(isset($_GET['resetPassword'])){
+	$changeData = array("user" => array("name" => $_POST['user'], "token" => $_POST['password']), "code" => $_POST['code']);
+
+	$response = put_request($baseURL.'/resetPassword', $changeData);
+	if($response['status'] == 200){
+		echo json_encode($response);
+	}else{
+		echo json_encode($response);
+	}
+}
+
 if(isset($_GET['updateUser'])){
 	$changeData = array();
 	$response = [];

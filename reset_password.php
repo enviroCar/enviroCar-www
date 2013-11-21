@@ -1,5 +1,7 @@
 <?
 require_once('./assets/includes/authentification.php');
+require_once('assets/includes/connection.php');
+
 $logged_in = false; 
 if(!is_logged_in()){
         $logged_in = false; 
@@ -8,46 +10,54 @@ if(!is_logged_in()){
         $logged_in = true;
         include('header.php');
 }
+$code = $_GET["code"];
+$user	= $_GET["user"];
+
 ?>
 
+<div id="password-reset-error" class="container alert alert-block alert-error fade in" style="display: none;"> 
+  <a class="close" data-dismiss="alert">×</a>
+  <?echo $index_password_reset_error ?>
+</div>
 
 <div class="container rightband">
 	<div class="row-fluid">
-		<div class="span12">
-			<div class="alert alert-block alert-info fade in"><?php echo $password_reset_info ?></div>
-			<?php echo $captcha_incorrect_alert ?>
-		</div>
 		<div class="span6 offset2">
 
 			<h3><?php echo $index_reset_password ?><span class="extra-title muted"></span></h3>
 
-		  <form class="form-horizontal" id="reset-form" accept-charset="UTF-8" action="<?php echo basename($_SERVER['SCRIPT_FILENAME']); ?>" data-remote="true" method="post">
-		      <div class="control-group">
-		          <label for="email" class="control-label">E-Mail</label>
-		          <div class="controls">
-		              <input id="reset-mail" type="email" name="email" required data-validation-required-message="<?php echo $required_validation_message ?>" aria-invalid="true" data-validation-email-message="<?php echo $email_validation_message ?>">
-		          </div>
-		      </div>
+		  <form class="form" id="reset-password-form" accept-charset="UTF-8">
+		  	<div class="control-group">
+		      <div class="controls">
+		  			<input id="code" name="code" type="hidden" class="input" value="<? echo $code; ?>"/>
+		  		</div>
+	      </div>
+		  	<div class="control-group">
+		  		<div class="controls">
+		  			<input id="password" name="user" type="hidden" class="input" value="<? echo $user; ?>"/>
+		  		</div>
+		  	</div>
+		  	
+	      <div class="control-group">
+		  		<label for="password"><? echo $newPassword; ?></label>
+		      <div class="controls">
+		  			<input data-validation-minlength-message="<?php echo $password_validation_message ?>" minlength="6" id="password" name="password" type="password" class="input" placeholder="<? echo $newPassword; ?>"/>
+		  		</div>
+	      </div>
+	      
+	      <div class="control-group">
+	  			<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
+		      <div class="controls">
+		  			<input data-validation-match-message="<?php echo $password_match_validation_message ?>" data-validation-match-match="password" id="passwordRepeat" name="passwordRepeat" type="password" class="input" placeholder="<? echo $passwordRepeat; ?>"/>
+	        </div>
+	      </div>
 
-		        
-		    <div class="control-group">
-		    	<label for="recaptcha" class="control-label"><?php echo $index_recaptcha ?></label>
-		    	<div class="controls">
-		    	<script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli" ></script>
-
-		      <noscript>
-		        <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcUPeoSAAAAAETOO0Xnxx1TcyNaWLxj_-_z8Cli" height="300" width="500" frameborder="0"></iframe><br>
-		        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
-		        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-		      </noscript>
-		      </div>
-		    </div><br>
 		    <div class="control-group">
 		      <div class="controls">    
-		        <button href="#" type="submit" class="btn btn-primary" id="reset-form-submit"><?php echo $index_submit ?></button>
+		        <button type="button" class="btn btn-primary" onclick="submitForm()"><?php echo $index_submit ?></button>
 		      </div>
 		    </div>
-		  </form>
+	  	</form>
 		</div>
 	</div>
 </div>
