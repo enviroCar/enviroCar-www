@@ -4,11 +4,11 @@ require_once('assets/includes/connection.php');
 
 $logged_in = false; 
 if(!is_logged_in()){
-        $logged_in = false; 
-        include('header-start.php');
+	$logged_in = false; 
+	include('header-start.php');
 }else{
-        $logged_in = true;
-        include('header.php');
+  header("Location: index.php?lost_password_access_denied");
+  die();
 }
 $code = $_GET["code"];
 $user	= $_GET["user"];

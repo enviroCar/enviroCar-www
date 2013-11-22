@@ -110,9 +110,6 @@ include('header.php');
     </div>
   <div class="span6 graph-span">
     <div id="chartContainer" style="position: relative, height: 100%; width: 100%;"></div>
-
-
-
     <div class="dropdown" id="graph-dropdown">
       <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" href="#">
           Select Data
