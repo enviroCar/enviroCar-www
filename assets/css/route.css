@@ -1,8 +1,19 @@
-.graph-selection {
-  width:300px;
-  position: absolute;
-  left: -190px;
+
+@media (min-width: 767px){
+  .graph-selection {
+    white-space: nowrap;
+    width: 420px;
+  }
 }
+
+
+@media (max-width: 767px){
+  .graph-selection {
+    white-space: nowrap;
+    width: 210px;
+  }
+}
+
 
 #graph-dropdown {
   position: absolute;

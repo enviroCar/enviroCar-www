@@ -110,40 +110,67 @@ include('header.php');
     </div>
   <div class="span6 graph-span">
     <div id="chartContainer" style="position: relative, height: 100%; width: 100%;"></div>
+
+
+
     <div class="dropdown" id="graph-dropdown">
       <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" href="#">
           Select Data
           <b class="caret"></b>
       </a>
-      <div class="dropdown-menu graph-selection">
+      <div class="dropdown-menu graph-selection pull-right">
         <div class="span6">
-        <p>Primary Axis</p>
+        <p><strong>Primary Axis</strong></p>
               <label class="radio">
-                  <input type="radio" name="primary">
-                  Checkbox 1
+                  <input type="radio" name="primary" checked onclick="addSeries($.extend({},chartSeries[0]), 'primary')">
+                  <?php echo $route_dropup_speed; ?>
               </label>
               <label class="radio">
-                  <input type="radio" name="primary">
-                  Checkbox 2
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[1]), 'primary')">
+                  <?php echo $route_dropup_fuelConsumption; ?>
               </label>
               <label class="radio">
-                  <input type="radio" name="primary">
-                  Checkbox 3
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[2]), 'primary')">
+                  <?php echo $route_dropup_intake_temp; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[3]), 'primary')">
+                  <?php echo $route_dropup_intake_pressure; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[4]), 'primary')">
+                  <?php echo $route_dropup_co2; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[5]), 'primary')">
+                  <?php echo $route_dropup_maf ?>
               </label>
         </div>
         <div class="span6">
-        <p>Secondary Axis</p>
+        <p><strong>Secondary Axis</strong></p>
               <label class="radio">
-                  <input type="radio" name="secondary">
-                  Checkbox 1
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[0]), 'secondary')">
+                  <?php echo $route_dropup_speed; ?>
               </label>
               <label class="radio">
-                  <input type="radio" name="secondary">
-                  Checkbox 2
+                  <input type="radio" name="secondary" checked onclick="addSeries($.extend({},chartSeries[1]), 'secondary')">
+                  <?php echo $route_dropup_fuelConsumption; ?>
               </label>
               <label class="radio">
-                  <input type="radio" name="secondary">
-                  Checkbox 3
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[2]), 'secondary')">
+                  <?php echo $route_dropup_intake_temp; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[3]), 'secondary')">
+                  <?php echo $route_dropup_intake_pressure; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[4]), 'secondary')">
+                  <?php echo $route_dropup_co2; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[5]), 'secondary')">
+                  <?php echo $route_dropup_maf ?>
               </label>
         </div>
         
@@ -536,6 +563,7 @@ function initShowTrack(){
 }
 
 var chart;
+var data;
 function initChart(){
   
   //defining data and setting up the hash for lookup
@@ -590,19 +618,22 @@ function initChart(){
     zoomEnabled: true,
     panEnabled: true,
     legend: {
+      fontFamily: "Droid Sans",
       horizontalAlign: "left", // left, center ,right 
       verticalAlign: "top",  // top, center, bottom
     },
     axisX:{
         valueFormatString: "hh:mm",
+        labelFontFamily: "Droid Sans",
         includeZero: false
     },
     axisY: {
-        title: '<?php echo $route_dropup_speed; ?>',
-        titleFontSize: 15
+        title: '<?php echo $route_dropup_speed." in Km/h"; ?>',
+        titleFontSize: 15,
+        labelFontFamily: "Droid Sans"
     },
     axisY2: {
-        title: "<?php echo $route_dropup_fuelConsumption; ?>",
+        title: "<?php echo $route_dropup_fuelConsumption.' in l/100 km'; ?>",
         titleFontSize: 15
         //valueFormatString: " "
     },
@@ -612,6 +643,7 @@ function initChart(){
       /*** Change type "column" to "bar", "area", "line" or "pie"***/
       
       type: "spline",
+      axisYType: "primary",
       name: "<?php echo $route_dropup_speed; ?> in km/h",
       showInLegend: true,
       xValueType: "dateTime",
@@ -670,6 +702,27 @@ function initChart(){
     ]
   });
 
+  
+  chartSeries = $.extend({},chart.options.data);
+  chart.options.data.splice(2,4);
+  chart.render();
+}
+
+function addSeries(series, axis){
+  series.axisYType = axis;
+  //remove series from specified axis
+  for(var i=0; i<chart.options.data.length; i++){
+    if(chart.options.data[i].axisYType == axis){
+      chart.options.data.splice(i,1);
+    }
+  }
+  //add new series to specified axis
+  chart.options.data.push(series);
+  if(series.axisYType == "primary"){
+    chart.options.axisY.title = series.name;
+  }else{
+    chart.options.axisY2.title = series.name;
+  }
   chart.render();
 }
 
@@ -892,7 +945,7 @@ $('a#change-sensor-rpm').click(function(){
 });
 $('a#change-sensor-consumption').click(function(){ 
   changeSensor("consumption");
-  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_ ?>");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_fuelconsumption ?>");
 });
 $('a#change-sensor-intake-temp').click(function(){ 
   changeSensor("iat");
