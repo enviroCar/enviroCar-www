@@ -5,7 +5,7 @@ function submitForm(user, email){
   var r = "";
   $.post('./assets/includes/users.php?lostPassword', changeData, function(response){
     r = response;
-    if(JSON.parse(r).status >= 400){
+    if(JSON.parse(r).status != 204){
       $('#password-lost-error').show();
       $('#password-lost-error').text(JSON.parse(JSON.parse(r).response).errors[0]);
     }else{

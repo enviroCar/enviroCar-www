@@ -3,6 +3,7 @@
 $index_invalid_login_name="Ungültiger Benutzername"; 
 $index_empty_password="Bitte trage ein Passwort ein"; 
 $index_access_denied="Zugriff verweigert!";
+$index_lost_password_access_denied="Zugriff verweigert! Da du eingeloggt bist, kannst du versuchen dein Passwort über 'Profil bearbeiten' ändern.";
 $index_Please_sign_in="Bitte melde dich an";
 $index_password="Passwort";
 $index_lost_password="Passwort verloren?";
@@ -83,6 +84,7 @@ $dashboard_group_activities="Aktivitäten der Gruppe";
 $dashboard_activities_of="Aktivitäten von ";
 $dashboard_my_tracks="Meine Fahrten";
 $dashboard_number_of_tracks="Anzahl der Tracks";
+$dashboard_show_all="Zeige alle";
 
 //accept terms
 $please_accept_terms = 'Bitte lesen und akzeptieren Sie die aktuellen <a href="./terms.php">Nutzungsbedingungen</a>.';

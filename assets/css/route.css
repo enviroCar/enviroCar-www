@@ -1,3 +1,38 @@
+
+@media (min-width: 767px){
+  .graph-selection {
+    white-space: nowrap;
+    width: 420px;
+  }
+}
+
+
+@media (max-width: 767px){
+  .graph-selection {
+    white-space: nowrap;
+    width: 210px;
+  }
+}
+
+
+#graph-dropdown {
+  position: absolute;
+  right: 20px;
+}
+
+.graph-span {
+  position: relative;
+}
+.share-buttons {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#route-information-container {
+    position:relative;
+}
+
 .navbar {
   margin-bottom: 0px;
 }

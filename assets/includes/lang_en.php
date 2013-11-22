@@ -2,6 +2,7 @@
 // index.php
 $index_invalid_login_name="Invalid Login Name"; 
 $index_empty_password="Password cannot be empty"; 
+$index_lost_password_access_denied="Access denied! Since you are logged in you can try to change your password via 'Change Profile'";
 $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
@@ -81,7 +82,7 @@ $dashboard_group_activities="Group Activities";
 $dashboard_activities_of="Activities of ";
 $dashboard_my_tracks="My Tracks";
 $dashboard_number_of_tracks="Number of Tracks";
-
+$dashboard_show_all="Show all";
 //accept terms
 $please_accept_terms = 'Please read and accept the current <a href="./terms.php">Terms of Use</a>.';
 $confirm_accept_terms = 'I accept.';

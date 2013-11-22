@@ -59,7 +59,15 @@ if(isSet($_GET['lang'])){
     }    
     
     function addTrack(name, id){
-      $('#tracks').append('<div class="row row-narrow well"><div class="span12"><img src="./assets/img/route.svg" style="height: 30px; margin-right: 10px; "/><a href="route.php?id='+id+'">'+name+'</a></div></div>');
+      $('#tracks').append(
+        '<div class="row row-narrow well">'
+          +'<div class="span6">'
+            +'<a href="route.php?id='+id+'"><img src="http://giv-dueren.uni-muenster.de/assets/trips/109.png" style="height: 120px; margin-right: 10px; "/></a>'
+          +'</div>'
+          +'<div class="span6">'
+            +'<h3><a href="route.php?id='+id+'">'+name+'</a></h3>'
+          +'</div>'
+        +'</div>');
     }
     
     function addTracks(data){
@@ -187,7 +195,7 @@ if(isSet($_GET['lang'])){
 
   		function addFriendToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#friendsList').append('<dl><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></dl>');
+  			$('#friendsList').prepend('<dl><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></dl>');
   		}
 
   		$.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
@@ -241,7 +249,7 @@ if(isSet($_GET['lang'])){
 
   		function addGroupToList(name){
   			//$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-  			$('#groupsList').append('<dl><a href="group.php?group='+name+'"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px;"/></a><a href="group.php?group='+name+'">'+name+'</a></dl>');
+  			$('#groupsList').prepend('<dl><a href="group.php?group='+name+'"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px;"/></a><a href="group.php?group='+name+'">'+name+'</a></dl>');
   		}
 
   		$.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
@@ -381,21 +389,21 @@ if(isSet($_GET['lang'])){
         if(data.badges){
           for(var i = 0; i < data.badges.length; i++){
             if(data.badges[i] === "contributor"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Contributor</dl>');
             }else if(data.badges[i] === "friend"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >Friend of enviroCar</dl>');
             }else if(data.badges[i] === "support"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Supporters</dl>');
             }else if(data.badges[i] === "local-stakeholder"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Local Stakeholder</dl>');
             }else if(data.badges[i] === "fan"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Fan</dl>');
             }else if(data.badges[i] === "regional-stakeholder"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >First Regional Stakeholder</dl>');
             }else if(data.badges[i] === "early-bid"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Early Bid</dl>');
             }else if(data.badges[i] === "partner"){
-              $('#badges').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</li>');
+              $('#badges').prepend('<dl rel="tooltip" data-placement="right" data-toggle="tooltip" class="label label-envirocar" data-original-title="'+user+' has this badge because he supported enviroCar on it\'s Indiegogo campain" >enviroCar Partner</dl>');
             }
           }
         }
@@ -482,17 +490,19 @@ if(isSet($_GET['lang'])){
           <ul id="userInformation" class="nav nav-list"></ul>
           <ul id="overallStatistics" class="nav nav-list"></ul>
           <h3 class="muted"><?php echo $badges ?></h3>
-          <ul id="badges"></ul>
-          <small><a href="#" data-toggle="modal" data-target="#badgesModal" class="link"><i class="icon-plus-sign"></i><?php echo $availableBadges ?></a></small>
+          <ul class="nav nav-list" id="badges">
+            <li><small><a href="#" data-toggle="modal" data-target="#badgesModal" class="link"><i class="icon-plus-sign"></i><?php echo $availableBadges ?></a></small></li> 
+          </ul>
         </div>
       </div>
       <div class="row">
         <div class="span12">
           <h3 class="muted"><? echo $friends ?></h3>
           <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
-          <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-          <ul class="nav nav-list" id="friendsList"> 
-          </ul>          
+          <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div> 
+          <ul class="nav nav-list" id="friendsList">
+            <li><small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
+          </ul> 
         </div>
       </div>
       <div class="row">
@@ -502,6 +512,7 @@ if(isSet($_GET['lang'])){
           <small><a href="#create_group_modal" class="link" data-toggle="modal"><i class="icon-plus-sign"></i><? echo $creategroup; ?></a></small>
           <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           <ul class="nav nav-list" id="groupsList">
+          <li><small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
           </ul>         
         </div>
       </div>
@@ -511,6 +522,7 @@ if(isSet($_GET['lang'])){
     <div class="span9">
       <div class="row-fluid">
         <div class="span12" id="comparison">
+          <h2><?php echo $dashboard_overview; ?></h2>
           <div id="chart_div" style="width: 700px; height: 400px;">   
             <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
           </div>
@@ -521,6 +533,7 @@ if(isSet($_GET['lang'])){
     <div class="row-fluid">
         <div class="span12" id="tracks-span">
           <h2><?php echo $dashboard_my_tracks; ?></h2>
+          <small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small>
           <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           <div id="tracks">
           </div>

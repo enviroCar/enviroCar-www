@@ -3,7 +3,7 @@ function submitForm(){
   changeData = getFormData($('#reset-password-form'));
   $.post('./assets/includes/users.php?resetPassword', changeData, function(response){
     r = response;
-    if(JSON.parse(r).status >= 400 >= 400){
+    if(JSON.parse(r).status != 204){
       $('#password-reset-error').show();
       $('#password-reset-error').text(JSON.parse(JSON.parse(r).response).errors[0]);
     }else{
