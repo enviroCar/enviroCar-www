@@ -163,3 +163,14 @@ function echoActiveClassIfRequestMatches($requestUri)
       <a class="close" data-dismiss="alert">×</a>  
       <h4 class="alert-heading">Error</h4>  
     </div> 
+
+<?
+if(isset($_GET['lost_password_access_denied'])){
+?>
+  <div class="container alert alert-block alert-error fade in"> 
+  <a class="close" data-dismiss="alert">×</a> 
+  <? echo $index_lost_password_access_denied; ?>
+  </div> 
+<?
+}
+?>
