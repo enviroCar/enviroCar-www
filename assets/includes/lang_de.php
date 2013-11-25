@@ -85,6 +85,7 @@ $dashboard_activities_of="Aktivitäten von ";
 $dashboard_my_tracks="Meine Fahrten";
 $dashboard_number_of_tracks="Anzahl der Tracks";
 $dashboard_show_all="Zeige alle";
+$dashboard_track_number_tooltip="Die erste Zahl gibt an wieviele Tracks du bisher hochgeladen hast während die Zahl in den Klammern die Gesamtanzahl der Tracks auf enviroCar.org angibt.";
 
 //accept terms
 $please_accept_terms = 'Bitte lesen und akzeptieren Sie die aktuellen <a href="./terms.php">Nutzungsbedingungen</a>.';

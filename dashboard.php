@@ -47,7 +47,7 @@ if(isSet($_GET['lang'])){
     function addOverallStatistics(name, value){
   
 		$.get('assets/includes/tracks.php', function(data) {
-			 $('#overallStatistics').append('<li><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
+			 $('#overallStatistics').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" data-original-title="<?php echo $dashboard_track_number_tooltip; ?>"><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
 			
 		});  
 
@@ -253,7 +253,7 @@ if(isSet($_GET['lang'])){
           }else{
 		        data = JSON.parse(data);
             if(data.users.length > 0 ){
-		        	for(i = 0; i < Math.min(data.users.length, 10); i++){
+		        	for(i = 0; i < data.users.length; i++){
 		            	addFriendToList(data.users[i].name);
 		          	}
 		        }else{
@@ -306,7 +306,7 @@ if(isSet($_GET['lang'])){
       		}else{
 		        data = JSON.parse(data);
 		        if(data.groups.length > 0 ){
-		        	for(i = 0; i < Math.min(data.groups.length, 5); i++){
+		        	for(i = 0; i < data.groups.length; i++){
 		            	addGroupToList(data.groups[i].name);
 		          	}
 		        }
