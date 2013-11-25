@@ -63,7 +63,7 @@ include('header.php');
                 <a id="change-sensor-consumption" ><?php echo $route_dropup_fuelConsumption; ?></a>
               </li>
               <li>
-                <a id="change-sensor-rpm">U/min</a>
+                <a id="change-sensor-rpm"><?php echo $route_dropup_rpm; ?></a>
               </li>
               <li>
                 <a id="change-sensor-speed"><?php echo $route_dropup_speed; ?></a>

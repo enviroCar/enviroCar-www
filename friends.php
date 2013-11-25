@@ -89,7 +89,7 @@ include('header.php');
               }else if(activity.type == "CREATED_GROUP"){
                 if(activity.group) addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+"<? echo $createdGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "FRIENDED_USER"){
-                addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
+                if(activity.hasOwnProperty("other")) addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_TRACK"){
                 if(typeof activity.track != 'undefined') addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
               }else if(activity.type == "LEFT_GROUP"){
@@ -104,6 +104,7 @@ include('header.php');
         }else{
           $('#friendActivities').append("<? echo $norecentactivities ?>");
         }
+        $('#loadingIndicator_activities').hide();
       }
       $('#loadingIndicator_activities').hide();
     });
@@ -134,27 +135,28 @@ function convertToLocalTime(serverDate) {
     }
   	</script>
 	
-		<div class="container rightband">
-			<div style="float:right"> 
-				<label for="searchfriends"><? echo $searchfriends ?></label>
-				<input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
-			</div>
-			<div style="clear: all">
-			</div>
-			<div class="span5">
-				<h2> <? echo $friends ?></h2>
-				<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
-				</div>
-				<ul id="friendsList" style="max-height: 400px; overflow-y: auto;">	
-				</ul>          
-			</div>
-			<div class="span4">
-				<h2><?php echo $dashboard_friend_activities; ?></h2>
-                <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
-                </div>
-				<ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">       
-				</ul>
-			</div>
+		<div class="container leftband">
+			<div class="row">
+        <div class="span12">
+				  <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
+			  </div>
+      </div>
+      <div class="row"> 
+  			<div class="span5">
+  				<h2> <? echo $friends ?></h2>
+  				<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
+  				</div>
+  				<ul id="friendsList" style="max-height: 400px; overflow-y: auto;">	
+  				</ul>          
+  			</div>
+  			<div class="span6">
+  				<h2><?php echo $dashboard_friend_activities; ?></h2>
+                  <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
+                  </div>
+  				<ul id="friendActivities" style="margin-bottom: 10px; max-height: 400px; overflow-y:auto">       
+  				</ul>
+  			</div>
+      </div>
 		</div>
 <?
 include('footer.php');

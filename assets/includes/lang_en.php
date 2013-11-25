@@ -296,7 +296,7 @@ $deletegroup ="Delete Group";
 $deletedgroup = "Deleted the Group";
 $deletegroupsuccess = "Group successfully deleted";
 $creategroup = "Create Group";
-$searchgroups = "Search Groups";
+$searchgroups = "Search for Groups";
 $groupname = "Group name";
 $groupdescription = "Description";
 
@@ -624,6 +624,7 @@ $route_legend="Legend";
 $route_legend_title = "Showing ";
 $route_dropup_fuelConsumption = "Consumption";
 $route_dropup_speed = "Speed";
+$route_dropup_rpm = "RPM";
 $route_dropup_intake_temp = "Intake Air Temperature";
 $route_dropup_intake_pressure = "Intake Pressure";
 $route_dropup_co2 = "CO<sub>2</sub>";

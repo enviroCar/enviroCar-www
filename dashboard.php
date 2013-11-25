@@ -47,7 +47,6 @@ if(isSet($_GET['lang'])){
     function addOverallStatistics(name, value){
   
 		$.get('assets/includes/tracks.php', function(data) {
-						
 			 $('#overallStatistics').append('<li><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
 			
 		});  
@@ -174,12 +173,12 @@ if(isSet($_GET['lang'])){
         currentPage: 1,
         totalPages: Math.ceil(numberOfTracks/5),
         pageUrl: function(type, page, current){
-          $('#tracks-list').empty();
-
           return null;
 
         },
         onPageClicked: function(e,originalEvent,type,page){
+          $('#tracks-list').empty();
+          $('#loadingIndicator_tracks').show();
           originalEvent.preventDefault();
           originalEvent.stopPropagation();
 
@@ -254,7 +253,7 @@ if(isSet($_GET['lang'])){
           }else{
 		        data = JSON.parse(data);
             if(data.users.length > 0 ){
-		        	for(i = 0; i < data.users.length; i++){
+		        	for(i = 0; i < Math.min(data.users.length, 10); i++){
 		            	addFriendToList(data.users[i].name);
 		          	}
 		        }else{
@@ -307,7 +306,7 @@ if(isSet($_GET['lang'])){
       		}else{
 		        data = JSON.parse(data);
 		        if(data.groups.length > 0 ){
-		        	for(i = 0; i < data.groups.length; i++){
+		        	for(i = 0; i < Math.min(data.groups.length, 5); i++){
 		            	addGroupToList(data.groups[i].name);
 		          	}
 		        }
@@ -543,7 +542,7 @@ if(isSet($_GET['lang'])){
           <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
           <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div> 
           <ul class="nav nav-list" id="friendsList">
-            <li><small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
+            <li><small><a href="friends.php"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
           </ul> 
         </div>
       </div>
@@ -554,7 +553,7 @@ if(isSet($_GET['lang'])){
           <small><a href="#create_group_modal" class="link" data-toggle="modal"><i class="icon-plus-sign"></i><? echo $creategroup; ?></a></small>
           <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           <ul class="nav nav-list" id="groupsList">
-          <li><small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
+          <li><small><a href="groups.php"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
           </ul>         
         </div>
       </div>
@@ -566,22 +565,24 @@ if(isSet($_GET['lang'])){
         <div class="span12" id="comparison">
           <h2><?php echo $dashboard_overview; ?></h2>
           <div id="chart_div" style="width: 700px; height: 400px;">   
-            <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
+            <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none"></div>
           </div>
         </div>
         <hr class="featurette-divider">
       </div>
-    </div>
+    
     <div class="row-fluid">
         <div class="span12" id="tracks-span">
           <h2><?php echo $dashboard_my_tracks; ?></h2>
-          <small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small>
-          <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           <div id="tracks-pagination"></div>
-          <div id="tracks-list" class="span12"></div>
+          <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+          <div id="tracks-list" class="span12">
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  
   </div>
 
 
