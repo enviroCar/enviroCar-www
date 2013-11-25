@@ -1,4 +1,18 @@
-.row-narrow {
+.row-narrow, #tracks-list {
 	margin-left: 0px;
 	padding: 0px;
+}
+
+li > a {
+	cursor: pointer;
+  	cursor: hand;
+}
+
+#comparison {
+	padding-bottom: 0px;
+}
+
+.featurette-divider {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

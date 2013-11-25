@@ -47,8 +47,7 @@ if(isSet($_GET['lang'])){
     function addOverallStatistics(name, value){
   
 		$.get('assets/includes/tracks.php', function(data) {
-						
-			 $('#overallStatistics').append('<li><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
+			 $('#overallStatistics').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" data-original-title="<?php echo $dashboard_track_number_tooltip; ?>"><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
 			
 		});  
 
@@ -59,13 +58,13 @@ if(isSet($_GET['lang'])){
     }    
     
     function addTrack(name, id){
-      $('#tracks').append(
-        '<div class="row row-narrow well">'
-          +'<div class="span6">'
-            +'<a href="route.php?id='+id+'"><img src="http://giv-dueren.uni-muenster.de/assets/trips/109.png" style="height: 120px; margin-right: 10px; "/></a>'
+      $('#tracks-list').append(
+        '<div class="row row-narrow">'
+          +'<div class="span3">'
+            +'<a href="route.php?id='+id+'"><img src="http://giv-dueren.uni-muenster.de/assets/trips/109.png" style="height: 60px; margin-right: 10px; "/></a>'
           +'</div>'
-          +'<div class="span6">'
-            +'<h3><a href="route.php?id='+id+'">'+name+'</a></h3>'
+          +'<div class="span9">'
+            +'<a href="route.php?id='+id+'">'+name+'</a>'
           +'</div>'
         +'</div>');
     }
@@ -160,12 +159,54 @@ if(isSet($_GET['lang'])){
           if(data.tracks != null){
             numberofTracks = data.tracks.length;
             addOverallStatistics("Tracks", numberofTracks);
+            addPaginationToTracks(numberofTracks, data);
+            data.tracks = data.tracks.slice(0,5);
             addTracks(data);
           }
 
       }    		
       $('#loadingIndicator_tracks').hide();
     });
+
+    function addPaginationToTracks(numberOfTracks){
+      var options = {
+        currentPage: 1,
+        totalPages: Math.ceil(numberOfTracks/5),
+        pageUrl: function(type, page, current){
+          return null;
+
+        },
+        onPageClicked: function(e,originalEvent,type,page){
+          $('#tracks-list').empty();
+          $('#loadingIndicator_tracks').show();
+          originalEvent.preventDefault();
+          originalEvent.stopPropagation();
+
+          $.get('./assets/includes/users.php?tracks-page=' + page, function(data) {
+            if(data >= 400){
+              console.log(data);
+              if(data == 400){
+                  error_msg("<? echo $routeError ?>");
+              }else if(data == 401 || data == 403){
+                error_msg("<? echo $routeNotAllowed ?>")
+              }else if(data == 404){
+                error_msg("<? echo $routeNotFound ?>")
+              }
+            }else{
+                data = JSON.parse(data);
+                if(data.tracks != null){
+                  addTracks(data);
+                }
+
+            }       
+            $('#loadingIndicator_tracks').hide();
+          });
+        }
+      }
+
+      $('#tracks-pagination').bootstrapPaginator(options);
+    }
+    
 
     function convertToLocalTime(serverDate) {
       var dt = new Date(Date.parse(serverDate));
@@ -501,7 +542,7 @@ if(isSet($_GET['lang'])){
           <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
           <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div> 
           <ul class="nav nav-list" id="friendsList">
-            <li><small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
+            <li><small><a href="friends.php"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
           </ul> 
         </div>
       </div>
@@ -512,7 +553,7 @@ if(isSet($_GET['lang'])){
           <small><a href="#create_group_modal" class="link" data-toggle="modal"><i class="icon-plus-sign"></i><? echo $creategroup; ?></a></small>
           <div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
           <ul class="nav nav-list" id="groupsList">
-          <li><small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
+          <li><small><a href="groups.php"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small></li> 
           </ul>         
         </div>
       </div>
@@ -524,22 +565,24 @@ if(isSet($_GET['lang'])){
         <div class="span12" id="comparison">
           <h2><?php echo $dashboard_overview; ?></h2>
           <div id="chart_div" style="width: 700px; height: 400px;">   
-            <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
+            <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none"></div>
           </div>
         </div>
         <hr class="featurette-divider">
       </div>
-    </div>
+    
     <div class="row-fluid">
         <div class="span12" id="tracks-span">
           <h2><?php echo $dashboard_my_tracks; ?></h2>
-          <small><a href="#"><i class="icon-plus-sign"></i><?php echo $dashboard_show_all; ?></a></small>
+          <div id="tracks-pagination"></div>
           <div id="loadingIndicator_tracks" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
-          <div id="tracks">
+          <div id="tracks-list" class="span12">
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
   </div>
 
 
@@ -576,7 +619,11 @@ if(isSet($_GET['lang'])){
     <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
  
    <script type="text/javascript">
-       var friend = "<? echo $user?>";
+
+      
+
+
+      var friend = "<? echo $user?>";
       var values = [];
       var values2 = [];
       var count=0;

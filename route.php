@@ -6,6 +6,9 @@ include('header.php');
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 
+<link href="./assets/css/jquery.share.css" rel="stylesheet">
+<script src="./assets/js/jquery.share.js" type="text/javascript"></script>
+
 
 <div class="container leftband" id="route-information-container">
   <div class="row-fluid" >
@@ -20,7 +23,7 @@ include('header.php');
         <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
-    <div class="share-buttons"></div>
+    <div id="share-buttons" class="share-buttons"></div>
   </div>
 </div>
 
@@ -60,7 +63,7 @@ include('header.php');
                 <a id="change-sensor-consumption" ><?php echo $route_dropup_fuelConsumption; ?></a>
               </li>
               <li>
-                <a id="change-sensor-rpm">U/min</a>
+                <a id="change-sensor-rpm"><?php echo $route_dropup_rpm; ?></a>
               </li>
               <li>
                 <a id="change-sensor-speed"><?php echo $route_dropup_speed; ?></a>
@@ -179,10 +182,11 @@ include('header.php');
 
 </div>
 <script type="text/javascript">
-  $('.share-buttons').share({
-    url: window.location.href,
-    text: 'Check out my awesome track on enviroCar!'
-  });
+  $('#share-buttons').share({
+        networks: ['googleplus','facebook','twitter'],
+        theme: 'square'
+    });
+
 
   var popup;
   var lengthOfTrack;

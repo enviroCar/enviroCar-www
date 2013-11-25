@@ -85,6 +85,7 @@ $dashboard_activities_of="Aktivitäten von ";
 $dashboard_my_tracks="Meine Fahrten";
 $dashboard_number_of_tracks="Anzahl der Tracks";
 $dashboard_show_all="Zeige alle";
+$dashboard_track_number_tooltip="Die erste Zahl gibt an wieviele Tracks du bisher hochgeladen hast während die Zahl in den Klammern die Gesamtanzahl der Tracks auf enviroCar.org angibt.";
 
 //accept terms
 $please_accept_terms = 'Bitte lesen und akzeptieren Sie die aktuellen <a href="./terms.php">Nutzungsbedingungen</a>.';
@@ -301,7 +302,7 @@ $deletegroup ="Gruppe löschen";
 $deletedgroup = "Gruppe gelöscht";
 $deletegroupsuccess = "Gruppe erfolgreich gelöscht";
 $creategroup = "Gruppe erstellen";
-$searchgroups = "Gruppen suchen";
+$searchgroups = "Suche nach Gruppen";
 $groupname = "Gruppenname";
 $groupdescription = "Beschreibung";
 
@@ -645,6 +646,7 @@ $route_dropup_intake_pressure = "Luftansaugdruck";
 $route_dropup_co2 = "CO<sub>2</sub>";
 $route_dropup_maf = "MAF";
 $route_dropup_speed = "Geschwindigkeit";
+$route_dropup_rpm = "U/min";
 $route_requestFuelPriceStart = "Frage aktuelle Benzinpreise ab...";
 $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";

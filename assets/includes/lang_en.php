@@ -83,6 +83,7 @@ $dashboard_activities_of="Activities of ";
 $dashboard_my_tracks="My Tracks";
 $dashboard_number_of_tracks="Number of Tracks";
 $dashboard_show_all="Show all";
+$dashboard_track_number_tooltip="The first number shows how many tracks you have uploaded while the second number shows how many tracks have been uploaded by all users.";
 //accept terms
 $please_accept_terms = 'Please read and accept the current <a href="./terms.php">Terms of Use</a>.';
 $confirm_accept_terms = 'I accept.';
@@ -296,7 +297,7 @@ $deletegroup ="Delete Group";
 $deletedgroup = "Deleted the Group";
 $deletegroupsuccess = "Group successfully deleted";
 $creategroup = "Create Group";
-$searchgroups = "Search Groups";
+$searchgroups = "Search for Groups";
 $groupname = "Group name";
 $groupdescription = "Description";
 
@@ -626,6 +627,7 @@ $route_legend="Legend";
 $route_legend_title = "Showing ";
 $route_dropup_fuelConsumption = "Consumption";
 $route_dropup_speed = "Speed";
+$route_dropup_rpm = "RPM";
 $route_dropup_intake_temp = "Intake Air Temperature";
 $route_dropup_intake_pressure = "Intake Pressure";
 $route_dropup_co2 = "CO<sub>2</sub>";
