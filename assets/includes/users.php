@@ -116,6 +116,15 @@ if(isset($_GET['tracks'])){
 	}
 }
 
+if(isset($_GET['tracks-page'])){
+	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks'.'?limit=5&page='.rawurlencode($_GET['tracks-page']), true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 if(isset($_GET['track'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks/'.rawurlencode($_GET['track']), true);
 	if($response['status'] == 200){
