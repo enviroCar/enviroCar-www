@@ -2,7 +2,7 @@
 require_once('connection.php');
 
 
-$baseURL = $serverurl; //as defined in connection.php
+$baseURL = get_serverurl(); //as defined in config.php
 //USAGE: Just call this page via GET with the specific parameters:
 // users.php?user=username
 // users.php?friends

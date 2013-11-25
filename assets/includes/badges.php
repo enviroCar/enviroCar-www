@@ -58,7 +58,7 @@ $badges_json = '{
 
 
 
-$baseURL = $serverurl; //as defined in connection.php
+$baseURL = get_serverurl(); //as defined in connection.php
 
 
 if(isset($_GET['badges'])){

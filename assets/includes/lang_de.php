@@ -239,7 +239,7 @@ $signedin = "Angemeldet";
 
 $logoutsuccess = "Erfolgreich abgemeldet";
 $currentlynotloggedin = "Du bist derzeit nicht angemeldet.";
-$welcometoex = "Willkommen bei enviroCar";
+$welcometoec = "Willkommen bei enviroCar";
 $regsuccessfull = "Du hast dich erfolgreich registriert.";
 $logincontinue = "Melde dich an um fortzufahren.";
 $accountdeleted = "Zugang gelöscht";
