@@ -1251,7 +1251,7 @@ var searchResult;
             }
         });
 
-        this._toolBar.style.display = "none";
+        //this._toolBar.style.display = "none";
 
         this.bounds = { x1: 0, y1: 0, x2: this.canvas.width, y2: this.canvas.height };
 
