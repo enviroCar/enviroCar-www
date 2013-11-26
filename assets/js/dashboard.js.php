@@ -277,11 +277,10 @@
     else{
       data = JSON.parse(data);
       if(data.users.length > 0 ){
-        for(i = 0; i < data.users.length; i++){
+        for(i = 0; i < Math.min(10,data.users.length); i++){
           addFriendToList(data.users[i].name);
         }
-      }
-      else{
+      }else{
         $('#friendsList').html("<? echo $madeNoFriends ?>");
       }
     }
@@ -340,9 +339,11 @@
     else{
       data = JSON.parse(data);
       if(data.groups.length > 0 ){
-        for(i = 0; i < data.groups.length; i++){
+        for(i = 0; i < Math.min(5,data.groups.length); i++){
           addGroupToList(data.groups[i].name);
         }
+      }else{
+        $('#groupsList').html("<? echo $hasNoGroups ?>");
       }
     }
   }

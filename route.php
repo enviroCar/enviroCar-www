@@ -21,7 +21,7 @@ include('header.php');
         <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
-    <div class="onoffswitch">
+    <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
       <label class="onoffswitch-label" for="share-switch">
         <div class="onoffswitch-inner">
@@ -57,9 +57,9 @@ include('header.php');
           <ul class="dropdown-menu">
               <li id="download-geojson">
               </li>
-              <li>
+              <!--<li>
                 <a id="download-shape">Shape (*.shp)</a>
-              </li>
+              </li> -->
           </ul>
         </div>
         <div class="btn btn-group dropup">

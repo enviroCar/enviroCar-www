@@ -7,7 +7,7 @@ function toggleSharing(){
 			addShareButtons();
 		});
 	}else{
-		$('#share-buttons').html("<a class='pop share-square share-square-googleplus-disabled'></a><a class='pop share-square share-square-facebook-disabled'></a><a class='pop share-square share-square-twitter-disabled'></a>");
+		$('#share-switch').prop('checked', true);
 	}
 }	
 
@@ -18,5 +18,9 @@ function addShareButtons(){
     });
 }
 
-
+$(function(){
+    $('body').tooltip({
+      selector: '[rel=tooltip]'
+    });
+  });
 </script>
