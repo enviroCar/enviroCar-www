@@ -5,9 +5,7 @@ include('header.php');
 <script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>  
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
-
 <link href="./assets/css/jquery.share.css" rel="stylesheet">
-<script src="./assets/js/jquery.share.js" type="text/javascript"></script>
 
 
 <div class="container leftband" id="route-information-container">
@@ -23,7 +21,18 @@ include('header.php');
         <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
-    <div id="share-buttons" class="share-buttons"></div>
+    <div class="onoffswitch">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
+      <label class="onoffswitch-label" for="share-switch">
+        <div class="onoffswitch-inner">
+          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php echo $route_sharing_on; ?></div></div>
+          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php echo $route_sharing_off; ?></div></div>
+        </div>
+      </label>
+    </div>
+    <div id="share-buttons" class="share-buttons">
+      <a class='pop share-square share-square-googleplus-disabled'></a><a class='pop share-square share-square-facebook-disabled'></a><a class='pop share-square share-square-twitter-disabled'></a>
+    </div>
   </div>
 </div>
 
@@ -182,10 +191,7 @@ include('header.php');
 
 </div>
 <script type="text/javascript">
-  $('#share-buttons').share({
-        networks: ['googleplus','facebook','twitter'],
-        theme: 'square'
-    });
+  
 
 
   var popup;

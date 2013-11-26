@@ -1,3 +1,4 @@
+<script type="text/javascript">
 function submitForm(user, email){
   changeData = new Object();
   changeData.user = user;
@@ -25,3 +26,4 @@ function getFormData($form){
     });
     return indexed_array;
   }
+  </script>

@@ -1,3 +1,4 @@
+<script type="text/javascript">
 function submitForm(){
 
   changeData = getFormData($('#reset-password-form'));
@@ -23,3 +24,4 @@ function getFormData($form){
     });
     return indexed_array;
   }
+  </script>

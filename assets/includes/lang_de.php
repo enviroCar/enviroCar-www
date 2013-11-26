@@ -650,6 +650,8 @@ $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
 $route_fullscreen = "Vollbild";
 $route_minimize = "Verkleinern";
+$route_sharing_on="AN";
+$route_sharing_off="AUS";
 //terms
 $terms_general = '<h2 class="featurette-heading">Nutzungsbedingungen</h2>
 <p style="text-align: justify">

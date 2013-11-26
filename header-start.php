@@ -65,10 +65,10 @@ if ($login_name != "" && $login_password != ""){
     
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-      $jsfile = "./assets/js/$current_file_name.js";
+      $jsfile = "./assets/js/$current_file_name.js.php";
 
       if (file_exists($jsfile)) {
-          echo "<script src='$jsfile'></script>";
+          include $jsfile;
       }
     ?>
     

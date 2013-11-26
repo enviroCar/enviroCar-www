@@ -635,6 +635,8 @@ $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
 $route_fullscreen = "Fullscreen";
 $route_minimize = "Minimize";
+$route_sharing_on="ON";
+$route_sharing_off="OFF";
 
 //terms
 $terms_general = '<h2 class="featurette-heading">Terms of Use</h2>
