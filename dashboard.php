@@ -76,7 +76,7 @@ if(isSet($_GET['lang'])){
             	addTrack(track.name, track.id);
             }
         }else{
-          $('#tracks').append("<? echo $noroutesavailable ?>");
+          $('#tracks-list').append("<? echo $noroutesavailable ?>");
         }
     }
 
@@ -159,8 +159,10 @@ if(isSet($_GET['lang'])){
           if(data.tracks != null){
             numberofTracks = data.tracks.length;
             addOverallStatistics("Tracks", numberofTracks);
-            addPaginationToTracks(numberofTracks, data);
-            data.tracks = data.tracks.slice(0,5);
+            if(data.tracks.length > 5){
+              addPaginationToTracks(numberofTracks, data);
+              data.tracks = data.tracks.slice(0,5);
+            }
             addTracks(data);
           }
 
