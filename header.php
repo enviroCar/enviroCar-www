@@ -1,6 +1,22 @@
-<?
+<?php
 require_once('./assets/includes/authentification.php');
 require_once('./assets/includes/language.php');
+require_once('assets/includes/connection.php');
+
+$loggedInUser = $_SESSION["name"];
+$user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
+
+//language
+$lang = 'en';
+if(isSet($_GET['lang'])){
+  $lang = $_GET['lang'];
+}else if(isSet($_SESSION['lang'])){
+  $lang = $_SESSION['lang'];
+}else if(isSet($_COOKIE['lang'])){
+  $lang = $_COOKIE['lang'];
+}else{
+  $lang = 'en';
+}
 
 // If you try to open a page, but are not logged in, you will be forwarded to the index.php.
 // a forwarding referer will be added to the request string, enabling a redirection to the target you requested after logging in.
@@ -13,8 +29,7 @@ if(isset($_POST["fwdref"])){
  header('Location: '.$_POST["fwdref"]);
 }
 
-function echoActiveClassIfRequestMatches($requestUri)
-{
+function echoActiveClassIfRequestMatches($requestUri){
     $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
 
     if ($current_file_name == $requestUri)
@@ -55,10 +70,10 @@ function echoActiveClassIfRequestMatches($requestUri)
     
     <?php 
       $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-      $jsfile = "./assets/js/$current_file_name.js";
+      $jsfile = "./assets/js/$current_file_name.js.php";
 
       if (file_exists($jsfile)) {
-          echo "<script type='text/javascript' src='$jsfile'></script>";
+          include $jsfile;
       }
     ?>
     
@@ -153,23 +168,14 @@ function echoActiveClassIfRequestMatches($requestUri)
     </div>
   </div> <!-- Navbar -->
 
-<!--    <div id="settings" class="settings">
-      <h4><a style="padding-left:15px;" href="profile.php?user=<?echo $_SESSION['name']?> "><? echo $profile ?> </a></h4><br>
-      <h4><a style="padding-left:15px;" href="./assets/includes/authentification?logout"><? echo $logout ?></a></h4>
-    </div>-->
+  <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+    <a class="close" data-dismiss="alert">×</a>  
+    <h4 class="alert-heading">Error</h4>  
+  </div> 
 
-    <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
-      <a class="close" data-dismiss="alert">×</a>  
-      <h4 class="alert-heading">Error</h4>  
-    </div> 
-
-<?
-if(isset($_GET['lost_password_access_denied'])){
-?>
+<?php if(isset($_GET['lost_password_access_denied'])){ ?>
   <div class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a> 
   <? echo $index_lost_password_access_denied; ?>
   </div> 
-<?
-}
-?>
+<?php } ?>

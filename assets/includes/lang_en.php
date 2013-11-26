@@ -235,7 +235,7 @@ $signedin = "Signed in";
 
 $logoutsuccess = "Successfully logged out";
 $currentlynotloggedin = "You are currently not logged in.";
-$welcometoex = "Welcome to enviroCar";
+$welcometoec = "Welcome to enviroCar";
 $regsuccessfull = "Your registration was successful.";
 $logincontinue = "Please login to continue.";
 $accountdeleted = "Account deleted.";
@@ -637,6 +637,8 @@ $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
 $route_fullscreen = "Fullscreen";
 $route_minimize = "Minimize";
+$route_sharing_on="ON";
+$route_sharing_off="OFF";
 
 //terms
 $terms_general = '<h2>Terms of Use</h2>

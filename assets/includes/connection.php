@@ -1,4 +1,27 @@
 <?
+require_once('config.php');
+
+function get_serverurl()
+{
+  global $serverurl;
+  return $serverurl;
+}
+
+function get_wps_tracks()
+{
+  global $wps_tracks;
+  return $wps_tracks;
+}
+
+function get_wps_fuel_price()
+{
+  global $wps_fuel_price;
+  return $wps_fuel_price;
+}
+
+
+
+
 if (!isset($_SESSION)) session_start();
 
 /*Example Usage:
@@ -8,9 +31,6 @@ echo get_request($uri, true);
 echo '<br>';
 echo get_request('example.com:80/api/stable/users/', false);
 */
-
-$serverurl = "https://envirocar.org/api/stable";
-$chainfile = "wwuca_chain.pem";
 
 
 function get_request($uri, $isAuthRequired){

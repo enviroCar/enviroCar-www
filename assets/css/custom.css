@@ -274,6 +274,9 @@ line-height: 8px!important;
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */
+.nav-collapse .dropdown-menu a:link {
+	color: black;
+}
 
 .btn:focus {
 	outline: 0px;
@@ -288,7 +291,7 @@ line-height: 8px!important;
 
 
 @media (min-width: 980px) {
-    .nav-collapse .dropdown-menu a:link, #register-btn, #lost-password-link {
+    #register-btn, #lost-password-link {
 		color: #0088CC;
 	}
 }

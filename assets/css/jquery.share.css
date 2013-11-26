@@ -120,7 +120,7 @@
 .share-square-facebook {
     background-position: -384px -44px;
 }
-.share-square-facebook:hover {
+.share-square-facebook:hover, .share-square-facebook-disabled {
     background-position: -384px -77px;
 }
 .share-square-flickr {
@@ -138,7 +138,7 @@
 .share-square-googleplus {
     background-position: -288px -44px;
 }
-.share-square-googleplus:hover {
+.share-square-googleplus:hover, .share-square-googleplus-disabled {
     background-position: -288px -77px;
 }
 .share-square-in1 {
@@ -198,7 +198,7 @@
 .share-square-twitter {
     background-position: -64px -44px;
 }
-.share-square-twitter:hover {
+.share-square-twitter:hover, .share-square-twitter-disabled {
     background-position: -64px -77px;
 }
 .share-square-vimeo {

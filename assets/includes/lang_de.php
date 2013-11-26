@@ -239,7 +239,7 @@ $signedin = "Angemeldet";
 
 $logoutsuccess = "Erfolgreich abgemeldet";
 $currentlynotloggedin = "Du bist derzeit nicht angemeldet.";
-$welcometoex = "Willkommen bei enviroCar";
+$welcometoec = "Willkommen bei enviroCar";
 $regsuccessfull = "Du hast dich erfolgreich registriert.";
 $logincontinue = "Melde dich an um fortzufahren.";
 $accountdeleted = "Zugang gelöscht";
@@ -652,6 +652,8 @@ $route_drivenRoute = "Gefahrene Strecke";
 $route_baseLayer = "Basis Karte";
 $route_fullscreen = "Vollbild";
 $route_minimize = "Verkleinern";
+$route_sharing_on="AN";
+$route_sharing_off="AUS";
 //terms
 $terms_general = '<h2>Nutzungsbedingungen</h2>
 <p style="text-align: justify">
