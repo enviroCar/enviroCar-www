@@ -18,6 +18,11 @@ $serverurl	= "https://envirocar.org/api/stable";
 $serverurl_dev 	= "https://envirocar.org/api/dev";
 $chainfile = "wwuca_chain.pem";
 
+//Find out if stable or dev should be used
+if(strpos($_SERVER['REQUEST_URI'], 'dev')){
+	$serverurl = $serverurl_dev;
+}
+
 
 //WPS url variables
 $wps_fuel_price =  "http://geoprocessing.demo.52north.org:8080/wps/WebProcessingService?Service=WPS&Request=Execute&Version=1.0.0&Identifier=org.n52.wps.extension.GetFuelPriceProcess&RawDataOutput=fuelPrice&DataInputs=fuelType=";
