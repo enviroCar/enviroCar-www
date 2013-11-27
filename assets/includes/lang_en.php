@@ -372,7 +372,8 @@ $registrationNotAllowed = "Your email address is not registered for our beta-pha
 $registrationInvalid = "Your inputs are not valid. Please check the form field and try again.";
 
 $noFriendsYet = "hasn't added you as a friend yet.";
-$madeNoFriends ="You haven't made any friends yet. You can search for friends in the search-field in the upper right corner.";
+$madeNoFriends ="You haven't made any friends yet. You can search for friends in the search-field above.";
+$hasNoGroups = "You are not member of any group. You can create a group or search for groups.";
 
 $changeprofile = "Change Profile";
 $email = "e-mail";
@@ -639,6 +640,7 @@ $route_fullscreen = "Fullscreen";
 $route_minimize = "Minimize";
 $route_sharing_on="ON";
 $route_sharing_off="OFF";
+$route_sharing_info="Two clicks for more privacy.  Activating the buttons already sends data to Google/Facebook/Twitter.";
 
 //terms
 $terms_general = '<h2>Terms of Use</h2>

@@ -27,7 +27,7 @@ Project Structure
 * /assets
   * /includes (server-side code, responsible for RESTful connection as well as login- and language sessions)
   * /css (Twitter Bootstrap and custom CSS files
-  * /js (javascript of libraries)
+  * /js (javascript files)
   * /font (used fonts)
   * /ico (favicon for the browser)
   * /OpenLayers (map library library)
@@ -55,4 +55,10 @@ The selection of the language uses the browser's language and can be overridden 
 
 ### Styles and CSS
 
-Currently all our custom CSS goes either into the file ``assets/css/custom.css`` or into .php files, which is on our radar to be improved.
+All custom CSS should be put into separate file and not inside the .php files. For a page example.php create a file /assets/css/example.css, it will automatically be loaded with the example.php page. Application-wide CSS styles can be put into /assets/css/custom.css.
+
+### Javascript
+Custom Javascript code belongs in separate files as well. For a page example.php create a file /assets/js/example.js.php, it will automatically be loaded with the example.php page. The .php extension is needed for inline php code.
+
+### Config File
+All global variables such as server urls should be saved in /assets/includes/config.php. If you want to use those variables the config.php needs to be included using require_once. A get method is also required. See the config.php or http://www.ibm.com/developerworks/library/os-php-config/ for additional information.

@@ -147,9 +147,9 @@ img.olTileImage {
 
 .onoffswitch {
   position: absolute;
-  right: 10px;
+  right: 12px;
   bottom: 45px; 
-  width: 106px;
+  width: 104px;
   -webkit-user-select:none; 
   -moz-user-select:none; 
   -ms-user-select: none;

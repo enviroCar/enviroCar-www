@@ -375,7 +375,8 @@ $registrationInvalid = "Deine Eingaben waren nicht valide. Bitte überprüfe die
 
 $noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
 
-$madeNoFriends = "Du hast noch keine Personen als Freunde hinzugefügt. Verwende das Eingabefeld in der rechten, oberen Ecke um nach Personen zu suchen.";
+$madeNoFriends = "Du hast noch keine Personen als Freunde hinzugefügt. Verwende das obige Eingabefeld, um nach Personen zu suchen.";
+$hasNoGroups = "Du bist in keiner Gruppe Mitglied. Du kannst eine neue Gruppe erstellen oder nach Gruppen suchen.";
 
 $fuelType = "Treibstoff";
 $constructionYear ="Baujahr";
@@ -654,6 +655,7 @@ $route_fullscreen = "Vollbild";
 $route_minimize = "Verkleinern";
 $route_sharing_on="AN";
 $route_sharing_off="AUS";
+$route_sharing_info="Zwei Klicks für mehr Privatsphäre. Alleine das Anzeigen der Share-Icons sendet Daten an Google/Facebook/Twitter.";
 //terms
 $terms_general = '<h2>Nutzungsbedingungen</h2>
 <p style="text-align: justify">

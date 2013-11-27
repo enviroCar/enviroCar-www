@@ -68,7 +68,7 @@
     }
   }
   
-  $.get('./assets/includes/users.php?userActivities', function(data) {
+  /* $.get('./assets/includes/users.php?userActivities', function(data) {
     if(data >= 400){
       console.log(data);
       if(data == 400){
@@ -118,6 +118,7 @@
     }
   }
        );
+*/
   
   $.get('./assets/includes/users.php?userStatistics', function(data) {
     if(data >= 400){
@@ -147,7 +148,26 @@
     }
     $('#loadingIndicator_overview').hide();
   }
-       );
+);
+
+  $.get('./assets/includes/users.php?track-number-user', function(data) {
+    if(data >= 400){
+      console.log(data);
+      if(data == 400){
+        error_msg("<? echo $routeError ?>");
+      }
+      else if(data == 401 || data == 403){
+        error_msg("<? echo $routeNotAllowed ?>")
+      }
+      else if(data == 404){
+        error_msg("<? echo $routeNotFound ?>")
+      }
+    }
+    else{
+      addOverallStatistics("Tracks", data);
+    }
+    }
+  );
   
   $.get('./assets/includes/users.php?tracks', function(data) {
     if(data >= 400){
@@ -166,7 +186,6 @@
       data = JSON.parse(data);
       if(data.tracks != null){
         numberofTracks = data.tracks.length;
-        addOverallStatistics("Tracks", numberofTracks);
         if(data.tracks.length > 5){
           addPaginationToTracks(numberofTracks, data);
           data.tracks = data.tracks.slice(0,5);
@@ -212,13 +231,11 @@
             data = JSON.parse(data);
             if(data.tracks != null){
               addTracks(data);
-            }
-            
+            }  
           }
-          
           $('#loadingIndicator_tracks').hide();
-        }
-             );
+          }
+        );
       }
     }
         
@@ -277,11 +294,10 @@
     else{
       data = JSON.parse(data);
       if(data.users.length > 0 ){
-        for(i = 0; i < data.users.length; i++){
+        for(i = 0; i < Math.min(10,data.users.length); i++){
           addFriendToList(data.users[i].name);
         }
-      }
-      else{
+      }else{
         $('#friendsList').html("<? echo $madeNoFriends ?>");
       }
     }
@@ -340,9 +356,11 @@
     else{
       data = JSON.parse(data);
       if(data.groups.length > 0 ){
-        for(i = 0; i < data.groups.length; i++){
+        for(i = 0; i < Math.min(5,data.groups.length); i++){
           addGroupToList(data.groups[i].name);
         }
+      }else{
+        $('#groupsList').html("<? echo $hasNoGroups ?>");
       }
     }
   }
