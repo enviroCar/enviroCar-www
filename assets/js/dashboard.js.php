@@ -68,7 +68,7 @@
     }
   }
   
-  $.get('./assets/includes/users.php?userActivities', function(data) {
+  /* $.get('./assets/includes/users.php?userActivities', function(data) {
     if(data >= 400){
       console.log(data);
       if(data == 400){
@@ -118,6 +118,7 @@
     }
   }
        );
+*/
   
   $.get('./assets/includes/users.php?userStatistics', function(data) {
     if(data >= 400){
