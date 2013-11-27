@@ -46,7 +46,6 @@ function get_request($uri, $isAuthRequired){
         curl_setopt_array($ch, array(
             CURLOPT_RETURNTRANSFER  =>true,
             CURLOPT_VERBOSE     => 0,
-            CURLOPT_CAINFO => "wwuca_chain.pem",
             CURLOPT_FOLLOWLOCATION => TRUE
         ));
     }
@@ -87,7 +86,6 @@ function post_request($url, $data, $isAuthRequired){
 			'Content-Length: ' . strlen($data_string))
 		);                                            
 	}
-    curl_setopt($ch, CURLOPT_CAINFO, "wwuca_chain.pem");
     $result = curl_exec($ch);
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     return array("status" => $http_status, "response" => $result);
@@ -100,8 +98,7 @@ function put_request($url, $data){
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");                                                                     
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);   
     curl_setopt($ch, CURLOPT_VERBOSE,0);                                                               
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-    curl_setopt($ch, CURLOPT_CAINFO, "wwuca_chain.pem");                                                                    
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                   
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'Content-Type: application/json',                                                                                
         'Content-Length: ' . strlen($data_string),
@@ -120,8 +117,7 @@ function delete_request($url){
     $ch = curl_init($url);                                                                      
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
     curl_setopt($ch, CURLOPT_VERBOSE,0);                                                                                                
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_CAINFO, "wwuca_chain.pem");                                                                    
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                   
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'X-User: '.$_SESSION['name'], 
         'X-Token: '.$_SESSION['password'])                                                                       
