@@ -16,7 +16,6 @@
 //Server related variables
 $serverurl	= "https://envirocar.org/api/stable";
 $serverurl_dev 	= "https://envirocar.org/api/dev";
-$chainfile = "wwuca_chain.pem";
 
 //Find out if stable or dev should be used
 if(strpos($_SERVER['REQUEST_URI'], 'dev')){
