@@ -126,6 +126,48 @@ if(isset($_GET['tracks-page'])){
 	}
 }
 
+if(isset($_GET['track-number-user'])){
+	//This is a workaround to get the total number of a user's tracks
+	//We also need to set up our own curl request because we need the headers and we need to parse them
+	$ch = curl_init($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks'.'?limit=1');
+    curl_setopt_array($ch, array(
+        CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_VERBOSE     => 1,
+        CURLOPT_FOLLOWLOCATION => TRUE,
+        CURLOPT_HEADER => 1
+    ));
+    $out = curl_exec($ch);
+    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    curl_close($ch);
+    //The request is fully returned, so split headers and body
+    list($headers, $body) = explode("\r\n\r\n", $out, 2);
+    //Put all headers into a key/value-Array so we can get the desired "Link" header later
+    $lines = explode("\r\n", $headers);
+    $parsed = array();
+    foreach($lines as $line) {
+        $colon = strpos($line, ':');
+        if($colon !== false) {
+            $name = trim(substr($line, 0, $colon));
+            $value = trim(substr($line, $colon + 1));
+            //Actually there are two "Link" Elements, we need the first one
+            if($parsed[$name] == null) $parsed[$name] = $value;
+        }
+    }
+    //parse the number of tracks from the "Link"-Headers
+    $num_of_tracks = substr(explode( ">", $parsed['Link'])[0], -1);
+    $response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
+
+
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+
 if(isset($_GET['track'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks/'.rawurlencode($_GET['track']), true);
 	if($response['status'] == 200){

@@ -148,7 +148,26 @@
     }
     $('#loadingIndicator_overview').hide();
   }
-       );
+);
+
+  $.get('./assets/includes/users.php?track-number-user', function(data) {
+    if(data >= 400){
+      console.log(data);
+      if(data == 400){
+        error_msg("<? echo $routeError ?>");
+      }
+      else if(data == 401 || data == 403){
+        error_msg("<? echo $routeNotAllowed ?>")
+      }
+      else if(data == 404){
+        error_msg("<? echo $routeNotFound ?>")
+      }
+    }
+    else{
+      addOverallStatistics("Tracks", data);
+    }
+    }
+  );
   
   $.get('./assets/includes/users.php?tracks', function(data) {
     if(data >= 400){
@@ -167,7 +186,6 @@
       data = JSON.parse(data);
       if(data.tracks != null){
         numberofTracks = data.tracks.length;
-        addOverallStatistics("Tracks", numberofTracks);
         if(data.tracks.length > 5){
           addPaginationToTracks(numberofTracks, data);
           data.tracks = data.tracks.slice(0,5);
@@ -213,13 +231,11 @@
             data = JSON.parse(data);
             if(data.tracks != null){
               addTracks(data);
-            }
-            
+            }  
           }
-          
           $('#loadingIndicator_tracks').hide();
-        }
-             );
+          }
+        );
       }
     }
         
