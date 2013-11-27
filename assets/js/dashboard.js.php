@@ -304,6 +304,68 @@
     $('#loadingIndicator_friends').hide();
   }
   );
+
+
+
+
+  $.get('./assets/includes/users.php?friend-requests-incoming', function(data){
+    if(data >= 400){
+      console.log(data);
+        error_msg("Couldn't get incoming friend requests.");
+    }
+    else{
+      data = JSON.parse(data);
+      data.users.forEach(function(entry){
+        friendship_incoming_msg("<a href='profile.php?user="+entry.name+"'>"+entry.name+"</a><?php echo $dashboard_friend_request_received; ?> "
+          +"<a onclick='acceptFriendship(&quot;"+entry.name+"&quot;); $(this).parent().remove();' class='btn btn-primary'><?php echo $dashboard_accept_friend_request ?></a>"+" "
+          +"<a onclick='declineFriendship(&quot;"+entry.name+"&quot;); $(this).parent().remove();' class='btn btn-primary'><?php echo $dashboard_ignore_friend_request ?></a>"
+          );
+      });
+    }
+    });
+
+  //This method needs to be executed AFTER all already accepted friends were added to the list
+  $.get('./assets/includes/users.php?friend-requests-outgoing', function(data){
+    if(data >= 400){
+      console.log(data);
+        error_msg("Couldn't get incoming friend requests.");
+    }
+    else{
+      data = JSON.parse(data);
+      if(data.users.length > 0) $('#show-all-friends').before("<strong><?php echo $dashboard_pending; ?></strong>");
+      data.users.forEach(function(entry){
+        $('#show-all-friends').before('<dl><a href="profile.php?user='+entry.name+'"><img src='+getAvatar(entry.name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+entry.name+'">'+entry.name+'</a></dl>');
+      });
+    }
+    });
+
+  function acceptFriendship(name){
+    $.post('./assets/includes/users.php?friend-request-accept', {acceptFriend: name}, 
+      function(data){
+        if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          error_msg("Friend couldn't be added successfully.");
+        }else{
+          friendship_accepted_msg("<a href='profile.php?user="+name+"'>"+name+"</a> added successfully to your friends.");
+        }
+      });
+  }
+
+  function declineFriendship(name){
+    $.post('./assets/includes/users.php?friend-request-decline', {declineFriend: name}, 
+      function(data){
+        if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          error_msg("Friendship request couldn't be declined successfully.");
+        }else{
+          friendship_declined_msg("<a href='profile.php?user="+name+"''>"+name+"</a>'s friendship request has been declined.");
+        }
+      });
+  }
+
+
+
+
+
+
   
   $.get('./assets/includes/users.php?users', function(data){
     if(data >= 400){

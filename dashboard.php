@@ -70,7 +70,7 @@ include('header.php');
           </div>
           
           <ul class="nav nav-list" id="friendsList">
-            <li>
+            <li id="show-all-friends">
               <small>
                 <a href="friends.php">
                   <i class="icon-plus-sign">

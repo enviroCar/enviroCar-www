@@ -76,6 +76,10 @@ $date_validation_message="Bitte gib das Datum in dem Format <code>JJJJ-MM-TT</co
 $required_validation_message="Dies ist ein Pflichtfeld.";
 
 // dashboard.php
+$dashboard_pending = "Noch nicht bestätigt";
+$dashboard_friend_request_received = " hat dir eine Freundschaftsanfrage geschickt.";
+$dashboard_accept_friend_request = "Annehmen";
+$dashboard_ignore_friend_request = "Ablehnen";
 $dashboard_recent_avtivities="Letzte Aktivitäten";
 $dashboard_view_details="Details anzeigen";
 $dashboard_overview="Übersicht";

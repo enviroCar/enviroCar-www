@@ -74,6 +74,10 @@ $date_validation_message="Please enter the date in the format <code>YYYY-MM-DD</
 $required_validation_message="This is required.";
 
 // dashboard.php
+$dashboard_pending = "Pending";
+$dashboard_friend_request_received = " has sent you a friendship request.";
+$dashboard_accept_friend_request = "Accept";
+$dashboard_ignore_friend_request = "Decline";
 $dashboard_recent_avtivities="Recent Activities";
 $dashboard_view_details="View details";
 $dashboard_overview="Overview";
