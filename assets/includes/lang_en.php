@@ -411,6 +411,9 @@ $close = "Close";
 $male = "male";
 $female ="female";
 
+$edit_profile_invalid_input="Some data has been entered incorrectly. Please correct the fields marked with red.";
+$edit_profile_success="Your profile changes have been successfully saved.";
+$edit_profile_error="Your profile changes could not be saved. Please check your input and try again.";
 $deletemyaccount ="Delete account";
 $editaccount = "Save changes";
 

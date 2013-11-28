@@ -414,6 +414,10 @@ $close = "Schließen";
 $male = "männlich";
 $female ="weiblich";
 
+$edit_profile_invalid_input="Einige Angaben sind nicht korrekt. Bitte befolge die Hinweise und rote Markierungen.";
+$edit_profile_success="Die Änderungen an deinem Profil wurden erfolgreich gespeichert.";
+$edit_profile_error="Die Änderungen an deinem Profil konnten nicht gespeichert werden. Bitte überprüfe deine Eingaben.";
+
 $deletemyaccount ="Account löschen";
 $editaccount = "Änderungen speichern";
 
