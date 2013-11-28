@@ -194,7 +194,7 @@ if(isset($_GET['track-number-user'])){
         }
     }
     //parse the number of tracks from the "Link"-Headers
-    $num_of_tracks = substr(explode( ">", $parsed['Link'])[0], -1);
+    $num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];
     $response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
 
 

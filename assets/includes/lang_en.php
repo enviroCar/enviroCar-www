@@ -75,6 +75,12 @@ $required_validation_message="This is required.";
 
 // dashboard.php
 $dashboard_pending = "Pending";
+$dashboard_friends_incoming_error = "Couldn't receive incoming friendship requests.";
+$dashboard_friends_incoming_error = "Couldn't receive pending friendships.";
+$dashboard_friends_accept_error = "Couldn't accept friendship. Please try again later.";
+$dashboard_friend_added = " was successfully added to your friend list.";
+$dashboard_friend_declined = "'s friendship request was declined.";
+$dashboard_friend_decline_error = "Couldn't decline the friendship request. Please try again later.";
 $dashboard_friend_request_received = " has sent you a friendship request.";
 $dashboard_accept_friend_request = "Accept";
 $dashboard_ignore_friend_request = "Decline";
