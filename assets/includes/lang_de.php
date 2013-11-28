@@ -76,6 +76,16 @@ $date_validation_message="Bitte gib das Datum in dem Format <code>JJJJ-MM-TT</co
 $required_validation_message="Dies ist ein Pflichtfeld.";
 
 // dashboard.php
+$dashboard_pending = "Noch nicht bestätigt";
+$dashboard_friends_incoming_error = "Eingehende Freundschaftsanfragen konnten nicht empfangen werden.";
+$dashboard_friends_incoming_error = "Noch nicht bestätigte Freundschaftsanfragen konnten nicht empfangen werden.";
+$dashboard_friends_accept_error = "Die Freundschaftsanfrage konnte nicht akzeptiert werden. Bitte probiere es später nocheinmal.";
+$dashboard_friend_added = " wurde erfolgreich zu deiner Freundeslist hinzugefügt.";
+$dashboard_friend_declined = "'s Freundschaftsanfrage wurde abgelehnt.";
+$dashboard_friend_decline_error = "Die Freundschaftsanfrage konnte nicht erfolgreich abgelehnt werden. Bitte probiere es später nochmal.";
+$dashboard_friend_request_received = " hat dir eine Freundschaftsanfrage geschickt.";
+$dashboard_accept_friend_request = "Annehmen";
+$dashboard_ignore_friend_request = "Ablehnen";
 $dashboard_recent_avtivities="Letzte Aktivitäten";
 $dashboard_view_details="Details anzeigen";
 $dashboard_overview="Übersicht";

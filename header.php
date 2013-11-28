@@ -103,6 +103,28 @@ function echoActiveClassIfRequestMatches($requestUri){
         }
       }
 
+      function friendship_incoming_msg(msg){
+        $('#messages').append('<div class="container alert alert-block alert-info fade in">' 
+          +'<a class="close" data-dismiss="alert">×</a>'
+          +msg
+          +'</div>');
+      }
+
+      function friendship_accepted_msg(msg){
+        $('#messages').append('<div class="container alert alert-block alert-success fade in">' 
+          +'<a class="close" data-dismiss="alert">×</a>'
+          +msg
+          +'</div>');
+      }
+
+      //same method as friendship_incoming_msg but if needed can be styled differently here
+      function friendship_declined_msg(msg){
+        $('#messages').append('<div class="container alert alert-block alert-info fade in">' 
+          +'<a class="close" data-dismiss="alert">×</a>'
+          +msg
+          +'</div>');
+      }
+
       function changeLanguage(lang){
         $.get('assets/includes/language.php?lang='+lang, function(data) {
           window.location.reload();
@@ -168,9 +190,11 @@ function echoActiveClassIfRequestMatches($requestUri){
     </div>
   </div> <!-- Navbar -->
 
-  <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
-    <a class="close" data-dismiss="alert">×</a>  
-    <h4 class="alert-heading">Error</h4>  
+  <div id="messages">
+    <div id="error_div" class="container alert alert-block alert-error fade in" style="display:none"> 
+      <a class="close" data-dismiss="alert">×</a>  
+      <h4 class="alert-heading">Error</h4>  
+    </div>
   </div> 
 
 <?php if(isset($_GET['lost_password_access_denied'])){ ?>

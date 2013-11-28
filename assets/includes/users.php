@@ -52,6 +52,44 @@ if(isset($_GET['friends'])){
 	}
 }
 
+if(isset($_GET['friend-requests-incoming'])){
+	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends/incomingRequests', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-requests-outgoing'])){
+	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends/outgoingRequests', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-request-accept'])){
+	$friend = array("name" => ''.$_POST['acceptFriend']); 
+	$response = post_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends', $friend, true);
+	if($response['status'] == 204){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-request-decline'])){
+	$friend = array("name" => ''.$_POST['declineFriend']); 
+	$response = post_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends/declineRequest', $friend, true);
+	if($response['status'] == 204){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 if(isset($_GET['friendsOf'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_GET['friendsOf']).'/friends', true);
 	if($response['status'] == 200){
@@ -156,7 +194,7 @@ if(isset($_GET['track-number-user'])){
         }
     }
     //parse the number of tracks from the "Link"-Headers
-    $num_of_tracks = substr(explode( ">", $parsed['Link'])[0], -1);
+    $num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];
     $response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
 
 

@@ -31,7 +31,7 @@
   function addOverallStatistics(name, value){
     
     $.get('assets/includes/tracks.php', function(data) {
-      $('#overallStatistics').append('<li rel="tooltip" data-placement="right" data-toggle="tooltip" data-original-title="<?php echo $dashboard_track_number_tooltip; ?>"><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
+      $('#overallStatistics').append('<li id="number-of-tracks" rel="tooltip" data-placement="right" data-toggle="tooltip" data-original-title="<?php echo $dashboard_track_number_tooltip; ?>"><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
       
     }
          );
@@ -164,7 +164,9 @@
       }
     }
     else{
-      addOverallStatistics("Tracks", data);
+      if(data != "1"){
+        addOverallStatistics("Tracks", data);
+      }
     }
     }
   );
@@ -186,6 +188,14 @@
       data = JSON.parse(data);
       if(data.tracks != null){
         numberofTracks = data.tracks.length;
+        /*
+        * The above method "$.get('./assets/includes/users.php?track-number-user', function(data) { ..."
+        * uses a workaround to get the number of total tracks a user has
+        * When a user has zero tracks this method still displays 1, so we need to check again here
+        */
+        if(data.tracks.length <= 1){
+          addOverallStatistics("Tracks", data.tracks.length);
+        }
         if(data.tracks.length > 5){
           addPaginationToTracks(numberofTracks, data);
           data.tracks = data.tracks.slice(0,5);
@@ -304,6 +314,68 @@
     $('#loadingIndicator_friends').hide();
   }
   );
+
+
+
+
+  $.get('./assets/includes/users.php?friend-requests-incoming', function(data){
+    if(data >= 400){
+      console.log(data);
+        error_msg("<?php echo $dashboard_friends_incoming_error ?>");
+    }
+    else{
+      data = JSON.parse(data);
+      data.users.forEach(function(entry){
+        friendship_incoming_msg("<a href='profile.php?user="+entry.name+"'>"+entry.name+"</a><?php echo $dashboard_friend_request_received; ?> "
+          +"<div class='pull-right' style='padding-right: 20px;'><a onclick='acceptFriendship(&quot;"+entry.name+"&quot;); $(this).parent().parent().remove();' class='btn btn-primary btn-small'><?php echo $dashboard_accept_friend_request ?></a>"+" "
+          +"<a onclick='declineFriendship(&quot;"+entry.name+"&quot;); $(this).parent().parent().remove();' class='btn btn-primary btn-small'><?php echo $dashboard_ignore_friend_request ?></a></div>"
+          );
+      });
+    }
+    });
+
+  //This method needs to be executed AFTER all already accepted friends were added to the list
+  $.get('./assets/includes/users.php?friend-requests-outgoing', function(data){
+    if(data >= 400){
+      console.log(data);
+        error_msg("<?php echo $dashboard_friends_outgoing_error ?>");
+    }
+    else{
+      data = JSON.parse(data);
+      if(data.users.length > 0) $('#show-all-friends').before("<strong><?php echo $dashboard_pending; ?></strong>");
+      data.users.forEach(function(entry){
+        $('#show-all-friends').before('<dl><a href="profile.php?user='+entry.name+'"><img src='+getAvatar(entry.name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+entry.name+'">'+entry.name+'</a></dl>');
+      });
+    }
+    });
+
+  function acceptFriendship(name){
+    $.post('./assets/includes/users.php?friend-request-accept', {acceptFriend: name}, 
+      function(data){
+        if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          error_msg("<?php echo $dashboard_friends_accept_error ?>");
+        }else{
+          friendship_accepted_msg("<a href='profile.php?user="+name+"'>"+name+"</a><?php echo $dashboard_friend_added; ?>");
+        }
+      });
+  }
+
+  function declineFriendship(name){
+    $.post('./assets/includes/users.php?friend-request-decline', {declineFriend: name}, 
+      function(data){
+        if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+          error_msg("<?php echo $dashboard_friend_decline_error; ?>");
+        }else{
+          friendship_declined_msg("<a href='profile.php?user="+name+"''>"+name+"</a><?php echo $dashboard_friend_declined; ?>");
+        }
+      });
+  }
+
+
+
+
+
+
   
   $.get('./assets/includes/users.php?users', function(data){
     if(data >= 400){
