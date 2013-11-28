@@ -284,7 +284,7 @@
   
   function addFriendToList(name){
     //$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-    $('#friendsList').prepend('<dl><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></dl>');
+    $('#friendsList').prepend('<dl><table><tr><td style="min-width:40px; padding: 0px;"><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/></a></td><td><a href="profile.php?user='+name+'">'+name+'</a></tr></table></dl>');
   }
   
   $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
