@@ -11,7 +11,7 @@ if(!is_logged_in()){
 ?>
 	<div id="data-preview" class="container">
 		<div class="row-fluid">
-			<div class="span6 well data-preview leftband">
+			<div class="span6 well data-preview leftband first-row">
 				<div class="span4">
 					<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" class="thumbnail" target="_blank" title="Live track overview map">
 						<img src="http://www.arcgis.com/sharing/rest/content/items/3c37371867d64b9a83e1b4fe56a34e72/info/thumbnail/ago_downloaded.png" alt="map preview">
@@ -22,7 +22,7 @@ if(!is_logged_in()){
 	        <?php echo $speed_description ?>       
 	      </div>
 			</div>
-			<div class="span6 well data-preview leftband">
+			<div class="span6 well data-preview leftband first-row">
 			<div class="span4">
 					<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" class="thumbnail" target="_blank" title="CO2 Hotspot Analysis Map">
 						<img src="http://www.arcgis.com/sharing/rest/content/items/5db4e1ea445e4b4b8612443e7ba76119/info/thumbnail/ago_downloaded.png" alt="map preview">

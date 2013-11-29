@@ -78,7 +78,7 @@ $required_validation_message="Dies ist ein Pflichtfeld.";
 // dashboard.php
 $dashboard_pending = "Noch nicht bestätigt";
 $dashboard_friends_incoming_error = "Eingehende Freundschaftsanfragen konnten nicht empfangen werden.";
-$dashboard_friends_incoming_error = "Noch nicht bestätigte Freundschaftsanfragen konnten nicht empfangen werden.";
+$dashboard_friends_outgoing_error = "Noch nicht bestätigte Freundschaftsanfragen konnten nicht empfangen werden.";
 $dashboard_friends_accept_error = "Die Freundschaftsanfrage konnte nicht akzeptiert werden. Bitte probiere es später nocheinmal.";
 $dashboard_friend_added = " wurde erfolgreich zu deiner Freundeslist hinzugefügt.";
 $dashboard_friend_declined = "'s Freundschaftsanfrage wurde abgelehnt.";

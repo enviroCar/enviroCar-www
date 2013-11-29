@@ -338,7 +338,7 @@
   $.get('./assets/includes/users.php?friend-requests-outgoing', function(data){
     if(data >= 400){
       console.log(data);
-        error_msg("<?php echo $dashboard_friends_outgoing_error ?>");
+        error_msg("<?php echo $dashboard_friends_outgoing_error; ?>");
     }
     else{
       data = JSON.parse(data);
