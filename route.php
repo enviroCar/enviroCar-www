@@ -5,67 +5,194 @@ include('header.php');
 <script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>  
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
+<link href="./assets/css/jquery.share.css" rel="stylesheet">
 
 
 <div class="container leftband" id="route-information-container">
-  <div id="routeInformation" style="margin-left: 30px;"></div>
   <div class="row-fluid" >
-    <div class="span8">
+    <div class="span10">
+      <div id="routeInformation" style="margin-left: 30px;">
+      </div>
       <ul class="inline-stats" id="statistics">
-          <li><p id="distTime" ></p><span class="muted"><?php echo $route_distance; ?></span></li>
-          <li><p id="fuelConsum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
-          <li><p id="co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
-          <li><p id="idleTime"><br></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
-          <li><p id="avgSpeed"><br></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
+        <li><p id="dist"></p><p id="time"></p><span class="muted"><?php echo $route_distance; ?></span></li>
+        <li><p id="avg-consum"></p><p id="total-consum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
+        <li><p id="avg-co2"></p><p id="total-co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
+        <li><p><br></p><p id="idle-time"></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
+        <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
-    <div class="span4">
-      <div id="furtherInformation" style="margin-left: 30px;"></div>
+    <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
+      <label class="onoffswitch-label" for="share-switch">
+        <div class="onoffswitch-inner">
+          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php echo $route_sharing_on; ?></div></div>
+          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php echo $route_sharing_off; ?></div></div>
+        </div>
+      </label>
+    </div>
+    <div id="share-buttons" class="share-buttons">
+      <a class='pop share-square share-square-googleplus-disabled'></a><a class='pop share-square share-square-facebook-disabled'></a><a class='pop share-square share-square-twitter-disabled'></a>
     </div>
   </div>
-<div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 </div>
 
-  <div class="row-fluid" id="full-map-span">
-  </div>
+<div id="loadingIndicator_route" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
+
+
+<div class="row-fluid" id="full-map-span">
+</div>
 
 <div class="container leftband" id="map-and-chart-container">
 <div class="row-fluid" id="mapAndChart">
 <div class="span6" id="small-map-span">
     <div class="simple-map" id="map">
-      
-      <div class="btn-group sensorswitch dropup">
-        <a class="btn btn-primary btn-full-screen" id="btn-full-screen">Fullscreen</a>
-        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" id="sensorswitch">
-          Sensor
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-              <a id="change-sensor-consumption" href="#"><?php echo $route_dropup_fuelConsumption; ?></a>
-            </li>
-            <li>
-              <a id="change-sensor-rpm" href="#">U/min</a>
-            </li>
-            <li>
-              <a id="change-sensor-speed" href="#"><?php echo $route_dropup_speed; ?></a>
-            </li>
-        </ul>
+      <p id="enviroCar-license">Tracks ODbL by <a href="https://envirocar.org/terms.php">enviroCar</a></p>
+      <div class="btn-group sensorswitch">
+        <a class="btn btn-primary btn-full-screen" id="btn-full-screen"><?php echo $route_fullscreen ?></a>
+        <div class="btn btn-group dropup">
+          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" id="sensorswitch">
+            Download
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+              <li id="download-geojson">
+              </li>
+              <!--<li>
+                <a id="download-shape">Shape (*.shp)</a>
+              </li> -->
+          </ul>
+        </div>
+        <div class="btn btn-group dropup">
+          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" id="sensorswitch">
+            Sensor
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+              <li>
+                <a id="change-sensor-consumption" ><?php echo $route_dropup_fuelConsumption; ?></a>
+              </li>
+              <li>
+                <a id="change-sensor-rpm"><?php echo $route_dropup_rpm; ?></a>
+              </li>
+              <li>
+                <a id="change-sensor-speed"><?php echo $route_dropup_speed; ?></a>
+              </li>
+              <li>
+                <a id="change-sensor-intake-temp"><?php echo $route_dropup_intake_temp; ?></a>
+              </li>
+              <li>
+                <a id="change-sensor-intake-pressure"><?php echo $route_dropup_intake_pressure; ?></a>
+              </li>
+              <li>
+                <a id="change-sensor-co2"><?php echo $route_dropup_co2; ?></a>
+              </li>
+              <li>
+                <a id="change-sensor-maf"><?php echo $route_dropup_maf; ?></a>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="well" id="legend"  style="display:inline">
+        <p><strong><?php echo $route_legend ?></strong></p>
+        <p id="legend-title"><?php echo $route_legend_title.$route_dropup_speed ?></p>
+        <table>
+          <tr>
+            <td><img src="./assets/img/legend_green.png" class="legend"></img></td>
+            <td id="legend1"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/legend_dark_green.png" class="legend"></img></td>
+            <td id="legend2"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/legend_orange.png" class="legend"></img></td>
+            <td id="legend3"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/legend_light_red.png" class="legend"></img></td>
+            <td id="legend4"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/legend_red.png" class="legend"></img></td>
+            <td id="legend5"></td>
+          </td>
+        </table>
+      </div>
+  </div>
+    </div>
+  <div class="span6 graph-span">
+    <div id="chartContainer" style="position: relative, height: 100%; width: 100%;"></div>
+    <div class="dropdown" id="graph-dropdown">
+      <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" href="#">
+          Select Data
+          <b class="caret"></b>
+      </a>
+      <div class="dropdown-menu graph-selection pull-right">
+        <div class="span6">
+        <p><strong>Primary Axis</strong></p>
+              <label class="radio">
+                  <input type="radio" name="primary" checked onclick="addSeries($.extend({},chartSeries[0]), 'primary')">
+                  <?php echo $route_dropup_speed; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[1]), 'primary')">
+                  <?php echo $route_dropup_fuelConsumption; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[2]), 'primary')">
+                  <?php echo $route_dropup_intake_temp; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[3]), 'primary')">
+                  <?php echo $route_dropup_intake_pressure; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[4]), 'primary')">
+                  <?php echo $route_dropup_co2; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="primary" onclick="addSeries($.extend({},chartSeries[5]), 'primary')">
+                  <?php echo $route_dropup_maf ?>
+              </label>
+        </div>
+        <div class="span6">
+        <p><strong>Secondary Axis</strong></p>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[0]), 'secondary')">
+                  <?php echo $route_dropup_speed; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" checked onclick="addSeries($.extend({},chartSeries[1]), 'secondary')">
+                  <?php echo $route_dropup_fuelConsumption; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[2]), 'secondary')">
+                  <?php echo $route_dropup_intake_temp; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[3]), 'secondary')">
+                  <?php echo $route_dropup_intake_pressure; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[4]), 'secondary')">
+                  <?php echo $route_dropup_co2; ?>
+              </label>
+              <label class="radio">
+                  <input type="radio" name="secondary" onclick="addSeries($.extend({},chartSeries[5]), 'secondary')">
+                  <?php echo $route_dropup_maf ?>
+              </label>
+        </div>
+        
+        
       </div>
     </div>
-    <img src="./assets/img/legend_green.png" class="legend"><p style="display:inline" id="legend1"></p></img>
-    <img src="./assets/img/legend_dark_green.png" class="legend"><p style="display:inline" id="legend2"></p></img>
-    <img src="./assets/img/legend_orange.png" class="legend"><p style="display:inline" id="legend3"></p></img>
-    <img src="./assets/img/legend_light_red.png" class="legend"><p style="display:inline" id="legend4"></p></img>
-    <img src="./assets/img/legend_red.png" class="legend"><p style="display:inline" id="legend5"></p></img>
-  </div>
-  <div class="span6">
-    <div id="chartContainer" style="height: 100%; width: 100%;"></div>
   </div>
 </div>
 
 </div>
 <script type="text/javascript">
+  
+
 
   var popup;
   var lengthOfTrack;
@@ -113,7 +240,7 @@ include('header.php');
 
   function addRouteInformation(name){
       $('#routeInformation').append('<h2>'+name+'</h2>');
-      $('#furtherInformation').append('<p><a class="btn" href="graph.php?id='+$_GET(['id'])+'"><? echo $graphs ?></a><a class="btn" href="thematic_map.php?id='+$_GET(['id'])+'"><? echo $thematicmaps ?></a><a class="btn" target="_blank" href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">Download (GeoJSON)</a></p>');
+      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">GeoJSON (*.json)</a>');
   }     
 
 
@@ -261,12 +388,12 @@ include('header.php');
 			var totalCO2 = co2inGramsPerKm * distance / 1000;
 			
 			$('#routeInformation').append('<h2>'+name+'</h2>');
-			$('#idleTime').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
-			$('#distTime').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
-			$('#distTime').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
-			$('#fuelConsum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km ' + (fuelType == 'diesel' ? '<?php echo $route_fuelDiesel; ?>' : '<?php echo $route_fuelGas; ?>') + '</p>');
-			$('#co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
-			$('#co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
+			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
+			$('#dist').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
+			$('#time').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
+			$('#avg-consum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km </p>');
+			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
+			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
 			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * distance;		
 			
@@ -311,21 +438,37 @@ include('header.php');
 		var maxSpeed = 0;
 		var maxConsumption = 0;
 		var maxRPM = 0;
+    var maxIat = 0;
+    var maxMap = 0;
+    var maxCo2 = 0;
+    var maxMaf = 0;
 
       for(i = 0; i < data.statistics.length; i++){
       	var phenoName = data.statistics[i].phenomenon.name;
       	if(phenoName == 'Speed'){
       		maxSpeed = data.statistics[i].max;
-      		$('#avgSpeed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');				
+      		$('#avg-speed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');				
         	}else if(phenoName == 'Consumption'){
         		maxConsumption = data.statistics[i].max;
         	}else if(phenoName == 'Rpm'){
         		maxRPM = data.statistics[i].max;
-        	}
+        	}else if(phenoName == 'Intake Temperature'){
+            maxIat = data.statistics[i].max;
+          }else if(phenoName == 'Intake Pressure'){
+            maxMap = data.statistics[i].max;
+          }else if(phenoName == 'CO2'){
+            maxCo2 = data.statistics[i].max;
+          }else if(phenoName == 'Calculated MAF' || phenoName == 'MAF'){
+            maxMaf = data.statistics[i].max;
+          }
       }
       gon.statistics = {max_speed : maxSpeed, 
       						max_rpm : maxRPM, 
-     							 max_consumption : maxConsumption
+     							 max_consumption : maxConsumption,
+                   max_iat : maxIat,
+                   max_map : maxMap,
+                   max_co2 : maxCo2,
+                   max_maf : maxMaf
       						};
 
     }
@@ -361,7 +504,7 @@ include('header.php');
 	
 	function getFuelPrice(totalFuelConsumption, fuelType){
 		$.get('assets/includes/fuelprices.php?fuelType='+fuelType, function(data) {
-			$('#fuelConsum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + Math.round(totalFuelConsumption * data*100)/100 + ' €</p>');
+			$('#total-consum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + Math.round(totalFuelConsumption * data*100)/100 + ' €</p>');
 		});
 	}
 			
@@ -426,10 +569,12 @@ function initShowTrack(){
 
 }
 
+var chart;
+var data;
 function initChart(){
   
   //defining data and setting up the hash for lookup
-  var seriesData = [[],[],[]];
+  var seriesData = [[],[],[],[],[],[]];
   epsg4326 =  new OpenLayers.Projection("EPSG:4326"); //WGS 1984 projection
   projectTo = map.getProjectionObject();
 
@@ -443,32 +588,59 @@ function initChart(){
       label: "km/h"
     }
     //consumption
-    seriesData[2][i] = {
+    seriesData[1][i] = {
       x: date,
       y: gon.measurements[i].consumption,
       label: "l/100 km"
+    }
+    //iat
+    seriesData[2][i] = {
+      x: date,
+      y: gon.measurements[i].iat,
+      label: "&deg;C"
+    }
+    //map
+    seriesData[3][i] = {
+      x: date,
+      y: gon.measurements[i].map,
+      label: "kPa"
+    }
+    //co2
+    seriesData[4][i] = {
+      x: date,
+      y: gon.measurements[i].co2,
+      label: "g/sec"
+    }
+    //maf
+    seriesData[5][i] = {
+      x: date,
+      y: gon.measurements[i].maf,
+      label: "g/sec"
     }
     dataHash[date] = new OpenLayers.Geometry.Point( coords[1], coords[2] ).transform(epsg4326, projectTo);
   }
   
   
-  var chart = new CanvasJS.Chart("chartContainer", {
+  chart = new CanvasJS.Chart("chartContainer", {
     zoomEnabled: true,
     panEnabled: true,
     legend: {
+      fontFamily: "Droid Sans",
       horizontalAlign: "left", // left, center ,right 
       verticalAlign: "top",  // top, center, bottom
     },
     axisX:{
         valueFormatString: "hh:mm",
+        labelFontFamily: "Droid Sans",
         includeZero: false
     },
     axisY: {
-        title: '<?php echo $route_dropup_speed; ?>',
-        titleFontSize: 15
+        title: '<?php echo $route_dropup_speed." in Km/h"; ?>',
+        titleFontSize: 15,
+        labelFontFamily: "Droid Sans"
     },
     axisY2: {
-        title: "<?php echo $route_dropup_fuelConsumption; ?>",
+        title: "<?php echo $route_dropup_fuelConsumption.' in l/100 km'; ?>",
         titleFontSize: 15
         //valueFormatString: " "
     },
@@ -478,6 +650,7 @@ function initChart(){
       /*** Change type "column" to "bar", "area", "line" or "pie"***/
       
       type: "spline",
+      axisYType: "primary",
       name: "<?php echo $route_dropup_speed; ?> in km/h",
       showInLegend: true,
       xValueType: "dateTime",
@@ -491,11 +664,72 @@ function initChart(){
       name: "<?php echo $route_dropup_fuelConsumption; ?> in l/100 km",
       showInLegend: true,
       xValueType: "dateTime",
+      dataPoints: seriesData[1]
+    },
+    { //dataSeries object
+
+      /*** Change type "column" to "bar", "area", "line" or "pie"***/
+      axisYType: "secondary",
+      type: "spline",
+      name: "<?php echo $route_dropup_intake_temp; ?> in Celsius",
+      showInLegend: true,
+      xValueType: "dateTime",
       dataPoints: seriesData[2]
+    },
+    { //dataSeries object
+
+      /*** Change type "column" to "bar", "area", "line" or "pie"***/
+      axisYType: "secondary",
+      type: "spline",
+      name: "<?php echo $route_dropup_intake_pressure; ?> in kPa",
+      showInLegend: true,
+      xValueType: "dateTime",
+      dataPoints: seriesData[3]
+    },
+    { //dataSeries object
+
+      /*** Change type "column" to "bar", "area", "line" or "pie"***/
+      axisYType: "secondary",
+      type: "spline",
+      name: "CO2 in g/sec",
+      showInLegend: true,
+      xValueType: "dateTime",
+      dataPoints: seriesData[4]
+    },
+    { //dataSeries object
+
+      /*** Change type "column" to "bar", "area", "line" or "pie"***/
+      axisYType: "secondary",
+      type: "spline",
+      name: "<?php echo $route_dropup_maf ?> in g/sec",
+      showInLegend: true,
+      xValueType: "dateTime",
+      dataPoints: seriesData[5]
     }
     ]
   });
 
+  
+  chartSeries = $.extend({},chart.options.data);
+  chart.options.data.splice(2,4);
+  chart.render();
+}
+
+function addSeries(series, axis){
+  series.axisYType = axis;
+  //remove series from specified axis
+  for(var i=0; i<chart.options.data.length; i++){
+    if(chart.options.data[i].axisYType == axis){
+      chart.options.data.splice(i,1);
+    }
+  }
+  //add new series to specified axis
+  chart.options.data.push(series);
+  if(series.axisYType == "primary"){
+    chart.options.axisY.title = series.name;
+  }else{
+    chart.options.axisY2.title = series.name;
+  }
   chart.render();
 }
 
@@ -523,7 +757,7 @@ function initMap() {
   map.addLayer(vectorLayer);
 
   //map.addControl(new OpenLayers.Control.PanZoomBar());
-  map.addControl(new OpenLayers.Control.LayerSwitcher());
+  //map.addControl(new OpenLayers.Control.LayerSwitcher());
   //map.addControl(new OpenLayers.Control.MousePosition());
   //map.addControl(new OpenLayers.Control.OverviewMap());
   //map.addControl(new OpenLayers.Control.KeyboardDefaults());
@@ -627,6 +861,18 @@ function postAnalytics(){
 function changeSensor(sensor){
     var unit = "";
     switch (sensor) {
+      case "iat":
+          unit = " &deg;C";
+          break;
+      case "map":
+          unit = " kPa";
+          break;
+      case "co2":
+          unit = " g/sec";
+          break;
+      case "maf":
+          unit = " g/sec";
+          break;
       case "speed":
           unit = " km/h";
           break;
@@ -696,9 +942,34 @@ function getColor(sensor, value){
 }
 
 
-$('a#change-sensor-speed').click(function(){ changeSensor("speed");});
-$('a#change-sensor-rpm').click(function(){ changeSensor("rpm");});
-$('a#change-sensor-consumption').click(function(){ changeSensor("consumption");});
+$('a#change-sensor-speed').click(function(){ 
+  changeSensor("speed");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_speed ?>");
+});
+$('a#change-sensor-rpm').click(function(){ 
+  changeSensor("rpm");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_speed ?>");
+});
+$('a#change-sensor-consumption').click(function(){ 
+  changeSensor("consumption");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_fuelconsumption ?>");
+});
+$('a#change-sensor-intake-temp').click(function(){ 
+  changeSensor("iat");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_intake_temp ?>");
+});
+$('a#change-sensor-intake-pressure').click(function(){ 
+  changeSensor("map");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_intake_pressure ?>");
+});
+$('a#change-sensor-co2').click(function(){ 
+  changeSensor("co2");
+  $('#legend-title').text("<?php echo $route_legend_title.'CO2' ?>");
+});
+$('a#change-sensor-maf').click(function(){ 
+  changeSensor("maf");
+  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_maf ?>");
+});
 
 var scroll = 0;
 $(document).ready(function () {
@@ -740,7 +1011,7 @@ $(document).ready(function () {
                     $("#map").addClass("simple-map");
                     $("#btn-full-screen").removeClass("btn-partial-screen");
                     $("#btn-full-screen").addClass("btn-full-screen");
-                    $("#btn-full-screen").attr('title', 'Fullscreen');                    
+                    $("#btn-full-screen").text('Fullscreen');                    
                     $(window).scrollTop(scroll);
                 }
                 map.updateSize();

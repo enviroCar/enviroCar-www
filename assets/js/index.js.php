@@ -1,3 +1,4 @@
+<script type="text/javascript">
 $(document).ready(function() {
 	var src = "";
 
@@ -14,3 +15,4 @@ $(document).ready(function() {
 		};
 	});
 });
+</script>

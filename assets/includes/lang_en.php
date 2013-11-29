@@ -2,10 +2,15 @@
 // index.php
 $index_invalid_login_name="Invalid Login Name"; 
 $index_empty_password="Password cannot be empty"; 
+$index_lost_password_access_denied="Access denied! Since you are logged in you can try to change your password via 'Change Profile'";
 $index_access_denied="Access denied!";
 $index_Please_sign_in="Please sign in";
 $index_password="Password";
 $index_lost_password="Lost password?";
+$index_password_lost_error="Your password change request failed.";
+$index_password_reset_error="Your password change failed.";
+$index_password_reset_submitted="The password reset request has successfully been sent. You should receive an email from us soon.";
+$index_password_resetted="Your password has been changed. Please log in with your new credentials.";
 $index_recaptcha="Please verify that you are human";
 $index_submit="Submit";
 $index_reset_password="Reset Password";
@@ -69,6 +74,16 @@ $date_validation_message="Please enter the date in the format <code>YYYY-MM-DD</
 $required_validation_message="This is required.";
 
 // dashboard.php
+$dashboard_pending = "Pending";
+$dashboard_friends_incoming_error = "Couldn't receive incoming friendship requests.";
+$dashboard_friends_outgoing_error = "Couldn't receive pending friendships.";
+$dashboard_friends_accept_error = "Couldn't accept friendship. Please try again later.";
+$dashboard_friend_added = " was successfully added to your friend list.";
+$dashboard_friend_declined = "'s friendship request was declined.";
+$dashboard_friend_decline_error = "Couldn't decline the friendship request. Please try again later.";
+$dashboard_friend_request_received = " has sent you a friendship request.";
+$dashboard_accept_friend_request = "Accept";
+$dashboard_ignore_friend_request = "Decline";
 $dashboard_recent_avtivities="Recent Activities";
 $dashboard_view_details="View details";
 $dashboard_overview="Overview";
@@ -77,7 +92,8 @@ $dashboard_group_activities="Group Activities";
 $dashboard_activities_of="Activities of ";
 $dashboard_my_tracks="My Tracks";
 $dashboard_number_of_tracks="Number of Tracks";
-
+$dashboard_show_all="Show all";
+$dashboard_track_number_tooltip="The first number shows how many tracks you have uploaded while the second number shows how many tracks have been uploaded by all users.";
 //accept terms
 $please_accept_terms = 'Please read and accept the current <a href="./terms.php">Terms of Use</a>.';
 $confirm_accept_terms = 'I accept.';
@@ -229,7 +245,7 @@ $signedin = "Signed in";
 
 $logoutsuccess = "Successfully logged out";
 $currentlynotloggedin = "You are currently not logged in.";
-$welcometoex = "Welcome to enviroCar";
+$welcometoec = "Welcome to enviroCar";
 $regsuccessfull = "Your registration was successful.";
 $logincontinue = "Please login to continue.";
 $accountdeleted = "Account deleted.";
@@ -291,7 +307,7 @@ $deletegroup ="Delete Group";
 $deletedgroup = "Deleted the Group";
 $deletegroupsuccess = "Group successfully deleted";
 $creategroup = "Create Group";
-$searchgroups = "Search Groups";
+$searchgroups = "Search for Groups";
 $groupname = "Group name";
 $groupdescription = "Description";
 
@@ -366,7 +382,8 @@ $registrationNotAllowed = "Your email address is not registered for our beta-pha
 $registrationInvalid = "Your inputs are not valid. Please check the form field and try again.";
 
 $noFriendsYet = "hasn't added you as a friend yet.";
-$madeNoFriends ="You haven't made any friends yet. You can search for friends in the search-field in the upper right corner.";
+$madeNoFriends ="You haven't made any friends yet. You can search for friends in the search-field above.";
+$hasNoGroups = "You are not member of any group. You can create a group or search for groups.";
 
 $changeprofile = "Change Profile";
 $email = "e-mail";
@@ -394,6 +411,9 @@ $close = "Close";
 $male = "male";
 $female ="female";
 
+$edit_profile_invalid_input="Some data has been entered incorrectly. Please correct the fields marked with red.";
+$edit_profile_success="Your profile changes have been successfully saved.";
+$edit_profile_error="Your profile changes could not be saved. Please check your input and try again.";
 $deletemyaccount ="Delete account";
 $editaccount = "Save changes";
 
@@ -476,14 +496,17 @@ $analyzing_with_R_titel = "Analyzing enviroCar Trajectory Data with R";
 $analyzing_with_R_description = 'R is a free programming language for (geo) statistical computations. In his online publication <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> Edzer Pebesma uses several examples to describe how to use R for analyzing enviroCar data. Edzer Pebesma is professor and managing director of the <a href="http://ifgi.uni-muenster.de" target="_blank">Institute for Geoinformatics at Münster University</a>.<br /><br/>Open the script <a href="http://rpubs.com/edzer/enviroCar" title="RPubs script for analyzing enviroCar trajectory data with R">here</a>.';
 
 //dataaccess.php
-$dataaccess_viaAPIHead = 'Using the enviroCar API';
+$dataaccess_head = 'enviroCar Data';
+$dataaccess_licenseHead = 'License';
+$dataaccess_licenseText = 'Data available via the enviroCar API can be used by third parties in accordance with the <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a>. For details see <a href="http://localhost/envirocar/terms.php#license">enviroCar terms</a>.';
+$dataaccess_viaAPIHead = 'API';
 $dataaccess_viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
 <br/><br/>
 The data is anonymized, i.e. it is not possible to connect it to the driver. Access to user related  data is protected and requires the user to login via HTTP authorization.
 <br/><br/>
 Detailed <strong>description of the enviroCar-server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
-//$viaDownloadHead = "Via Download";
-//$viaDownloadText = "Keine Beschreibung verfügbar.";
+$dataaccess_downloadHead = 'File download';
+$dataaccess_downloadText = 'Users can download their own tracks in several formats (e.g. GeoJSON) using the menu on the <a href="https://envirocar.org/routes.php">routes overview</a> page.';
 $dataaccess_endpointHead = 'API Endpoints';
 $dataaccess_endpointText = '<ul>
 <li>Stable API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>
@@ -515,23 +538,32 @@ $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
 enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
 $about_the_people_behind_head = "The People behind";
-$about_the_people_behind_text = 'enviroCar is a project of 
+$about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
 <ul>
 <li style="list-style-type: none;"><a href="http://52north.org" target="_blank">the 52°North</a> research and development network</li> 
 <li style="list-style-type: none;">and the <a href="http://ifgi.uni-muenster.de/en" target="_blank">Institute for Geoinformatics at Münster University</a>.</li>
 </ul>
-Partners are
+<strong>Partners</strong> are
 <ul>
 <li style="list-style-type: none;"><a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">the Technical University of Dresden - Professorship of Geoinformation Systems</a></li> 
 <li style="list-style-type: none;">and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a>.</li>
 </ul>
-Global Sponsor
+<strong>Global Sponsor</strong>
 <ul>
-<li style="list-style-type: none;">This project is sponsored by Esri - the Environmental Systems Research Institute - as a global sponsor (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Germany</a>)</li>
+<li style="list-style-type: none;">This project is sponsored by Esri - the Environmental Systems Research Institute - as a global sponsor (<a href="http://www.esri.com" target="_blank">Esri Inc</a>, <a href="http://www.esri.de/" target="_blank">Esri Germany</a>).</li>
 </ul>
-This project is open for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
+This project is <strong>open</strong> for additional partners, researchers and developers. Contact <a href="mailto:envirocar@52north.org">envirocar@52north.org</a>.';
+
+$about_contributors_head = 'enviroCar Supporter';
+$about_contributors_text = '<p>There are many enviroCar enthusiats who are committed to the enviroCar idea and support the project in a number of ways.<br />
+<br />
+In particular, enviroCar thanks the students of the Institute for Geoinformatics at the Münster University whose concepts, developments and activities laid the corner stone for the enviroCar platform.
+<br /><br />
+Special thanks goes to those <strong>“First Supporters”</strong> and <strong>“First Contributors”</strong> of the Indiegogo crowd funding campaign who provided financial support for the start of the project: Thomas Bartoschek, Hermann-Peter Berlekamp, "Professorship of Geoinformation Systems Faculty of Environmental Sciences, Technische Universität Dresden", Johannes Brauner, Andreas Brenk, Martin Düren, Christian Elfers, Theodor Foerster, Holger Fritze, D. Gueneysu, Ann Hitchcock, Pierre Karrasch, Rob Lemmens,Lovecars.com, Michi6, Tino Miegel, Daniel Nüst, Christian Paas, Lea Remke, Domink Schlarmann, Hansi Senaratne, Christoph Stasch, Martin der Techniker, xydiari
+</p>';
+
 $about_gettinginvolvedHead = "Getting Involved";
-$asACitizenHead = "As a Citizen, who is interested  and engaged in research (Citizen Scientist)";
+$asACitizenHead = "As a Citizen interested  and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
 The enviroCar beta app is available for <strong>Android 2.3 - 4.4</strong>. Download it from <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a>, install it on your smartphone, test it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
@@ -598,25 +630,37 @@ We expect to have a stable release of all components by the end of 2013.";
 //route.php
 
 $route_distance = "DISTANCE";
-$route_fuelConsumption = "FUEL CONSUMPTION";
+$route_fuelConsumption = "CONSUMPTION";
 $route_CO2 = "CO2";
 $route_idleTime = "IDLE TIME";
 $route_avgSpeed = "AVERAGE SPEED";
 $route_minutes = "m";
 $route_fuelGas = "gasoline";
 $route_fuelDiesel = "diesel";
-$route_dropup_fuelConsumption = "consumption";
-$route_dropup_speed = "speed";
+$route_legend="Legend";
+$route_legend_title = "Showing ";
+$route_dropup_fuelConsumption = "Consumption";
+$route_dropup_speed = "Speed";
+$route_dropup_rpm = "RPM";
+$route_dropup_intake_temp = "Intake Air Temperature";
+$route_dropup_intake_pressure = "Intake Pressure";
+$route_dropup_co2 = "CO<sub>2</sub>";
+$route_dropup_maf = "MAF";
 $route_requestFuelPrice = "Requesting current fuel prices...";
 $route_drivenRoute = "driven route";
 $route_baseLayer = "base layer";
+$route_fullscreen = "Fullscreen";
+$route_minimize = "Minimize";
+$route_sharing_on="ON";
+$route_sharing_off="OFF";
+$route_sharing_info="Two clicks for more privacy.  Activating the buttons already sends data to Google/Facebook/Twitter.";
 
 //terms
-$terms_general = '<h2 class="featurette-heading">Terms of Use</h2>
+$terms_general = '<h2>Terms of Use</h2>
 <p style="text-align: justify">
 When you accept our Terms of Use, you agree to comply with the following regulations.
 <br/><br/>
-<strong>1. What happens to User Data</strong> 
+<h3 id="userdata">1. What happens to User Data</h3> 
 <br/>
 When using this website, your IP address will be stored  in our server’s access log and error log file.
 <br/><br/>
@@ -643,7 +687,7 @@ Any other information you provided in a free text form</li>
 You can delete (there is no way back!) your account and the data associated with it (see above) at anytime. Tracks that have been uploaded as Open Data and published to the public are NOT deleted. If you would like to delete your tracks as well, you must do this before you delete your account. Once your account is gone, it is not possible to find out which tracks were yours. Please read the FAQ <LINK> for more information about how to delete your data and/or your account.
 </p>       
 <br/>
-<strong>2. Saving data during a drive</strong> 
+<h3 id="duringdrive">2. Saving data during a drive</h3> 
 <br/>
 <p style="text-align: justify">
 During your test drive (after the START button has been pushed until the STOP button has been pushed), the following data is collected and saved:
@@ -658,14 +702,14 @@ During your test drive (after the START button has been pushed until the STOP bu
 This data is linked via an encrypted key to your user account, which enables you to view your own data in the enviroCar App and on the website. Communication between the enviroCar App, the enviroCar server and the enviroCar website is encrypted so that no third party can access your data.
 </p>
 <br/>
-<strong>3. Upload data to enviroCar server</strong> 
+<h3 id="upload">3. Upload data to enviroCar server</h3> 
 <br/>
 <p style="text-align: justify">
 When you upload your data to the enviroCar server (option: “Upload Track as Open Data“), you agree to publish the measured data as anonymous Open Data and allow third parties to use the data in accordance with the Open Database License (ODbL).
 Data which is downloaded from the enviroCar server contains no user information. The enviroCar App has an option in “Settings” with which you can cut off the beginning and end of your tracks so that the point of departure and the destination are obscured.
 </p>
 <br/>
-<strong>4. Licensing</strong> 
+<h3 id="license">4. Licensing</h3> 
 <br/>
 <p style="text-align: justify">
 Data available via the enviroCar API can be used by third parties in accordance with the Open Database License <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">ODbL</a>. This means
@@ -679,14 +723,11 @@ b) as long as you mention the source of the data (use “Source: 52°North envir
 </li>
 </ul>
 <br/>
-<strong>5. Use of cookies</strong> 
+<h3 id="cookies">5. Use of cookies</h3> 
 <br/>
 <p style="text-align: justify">
 When you use this website, you agree to the use of cookies. The cookies will be used strictly for the purpose of enabling you to log in to our services and select the language of preference for our website. The cookie stores a combination of numbers and characters to identify you during a browser session. Our cookies are valid for one (1) browser session. 
 </p>';
-
-//temporary
-$under_construction = "This website is currently under construction..";
 
 //Badges
 $availableBadges = "Available Badges";

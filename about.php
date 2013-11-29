@@ -108,6 +108,14 @@ $(function(){
 						</div>  
 					</div>    
 				</div>
+				<div class="container leftband">
+					<div class="row-fluid">
+						<div class="span11" style="padding-right: 1ex; text-align: justify;">
+							<h2><span class="anchor" id="sign1"></span><? echo $about_contributors_head ?></h2>
+							<? echo $about_contributors_text ?>
+						</div>  
+					</div>    
+				</div>
 			</div><!--end of div id="behind"-->	
 			<div class="tab-pane fade in" id="getinvolved">
 				<div class="container leftband">

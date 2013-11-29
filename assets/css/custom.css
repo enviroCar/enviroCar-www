@@ -261,8 +261,6 @@ h5{
 }
 
 #chart_div {
-	padding-top: 60px;
-	margin-left: -60px;
 	width: 400px; 
 	height: 200px;
 }
@@ -276,14 +274,30 @@ line-height: 8px!important;
 }
 
 /* Overwriting Bootstrap CSS ------------------------- */
+.nav-collapse .dropdown-menu a:link {
+	color: black;
+}
+
+.btn:focus {
+	outline: 0px;
+}
+.well {
+	border-radius: 0px;
+}
+
+.btn-primary {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#048abf), to(#0065a0));
+}
+
+
 @media (min-width: 980px) {
-    .nav-collapse .dropdown-menu a:link, #register-btn {
+    #register-btn, #lost-password-link {
 		color: #0088CC;
 	}
 }
 
 @media (max-width: 980px) {
-    .nav-collapse .dropdown-menu a:link, #register-btn, .nav-collapse .dropdown-menu p {
+    .nav-collapse .dropdown-menu a:link, #register-btn, #lost-password-link, .nav-collapse .dropdown-menu p {
 		color: white;
 		padding-left: 0px;
 	}
@@ -622,10 +636,17 @@ ul.dropdown-menu li a {
 	color: black;
 }
 
-.input-prepend {
-	width: 100%;
+.input-prepend.input-block-level {
+  display: table; 
 }
-.input-prepend > input {
-	width: 100%;
+.input-prepend.input-block-level .add-on {
+  display: table-cell;
+}
+.input-prepend.input-block-level > input {
+  width: 100%;
 }
 
+.input-prepend.input-block-level .add-on {
+    display: table-cell;
+    border-right: #fff;
+}

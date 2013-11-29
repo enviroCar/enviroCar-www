@@ -45,6 +45,7 @@ if ($login_name != "" && $login_password != ""){
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    <link href="./assets/css/header-start.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="./assets/css/flags.css" rel="stylesheet">
@@ -62,6 +63,24 @@ if ($login_name != "" && $login_password != ""){
     <script src="./assets/js/bootstrap-tooltip.js"></script>
     <script src="./assets/js/jqBootstrapValidation.js"></script>
     
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $jsfile = "./assets/js/$current_file_name.js.php";
+
+      if (file_exists($jsfile)) {
+          include $jsfile;
+      }
+    ?>
+    
+    <?php 
+      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
+      $cssfile = "./assets/css/$current_file_name.css";
+
+      if (file_exists($cssfile)) {
+          echo "<link href='$cssfile' rel='stylesheet' type='text/css'/>";
+      }
+    ?>
+
     <?php
       $captcha_incorrect_alert="";
 
@@ -72,31 +91,19 @@ if ($login_name != "" && $login_password != ""){
                                       $_SERVER["REMOTE_ADDR"],
                                       $_POST["recaptcha_challenge_field"],
                                       $_POST["recaptcha_response_field"]);
+        $user = $_POST['user'];
+        $mail = $_POST['email'];
 
         if (!$resp->is_valid) {
           // What happens when the CAPTCHA was entered incorrectly
-          $captcha_incorrect_alert='<div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div>';
+          $captcha_incorrect_alert='<div class="span12"><div class="alert alert-block alert-error fade in">CAPTCHA '.$index_captcha_incorrect_try_again.'</div></div>';
         } else {
-          header('Location: mailto:envirocar@52north.org?subject=Reset%20Password&body='.$_POST['email']);
+    ?>
+    <script type="text/javascript">
+      submitForm("<?php echo $user; ?>", "<?php echo $mail; ?>");
+    </script>
+    <?php
         }
-      }
-    ?>
-
-    <?php 
-      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-      $jsfile = "./assets/js/$current_file_name.js";
-
-      if (file_exists($jsfile)) {
-          echo "<script src='$jsfile'></script>";
-      }
-    ?>
-    
-    <?php 
-      $current_file_name = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-      $cssfile = "./assets/css/$current_file_name.css";
-
-      if (file_exists($cssfile)) {
-          echo "<link href='$cssfile' rel='stylesheet' type='text/css'/>";
       }
     ?>
 
@@ -232,19 +239,28 @@ if ($login_name != "" && $login_password != ""){
                   <form name="login" action="index.php" method="post" style="display: inline;">
                     <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
                     <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
+                    
                     <div class="control-group">
-                    <div class="input-prepend">
-                      <!--<span class="add-on" id="sign-in-user-icon"><i class="icon-user"></i></span>-->
-                      <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                      <div class="controls">
+                        <div class="input-block-level input-prepend"> 
+                          <span class="add-on" id="sign-in-user-icon"><i class="icon-user"></i></span>
+                          <input type="text"  class="input-block-level" id="login_name"   name="login_name" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                        </div>
+                      </div>
                     </div>
+
+                    <div class="control-group">
+                      <div class="controls">
+                        <div class="input-block-level input-prepend">
+                          <span class="add-on" id="sign-in-password-icon"><i class="icon-lock"></i></span>
+                          <input type="password"  id="login_password" class="input-block-level" name="login_password" placeholder="<? echo $index_password;?>" />
+                        </div>
+                      </div>
                     </div>
-                    <div class="input-prepend">
-                      <!--<span class="add-on" id="sign-in-password-icon"><i class="icon-lock"></i></span>-->
-                      <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
-                    </div>
+
                     <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
-                  <p><a href="reset_password.php" class="link" ><?php echo $index_lost_password ?></a></p>
+                  <p><a href="lost_password.php" class="link" id="lost-password-link"><?php echo $index_lost_password ?></a></p>
                   <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
                 </div>
                 </li>
@@ -321,6 +337,28 @@ if(isset($_GET['deleted'])){
 }
 ?>
 
+<?
+if(isset($_GET['password_reset_submitted'])){
+?>
+<div id="password-reset-submitted" class="container alert alert-block alert-success fade in"> 
+  <a class="close" data-dismiss="alert">×</a>
+  <?echo $index_password_reset_submitted?>
+</div> 
+<?
+}
+?>
+
+<?
+if(isset($_GET['password_resetted'])){
+?>
+<div id="password-reset-submitted" class="container alert alert-block alert-success fade in"> 
+  <a class="close" data-dismiss="alert">×</a> 
+  <?echo $index_password_resetted?>
+</div> 
+<?
+}
+?>
+
 <?         
 if ($login_form_attempt>=1){
 
@@ -359,7 +397,7 @@ if ($login_form_attempt>=1){
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
 	<? echo $usernameorpasswordwrong ?>
-  <a href="reset_password.php" class="link" ><?php echo $index_lost_password ?></a>
+  <a href="lost_password.php" class="link" ><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){
@@ -381,7 +419,7 @@ if ($login_fail) {
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
  <? echo $usernameorpasswordwrong ?><br>
- <a href="reset_password.php" class="link"><?php echo $index_lost_password ?></a>
+ <a href="lost_password.php" class="link"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
 	<?
 		if ($login_form_attempt >= 5){

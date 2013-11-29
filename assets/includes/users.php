@@ -2,7 +2,8 @@
 require_once('connection.php');
 
 
-$baseURL = $serverurl; //as defined in connection.php
+$baseURL = get_serverurl(); //as defined in config.php
+
 //USAGE: Just call this page via GET with the specific parameters:
 // users.php?user=username
 // users.php?friends
@@ -45,6 +46,44 @@ if(isset($_GET['users'])){
 if(isset($_GET['friends'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends', true);
 	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-requests-incoming'])){
+	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends/incomingRequests', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-requests-outgoing'])){
+	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends/outgoingRequests', true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-request-accept'])){
+	$friend = array("name" => ''.$_POST['acceptFriend']); 
+	$response = post_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends', $friend, true);
+	if($response['status'] == 204){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['friend-request-decline'])){
+	$friend = array("name" => ''.$_POST['declineFriend']); 
+	$response = post_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/friends/declineRequest', $friend, true);
+	if($response['status'] == 204){
 		echo $response['response'];
 	}else{
 		echo $response['status'];
@@ -115,6 +154,60 @@ if(isset($_GET['tracks'])){
 		echo $response['status'];
 	}
 }
+
+if(isset($_GET['tracks-page'])){
+	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks'.'?limit=5&page='.rawurlencode($_GET['tracks-page']), true);
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
+if(isset($_GET['track-number-user'])){
+	//This is a workaround to get the total number of a user's tracks
+	//We also need to set up our own curl request because we need the headers and we need to parse them
+	$ch = curl_init($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks'.'?limit=1');
+    curl_setopt_array($ch, array(
+        CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_VERBOSE     => 1,
+        CURLOPT_FOLLOWLOCATION => TRUE,
+        CURLOPT_HEADER => 1
+    ));
+    $out = curl_exec($ch);
+    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    curl_close($ch);
+    //The request is fully returned, so split headers and body
+    list($headers, $body) = explode("\r\n\r\n", $out, 2);
+    //Put all headers into a key/value-Array so we can get the desired "Link" header later
+    $lines = explode("\r\n", $headers);
+    $parsed = array();
+    foreach($lines as $line) {
+        $colon = strpos($line, ':');
+        if($colon !== false) {
+            $name = trim(substr($line, 0, $colon));
+            $value = trim(substr($line, $colon + 1));
+            //Actually sometimes there are two "Link" Elements, we need the first one
+            if(!array_key_exists($name, $parsed)) $parsed[$name] = $value;
+        }
+    }
+    //parse the number of tracks from the "Link"-Headers
+    $num_of_tracks = 0;
+    if(array_key_exists('Link', $parsed)){
+    	$num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];	
+    }
+    $response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
+
+
+	if($response['status'] == 200){
+		echo $response['response'];
+	}else{
+		echo $response['status'];
+	}
+}
+
 
 if(isset($_GET['track'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks/'.rawurlencode($_GET['track']), true);
@@ -195,6 +288,28 @@ if(isset($_GET['friendActivities'])){
 		echo $response['response'];
 	}else{
 		echo $response['status'];
+	}
+}
+
+if(isset($_GET['lostPassword'])){
+	$changeData = array("user" => array("name" => $_POST['user'], "mail" => $_POST['email']));
+	$response = post_request($baseURL.'/resetPassword', $changeData, false);
+
+	if($response['status'] == 200){
+		echo json_encode($response);
+	}else{
+		echo json_encode($response);
+	}
+}
+
+if(isset($_GET['resetPassword'])){
+	$changeData = array("user" => array("name" => $_POST['user'], "token" => $_POST['password']), "code" => $_POST['code']);
+
+	$response = put_request($baseURL.'/resetPassword', $changeData);
+	if($response['status'] == 200){
+		echo json_encode($response);
+	}else{
+		echo json_encode($response);
 	}
 }
 
