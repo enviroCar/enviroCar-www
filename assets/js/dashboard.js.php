@@ -48,7 +48,7 @@
     $('#tracks-list').append(
       '<div class="row row-narrow">'
       +'<div class="span3">'
-      +'<a href="route.php?id='+id+'"><img src="http://giv-dueren.uni-muenster.de/assets/trips/109.png" style="height: 60px; margin-right: 10px; "/></a>'
+      +'<a href="route.php?id='+id+'"><img src="./assets/img/track_preview.png" style="height: 60px; margin-right: 10px; "/></a>'
       +'</div>'
       +'<div class="span9">'
       +'<a href="route.php?id='+id+'">'+name+'</a>'
