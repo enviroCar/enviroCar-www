@@ -48,7 +48,7 @@
     $('#tracks-list').append(
       '<div class="row row-narrow">'
       +'<div class="span3">'
-      +'<a href="route.php?id='+id+'"><img src="http://giv-dueren.uni-muenster.de/assets/trips/109.png" style="height: 60px; margin-right: 10px; "/></a>'
+      +'<a href="route.php?id='+id+'"><img src="./assets/img/track_preview.png" style="height: 60px; margin-right: 10px; "/></a>'
       +'</div>'
       +'<div class="span9">'
       +'<a href="route.php?id='+id+'">'+name+'</a>'
@@ -284,7 +284,7 @@
   
   function addFriendToList(name){
     //$('#friendsList').append('<li class="customLi"><div style="float:left;"><img src="assets/img/user.jpg" style="height: 45px";/></div><div style="float:left;"><div class="profile_name"><a href="profile.php?user='+name+'">'+name+'</a></div></div></li>');
-    $('#friendsList').prepend('<dl><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/><a href="profile.php?user='+name+'">'+name+'</a></dl>');
+    $('#friendsList').prepend('<dl><table><tr><td style="min-width:40px; padding: 0px;"><a href="profile.php?user='+name+'"><img src='+getAvatar(name, 30)+' style="height: 30px; margin-right: 10px; "/></a></td><td><a href="profile.php?user='+name+'">'+name+'</a></tr></table></dl>');
   }
   
   $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
@@ -338,7 +338,7 @@
   $.get('./assets/includes/users.php?friend-requests-outgoing', function(data){
     if(data >= 400){
       console.log(data);
-        error_msg("<?php echo $dashboard_friends_outgoing_error ?>");
+        error_msg("<?php echo $dashboard_friends_outgoing_error; ?>");
     }
     else{
       data = JSON.parse(data);

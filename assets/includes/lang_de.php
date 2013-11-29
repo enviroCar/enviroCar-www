@@ -78,7 +78,7 @@ $required_validation_message="Dies ist ein Pflichtfeld.";
 // dashboard.php
 $dashboard_pending = "Noch nicht bestätigt";
 $dashboard_friends_incoming_error = "Eingehende Freundschaftsanfragen konnten nicht empfangen werden.";
-$dashboard_friends_incoming_error = "Noch nicht bestätigte Freundschaftsanfragen konnten nicht empfangen werden.";
+$dashboard_friends_outgoing_error = "Noch nicht bestätigte Freundschaftsanfragen konnten nicht empfangen werden.";
 $dashboard_friends_accept_error = "Die Freundschaftsanfrage konnte nicht akzeptiert werden. Bitte probiere es später nocheinmal.";
 $dashboard_friend_added = " wurde erfolgreich zu deiner Freundeslist hinzugefügt.";
 $dashboard_friend_declined = "'s Freundschaftsanfrage wurde abgelehnt.";
@@ -413,6 +413,10 @@ $removeasfriend ="Als Freund löschen";
 $close = "Schließen";
 $male = "männlich";
 $female ="weiblich";
+
+$edit_profile_invalid_input="Einige Angaben sind nicht korrekt. Bitte befolge die Hinweise und rote Markierungen.";
+$edit_profile_success="Die Änderungen an deinem Profil wurden erfolgreich gespeichert.";
+$edit_profile_error="Die Änderungen an deinem Profil konnten nicht gespeichert werden. Bitte überprüfe deine Eingaben.";
 
 $deletemyaccount ="Account löschen";
 $editaccount = "Änderungen speichern";

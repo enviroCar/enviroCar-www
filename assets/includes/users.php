@@ -189,12 +189,15 @@ if(isset($_GET['track-number-user'])){
         if($colon !== false) {
             $name = trim(substr($line, 0, $colon));
             $value = trim(substr($line, $colon + 1));
-            //Actually there are two "Link" Elements, we need the first one
-            if($parsed[$name] == null) $parsed[$name] = $value;
+            //Actually sometimes there are two "Link" Elements, we need the first one
+            if(!array_key_exists($name, $parsed)) $parsed[$name] = $value;
         }
     }
     //parse the number of tracks from the "Link"-Headers
-    $num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];
+    $num_of_tracks = 0;
+    if(array_key_exists('Link', $parsed)){
+    	$num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];	
+    }
     $response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
 
 

@@ -76,7 +76,7 @@ $required_validation_message="This is required.";
 // dashboard.php
 $dashboard_pending = "Pending";
 $dashboard_friends_incoming_error = "Couldn't receive incoming friendship requests.";
-$dashboard_friends_incoming_error = "Couldn't receive pending friendships.";
+$dashboard_friends_outgoing_error = "Couldn't receive pending friendships.";
 $dashboard_friends_accept_error = "Couldn't accept friendship. Please try again later.";
 $dashboard_friend_added = " was successfully added to your friend list.";
 $dashboard_friend_declined = "'s friendship request was declined.";
@@ -411,6 +411,9 @@ $close = "Close";
 $male = "male";
 $female ="female";
 
+$edit_profile_invalid_input="Some data has been entered incorrectly. Please correct the fields marked with red.";
+$edit_profile_success="Your profile changes have been successfully saved.";
+$edit_profile_error="Your profile changes could not be saved. Please check your input and try again.";
 $deletemyaccount ="Delete account";
 $editaccount = "Save changes";
 
