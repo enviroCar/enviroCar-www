@@ -1,4 +1,9 @@
-<?
+<?php
+/*
+* This file is subject to the terms and conditions defined in
+* file 'LICENSE', which is part of this source code package.
+*/
+
 require_once('assets/includes/commons.php');
 
 $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");

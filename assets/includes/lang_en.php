@@ -1,4 +1,9 @@
 <?php 
+/*
+* This file is subject to the terms and conditions defined in
+* file 'LICENSE', which is part of this source code package.
+*/
+
 // index.php
 $index_invalid_login_name="Invalid Login Name"; 
 $index_empty_password="Password cannot be empty"; 

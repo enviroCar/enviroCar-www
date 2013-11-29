@@ -1,5 +1,9 @@
 <?php
-/* This is the global config file for enviroCar.org
+/*
+* This file is subject to the terms and conditions defined in
+* file 'LICENSE', which is part of this source code package.
+*
+* This is the global config file for enviroCar.org
 * if variables need to be accessible require_once this file and add a function to get the variable
 * example:
 * 
