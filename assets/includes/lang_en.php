@@ -515,7 +515,7 @@ $analyzing_with_R_description = 'R is a free programming language for (geo) stat
 //dataaccess.php
 $dataaccess_head = 'enviroCar Data';
 $dataaccess_licenseHead = 'License';
-$dataaccess_licenseText = 'Data available via the enviroCar API can be used by third parties in accordance with the <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a>. For details see <a href="http://localhost/envirocar/terms.php#license">enviroCar terms</a>.';
+$dataaccess_licenseText = 'Data available via the enviroCar API can be used by third parties in accordance with the <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a>. For details see <a href="./terms.php#license">enviroCar terms</a>.';
 $dataaccess_viaAPIHead = 'API';
 $dataaccess_viaAPIText = 'The enviroCar server’s REST API supports the download of anonymized track data. Query it via HTTP for tracks, measurements, or statistics and select using spatial and temporal filters. 
 <br/><br/>
@@ -523,7 +523,7 @@ The data is anonymized, i.e. it is not possible to connect it to the driver. Acc
 <br/><br/>
 Detailed <strong>description of the enviroCar-server API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
 $dataaccess_downloadHead = 'File download';
-$dataaccess_downloadText = 'Users can download their own tracks in several formats (e.g. GeoJSON) using the menu on the <a href="https://envirocar.org/routes.php">routes overview</a> page.';
+$dataaccess_downloadText = 'Users can download their own tracks in several formats (e.g. GeoJSON) using the menu on the route overview page (go to <a href="./dashboard.php">your profile</a> and click on a track in the list to see the route overview page).';
 $dataaccess_endpointHead = 'API Endpoints';
 $dataaccess_endpointText = '<ul>
 <li>Stable API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>

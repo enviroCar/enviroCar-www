@@ -265,7 +265,7 @@ $showapiongithub = "Zeige die API-Definition auf github.com";
 $signedin = "Angemeldet";
 
 $logoutsuccess = "Erfolgreich abgemeldet";
-$currentlynotloggedin = "Du bist derzeit nicht angemeldet.";
+$currentlynotloggedin = "Sie sind derzeit nicht angemeldet.";
 $welcometoec = "Willkommen bei enviroCar";
 $regsuccessfull = "Du hast dich erfolgreich registriert.";
 $logincontinue = "Melde dich an um fortzufahren.";
@@ -396,14 +396,14 @@ $joinGroupNotAllowed = "Es ist dir nicht erlaubt, der Gruppe beizutreten.";
 
 $allUsers = "Alle Nutzer";
 
-$registrationError = "Der Server ist zur Zeit nicht verfügbar. Versuche es später erneut";
+$registrationError = "Der Server ist zur Zeit nicht verfügbar. Versuchen Sie es später erneut";
 $registrationNotAllowed = "Deine Emailadresse ist aktuell nicht für die Beta-Phase freigeschaltet. Bitte kontaktiere envirocar@52north.org für einen Beta-tester Account.";
-$registrationInvalid = "Deine Eingaben waren nicht valide. Bitte überprüfe die Formfelder und versuche es erneut.";
+$registrationInvalid = "Ihre Eingaben waren nicht valide. Bitte überprüfen Sie die Formfelder und versuche es erneut.";
 
 $noFriendsYet = "hat dich noch nicht als Freund hinzugefügt.";
 
-$madeNoFriends = "Du hast noch keine Personen als Freunde hinzugefügt. Verwende das obige Eingabefeld, um nach Personen zu suchen.";
-$hasNoGroups = "Du bist in keiner Gruppe Mitglied. Du kannst eine neue Gruppe erstellen oder nach Gruppen suchen.";
+$madeNoFriends = "Sie haben noch keine Personen als Freunde hinzugefügt. Verwende das obige Eingabefeld, um nach Personen zu suchen.";
+$hasNoGroups = "Sie sind in keiner Gruppe Mitglied. Du kannst eine neue Gruppe erstellen oder nach Gruppen suchen.";
 
 $fuelType = "Treibstoff";
 $constructionYear ="Baujahr";
@@ -472,7 +472,7 @@ $detail_info="Das Visualisieren der Messdaten ist eine geeignete Vorgehensweise 
 $speed_map_detail="Detail der Geschwindigkeitskarte";
 $visualization_multitude="Darüber hinaus kann die Auswertung der Messdaten Details wie z.B. Beschleunigungs- und Verzögerungsbereiche darstellen.";
 $GE_visualization="Darstellung der Geschwindigkeitswerte in Google Earth";
-$multitude_possibilities="Du bist somit in der Lage die Daten deiner eigenen Fahrt zu erforschen. Es gibt eine Vielzahl an Analyse- und Visualisierungsmöglichkeiten. Erforsche die Welt deiner eigenen Messdaten!";
+$multitude_possibilities="Sie sind somit in der Lage die Daten deiner eigenen Fahrt zu erforschen. Es gibt eine Vielzahl an Analyse- und Visualisierungsmöglichkeiten. Erforsche die Welt deiner eigenen Messdaten!";
 
 $phen_header = 'Was bedeuten die Phänomene?'; 
 $phen_description ='<p>
@@ -517,7 +517,7 @@ $analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)s
 //dataaccess.php
 $dataaccess_head = 'enviroCar Daten';
 $dataaccess_licenseHead = 'Lizenz';
-$dataaccess_licenseText = 'Die Daten auf dem enviroCar Server dürfen von nach Maßgabe der <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a> genutzt werden, siehe <a href="http://localhost/envirocar/terms.php#license">Nutzungsbedingungen</a>.';
+$dataaccess_licenseText = 'Die Daten auf dem enviroCar Server dürfen von nach Maßgabe der <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">Open Database License (ODbL)</a> genutzt werden, siehe <a href="./terms.php#license">Nutzungsbedingungen</a>.';
 $dataaccess_viaAPIHead = 'API';
 $dataaccess_viaAPIText = 'Die API des enviroCar Servers unterstützt den selektiven  Zugriff auf anonymisierte Messfahrten (Tracks). Sie können per HTTP auf die Tracks, die Messungen und zugehörige Statistiken zugreifen. Für die Selektion können räumliche und zeitliche Filter verwendet werden.
 <br/><br/>
@@ -525,7 +525,7 @@ Die Daten sind anonymisiert, d.h. eine Verbindung zu den Nutzerdaten kann nicht 
 <br/><br/>
 Detaillierte <strong>Beschreibung der enviroCar API</strong>: <a href="http://envirocar.github.io/enviroCar-server/api/">http://envirocar.github.io/enviroCar-server/api/</a>.';
 $dataaccess_downloadHead = 'Dateidownload';
-$dataaccess_downloadText = 'Nutzer können ihre eigenen Tracks in verschiedenen Formaten (z.B. GeoJSON) über die Menüs in der <a href="https://envirocar.org/routes.php">Trackansicht</a> herunterladen.';
+$dataaccess_downloadText = 'Nutzer können ihre eigenen Tracks in verschiedenen Formaten (z.B. GeoJSON) über die Menüs in der Trackansicht herunterladen (klicken Sie in <a href="./dashboard.php">ihrem Profil</a> auf einen der Tracks in der Liste, um zur Trackansicht zu gelangen).';
 $dataaccess_endpointHead = "API URLs";
 $dataaccess_endpointText = '<ul>
 <li>Stabile API: <a href="https://envirocar.org/api/stable/">https://envirocar.org/api/stable/</a></li>
