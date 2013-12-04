@@ -44,7 +44,7 @@ Learn about mobility & environment! Share your data with the enviroCar Citizen S
 $index_support_indiegogo="Support us on Indiegogo";
 $index_this_is_community=" It's an app - collect floating car data
 <br><br>
-It's an internet platform - schare and analyze anonymized open data
+It's an internet platform - share and analyze anonymized open data
 <br><br>
 It's a community - collaborate with other citizens, traffic planners and scientists worldwide!";
 $index_how_it_works="How does it work?";
