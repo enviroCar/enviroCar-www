@@ -42,11 +42,11 @@ $index_help_the_world='Help make mobility sustainable and our cities a little sm
 <br><br>
 Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community='Use the enviroCar app to read your car’s sensor data, learn about your car and explore your driving style.
+$index_this_is_community=" It's an app - collect floating car data
 <br><br>
-Upload your tracks as Open Data to the enviroCar server and provide this anonymized data to researchers and planners in the field of mobility and environment.
+It's an internet platform - schare and analyze anonymized open data
 <br><br>
-Analyze your data and learn about further enviroCar projects and activities via the enviroCar website.';
+It's a community - collaborate with other citizens, traffic planners and scientists worldwide!";
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
