@@ -15,7 +15,7 @@ Best way to get started is to start with these:
 * Dustin Demuth [@dustindemuth](https://github.com/dustindemuth)
 * Stephanie Walter [@StephanieWalter](https://github.com/StephanieWalter)
 * Friedrich Mller  [@FriedrichMueller](https://github.com/FriedrichMueller)
-* Oraib Megdadi [@oraibalmegdadi](https://github.com/oraibalmegdadi)
+* Oraib Almegdadi [@oraibalmegdadi](https://github.com/oraibalmegdadi)
 * Daniel Nüst [@nuest](https://github.com/nuest)
 * Martin Düren [@github_account](http://github.com/github_account)
 * Benjamin Pross [@bpross-52n](https://github.com/bpross-52n)
