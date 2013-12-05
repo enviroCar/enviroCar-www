@@ -99,7 +99,13 @@ $(function(){
 						<? echo $about_aboutText2 ?>	
 						</div>
 						<div class="span6" style="padding-right: 1ex">
-							<img src="./assets/img/enviroCarConceptOverview.png" style="height:300px; width:487px;" alt="The architecture of envirocar" />
+						<?
+                    if($lang == 'en'){ 
+                        echo '<img src="./assets/img/enviroCar-architecture_en.png" style="height:300px; width:487px;" alt="The architecture of enviroCar">';
+                    }else{
+                        echo '<img src="./assets/img/enviroCar-architecture_de.png" style="height:300px; width:487px;" alt="Die enviroCar Architektur">';
+                    }
+                  ?>
 						</div>		
 					</div> 
 					   
