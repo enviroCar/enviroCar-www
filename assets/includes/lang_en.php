@@ -550,9 +550,9 @@ $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
 <strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.';
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
-enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
-$about_aboutText4 = '<h2>the app</h2>
-a text about the app.';
+enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!';
+$about_aboutText4 = '<h2>The enviroCar app</h2>
+The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions. a text about the app.';
 
 $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
