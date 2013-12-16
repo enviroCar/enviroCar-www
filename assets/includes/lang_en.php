@@ -552,7 +552,7 @@ It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <st
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
 enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!';
 $about_aboutText4 = '<h2>The enviroCar app</h2>
-The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions. a text about the app.';
+The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.';
 
 $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
