@@ -42,11 +42,11 @@ $index_help_the_world='Help make mobility sustainable and our cities a little sm
 <br><br>
 Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community='Use the enviroCar app to read your car’s sensor data, learn about your car and explore your driving style.
+$index_this_is_community=" It's an app - collect floating car data
 <br><br>
-Upload your tracks as Open Data to the enviroCar server and provide this anonymized data to researchers and planners in the field of mobility and environment.
+It's an internet platform - share and analyze anonymized open data
 <br><br>
-Analyze your data and learn about further enviroCar projects and activities via the enviroCar website.';
+It's a community - collaborate with other citizens, traffic planners and scientists worldwide!";
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
@@ -535,25 +535,25 @@ $about_aboutHead = "About enviroCar";
 $about_aboutText1 = '<h2>enviroCar & Citizen Science</h2>
 Use <strong>enviroCar</strong> to investigate the impact your driving has on environmental factors, such as <strong>fuel consumption</strong>, <strong>CO2</strong>, or <strong>noise</strong> emissions. <strong>Compare</strong> your driving statistics with friends and compete to become the most efficient driver while reducing your car’s running costs!
 <strong>Share</strong> your data with the enviroCar <strong>citizen science</strong> community and collaborate with others to investigate questions such as:
+<br/><br/>
 <ul>
 <li>What are the spatial characteristics of fuel consumption in your city?</li>
 <li>How can traffic planning be optimized to effectively reduce emissions?</li>
 <li>What can we learn from average speed maps?</li>
 </ul>
-Help <strong>build</strong> a database to help solve these kind of questions. 
+Help create a unique source of information and use it to improve and implement concepts for sustainable mobility. 
 <br/><br/>
-With enviroCar we can all contribute to a <strong>new environmental information</strong> resource. Join the community and help make our world a little smarter.';
+enviroCar counts on YOU! Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<h2>The enviroCar Platform</h2>
-<strong>enviroCar</strong> is a community based platform for gathering car-borne sensor data and producing environmental information. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The <strong>enviroCar app</strong> provides information about your car and your driving characteristics. Upload the data to the <strong>enviroCar server</strong> and contribute anonymized data to the open enviroCar citizen science community. The <strong>enviroCar website</strong> allows you to:
-<ul>
-<li>access your data,</li>
-<li>compare your driving characteristics with others,</li>
-<li>explore maps and statistics and</li>
-<li>download data to process and analyze.</li>
-</ul>
-';
+<strong>enviroCar</strong> is an open platform for Citizen Science projects in the filed of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze floating car data and share their findings.
+<br/><br/>
+It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
+<strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.';
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
-enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
+enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!';
+$about_aboutText4 = '<h2>The enviroCar app</h2>
+The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.';
+
 $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
 <ul>
