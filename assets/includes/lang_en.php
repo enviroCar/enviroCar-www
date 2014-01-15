@@ -504,6 +504,8 @@ $map = "Map";
 $details = "Details";
 $hotspot_titel = "enviroCar Hot Spot Analysis";
 $hotspot_description = 'This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.<br /><br/>Open the map <a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" title="CO2 hot spot analysis Münster | enviroCar">here</a>.';
+$agol_titel = "";
+$agol_description = "";
 $speed_titel = "enviroCar Tracks";
 $speed_description = 'This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.<br /><br/>Open the map <a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" title="Live track overview map">here</a>.';
 $speedcomparison_titel = "Speed Analysis";

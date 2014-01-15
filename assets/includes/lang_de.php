@@ -505,6 +505,8 @@ $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
 $hotspot_titel = "enviroCar Hot-Spot Analyse";
 $hotspot_description = 'Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster (August 2013). Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen  Werten an.<br /><br/><a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" title="CO2 hot spot Analyse für Münster | enviroCar">Karte öffnen</a>';
+$agol_titel = "";
+$agol_description = "";
 $speed_titel = "enviroCar Tracks";
 $speed_description = 'Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.<br /><br/><a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" title="Live track Karte">Karte öffnen</a>';
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
