@@ -537,7 +537,7 @@ $dataaccess_endpointText = '<ul>
 //about.php
 $about_aboutHead = "Über enviroCar";
 $about_aboutText1 = '<h2>enviroCar & Citizen Science</h2>
-<strong>enviroCar</strong> bietet die Möglichkeit, auf Sensordaten von Fahrzeugen zuzugreifen und den Einfluss des Fahrens auf Faktoren wie beispielsweise den Energieverbrauch, die CO2-Produktion oder die Lärmentwicklung zu erkunden.
+<strong>enviroCar</strong> bietet die Möglichkeit, auf Sensordaten von Fahrzeugen zuzugreifen und den Einfluss des Fahrens auf Faktoren wie beispielsweise den <strong>Energieverbrauch</strong>, die <strong>CO2-Produktion</strong> oder die <strong>Lärmentwicklung</strong> zu erkunden.
 <br/>
 Du kannst dein Umweltprofil mit dem deiner Freunde oder auch dem ganzer Gruppen von enviroCar-Nutzern vergleichen und die sportliche Herausforderung annehmen, effizienter als andere zu fahren. Gleichzeitig wirst Du die laufenden Kosten für jeden gefahrenen Kilometer reduzieren.
 <br/>
@@ -552,8 +552,8 @@ Verkehrsplaner, Wissenschaftler, die Industrie und viele Bürger sind sehr daran
 Mach mit! Helf Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
 $about_aboutText2 = '<h2>Die enviroCar Plattform</h2>
 enviroCar ist eine Plattform für Citizen Science Projekte, bei denen Bürger eingeladen sind, sich aktiv mit dem Thema Mobilität und Umwelt zu befassen.
-<br/> Es ist einfach und macht Spaß. Mit Hilfe eines Bluetooth OBD-II-Adapters, deinem Android Smartphone und der enviroCar App greifst du auf die Daten der Sensorik deines Fahrzeuges. Die kostenlose App stellt dir bereits viele Informationen über die Charakteristik deines Fahrzeuges und über deinen Fahrstil bereit.
-Nach der Übertragung auf den Server stehen die Daten der Community anonymisiert als offene Daten zur Verfügung. Die enviroCar Webseite bietet dir Möglichkeiten um Fragen zum Thema Mobilität und Umwelt zu beantworten. Mittels <a href="http://52north.maps.arcgis.com/home/"> ArcGIS Online</a> können Ideen, Daten, Analysen und die daraus gewonnene Erkenntnisse publiziert und diskutiert werden.<br/> 
+<br/> Es ist einfach und macht Spaß. Mit Hilfe eines <strong>Bluetooth OBD-II-Adapters</strong>, deinem <strong>Android Smartphone</strong> und der <strong>enviroCar App</strong> greifst du auf die Daten der Sensorik deines Fahrzeuges. Die kostenlose App stellt dir bereits viele Informationen über die Charakteristik deines Fahrzeuges und über deinen Fahrstil bereit.
+Nach der Übertragung auf den <strong>enviroCar Server</strong> stehen die Daten der Community anonymisiert als offene Daten zur Verfügung. Die <strong>enviroCar Webseite</strong> bietet dir Möglichkeiten um Fragen zum Thema Mobilität und Umwelt zu beantworten. Mittels <a href="http://52north.maps.arcgis.com/home/"> ArcGIS Online</a> können Ideen, Daten, Analysen und die daraus gewonnene Erkenntnisse publiziert und diskutiert werden.<br/> 
 Du hast die Möglichkeit, deine Daten anonymisiert auf den enviroCar Server zu laden, wo sie als offene Daten für die Citizen Science Community von enviroCar zur Verfügung stehen.';
 $about_aboutText3 = "<h2>OBD II - Adapter</h2>
 enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Du kannst diese Adapter auf die entsprechende Schnittstelle in deinem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden, die App starten und losfahren.";
