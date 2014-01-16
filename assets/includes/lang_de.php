@@ -539,9 +539,9 @@ $about_aboutHead = "Über enviroCar";
 $about_aboutText1 = '<h2>enviroCar & Citizen Science</h2>
 <strong>enviroCar</strong> bietet die Möglichkeit, auf Sensordaten von Fahrzeugen zuzugreifen und den Einfluss des Fahrens auf Faktoren wie beispielsweise den Energieverbrauch, die CO2-Produktion oder die Lärmentwicklung zu erkunden.
 <br/>
-Sie können Ihr Umweltprofil mit dem Ihrer Freunde oder auch dem ganzer Gruppen von enviroCar-Nutzern vergleichen und die sportliche Herausforderung annehmen, effizienter als andere zu fahren. Gleichzeitig werden Sie die laufenden Kosten für jeden gefahrenen Kilometer reduzieren.
+Du kannst dein Umweltprofil mit dem deiner Freunde oder auch dem ganzer Gruppen von enviroCar-Nutzern vergleichen und die sportliche Herausforderung annehmen, effizienter als andere zu fahren. Gleichzeitig wirst Du die laufenden Kosten für jeden gefahrenen Kilometer reduzieren.
 <br/>
-Information, die geteilt wird, vermehrt sich dabei! Teilen Sie Ihre Daten mit allen Nutzern von enviroCar und befassen Sie sich mit interessanten Forschungsfragen wie beispielsweise:
+Information, die geteilt wird, vermehrt sich dabei! Teil deine Daten mit allen Nutzern von enviroCar und befasse dich mit interessanten Forschungsfragen wie beispielsweise:
 <ul>
 <li>Auf welchen Straßenabschnitten wird besonders viel Kraftstoff verbraucht?</li>
 <li>Wie lässt sich die Verkehrssteuerung verbessern, um den Energieverbrauch und Emissionen zu verringern?</li>
@@ -549,11 +549,11 @@ Information, die geteilt wird, vermehrt sich dabei! Teilen Sie Ihre Daten mit al
 </ul>
 Verkehrsplaner, Wissenschaftler, die Industrie und viele Bürger sind sehr daran interessiert, eine Datenquelle aufzubauen, mit der diese und ähnliche Fragen beantwortet werden können. 
 <br/>
-Machen Sie mit! Helfen Sie, Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
+Mach mit! Helf Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
 $about_aboutText2 = '<h2>Die enviroCar Plattform</h2>
 enviroCar ist eine Community Plattform für die Gewinnung von Umweltinformationen aus den Daten der Fahrzeugsensorik. Mit Hilfe eines OBD-II-Adapters, Ihrem Android Smartphone und der enviroCar App können Sie auf die Daten der Sensorik Ihres Fahrzeuges zugreifen. Die App stellt Ihnen bereits viele Informationen über die Charakteristik ihres Fahrzeuges und über Ihren Fahrstil zur Verfügung.
 <br/> 
-Sie haben die Möglichkeit, ihre Daten anonymisiert auf den enviroCar Server zu laden, wo sie als offene Daten für die Citizen Science Community von enviroCar zur Verfügung stehen.
+Du hast die Möglichkeit, deine Daten anonymisiert auf den enviroCar Server zu laden, wo sie als offene Daten für die Citizen Science Community von enviroCar zur Verfügung stehen.
 <br/>
 Die enviroCar Website ermöglicht Ihnen
 <ul>
@@ -563,9 +563,9 @@ Die enviroCar Website ermöglicht Ihnen
 <li>Daten für weitere Auswertungen herunterzuladen</li>
 </ul>';
 $about_aboutText3 = "<h2>OBD II - Adapter</h2>
-enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Sie können diese Adapter auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden. Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.";
+enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Du kannst diese Adapter auf die entsprechende Schnittstelle in deinem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden.";
 $about_aboutText4 = '<h2>die App</h2>
-ein text über die App.';
+Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.';
 
 $about_the_people_behind_head = "Wer steckt dahinter";
 $about_the_people_behind_text = '<strong>enviroCar</strong> ist ein Projekt des 
