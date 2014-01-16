@@ -582,7 +582,7 @@ Special thanks goes to those <strong>“First Supporters”</strong> and <strong
 </p>';
 
 $about_gettinginvolvedHead = "Getting Involved";
-$asACitizenHead = "As a Citizen interested  and engaged in research (Citizen Scientist)";
+$asACitizenHead = "As a Citizen interested and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
 The enviroCar beta app is available for <strong>Android 2.3 - 4.4</strong>. It is now available for testing at <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a>. Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
@@ -616,6 +616,7 @@ $faq_q2 = "Is my car supported?";
 $faq_q3 = "What about privacy issues?";
 $faq_q4 = "How can I contribute as a developer to enviroCar ?";
 $faq_q5 = "What is the current state of enviroCar?";
+$faq_q6 = "I have an iPhone XY, can I use the enviroCar app with it?";
 
 $faq_a1 = 'There are many OBD-II adapters available on the market.  Prices range from 15 EUR, for low cost Chinese imports at eBay and Amazon, up to 90 - 200 EUR for high quality systems from specialized suppliers. Please be aware that, in Europe, certain certificates are required when trading those products (CE) and when using them in cars while driving (ECE). Other countries may have additional legal requirements. Currently, the Drivedeck W4 adapter seems to be the only one equipped with all certificates required in Germany. Please check national regulations to be sure that the adapter of your choice can be used without restrictions in your country.
 <br/><br/>
@@ -645,6 +646,10 @@ Please contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°
 $faq_a5 = "In its current phase, enviroCar is in a closed beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
 <br/><br/>
 We expect to have a stable release of all components by the end of 2013.";
+$faq_q6 = "This would be great, but unfortunately it is not possible at the moment. The enviroCar app is only available for smartphones with an Android (version 2.3 – 4.4) operating system. This is due to a number of reasons, one being that we decided to focus on implementing the app for Bluetooth ODB-II adapters. iOS supports Wi-Fi adapters and not Bluetooth ODB-II adapters. Since we started as a study project in the spring of 2013, we had to focus our resources and decided that developing a cross platform app was not appropriate. Even though we are no longer a study project, we still have limited resources!
+<br/><br/>
+If you are keen on having it – pitch in and join the developers!";
+
 
 //route.php
 
