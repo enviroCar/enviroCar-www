@@ -35,7 +35,7 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	      <div class="span8">
-			<h2> <? echo $speed_titel ?></h2>
+			<h2> <?php echo $speed_titel ?></h2>
 	        <?php echo $speed_description ?>       
 	      </div>
 			</div>
@@ -46,7 +46,7 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	        <div class="span8">
-	        	<h2><? echo $hotspot_titel ?></h2>
+	        	<h2><?php echo $hotspot_titel ?></h2>
 	          <?php echo $hotspot_description ?>       
 	        </div>
 			</div>
@@ -65,7 +65,7 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	        <div class="span8">
-	        	<h2><? echo $analyzing_with_R_titel ?></h2>
+	        	<h2><?php echo $analyzing_with_R_titel ?></h2>
 	          <?php echo $analyzing_with_R_description ?>         
 	        </div>
 			</div>
@@ -76,7 +76,7 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	        <div class="span8">
-	        	<h2><? echo $agol_titel ?></h2>
+	        	<h2><?php echo $agol_titel ?></h2>
 	          <?php echo $agol_description ?>       
 	        </div>
 			</div>
