@@ -121,23 +121,23 @@ $(function(){
 						</div>  
 					</div>
 				</div>
-				<div class="container leftband">
+<!--				<div class="container leftband">
 					<div class="row-fluid">	
 						<div class="span6">
 						<p>  		 	
-						<? echo $about_aboutText4 ?>	
+						<? //echo $about_aboutText4 ?>	
 						</div>
 						<div class="span6" style="padding-right: 1ex">
-						<?
-                    if($lang == 'en'){ 
-                        echo '<img src="./assets/img/enviroCar-architecture_en.png" style="height:300px; width:487px;" alt="The architecture of enviroCar">';
-                    }else{
-                        echo '<img src="./assets/img/enviroCar-architecture_de.png" style="height:300px; width:487px;" alt="Die enviroCar Architektur">';
-                    }
+						<? 
+                    //if($lang == 'en'){ 
+                    //    echo '<img src="./assets/img/enviroCar-architecture_en.png" style="height:300px; width:487px;" alt="The architecture of enviroCar">';
+                    //}else{
+                    //    echo '<img src="./assets/img/enviroCar-architecture_de.png" style="height:300px; width:487px;" alt="Die enviroCar Architektur">';
+                    //} 
                   ?>
 						</div>		
 					</div> 
-				</div>
+				</div>-->
 			</div><!--end of div id="main"-->		
 			<div class="tab-pane fade in" id="behind">
 				<div class="container leftband">
