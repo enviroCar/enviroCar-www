@@ -37,10 +37,9 @@ $index_register="Registrieren";
 $index_register_name_taken="Dieser Nick-Name ist bereits vergeben.";
 $index_get_App="Hol dir unsere App!";
 $index_get_it_on_google="Besuch Google Play!";
-$index_be_a_citizen_scientist="Machen Sie mit ...";
-$index_help_the_world='Wer fährt umweltfreundlicher, Sie oder die Kollegen Ihrer Arbeitsstelle? Wieviel CO2 produziert Ihr Fahrzeug? Was müssten Sie unternehmen, um klimaneutral zu fahren? <br> Welche Strecken benötigen besonders viel Kraftstoff? Sind Fahrbahnschwellen umweltfreundlicher als Tempo-Zonen? Ließe sich die Situation durch eine andere Verkehrsführung optimieren?
-<br><br> 
-Nutzen Sie enviroCar, um diese und ähnliche Fragen zu beantworten. Stellen Sie Forschern und Planern Daten aus der Sensorik Ihres Fahrzeuges zur Verfügung. Helfen Sie mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
+$index_be_a_citizen_scientist="Mach mit ...";
+$index_help_the_world='Wer fährt umweltfreundlicher, du oder deine Kollegen? Wieviel CO2 produziert dein Fahrzeug? Mit enviroCar kannst du diese und ähnliche Fragen beantworten. 
+<br><br>Stell Forschern und Planern Daten aus der Sensorik deines Fahrzeuges zur Verfügung. Helf mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
 $index_support_indiegogo="Unterstütze uns auf Indiegogo";
 $index_this_is_community='Mit der enviroCar App können Sie Sensordaten aus der Motorsteuerung auslesen und mehr über Ihr Fahrzeug und Ihren Fahrstil erfahren.
 <br><br>
