@@ -128,13 +128,7 @@ $(function(){
 						<? echo $about_aboutText4 ?>	
 						</div>
 						<div class="span6" style="padding-right: 1ex">
-						<?
-                    if($lang == 'en'){ 
-                        echo '<img src="./assets/img/enviroCar-architecture_en.png" style="height:300px; width:487px;" alt="The architecture of enviroCar">';
-                    }else{
-                        echo '<img src="./assets/img/enviroCar-architecture_de.png" style="height:300px; width:487px;" alt="Die enviroCar Architektur">';
-                    }
-                  ?>
+						<img class="offset3" src="./assets/img/about/enviroCar-app.jpg" style="width:40%;" alt="The enviroCar App">
 						</div>		
 					</div> 
 				</div>
