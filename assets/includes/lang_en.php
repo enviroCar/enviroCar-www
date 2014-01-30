@@ -504,6 +504,8 @@ $map = "Map";
 $details = "Details";
 $hotspot_titel = "enviroCar Hot Spot Analysis";
 $hotspot_description = 'This map presents a CO2 hot spot analysis for the city of Münster (August 2013). Red dots indicate regions in which cars produced significantly high values. Blue dots are regions with significantly low values.<br /><br/>Open the map <a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" title="CO2 hot spot analysis Münster | enviroCar">here</a>.';
+$agol_titel = "interactive maps with ArcGIS Online";
+$agol_description = 'enviroCar\'s ArcGIS online mapping platform provides a number of interactive maps based on enviroCar data. Browse the gallery. Tell the community about projects. Share ideas, insights and conclusions with people all over the world.<br /><br/><a href="http://52north.maps.arcgis.com/home" title="enviroCar AGOL portal">Open the portal.</a>';
 $speed_titel = "enviroCar Tracks";
 $speed_description = 'This map provides an overview of all enviroCar tracks. It displays the measured speed. New tracks are visible within seconds after uploading them from the enviroCar app. You can access this map from the ArcGIS app on your tablet pc or your smartphone. Just search for enviroCar.<br /><br/>Open the map <a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" title="Live track overview map">here</a>.';
 $speedcomparison_titel = "Speed Analysis";
@@ -545,14 +547,14 @@ Help create a unique source of information and use it to improve and implement c
 <br/><br/>
 enviroCar counts on YOU! Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<h2>The enviroCar Platform</h2>
-<strong>enviroCar</strong> is an open platform for Citizen Science projects in the filed of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze floating car data and share their findings.
+<strong>enviroCar</strong> is an open platform for Citizen Science projects in the field of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze floating car data and share their findings.
 <br/><br/>
 It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
 <strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.';
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
-enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug the OBD-II adapter into your car, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track! The enviroCar app automatically reads out parameters, such as  speed or revolution per minutes and calculates further information such as fuel consumption and CO2 emissions.';
-$about_aboutText4 = '<h2>the app</h2>
-a text about the app.';
+enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!';
+$about_aboutText4 = '<h2>The enviroCar app</h2>
+The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.';
 
 $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
@@ -580,7 +582,7 @@ Special thanks goes to those <strong>“First Supporters”</strong> and <strong
 </p>';
 
 $about_gettinginvolvedHead = "Getting Involved";
-$asACitizenHead = "As a Citizen interested  and engaged in research (Citizen Scientist)";
+$asACitizenHead = "As a Citizen interested and engaged in research (Citizen Scientist)";
 $asACitizenText = 'All you need is an Android smartphone (version 2.3 or higher),  a Bluetooth OBD-II adapter, and a car, which supports the ODB-II standard. Plug the adapter into the OBD-II socket in your car (check the web for your car type and socket position) and pair it with your smartphone following the adapter’s instructions. 
 <br/><br/>
 The enviroCar beta app is available for <strong>Android 2.3 - 4.4</strong>. It is now available for testing at <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a>. Download it to your smartphone, install it and enjoy. Use the app to register for enviroCar, check your settings, register your car type, select the bluetooth device and start collecting your first tracks. 
@@ -614,6 +616,7 @@ $faq_q2 = "Is my car supported?";
 $faq_q3 = "What about privacy issues?";
 $faq_q4 = "How can I contribute as a developer to enviroCar ?";
 $faq_q5 = "What is the current state of enviroCar?";
+$faq_q6 = "I have an iPhone XY, can I use the enviroCar app with it?";
 
 $faq_a1 = 'There are many OBD-II adapters available on the market.  Prices range from 15 EUR, for low cost Chinese imports at eBay and Amazon, up to 90 - 200 EUR for high quality systems from specialized suppliers. Please be aware that, in Europe, certain certificates are required when trading those products (CE) and when using them in cars while driving (ECE). Other countries may have additional legal requirements. Currently, the Drivedeck W4 adapter seems to be the only one equipped with all certificates required in Germany. Please check national regulations to be sure that the adapter of your choice can be used without restrictions in your country.
 <br/><br/>
@@ -643,6 +646,10 @@ Please contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°
 $faq_a5 = "In its current phase, enviroCar is in a closed beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
 <br/><br/>
 We expect to have a stable release of all components by the end of 2013.";
+$faq_q6 = "This would be great, but unfortunately it is not possible at the moment. The enviroCar app is only available for smartphones with an Android (version 2.3 – 4.4) operating system. This is due to a number of reasons, one being that we decided to focus on implementing the app for Bluetooth ODB-II adapters. iOS supports Wi-Fi adapters and not Bluetooth ODB-II adapters. Since we started as a study project in the spring of 2013, we had to focus our resources and decided that developing a cross platform app was not appropriate. Even though we are no longer a study project, we still have limited resources!
+<br/><br/>
+If you are keen on having it – pitch in and join the developers!";
+
 
 //route.php
 

@@ -37,16 +37,15 @@ $index_register="Registrieren";
 $index_register_name_taken="Dieser Nick-Name ist bereits vergeben.";
 $index_get_App="Hol dir unsere App!";
 $index_get_it_on_google="Besuch Google Play!";
-$index_be_a_citizen_scientist="Machen Sie mit ...";
-$index_help_the_world='Wer fährt umweltfreundlicher, Sie oder die Kollegen Ihrer Arbeitsstelle? Wieviel CO2 produziert Ihr Fahrzeug? Was müssten Sie unternehmen, um klimaneutral zu fahren? <br> Welche Strecken benötigen besonders viel Kraftstoff? Sind Fahrbahnschwellen umweltfreundlicher als Tempo-Zonen? Ließe sich die Situation durch eine andere Verkehrsführung optimieren?
-<br><br> 
-Nutzen Sie enviroCar, um diese und ähnliche Fragen zu beantworten. Stellen Sie Forschern und Planern Daten aus der Sensorik Ihres Fahrzeuges zur Verfügung. Helfen Sie mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
+$index_be_a_citizen_scientist="Mach mit ...";
+$index_help_the_world='Wer fährt umweltfreundlicher, du oder deine Kollegen? Wieviel CO2 produziert dein Fahrzeug? Mit enviroCar kannst du diese und ähnliche Fragen beantworten. 
+<br><br>Stell Forschern und Planern Daten aus der Sensorik deines Fahrzeuges zur Verfügung. Helf mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
 $index_support_indiegogo="Unterstütze uns auf Indiegogo";
-$index_this_is_community='Mit der enviroCar App können Sie Sensordaten aus der Motorsteuerung auslesen und mehr über Ihr Fahrzeug und Ihren Fahrstil erfahren.
+$index_this_is_community='Mit der enviroCar App kannst Du Sensordaten aus der Motorsteuerung auslesen und mehr über dein Fahrzeug und deinen Fahrstil erfahren.
 <br><br>
-Sie können die Daten als Open Data auf den enviroCar Server hochladen und anonymisiert für die Verkehrs- und Umweltforschung zur Verfügung stellen.
+Stell deine Daten anonymisiert als Open Data auf die enviroCar Internet Plattform zur Verfügung.
 <br><br>
-Nutzen Sie die enviroCar Website, um Ihre Daten zu verwalten und enviroCar Projekte kennenzulernen.';
+Werd Teil der enviroCar Community  - eine Gemeinschaft von Bürgern, Forschern und Planer weltweit!';
 $index_how_it_works="Wie funktioniert das Ganze?";
 $index_here_we_go=" - so geht's!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
@@ -505,6 +504,8 @@ $noDescription = "Keine Beschreibung verfügbar.";
 $map = "Karte";
 $hotspot_titel = "enviroCar Hot-Spot Analyse";
 $hotspot_description = 'Die Karte zeigt eine Hot-Spot Analyse der gemessenen CO2-Werte für das Stadtgebiet von Münster (August 2013). Rote Punkte signalisieren Regionen mit signifikant hohen Emissionswerten. Blaue Punkte zeigen Bereiche mit signifikant niedrigen  Werten an.<br /><br/><a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=5db4e1ea445e4b4b8612443e7ba76119" title="CO2 hot spot Analyse für Münster | enviroCar">Karte öffnen</a>';
+$agol_titel = "Interative Karten mit ArcGIS Online";
+$agol_description = 'enviroCar nutzt das Mapping-Plattform ArcGIS Online um eine Vielzahl von interaktiven Karten bereitzustellen. Kartengrundlagen sind die enviroCar Daten. Du kannst die Gallarie durchschauen, Ideen, Daten, Analysen und die daraus gewonnene Erkenntnisse publizieren und diskutieren.<br /><br/><a href="http://52north.maps.arcgis.com/home" title="enviroCar AGOL portal">Portal öffnen</a>';
 $speed_titel = "enviroCar Tracks";
 $speed_description = 'Die Karte gibt einen Überblick über alle Tracks, die bislang über die enviroCar-Plattform erfasst wurden. Die Darstellung zeigt die gemessenen Geschwindigkeiten. Neue Tracks werden innerhalb weniger Sekunden nach dem Hochladen aus der enviroCar App in der Karte angezeigt. Diese Karte können Sie auch über die ArcGIS App auf ihrem tablet-PC oder Ihrem Smartphone ansehen, wenn Sie nach enviroCar suchen.<br /><br/><a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" title="Live track Karte">Karte öffnen</a>';
 $speedcomparison_titel = "Geschwindigkeits-Analyse";
@@ -535,11 +536,11 @@ $dataaccess_endpointText = '<ul>
 //about.php
 $about_aboutHead = "Über enviroCar";
 $about_aboutText1 = '<h2>enviroCar & Citizen Science</h2>
-<strong>enviroCar</strong> bietet die Möglichkeit, auf Sensordaten von Fahrzeugen zuzugreifen und den Einfluss des Fahrens auf Faktoren wie beispielsweise den Energieverbrauch, die CO2-Produktion oder die Lärmentwicklung zu erkunden.
+<strong>enviroCar</strong> bietet die Möglichkeit, auf Sensordaten von Fahrzeugen zuzugreifen und den Einfluss des Fahrens auf Faktoren wie beispielsweise den <strong>Energieverbrauch</strong>, die <strong>CO2-Produktion</strong> oder die <strong>Lärmentwicklung</strong> zu erkunden.
 <br/>
-Sie können Ihr Umweltprofil mit dem Ihrer Freunde oder auch dem ganzer Gruppen von enviroCar-Nutzern vergleichen und die sportliche Herausforderung annehmen, effizienter als andere zu fahren. Gleichzeitig werden Sie die laufenden Kosten für jeden gefahrenen Kilometer reduzieren.
+Du kannst dein Umweltprofil mit dem deiner Freunde oder auch dem ganzer Gruppen von enviroCar-Nutzern vergleichen und die sportliche Herausforderung annehmen, effizienter als andere zu fahren. Gleichzeitig wirst Du die laufenden Kosten für jeden gefahrenen Kilometer reduzieren.
 <br/>
-Information, die geteilt wird, vermehrt sich dabei! Teilen Sie Ihre Daten mit allen Nutzern von enviroCar und befassen Sie sich mit interessanten Forschungsfragen wie beispielsweise:
+Information, die geteilt wird, vermehrt sich dabei! Teil deine Daten mit allen Nutzern von enviroCar und befasse dich mit interessanten Forschungsfragen wie beispielsweise:
 <ul>
 <li>Auf welchen Straßenabschnitten wird besonders viel Kraftstoff verbraucht?</li>
 <li>Wie lässt sich die Verkehrssteuerung verbessern, um den Energieverbrauch und Emissionen zu verringern?</li>
@@ -547,23 +548,15 @@ Information, die geteilt wird, vermehrt sich dabei! Teilen Sie Ihre Daten mit al
 </ul>
 Verkehrsplaner, Wissenschaftler, die Industrie und viele Bürger sind sehr daran interessiert, eine Datenquelle aufzubauen, mit der diese und ähnliche Fragen beantwortet werden können. 
 <br/>
-Machen Sie mit! Helfen Sie, Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
+Mach mit! Helf Mobilität nachhaltig zu gestalten und den Spaß an umweltfreundlichem Fahren zu verbreiten.';
 $about_aboutText2 = '<h2>Die enviroCar Plattform</h2>
-enviroCar ist eine Community Plattform für die Gewinnung von Umweltinformationen aus den Daten der Fahrzeugsensorik. Mit Hilfe eines OBD-II-Adapters, Ihrem Android Smartphone und der enviroCar App können Sie auf die Daten der Sensorik Ihres Fahrzeuges zugreifen. Die App stellt Ihnen bereits viele Informationen über die Charakteristik ihres Fahrzeuges und über Ihren Fahrstil zur Verfügung.
-<br/> 
-Sie haben die Möglichkeit, ihre Daten anonymisiert auf den enviroCar Server zu laden, wo sie als offene Daten für die Citizen Science Community von enviroCar zur Verfügung stehen.
-<br/>
-Die enviroCar Website ermöglicht Ihnen
-<ul>
-<li>Auf Ihre Daten zuzugreifen</li>
-<li>Die Charakteristik Ihrer Fahrten mit anderen zu vergleichen</li>
-<li>Interaktive Karten und Statistiken zu nutzen</li>
-<li>Daten für weitere Auswertungen herunterzuladen</li>
-</ul>';
+enviroCar ist eine Plattform für Citizen Science Projekte, bei denen Bürger eingeladen sind, sich aktiv mit dem Thema Mobilität und Umwelt zu befassen.
+<br/> Es ist einfach und macht Spaß. Mit Hilfe eines <strong>Bluetooth OBD-II-Adapters</strong>, deinem <strong>Android Smartphone</strong> und der <strong>enviroCar App</strong> greifst du auf die Daten der Sensorik deines Fahrzeuges. Die kostenlose App stellt dir bereits viele Informationen über die Charakteristik deines Fahrzeuges und über deinen Fahrstil bereit.
+Nach der Übertragung auf den <strong>enviroCar Server</strong> stehen die Daten der Community anonymisiert als offene Daten zur Verfügung. Die <strong>enviroCar Webseite</strong> bietet dir Möglichkeiten um Fragen zum Thema Mobilität und Umwelt zu beantworten. Mittels <a href="http://52north.maps.arcgis.com/home/"> ArcGIS Online</a> können Ideen, Daten, Analysen und die daraus gewonnene Erkenntnisse publiziert und diskutiert werden.<br/> ';
 $about_aboutText3 = "<h2>OBD II - Adapter</h2>
-enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Sie können diese Adapter auf die entsprechende Schnittstelle in Ihrem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden. Die enviroCar App ist dann in der Lage, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.";
-$about_aboutText4 = '<h2>die App</h2>
-ein text über die App.';
+enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Du kannst diese Adapter auf die entsprechende Schnittstelle in deinem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden, die App starten und losfahren.";
+$about_aboutText4 = '<h2>Die App</h2>
+Die enviroCar App ist dann in der Lage, deine Route aufzunehmen, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.';
 
 $about_the_people_behind_head = "Wer steckt dahinter";
 $about_the_people_behind_text = '<strong>enviroCar</strong> ist ein Projekt des 
