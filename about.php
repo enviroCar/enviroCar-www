@@ -112,7 +112,7 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
         			<div class="span6">
-        			<img class="offset3" src="./assets/img/drivedeck1.jpg" style="width:50%;" alt="An ODB II Adapter">
+        			<img class="offset3" src="./assets/img/drivedeck1.jpg" style="width:30%;" alt="An ODB II Adapter">
         			</div>
 					<div class="span6">
 							<p>
