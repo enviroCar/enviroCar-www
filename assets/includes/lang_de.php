@@ -513,7 +513,8 @@ $speedcomparison_description = "Die Karte zeigt die Abweichung der gemessenen mi
 Gegenstand einer Studienarbeit am Institut für Geoinformatik der Uni Münster (2013/07).";
 $speedcomparison_page_headline = "Abweichung der gemessenen mittleren Geschwindigkeiten von den in OpenStreetMap verzeichneten Geschwindigkeitsbegrenzungen";
 $analyzing_with_R_titel = "enviroCar Tracks analysieren mit R";
-$analyzing_with_R_description = 'R ist eine freie Programmiersprache für (geo)statistische Berechnungen. In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.<br /><br/><a href="http://rpubs.com/edzer/enviroCar" title="RPubs Skript für Analyse von enviroCar Tracks mit R">Skript öffnen</a>';
+$analyzing_with_R_description = '<p>R ist eine freie Programmiersprache für (geo)statistische Berechnungen. Die enviroCar community entwickelt ein Erweiterungspaket für R mit Funktionen zum Import von Daten vom enviroCar-Server sowie Demonstrationsskripte: <a href="https://github.com/enviroCar/enviroCaR" title="enviroCaR auf GitHub">https://github.com/enviroCar/enviroCaR</a></p>
+<p>In seiner englischsprachigen Online Publikation <a href="http://rpubs.com/edzer/enviroCar" target="_blank">“Analyzing enviroCar trajectories with R”</a> beschreibt Edzer Pebesma anhand einiger Beispiele, wie enviroCar-Daten mit Hilfe von R verarbeitet werden können. Edzer Pebesma ist Professor und leitender Direktor des <a href="http://ifgi.uni-muenster.de" target="_blank">Institutes für Geoinformatik der Universität Münster</a>.<br /><br/><a href="http://rpubs.com/edzer/enviroCar" title="RPubs Skript für Analyse von enviroCar Tracks mit R">Skript öffnen</a></p>';
 
 //dataaccess.php
 $dataaccess_head = 'enviroCar Daten';
@@ -587,7 +588,7 @@ $about_gettinginvolvedHead = "Mitmachen";
 $asACitizenHead = "Als wissenschaftlich interessierter und engagierter Bürger (Citizen Scientist)";
 $asACitizenText = 'Alles was Sie benötigen ist ein Smartphone mit Android Betriebssystem (ab Version 2.3), ein Bluetooth OBD-II-Adapter und ein Fahrzeug, das den OBD-II Standard unterstützt. Stecken Sie den Adapter auf den OBD-II Anschluss Ihres Fahrzeuges und verbinden Sie das System nach den Anweisungen der Bedienungsanleitung des Adapters mit Ihrem Smartphone.
 <br/><br/> 
-Die enviroCar App ist im Rahmen des  aktuellen Beta-Tests für die Android-Versionen 2.3 - 4.4 verfügbar und steht über <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a> zur Verfügung. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen.
+Die enviroCar App ist im Rahmen des aktuellen Beta-Tests für die Android-Versionen 2.3 - 4.4 verfügbar und steht über <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">Google Play</a> zur Verfügung. Mit der App können Sie sich bei enviroCar als Nutzer registrieren und verschiedene Einstellungen vornehmen (Typ des Fahrzeuges, Bluetooth-Adapter etc. ) und anschließend Ihre ersten Tracks aufnehmen.
 <br/><br/> 
 Sie können Ihre Daten aus der App zum enviroCar-Server hochladen und die enviroCar  Webseite verwenden, um Ihre Fahrten zu analysieren und in einer Karte  zu betrachten. Außerdem können Sie sich hier mit Freunden und Gruppen vernetzen.
 <br/><br/> 
@@ -652,7 +653,7 @@ Die offene <a href="http://envirocar.github.io/enviroCar-server/api" target="_bl
 <br/><br/>
 Kontaktieren Sie gern das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, um weitere Fragen zu klären.
 ';
-$faq_a5 = 'Derzeit befindet sich enviroCar in einer geschlossenen Beta Phase. Mit den Teilnehmern an dieser Phase sind wir dabei, die Software für die breite Anwendung fit zu machen. Wir suchen nach Nutzern, die bereit sind, die Software zu testen und uns ihr Feedback mitzuteilen. Bitte kontaktieren Sie das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, falls Sie als Beta Tester teilnehmen möchten!
+$faq_a5 = 'Derzeit befindet sich enviroCar in einer offenen Beta Phase. Mit den Teilnehmern an dieser Phase sind wir dabei, die Software für die breite Anwendung fit zu machen. Wir suchen nach Nutzern, die bereit sind, die Software zu testen und uns ihr Feedback mitzuteilen. Bitte kontaktieren Sie das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, falls Sie als Beta Tester teilnehmen möchten!
 <br/><br/>
 Für Dezember 2013 planen die Veröffentlichung einer ersten Vollversion.';
 

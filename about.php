@@ -121,17 +121,17 @@ $(function(){
 						</div>  
 					</div>
 				</div>
-				<div class="container leftband">
+
+<!--				<div class="container leftband">
 					<div class="row-fluid">	
 						<div class="span6">
 						<p>  		 	
-						<? echo $about_aboutText4 ?>	
+						<? //echo $about_aboutText4 ?>	
 						</div>
 						<div class="span6" style="padding-right: 1ex">
-						<img class="offset3" src="./assets/img/about/enviroCar-app.jpg" style="width:40%;" alt="The enviroCar App">
-						</div>		
+                  ?>						</div>		
 					</div> 
-				</div>
+				</div>-->
 			</div><!--end of div id="main"-->		
 			<div class="tab-pane fade in" id="behind">
 				<div class="container leftband">
