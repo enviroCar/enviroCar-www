@@ -642,16 +642,16 @@ In Europa:
 <li>für alle Dieselfahrzeuge ab Baujahr 01.01.2003</li>
 <li>alle LKWs ab Baujahr 01.01.2005</li>
 </ul>';
-$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind durch eine Reihe von Maßnahmen vor unbefugten Zugriffen gesichert. Nur du und die von dir als “Freunde” hinzugefügten Nutzer erhalten Zugriff auf deine Track-Daten. Dies setzt voraus, dass du dich per Passwort authentifizieren kannst.
+$faq_a3 = "Die zum enviroCar Server hochgeladenen Daten sind durch eine Reihe von Maßnahmen vor unbefugten Zugriffen gesichert. Nur du und die von dir als  “Freunde” hinzugefügten Nutzer erhalten Zugriff auf deine Track-Daten. Dies setzt voraus, dass du dich per Passwort authentifizieren kannst.
 <br/><br/>
-Um die Analyse der Daten zu ermöglichen, können die Tracks auch von anderen in anonymisierter Form heruntergeladen werden. Verweise auf den Autor sind hierbei nicht mehr enthalten, d.h. es ist später nicht mehr möglich festzustellen, ob zwei Messfahrten vom selben Nutzer stammen. Die Kommunikation zwischen Website/App und dem enviroCar Server erfolgt in verschlüsselter Form.
+Um die Analyse der Daten zu ermöglichen, können die Tracks auch von anderen in anonymisierter Form heruntergeladen werden. Verweise auf den Autor  sind hierbei nicht mehr enthalten, d.h. es ist später nicht mehr möglich festzustellen, ob zwei Messfahrten vom selben Nutzer stammen. Die Kommunikation zwischen Website/App und dem enviroCar Server erfolgt in verschlüsselter Form.
 <br/><br/>
-Weiterhin unterstützt die App die Verschleierung von Start und Ziel Ihrer Messfahrten.  Sofern du diese Funktion in der App nicht explizit deaktivierst, werden die ersten und letzten 250 Meter einer jeden Messfahrt abgeschnitten - mindestens aber die Strecken, die in der ersten und letzten Minute des jeweiligen Messvorganges gefahren wurden. So können sie verhindern, dass Messfahrten mit häufig angefahrenen Privat- oder Geschäftsadressen in Verbindung  gebracht werden.";
+Weiterhin unterstützt die App die Verschleierung von Start und Ziel Ihrer Messfahrten.  Sofern du diese Funktion in der App nicht explizit deaktivierst, werden  die ersten und letzten 250 Meter einer jeden Messfahrt abgeschnitten - mindestens aber die Strecken, die in der ersten und letzten Minute des jeweiligen Messvorganges gefahren wurden. So können sie verhindern, dass Messfahrten mit häufig angefahrenen Privat- oder Geschäftsadressen in Verbindung  gebracht werden.";
 $faq_a4 = 'enviroCar ist ein Community-basiertes Vorhaben. Jeder ist herzlich eingeladen beizutragen! enviroCar ist vollständig open source - alle Komponenten sind über unser <a href="https://github.com/enviroCar" target="_blank">Github Repository</a> verfügbar. 
 <br/><br/>
 Die offene <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> unterstützt den einfachen Zugriff auf Messfahrten im JSON-Format und als Linked Data.  Die ODBL-lizensierten Daten sind öffentlich zugänglich und können frei genutzt werden, um Informationsprodukte wie Karten oder statistische Analysen zu erzeugen. 
 <br/><br/>
-Kontaktier gern das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, um weitere Fragen zu klären.
+Gerne kannst du das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a> kontaktieren, um weitere Fragen zu klären.
 ';
 $faq_a5 = 'Derzeit befindet sich enviroCar in einer offenen Beta Phase. Mit den Teilnehmern an dieser Phase sind wir dabei, die Software für die breite Anwendung fit zu machen. Wir suchen nach Nutzern, die bereit sind, die Software zu testen und uns ihr Feedback mitzuteilen. Bitte kontaktier das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a>, falls du als Beta Tester teilnehmen möchtest!
 ';
