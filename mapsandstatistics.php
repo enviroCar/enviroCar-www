@@ -35,7 +35,7 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	      <div class="span8">
-			<h2> <? echo $speed_titel ?></h2>
+			<h2> <?php echo $speed_titel ?></h2>
 	        <?php echo $speed_description ?>       
 	      </div>
 			</div>
@@ -46,7 +46,7 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	        <div class="span8">
-	        	<h2><? echo $hotspot_titel ?></h2>
+	        	<h2><?php echo $hotspot_titel ?></h2>
 	          <?php echo $hotspot_description ?>       
 	        </div>
 			</div>
@@ -65,8 +65,19 @@ if(!is_logged_in()){
 					</a>
 				</div>
 	        <div class="span8">
-	        	<h2><? echo $analyzing_with_R_titel ?></h2>
+	        	<h2><?php echo $analyzing_with_R_titel ?></h2>
 	          <?php echo $analyzing_with_R_description ?>         
+	        </div>
+			</div>
+			<div class="span6 well data-preview leftband first-row">
+			<div class="span4">
+					<a href="http://52north.maps.arcgis.com/home/index.html" class="thumbnail" target="_blank" title="ArcGIS Online enviroCar page">
+						<img src="./assets/img/agol_thumb.png" alt="preview">
+					</a>
+				</div>
+	        <div class="span8">
+	        	<h2><?php echo $agol_titel ?></h2>
+	          <?php echo $agol_description ?>       
 	        </div>
 			</div>
 		</div>
