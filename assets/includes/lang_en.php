@@ -546,7 +546,7 @@ Use <strong>enviroCar</strong> to investigate the impact your driving has on env
 </ul>
 Help create a unique source of information and use it to improve and implement concepts for sustainable mobility. 
 <br/><br/>
-enviroCar counts on YOU! <a href="https://www.envirocar.org/about.php#getinvolved" target="_blank">Join the community and help make our world a little smarter.';
+enviroCar counts on YOU! Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 <strong>enviroCar</strong> is an open platform for Citizen Science projects in the field of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze floating car data and share their findings.
 <br/><br/>
