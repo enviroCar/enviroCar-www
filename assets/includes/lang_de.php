@@ -630,13 +630,12 @@ Zu beachten ist, dass in Europa bestimmte Zertifikate für den Handel von System
 <br/><br/>
 Bitte beachte, dass wir das Funktionieren beliebiger Smartphone/Adapter-Kombinationen nicht garantieren können. Die enviroCar Community hat begonnen, <a href="https://wiki.52north.org/bin/view/Projects/EnviroCar#App_Compatibility" target="_blank">eine Liste getesteter Kombinationen</a> im enviroCar wiki zu dokumentieren. Um diese Matrix weiter zu pflegen, bitten wir dich, im <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">enviroCar Forum</a> über deine Erfahrungen zu berichten. Du kannst diesbezüglich auch gern eine Info an das <a href="mailto:enviroCar@52north.org">enviroCar Team bei 52°North</a> senden.
 ';
-$faq_a2 = 'Das Vorhandensein der OBD-II Schnittstelle in Fahrzeugen ist gesetzlich vorgeschrieben.
-<br/>
-In den USA: 
+$faq_a2 = '<p>Das Vorhandensein der OBD-II Schnittstelle in Fahrzeugen ist gesetzlich vorgeschrieben.</p>
+<p>In den USA: </p>
 <ul>
 <li>für alle Autos ab dem Baujahr 01.01.1996 </li>
 </ul>
-In Europa:
+<p>In Europa:</p>
 <ul>
 <li>für alle Benzinfahrzeuge ab Baujahr 01.01.2001 und EURO-3 Norm (oder besser)</li>
 <li>für alle Dieselfahrzeuge ab Baujahr 01.01.2003</li>
