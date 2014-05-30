@@ -640,9 +640,7 @@ $faq_a4 = 'enviroCar is a community based project and you are heartily welcome t
 A <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> enables you to download/upload data and use it to create information products, such as maps or statistical analyses. The data is publicly available as JSON and as Linked Data, which makes it possible to flexibly include enviroCar’s data in any services.
 <br/><br/>
 Please contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°North</a> to clarify any further questions.';
-$faq_a5 = "enviroCar is currently in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
-<br/><br/>
-We expect to have a stable release of all components by the end of 2013.";
+$faq_a5 = "enviroCar is currently in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!";
 $faq_q6 = "This would be great, but unfortunately it is not possible at the moment. The enviroCar app is only available for smartphones with an Android (version 2.3 – 4.4) operating system. This is due to a number of reasons, one being that we decided to focus on implementing the app for Bluetooth ODB-II adapters. iOS supports Wi-Fi adapters and not Bluetooth ODB-II adapters. Since we started as a study project in the spring of 2013, we had to focus our resources and decided that developing a cross platform app was not appropriate. Even though we are no longer a study project, we still have limited resources!
 <br/><br/>
 If you are keen on having it – pitch in and join the developers!";
