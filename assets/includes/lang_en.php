@@ -548,14 +548,13 @@ Help create a unique source of information and use it to improve and implement c
 <br/><br/>
 enviroCar counts on YOU! Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<h2>The enviroCar Platform</h2>
-<strong>enviroCar</strong> is an open platform for Citizen Science projects in the field of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze floating car data and share their findings.
-<br/><br/>
-It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
-<strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.';
+<p><strong>enviroCar</strong> is an open platform for Citizen Science projects in the field of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze floating car data and share their findings.<br /></p>
+<p>It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
+<strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.</p>';
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
-enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!';
+<p>enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!</p>';
 $about_aboutText4 = '<h2>The enviroCar app</h2>
-The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.';
+<p>The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.</p>';
 
 $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
@@ -594,7 +593,7 @@ $asAScientistText = 'Are you interested in using the enviroCar platform and its 
 <br/><br/>
 If you would like to share your questions and comments with all enviroCar users and project groups, join the public enviroCar <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">forum</a>.
 <br/><br/>
-If you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North directly</a>. 
+If you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North</a> directly. 
 ';
 $asAPlannerHead = "As a Public Authority";
 $asAPlannerText = 'Would you like to raise awareness about mobility and environment among “your” citizens? 
@@ -606,7 +605,7 @@ Use the enviroCar platform as a basis for citizen science projects with research
 <br/><br/>
 If you’d like to contact all enviroCar users and project groups with your questions and comments, join the public <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">enviroCar Forum</a>.
 <br/><br/>
-If you have more detailed questions regarding the enviroCar platform, the parameters, the data quality, methods and technologies, or if you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North directly</a>.';
+If you have more detailed questions regarding the enviroCar platform, the parameters, the data quality, methods and technologies, or if you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North </a>directly.';
 $asADeveloperHead = "As a Developer";
 $asADeveloperText = 'Would you like to develop an application and use the enviroCar platform as a public data source? Check out the <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">enviroCar APIs and software at Github</a>. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data.
 <br/><br/>
@@ -619,20 +618,17 @@ $faq_q4 = "How can I contribute as a developer to enviroCar ?";
 $faq_q5 = "What is the current state of enviroCar?";
 $faq_q6 = "I have an iPhone XY, can I use the enviroCar app with it?";
 
-$faq_a1 = 'There are many OBD-II adapters available on the market.  Prices range from 15 EUR, for low cost Chinese imports at eBay and Amazon, up to 90 - 200 EUR for high quality systems from specialized suppliers. Please be aware that, in Europe, certain certificates are required when trading those products (CE) and when using them in cars while driving (ECE). Other countries may have additional legal requirements. Currently, the Drivedeck W4 adapter seems to be the only one equipped with all certificates required in Germany. Please check national regulations to be sure that the adapter of your choice can be used without restrictions in your country.
+$faq_a1 = 'There are many OBD-II adapters available on the market. Prices range from 15 EUR, for low cost Chinese imports at eBay and Amazon, up to 90 - 200 EUR for high quality systems from specialized suppliers. Please be aware that, in Europe, certain certificates are required when trading those products (CE) and when using them in cars while driving (ECE). Other countries may have additional legal requirements. Currently, the Drivedeck W4 adapter seems to be the only one equipped with all certificates required in Germany. Please check national regulations to be sure that the adapter of your choice can be used without restrictions in your country.
 <br/><br/>
 Please be aware that we are not able to guarantee that all combinations of smartphones/adapters work well. The enviroCar community maintains a matrix of working combinations <a href="https://wiki.52north.org/bin/view/Projects/EnviroCar#App_Compatibility" target="_blank">here</a>. Please report your experience regarding smartphone/adapter combinations to the <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">enviroCar forum</a> or send a message to the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°North</a> .';
-$faq_a2 = 'The presence of an OBD-II interface within today’s cars is mandated by law in the US, as well as Europe. 
-<br/><br/>
-In the US, all cars built 01.01.1996 or later are equipped with an OBD-II interface.
-<br/><br/>
-In Europe, the following vehicles are equipped with an OBD-II interface:
+$faq_a2 = '<p>The presence of an OBD-II interface within today’s cars is mandated by law in the US, as well as Europe.</p>
+<p>In the US, all cars built 01.01.1996 or later are equipped with an OBD-II interface.<br/></p>
+<p>In Europe, the following vehicles are equipped with an OBD-II interface:</p>
 <ul>
 <li>All cars with a gasoline engine built 01.01.2001 or later and with a EURO-3 norm (or better)</li>
 <li>All diesel vehicles built 01.01.2003 or later</li>
 <li>All trucks built 01.01.2005 or later</li>
-</ul>
-';
+</ul>';
 $faq_a3 = 'The track data you upload to the enviroCar server is protected by a number of measures. Only you and users you have added as friends can view your track data.  You and your friends must log in with a password to access this data. 
 <br/><br/>
 The tracks are also available to others as anonymous open data, i.e.  any reference to the user - you - is inaccessible. Of course, all communication between website/app and the enviroCar server is encrypted to prevent eavesdropping.
@@ -644,9 +640,7 @@ $faq_a4 = 'enviroCar is a community based project and you are heartily welcome t
 A <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">Web API</a> enables you to download/upload data and use it to create information products, such as maps or statistical analyses. The data is publicly available as JSON and as Linked Data, which makes it possible to flexibly include enviroCar’s data in any services.
 <br/><br/>
 Please contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°North</a> to clarify any further questions.';
-$faq_a5 = "enviroCar is currently in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the enviroCar Team at envirocar@52north.org!
-<br/><br/>
-We expect to have a stable release of all components by the end of 2013.";
+$faq_a5 = 'enviroCar is currently in an open beta phase. We are still in the process of developing and refining the software, and are looking for people who are willing to test it and provide us with valuable feedback. Please let us know if you like to become a beta tester, contact the <a href="mailto:enviroCar@52north.org">enviroCar Team at 52°North</a>!';
 $faq_q6 = "This would be great, but unfortunately it is not possible at the moment. The enviroCar app is only available for smartphones with an Android (version 2.3 – 4.4) operating system. This is due to a number of reasons, one being that we decided to focus on implementing the app for Bluetooth ODB-II adapters. iOS supports Wi-Fi adapters and not Bluetooth ODB-II adapters. Since we started as a study project in the spring of 2013, we had to focus our resources and decided that developing a cross platform app was not appropriate. Even though we are no longer a study project, we still have limited resources!
 <br/><br/>
 If you are keen on having it – pitch in and join the developers!";
