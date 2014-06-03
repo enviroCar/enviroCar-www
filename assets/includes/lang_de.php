@@ -601,7 +601,7 @@ $asAScientistText = 'Interessierst du dich für die enviroCar-Plattform und die 
 <br/><br/>
 Sofern Du dich mit Fragen und Anregungen an alle enviroCar-Nutzer und Projektgruppen wenden wollen, nutz das englischsprachige <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">Forum</a> der internationalen enviroCar Community.
 <br/><br/>
-Sofern Du besondere Anpassungen benötigst oder generell an gemeinsamen Aktivitäten mit 52°North interessiert bist, kannst du auch gern direkt <a href="mailto:enviroCar@52north.org">mit dem enviroCar Team bei 52°North in Kontakt treten</a>.
+Sofern Du besondere Anpassungen benötigst oder generell an gemeinsamen Aktivitäten mit 52°North interessiert bist, kannst du auch gern direkt <a href="mailto:enviroCar@52north.org">mit dem enviroCar Team bei 52°North</a> in Kontakt treten.
 ';
 $asAPlannerHead = "Als öffentliche Einrichtung";
 $asAPlannerText = 'Möchtest du die Bürger für das Thema Mobilität und Umwelt sensibilisieren? Möchtest du die aktive Auseinandersetzung von Bürgern mit dem Thema und die Entwicklung eines umfassenden Verständnisses für die Thematik fördern? Möchtest du die Bürger aktiv in den Prozess der Gestaltung einer nachhaltigen Verkehrsentwicklung einbeziehen? 
@@ -610,7 +610,7 @@ Nutz die enviroCar Plattform als Basis für Citizen Science Projekte mit Wissens
 <br/><br/>
 Sofern Du dich mit Fragen und Anregungen an alle Nutzer und Projektgruppen von enviroCar wenden möchtest, nutz die englischsprachige <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">Forum</a> der enviroCar Community. 
 <br/><br/>
-Wenn du speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien hast, wenn du besondere Anpassungen benötigst oder wenn du dich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchtest, kannst du auch gern direkt <a href="mailto:enviroCar@52north.org">mit dem enviroCar Team bei 52°North in Kontakt treten</a>.
+Wenn du speziellere Fragen zur Plattform, zu den Parametern, zur Datenqualität oder zu den verwendeten Methoden und Technologien hast, wenn du besondere Anpassungen benötigst oder wenn du dich bei der Durchführung von Citizen Science Projekten unterstützen lassen möchtest, kannst du auch gern direkt <a href="mailto:enviroCar@52north.org">mit dem enviroCar Team bei 52°North</a> in Kontakt treten.
 ';
 $asADeveloperHead = "Als Softwareentwickler";
 $asADeveloperText = 'Du möchtest eine Anwendung auf Basis der öffentlichen Daten von enviroCar entwickeln? Prima! Das <a href="https://github.com/enviroCar" target="_blank">enviroCar Open Source Software Repository</a> findest du auf GitHub. Dort findest du auch die sehr einfache REST-Schnittstelle des enviroCar-Servers, die dir freien Zugriff auf die Daten ermöglicht. 
