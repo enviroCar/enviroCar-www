@@ -593,7 +593,7 @@ $asAScientistText = 'Are you interested in using the enviroCar platform and its 
 <br/><br/>
 If you would like to share your questions and comments with all enviroCar users and project groups, join the public enviroCar <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">forum</a>.
 <br/><br/>
-If you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North directly</a>. 
+If you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North</a> directly. 
 ';
 $asAPlannerHead = "As a Public Authority";
 $asAPlannerText = 'Would you like to raise awareness about mobility and environment among “your” citizens? 
@@ -605,7 +605,7 @@ Use the enviroCar platform as a basis for citizen science projects with research
 <br/><br/>
 If you’d like to contact all enviroCar users and project groups with your questions and comments, join the public <a href="http://envirocar-discuss.forum.52north.org/" target="_blank">enviroCar Forum</a>.
 <br/><br/>
-If you have more detailed questions regarding the enviroCar platform, the parameters, the data quality, methods and technologies, or if you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North directly</a>.';
+If you have more detailed questions regarding the enviroCar platform, the parameters, the data quality, methods and technologies, or if you have special requirements and think about joint citizen science projects or other activities with 52°North you’re invited to <a href="mailto:enviroCar@52north.org">contact the enviroCar team at 52°North </a>directly.';
 $asADeveloperHead = "As a Developer";
 $asADeveloperText = 'Would you like to develop an application and use the enviroCar platform as a public data source? Check out the <a href="http://envirocar.github.io/enviroCar-server/api" target="_blank">enviroCar APIs and software at Github</a>. You’ll find an easy to use REST interface to the enviroCar server, which provides you with free access to the data.
 <br/><br/>
