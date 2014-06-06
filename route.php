@@ -74,9 +74,10 @@ include('header.php');
           <ul class="dropdown-menu">
               <li id="download-geojson">
               </li>
-              <!--<li>
-                <a id="download-shape">Shape (*.shp)</a>
-              </li> -->
+              <li id="download-shapefile">
+              </li>
+              <li id="download-csv">
+              </li>
           </ul>
         </div>
         <div class="btn btn-group dropup">
@@ -257,7 +258,9 @@ include('header.php');
 
   function addRouteInformation(name){
       $('#routeInformation').append('<h2>'+name+'</h2>');
-      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">GeoJSON (*.json)</a>');
+      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson" target="_blank">GeoJSON (*.json)</a>');
+      $('#download-shapefile').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.shp" download="enviroCar_track_'+$_GET(['id'])+'.shp" target="_blank">Zipped shapefile (*.shp)</a>');
+      $('#download-csv').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.csv" download="enviroCar_track_'+$_GET(['id'])+'.csv" target="_blank">Comma separated values (*.csv)</a>');
   }     
 
 
