@@ -292,6 +292,12 @@ include('header.php');
 		// total fuel consumption in liter per hour
 		var totalFuelConsumptionLiterPerHour = 0;		
 		
+		//prevent memory issues, only show shapefile download for smaller tracks
+		//max value must correspond with max measurements value of enviroCar-server
+        if (data.features.length >= 500) {
+      	    $('#download-shapefile').hide();
+        }
+		
 		if (data.features.length > 1) {
 			for (var i = 0; i < data.features.length; i++) {
 				
