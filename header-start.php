@@ -283,7 +283,7 @@ if ($login_name != "" && $login_password != ""){
                 </li>
               <?php }else{ ?>
                 <li class="dropdown-toggle sign_in" hidefocus="hidefocus">
-                  <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" href="/users/martin/dashboard" hidefocus="hidefocus">
+                  <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" hidefocus="hidefocus">
                     <?php echo $signedin; ?>: <?php echo $_SESSION["name"];?> 
                     <strong class="caret"></strong>
                   </a>
