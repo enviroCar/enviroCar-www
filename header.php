@@ -189,7 +189,7 @@ function echoActiveClassIfRequestMatches($requestUri){
                 </li>
               <?php }else{ ?>
                 <li class="dropdown-toggle sign_in" hidefocus="hidefocus">
-                  <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" hidefocus="hidefocus">
+                  <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" href="" hidefocus="hidefocus">
                     <?php echo $signedin; ?>: <?php echo $_SESSION["name"];?> 
                     <strong class="caret"></strong>
                   </a>
