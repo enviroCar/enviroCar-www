@@ -557,7 +557,7 @@ Nach der Übertragung auf den <strong>enviroCar Server</strong> stehen die Daten
 $about_aboutText3 = "<h2>OBD II - Adapter</h2>
 enviroCar nutzt marktübliche Bluetooth OBD-II Adaper, wie den Drivedeck Sport. Du kannst diese Adapter auf die entsprechende Schnittstelle in deinem Fahrzeug stecken und per Bluetooth mit dem Android Smartphone verbinden, die App starten und losfahren.";
 $about_aboutText4 = '<h2>Die App</h2>
-Die enviroCar App ist dann in der Lage, deine Route aufzunehmen, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.';
+Die <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">enviroCar App</a> ist dann in der Lage, deine Route aufzunehmen, eine Vielzahl an Daten aus dem Fahrzeug auszulesen und weitere Informationen wie den Kraftstoffverbrauch oder die CO2 Emission daraus zu berechnen.';
 
 $about_the_people_behind_head = "Wer steckt dahinter";
 $about_the_people_behind_text = '<strong>enviroCar</strong> ist ein Projekt des 
