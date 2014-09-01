@@ -758,27 +758,15 @@ function addSeries(series, axis){
   }
   chart.render();
 }
-
+/* http://b.www.toolserver.org/tiles/bw-mapnik/$%7Bz%7D/$%7Bx%7D/$%7By%7D.png
+*/
 function initMap() {
 	
-  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', null, {
-    crossOriginKeyword: null,
-    eventListeners: {
-        tileloaded: function(evt) {
-            var ctx = evt.tile.getCanvasContext();
-            if (ctx) {
-                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
-                var pix = imgd.data;
-                for (var i = 0, n = pix.length; i < n; i += 4) {
-                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
-                }
-                ctx.putImageData(imgd, 0, 0);
-                evt.tile.imgDiv.removeAttribute("crossorigin");
-                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
-            }
-        }
-    }
-  });
+  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
+	"http://a.www.toolserver.org/tiles/bw-mapnik/${z}/${x}/${y}.png",
+	"http://b.www.toolserver.org/tiles/bw-mapnik/${z}/${x}/${y}.png"], {
+		crossOriginKeyword: null
+	});
   map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
   map.addLayer(vectorLayer);
