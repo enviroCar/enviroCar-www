@@ -74,9 +74,10 @@ include('header.php');
           <ul class="dropdown-menu">
               <li id="download-geojson">
               </li>
-              <!--<li>
-                <a id="download-shape">Shape (*.shp)</a>
-              </li> -->
+              <li id="download-shapefile">
+              </li>
+              <li id="download-csv">
+              </li>
           </ul>
         </div>
         <div class="btn btn-group dropup">
@@ -257,7 +258,9 @@ include('header.php');
 
   function addRouteInformation(name){
       $('#routeInformation').append('<h2>'+name+'</h2>');
-      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">GeoJSON (*.json)</a>');
+      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson" target="_blank">GeoJSON (*.json)</a>');
+      $('#download-shapefile').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.shp" download="enviroCar_track_'+$_GET(['id'])+'.shp" target="_blank">Zipped shapefile (*.shp)</a>');
+      $('#download-csv').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.csv" download="enviroCar_track_'+$_GET(['id'])+'.csv" target="_blank">Comma-separated values (*.csv)</a>');
   }     
 
 
@@ -288,6 +291,12 @@ include('header.php');
 		
 		// total fuel consumption in liter per hour
 		var totalFuelConsumptionLiterPerHour = 0;		
+		
+		//prevent memory issues, only show shapefile download for smaller tracks
+		//max value must correspond with max measurements value of enviroCar-server
+        if (data.features.length >= 500) {
+      	    $('#download-shapefile').hide();
+        }
 		
 		if (data.features.length > 1) {
 			for (var i = 0; i < data.features.length; i++) {
@@ -749,26 +758,15 @@ function addSeries(series, axis){
   }
   chart.render();
 }
-
+/* http://b.www.toolserver.org/tiles/bw-mapnik/$%7Bz%7D/$%7Bx%7D/$%7By%7D.png
+*/
 function initMap() {
 	
-  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', null, {
-    eventListeners: {
-        tileloaded: function(evt) {
-            var ctx = evt.tile.getCanvasContext();
-            if (ctx) {
-                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
-                var pix = imgd.data;
-                for (var i = 0, n = pix.length; i < n; i += 4) {
-                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
-                }
-                ctx.putImageData(imgd, 0, 0);
-                evt.tile.imgDiv.removeAttribute("crossorigin");
-                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
-            }
-        }
-    }
-  });
+  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=a&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=b&url=${z}%2F${x}%2F${y}.png"], {
+		crossOriginKeyword: null
+	});
   map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
   map.addLayer(vectorLayer);

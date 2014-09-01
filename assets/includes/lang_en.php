@@ -554,7 +554,7 @@ $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
 <p>enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!</p>';
 $about_aboutText4 = '<h2>The enviroCar app</h2>
-<p>The app talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.</p>';
+<p>The <a href="https://play.google.com/store/apps/details?id=org.envirocar.app" target="_blank">app</a> talks to the onboard computer, records your route (track) and automatically gives you information about speed and revolutions per minute and calculates additional information, such as fuel consumption, estimated fuel cost and CO2 emissions.</p>';
 
 $about_the_people_behind_head = "The People behind";
 $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of 
