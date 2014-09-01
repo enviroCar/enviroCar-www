@@ -762,6 +762,7 @@ function addSeries(series, axis){
 function initMap() {
 	
   var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', null, {
+    crossOriginKeyword: null,
     eventListeners: {
         tileloaded: function(evt) {
             var ctx = evt.tile.getCanvasContext();
