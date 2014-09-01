@@ -763,8 +763,8 @@ function addSeries(series, axis){
 function initMap() {
 	
   var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
-	"./assets/proxy/ba-simple-proxy.php?url=http%3A%2F%2Fa.www.toolserver.org%2Ftiles%2Fbw-mapnik%2F${z}%2F${x}%2F${y}.png",
-	"./assets/proxy/ba-simple-proxy.php?url=http%3A%2F%2Fb.www.toolserver.org%2Ftiles%2Fbw-mapnik%2F${z}%2F${x}%2F${y}.png"], {
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=a&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=b&url=${z}%2F${x}%2F${y}.png"], {
 		crossOriginKeyword: null
 	});
   map.addLayer(osm);
