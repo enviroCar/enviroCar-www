@@ -142,7 +142,7 @@ $valid_url_regex = '/.*/';
 
 // ############################################################################
 
-$url = "http://"+ $_GET['sub'] +".www.toolserver.org/tiles/bw-mapnik/" + $_GET['url'];
+$url = "http://". $_GET['sub'] .".www.toolserver.org/tiles/bw-mapnik/". $_GET['url'];
 
 if ( !$url ) {
   
