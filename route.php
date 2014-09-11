@@ -406,7 +406,7 @@ include('header.php');
 			}
 			
 			// in liter per 100 km
-			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / distance * 100;			
+			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;			
 						
 			//calculate grams of CO2 per km
 			var co2inGramsPerKm	= 0;
@@ -417,7 +417,7 @@ include('header.php');
 				co2inGramsPerKm = avgFuelConsumption * 26.4;
 			}
 			
-			var totalCO2 = co2inGramsPerKm * distance / 1000;
+			var totalCO2 = co2inGramsPerKm * lengthOfTrack / 1000;
 			
 			$('#routeInformation').append('<h2>'+name+'</h2>');
 			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
@@ -427,7 +427,7 @@ include('header.php');
 			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
 			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
-			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * distance;		
+			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;		
 			
 			getFuelPrice(totalFuelConsumptionInLiter, fuelType);	
 			
