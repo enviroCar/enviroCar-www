@@ -763,10 +763,14 @@ function addSeries(series, axis){
 function initMap() {
 	
   var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=a&url=${z}%2F${x}%2F${y}.png",
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=b&url=${z}%2F${x}%2F${y}.png"], {
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile1&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile2&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile3&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile4&url=${z}%2F${x}%2F${y}.png"], {
 		crossOriginKeyword: null
 	});
+	osm.attribution = '<p>Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png"></p>';
+
   map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
   map.addLayer(vectorLayer);
