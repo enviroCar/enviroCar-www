@@ -142,7 +142,7 @@ $valid_url_regex = '/.*/';
 
 // ############################################################################
 
-$url = "http://". $_GET['sub'] .".www.toolserver.org/tiles/bw-mapnik/". $_GET['url'];
+$url = "http://". $_GET['sub'] .".mqcdn.com/tiles/1.0.0/map/". $_GET['url'];
 
 if ( !$url ) {
   
@@ -206,7 +206,11 @@ if ( $_GET['mode'] == 'native' ) {
     }
   }
   
-  print $contents;
+  $image = imagecreatefromstring($contents);
+  imagefilter($image, IMG_FILTER_GRAYSCALE);
+  
+  header("Content-type: image/png");
+  imagepng($image);
   
 } else {
   
