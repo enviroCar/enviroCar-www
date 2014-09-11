@@ -213,7 +213,7 @@ include('header.php');
 
 
   var popup;
-  var lengthOfTrack;
+  var lengthOfTrack = 0;
   var duration;
   var fuelConsumptionPerHour;
   var fuelConsumptionPer100KM;
@@ -287,7 +287,10 @@ include('header.php');
 		//speed = 0 counts as idle time
 		var idleTime = 0;
 		
-		var distance = 0;		
+		var distance = 0;
+		if (data.properties.length) {
+			lengthOfTrack = data.properties.length;
+		}
 		
 		// total fuel consumption in liter per hour
 		var totalFuelConsumptionLiterPerHour = 0;		
@@ -313,14 +316,15 @@ include('header.php');
  				
  				var trackPartDistance = 0;				
 				
-				if(i < data.features.length-1){				
-				var lat2 = data.features[i+1].geometry.coordinates[1];
-				var lng2 = data.features[i+1].geometry.coordinates[0];
-				
-				trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
-				
-				distance = distance + trackPartDistance;
+				if (lengthOfTrack == 0 && i < data.features.length-1){				
+					var lat2 = data.features[i+1].geometry.coordinates[1];
+					var lng2 = data.features[i+1].geometry.coordinates[0];
+					
+					trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
+					
+					distance = distance + trackPartDistance;
 				}
+				
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
         		
         		var rpm = checkPhenomenonValue('Rpm', feature).value;
@@ -397,7 +401,9 @@ include('header.php');
 			
 			duration = endTime.getTime() - startTime.getTime();
 		
-			lengthOfTrack = distance;
+			if (lengthOfTrack == 0) {
+				lengthOfTrack = distance;
+			}
 			
 			// in liter per 100 km
 			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / distance * 100;			
