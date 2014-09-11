@@ -24,11 +24,6 @@ function get_serverurl()
   return $serverurl;
 }
 
-function get_wps_tracks()
-{
-  global $wps_tracks;
-  return $wps_tracks;
-}
 
 function get_wps_fuel_price()
 {
