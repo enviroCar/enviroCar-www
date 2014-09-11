@@ -66,16 +66,22 @@ function get_request($uri, $isAuthRequired){
             CURLOPT_FOLLOWLOCATION => TRUE
         ));
     }
+    curl_setopt($ch, CURLOPT_HEADER, 1);
     
     //Performs the curl GET request
     $out = curl_exec($ch);
+    
+    $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+	$header = substr($out, 0, $header_size);
+	$body = substr($out, $header_size);
+    
     //Returns the HTTP status codes 
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 
     curl_close($ch);
 
-    return array("status" => $http_status, "response" => $out, "url" => $lastUrl);
+    return array("status" => $http_status, "response" => $body, "url" => $lastUrl, "header" => $header);
 
 }
 
