@@ -18,7 +18,7 @@
 
 require_once('connection.php');
 
-	$resp = get_request("https://envirocar.org/api/stable/tracks/?limit=1&page=0", false);
+	$resp = get_request_with_headers("https://envirocar.org/api/stable/tracks/?limit=1&page=0", false);
 	
 	processTrackNumberResponse($resp);
 	
