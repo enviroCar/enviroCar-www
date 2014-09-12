@@ -213,7 +213,7 @@ include('header.php');
 
 
   var popup;
-  var lengthOfTrack;
+  var lengthOfTrack = 0;
   var duration;
   var fuelConsumptionPerHour;
   var fuelConsumptionPer100KM;
@@ -287,7 +287,10 @@ include('header.php');
 		//speed = 0 counts as idle time
 		var idleTime = 0;
 		
-		var distance = 0;		
+		var distance = 0;
+		if (data.properties.length) {
+			lengthOfTrack = data.properties.length;
+		}
 		
 		// total fuel consumption in liter per hour
 		var totalFuelConsumptionLiterPerHour = 0;		
@@ -313,14 +316,15 @@ include('header.php');
  				
  				var trackPartDistance = 0;				
 				
-				if(i < data.features.length-1){				
-				var lat2 = data.features[i+1].geometry.coordinates[1];
-				var lng2 = data.features[i+1].geometry.coordinates[0];
-				
-				trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
-				
-				distance = distance + trackPartDistance;
+				if (lengthOfTrack == 0 && i < data.features.length-1){				
+					var lat2 = data.features[i+1].geometry.coordinates[1];
+					var lng2 = data.features[i+1].geometry.coordinates[0];
+					
+					trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
+					
+					distance = distance + trackPartDistance;
 				}
+				
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
         		
         		var rpm = checkPhenomenonValue('Rpm', feature).value;
@@ -397,10 +401,12 @@ include('header.php');
 			
 			duration = endTime.getTime() - startTime.getTime();
 		
-			lengthOfTrack = distance;
+			if (lengthOfTrack == 0) {
+				lengthOfTrack = distance;
+			}
 			
 			// in liter per 100 km
-			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / distance * 100;			
+			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;			
 						
 			//calculate grams of CO2 per km
 			var co2inGramsPerKm	= 0;
@@ -411,7 +417,7 @@ include('header.php');
 				co2inGramsPerKm = avgFuelConsumption * 26.4;
 			}
 			
-			var totalCO2 = co2inGramsPerKm * distance / 1000;
+			var totalCO2 = co2inGramsPerKm * lengthOfTrack / 1000;
 			
 			$('#routeInformation').append('<h2>'+name+'</h2>');
 			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
@@ -421,7 +427,7 @@ include('header.php');
 			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
 			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
-			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * distance;		
+			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;		
 			
 			getFuelPrice(totalFuelConsumptionInLiter, fuelType);	
 			
@@ -763,10 +769,14 @@ function addSeries(series, axis){
 function initMap() {
 	
   var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=a&url=${z}%2F${x}%2F${y}.png",
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=b&url=${z}%2F${x}%2F${y}.png"], {
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile1&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile2&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile3&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile4&url=${z}%2F${x}%2F${y}.png"], {
 		crossOriginKeyword: null
 	});
+	osm.attribution = '<p>Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png"></p>';
+
   map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
   map.addLayer(vectorLayer);

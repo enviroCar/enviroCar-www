@@ -24,11 +24,6 @@ function get_serverurl()
   return $serverurl;
 }
 
-function get_wps_tracks()
-{
-  global $wps_tracks;
-  return $wps_tracks;
-}
 
 function get_wps_fuel_price()
 {
@@ -76,6 +71,41 @@ function get_request($uri, $isAuthRequired){
     curl_close($ch);
 
     return array("status" => $http_status, "response" => $out, "url" => $lastUrl);
+
+}
+
+function get_request_with_headers($uri, $isAuthRequired){
+    $ch = curl_init($uri);
+    if($isAuthRequired){
+        curl_setopt_array($ch, array(
+            CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
+            CURLOPT_RETURNTRANSFER  =>true,
+            CURLOPT_VERBOSE     => 0,
+            CURLOPT_FOLLOWLOCATION => TRUE
+        ));
+    }else{
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER  =>true,
+            CURLOPT_VERBOSE     => 0,
+            CURLOPT_FOLLOWLOCATION => TRUE
+        ));
+    }
+    curl_setopt($ch, CURLOPT_HEADER, 1);
+    
+    //Performs the curl GET request
+    $out = curl_exec($ch);
+    
+    $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+	$header = substr($out, 0, $header_size);
+	$body = substr($out, $header_size);
+    
+    //Returns the HTTP status codes 
+    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+
+    curl_close($ch);
+
+    return array("status" => $http_status, "response" => $body, "url" => $lastUrl, "header" => $header);
 
 }
 
