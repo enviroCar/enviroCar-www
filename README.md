@@ -38,6 +38,8 @@ Project Structure
 Development
 -----------
 
+We use a ``dev`` and a ``master`` branch. All pull request must be send to the ``dev`` branch.
+
 As described in the File structure the main html files are located in the root directory. To create new pages you simply have to include the header.php and footer.php within a new .php file which contain all necessary CSS and Javascript files.
 
 For the server connection the main logic is located in the file ``/includes/connection.php``. The RESTful methods GET and POST require a parameter specifying if an authorization is required. If the parameter is true, the password and username will be retrieved from the $_SESSION variable set at the login (``/includes/authentification.php``). PUT and DELETE don't require a authorization parameter as all possible methods from the API require a user authorization.
