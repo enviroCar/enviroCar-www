@@ -42,7 +42,7 @@ $index_help_the_world='Help make mobility sustainable and our cities a little sm
 <br><br>
 Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community= "It's an app - collect floating car data
+$index_this_is_community= "It's an app - collect car data
 <br><br>
 It's an internet platform - share and analyze anonymized open data
 <br><br>
