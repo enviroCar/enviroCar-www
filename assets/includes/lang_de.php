@@ -47,7 +47,7 @@ $index_this_is_community='<strong>Die App</strong> - Mit der enviroCar App kanns
 <br><br>
 <strong>Die Commmunity</strong> - Werde Teil der enviroCar Community, eine Gemeinschaft von Bürgern, Forschern und Planer weltweit!
 <br><br>
-<strong>Die Software</strong>: enviroCar Software ist Open Source.';
+<strong>Die Software</strong> - enviroCar Software ist Open Source.';
 $index_how_it_works="Wie funktioniert das Ganze?";
 $index_here_we_go=" - so geht's!"; 
 $index_three_steps_to="Drei Schritte und sei dabei.";
