@@ -73,7 +73,7 @@ if(!is_logged_in()){
 
        </div>
         <div class="span6">
-          <h2><? echo $index_be_a_citizen_scientist;?></h2>
+          <h2><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
           
           <p><? echo $index_help_the_world;?></p>
         </div>
@@ -91,7 +91,7 @@ if(!is_logged_in()){
       <div class="row-fluid">
        <div class="span6" style="margin-left:10px;">
 <!--		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>-->
-		<h2><? echo $envirocar;?> <span class="muted"><? echo $index_here_we_go;?></span></h2>
+		<h2><? echo $index_be_a_citizen_scientist;?></h2>
 		<p>
 			<? echo $index_this_is_community;?>
 		</p>
