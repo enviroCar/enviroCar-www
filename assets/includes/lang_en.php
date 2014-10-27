@@ -42,13 +42,13 @@ $index_help_the_world='Help make mobility sustainable and our cities a little sm
 <br><br>
 Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community= "It's an app - collect car data
+$index_this_is_community= "It's an <strong>app</strong> - collect car data
 <br><br>
-It's an internet platform - share and analyze anonymized open data
+It's an <strong>internet platform</strong> - share and analyze anonymized open data
 <br><br>
-It's a community - collaborate with other citizens, traffic planners and scientists worldwide!
+It's a <strong>community</strong> - collaborate with other citizens, traffic planners and scientists worldwide!
 <br><br>
-It’s open source!";
+It’s <strong>open source</strong>!";
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
