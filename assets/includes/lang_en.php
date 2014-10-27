@@ -40,7 +40,7 @@ $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";
 $index_help_the_world='Help make mobility sustainable and our cities a little smarter.
 <br><br>
-Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
+Learn about mobility & environment. Share your data with the enviroCar Citizen Science Community. Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
 $index_this_is_community= "It's an <strong>app</strong> - collect car data
 <br><br>
