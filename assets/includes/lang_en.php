@@ -46,7 +46,9 @@ $index_this_is_community= "It's an app - collect car data
 <br><br>
 It's an internet platform - share and analyze anonymized open data
 <br><br>
-It's a community - collaborate with other citizens, traffic planners and scientists worldwide!";
+It's a community - collaborate with other citizens, traffic planners and scientists worldwide!
+<br><br>
+It’s open source!";
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
@@ -549,7 +551,7 @@ Help create a unique source of information and use it to improve and implement c
 enviroCar counts on YOU! Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 <p><strong>enviroCar</strong> is an open platform for Citizen Science projects in the field of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze car data and share their findings.<br /></p>
-<p>It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
+<p>It’s simple, it’s easy, it’s fun - it’s open source! Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
 <strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.</p>';
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
 <p>enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!</p>';
