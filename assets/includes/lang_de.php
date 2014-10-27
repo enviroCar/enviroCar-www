@@ -41,11 +41,11 @@ $index_be_a_citizen_scientist="Mach mit ...";
 $index_help_the_world='Wer fährt umweltfreundlicher, du oder deine Kollegen? Wieviel CO2 produziert dein Fahrzeug? Mit enviroCar kannst du diese und ähnliche Fragen beantworten. 
 <br><br>Stell Forschern und Planern Daten aus der Sensorik deines Fahrzeuges zur Verfügung. Helf mit, den Straßenverkehr sicherer und umweltfreundlicher zu gestalten.';
 $index_support_indiegogo="Unterstütze uns auf Indiegogo";
-$index_this_is_community='<strong>Die App</strong>: Mit der enviroCar App kannst Du Sensordaten aus der Motorsteuerung auslesen und mehr über dein Fahrzeug und deinen Fahrstil erfahren.
+$index_this_is_community='<strong>Die App</strong> - Mit der enviroCar App kannst Du Sensordaten aus der Motorsteuerung auslesen und mehr über dein Fahrzeug und deinen Fahrstil erfahren.
 <br><br>
-<strong>Die Plattform</strong>: Stell deine Daten anonymisiert als Open Data auf die enviroCar Internet Plattform zur Verfügung.
+<strong>Die Plattform</strong> - Stell deine Daten anonymisiert als Open Data auf die enviroCar Internet Plattform zur Verfügung.
 <br><br>
-<strong>Die Commmunity</strong>: Werde Teil der enviroCar Community  - eine Gemeinschaft von Bürgern, Forschern und Planer weltweit!
+<strong>Die Commmunity</strong> - Werde Teil der enviroCar Community, eine Gemeinschaft von Bürgern, Forschern und Planer weltweit!
 <br><br>
 <strong>Die Software</strong>: enviroCar Software ist Open Source.';
 $index_how_it_works="Wie funktioniert das Ganze?";
