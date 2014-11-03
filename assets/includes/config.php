@@ -40,7 +40,6 @@ if(strpos($_SERVER['REQUEST_URI'], 'dev')){
 
 
 //WPS url variables
-$wps_fuel_price =  "http://geoprocessing.demo.52north.org:8080/wps/WebProcessingService?Service=WPS&Request=Execute&Version=1.0.0&Identifier=org.n52.wps.extension.GetFuelPriceProcess&RawDataOutput=fuelPrice&DataInputs=fuelType=";
-$wps_tracks =  "http://geoprocessing.demo.52north.org:8081/enviroCar-wps/WebProcessingService?Service=WPS&Request=Execute&Version=1.0.0&Identifier=org.n52.wps.extension.GetNumberOfAllEnviroCarTracks&RawDataOutput=numberOfAllEnviroCarTracks&DataInputs=serverURL=https://envirocar.org/api/stable/tracks/";
+$wps_fuel_price = "http://processing.envirocar.org:8080/wps/WebProcessingService?Service=WPS&Request=Execute&Version=1.0.0&Identifier=org.envirocar.wps.GetFuelPriceProcess&RawDataOutput=fuelPrice&DataInputs=fuelType=";
 
 ?>

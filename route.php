@@ -74,9 +74,10 @@ include('header.php');
           <ul class="dropdown-menu">
               <li id="download-geojson">
               </li>
-              <!--<li>
-                <a id="download-shape">Shape (*.shp)</a>
-              </li> -->
+              <li id="download-shapefile">
+              </li>
+              <li id="download-csv">
+              </li>
           </ul>
         </div>
         <div class="btn btn-group dropup">
@@ -212,7 +213,7 @@ include('header.php');
 
 
   var popup;
-  var lengthOfTrack;
+  var lengthOfTrack = 0;
   var duration;
   var fuelConsumptionPerHour;
   var fuelConsumptionPer100KM;
@@ -257,7 +258,9 @@ include('header.php');
 
   function addRouteInformation(name){
       $('#routeInformation').append('<h2>'+name+'</h2>');
-      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson">GeoJSON (*.json)</a>');
+      $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson" target="_blank">GeoJSON (*.json)</a>');
+      $('#download-shapefile').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.shp" download="enviroCar_track_'+$_GET(['id'])+'.shp" target="_blank">Zipped shapefile (*.shp)</a>');
+      $('#download-csv').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.csv" download="enviroCar_track_'+$_GET(['id'])+'.csv" target="_blank">Comma-separated values (*.csv)</a>');
   }     
 
 
@@ -284,10 +287,19 @@ include('header.php');
 		//speed = 0 counts as idle time
 		var idleTime = 0;
 		
-		var distance = 0;		
+		var distance = 0;
+		if (data.properties.length) {
+			lengthOfTrack = data.properties.length;
+		}
 		
 		// total fuel consumption in liter per hour
 		var totalFuelConsumptionLiterPerHour = 0;		
+		
+		//prevent memory issues, only show shapefile download for smaller tracks
+		//max value must correspond with max measurements value of enviroCar-server
+        if (data.features.length >= 500) {
+      	    $('#download-shapefile').hide();
+        }
 		
 		if (data.features.length > 1) {
 			for (var i = 0; i < data.features.length; i++) {
@@ -304,14 +316,15 @@ include('header.php');
  				
  				var trackPartDistance = 0;				
 				
-				if(i < data.features.length-1){				
-				var lat2 = data.features[i+1].geometry.coordinates[1];
-				var lng2 = data.features[i+1].geometry.coordinates[0];
-				
-				trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
-				
-				distance = distance + trackPartDistance;
+				if (lengthOfTrack == 0 && i < data.features.length-1){				
+					var lat2 = data.features[i+1].geometry.coordinates[1];
+					var lng2 = data.features[i+1].geometry.coordinates[0];
+					
+					trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
+					
+					distance = distance + trackPartDistance;
 				}
+				
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
         		
         		var rpm = checkPhenomenonValue('Rpm', feature).value;
@@ -388,10 +401,12 @@ include('header.php');
 			
 			duration = endTime.getTime() - startTime.getTime();
 		
-			lengthOfTrack = distance;
+			if (lengthOfTrack == 0) {
+				lengthOfTrack = distance;
+			}
 			
 			// in liter per 100 km
-			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / distance * 100;			
+			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;			
 						
 			//calculate grams of CO2 per km
 			var co2inGramsPerKm	= 0;
@@ -402,7 +417,7 @@ include('header.php');
 				co2inGramsPerKm = avgFuelConsumption * 26.4;
 			}
 			
-			var totalCO2 = co2inGramsPerKm * distance / 1000;
+			var totalCO2 = co2inGramsPerKm * lengthOfTrack / 1000;
 			
 			$('#routeInformation').append('<h2>'+name+'</h2>');
 			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
@@ -412,7 +427,7 @@ include('header.php');
 			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
 			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
 			
-			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * distance;		
+			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;		
 			
 			getFuelPrice(totalFuelConsumptionInLiter, fuelType);	
 			
@@ -749,26 +764,19 @@ function addSeries(series, axis){
   }
   chart.render();
 }
-
+/* http://b.www.toolserver.org/tiles/bw-mapnik/$%7Bz%7D/$%7Bx%7D/$%7By%7D.png
+*/
 function initMap() {
 	
-  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', null, {
-    eventListeners: {
-        tileloaded: function(evt) {
-            var ctx = evt.tile.getCanvasContext();
-            if (ctx) {
-                var imgd = ctx.getImageData(0, 0, evt.tile.size.w, evt.tile.size.h);
-                var pix = imgd.data;
-                for (var i = 0, n = pix.length; i < n; i += 4) {
-                    pix[i] = pix[i + 1] = pix[i + 2] = (3 * pix[i] + 4 * pix[i + 1] + pix[i + 2]) / 8;
-                }
-                ctx.putImageData(imgd, 0, 0);
-                evt.tile.imgDiv.removeAttribute("crossorigin");
-                evt.tile.imgDiv.src = ctx.canvas.toDataURL();
-            }
-        }
-    }
-  });
+  var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile1&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile2&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile3&url=${z}%2F${x}%2F${y}.png",
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile4&url=${z}%2F${x}%2F${y}.png"], {
+		crossOriginKeyword: null
+	});
+	osm.attribution = '<p>Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png"></p>';
+
   map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
   map.addLayer(vectorLayer);
