@@ -40,13 +40,15 @@ $index_get_it_on_google="Get it on Google Play!";
 $index_be_a_citizen_scientist="Be a Citizen Scientist";
 $index_help_the_world='Help make mobility sustainable and our cities a little smarter.
 <br><br>
-Learn about mobility & environment! Share your data with the enviroCar Citizen Science Community! Collaborate with other citizens, urban planners and scientists worldwide!';
+Learn about mobility & environment. Share your data with the enviroCar Citizen Science Community. Collaborate with other citizens, urban planners and scientists worldwide!';
 $index_support_indiegogo="Support us on Indiegogo";
-$index_this_is_community= "It's an app - collect car data
+$index_this_is_community= "It's an <strong>app</strong> - collect car data
 <br><br>
-It's an internet platform - share and analyze anonymized open data
+It's an <strong>internet platform</strong> - share and analyze anonymized open data
 <br><br>
-It's a community - collaborate with other citizens, traffic planners and scientists worldwide!";
+It's a <strong>community</strong> - collaborate with other citizens, traffic planners and scientists worldwide!
+<br><br>
+It’s <strong>open source</strong>!";
 $index_how_it_works="How does it work?";
 $index_here_we_go=" - off we go!"; 
 $index_three_steps_to="Three steps to become a citizen scientist";
@@ -549,7 +551,7 @@ Help create a unique source of information and use it to improve and implement c
 enviroCar counts on YOU! Join the community and help make our world a little smarter.';
 $about_aboutText2 = '<h2>The enviroCar Platform</h2>
 <p><strong>enviroCar</strong> is an open platform for Citizen Science projects in the field of sustainable mobility. Citizens, scientists, traffic planners and industry collect and analyze car data and share their findings.<br /></p>
-<p>It’s simple, it’s easy, it’s fun. Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
+<p>It’s simple, it’s easy, it’s fun - it’s open source! Access the car’s sensors with your <strong>Android smartphone</strong> and a <strong>Bluetooth OBD-II adapter</strong>. The free <strong>enviroCar app</strong> provides information about your car and your driving characteristics. By uploading the data to the <strong>enviroCar server</strong> you agree to publish it as anonymized open data. As a scientist or traffic expert, you access the data easily via the 
 <strong>enviroCar website</strong> and use it to answer questions in the field of mobility and environment. Use <a href="https://52north.maps.arcgis.com/home" target="_blank">ArcGIS online</a> to tell the community about your projects and to share your ideas, insights and conclusions with people all over the world.</p>';
 $about_aboutText3 = '<h2>OBD II Adapter</h2>
 <p>enviroCar uses standard Bluetooth OBD-II adapters, such as the Drivedeck Sport. Plug in the OBD-II adapter, connect it with your Android smartphone using Bluetooth, start the enviroCar app and off you go collecting data for a new track!</p>';
@@ -566,6 +568,7 @@ $about_the_people_behind_text = '<strong>enviroCar</strong> is a project of
 <ul>
 <li style="list-style-type: none;"><a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis/index_html/document_view?set_language=en" target="_blank">the Technical University of Dresden - Professorship of Geoinformation Systems</a></li> 
 <li style="list-style-type: none;">and <a href="http://www.conterra.de/index_en.asp" target="_blank">con terra GmbH</a>.</li>
+<li style="list-style-type: none;">and the <a href="http://www.hochschule-bochum.de/fbv.html" target="_blank">Department of Geodesy at the Bochum University of Applied Sciences</a>.</li>
 </ul>
 <strong>Global Sponsor</strong>
 <ul>
