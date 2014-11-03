@@ -571,7 +571,7 @@ $about_the_people_behind_text = '<strong>enviroCar</strong> ist ein Projekt des
 <ul>
 <li style="list-style-type: none;">sind die <a href="http://tu-dresden.de/die_tu_dresden/fakultaeten/fakultaet_forst_geo_und_hydrowissenschaften/fachrichtung_geowissenschaften/gis" target="_blank">Technische Universität Dresden - Professur für Geoinformatik</a>,</li> 
 <li style="list-style-type: none;">die <a href="http://www.conterra.de" target="_blank">con terra GmbH</a></li>
-<li style="list-style-type: none;">und die <a href="http://www.hochschule-bochum.de/fbv.html" target="_blank">Fachbereich Geodäsie der Hochschule Bochum</a>.</li>
+<li style="list-style-type: none;">und der <a href="http://www.hochschule-bochum.de/fbv.html" target="_blank">Fachbereich Geodäsie der Hochschule Bochum</a>.</li>
 </ul>
 <strong>Global Sponsor</strong>
 <ul>
