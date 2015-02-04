@@ -132,7 +132,6 @@ function submitProfileChanges(){
 			$('#edit-profile-success').show();
     }
   });
-  return false;	
 }
 
 function getAvatar(name, size){
