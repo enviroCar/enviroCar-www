@@ -259,6 +259,8 @@ $mapsandstatistics = "Maps & Statistics";
 $gettinginvolved = "Getting Involved";
 $api = "API";
 $data = "Data";
+$software = "Software";
+$softwareTitle = "Software (opens new page)";
 $showapiongithub = "Show API-definition on github.com";
 $signedin = "Signed in";
 

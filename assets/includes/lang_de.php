@@ -262,6 +262,8 @@ $mapsandstatistics = "Karten & Statistiken";
 $gettinginvolved = "Mitwirken";
 $api = "API";
 $data = "Daten";
+$software = "Software";
+$softwareTitle = "Software (öffnet neue Seite)";
 $showapiongithub = "Zeige die API-Definition auf github.com";
 $signedin = "Angemeldet";
 
