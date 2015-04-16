@@ -87,6 +87,7 @@ $terms_check = 'I have read and understood the <a href="./terms.php" target="_bl
 $terms_check_alert = 'Please read and accept the Terms of Use.';
 $error_setting_terms_on_server="An error occured while trying to update user information.";
 $email_validation_message="Please enter a valid email address.";
+$username_validation_message="Please enter a valid nick-name. Points are not allowed, dashes are.";
 $password_validation_message="The password must contain at least 6 characters.";
 $password_match_validation_message="The passwords do not match.";
 $date_validation_message="Please enter the date in the format <code>YYYY-MM-DD</code>.";
