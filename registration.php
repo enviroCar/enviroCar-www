@@ -49,7 +49,7 @@ if(isset($_GET['name_taken'])){
 		    <div class="control-group">
 				<label class="control-label" for="name">Nick-Name</label>
 				<div class="controls">
-				    <input type="text" class="input-xlarge" name="name" id="name" placeholder="Nick-Name" required data-validation-ajax-ajax='./assets/includes/users.php?user-exists'>
+				    <input type="text" class="input-xlarge" name="name" id="name" placeholder="Nick-Name" required data-validation-ajax-ajax='./assets/includes/users.php?user-exists' data-validation-username-message="<?php echo $username_validation_message ?>">
 				</div>
 			</div>
 			<div class="control-group">
