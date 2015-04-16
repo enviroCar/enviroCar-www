@@ -192,6 +192,18 @@
               $this.data("validationValidemailMessage", message);
             }
             // ---------------------------------------------------------
+            //                                                     Username
+            // ---------------------------------------------------------
+            if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "text") {
+              message = "Not a valid nick-name<!-- data-validator-validusername-message to override -->";
+              if ($this.data("validationValidusernameMessage")) {
+                message = $this.data("validationValidusernameMessage");
+              } else if ($this.data("validationUsernameMessage")) {
+                message = $this.data("validationUsernameMessage");
+              }
+              $this.data("validationValidusernameMessage", message);
+            }
+            // ---------------------------------------------------------
             //                                                MINCHECKED
             // ---------------------------------------------------------
             if ($this.attr("minchecked") !== undefined) {
@@ -792,6 +804,17 @@
 				type: "regex",
 				regex: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,4}",
 				message: "Not a valid email address<!-- data-validator-validemail-message to override -->"
+			},
+			username: {
+				name: "Name",
+				type: "shortcut",
+				shortcut: "validusername"
+			},
+			validusername: {
+				name: "Validusername",
+				type: "regex",
+				regex: "[_A-Za-z0-9-]{4,}$",
+				message: "Not a valid nick-name<!-- data-validator-validusername-message to override -->"
 			},
 			passwordagain: {
 				name: "Passwordagain",

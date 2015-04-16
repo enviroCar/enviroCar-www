@@ -88,6 +88,7 @@ $terms_check = 'Ich habe die <a href="./terms.php" target="_blank">Nutzungsbedin
 $terms_check_alert = 'Bitte lesen und akzeptieren Sie die Nutzungsbedingungen um fortzufahren.';
 $error_setting_terms_on_server="Leider gab es einen Fehler beim Versuch, die Nutzerinformationen zu aktualisieren.";
 $email_validation_message="Bitte gib eine gültige Email Adresse an.";
+$username_validation_message="Bitte gib einen gültigen Nick-Name an. Punkte sind nicht erlaubt, Bindestriche sind erlaubt.";
 $password_validation_message="Das Passwort muss mindestens 6 Zeichen enthalten.";
 $password_match_validation_message="Die Passwörter müssen übereinstimmen.";
 $date_validation_message="Bitte gib das Datum in dem Format <code>JJJJ-MM-TT</code> an.";
