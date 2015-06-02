@@ -52,7 +52,7 @@ if(isset($_GET['user'])){
 }
 
 if(isset($_GET['users'])){
-	$response = get_request($baseURL.'/users/', true);
+	$response = get_request($baseURL.'/users?limit=1000', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
