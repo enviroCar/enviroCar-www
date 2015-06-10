@@ -25,6 +25,12 @@
   
   var serverTermsOfUseIssuedDate;
   
+  var friend;
+  var values;
+  var values2;
+  var count;
+  var phen;
+  
   
   function init(){
 		loggedInUser = '<?php echo $_SESSION["name"] ?>';
@@ -32,6 +38,14 @@
 		getUserInfo();
 		getBadges();
 		$('#username').html(user);
+		
+		friend = "<? echo $user?>";
+		values = [];
+		values2 = [];
+		count=0;
+		phen=[];
+		
+		$('#loadingIndicator_graph').show();
 		executeRequests();
     }
     
@@ -268,7 +282,7 @@
 	  });
 	  
 	  $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
-		$('#loadingIndicator_graph').show();
+		
 		if(data >= 400){
 		  error_msg("<? echo $statisticsError ?>");
 		  $('#loadingIndicator_graph').hide();
@@ -282,33 +296,41 @@
 			}
 		  }
 		  count=phen.length;
+		  
+		  //NOW start requesting the overall statistics
+			$.get('assets/includes/users.php?allStatistics', function(data) {
+			  
+				if(data >= 400){
+				  if(data === 401 || data === 403) noFriend();
+				  else error_msg("<? echo $statisticsNotFound ?>");
+				  $('#loadingIndicator_graph').hide();
+				}else{
+				  data = JSON.parse(data);
+				  console.info(data);
+				  for (h=0; h<count; h++ ){
+					values2[h]=0;
+				  }
+				  for(i = 0; i < data.statistics.length; i++){
+					  console.info("i="+i); 
+					for (j=0; j<count; j++ ){
+						console.info("j="+j);
+					  if ((data.statistics[i].phenomenon.name) === phen[j]){ 
+						values2[j]= Math.round(data.statistics[i].avg*100)/100;
+						break;
+					  }
+					}
+				  }
+				  if(data.statistics.length === 0){
+					values2 = [0,0,0,0];
+				  }
+				  console.info(values2);
+				  google.setOnLoadCallback(drawChart());
+				}
+			  });
 		}
 	  });
 	  
-	  $.get('assets/includes/users.php?allStatistics', function(data) {
-		if(data >= 400){
-		  if(data == 401 || data == 403) noFriend();
-		  else error_msg("<? echo $statisticsNotFound ?>");
-		  $('#loadingIndicator_graph').hide();
-		}else{
-		  data = JSON.parse(data);
-		  for (h=0; h<count; h++ ){
-			values2[h]=0;
-		  }
-		  for(i = 0; i < data.statistics.length; i++){ 
-			for (j=0; j<count; j++ ){
-			  if ((data.statistics[i].phenomenon.name)==phen[j]){ 
-				values2[j]= Math.round(data.statistics[i].avg*100)/100;
-				break;
-			  }
-			}
-		  }
-		  if(data.statistics.length==0){
-			values2 = [0,0,0,0];
-		  }
-		  google.setOnLoadCallback(drawChart());
-		}
-	  });
+	  
   }
   
   
@@ -530,43 +552,9 @@
     $('#groupsList').prepend('<dl><a href="group.php?group='+name+'"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px;"/></a><a href="group.php?group='+name+'">'+name+'</a></dl>');
   }
   
-
-  
-  $(function(){
-    $('#createGroupForm').submit(function(){
-      if($('#group_name').val() === '' || $('#group_description').val() === ''){
-        alert("<? echo $bothFieldsFilled ?>");
-      }
-      else{
-        if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){
-          $('#loadingIndicator').show();
-          
-          $.post('./assets/includes/groups.php?createGroup', {
-            group_name: $('#group_name').val(), group_description: $('#group_description').val()}
-                 , 
-                 function(response){
-                   if(response >= 400){
-                     error_msg("<? echo $creategrouperror ?>");
-                   }
-                   else{
-                     window.location.href="group.php?group="+$('#group_name').val();
-                   }
-                 }
-                );
-        }
-        else{
-          $('#loadingIndicator').hide();
-          alert("<? echo $invalidCharacterError ?>");
-        }
-      }
-      return false;
-    }
-                                );
-  }
-   );
-  
+ 
   function validateInput(input){
-    re = /[&=`\[\]"'<>\/]/;
+    var re = /[&=`\[\]"'<>\/]/;
     return re.test(input);
   }
   
@@ -708,15 +696,6 @@
     });
   }
   
-  var friend = "<? echo $user?>";
-  var values = [];
-  var values2 = [];
-  var count=0;
-  var phen=[];
-  
-
-  
-  
   google.load("visualization", "1", {packages:["corechart"]});
   
   function drawChart() {
@@ -753,6 +732,35 @@
   }
   
   $(function () {
+    $('#createGroupForm').submit(function(){
+      if($('#group_name').val() === '' || $('#group_description').val() === ''){
+        alert("<? echo $bothFieldsFilled ?>");
+      }
+      else{
+        if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){
+          $('#loadingIndicator').show();
+          
+          $.post('./assets/includes/groups.php?createGroup', {
+            group_name: $('#group_name').val(), group_description: $('#group_description').val()}
+                 , 
+                 function(response){
+                   if(response >= 400){
+                     error_msg("<? echo $creategrouperror ?>");
+                   }
+                   else{
+                     window.location.href="group.php?group="+$('#group_name').val();
+                   }
+                 }
+                );
+        }
+        else{
+          $('#loadingIndicator').hide();
+          alert("<? echo $invalidCharacterError ?>");
+        }
+      }
+      return false;
+    });
+	  
     init();
   });
   
