@@ -37,8 +37,12 @@ function addShareButtons(){
 }
 
 $(function(){
-    $('body').tooltip({
-      selector: '[rel=tooltip]'
-    });
-  });
+	$('body').tooltip({
+	  selector: '[rel=tooltip]'
+	});
+});
+  
+
+
+  
 </script>
