@@ -18,7 +18,6 @@
 
 include('header.php');
 require_once('assets/includes/connection.php');
-require_once('assets/includes/config.php');
 
 $loggedInUser = $_SESSION["name"];
 $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;

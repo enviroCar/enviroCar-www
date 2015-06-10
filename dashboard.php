@@ -17,7 +17,6 @@
 */
 
 include('header.php');
-require_once('assets/includes/config.php');
 ?>
 
 <div id="badgesModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

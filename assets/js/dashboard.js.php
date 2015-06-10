@@ -83,10 +83,7 @@
       $('#tracks-list').append("<? echo $noroutesavailable ?>");
     }
   }
-  
-  function error_msg(msg) {
-	  alert(msg);
-  }
+
   
   /* $.get('./assets/includes/users.php?userActivities', function(data) {
     if(data >= 400){
