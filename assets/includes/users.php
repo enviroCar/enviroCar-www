@@ -17,6 +17,7 @@
 */
 
 require_once('connection.php');
+require_once('config.php');
 
 
 $baseURL = get_serverurl(); //as defined in config.php
@@ -52,7 +53,7 @@ if(isset($_GET['user'])){
 }
 
 if(isset($_GET['users'])){
-	$response = get_request($baseURL.'/users/', true);
+	$response = get_request($baseURL.'/users?limit=1000', true);
 	if($response['status'] == 200){
 		echo $response['response'];
 	}else{
@@ -182,44 +183,45 @@ if(isset($_GET['tracks-page'])){
 }
 
 if(isset($_GET['track-number-user'])){
-	//This is a workaround to get the total number of a user's tracks
-	//We also need to set up our own curl request because we need the headers and we need to parse them
-	$ch = curl_init($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks'.'?limit=1');
-    curl_setopt_array($ch, array(
-        CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
-        CURLOPT_RETURNTRANSFER  => true,
-        CURLOPT_VERBOSE     => 1,
-        CURLOPT_FOLLOWLOCATION => TRUE,
-        CURLOPT_HEADER => 1
-    ));
-    $out = curl_exec($ch);
-    $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
-    curl_close($ch);
-    //The request is fully returned, so split headers and body
-    list($headers, $body) = explode("\r\n\r\n", $out, 2);
-    //Put all headers into a key/value-Array so we can get the desired "Link" header later
-    $lines = explode("\r\n", $headers);
-    $parsed = array();
-    foreach($lines as $line) {
-        $colon = strpos($line, ':');
-        if($colon !== false) {
-            $name = trim(substr($line, 0, $colon));
-            $value = trim(substr($line, $colon + 1));
-            //Actually sometimes there are two "Link" Elements, we need the first one
-            if(!array_key_exists($name, $parsed)) $parsed[$name] = $value;
-        }
-    }
-    //parse the number of tracks from the "Link"-Headers
-    $num_of_tracks = 0;
-    if(array_key_exists('Link', $parsed)){
-    	$num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];	
-    }
-    $response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
+	////This is a workaround to get the total number of a user's tracks
+	////We also need to set up our own curl request because we need the headers and we need to parse them
+	//$ch = curl_init($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks'.'?limit=1');
+    //curl_setopt_array($ch, array(
+        //CURLOPT_HTTPHEADER  => array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']),  
+        //CURLOPT_RETURNTRANSFER  => true,
+        //CURLOPT_VERBOSE     => 1,
+        //CURLOPT_FOLLOWLOCATION => TRUE,
+        //CURLOPT_HEADER => 1
+    //));
+    //$out = curl_exec($ch);
+    //$http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    //$lastUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    //curl_close($ch);
+    ////The request is fully returned, so split headers and body
+    //list($headers, $body) = explode("\r\n\r\n", $out, 2);
+    ////Put all headers into a key/value-Array so we can get the desired "Link" header later
+    //$lines = explode("\r\n", $headers);
+    //$parsed = array();
+    //foreach($lines as $line) {
+        //$colon = strpos($line, ':');
+        //if($colon !== false) {
+            //$name = trim(substr($line, 0, $colon));
+            //$value = trim(substr($line, $colon + 1));
+            ////Actually sometimes there are two "Link" Elements, we need the first one
+            //if(!array_key_exists($name, $parsed)) $parsed[$name] = $value;
+        //}
+    //}
+    ////parse the number of tracks from the "Link"-Headers
+    //$num_of_tracks = 0;
+    //if(array_key_exists('Link', $parsed)){
+    	//$num_of_tracks = explode(">",explode( "page=", $parsed['Link'])[1])[0];	
+    //}
+    //$response = array("status" => $http_status, "response" => $num_of_tracks, "url" => $lastUrl);
 
-
+	$response = get_request_with_headers($serverurl."/users/".rawurlencode($_SESSION['name'])."/tracks/?limit=1&page=0", true);
+	
 	if($response['status'] == 200){
-		echo $response['response'];
+		echo processTrackNumberResponse($response);
 	}else{
 		echo $response['status'];
 	}
