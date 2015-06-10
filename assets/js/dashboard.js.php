@@ -50,11 +50,8 @@
   function addOverallStatistics(name, value){
     
     $.get('assets/includes/tracks.php', function(data) {
-      $('#overallStatistics').append('<li id="number-of-tracks" rel="tooltip" data-placement="right" data-toggle="tooltip" data-original-title="<?php echo $dashboard_track_number_tooltip; ?>"><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + '(' + data + ')</strong>');
-      
-    }
-         );
-    
+      $('#overallStatistics').append('<li id="number-of-tracks" rel="tooltip" data-placement="right" data-toggle="tooltip" data-original-title="<?php echo $dashboard_track_number_tooltip; ?>"><?php echo $dashboard_number_of_tracks; ?>:<strong> '+value + ' (' + data + ')</strong>');
+    });
     
   }
   
@@ -85,6 +82,10 @@
     else{
       $('#tracks-list').append("<? echo $noroutesavailable ?>");
     }
+  }
+  
+  function error_msg(msg) {
+	  alert(msg);
   }
   
   /* $.get('./assets/includes/users.php?userActivities', function(data) {
@@ -621,6 +622,11 @@
   function getTerms(){ 
     $.get('./assets/includes/terms.php?getTerms', function(data){
       data = JSON.parse(data);
+      
+      if (!data.termsOfUse) {
+		  return;
+	  }
+      
       serverTermsOfUseIssuedDate = data.termsOfUse[0].issuedDate;     
       
       if(acceptedTermsOfUseIssuedDate){

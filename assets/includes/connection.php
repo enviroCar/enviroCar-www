@@ -175,4 +175,38 @@ function delete_request($url){
     return array("status" => $http_status, "response" => $result);
 }
 
+function processTrackNumberResponse($response) {
+	if ($response['status'] == 200) {
+		$header_array = explode("\n", $response['header']);
+		
+		$header_size = count($header_array);
+		for ($i = 0; $i < $header_size; ++$i) {
+			if (strpos($header_array[$i], "Content-Range") === 0) {
+				return trim(substr($header_array[$i], strpos($header_array[$i], "/")+1, strlen($header_array[$i])));
+			}
+		}
+		
+		for ($i = 0; $i < $header_size; ++$i) {
+			if (strpos($header_array[$i], "Link") === 0) {
+				$links = explode(", ", $header_array[$i]);
+				
+				$links_size = count($links);
+				for ($j = 0; $j < $links_size; ++$j) {
+					if (strpos($links[$j], "rel=last")) {
+						$pageIndex = strpos($links[$j], "page=");
+						$pageEndIndex = strpos($links[$j], ">;", $pageIndex);
+
+						return trim(substr($links[$j], $pageIndex+5, $pageEndIndex - ($pageIndex+5)));
+					}
+				}
+
+			}
+		}
+		//echo $response['response'];
+		return substr_count($response['response'], 'id');
+	} else {
+		return $response['status'];
+	}
+}
+
 ?>

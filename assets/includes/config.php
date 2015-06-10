@@ -30,8 +30,8 @@
 */
 
 //Server related variables
-$serverurl	= "https://envirocar.org/api/stable";
-$serverurl_dev 	= "https://envirocar.org/api/dev";
+$serverurl	= "http://localhost:8080/webapp-1.1.0-SNAPSHOT";
+$serverurl_dev 	= "http://localhost:8080/webapp-1.1.0-SNAPSHOT";
 
 //Find out if stable or dev should be used
 if(strpos($_SERVER['REQUEST_URI'], 'dev')){
