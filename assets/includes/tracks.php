@@ -17,45 +17,11 @@
 */
 
 require_once('connection.php');
+require_once('config.php');
 
-	$resp = get_request_with_headers("https://envirocar.org/api/stable/tracks/?limit=1&page=0", false);
+	$resp = get_request_with_headers($serverurl."/tracks/?limit=1&page=0", false);
 	
-	processTrackNumberResponse($resp);
+	echo processTrackNumberResponse($resp);
 	
-	function processTrackNumberResponse($response) {
-		if ($response['status'] == 200) {
-			$header_array = explode("\n", $response['header']);
-			
-			$header_size = count($header_array);
-			for ($i = 0; $i < $header_size; ++$i) {
-				if (strpos($header_array[$i], "Content-Range") === 0) {
-					echo trim(substr($header_array[$i], strpos($header_array[$i], "/")+1, strlen($header_array[$i])));
-					return;
-				}
-			}
-			
-			for ($i = 0; $i < $header_size; ++$i) {
-				if (strpos($header_array[$i], "Link") === 0) {
-					$links = explode(", ", $header_array[$i]);
-					
-					$links_size = count($links);
-					for ($j = 0; $j < $links_size; ++$j) {
-						if (strpos($links[$j], "rel=last")) {
-							$pageIndex = strpos($links[$j], "page=");
-							$pageEndIndex = strpos($links[$j], ">;", $pageIndex);
-
-							echo trim(substr($links[$j], $pageIndex+5, $pageEndIndex - ($pageIndex+5)));
-							return;
-						}
-					}
-
-				}
-			}
-
-			echo "0";
-		} else {
-			echo $response['status'];
-		}
-	}
 	
 ?>

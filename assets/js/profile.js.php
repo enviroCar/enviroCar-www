@@ -65,6 +65,51 @@
     getUserFriends();
     getUserGroups();
     getLoggedInUserFriends();
+    
+//gets activities of current friend ($user)
+ $.get('./assets/includes/users.php?friendActivities', function(data) {
+      if(data >= 400){
+        console.log(data);
+        if(data == 400){
+          error_msg("<? echo $activityError ?>");
+        }else if(data == 401 || data == 403){
+          error_msg("<? echo $activityNotAllowed ?>")
+        }else if(data == 404){
+          error_msg("<? echo $activityNotFound ?>")
+        }
+        $('#loadingIndicator_friend_activities').hide();
+      }else{
+          data = JSON.parse(data);
+
+          if(data.activities.length > 0){
+
+            for(i = 0; i < data.activities.length; i++){
+              var activity = data.activities[i]; 	
+              if(activity.user.name == "<? echo $user ?>"){
+              if(activity.type == "JOINED_GROUP"){
+                if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CREATED_GROUP"){
+                if(activity.group) addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $createdGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "FRIENDED_USER"){
+                addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CREATED_TRACK"){
+                if(typeof activity.track != 'undefined') addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?> "+activity.track.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "LEFT_GROUP"){
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_GROUP"){
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
+              }else if(activity.type == "CHANGED_PROFILE"){
+                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
+              }
+              }
+            }
+            
+        }else{
+          $('#friendActivities').append("<? echo $norecentactivities ?>");
+        }
+        $('#loadingIndicator_friend_activities').hide();
+      }
+    }); 
   }
 
   function getUserInfo(){
@@ -306,55 +351,9 @@
           });
           return false;
         });
+        
+        init();
     });
  
-//gets activities of current friend ($user)
- $.get('./assets/includes/users.php?friendActivities', function(data) {
-      if(data >= 400){
-        console.log(data);
-        if(data == 400){
-          error_msg("<? echo $activityError ?>");
-        }else if(data == 401 || data == 403){
-          error_msg("<? echo $activityNotAllowed ?>")
-        }else if(data == 404){
-          error_msg("<? echo $activityNotFound ?>")
-        }
-        $('#loadingIndicator_friend_activities').hide();
-      }else{
-          data = JSON.parse(data);
-
-          if(data.activities.length > 0){
-
-            for(i = 0; i < data.activities.length; i++){
-              var activity = data.activities[i]; 	
-              if(activity.user.name == "<? echo $user ?>"){
-              if(activity.type == "JOINED_GROUP"){
-                if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "CREATED_GROUP"){
-                if(activity.group) addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $createdGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "FRIENDED_USER"){
-                addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "CREATED_TRACK"){
-                if(typeof activity.track != 'undefined') addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?> "+activity.track.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "LEFT_GROUP"){
-                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "CHANGED_GROUP"){
-                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
-              }else if(activity.type == "CHANGED_PROFILE"){
-                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
-              }
-              }
-            }
-            
-        }else{
-          $('#friendActivities').append("<? echo $norecentactivities ?>");
-        }
-        $('#loadingIndicator_friend_activities').hide();
-      }
-    }); 
-  
-  $(function () {
-    init();
-});
 
 </script>
