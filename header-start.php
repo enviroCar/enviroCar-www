@@ -249,6 +249,7 @@ if ($login_name != "" && $login_password != ""){
               <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
               <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
+			  <li><a href="http://envirocar.github.io/" target="_blank" title="<? echo $softwareTitle ?>"><? echo $software ?></a></li>
               <?php if(!is_logged_in()){ ?>
                 <li class="dropdown">
                 <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>

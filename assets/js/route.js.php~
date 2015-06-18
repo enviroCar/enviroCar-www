@@ -43,7 +43,12 @@ function shareOnFacebook() {
 }
 
 $(function(){
-
+<<<<<<< HEAD
+    $('body').tooltip({
+      selector: '[rel=tooltip]'
+    });
+  });
+=======
 	$('body').tooltip({
 	  selector: '[rel=tooltip]'
 	});
@@ -52,4 +57,5 @@ $(function(){
 
 
   
+>>>>>>> 2eec2b8c2b3fa7d7a27f6d6101680446a2acc35d
 </script>
