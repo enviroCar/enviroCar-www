@@ -17,6 +17,10 @@ window.fbAsyncInit = function() {
         xfbml: true,
         version: 'v2.2'
     });
+    
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    });
 };
 
 function checkLoginState() {
@@ -60,15 +64,6 @@ function postLike() {
             action_properties: JSON.stringify({
                 track: track,
             })
-        },
-        function(response) {
-            if (!response) {
-                alert('Error occurred.');
-            } else if (response.error) {
-                alert(response.error);
-            } else {
-                alert(response.id);
-            }
         });
 }
 
