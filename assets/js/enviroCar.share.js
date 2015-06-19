@@ -99,12 +99,31 @@ function tweetShare() {
     window.open(url, 'twitter', opts);
 }
 
+function googleShare() {
+    /*$("meta[property='og\\:title']").attr("content", 'photo');
+     $("meta[property='og\\:image']").attr("content", 'https://www.envirocar.org/assets/img/marketing/envCar_Foto19.jpg');
+     $("meta[property='og\\:description']").attr("content", 'Mountain sunset');*/
+
+    var width = 575,
+        sendurl = 'www.envirocar.org',
+        height = 400,
+        left = ($(window).width() - width) / 2,
+        top = ($(window).height() - height) / 2,
+        url = 'https://plus.google.com/share?url=' + sendurl,
+        opts = 'status=1' +
+            ',width=' + width +
+            ',height=' + height +
+            ',top=' + top +
+            ',left=' + left;
+    window.open(url, 'Google', opts);
+}
+
 function tweetPhotoShare() {
     $("meta[property='twitter\\:card']").attr("content", 'photo');
     $("meta[property='twitter\\:site']").attr("content", '@drifftr');
     $("meta[property='twitter\\:title']").attr("content", 'Mountain sunset');
     $("meta[property='twitter\\:image']").attr("content", 'http://www.faecarefoundation.org/sites/faecarefoundation.org/files/styles/large/public/DSC_0341%20%28320x213%29.jpg');
-    $("meta[property='twitter\\:url']").attr("content", 'https://www.flickr.com/photos/reza-sina/11858349453/');
+    $("meta[property='twitter\\:url']").attr("content", window.location.href);
     var width = 575,
         sendurl = window.location.href,
         text = 'I Just used %23enviroCar',

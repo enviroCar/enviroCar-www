@@ -48,6 +48,12 @@
         });
     }
 
+    function shareOnGoogle() {
+        $.getScript("assets/js/enviroCar.share.js", function () {
+            googleShare();
+        });
+    }
+
     $(function () {
 
         $('body').tooltip({
