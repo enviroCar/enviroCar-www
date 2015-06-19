@@ -16,6 +16,7 @@
 * along with enviroCar.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
+ <script src="assets/js/enviroCar.share.js"></script> 
 <script type="text/javascript">
 
 function toggleSharing(){
@@ -37,11 +38,8 @@ function addShareButtons(){
 }
 
 function shareOnFacebook() {
-        $.getScript("assets/js/enviroCar.share.js", function() {
-            //checkLoginState();
-            
+           //checkLoginState();
             fbShare();
-        });
 }
 
 $(function(){
