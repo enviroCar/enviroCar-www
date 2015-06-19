@@ -51,8 +51,7 @@ include('header.php');
       <a class='pop share-square share-square-googleplus-disabled'></a><a class='pop share-square share-square-facebook-disabled'></a><a class='pop share-square share-square-twitter-disabled'></a>
     </div>
      <div id="leButton">
-	<input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"></input>
-	<input type="button" id="mytweetbutton" value="Tweet me" onclick="addTweetButtons();"></input>
+	 <input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"/><input type="button" id="twitter"  value="Tweet Me" onclick="shareOnTwitter();"/>
      </div>
   </div>
 </div>
@@ -213,8 +212,6 @@ include('header.php');
 
 </div>
 <script type="text/javascript">
-  
-  
 
   var popup;
   var lengthOfTrack = 0;

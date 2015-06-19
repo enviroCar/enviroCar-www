@@ -18,40 +18,42 @@
 ?>
 <script type="text/javascript">
 
-function toggleSharing(){
-	if($('#share-switch').prop('checked')){
-		$('#share-buttons').html("");
-		$.getScript( "assets/js/jquery.share.js", function() {
-			addShareButtons();
-		});
-	}else{
-		$('#share-switch').prop('checked', true);
-	}
-}	
+    function toggleSharing() {
+        if ($('#share-switch').prop('checked')) {
+            $('#share-buttons').html("");
+            $.getScript("assets/js/jquery.share.js", function () {
+                addShareButtons();
+            });
+        } else {
+            $('#share-switch').prop('checked', true);
+        }
+    }
 
-function addShareButtons(){
-	$('#share-buttons').share({
-        networks: ['googleplus','facebook','twitter'],
-        theme: 'square'
-    });
-}
-
-function shareOnFacebook() {
-        $.getScript("assets/js/enviroCar.share.js", function() {
-            //checkLoginState();
-            
-            fbShare();
+    function addShareButtons() {
+        $('#share-buttons').share({
+            networks: ['googleplus', 'facebook', 'twitter'],
+            theme: 'square'
         });
-}
+    }
 
-$(function(){
+    function shareOnFacebook() {
+        $.getScript("assets/js/enviroCar.share.js", function () {
+            FBShareOAuth();
+        });
+    }
 
-	$('body').tooltip({
-	  selector: '[rel=tooltip]'
-	});
-});
-  
+    function shareOnTwitter() {
+        $.getScript("assets/js/enviroCar.share.js", function () {
+            tweetShare();
+        });
+    }
+
+    $(function () {
+
+        $('body').tooltip({
+            selector: '[rel=tooltip]'
+        });
+    });
 
 
-  
 </script>
