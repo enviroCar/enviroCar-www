@@ -19,11 +19,33 @@
 include('header.php');
 ?>
 
-<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>  
+<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 <link href="./assets/css/jquery.share.css" rel="stylesheet">
+<!--meta tags used for twitter sharing
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@drifftr" />
+<meta name="twitter:creator" content="@drifftr" />
 
+<meta name="twitter:image:src" content="https://www.envirocar.org/assets/img/marketing/envCar_Foto19.jpg" />
+<meta name="twitter:image:width" content= "280" />
+<meta name="twitter:image:height" content= "480" />
+
+<meta property="og:image" content="https://www.envirocar.org/assets/img/marketing/envCar_Foto19.jpg" />
+<meta property="og:image:width" content= "280" />
+<meta property="og:image:height" content= "480" />
+
+<meta property="og:url" content="http://localhost/enviroCar-WWW/enviroCar-www/route.php?id=5577008eccf24b5d2a54a5e9" />
+<meta property="og:title" content="My Page Title" />
+<meta property="og:description" content="My Page Description" />
+-->
+<!-- meta tags used for google sharing
+<html itemscope itemtype="http://schema.org/Product">
+<meta property="og:title" content="photo" />
+<meta property="og:image" content="https://www.envirocar.org/assets/img/marketing/envCar_Foto19.jpg" />
+<meta property="og:description" content="This is my image shared" />
+-->
 
 <div class="container leftband" id="route-information-container">
   <div class="row-fluid" >
@@ -50,6 +72,11 @@ include('header.php');
     <div id="share-buttons" class="share-buttons">
       <a class='pop share-square share-square-googleplus-disabled'></a><a class='pop share-square share-square-facebook-disabled'></a><a class='pop share-square share-square-twitter-disabled'></a>
     </div>
+     <div id="leButton">
+	<input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"/>
+         <input type="button" id="twitter"  value="Tweet Me" onclick="shareOnTwitter();"/>
+         <input type="button" id="google"  value="G+ Me" onclick="shareOnGoogle();"/>
+     </div>
   </div>
 </div>
 
@@ -209,8 +236,6 @@ include('header.php');
 
 </div>
 <script type="text/javascript">
-  
-  
 
   var popup;
   var lengthOfTrack = 0;
