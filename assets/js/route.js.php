@@ -36,9 +36,9 @@
         });
     }
 
-    function shareOnFacebook() {
+    function shareOnFacebook(id) {
         $.getScript("assets/js/enviroCar.share.js", function () {
-            FBShareOAuth();
+            FBShareOAuth(id);
         });
     }
 
