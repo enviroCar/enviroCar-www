@@ -363,7 +363,7 @@
     $('#tracks-list').append(
       '<div class="row row-narrow">'
       +'<div class="span3">'
-      +'<a href="route.php?id='+id+'"><img src="./assets/img/track_preview.png" style="height: 60px; margin-right: 10px; "/></a>'
+      +'<a href="route.php?id='+id+'"><img src="https://envirocar.org/api/dev/tracks/'+id+'/preview" style="height: 60px; margin-right: 10px; "/></a>'  //make it relative
       +'</div>'
       +'<div class="span9">'
       +'<a href="route.php?id='+id+'">'+name+'</a>'

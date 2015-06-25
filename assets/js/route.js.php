@@ -44,7 +44,7 @@
 
     function shareOnTwitter() {
         $.getScript("assets/js/enviroCar.share.js", function () {
-            tweetShare();
+            tweetPhotoShare();
         });
     }
 
