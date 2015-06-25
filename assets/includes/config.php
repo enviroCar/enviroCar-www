@@ -30,7 +30,7 @@
 */
 
 //Server related variables
-$serverurl	= "https://envirocar.org/api/stable";
+$serverurl	= "https://envirocar.org/api/dev";
 $serverurl_dev 	= "https://envirocar.org/api/dev";
 
 //Find out if stable or dev should be used

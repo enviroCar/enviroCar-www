@@ -53,8 +53,8 @@ function FBShareOAuth() {
         var track = {
             'fb:app_id': appId,
             'og:title': 'EnviroCar',
-            'og:image': "http://img.fun-taiwan.com.tw/FunTaiwan/fb-previews/1200X630_2.jpg",
-            'og:url': 'http://www.envirocar.org',
+            'og:image': "https://envirocar.org/api/dev/share/51d027e3e4b0f7630819f1dc",
+            'og:url': window.location.href,
             'og:type': "sentiment_codeelite:track",
             'sentiment_codeelite:speed': 12,
             'sentiment_codeelite:emission': 25
@@ -63,7 +63,7 @@ function FBShareOAuth() {
         FB.ui({
             method: 'share_open_graph',
             action_type: 'sentiment_codeelite:shared',
-            picture: "http://img.fun-taiwan.com.tw/FunTaiwan/fb-previews/1200X630_2.jpg",
+            picture: "https://envirocar.org/api/dev/share/51d027e3e4b0f7630819f1dc",
             action_properties: JSON.stringify({
                 track: track
             })
@@ -73,7 +73,7 @@ function FBShareOAuth() {
     function clearCache() {
         $.post(
             'https://graph.facebook.com', {
-                id: 'http://img.fun-taiwan.com.tw/FunTaiwan/fb-previews/1200X630_2.jpg',
+                id:  window.location.href,
                 scrape: true
             },
             function (response) {
@@ -105,7 +105,7 @@ function googleShare() {
      $("meta[property='og\\:description']").attr("content", 'Mountain sunset');*/
 
     var width = 575,
-        sendurl = 'www.envirocar.org',
+        sendurl = window.location.href,
         height = 400,
         left = ($(window).width() - width) / 2,
         top = ($(window).height() - height) / 2,
@@ -118,20 +118,20 @@ function googleShare() {
     window.open(url, 'Google', opts);
 }
 
-function tweetPhotoShare() {
-    $("meta[property='twitter\\:card']").attr("content", 'photo');
+function tweetPhotoShare() { //twitter card implementation
+    /*$("meta[property='twitter\\:card']").attr("content", 'photo');
     $("meta[property='twitter\\:site']").attr("content", '@drifftr');
     $("meta[property='twitter\\:title']").attr("content", 'Mountain sunset');
     $("meta[property='twitter\\:image']").attr("content", 'http://www.faecarefoundation.org/sites/faecarefoundation.org/files/styles/large/public/DSC_0341%20%28320x213%29.jpg');
-    $("meta[property='twitter\\:url']").attr("content", window.location.href);
+    $("meta[property='twitter\\:url']").attr("content", window.location.href);*/
     var width = 575,
         sendurl = window.location.href,
         text = 'I Just used %23enviroCar',
         height = 400,
         left = ($(window).width() - width) / 2,
         top = ($(window).height() - height) / 2,
-    //url = 'https://twitter.com/intent/tweet?url='+sendurl+'&text='+text,
-        url = 'https://twitter.com/share',
+        url = 'https://twitter.com/intent/tweet?url='+sendurl+'&text='+text,
+        //url = 'https://twitter.com/share',
         opts = 'status=1' +
             ',width=' + width +
             ',height=' + height +
@@ -145,7 +145,7 @@ function FBSharer() {
         'fb:app_id': appId,
         'og:title': 'EnviroCar',
         'og:image': "http://img.fun-taiwan.com.tw/FunTaiwan/fb-previews/1200X630_2.jpg",
-        'og:url': 'http://www.envirocar.org',
+        'og:url': window.location.href,
         'og:type': "sentiment_codeelite:track",
         'sentiment_codeelite:speed': 12,
         'sentiment_codeelite:emission': 25

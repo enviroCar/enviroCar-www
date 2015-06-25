@@ -43,21 +43,37 @@ if ($login_name != "" && $login_password != ""){
 		$login_fail = true;
 	}
 }
-
+$self_name = basename($_SERVER['PHP_SELF']);
 ?>
 
 
           
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Product">
   <head>
     <meta charset="utf-8">
     <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="root" >
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@drifftr" />
+      <meta name="twitter:creator" content="@drifftr" />
 
+
+      <meta itemprop="name" content="enviroCar">
+      <meta itemprop="description" content="This is enviroCar">
+
+      <?php if($self_name=="route.php"){
+          $image_url = get_serverurl()."/tracks/".$_GET['id']."/share";
+          echo "<meta name='twitter:image:src' content='".$image_url."' />";
+          echo "<meta itemprop='image' content='".$image_url."' />";
+          echo "<meta property='og:image' content='".$image_url."' />";
+      }
+      ?>
+      <meta property="og:title" content="photo" />
+      <meta property="og:description" content="This is my image shared" />
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
