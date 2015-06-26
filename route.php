@@ -24,6 +24,9 @@ include('header.php');
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 <link href="./assets/css/jquery.share.css" rel="stylesheet">
 
+
+
+
 <div class="container leftband" id="route-information-container">
   <div class="row-fluid" >
     <div class="span10">
@@ -47,7 +50,7 @@ include('header.php');
       </label>-->
     </div>
     <div id="share-buttons" class="share-buttons">
-      <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook();"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
+      <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook('<?php echo $_GET['id']; ?>');"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
     </div>
     <!--<div id="leButton">
 	<input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"/>

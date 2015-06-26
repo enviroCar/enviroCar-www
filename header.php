@@ -63,19 +63,20 @@ $self_name = basename($_SERVER['PHP_SELF']);
     <meta charset="utf-8">
     <title>enviroCar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="It's an app - collect car data, It's an internet platform - share and analyze anonymized open data,It's a community - collaborate with other citizens, traffic planners and scientists worldwide!, It’s open source!">
     <meta name="author" content="root" >
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@drifftr" />
       <meta name="twitter:creator" content="@drifftr" />
 
       <meta itemprop="name" content="enviroCar">
-      <meta itemprop="description" content="This is enviroCar">
-      <?php if($self_name=="route.php"){
-          $image_url = get_serverurl()."/tracks/".$_GET['id']."/share";
-         echo "<meta name='twitter:image:src' content='".$image_url."' />";
-         echo "<meta itemprop='image' content='".$image_url."' />";
-         echo "<meta property='og:image' content='".$image_url."' />";
+      <meta itemprop="description" content="It's an app - collect car data, It's an internet platform - share and analyze anonymized open data,It's a community - collaborate with other citizens, traffic planners and scientists worldwide!, It’s open source!">
+      <?php if($self_name=="route.php" || isset($_GET["fwdref"])){
+          parse_str(parse_url($login_referer, PHP_URL_QUERY), $getArray);
+          $image_url = get_serverurl()."/tracks/".$getArray['id']."/share";
+          echo "<meta name='twitter:image:src' content='".$image_url."' />";
+          echo "<meta itemprop='image' content='".$image_url."' />";
+          echo "<meta property='og:image' content='".$image_url."' />";
       }
       ?>
 
