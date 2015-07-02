@@ -17,15 +17,11 @@
 */
 ?>
 <script type="text/javascript">
-
     function toggleSharing() {
         if ($('#share-switch').prop('checked')) {
-            $('#share-buttons').html("");
-            $.getScript("assets/js/jquery.share.js", function () {
-                addShareButtons();
-            });
+            $('#share-buttons').show();
         } else {
-            $('#share-switch').prop('checked', true);
+            $('#share-buttons').hide();
         }
     }
 

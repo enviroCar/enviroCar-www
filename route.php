@@ -42,14 +42,14 @@ include('header.php');
     </div>
     <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
-      <!--<label class="onoffswitch-label" for="share-switch">
+      <label class="onoffswitch-label" for="share-switch">
         <div class="onoffswitch-inner">
-          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php /*echo $route_sharing_on; */?></div></div>
-          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php /*echo $route_sharing_off; */?></div></div>
+          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php echo $route_sharing_on; ?></div></div>
+          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php echo $route_sharing_off; ?></div></div>
         </div>
-      </label>-->
+      </label>
     </div>
-    <div id="share-buttons" class="share-buttons">
+    <div id="share-buttons" class="share-buttons" style="display: none;" >
       <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook('<?php echo $_GET['id']; ?>');"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
     </div>
     <!--<div id="leButton">
