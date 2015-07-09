@@ -332,8 +332,7 @@
 	  
 	  
   }
-  
-  
+
   function addRecentActivities(img, id, titel, date){
     $('#recentActivities').append('<li class="customLi"><img src="'+img+'" style="height: 30px; margin-right: 10px; "/><a href="'+id+'">'+titel+'</a><br><div>'+date+'</div></li>');
   }
@@ -366,7 +365,8 @@
       +'<a href="route.php?id='+id+'"><img src="https://envirocar.org/api/dev/tracks/'+id+'/preview" style="height: 60px; margin-right: 10px; "/></a>'  //make it relative
       +'</div>'
       +'<div class="span9">'
-      +'<a href="route.php?id='+id+'">'+name+'</a>'
+      +'<a style="padding-right: 20px;" href="route.php?id='+id+'">'+name+'</a>'
+      +'<button class="btn btn-default btn-delete" data-toggle="popover" onclick="deleteTrack(\''+id+'\')" type="button"><span class="icon-trash icon-red"></span></button>'
       +'</div>'
       +'</div>');
   }
@@ -383,6 +383,20 @@
     }
   }
 
+  function deleteTrack(id){
+      if (confirm("Are you sure you want to delete this track?")) {
+          $.post('./assets/includes/users.php?deleteTrack', {deleteTrack: id},
+              function(data){
+                  alert(data);
+                  if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+                      error_msg("Track couldn't be removed.");
+                  }else{
+                      //reload page
+                  }
+              });
+      }
+      return false;
+  }
   
   /* $.get('./assets/includes/users.php?userActivities', function(data) {
     if(data >= 400){
@@ -763,7 +777,7 @@
 	  
     init();
   });
-  
+
   $(function(){
     $('body').tooltip({
       selector: '[rel=tooltip]'
