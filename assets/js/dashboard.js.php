@@ -18,7 +18,8 @@
 ?>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
+<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap-dialog.js"></script>
 <script type="text/javascript">
   
   var acceptedTermsOfUseIssuedDate;
@@ -366,7 +367,7 @@
       +'</div>'
       +'<div class="span9">'
       +'<a style="padding-right: 20px;" href="route.php?id='+id+'">'+name+'</a>'
-      +'<button class="btn btn-default btn-delete" data-toggle="popover" onclick="deleteTrack(\''+id+'\')" type="button"><span class="icon-trash icon-red"></span></button>'
+      +'<button class="btn btn-default btn-delete" style="background:none;border:none;box-shadow:none;" data-toggle="popover" onclick="deleteTrack(\''+name+'\',\''+id+'\')" type="button"><span class="icon-trash icon-red"></span></button>'
       +'</div>'
       +'</div>');
   }
@@ -383,19 +384,34 @@
     }
   }
 
-  function deleteTrack(id){
-      if (confirm("Are you sure you want to delete this track?")) {
+  function deleteTrack(name,id){
+      if (BootstrapDialog.confirm({
+              title: 'Delete This Track?',
+              message: 'Are you sure you want to delete '+name+' ?',
+              type: BootstrapDialog.TYPE_WARNING,
+              closable: true,
+              draggable: true,
+              btnCancelLabel: 'Do not delete it!',
+              btnOKLabel: 'Delete it',
+              btnOKClass: 'btn-warning',
+              callback: function(result) {
+                  if(result) {
+                      this.close();
+                     window.location.reload();
+                  }
+              }
+          })) {
           $.post('./assets/includes/users.php?deleteTrack', {deleteTrack: id},
               function(data){
                   alert(data);
                   if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
                       error_msg("Track couldn't be removed.");
                   }else{
-                      //reload page
+
                   }
               });
-      }
-      return false;
+        }
+    return false;
   }
   
   /* $.get('./assets/includes/users.php?userActivities', function(data) {
