@@ -65,9 +65,15 @@ $self_name = basename($_SERVER['PHP_SELF']);
       <meta itemprop="name" content="enviroCar">
       <meta itemprop="description" content="It's an app - collect car data, It's an internet platform - share and analyze anonymized open data,It's a community - collaborate with other citizens, traffic planners and scientists worldwide!, It’s open source!">
 
-      <?php if($self_name=="route.php" || isset($_GET["fwdref"])){
+      <?php if(isset($_GET["fwdref"])){
           parse_str(parse_url($login_referer, PHP_URL_QUERY), $getArray);
-          $image_url = get_serverurl()."/tracks/".$getArray['id']."/share";
+          $image_url = get_serverurl()."/tracks/".$getArray['id']."/share/".$lang;
+          echo "<meta name='twitter:image:src' content='".$image_url."' />";
+          echo "<meta itemprop='image' content='".$image_url."' />";
+          echo "<meta property='og:image' content='".$image_url."' />";
+      }else if($self_name=="route.php"){
+          parse_str(parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY), $getArray);
+          $image_url = get_serverurl()."/tracks/".$getArray['id']."/share/".$lang;
           echo "<meta name='twitter:image:src' content='".$image_url."' />";
           echo "<meta itemprop='image' content='".$image_url."' />";
           echo "<meta property='og:image' content='".$image_url."' />";
@@ -336,6 +342,18 @@ if(isset($_GET['accessdenied'])){
 <?
 }
 ?>
+
+    <?
+    if($self_name=="route.php"){
+        ?>
+        <div class="container alert alert-block alert-error fade in">
+            <a class="close" data-dismiss="alert">×</a>
+            <h4 class="alert-heading"><? echo $index_cont3; ?></h4>
+            <? echo $currentlynotloggedin; ?>
+        </div>
+    <?
+    }
+    ?>
 
 <?
 if(isset($_GET['lo'])){
