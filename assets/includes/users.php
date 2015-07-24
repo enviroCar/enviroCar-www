@@ -246,6 +246,15 @@ if(isset($_GET['atrack'])){
 	}
 }
 
+if(isset($_GET['deleteTrack'])){
+    $response = delete_request($baseURL.'/tracks/'.rawurlencode($_POST['deleteTrack']));
+    if($response['status'] == 204){
+        echo $response['response'];
+    }else{
+        echo $response['status'];
+    }
+}
+
 if(isset($_GET['trackStatistics'])){
 	$response = get_request($baseURL.'/users/'.rawurlencode($_SESSION['name']).'/tracks/'.rawurlencode($_GET['trackStatistics']).'/statistics', true);
 	if($response['status'] == 200){

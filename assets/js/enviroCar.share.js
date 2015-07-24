@@ -1,9 +1,9 @@
 var appId = '408578959324906';
-function FBShareOAuth(trackId) {
+function FBShareOAuth(trackId,lang) {
 var sharedTrackID = trackId;
     if (window.fbAsyncInit != null) {
         FB.getLoginStatus(function (response) {
-            statusChangeCallback(response,sharedTrackID);
+            statusChangeCallback(response,sharedTrackID,lang);
         });
     }
 
@@ -27,20 +27,20 @@ var sharedTrackID = trackId;
         });
 
         FB.getLoginStatus(function (response) {
-           statusChangeCallback(response,sharedTrackID);
+           statusChangeCallback(response,sharedTrackID,lang);
         });
     };
 
-    function statusChangeCallback(response,sharedTrackID) {
+    function statusChangeCallback(response,sharedTrackID,lang) {
         if (response.status === 'connected') {
-            postLike(sharedTrackID);
+            postLike(sharedTrackID,lang);
         } else if (response.status === 'not_authorized') {
             alert("not authorized");
         } else {
             FB.login(function (response) {
                 if (response.authResponse) {
                     FB.api('/me', function (response) {
-                        postLike(sharedTrackID);
+                        postLike(sharedTrackID,lang);
                     });
                 } else {
                     alert("Please log in to share");
@@ -49,35 +49,36 @@ var sharedTrackID = trackId;
         }
     }
 
-    function postLike(sharedTrackID) {
+    function postLike(sharedTrackID,lang) {
+        alert(lang);
        var track = {
             'fb:app_id': appId,
             'og:title': 'EnviroCar',
            // 'og:image': "https://envirocar.org/api/dev/"+sharedTrackID+"/share",
-            'og:image': "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share",
-            'og:image:url':"https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share",
-            'og:image:secure_url':  "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share",
+            'og:image': "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share/".lang,
+            'og:image:url':"https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share".lang,
+            'og:image:secure_url':  "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share".lang,
             'og:description':"It's an app - collect car data, It's an internet platform - share and analyze anonymized open data,It's a community - collaborate with other citizens, traffic planners and scientists worldwide!, It’s open source!",
             'og:url': window.location.href,
             'og:type': "sentiment_codeelite:track",
             'sentiment_codeelite:speed': 12,
             'sentiment_codeelite:emission': 25
         };
-        clearCache(sharedTrackID);
+        clearCache(sharedTrackID,lang);
         FB.ui({
             method: 'share_open_graph',
             action_type: 'sentiment_codeelite:shared',
-            picture: "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share",
+            picture: "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share".lang,
             action_properties: JSON.stringify({
                 track: track
             })
         });
     }
 
-    function clearCache(sharedTrackID) {
+    function clearCache(sharedTrackID,lang) {
         $.post(
             'https://graph.facebook.com', {
-                id:  'https://envirocar.org/api/dev/'+sharedTrackID+'/share',
+                id:  'https://envirocar.org/api/dev/'+sharedTrackID+'/share'.lang,
                 scrape: true
             },
             function (response) {

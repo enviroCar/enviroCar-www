@@ -15,8 +15,15 @@
 * You should have received a copy of the GNU General Public License
 * along with enviroCar.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-include('header.php');
+require_once('./assets/includes/authentification.php');
+$logged_in = false;
+if(!is_logged_in()){
+    $logged_in = false;
+    include('header-start.php');
+}else{
+    $logged_in = true;
+    include('header.php');
+}
 ?>
 
 <script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>
@@ -42,15 +49,15 @@ include('header.php');
     </div>
     <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
-      <!--<label class="onoffswitch-label" for="share-switch">
+      <label class="onoffswitch-label" for="share-switch">
         <div class="onoffswitch-inner">
-          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php /*echo $route_sharing_on; */?></div></div>
-          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php /*echo $route_sharing_off; */?></div></div>
+          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php echo $route_sharing_on; ?></div></div>
+          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php echo $route_sharing_off; ?></div></div>
         </div>
-      </label>-->
+      </label>
     </div>
-    <div id="share-buttons" class="share-buttons">
-      <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook('<?php echo $_GET['id']; ?>');"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
+    <div id="share-buttons" class="share-buttons" style="display: none;" >
+      <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook('<?php echo $_GET['id']; ?>','<?php echo $lang; ?>');"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
     </div>
     <!--<div id="leButton">
 	<input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"/>
@@ -293,54 +300,76 @@ include('header.php');
         }else if(data == 401 || data == 403){
           error_msg("<? echo $statisticsNotAllowed ?>")
         }else if(data == 404){
-          error_msg("<? echo $statisticsNotFound ?>")
+          /*error_msg("<? echo $statisticsNotFound ?>")*/
+            $.get('assets/includes/users.php?atrackStatistics='+$_GET(['id']), function(adata) {
+                if(adata >= 400){
+                    alert("400");
+                    console.log(adata);
+                    if(adata == 400){
+                        error_msg("<? echo $statisticsError ?>");
+                    }else if(adata == 401 || adata == 403){
+                        error_msg("<? echo $statisticsNotAllowed ?>")
+                    }else if(adata == 404){
+                        error_msg("<? echo $statisticsNotFound ?>")
+                    }
+                    $('#loadingIndicator_route').hide();
+                }else{
+                    processStatisticsrequest(adata);
+                }
+                initShowTrack();
+                $('#loadingIndicator_route').hide();
+            });
         }
-        $('#loadingIndicator_route').hide();
+       // $('#loadingIndicator_route').hide();
       }else{
-      data = JSON.parse(data);
-
-		
-		var maxSpeed = 0;
-		var maxConsumption = 0;
-		var maxRPM = 0;
-    var maxIat = 0;
-    var maxMap = 0;
-    var maxCo2 = 0;
-    var maxMaf = 0;
-
-      for(i = 0; i < data.statistics.length; i++){
-      	var phenoName = data.statistics[i].phenomenon.name;
-      	if(phenoName == 'Speed'){
-      		maxSpeed = data.statistics[i].max;
-      		$('#avg-speed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');				
-        	}else if(phenoName == 'Consumption'){
-        		maxConsumption = data.statistics[i].max;
-        	}else if(phenoName == 'Rpm'){
-        		maxRPM = data.statistics[i].max;
-        	}else if(phenoName == 'Intake Temperature'){
-            maxIat = data.statistics[i].max;
-          }else if(phenoName == 'Intake Pressure'){
-            maxMap = data.statistics[i].max;
-          }else if(phenoName == 'CO2'){
-            maxCo2 = data.statistics[i].max;
-          }else if(phenoName == 'Calculated MAF' || phenoName == 'MAF'){
-            maxMaf = data.statistics[i].max;
-          }
+          processStatisticsrequest(data);
+          initShowTrack();
       }
-      gon.statistics = {max_speed : maxSpeed, 
-      						max_rpm : maxRPM, 
-     							 max_consumption : maxConsumption,
-                   max_iat : maxIat,
-                   max_map : maxMap,
-                   max_co2 : maxCo2,
-                   max_maf : maxMaf
-      						};
-
-    }
-    initShowTrack();
+    //initShowTrack();
    $('#loadingIndicator_route').hide(); 
   });
   }
+  function processStatisticsrequest(data){
+      data = JSON.parse(data);
+
+
+      var maxSpeed = 0;
+      var maxConsumption = 0;
+      var maxRPM = 0;
+      var maxIat = 0;
+      var maxMap = 0;
+      var maxCo2 = 0;
+      var maxMaf = 0;
+
+      for(i = 0; i < data.statistics.length; i++){
+          var phenoName = data.statistics[i].phenomenon.name;
+          if(phenoName == 'Speed'){
+              maxSpeed = data.statistics[i].max;
+              $('#avg-speed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');
+          }else if(phenoName == 'Consumption'){
+              maxConsumption = data.statistics[i].max;
+          }else if(phenoName == 'Rpm'){
+              maxRPM = data.statistics[i].max;
+          }else if(phenoName == 'Intake Temperature'){
+              maxIat = data.statistics[i].max;
+          }else if(phenoName == 'Intake Pressure'){
+              maxMap = data.statistics[i].max;
+          }else if(phenoName == 'CO2'){
+              maxCo2 = data.statistics[i].max;
+          }else if(phenoName == 'Calculated MAF' || phenoName == 'MAF'){
+              maxMaf = data.statistics[i].max;
+          }
+      }
+      gon.statistics = {max_speed : maxSpeed,
+          max_rpm : maxRPM,
+          max_consumption : maxConsumption,
+          max_iat : maxIat,
+          max_map : maxMap,
+          max_co2 : maxCo2,
+          max_maf : maxMaf
+      };
+  }
+
   function getDistance(lat1, lng1, lat2, lng2){
   		var earthRadius = 6369;
 		var dLat = (lat2 - lat1) / 180 * Math.PI;
@@ -879,178 +908,194 @@ $(document).ready(function () {
 	
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
-    if(data >= 400){
+      if(data >= 400){
       console.log(data);
       if(data == 400){
           error_msg("<? echo $routeError ?>");
       }else if(data == 401 || data == 403){
         error_msg("<? echo $routeNotAllowed ?>")
       }else if(data == 404){
-        error_msg("<? echo $routeNotFound ?>")
+        //error_msg("<? echo $routeNotFound ?>")
+          $.get('assets/includes/users.php?atrack='+$_GET(['id']), function(adata) {
+              if(adata >= 400){
+                  console.log(adata);
+                  if(adata == 400){
+                      error_msg("<? echo $routeError ?>");
+                  }else if(adata == 401 || adata == 403){
+                      error_msg("<? echo $routeNotAllowed ?>")
+                  }else if(adata == 404){
+                      error_msg("<? echo $routeNotFound ?>")
+                  }
+                  $('#loadingIndicator').hide();
+              }else{
+                  processTrackRequest(adata);
+              }
+          });
       }
       $('#loadingIndicator').hide();
     }else{
-	
-      data = JSON.parse(data);
-      addRouteInformation(data.properties.name);
-      var fuelType = data.properties.sensor.properties.fuelType;	
-		
-		var measurements = [];
-		
-		//speed = 0 counts as idle time
-		var idleTime = 0;
-		
-		var distance = 0;
-		if (data.properties.length) {
-			lengthOfTrack = data.properties.length;
-		}
-		
-		// total fuel consumption in liter per hour
-		var totalFuelConsumptionLiterPerHour = 0;		
-		
-		//prevent memory issues, only show shapefile download for smaller tracks
-		//max value must correspond with max measurements value of enviroCar-server
-        if (data.features.length >= 500) {
-      	    $('#download-shapefile').hide();
-        }
-		
-		if (data.features.length > 1) {
-			for (var i = 0; i < data.features.length; i++) {
-				
-				var feature = data.features[i];		
-				
-				if(i == 0){
-					startTime = new Date(data.features[i].properties.time);
-				}else if(i == data.features.length - 2){
-					endTime = new Date(data.features[i + 1].properties.time);	
-				}
-				var lat1 = feature.geometry.coordinates[1];
-				var lng1 = feature.geometry.coordinates[0];
- 				
- 				var trackPartDistance = 0;				
-				
-				if (lengthOfTrack == 0 && i < data.features.length-1){				
-					var lat2 = data.features[i+1].geometry.coordinates[1];
-					var lng2 = data.features[i+1].geometry.coordinates[0];
-					
-					trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
-					
-					distance = distance + trackPartDistance;
-				}
-				
-				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
-        		
-        		var rpm = checkPhenomenonValue('Rpm', feature).value;
-        		var iat = checkPhenomenonValue('Intake Temperature', feature);
-        		var map = checkPhenomenonValue('Intake Pressure', feature);
-        		var speed = checkPhenomenonValue('Speed', feature);
-				
-				if(speed == 0){
-					//add five thousand miliseconds of idle time for each measurement with speed = 0
-					idleTime = idleTime + 5000;	
-				}	
-				
-				var maf = feature.properties.phenomenons["MAF"];
-
-				if(maf){
-					 maf = checkPhenomenonValue("MAF", feature);
-				}else if (!maf || maf <= 0) {
-					maf = checkPhenomenonValue("Calculated MAF", feature);		
-				}	
-				
-				var secondsBtwnMeasurements = 0;				
-
-				if(i == (data.features.length - 1)){				
-					secondsBtwnMeasurements = 1;
-					
-				}else{				
-					//multiply with seconds between measurements
-					secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;		
-									
-				}		
-				
-				var consumption = 0;				
-				var co2 = 0;
-				var fuelConsumptionOfMeasurement = checkPhenomenonValue('Consumption', feature);       		
-
-        		if (speed > 0){
-          		//consumption = (maf * 3355) / (speed * 100);
-          		consumption = (fuelConsumptionOfMeasurement / speed) * 100;
-        		}else{
-          		//consumption = (maf * 3355) / 10000;
-          		consumption = fuelConsumptionOfMeasurement / 10000;//??
-        		}
-        
-				if (consumption > 50){
-          		consumption = 50;
-       		}
-       		
-				//this does not work as the distance between measurment points can be 0 sometimes
-				//if(trackPartDistance != 0){
-				//	consumption = fuelConsumptionOfMeasurement * secondsBtwnMeasurements / 3600 / trackPartDistance * 100;
-				//}
-				totalFuelConsumptionLiterPerHour += fuelConsumptionOfMeasurement;			
-				
-        		co2 = consumption * 2.35 //gets kg/100 km        
-        
-				var recorded_at = feature.properties.time;				
-				
-        		var m = {
-          		recorded_at : recorded_at,
-          		speed : speed,
-          		rpm : rpm,
-          		maf : maf,
-          		iat : iat,
-          		map : map,
-          		consumption : consumption,
-          		co2 : co2,
-          		latlon : coords
-          	};
-				
-				measurements.push(m);
-			}	
-			
-			gon.measurements = measurements;	
-			
-			duration = endTime.getTime() - startTime.getTime();
-		
-			if (lengthOfTrack == 0) {
-				lengthOfTrack = distance;
-			}
-			
-			// in liter per 100 km
-			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;			
-						
-			//calculate grams of CO2 per km
-			var co2inGramsPerKm	= 0;
-			
-			if(fuelType == "gasoline"){
-				co2inGramsPerKm = avgFuelConsumption * 23.3;
-			}else if(fuelType == "diesel"){
-				co2inGramsPerKm = avgFuelConsumption * 26.4;
-			}
-			
-			var totalCO2 = co2inGramsPerKm * lengthOfTrack / 1000;
-			
-			$('#routeInformation').append('<h2>'+name+'</h2>');
-			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
-			$('#dist').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
-			$('#time').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
-			$('#avg-consum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km </p>');
-			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
-			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
-			
-			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;		
-			
-			getFuelPrice(totalFuelConsumptionInLiter, fuelType);	
-			
-		}    	
-		
-    	fillStatistics()     
-      
+        processTrackRequest(data);
     }
   });
-	
+	function processTrackRequest(data){
+        data = JSON.parse(data);
+        addRouteInformation(data.properties.name);
+        var fuelType = data.properties.sensor.properties.fuelType;
+
+        var measurements = [];
+
+        //speed = 0 counts as idle time
+        var idleTime = 0;
+
+        var distance = 0;
+        if (data.properties.length) {
+            lengthOfTrack = data.properties.length;
+        }
+
+        // total fuel consumption in liter per hour
+        var totalFuelConsumptionLiterPerHour = 0;
+
+        //prevent memory issues, only show shapefile download for smaller tracks
+        //max value must correspond with max measurements value of enviroCar-server
+        if (data.features.length >= 500) {
+            $('#download-shapefile').hide();
+        }
+
+        if (data.features.length > 1) {
+            for (var i = 0; i < data.features.length; i++) {
+
+                var feature = data.features[i];
+
+                if(i == 0){
+                    startTime = new Date(data.features[i].properties.time);
+                }else if(i == data.features.length - 2){
+                    endTime = new Date(data.features[i + 1].properties.time);
+                }
+                var lat1 = feature.geometry.coordinates[1];
+                var lng1 = feature.geometry.coordinates[0];
+
+                var trackPartDistance = 0;
+
+                if (lengthOfTrack == 0 && i < data.features.length-1){
+                    var lat2 = data.features[i+1].geometry.coordinates[1];
+                    var lng2 = data.features[i+1].geometry.coordinates[0];
+
+                    trackPartDistance = getDistance(lat1, lng1, lat2, lng2);
+
+                    distance = distance + trackPartDistance;
+                }
+
+                var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
+
+                var rpm = checkPhenomenonValue('Rpm', feature).value;
+                var iat = checkPhenomenonValue('Intake Temperature', feature);
+                var map = checkPhenomenonValue('Intake Pressure', feature);
+                var speed = checkPhenomenonValue('Speed', feature);
+
+                if(speed == 0){
+                    //add five thousand miliseconds of idle time for each measurement with speed = 0
+                    idleTime = idleTime + 5000;
+                }
+
+                var maf = feature.properties.phenomenons["MAF"];
+
+                if(maf){
+                    maf = checkPhenomenonValue("MAF", feature);
+                }else if (!maf || maf <= 0) {
+                    maf = checkPhenomenonValue("Calculated MAF", feature);
+                }
+
+                var secondsBtwnMeasurements = 0;
+
+                if(i == (data.features.length - 1)){
+                    secondsBtwnMeasurements = 1;
+
+                }else{
+                    //multiply with seconds between measurements
+                    secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;
+
+                }
+
+                var consumption = 0;
+                var co2 = 0;
+                var fuelConsumptionOfMeasurement = checkPhenomenonValue('Consumption', feature);
+
+                if (speed > 0){
+                    //consumption = (maf * 3355) / (speed * 100);
+                    consumption = (fuelConsumptionOfMeasurement / speed) * 100;
+                }else{
+                    //consumption = (maf * 3355) / 10000;
+                    consumption = fuelConsumptionOfMeasurement / 10000;//??
+                }
+
+                if (consumption > 50){
+                    consumption = 50;
+                }
+
+                //this does not work as the distance between measurment points can be 0 sometimes
+                //if(trackPartDistance != 0){
+                //	consumption = fuelConsumptionOfMeasurement * secondsBtwnMeasurements / 3600 / trackPartDistance * 100;
+                //}
+                totalFuelConsumptionLiterPerHour += fuelConsumptionOfMeasurement;
+
+                co2 = consumption * 2.35 //gets kg/100 km
+
+                var recorded_at = feature.properties.time;
+
+                var m = {
+                    recorded_at : recorded_at,
+                    speed : speed,
+                    rpm : rpm,
+                    maf : maf,
+                    iat : iat,
+                    map : map,
+                    consumption : consumption,
+                    co2 : co2,
+                    latlon : coords
+                };
+
+                measurements.push(m);
+            }
+
+            gon.measurements = measurements;
+
+            duration = endTime.getTime() - startTime.getTime();
+
+            if (lengthOfTrack == 0) {
+                lengthOfTrack = distance;
+            }
+
+            // in liter per 100 km
+            var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;
+
+            //calculate grams of CO2 per km
+            var co2inGramsPerKm	= 0;
+
+            if(fuelType == "gasoline"){
+                co2inGramsPerKm = avgFuelConsumption * 23.3;
+            }else if(fuelType == "diesel"){
+                co2inGramsPerKm = avgFuelConsumption * 26.4;
+            }
+
+            var totalCO2 = co2inGramsPerKm * lengthOfTrack / 1000;
+
+            $('#routeInformation').append('<h2>'+name+'</h2>');
+            $('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
+            $('#dist').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
+            $('#time').append('<p><i class="icon-time"> </i>' + convertMilisecondsToTime(duration) + '</p>');
+            $('#avg-consum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km </p>');
+            $('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
+            $('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
+
+            var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;
+
+            getFuelPrice(totalFuelConsumptionInLiter, fuelType);
+
+        }
+
+        fillStatistics()
+
+    }
 });
 
 
