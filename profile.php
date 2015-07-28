@@ -29,7 +29,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       <div class="well sidebar-nav">
       <h2 id="username"></h2>
 		<span style="text-align: center; display: block">
-			<img src="./assets/includes/get.php?url=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+			<img src="./assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
 		</span>
     <br>
         <ul id="userInformation" class="nav nav-list" style="text-align:center"></ul>

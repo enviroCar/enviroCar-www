@@ -31,7 +31,47 @@ function get_wps_fuel_price()
   return $wps_fuel_price;
 }
 
+/*
+ * class for curl objects;
+ * parses headers, status and response
+ */
+class cUrl {
+    public $response;
+    public $header = array();
+    public $status;
+    
+    function cUrl($url, $isAuthRequired) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER => true, //Causes curl_exec() to return the response
+            CURLOPT_HEADER         => false, //Suppress headers from returning in curl_exec()
+            CURLOPT_HEADERFUNCTION => array($this, 'header_callback'),
+        ));
+        
+        if ($isAuthRequired){
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-User: '.$_SESSION['name'], 'X-Token: '.$_SESSION['password']));
+        }
+        
+        $this->response = curl_exec($ch);
+        
+        $this->status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        
+        curl_close($ch);
+        return $this->response;
+    }
 
+    function header_callback($ch, $header_line){
+        $arr = explode(': ', $header_line);
+        
+        if (sizeof($arr) == 1) {
+            return strlen($header_line);
+        }
+        
+        $this->header[$arr[0]] = $arr[1];
+
+        return strlen($header_line);
+    }
+}
 
 
 if (!isset($_SESSION)) session_start();
@@ -107,6 +147,26 @@ function get_request_with_headers($uri, $isAuthRequired){
 
     return array("status" => $http_status, "response" => $body, "url" => $lastUrl, "header" => $header);
 
+}
+
+function get_request_no_follow($uri, $isAuthRequired){
+    $cObj = new cUrl($uri, $isAuthRequired);
+    
+//    $startTime = time();
+//    error_log("Start request... ". $uri);
+    
+//    error_log("Finished request in (ms): ".  (time() - $startTime));
+//    var_dump($cObj->header);
+
+    $loc;
+    if (array_key_exists('Location', $cObj->header)) {
+        $loc = $cObj->header['Location'];
+    }
+    else {
+        $loc = "";
+    }
+    
+    return array("status" => $cObj->status, "response" => $cObj->response, "url" => $loc);
 }
 
 
