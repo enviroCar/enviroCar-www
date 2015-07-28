@@ -37,19 +37,20 @@ if(isset($_GET['url'])){
 
 if(isset($_GET['redirectUrl'])){
 	$host = parse_url($_GET['redirectUrl'], PHP_URL_HOST);
-	if($host == 'envirocar.org'){
+        error_log("HA!");
+	//if($host == 'envirocar.org'){
 		if(isset($_GET['auth'])){
-			$response = get_request($_GET['redirectUrl'], $_GET['auth']);
+			$response = get_request_no_follow($_GET['redirectUrl'], $_GET['auth']);
 		}else{
-			$response = get_request($_GET['redirectUrl'], false);
+			$response = get_request_no_follow($_GET['redirectUrl'], false);
 		}
-		if($response['status'] == 200){
+		if($response['status'] == 200 || $response['status'] == 302 || $response['status'] == 307){
 			header('Location:'.$response['url']);
 		}else{
 			echo $response['status'];
 
 		}
-	}
+	//}
 }
 
 
