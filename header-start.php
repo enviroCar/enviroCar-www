@@ -70,7 +70,7 @@ ranked list, and learn about our methodology..." />
       <meta itemprop="name" content="enviroCar">
       <meta itemprop="description" content="It's an app - collect car data, It's an internet platform - share and analyze anonymized open data,It's a community - collaborate with other citizens, traffic planners and scientists worldwide!, It’s open source!">
 
-     <!-- --><?php /*if(isset($_GET["fwdref"])){
+      <?php if(isset($_GET["fwdref"])){
           parse_str(parse_url($login_referer, PHP_URL_QUERY), $getArray);
           $image_url = get_serverurl()."/tracks/".$getArray['id']."/share/".$lang;
           echo "<meta name='twitter:image:src' content='".$image_url."' />";
@@ -83,7 +83,7 @@ ranked list, and learn about our methodology..." />
           echo "<meta itemprop='image' content='".$image_url."' />";
           echo "<meta property='og:image' content='".$image_url."' />";
       }
-      */?>
+      ?>
       <meta property="og:title" content="photo" />
       <meta property="og:description" content="This is my image shared" />
     <!-- Le styles -->
