@@ -29,7 +29,10 @@ if(!is_logged_in()){
 <script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap-dialog.js"></script>
 <link href="./assets/css/jquery.share.css" rel="stylesheet">
+
 
 
 
@@ -269,7 +272,7 @@ if(!is_logged_in()){
     }
 
   function addRouteInformation(name){
-      $('#routeInformation').append('<h2>'+name+'</h2>');
+      $('#routeInformation').append('<h2>'+name+'<button class="btn btn-default btn-delete" style="background:none;border:none;box-shadow:none;" data-toggle="popover" onclick="deleteTrack(\''+name+'\',\''+$_GET(['id'])+'\')" type="button"><span class="icon-trash icon-red"></span></button><h2>');
       $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson" target="_blank">GeoJSON (*.json)</a>');
       $('#download-shapefile').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.shp" download="enviroCar_track_'+$_GET(['id'])+'.shp" target="_blank">Zipped shapefile (*.shp)</a>');
       $('#download-csv').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.csv" download="enviroCar_track_'+$_GET(['id'])+'.csv" target="_blank">Comma-separated values (*.csv)</a>');
@@ -415,7 +418,37 @@ if(!is_logged_in()){
 			}			
 		}
 		return sum;
-	}	
+	}
+
+  function deleteTrack(name,id){
+     if (BootstrapDialog.confirm({
+              title: 'Delete This Track?',
+              message: 'Are you sure you want to delete '+name+' ?',
+              type: BootstrapDialog.TYPE_WARNING,
+              closable: true,
+              draggable: true,
+              btnCancelLabel: 'Do not delete it!',
+              btnOKLabel: 'Delete it',
+              btnOKClass: 'btn-warning',
+              callback: function(result) {
+                  if(result) {
+                      this.close();
+                      window.location.reload();
+                  }
+              }
+          })) {
+          $.post('./assets/includes/users.php?deleteTrack', {deleteTrack: id},
+              function(data){
+                  alert(data);
+                  if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
+                      error_msg("Track couldn't be removed.");
+                  }else{
+
+                  }
+              });
+      }
+      return false;
+  }
 	
 	function convertMilisecondsToTime(miliseconds) {
 

@@ -60,8 +60,6 @@ $self_name = basename($_SERVER['PHP_SELF']);
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@drifftr" />
       <meta name="twitter:creator" content="@drifftr" />
-
-
       <meta itemprop="name" content="enviroCar">
       <meta itemprop="description" content="It's an app - collect car data, It's an internet platform - share and analyze anonymized open data,It's a community - collaborate with other citizens, traffic planners and scientists worldwide!, It’s open source!">
 
@@ -349,7 +347,7 @@ if(isset($_GET['accessdenied'])){
         <div class="container alert alert-block alert-error fade in">
             <a class="close" data-dismiss="alert">×</a>
             <h4 class="alert-heading"><? echo $index_cont3; ?></h4>
-            <? echo $currentlynotloggedin; ?>
+            <? echo $logintoviewroute; ?>
         </div>
     <?
     }
