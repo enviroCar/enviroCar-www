@@ -267,7 +267,7 @@ $signedin = "Signed in";
 
 $logoutsuccess = "Successfully logged out";
 $currentlynotloggedin = "You are currently not logged in.";
-$logintoviewroute = "Please login into view the route in details";
+$logintoviewroute = "Please log in to see and connect with the user";
 $welcometoec = "Welcome to enviroCar";
 $regsuccessfull = "Your registration was successful.";
 $logincontinue = "Please login to continue.";
