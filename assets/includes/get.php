@@ -37,7 +37,7 @@ if(isset($_GET['url'])){
 
 if(isset($_GET['redirectUrl'])){
 	$host = parse_url($_GET['redirectUrl'], PHP_URL_HOST);
-	//if($host == 'envirocar.org'){
+	if($host == 'envirocar.org'){
 		if(isset($_GET['auth'])){
 			$response = get_request_no_follow($_GET['redirectUrl'], $_GET['auth']);
 		}else{
@@ -49,7 +49,7 @@ if(isset($_GET['redirectUrl'])){
 			echo $response['status'];
 
 		}
-	//}
+	}
 }
 
 
