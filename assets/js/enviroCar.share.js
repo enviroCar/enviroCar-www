@@ -50,7 +50,6 @@ var sharedTrackID = trackId;
     }
 
     function postLike(sharedTrackID,lang) {
-        alert(lang);
        var track = {
             'fb:app_id': appId,
             'og:title': 'EnviroCar',
@@ -64,21 +63,31 @@ var sharedTrackID = trackId;
             'sentiment_codeelite:speed': 12,
             'sentiment_codeelite:emission': 25
         };
-        clearCache(sharedTrackID,lang);
+       // clearCache(sharedTrackID,lang);
         FB.ui({
             method: 'share_open_graph',
             action_type: 'sentiment_codeelite:shared',
-            picture: "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share".lang,
+            picture: "https://envirocar.org/api/dev/tracks/"+sharedTrackID+"/share/"+lang,
             action_properties: JSON.stringify({
                 track: track
             })
-        });
+        },
+            function(response) {
+                if (response != null) {
+                    var post_url=response['post_id'];
+                    window.open("https://www.facebook.com/"+post_url);
+                    return true;
+                }
+                else {
+
+                }
+            });
     }
 
     function clearCache(sharedTrackID,lang) {
         $.post(
             'https://graph.facebook.com', {
-                id:  'https://envirocar.org/api/dev/'+sharedTrackID+'/share'.lang,
+                id:  'https://envirocar.org/api/dev/tracks/'+sharedTrackID+'/share/'+lang,
                 scrape: true
             },
             function (response) {
