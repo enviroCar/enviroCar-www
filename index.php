@@ -26,27 +26,8 @@ if(!is_logged_in()){
         include('header.php');
 }
 ?>
-<script type="text/javascript" src="./assets/OpenLayers/lib/OpenLayers.js"></script>
-<script type="text/javascript">
-    var map;
-    function init() {
-        // clear array to simulate a wrong axis order request
-        map = new OpenLayers.Map( 'map' );
-        var layer = new OpenLayers.Layer.WMS(
-            "OpenLayers WMS",
-            "http://demo.cubewerx.com/demo/cubeserv/cubeserv.cgi?",
-            {layers: 'Foundation.GTOPO30', version: '1.3.0'},
-            {singleTile: true, yx: []}
-        );
-        map.addLayer(layer);
-
-        map.zoomToMaxExtent();
-    }
-
-    $( document ).ready(function() {
-                init();
-    });
-</script>
+<script src="./assets/leaflet.wms/lib/require.js" data-main="./assets/js/aggregate-map"></script>
+<link rel="stylesheet" type="text/css" href="./assets/leaflet.wms/lib/leaflet.css">
 <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; height: 250px; background-size: cover;">
     <div class="row">
 		<div class="span4">
@@ -114,15 +95,21 @@ if(!is_logged_in()){
 <!--		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>-->
 		<h2><? echo $index_be_a_citizen_scientist;?></h2>
 		<p><? echo $index_help_the_world;?></p>
+
 		</div>
-          <div class="span5" style="margin-left:10px;">
-              <div id="map" style="height: 340px; width: 480px;" ></div>
+          <div class="span5">
+              <iframe width="480" height="340" style="z-index:-9999; border:none;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen></iframe>
           </div>
-      <div class="span5">
-      <iframe width="480" height="340" style="z-index:-9999; border:none;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen></iframe>
-      </div>
       </div>
 	</div>
+
+<div class="container custom leftband">
+    <div class="row-fluid">
+        <div class="span12" style="">
+            <div id="overlay-map" style="height: 340px; width: 98%" ></div>
+        </div>
+    </div>
+</div>
 <?
   include('footer.php');
 ?>
