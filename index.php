@@ -26,7 +26,8 @@ if(!is_logged_in()){
         include('header.php');
 }
 ?>
-
+<script src="./assets/leaflet.wms/lib/require.js" data-main="./assets/js/aggregate-map"></script>
+<link rel="stylesheet" type="text/css" href="./assets/leaflet.wms/lib/leaflet.css">
 <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; height: 250px; background-size: cover;">
     <div class="row">
 		<div class="span4">
@@ -94,12 +95,21 @@ if(!is_logged_in()){
 <!--		<img class="featurette-image pull-right" src="./assets/img/enviroCarConceptOverview.png" style="width: 40%; padding: 3%" alt=""/>-->
 		<h2><? echo $index_be_a_citizen_scientist;?></h2>
 		<p><? echo $index_help_the_world;?></p>
+
 		</div>
-      <div class="span5">
-      <iframe width="480" height="340" style="z-index:-9999; border:none;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen></iframe>
-      </div>
+          <div class="span5">
+              <iframe width="480" height="340" style="z-index:-9999; border:none;" src="//www.youtube.com/embed/LTSuUEOfWa0?rel=0&amp;wmode=transparent" allowfullscreen></iframe>
+          </div>
       </div>
 	</div>
+
+<div class="container custom leftband">
+    <div class="row-fluid">
+        <div class="span12" style="">
+            <div id="overlay-map" style="height: 340px; width: 98%" ></div>
+        </div>
+    </div>
+</div>
 <?
   include('footer.php');
 ?>
