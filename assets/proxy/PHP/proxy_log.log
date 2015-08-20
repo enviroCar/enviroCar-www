@@ -1,0 +1,61 @@
+
+ 
+08-18-15 11:52:29 | GET detected
+08-18-15 11:52:29 | Pinged
+ 
+08-18-15 11:53:18 | GET detected
+08-18-15 11:53:18 | could not find driver
+08-18-15 11:53:18 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 11:53:19 | Ok to proxy
+08-18-15 11:53:19 | Proxy complete
+ 
+08-18-15 11:59:20 | GET detected
+08-18-15 11:59:20 | Proxy could not resolve requested url - http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer.  Possible solution would be to update 'mustMatch', 'matchAll' or 'url' property in the configuration file.
+ 
+08-18-15 11:59:52 | GET detected
+08-18-15 11:59:52 | could not find driver
+08-18-15 11:59:52 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 11:59:53 | Ok to proxy
+08-18-15 11:59:53 | Proxy complete
+ 
+08-18-15 12:07:49 | GET detected
+08-18-15 12:07:49 | could not find driver
+08-18-15 12:07:49 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 12:07:55 | Ok to proxy
+08-18-15 12:07:55 | Proxy complete
+ 
+08-18-15 12:11:36 | GET detected
+08-18-15 12:11:36 | could not find driver
+08-18-15 12:11:36 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 12:11:37 | Ok to proxy
+08-18-15 12:11:37 | Proxy complete
+ 
+08-18-15 12:25:24 | GET detected
+08-18-15 12:25:24 | could not find driver
+08-18-15 12:25:24 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 12:25:25 | Ok to proxy
+08-18-15 12:25:25 | Proxy complete
+ 
+08-18-15 12:25:40 | GET detected
+08-18-15 12:25:40 | could not find driver
+08-18-15 12:25:40 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 12:25:41 | Ok to proxy
+08-18-15 12:25:41 | Proxy complete
+ 
+08-18-15 12:31:16 | GET detected
+08-18-15 12:31:16 | could not find driver
+08-18-15 12:31:16 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 12:31:16 | Ok to proxy
+08-18-15 12:31:16 | Proxy complete
+ 
+08-18-15 12:31:20 | GET detected
+08-18-15 12:31:20 | could not find driver
+08-18-15 12:31:20 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-18-15 12:31:20 | Ok to proxy
+08-18-15 12:31:20 | Proxy complete
+ 
+08-20-15 14:12:22 | GET detected
+08-20-15 14:12:22 | could not find driver
+08-20-15 14:12:22 | Can not determine if OAuth or ArcGIS Server means of authentication.  Check config for errors.
+08-20-15 14:12:23 | Ok to proxy
+08-20-15 14:12:23 | Proxy complete

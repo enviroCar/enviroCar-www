@@ -26,8 +26,9 @@ if(!is_logged_in()){
         include('header.php');
 }
 ?>
-<script src="./assets/leaflet.wms/lib/require.js" data-main="./assets/js/aggregate-map"></script>
-<link rel="stylesheet" type="text/css" href="./assets/leaflet.wms/lib/leaflet.css">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
+<link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
 <div class="container custom rightband" style="background-image: url(./assets/img/marketing/envCar_Foto19.jpg); width 100%; height: 250px; background-size: cover;">
     <div class="row">
 		<div class="span4">
