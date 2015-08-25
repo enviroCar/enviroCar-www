@@ -17,6 +17,7 @@
 */
 ?>
 <script src="http://js.arcgis.com/3.14/"></script>
+<script src="./assets/leaflet.wms/lib/require.js" data-main="./assets/js/index.js.php"></script>
 <script type="text/javascript">
 
 $(document).ready(function() {
