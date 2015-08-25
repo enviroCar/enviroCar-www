@@ -50,23 +50,30 @@ if(!is_logged_in()){
         <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
       </ul>
     </div>
-    <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
-      <label class="onoffswitch-label" for="share-switch">
-        <div class="onoffswitch-inner">
-          <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php echo $route_sharing_on; ?></div></div>
-          <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php echo $route_sharing_off; ?></div></div>
-        </div>
-      </label>
-    </div>
-    <div id="share-buttons" class="share-buttons" style="display: none;" >
-      <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook('<?php echo $_GET['id']; ?>','<?php echo $lang; ?>');"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
-    </div>
-    <!--<div id="leButton">
-	<input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"/>
-         <input type="button" id="twitter"  value="Tweet Me" onclick="shareOnTwitter();"/>
-         <input type="button" id="google"  value="G+ Me" onclick="shareOnGoogle();"/>
-     </div>-->
+      <?php
+        if(is_logged_in()){
+      ?>
+            <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="share-switch" onclick="toggleSharing()">
+                <label class="onoffswitch-label" for="share-switch">
+                    <div class="onoffswitch-inner">
+                        <div class="onoffswitch-active"><div class="onoffswitch-switch"><?php echo $route_sharing_on; ?></div></div>
+                        <div class="onoffswitch-inactive"><div class="onoffswitch-switch"><?php echo $route_sharing_off; ?></div></div>
+                    </div>
+                </label>
+            </div>
+            <div id="share-buttons" class="share-buttons" style="display: none;" >
+                <a class='pop share-square share-square-googleplus' onclick="shareOnGoogle();" ></a><a class='pop share-square share-square-facebook' onclick="shareOnFacebook('<?php echo $_GET['id']; ?>','<?php echo $lang; ?>');"></a><a class='pop share-square share-square-twitter' onclick="shareOnTwitter();"></a>
+            </div>
+            <!--<div id="leButton">
+            <input type="button" id="mybutton" value="Facebook Share" onclick="shareOnFacebook();"/>
+                 <input type="button" id="twitter"  value="Tweet Me" onclick="shareOnTwitter();"/>
+                 <input type="button" id="google"  value="G+ Me" onclick="shareOnGoogle();"/>
+             </div>-->
+        <?php
+      }
+      ?>
+
   </div>
 </div>
 
@@ -235,7 +242,7 @@ if(!is_logged_in()){
   var gramsCO2PerKM;
   var track;
   var gon = {};
-
+  var loggedin = '<?php echo is_logged_in(); ?>';
   (function(){
     var s = window.location.search.substring(1).split('&');
       if(!s.length) return;
@@ -272,11 +279,14 @@ if(!is_logged_in()){
     }
 
   function addRouteInformation(name){
-      $('#routeInformation').append('<h2>'+name+'<button class="btn btn-default btn-delete" style="background:none;border:none;box-shadow:none;" data-toggle="popover" onclick="deleteTrack(\''+name+'\',\''+$_GET(['id'])+'\')" type="button"><span class="icon-trash icon-red"></span></button><h2>');
+      //if(!(typeof name === 'undefined')){
+      if(loggedin){
+          $('#routeInformation').append('<h2>'+name+'<button class="btn btn-default btn-delete" style="background:none;border:none;box-shadow:none;" data-toggle="popover" onclick="deleteTrack(\''+name+'\',\''+$_GET(['id'])+'\')" type="button"><span class="icon-trash icon-red"></span></button><h2>');
+      };
       $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson" target="_blank">GeoJSON (*.json)</a>');
       $('#download-shapefile').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.shp" download="enviroCar_track_'+$_GET(['id'])+'.shp" target="_blank">Zipped shapefile (*.shp)</a>');
       $('#download-csv').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.csv" download="enviroCar_track_'+$_GET(['id'])+'.csv" target="_blank">Comma-separated values (*.csv)</a>');
-  }     
+  }
 
 
 
