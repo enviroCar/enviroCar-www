@@ -16,7 +16,7 @@
 * along with enviroCar.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<script src="http://js.arcgis.com/3.14/"></script>
+<script src="//js.arcgis.com/3.14/"></script>
 <script src="./assets/leaflet.wms/lib/require.js" data-main="./assets/js/index.js.php"></script>
 <script type="text/javascript">
 
