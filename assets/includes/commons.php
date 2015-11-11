@@ -30,6 +30,3 @@ function echoActiveClassIfRequestMatches($requestUri)
     if ($current_file_name == $requestUri)
         echo 'class="active"';
 }
-
-
-?>

@@ -394,6 +394,3 @@ if(isset($_GET['updateAcceptedTermsofUse'])){
 		echo $response['status'];
 	}
 }
-
-
-?>

@@ -41,7 +41,7 @@ if(!is_logged_in()){
   <div id="sensor_headline" style="float:left"></div>
   <div>
     <div class="btn-group" style="float:right">
-      <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
+      <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><?php echo $choosesensor ?>
       <span class="caret"></span>
       </button>
       <ul id="sensorsDropdown" class="dropdown-menu">
@@ -52,7 +52,7 @@ if(!is_logged_in()){
 
   <div id="map" style="width: 100%; height: 512px; padding-top:20px !important" class="smallmap">
   </div>
-  <p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><? echo $routeoverview ?></a></p>
+  <p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><?php echo $routeoverview ?></a></p>
   <div class="row-fluid" id="legend"></div>
 </div>
 
@@ -225,6 +225,5 @@ var chosenSensor = null;
 
 
 
-<?
+<?php 
 include('footer.php');
-?>

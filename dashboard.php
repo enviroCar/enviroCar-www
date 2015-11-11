@@ -43,7 +43,7 @@ include('header.php');
   
   <?php echo $please_accept_terms ?>
   
-  <input type="button" name="Text 2" value="<? echo $confirm_accept_terms ?>" onclick="acceptTerms()">
+  <input type="button" name="Text 2" value="<?php echo $confirm_accept_terms ?>" onclick="acceptTerms()">
     
 </div>
 
@@ -53,7 +53,7 @@ include('header.php');
     <div class="span3">
       <div class="row">
         <div class="span12">
-          <img src="./assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+          <img src="./assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/<?php echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<?php echo $user;?>"/>
           <h2 id="username">
           </h2>
           <ul id="userInformation" class="nav nav-list">
@@ -82,7 +82,7 @@ include('header.php');
           <h3 class="muted">
             <?php echo $friends ?>
           </h3>
-          <input id="searchfriends" type="text" name="text" placeholder="<? echo $searchfriends ?>" data-provide="typeahead"/>
+          <input id="searchfriends" type="text" name="text" placeholder="<?php echo $searchfriends ?>" data-provide="typeahead"/>
           <div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
           </div>
           
@@ -106,7 +106,7 @@ include('header.php');
           <h3 class="muted">
             <?php echo $groups; ?>
           </h3>
-          <input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" data-provide="typeahead"/>
+          <input id="searchgroups" type="text" name="text" placeholder="<?php echo $searchgroups; ?>" data-provide="typeahead"/>
           <small>
             <a href="#create_group_modal" class="link" data-toggle="modal">
               <i class="icon-plus-sign">
@@ -185,12 +185,12 @@ include('header.php');
       <label for="group_name">
         <?php echo $groupname; ?>
         </label>
-        <input id="group_name" type="text" class="input-block-level" placeholder="<? echo $groupname; ?>">
+        <input id="group_name" type="text" class="input-block-level" placeholder="<?php echo $groupname; ?>">
         <label for="group_description">
           <?php echo $groupdescription; ?>
         </label>
-        <input id="group_description" type="text" class="input-block-level" placeholder="<? echo $groupdescription; ?>">
-        <input type="submit" class="btn btn-primary" value="<? echo $creategroup;?>">
+        <input id="group_description" type="text" class="input-block-level" placeholder="<?php echo $groupdescription; ?>">
+        <input type="submit" class="btn btn-primary" value="<?php echo $creategroup;?>">
       </form>
     </div>
     <div class="modal-footer">

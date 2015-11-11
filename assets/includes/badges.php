@@ -33,5 +33,3 @@ if(isset($_GET['badges'])){
 		echo $response['status'];
 	}
 }
-
-?>

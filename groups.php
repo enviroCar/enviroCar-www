@@ -22,10 +22,10 @@ if(isset($_GET['group_deleted'])){
 ?>
 <div id="deleted" class="container alert alert-block fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><? echo $deletedgroup; ?></h4>  
-  	<? echo $deletegroupsuccess; ?>
+  <h4 class="alert-heading"><?php echo $deletedgroup; ?></h4>  
+  	<?php echo $deletegroupsuccess; ?>
 </div> 
-<?
+<?php 
 }
 ?>
 
@@ -37,14 +37,14 @@ if(isset($_GET['group_deleted'])){
   			$('#groupsList').append('<li class="customLi"><img src="assets/img/user.jpg" style="height: 30px; margin-right: 10px; "/><a href="group.php?group='+name+'">'+name+'</a></li>');
   		}
 
-  		$.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
+  		$.get('./assets/includes/users.php?groupsOf=<?php echo $_SESSION["name"] ?>', function(data) {
       		if(data >= 400){
       		  if(data == 400){
-      		    error_msg("<? echo $groupOfError ?>");
+      		    error_msg("<?php echo $groupOfError ?>");
       		  }else if(data == 401 || data == 403){
-      		    error_msg("<? echo $groupOfNotAllowed ?>")
+      		    error_msg("<?php echo $groupOfNotAllowed ?>")
       		  }else if(data == 404){
-      		    error_msg("<? echo $groupOfNotFound ?>")
+      		    error_msg("<?php echo $groupOfNotFound ?>")
       		  }
       		  $('#loadingIndicator').hide();
       		}else{
@@ -60,11 +60,11 @@ if(isset($_GET['group_deleted'])){
 	  	$.get('./assets/includes/groups.php?groups', function(data){
       		if(data >= 400){
       		  if(data == 400){
-      		    error_msg("<? echo $groupError ?>");
+      		    error_msg("<?php echo $groupError ?>");
       		  }else if(data == 401 || data == 403){
-      		    error_msg("<? echo $groupNotAllowed ?>")
+      		    error_msg("<?php echo $groupNotAllowed ?>")
       		  }else if(data == 404){
-      		    error_msg("<? echo $groupNotFound ?>")
+      		    error_msg("<?php echo $groupNotFound ?>")
       		  }
       		  $('#loadingIndicator_groups').hide();
       		}else{
@@ -82,21 +82,21 @@ if(isset($_GET['group_deleted'])){
 	  	$(function(){
 		  	$('#createGroupForm').submit(function(){
 		  		if($('#group_name').val() === '' || $('#group_description').val() === ''){
-	  				alert("<? echo $bothFieldsFilled ?>");
+	  				alert("<?php echo $bothFieldsFilled ?>");
 	  			}else{
 	  				if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){
 	  					$('#loadingIndicator').show();	
 		  				$.post('./assets/includes/groups.php?createGroup', {group_name: $('#group_name').val(), group_description: $('#group_description').val()}, 
 			            	function(response){
 			              		if(response >= 400){
-			              			error_msg("<? echo $creategrouperror ?>");
+			              			error_msg("<?php echo $creategrouperror ?>");
 			              		}else{
 			              			window.location.href="group.php?group="+$('#group_name').val();
 			              		}
 			            });
 		  			}else{
 		  				$('#loadingIndicator').hide();
-		  				alert("<? echo $invalidCharacterError ?>");
+		  				alert("<?php echo $invalidCharacterError ?>");
 		  			}
 	  			}
 		  		return false;
@@ -117,19 +117,19 @@ if(isset($_GET['group_deleted'])){
 	<div id="create_group_modal" class="modal hide fade">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	    <h3><? echo $creategroup; ?></h3>
+	    <h3><?php echo $creategroup; ?></h3>
 	  </div>
 	  <div class="modal-body">
 	  	<form id="createGroupForm" action="./assets/includes/groups.php?createGroup" method="post">
-			<label for="group_name"><? echo $groupname; ?></label>
-	    	<input id="group_name" type="text" class="input-block-level" placeholder="<? echo $groupname; ?>">
-	    	<label for="group_description"><? echo $groupdescription; ?></label>
-	    	<input id="group_description" type="text" class="input-block-level" placeholder="<? echo $groupdescription; ?>">
-	    	<input type="submit" class="btn btn-primary" value="<? echo $creategroup;?>">
+			<label for="group_name"><?php echo $groupname; ?></label>
+	    	<input id="group_name" type="text" class="input-block-level" placeholder="<?php echo $groupname; ?>">
+	    	<label for="group_description"><?php echo $groupdescription; ?></label>
+	    	<input id="group_description" type="text" class="input-block-level" placeholder="<?php echo $groupdescription; ?>">
+	    	<input type="submit" class="btn btn-primary" value="<?php echo $creategroup;?>">
 	    </form>
 	  </div>
 	  <div class="modal-footer">
-	    <button class="btn" data-dismiss="modal" aria-hidden="true"><? echo $close; ?></button>
+	    <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo $close; ?></button>
 	  </div>
 	</div>
 
@@ -137,16 +137,16 @@ if(isset($_GET['group_deleted'])){
 		<div class="row">
 			<div class="span5">
 				<div id="create_group">
-					<a href="#create_group_modal" role="button" class="btn btn-primary" data-toggle="modal"><? echo $creategroup; ?></a>
+					<a href="#create_group_modal" role="button" class="btn btn-primary" data-toggle="modal"><?php echo $creategroup; ?></a>
 				</div>
 			</div>
 			<div class="span6">
-				<input id="searchgroups" type="text" name="text" placeholder="<? echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
+				<input id="searchgroups" type="text" name="text" placeholder="<?php echo $searchgroups; ?>" style="float:right" data-provide="typeahead"/>
 			</div>
 		</div>
 		<div class="row">
 			<div class="span6">
-				<h2><? echo $groups; ?></h2>
+				<h2><?php echo $groups; ?></h2>
 				
 				<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 				<ul id="groupsList" style="max-height: 400px; overflow-y: auto;">
@@ -156,6 +156,5 @@ if(isset($_GET['group_deleted'])){
 	</div>
 
 
-<?
+<?php 
 include('footer.php');
-?>

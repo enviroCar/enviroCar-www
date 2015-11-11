@@ -30,11 +30,10 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span11">				
-				<?echo $terms_general; ?>
+				<?php echo $terms_general; ?>
 			</div>
 		</div>
 	</div>
 
-<?
+<?php 
 include('footer.php');
-?>

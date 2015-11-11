@@ -29,34 +29,34 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       <div class="well sidebar-nav">
       <h2 id="username"></h2>
 		<span style="text-align: center; display: block">
-			<img src="./assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/<? echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<? echo $user;?>"/>
+			<img src="./assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/<?php echo $user; ?>/avatar?size=200&amp;auth=true" style="height: 200px; width:200px; margin-right: auto; margin-left: auto;" alt="<?php echo $user;?>"/>
 		</span>
     <br>
         <ul id="userInformation" class="nav nav-list" style="text-align:center"></ul>
         <ul id="badges" class="nav nav-list" style="text-align:center"></ul>
-		<?
+		<?php 
 			if($user == $loggedInUser){
 		?>
 			<span style="text-align: center; display: block">
 				<a href="javascript:deleteAccount();" class="btn btn-primary btn-small" style="margin-top: 1em">
-					<? echo $deletemyaccount; ?>
+					<?php echo $deletemyaccount; ?>
 				</a>
 				<a href="#changeProfile" class="btn btn-primary btn-small" style="margin-top: 1em" data-toggle="modal">
-					<? echo $editaccount; ?>
+					<?php echo $editaccount; ?>
 				</a>
 			</span>
-		<?
+		<?php 
 			}else{
 		?>
 			<span id="addAsFriendLink"></span>
-		<?
+		<?php 
             }
 		?>
       </div><!--/.well -->
     </div><!--/span-->
 
 
-    <div id="nofriends" style="display:none" class="span3 offset2"><? echo $user.' '.$noFriendsYet ?></div>
+    <div id="nofriends" style="display:none" class="span3 offset2"><?php echo $user.' '.$noFriendsYet ?></div>
     <div id="comparison" class="span5">
         <div id="chart_div" style="width: 700px; height: 400px;">   
           <div id="loadingIndicator_graph" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px; display:none">
@@ -66,18 +66,18 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
 
-  <? if($user != $loggedInUser){ ?>
+  <?php if($user != $loggedInUser){ ?>
     <script type="text/javascript">
-      var friend = "<? echo $user?>";
+      var friend = "<?php echo $user?>";
       var values = [];
       var values2 = [];
       var count=0;
       var phen=[];
 
-      $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
+      $.get('assets/includes/users.php?userStatistics=<?php echo $_SESSION['name'] ?>', function(data) {
         $('#loadingIndicator_graph').show();
         if(data >= 400){
-            error_msg("<? echo $statisticsError ?>");
+            error_msg("<?php echo $statisticsError ?>");
             $('#loadingIndicator_graph').hide();
         }else{
           data = JSON.parse(data);
@@ -92,7 +92,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       $.get('assets/includes/users.php?friendStatistics='+friend, function(data) {
         if(data >= 400){
             if(data == 401 || data == 403) noFriend();
-            else error_msg("<? echo $statisticsNotFound ?>");
+            else error_msg("<?php echo $statisticsNotFound ?>");
             $('#loadingIndicator_graph').hide();
         }else{
           data = JSON.parse(data);
@@ -120,7 +120,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       function drawChart() {
         var data = new google.visualization.DataTable();
           data.addColumn('string','Measurement');
-          data.addColumn('number', '<? echo $_SESSION['name'] ?>');
+          data.addColumn('number', '<?php echo $_SESSION['name'] ?>');
           data.addColumn('number', friend);
 
           data.addRows(count);
@@ -137,7 +137,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }
      
         var options = {
-          title: '<? echo $statistics ?>',
+          title: '<?php echo $statistics ?>',
           vAxis: {title: '',  titleTextStyle: {color: 'red'}}
         };
 
@@ -147,16 +147,16 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       }
     </script>  
 
-<? }else{ ?>
+<?php }else{ ?>
    <script type="text/javascript">
       var values = [];
       var count=0;
       var phen=[];
 
-      $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
+      $.get('assets/includes/users.php?userStatistics=<?php echo $_SESSION['name'] ?>', function(data) {
         $('#loadingIndicator_graph').show();
         if(data >= 400){
-            error_msg("<? echo $statisticsError ?>");
+            error_msg("<?php echo $statisticsError ?>");
             $('#loadingIndicator_graph').hide();
         }else{
           data = JSON.parse(data);
@@ -174,7 +174,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
       function drawChart() {
         var data = new google.visualization.DataTable();
           data.addColumn('string','Measurement');
-          data.addColumn('number', '<? echo $_SESSION['name'] ?>');
+          data.addColumn('number', '<?php echo $_SESSION['name'] ?>');
 
           data.addRows(count);
                
@@ -188,7 +188,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         }
      
         var options = {
-          title: '<? echo $statistics ?>',
+          title: '<?php echo $statistics ?>',
           vAxis: {title: '',  titleTextStyle: {color: 'red'}}
         };
 
@@ -199,20 +199,20 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
     </script>  
 
 
-<? } ?>
+<?php } ?>
 
     </div>
 </div>
 
 	<div class="container leftband" id="friendsgroups">
 		<div class="span4">
-			<h2><? echo $friends ?></h2>
+			<h2><?php echo $friends ?></h2>
 			<div id="loadingIndicator_friends" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 			<ul id="friends" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
 			</ul>
 		</div>
 		<div class="span4">
-			<h2><? echo $groups ?></h2>
+			<h2><?php echo $groups ?></h2>
 			<ul id="groups" style="margin-bottom: 10px; overflow-y:auto; max-height: 400px;">
 			</ul>
 		<div id="loadingIndicator_groups" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
@@ -221,7 +221,7 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
 	<div class="container rightband">
 	<div class="row-fluid">
         <div class="span5">
-          <h2><?php echo $dashboard_activities_of; ?> <? echo $user ?></h2>
+          <h2><?php echo $dashboard_activities_of; ?> <?php echo $user ?></h2>
             <div id="loadingIndicator_friend_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;">
             </div>
 		  <ul id="friendActivities" style="min-height: 93px; max-height: 400px; overflow-y:auto">
@@ -231,6 +231,5 @@ $user = (isset($_GET['user'])) ? $_GET['user'] : $loggedInUser;
         </div>
 		</div>
 	</div>
-<?
+<?php 
 include('footer.php');
-?>

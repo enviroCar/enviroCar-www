@@ -64,6 +64,5 @@ if(!is_logged_in()){
 
 </div>
 
-<?
+<?php 
 include('footer.php');
-?>

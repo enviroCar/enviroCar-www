@@ -43,40 +43,40 @@ function getUserInfo(){
 	$.get('./assets/includes/users.php?user='+user, function(data){
 	  if(data >= 400){
 	    if(data == 400){
-	      error_msg("<? echo $personError ?>");
+	      error_msg("<?php echo $personError ?>");
 	    }else if(data == 401 || data == 403){
 	      noFriend();
 	    }else if(data == 404){
-	      error_msg("<? echo $personNotFound ?>")
+	      error_msg("<?php echo $personNotFound ?>")
 	    }
 	    $('#loadingIndicator').hide();
 	  }else{
 	    data = JSON.parse(data);
 	    if(data.firstName){
-	       $('#userInformation').append('<li><? echo $firstname ?>: <b>'+data.firstName+'</b></li>');
+	       $('#userInformation').append('<li><?php echo $firstname ?>: <b>'+data.firstName+'</b></li>');
 	       $('#firstName').val(data.firstName);
 	     }
 	    if(data.mail){
 	       $('#mail').val(data.mail);
 	    }
 	    if(data.lastName){
-	       $('#userInformation').append('<li><? echo $lastname ?>: <b>'+data.lastName+'</b></li>');
+	       $('#userInformation').append('<li><?php echo $lastname ?>: <b>'+data.lastName+'</b></li>');
 	       $('#lastName').val(data.lastName);
 	     }
 	    if(data.gender){
-	       $('#userInformation').append('<li><? echo $gender ?>: <b>'+(data.gender == 'm' ? '<? echo $male ?>':'<? echo $female ?>') +'</b></li>');
+	       $('#userInformation').append('<li><?php echo $gender ?>: <b>'+(data.gender == 'm' ? '<?php echo $male ?>':'<?php echo $female ?>') +'</b></li>');
 	       $('#gender').val(data.gender);
 	     }
 	    if(data.dayOfBirth){
-	       $('#userInformation').append('<li><? echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
+	       $('#userInformation').append('<li><?php echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
 	       $('#dayOfBirth').val(data.dayOfBirth);
 	     }
 	    if(data.location){
-	       $('#userInformation').append('<li><? echo $location ?>: <b>'+data.location+'</b></li>');
+	       $('#userInformation').append('<li><?php echo $location ?>: <b>'+data.location+'</b></li>');
 	       $('#location').val(data.location);
 	     }
 	    if(data.country){
-	       $('#userInformation').append('<li><? echo $country ?>: <b>'+data.country+'</b></li>');
+	       $('#userInformation').append('<li><?php echo $country ?>: <b>'+data.country+'</b></li>');
 	       $('#country').val(data.country);
 	     }
 	    if(data.url){
@@ -84,7 +84,7 @@ function getUserInfo(){
 	       $('#url').val(data.url);
 	     }
 	    if(data.language){
-	       $('#userInformation').append('<li><? echo $language ?>: <b>'+data.language+'</b></li>');
+	       $('#userInformation').append('<li><?php echo $language ?>: <b>'+data.language+'</b></li>');
 	       $('#language').val(data.language);
 	    }
 	    if(data.aboutMe){

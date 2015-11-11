@@ -99,7 +99,3 @@ if(isset($_GET['deleteGroup'])){
 		echo $response['status'];
 	}
 }
-
-
-
-?>

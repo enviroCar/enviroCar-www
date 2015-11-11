@@ -764,4 +764,3 @@ Durch die Nutzung dieser Webseite erklären Sie sich mit der Nutzung von Cookies
 //Badges
 $availableBadges = "Verfügbare Badges";
 $badges = "Badges";
-?>

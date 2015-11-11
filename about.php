@@ -61,10 +61,10 @@ $(function(){
 <header class="container" id="about-menu">
   <div class="subnav droid-text">
     <ul class="nav nav-pills">
-      <li class="active"><a href="#main" data-toggle="tab"><? echo $about_aboutHead ?></a></li>
-			<li><a href="#behind" data-toggle="tab"><? echo $about_the_people_behind_head ?></a></li>
-			<li><a href="#getinvolved" data-toggle="tab"><? echo $about_gettinginvolvedHead ?></a></li>
-			<li><a href="#faqs" data-toggle="tab"><? echo $about_faqHead ?></a></li>
+      <li class="active"><a href="#main" data-toggle="tab"><?php echo $about_aboutHead ?></a></li>
+			<li><a href="#behind" data-toggle="tab"><?php echo $about_the_people_behind_head ?></a></li>
+			<li><a href="#getinvolved" data-toggle="tab"><?php echo $about_gettinginvolvedHead ?></a></li>
+			<li><a href="#faqs" data-toggle="tab"><?php echo $about_faqHead ?></a></li>
     </ul>
   </div>
 </header>
@@ -84,17 +84,17 @@ $(function(){
 							<img src="http://blogs.scientificamerican.com/media/inline/blog/Image/Citizen-Science-logo.jpg" alt="Logo of Citizen Science Initiative">
 						</div> 
 						<div class="span6" style="padding-right: 1ex;">
-							<? echo $about_aboutText1 ?>
+							<?php echo $about_aboutText1 ?>
 						</div>  
 					</div>    
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">	
 						<div class="span6">
-							<? echo $about_aboutText2 ?>	
+							<?php echo $about_aboutText2 ?>	
 						</div>
 						<div class="span6" style="padding-right: 1ex">
-						<?
+						<?php 
                     if($lang == 'en'){ 
                         echo '<img src="./assets/img/enviroCar-architecture_en.png" style="height:300px; width:487px;" alt="The architecture of enviroCar">';
                     }else{
@@ -110,7 +110,7 @@ $(function(){
         			<img class="offset3" src="./assets/img/about/drivedeck1.jpg" style="width:30%;" alt="An ODB II Adapter">
         			</div>
 					<div class="span6">
-							<? echo $about_aboutText3 ?>
+							<?php echo $about_aboutText3 ?>
 						</div>  
 					</div>
 				</div>
@@ -118,7 +118,7 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">	
 						<div class="span6">		 	
-							<? echo $about_aboutText4 ?>	
+							<?php echo $about_aboutText4 ?>	
 						</div>
 						<div class="span6" style="padding-right: 1ex">
 							<img src="./assets/img/about/enviroCar-app-02.jpg" style="width:487px;" alt="Screenshots of the enviroCar app">
@@ -130,15 +130,15 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span11" style="padding-right: 1ex; text-align: justify;">
-							<? echo $about_the_people_behind_text ?>
+							<?php echo $about_the_people_behind_text ?>
 						</div>  
 					</div>    
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span11" style="padding-right: 1ex; text-align: justify;">
-							<h2><span class="anchor" id="asContributors"></span><? echo $about_contributors_head ?></h2>
-							<? echo $about_contributors_text ?>
+							<h2><span class="anchor" id="asContributors"></span><?php echo $about_contributors_head ?></h2>
+							<?php echo $about_contributors_text ?>
 						</div>  
 					</div>    
 				</div>
@@ -147,9 +147,9 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="asCitizens"></span><? echo $asACitizenHead ?></h2>
+							<h2><span class="anchor" id="asCitizens"></span><?php echo $asACitizenHead ?></h2>
 							<p>
-								<? echo $asACitizenText ?>
+								<?php echo $asACitizenText ?>
 							</p>							    
 						</div>    
 					</div>    
@@ -157,9 +157,9 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign2"></span><? echo $asAScientistHead ?></h2>
+							<h2><span class="anchor" id="sign2"></span><?php echo $asAScientistHead ?></h2>
 							<p>
-								<? echo $asAScientistText ?>
+								<?php echo $asAScientistText ?>
 							</p>							   
 						</div>    
 					</div>    
@@ -167,9 +167,9 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign3"></span><? echo $asAPlannerHead ?></h2>
+							<h2><span class="anchor" id="sign3"></span><?php echo $asAPlannerHead ?></h2>
 							<p>
-								<? echo $asAPlannerText ?>
+								<?php echo $asAPlannerText ?>
 							</p>							    
 						</div>    
 					</div>    
@@ -177,9 +177,9 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="sign4"></span><? echo $asADeveloperHead ?></h2>
+							<h2><span class="anchor" id="sign4"></span><?php echo $asADeveloperHead ?></h2>
 							<p>
-								<? echo $asADeveloperText ?>
+								<?php echo $asADeveloperText ?>
 							</p>
 						</div>    
 					</div>    
@@ -190,11 +190,11 @@ $(function(){
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
 							<ul id="faqList" class="neutralList">
-								<li><a href="#q1"><? echo $faq_q1 ?></a></li>		
-								<li><a href="#q2"><? echo $faq_q2 ?></a></li>
-								<li><a href="#q3"><? echo $faq_q3 ?></a></li>		
-								<li><a href="#q4"><? echo $faq_q4 ?></a></li>
-								<li><a href="#q5"><? echo $faq_q5 ?></a></li>	
+								<li><a href="#q1"><?php echo $faq_q1 ?></a></li>		
+								<li><a href="#q2"><?php echo $faq_q2 ?></a></li>
+								<li><a href="#q3"><?php echo $faq_q3 ?></a></li>		
+								<li><a href="#q4"><?php echo $faq_q4 ?></a></li>
+								<li><a href="#q5"><?php echo $faq_q5 ?></a></li>	
 							</ul>
 						</div>
 					</div> 
@@ -202,9 +202,9 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span class="anchor" id="q1"></span><? echo $faq_q1 ?></h2>
+							<h2><span class="anchor" id="q1"></span><?php echo $faq_q1 ?></h2>
 							<p>
-								<? echo $faq_a1 ?>
+								<?php echo $faq_a1 ?>
 							</p>
 						</div>
 					</div>    
@@ -212,17 +212,17 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span  class="anchor" id="q2"></span><? echo $faq_q2 ?></h2>
-							<? echo $faq_a2 ?>
+							<h2><span  class="anchor" id="q2"></span><?php echo $faq_q2 ?></h2>
+							<?php echo $faq_a2 ?>
 						</div>    
 					</div>    
 				</div>
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span  class="anchor" id="q3"></span><? echo $faq_q3 ?></h2>
+							<h2><span  class="anchor" id="q3"></span><?php echo $faq_q3 ?></h2>
 							<p> 
-								<? echo $faq_a3 ?>
+								<?php echo $faq_a3 ?>
 							</p> 
 						</div>    
 					</div>    
@@ -230,9 +230,9 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span  class="anchor" id="q4"></span><? echo $faq_q4 ?></h2>
+							<h2><span  class="anchor" id="q4"></span><?php echo $faq_q4 ?></h2>
 							<p>
-								<? echo $faq_a4 ?>
+								<?php echo $faq_a4 ?>
 							</p>
 						</div>    
 					</div>    
@@ -240,15 +240,14 @@ $(function(){
 				<div class="container leftband">
 					<div class="row-fluid">
 						<div class="span" style="padding-right: 1ex">
-							<h2><span  class="anchor" id="q5"></span><? echo $faq_q5 ?></h2>
+							<h2><span  class="anchor" id="q5"></span><?php echo $faq_q5 ?></h2>
 							<p> 
-								<? echo $faq_a5 ?>
+								<?php echo $faq_a5 ?>
 							</p> 
 						</div>    
 					</div>    
 				</div>  
 			</div><!--end of div id="faqs"-->   
 		</div><!--end tab content-->
-<?
+<?php 
 include('footer.php');
-?>

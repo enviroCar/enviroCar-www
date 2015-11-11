@@ -246,23 +246,23 @@ if ($login_name != "" && $login_password != ""){
           
           <div class="nav-collapse collapse">
             <ul id="main-nav" class="nav pull-right droid-text">
-              <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
-			  <li><a href="http://envirocar.github.io/" target="_blank" title="<? echo $softwareTitle ?>"><? echo $software ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><?php echo $about ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><?php echo $mapsandstatistics ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><?php echo $data ?></a></li>
+			  <li><a href="http://envirocar.github.io/" target="_blank" title="<?php echo $softwareTitle ?>"><?php echo $software ?></a></li>
               <?php if(!is_logged_in()){ ?>
                 <li class="dropdown">
-                <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
+                <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><?php echo $index_sign_in;?> <strong class="caret"></strong></a>
                 <div class="dropdown-menu" id="sign-in-menu" style="padding: 15px; min-width: 210px;">
                   <form name="login" action="index.php" method="post" style="display: inline;">
-                    <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-                    <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
+                    <input type="hidden" name="login_form_attempt" value="<?php echo $login_form_attempt+1;?>">
+                    <input type="hidden" name="fwdref" value="<?php echo $login_referer;?>">
                     
                     <div class="control-group">
                       <div class="controls">
                         <div class="input-block-level input-prepend"> 
                           <span class="add-on" id="sign-in-user-icon"><i class="icon-user"></i></span>
-                          <input type="text"  class="input-block-level" id="login_name"   name="login_name" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
+                          <input type="text"  class="input-block-level" id="login_name"   name="login_name" placeholder="<?php echo $index_user_name;?>" value="<?php echo $login_name;?>"/>
                         </div>
                       </div>
                     </div>
@@ -271,12 +271,12 @@ if ($login_name != "" && $login_password != ""){
                       <div class="controls">
                         <div class="input-block-level input-prepend">
                           <span class="add-on" id="sign-in-password-icon"><i class="icon-lock"></i></span>
-                          <input type="password"  id="login_password" class="input-block-level" name="login_password" placeholder="<? echo $index_password;?>" />
+                          <input type="password"  id="login_password" class="input-block-level" name="login_password" placeholder="<?php echo $index_password;?>" />
                         </div>
                       </div>
                     </div>
 
-                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left; width: 100%;"/>
+                    <input type="submit" class="btn btn-medium btn-primary" value="<?php echo $index_sign_in;?>" style="float: left; width: 100%;"/>
                   </form>
                   <p><a href="lost_password.php" class="link" id="lost-password-link"><?php echo $index_lost_password ?></a></p>
                   <p><?php echo $index_register_here ?><a id="register-btn" href="./registration.php" class="link"><?php echo $index_register ?></a></p>
@@ -289,10 +289,10 @@ if ($login_name != "" && $login_password != ""){
                     <strong class="caret"></strong>
                   </a>
                   <ul id="session-menu" class="dropdown-menu">
-                    <li><a href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></li>
-                    <li><a href="dashboard.php"><? echo $dashboard ?></a></li>
+                    <li><a href="editprofile.php?user=<?php echo $_SESSION['name']?> "><?php echo $changeprofile ?> </a></li>
+                    <li><a href="dashboard.php"><?php echo $dashboard ?></a></li>
                     <li class="divider"></li>
-                    <li><a href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></li>
+                    <li><a href="./assets/includes/authentification.php?logout"><?php echo $logout ?></a></li>
                   </ul>
                 </li>
               <?php } ?>
@@ -308,145 +308,145 @@ if ($login_name != "" && $login_password != ""){
       <h4 class="alert-heading">Error</h4>  
  </div>
  
-<?
+<?php 
 if(isset($_GET['accessdenied'])){
 ?>
   <div class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><? echo $index_cont3; ?></h4>  
-  <? echo $currentlynotloggedin; ?>
+  <h4 class="alert-heading"><?php echo $index_cont3; ?></h4>  
+  <?php echo $currentlynotloggedin; ?>
   </div> 
-<?
+<?php 
 }
 ?>
 
-<?
+<?php 
 if(isset($_GET['lo'])){
 ?>
   <div class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <? echo $logoutsuccess; ?>
+  <?php echo $logoutsuccess; ?>
 </div> 
-<?
+<?php 
 }
 ?>
 
-<?
+<?php 
 if(isset($_GET['registration_successful'])){
 ?>
 <div id="registration_successful" class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><?echo $welcometoec;?></h4>  
-  <? echo $regsuccessfull.' '.$logincontinue ?>
+  <h4 class="alert-heading"><?php echo $welcometoec;?></h4>  
+  <?php echo $regsuccessfull.' '.$logincontinue ?>
 </div> 
-<?
+<?php 
 }
 ?>
 
-<?
+<?php 
 if(isset($_GET['deleted'])){
 ?>
 <div id="deleted" class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <h4 class="alert-heading"><?echo $accountdeleted?></h4>  
-  <?echo $accountdeletedsuccess?>
+  <h4 class="alert-heading"><?php echo $accountdeleted?></h4>  
+  <?php echo $accountdeletedsuccess?>
 </div> 
-<?
+<?php 
 }
 ?>
 
-<?
+<?php 
 if(isset($_GET['password_reset_submitted'])){
 ?>
 <div id="password-reset-submitted" class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a>
-  <?echo $index_password_reset_submitted?>
+  <?php echo $index_password_reset_submitted?>
 </div> 
-<?
+<?php 
 }
 ?>
 
-<?
+<?php 
 if(isset($_GET['password_resetted'])){
 ?>
 <div id="password-reset-submitted" class="container alert alert-block alert-success fade in"> 
   <a class="close" data-dismiss="alert">×</a> 
-  <?echo $index_password_resetted?>
+  <?php echo $index_password_resetted?>
 </div> 
-<?
+<?php 
 }
 ?>
 
-<?         
+<?php         
 if ($login_form_attempt>=1){
 
   if ($login_name != "" &&  $login_password == ""){
 	?>
 	<div class="container alert alert-block alert-error fade in">
 		<a class="close" data-dismiss="alert">×</a>  
-		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-		<? echo $index_cont20;?>
+		<h4 class="alert-heading"><?php echo $index_cont3;?></h4>
+		<?php echo $index_cont20;?>
 	</div>
-	<?
+	<?php 
   }
   
   if ($login_name == "" && $login_password != ""){
 	?>
 	<div class="container alert alert-block alert-error fade in">
 		<a class="close" data-dismiss="alert">×</a>
-		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-		<? echo $index_cont21;?>
+		<h4 class="alert-heading"><?php echo $index_cont3;?></h4>
+		<?php echo $index_cont21;?>
 	</div>
-	<?
+	<?php 
   }
   
   if ($login_name == "" && $login_password == ""){
 	?>
 	<div class="container alert alert-block alert-error fade in">
 		<a class="close" data-dismiss="alert">×</a>  
-		<h4 class="alert-heading"><? echo $index_cont3;?></h4>
-		<? echo $index_cont22;?>
+		<h4 class="alert-heading"><?php echo $index_cont3;?></h4>
+		<?php echo $index_cont22;?>
 	</div>
-	<?
+	<?php 
   }
 }
 ?>
 
 <div id="login_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>   
-	<? echo $usernameorpasswordwrong ?>
+	<?php echo $usernameorpasswordwrong ?>
   <a href="lost_password.php" class="link" ><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
-	<?
+	<?php 
 		if ($login_form_attempt >= 5){
 	?>
-		<? echo $index_having_account;?><br/> <? echo $index_create_new_one;?><br/>
-	<?
+		<?php echo $index_having_account;?><br/> <?php echo $index_create_new_one;?><br/>
+	<?php 
 		}
 	?>
 </div> 
 
 <div id="registration_fail" class="container alert alert-block alert-error fade in" style="display:none"> 
   <a class="close" data-dismiss="alert">×</a>  
- <? echo $registrationunsuccessfull.' '.$existingusername?>
+ <?php echo $registrationunsuccessfull.' '.$existingusername?>
 </div> 
 
-<?
+<?php 
 if ($login_fail) {
 ?>
 <div id="login_fail" class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a>   
- <? echo $usernameorpasswordwrong ?><br>
+ <?php echo $usernameorpasswordwrong ?><br>
  <a href="lost_password.php" class="link"><?php echo $index_lost_password ?></a>
 	<div style="clear:both"></div>
-	<?
+	<?php 
 		if ($login_form_attempt >= 5){
 	?>
-		<? echo $index_having_account;?><br/> <? echo $index_create_new_one;?><br/>
-	<?
+		<?php echo $index_having_account;?><br/> <?php echo $index_create_new_one;?><br/>
+	<?php 
 		}
 	?>
 </div> 
-<?
+<?php 
 }
 ?>

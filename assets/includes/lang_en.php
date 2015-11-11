@@ -757,4 +757,3 @@ When you use this website, you agree to the use of cookies. The cookies will be 
 //Badges
 $availableBadges = "Available Badges";
 $badges = "Badges";
-?>

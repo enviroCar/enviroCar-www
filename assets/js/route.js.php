@@ -41,8 +41,5 @@ $(function(){
 	  selector: '[rel=tooltip]'
 	});
 });
-  
 
-
-  
 </script>

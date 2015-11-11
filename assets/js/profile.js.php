@@ -71,11 +71,11 @@
       if(data >= 400){
         console.log(data);
         if(data == 400){
-          error_msg("<? echo $activityError ?>");
+          error_msg("<?php echo $activityError ?>");
         }else if(data == 401 || data == 403){
-          error_msg("<? echo $activityNotAllowed ?>")
+          error_msg("<?php echo $activityNotAllowed ?>")
         }else if(data == 404){
-          error_msg("<? echo $activityNotFound ?>")
+          error_msg("<?php echo $activityNotFound ?>")
         }
         $('#loadingIndicator_friend_activities').hide();
       }else{
@@ -85,27 +85,27 @@
 
             for(i = 0; i < data.activities.length; i++){
               var activity = data.activities[i]; 	
-              if(activity.user.name == "<? echo $user ?>"){
+              if(activity.user.name == "<?php echo $user ?>"){
               if(activity.type == "JOINED_GROUP"){
-                if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group)addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_GROUP"){
-                if(activity.group) addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $createdGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group) addFriendActivities("./assets/img/person.svg",getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $createdGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "FRIENDED_USER"){
-                addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
+                addFriendActivities(getAvatar(activity.other.name, 30),getAvatar(activity.user.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <?php echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CREATED_TRACK"){
-                if(typeof activity.track != 'undefined') addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?> "+activity.track.name, convertToLocalTime(activity.time));
+                if(typeof activity.track != 'undefined') addFriendActivities("./assets/img/route.svg",getAvatar(activity.user.name, 30), "route.php?id="+activity.track.id, activity.user.name+" <?php echo $createdRoute ?> "+activity.track.name, convertToLocalTime(activity.time));
               }else if(activity.type == "LEFT_GROUP"){
-                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_GROUP"){
-                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
+                if(activity.group) addFriendActivities("./assets/img/person.svg", getAvatar(activity.user.name, 30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
               }else if(activity.type == "CHANGED_PROFILE"){
-                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
+                addFriendActivities("./assets/img/user.jpg",getAvatar(activity.user.name, 30), "profile.php?user="+activity.user.name, activity.user.name+" <?php echo $changedProfile ?>", convertToLocalTime(activity.time));
               }
               }
             }
             
         }else{
-          $('#friendActivities').append("<? echo $norecentactivities ?>");
+          $('#friendActivities').append("<?php echo $norecentactivities ?>");
         }
         $('#loadingIndicator_friend_activities').hide();
       }
@@ -116,40 +116,40 @@
     $.get('./assets/includes/users.php?user='+user, function(data){
       if(data >= 400){
         if(data == 400){
-          error_msg("<? echo $personError ?>");
+          error_msg("<?php echo $personError ?>");
         }else if(data == 401 || data == 403){
           noFriend();
         }else if(data == 404){
-          error_msg("<? echo $personNotFound ?>")
+          error_msg("<?php echo $personNotFound ?>")
         }
         $('#loadingIndicator').hide();
       }else{
         data = JSON.parse(data);
         if(data.firstName){
-           $('#userInformation').append('<li><? echo $firstname ?>: <b>'+data.firstName+'</b></li>');
+           $('#userInformation').append('<li><?php echo $firstname ?>: <b>'+data.firstName+'</b></li>');
            $('#firstName').val(data.firstName);
          }
         if(data.mail){
            $('#mail').val(data.mail);
         }
         if(data.lastName){
-           $('#userInformation').append('<li><? echo $lastname ?>: <b>'+data.lastName+'</b></li>');
+           $('#userInformation').append('<li><?php echo $lastname ?>: <b>'+data.lastName+'</b></li>');
            $('#lastName').val(data.lastName);
          }
         if(data.gender){
-           $('#userInformation').append('<li><? echo $gender ?>: <b>'+(data.gender == 'm' ? '<? echo $male ?>':'<? echo $female ?>') +'</b></li>');
+           $('#userInformation').append('<li><?php echo $gender ?>: <b>'+(data.gender == 'm' ? '<?php echo $male ?>':'<?php echo $female ?>') +'</b></li>');
            $('#gender').val(data.gender);
          }
         if(data.dayOfBirth){
-           $('#userInformation').append('<li><? echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
+           $('#userInformation').append('<li><?php echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
            $('#dayOfBirth').val(data.dayOfBirth);
          }
         if(data.location){
-           $('#userInformation').append('<li><? echo $location ?>: <b>'+data.location+'</b></li>');
+           $('#userInformation').append('<li><?php echo $location ?>: <b>'+data.location+'</b></li>');
            $('#location').val(data.location);
          }
         if(data.country){
-           $('#userInformation').append('<li><? echo $country ?>: <b>'+data.country+'</b></li>');
+           $('#userInformation').append('<li><?php echo $country ?>: <b>'+data.country+'</b></li>');
            $('#country').val(data.country);
          }
         if(data.url){
@@ -157,7 +157,7 @@
            $('#url').val(data.url);
          }
         if(data.language){
-           $('#userInformation').append('<li><? echo $language ?>: <b>'+data.language+'</b></li>');
+           $('#userInformation').append('<li><?php echo $language ?>: <b>'+data.language+'</b></li>');
            $('#language').val(data.language);
         }
         if(data.aboutMe){
@@ -200,11 +200,11 @@
     $.get('./assets/includes/users.php?groupsOf='+user, function(data) {
       if(data >= 400){
         if(data == 400){
-          error_msg("<? echo $groupError ?>");
+          error_msg("<?php echo $groupError ?>");
         }else if(data == 401 || data == 403){
           noFriend();
         }else if(data == 404){
-          error_msg("<? echo $groupNotFound ?>")
+          error_msg("<?php echo $groupNotFound ?>")
         }
         $('#loadingIndicator_groups').hide();
       }else{
@@ -223,11 +223,11 @@
     $.get('./assets/includes/users.php?friendsOf='+loggedInUser, function(data) {
       if(data >= 400){
         if(data == 400){
-          error_msg("<? echo $friendError ?>");
+          error_msg("<?php echo $friendError ?>");
         }else if(data == 401 || data == 403){
           noFriend();
         }else if(data == 404){
-          error_msg("<? echo $friendNotFound ?>")
+          error_msg("<?php echo $friendNotFound ?>")
         }
         $('#loadingIndicator').hide();
       }else{
@@ -235,16 +235,16 @@
         if(data.users.length > 0 ){
           for(i = 0; i < data.users.length; i++){
             if(user == data.users[i].name){
-              $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();"><? echo $removeasfriend ?></a>');
+              $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();"><?php echo $removeasfriend ?></a>');
               break;
             }
             else{ 
-              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><? echo $addasfriend ?></a>');
+              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><?php echo $addasfriend ?></a>');
             }
           }
         }
         else{ 
-              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><? echo $addasfriend ?></a>');
+              $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><?php echo $addasfriend ?></a>');
         }
 
       }
@@ -259,11 +259,11 @@
     $.get('./assets/includes/users.php?friendsOf='+user, function(data) {
       if(data >= 400){
         if(data == 400){
-          error_msg("<? echo $friendError ?>");
+          error_msg("<?php echo $friendError ?>");
         }else if(data == 401 || data == 403){
           noFriend();
         }else if(data == 404){
-          error_msg("<? echo $friendNotFound ?>")
+          error_msg("<?php echo $friendNotFound ?>")
         }
         $('#loadingIndicator_friends').hide();
       }else{
@@ -286,7 +286,7 @@
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Friend couldn't be removed.");
         }else{
-          $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><? echo $addasfriend ?></a>');
+          $('#addAsFriendLink').html('<a href="javascript:addAsFriend();"><?php echo $addasfriend ?></a>');
         }
       });
   }
@@ -297,7 +297,7 @@
         if(data == 400 || data == 401 || data == 402 || data == 403 || data == 404){
           error_msg("Friend couldn't be added successfully.");
         }else{
-          $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();"><? echo $removeasfriend ?></a>');
+          $('#addAsFriendLink').html('<a href="javascript:removeAsFriend();"><?php echo $removeasfriend ?></a>');
         }
       });
   }

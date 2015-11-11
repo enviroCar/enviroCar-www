@@ -78,13 +78,13 @@ toggle_visibility('registration_fail');
 	 
     <div class="span3 offset=2 "> 
 	<h3 class="form-signin-heading">Change your profile:</h3>
-		current user name: <?echo $_SESSION['name']; ?> 
+		current user name: <?php echo $_SESSION['name']; ?> 
         <input id="name" type="text" class="input-block-level" placeholder="Please enter new name">
-        current password: <!--<?echo $_SESSION['password']; ?> -->
+        current password: <!--<?php echo $_SESSION['password']; ?> -->
 		<input id="password1"type="text" class="input-block-level" placeholder="Please enter new password">
        <br></br>
 		<input id="password2"type="text" class="input-block-level" placeholder="Please enter new password again">
-		current email: <?echo $_SESSION['mail']; ?> 
+		current email: <?php echo $_SESSION['mail']; ?> 
 		<input id="email" type="text" class="input-block-level" placeholder="Please enter new email">
 		<button class="btn btn-large btn-primary" type="submit" onclick="change_profil"()>Save settings</button>
       </form>

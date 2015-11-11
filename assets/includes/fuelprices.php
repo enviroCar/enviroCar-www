@@ -26,4 +26,3 @@ if(isset($_GET['fuelType'])){
 		echo $response['status'];
 	}
 }
-?>

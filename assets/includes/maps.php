@@ -34,5 +34,3 @@ if(isset($_GET['maps'])){
 		echo $response['status'];
 	}
 }
-
-?>

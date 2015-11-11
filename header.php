@@ -168,23 +168,23 @@ function echoActiveClassIfRequestMatches($requestUri){
           
           <div class="nav-collapse collapse">
             <ul id="main-nav" class="nav pull-right droid-text">
-              <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><? echo $about ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><? echo $dashboard ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><? echo $mapsandstatistics ?></a></li>
-              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><? echo $data ?></a></li>
-			  <li><a href="http://envirocar.github.io/" target="_blank" title="<? echo $softwareTitle ?>"><? echo $software ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("about")?>><a href="about.php"><?php echo $about ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dashboard")?>><a href="dashboard.php"><?php echo $dashboard ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("mapsandstatistics")?>><a href="mapsandstatistics.php"><?php echo $mapsandstatistics ?></a></li>
+              <li <?=echoActiveClassIfRequestMatches("dataaccess")?>><a href="dataaccess.php"><?php echo $data ?></a></li>
+			  <li><a href="http://envirocar.github.io/" target="_blank" title="<?php echo $softwareTitle ?>"><?php echo $software ?></a></li>
               <?php if(!is_logged_in()){ ?>
-                <li><a href="./registration.php"><? echo $index_register;?></a></li>
+                <li><a href="./registration.php"><?php echo $index_register;?></a></li>
                 <li class="dropdown">
-                <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><? echo $index_sign_in;?> <strong class="caret"></strong></a>
+                <a class="dropdown-toggle sign_in" href="#" data-toggle="dropdown"><?php echo $index_sign_in;?> <strong class="caret"></strong></a>
                 <div class="dropdown-menu" style="padding: 15px;">
-                 <h4 class="form-signin-heading"><? echo $index_Please_sign_in;?></h4>
+                 <h4 class="form-signin-heading"><?php echo $index_Please_sign_in;?></h4>
                   <form name="login" action="index.php" method="post" style="display: inline;">
-                    <input type="hidden" name="login_form_attempt" value="<?echo $login_form_attempt+1;?>">
-                    <input type="hidden" name="fwdref" value="<?echo $login_referer;?>">
-                    <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<? echo $index_user_name;?>" value="<?echo $login_name;?>"/>
-                    <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<? echo $index_password;?>" />
-                    <input type="submit" class="btn btn-medium btn-primary" value="<? echo $index_sign_in;?>" style="float: left"/>
+                    <input type="hidden" name="login_form_attempt" value="<?php echo $login_form_attempt+1;?>">
+                    <input type="hidden" name="fwdref" value="<?php echo $login_referer;?>">
+                    <input type="text"  id="login_name"   name="login_name"   class="input-block-level" placeholder="<?php echo $index_user_name;?>" value="<?php echo $login_name;?>"/>
+                    <input type="password"  id="login_password"   name="login_password"   class="input-block-level" placeholder="<?php echo $index_password;?>" />
+                    <input type="submit" class="btn btn-medium btn-primary" value="<?php echo $index_sign_in;?>" style="float: left"/>
                   </form>
                 </div>
                 </li>
@@ -195,10 +195,10 @@ function echoActiveClassIfRequestMatches($requestUri){
                     <strong class="caret"></strong>
                   </a>
                   <ul id="session-menu" class="dropdown-menu">
-                    <li><a href="editprofile.php?user=<?echo $_SESSION['name']?> "><? echo $changeprofile ?> </a></li>
-                    <li><a href="dashboard.php"><? echo $dashboard ?></a></li>
+                    <li><a href="editprofile.php?user=<?php echo $_SESSION['name']?> "><?php echo $changeprofile ?> </a></li>
+                    <li><a href="dashboard.php"><?php echo $dashboard ?></a></li>
                     <li class="divider"></li>
-                    <li><a href="./assets/includes/authentification.php?logout"><? echo $logout ?></a></li>
+                    <li><a href="./assets/includes/authentification.php?logout"><?php echo $logout ?></a></li>
                   </ul>
                 </li>
               <?php } ?>
@@ -218,6 +218,6 @@ function echoActiveClassIfRequestMatches($requestUri){
 <?php if(isset($_GET['lost_password_access_denied'])){ ?>
   <div class="container alert alert-block alert-error fade in"> 
   <a class="close" data-dismiss="alert">×</a> 
-  <? echo $index_lost_password_access_denied; ?>
+  <?php echo $index_lost_password_access_denied; ?>
   </div> 
 <?php } ?>

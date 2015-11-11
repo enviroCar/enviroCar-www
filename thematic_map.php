@@ -32,7 +32,7 @@ include('header.php');
   <div id="sensor_headline" style="float:left"></div>
 	<div>
 		<div class="btn-group" style="float:right">
-		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
+		  <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><?php echo $choosesensor ?>
 			<span class="caret"></span>
 		  </button>
 		  <ul id="sensorsDropdown" class="dropdown-menu">
@@ -46,7 +46,7 @@ include('header.php');
 	
 	<p id="legend"></p>
 	
-	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><? echo $routeoverview ?></a></p>
+	<p style="float:right; z-index:5000;"><a class="btn" href="routes.php"><?php echo $routeoverview ?></a></p>
 </div>
 
 <style type="text/css">
@@ -186,11 +186,11 @@ var chosenSensor = null;
   $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
     if(data >= 400){
       if(data == 400){
-        error_msg("<? echo $statisticsError ?>");
+        error_msg("<?php echo $statisticsError ?>");
       }else if(data == 401 || data == 403){
-        error_msg("<? echo $statisticsNotAllowed ?>")
+        error_msg("<?php echo $statisticsNotAllowed ?>")
       }else if(data == 404){
-        error_msg("<? echo $statisticsNotFound ?>")
+        error_msg("<?php echo $statisticsNotFound ?>")
       }
       $('#loadingIndicator').hide();
     }else{
@@ -204,11 +204,11 @@ var chosenSensor = null;
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
       if(data >= 400){
         if(data == 400){
-          error_msg("<? echo $routeError ?>");
+          error_msg("<?php echo $routeError ?>");
         }else if(data == 401 || data == 403){
-          error_msg("<? echo $routeNotAllowed ?>")
+          error_msg("<?php echo $routeNotAllowed ?>")
         }else if(data == 404){
-          error_msg("<? echo $routeNotFound ?>")
+          error_msg("<?php echo $routeNotFound ?>")
         }
         $('#loadingIndicator').hide();
       }else{   
@@ -229,6 +229,5 @@ var chosenSensor = null;
 
 
 
-<?
+<?php 
 include('footer.php');
-?>

@@ -34,7 +34,7 @@ $user	= $_GET["user"];
 
 <div id="password-reset-error" class="container alert alert-block alert-error fade in" style="display: none;"> 
   <a class="close" data-dismiss="alert">×</a>
-  <?echo $index_password_reset_error ?>
+  <?php echo $index_password_reset_error ?>
 </div>
 
 <div class="container rightband">
@@ -46,26 +46,26 @@ $user	= $_GET["user"];
 		  <form class="form" id="reset-password-form" accept-charset="UTF-8">
 		  	<div class="control-group">
 		      <div class="controls">
-		  			<input id="code" name="code" type="hidden" class="input" value="<? echo $code; ?>"/>
+		  			<input id="code" name="code" type="hidden" class="input" value="<?php echo $code; ?>"/>
 		  		</div>
 	      </div>
 		  	<div class="control-group">
 		  		<div class="controls">
-		  			<input id="password" name="user" type="hidden" class="input" value="<? echo $user; ?>"/>
+		  			<input id="password" name="user" type="hidden" class="input" value="<?php echo $user; ?>"/>
 		  		</div>
 		  	</div>
 		  	
 	      <div class="control-group">
-		  		<label for="password"><? echo $newPassword; ?></label>
+		  		<label for="password"><?php echo $newPassword; ?></label>
 		      <div class="controls">
-		  			<input data-validation-minlength-message="<?php echo $password_validation_message ?>" minlength="6" id="password" name="password" type="password" class="input" placeholder="<? echo $newPassword; ?>"/>
+		  			<input data-validation-minlength-message="<?php echo $password_validation_message ?>" minlength="6" id="password" name="password" type="password" class="input" placeholder="<?php echo $newPassword; ?>"/>
 		  		</div>
 	      </div>
 	      
 	      <div class="control-group">
-	  			<label for="passwordRepeat"><? echo $passwordRepeat; ?></label>
+	  			<label for="passwordRepeat"><?php echo $passwordRepeat; ?></label>
 		      <div class="controls">
-		  			<input data-validation-match-message="<?php echo $password_match_validation_message ?>" data-validation-match-match="password" id="passwordRepeat" name="passwordRepeat" type="password" class="input" placeholder="<? echo $passwordRepeat; ?>"/>
+		  			<input data-validation-match-message="<?php echo $password_match_validation_message ?>" data-validation-match-match="password" id="passwordRepeat" name="passwordRepeat" type="password" class="input" placeholder="<?php echo $passwordRepeat; ?>"/>
 	        </div>
 	      </div>
 
@@ -80,6 +80,6 @@ $user	= $_GET["user"];
 </div>
 
 
-<?
+<?php 
   include('footer.php');
 ?>
