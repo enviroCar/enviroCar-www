@@ -48,6 +48,12 @@ Within the files ``/includes/user.php`` and ``/includes/groups.php`` are several
 
 The complete server-client communication is based on those php-functions as it allows to handle the user-credentials on the server instead of revealing the password on the client side.
 
+As the code is using short tags (code between <? and ?> tags is recognized as PHP source), the option ``short_open_tag = On`` needs to be set in the ``php.ini`` file. 
+
+Only for Windows machines:
+
+As the server connections are based on curl using SSL, the CA root certificate bundle needs to be downloaded, see for example http://curl.haxx.se/docs/caextract.html, and the path to the bundle needs to be set in the ``php.ini`` file as well, e.g. ``curl.cainfo=c:\php\cacert.pem``.
+
 ### Languages
 
 Languages are currently managed as ``.php`` files in ``enviroCar-www\assets\includes`` named ``lang_[twoLetterIdentifierForLanguage].php``.
