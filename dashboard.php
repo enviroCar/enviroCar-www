@@ -135,7 +135,7 @@ include('header.php');
     
     
     <div class="span9">
-      <div class="row-fluid">
+      <!--<div class="row-fluid">
         <div class="span12" id="comparison">
           <h2>
             <?php echo $dashboard_overview; ?>
@@ -147,7 +147,7 @@ include('header.php');
           </div>
         </div>
         <hr class="featurette-divider">
-      </div>
+      </div>-->
       
       <div class="row-fluid">
         <div class="span12" id="tracks-span">
