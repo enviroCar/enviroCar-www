@@ -30,8 +30,8 @@ if(!is_logged_in()){
 		<div class="row-fluid">
 			<div class="span6 well data-preview leftband first-row">
 				<div class="span4">
-					<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=3c37371867d64b9a83e1b4fe56a34e72&extent=7.3198,51.7552,7.9927,52.1116" class="thumbnail" target="_blank" title="Live track overview map">
-						<img src="http://www.arcgis.com/sharing/rest/content/items/3c37371867d64b9a83e1b4fe56a34e72/info/thumbnail/ago_downloaded.png" alt="map preview">
+					<a href="http://52north.maps.arcgis.com/apps/webappviewer/index.html?id=602699b2f09340f6bd4086cacf2916d4" class="thumbnail" target="_blank" title="Live track overview map">
+						<img src="http://52north.maps.arcgis.com/sharing/rest/content/items/602699b2f09340f6bd4086cacf2916d4/info/thumbnail/aggregation_thumbnail.png" alt="map preview">
 					</a>
 				</div>
 	      <div class="span8">
