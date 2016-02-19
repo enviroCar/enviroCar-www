@@ -284,11 +284,11 @@ include('header.php');
       if(data >= 400){
         console.log(data);
         if(data == 400){
-            error_msg("<? echo $statisticsError ?>");
+            error_msg("<?php echo $statisticsError ?>");
         }else if(data == 401 || data == 403){
-          error_msg("<? echo $statisticsNotAllowed ?>")
+          error_msg("<?php echo $statisticsNotAllowed ?>")
         }else if(data == 404){
-          error_msg("<? echo $statisticsNotFound ?>")
+          error_msg("<?php echo $statisticsNotFound ?>")
         }
         $('#loadingIndicator_route').hide();
       }else{
@@ -877,11 +877,11 @@ $(document).ready(function () {
     if(data >= 400){
       console.log(data);
       if(data == 400){
-          error_msg("<? echo $routeError ?>");
+          error_msg("<?php echo $routeError ?>");
       }else if(data == 401 || data == 403){
-        error_msg("<? echo $routeNotAllowed ?>")
+        error_msg("<?php echo $routeNotAllowed ?>")
       }else if(data == 404){
-        error_msg("<? echo $routeNotFound ?>")
+        error_msg("<?php echo $routeNotFound ?>")
       }
       $('#loadingIndicator').hide();
     }else{
@@ -1051,6 +1051,5 @@ $(document).ready(function () {
 
 </script>
 
-<?
+<?php 
 include('footer.php');
-?>

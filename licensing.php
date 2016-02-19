@@ -30,9 +30,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_datalicensing_head"><?echo $licensing_datalicensing; ?></h2>
+				<h2 id="licensing_datalicensing_head"><?php echo $licensing_datalicensing; ?></h2>
 				<p style="text-align: justify">
-				<?echo $licensing_datalicensingtext; ?>
+				<?php echo $licensing_datalicensingtext; ?>
 				</p>
 			</div>
 		</div>
@@ -41,9 +41,9 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_allowed_head"><?echo $licensing_allowed; ?></h2>
+				<h2 id="licensing_allowed_head"><?php echo $licensing_allowed; ?></h2>
 				<p style="text-align: justify">
-				<?echo $licensing_allowedtext; ?>
+				<?php echo $licensing_allowedtext; ?>
 				</p>
 			</div>
 		</div>
@@ -52,14 +52,13 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span" style="padding-right: 1ex">
-				<h2 id="licensing_aslongas_head"><?echo $licensing_aslongas; ?></h2>
+				<h2 id="licensing_aslongas_head"><?php echo $licensing_aslongas; ?></h2>
 				<p style="text-align: justify">
-				<?echo $licensing_aslongastext; ?>
+				<?php echo $licensing_aslongastext; ?>
 				</p>
 			</div>
 		</div>
 	</div>
 
-<?
+<?php 
 include('footer.php');
-?>

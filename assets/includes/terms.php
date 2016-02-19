@@ -29,5 +29,3 @@ if(isset($_GET['getTerms'])){
 		echo $response['status'];
 	}
 }
-
-?>

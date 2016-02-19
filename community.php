@@ -41,7 +41,7 @@ if(!is_logged_in()){
 
   <div>
     <div class="btn-group" style="float:right">
-      <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><? echo $choosesensor ?>
+      <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><?php echo $choosesensor ?>
       <span class="caret"></span>
       </button>
       <ul id="sensorsDropdown" class="dropdown-menu">
@@ -262,6 +262,5 @@ var chosensensor = null;
 
 
 
-<?
+<?php 
 include('footer.php');
-?>

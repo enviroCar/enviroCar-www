@@ -41,5 +41,3 @@ else if(isSet($_SESSION['lang'])){
 
 
 include('lang_'.$lang.'.php');
-
-?>

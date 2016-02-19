@@ -39,7 +39,7 @@
 		getBadges();
 		$('#username').html(user);
 		
-		friend = "<? echo $user?>";
+		friend = "<?php echo $user?>";
 		values = [];
 		values2 = [];
 		count=0;
@@ -55,13 +55,13 @@
 		if(data >= 400){
 		  console.log(data);
 		  if(data == 400){
-			error_msg("<? echo $statisticsError ?>");
+			error_msg("<?php echo $statisticsError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $statisticsNotAllowed ?>")
+			error_msg("<?php echo $statisticsNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $statisticsNotFound ?>")
+			error_msg("<?php echo $statisticsNotFound ?>")
 		  }
 		  $('#loadingIndicator_overview').hide();
 		}
@@ -85,13 +85,13 @@
 		if(data >= 400){
 		  console.log(data);
 		  if(data == 400){
-			error_msg("<? echo $routeError ?>");
+			error_msg("<?php echo $routeError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $routeNotAllowed ?>")
+			error_msg("<?php echo $routeNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $routeNotFound ?>")
+			error_msg("<?php echo $routeNotFound ?>")
 		  }
 		}
 		else{
@@ -106,13 +106,13 @@
 		if(data >= 400){
 		  console.log(data);
 		  if(data == 400){
-			error_msg("<? echo $routeError ?>");
+			error_msg("<?php echo $routeError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $routeNotAllowed ?>")
+			error_msg("<?php echo $routeNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $routeNotFound ?>")
+			error_msg("<?php echo $routeNotFound ?>")
 		  }
 		}
 		else{
@@ -139,17 +139,17 @@
 		$('#loadingIndicator_tracks').hide();
 	  });
 	  
-	  $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
+	  $.get('./assets/includes/users.php?friendsOf=<?php echo $_SESSION['name'] ?>', function(data) {
 		if(data >= 400){
 		  console.log(data);
 		  if(data == 400){
-			error_msg("<? echo $friendError ?>");
+			error_msg("<?php echo $friendError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $friendNotAllowed ?>")
+			error_msg("<?php echo $friendNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $friendNotFound ?>")
+			error_msg("<?php echo $friendNotFound ?>")
 		  }
 		  $('#loadingIndicator_friends').hide();
 		}
@@ -160,7 +160,7 @@
 			  addFriendToList(data.users[i].name);
 			}
 		  }else{
-			$('#friendsList').html("<? echo $madeNoFriends ?>");
+			$('#friendsList').html("<?php echo $madeNoFriends ?>");
 		  }
 		}
 		$('#loadingIndicator_friends').hide();
@@ -205,13 +205,13 @@
 		if(data >= 400){
 		  console.log(data);
 		  if(data == 400){
-			error_msg("<? echo $personError ?>");
+			error_msg("<?php echo $personError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $personNotAllowed ?>")
+			error_msg("<?php echo $personNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $personNotFound ?>")
+			error_msg("<?php echo $personNotFound ?>")
 		  }
 		  $('#loadingIndicator').hide();
 		}
@@ -228,16 +228,16 @@
 		}
 	  });
 	  
-	  $.get('./assets/includes/users.php?groupsOf=<? echo $_SESSION["name"] ?>', function(data) {
+	  $.get('./assets/includes/users.php?groupsOf=<?php echo $_SESSION["name"] ?>', function(data) {
 		if(data >= 400){
 		  if(data == 400){
-			error_msg("<? echo $groupOfError ?>");
+			error_msg("<?php echo $groupOfError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $groupOfNotAllowed ?>")
+			error_msg("<?php echo $groupOfNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $groupOfNotFound ?>")
+			error_msg("<?php echo $groupOfNotFound ?>")
 		  }
 		  $('#loadingIndicator').hide();
 		}
@@ -248,7 +248,7 @@
 			  addGroupToList(data.groups[i].name);
 			}
 		  }else{
-			$('#groupsList').html("<? echo $hasNoGroups ?>");
+			$('#groupsList').html("<?php echo $hasNoGroups ?>");
 		  }
 		}
 	  }
@@ -257,13 +257,13 @@
 	  $.get('./assets/includes/groups.php?groups', function(data){
 		if(data >= 400){
 		  if(data == 400){
-			error_msg("<? echo $groupError ?>");
+			error_msg("<?php echo $groupError ?>");
 		  }
 		  else if(data == 401 || data == 403){
-			error_msg("<? echo $groupNotAllowed ?>")
+			error_msg("<?php echo $groupNotAllowed ?>")
 		  }
 		  else if(data == 404){
-			error_msg("<? echo $groupNotFound ?>")
+			error_msg("<?php echo $groupNotFound ?>")
 		  }
 		  $('#loadingIndicator_groups').hide();
 		}
@@ -281,10 +281,10 @@
 		$('#loadingIndicator_groups').hide();
 	  });
 	  
-	  $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
+	  $.get('assets/includes/users.php?userStatistics=<?php echo $_SESSION['name'] ?>', function(data) {
 		
 		if(data >= 400){
-		  error_msg("<? echo $statisticsError ?>");
+		  error_msg("<?php echo $statisticsError ?>");
 		  $('#loadingIndicator_graph').hide();
 		}else{
 		  data = JSON.parse(data);
@@ -302,7 +302,7 @@
 			  
 				if(data >= 400){
 				  if(data === 401 || data === 403) noFriend();
-				  else error_msg("<? echo $statisticsNotFound ?>");
+				  else error_msg("<?php echo $statisticsNotFound ?>");
 				  $('#loadingIndicator_graph').hide();
 				}else{
 				  data = JSON.parse(data);
@@ -379,7 +379,7 @@
       }
     }
     else{
-      $('#tracks-list').append("<? echo $noroutesavailable ?>");
+      $('#tracks-list').append("<?php echo $noroutesavailable ?>");
     }
   }
 
@@ -388,13 +388,13 @@
     if(data >= 400){
       console.log(data);
       if(data == 400){
-        error_msg("<? echo $activityError ?>");
+        error_msg("<?php echo $activityError ?>");
       }
       else if(data == 401 || data == 403){
-        error_msg("<? echo $activityNotAllowed ?>")
+        error_msg("<?php echo $activityNotAllowed ?>")
       }
       else if(data == 404){
-        error_msg("<? echo $activityNotFound ?>")
+        error_msg("<?php echo $activityNotFound ?>")
       }
       $('#loadingIndicator_activities').hide();
     }
@@ -404,31 +404,31 @@
         for(i = 0; i < data.activities.length; i++){
           var activity = data.activities[i];
           if(activity.type == "JOINED_GROUP"){
-            if(activity.group)addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
+            if(activity.group)addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <?php echo $joined ?> "+activity.group.name, convertToLocalTime(activity.time));
           }
           else if(activity.type == "CREATED_GROUP"){
-            if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $createdGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
+            if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <?php echo $createdGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
           }
           else if(activity.type == "FRIENDED_USER"){
-            addRecentActivities(getAvatar(activity.other.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
+            addRecentActivities(getAvatar(activity.other.name, 30), "profile.php?user="+activity.other.name, activity.user.name+" <?php echo $friended ?> "+activity.other.name, convertToLocalTime(activity.time));
           }
           else if(activity.type == "CREATED_TRACK"){
-            if(typeof activity.track != 'undefined') addRecentActivities("./assets/img/route.svg", "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
+            if(typeof activity.track != 'undefined') addRecentActivities("./assets/img/route.svg", "route.php?id="+activity.track.id, activity.user.name+" <?php echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
           }
           else if(activity.type == "LEFT_GROUP"){
-            if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
+            if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <?php echo $left ?> "+activity.group.name, convertToLocalTime(activity.time));
           }
           else if(activity.type == "CHANGED_GROUP"){
-            if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
+            if(activity.group) addRecentActivities("./assets/img/person.svg", "group.php?group="+activity.group.name, activity.user.name+" <?php echo $changedGroup ?> "+activity.group.name, convertToLocalTime(activity.time));
           }
           else if(activity.type == "CHANGED_PROFILE"){
             
-            addRecentActivities(getAvatar(activity.user.name, 30), "<? echo $user ?>" == "<? echo $loggedInUser ?>" ? "editprofile.php?user="+activity.user.name : "profile.php?user="+activity.user.name, activity.user.name+" <? echo $changedProfile ?>", convertToLocalTime(activity.time));
+            addRecentActivities(getAvatar(activity.user.name, 30), "<?php echo $user ?>" == "<?php echo $loggedInUser ?>" ? "editprofile.php?user="+activity.user.name : "profile.php?user="+activity.user.name, activity.user.name+" <?php echo $changedProfile ?>", convertToLocalTime(activity.time));
           }
         }
       }
       else{
-        $('#recentActivities').append("<? echo $norecentactivities ?>");
+        $('#recentActivities').append("<?php echo $norecentactivities ?>");
       }
       $('#loadingIndicator_activities').hide();
     }
@@ -457,13 +457,13 @@
           if(data >= 400){
             console.log(data);
             if(data == 400){
-              error_msg("<? echo $routeError ?>");
+              error_msg("<?php echo $routeError ?>");
             }
             else if(data == 401 || data == 403){
-              error_msg("<? echo $routeNotAllowed ?>")
+              error_msg("<?php echo $routeNotAllowed ?>")
             }
             else if(data == 404){
-              error_msg("<? echo $routeNotFound ?>")
+              error_msg("<?php echo $routeNotFound ?>")
             }
           }
           else{
@@ -574,40 +574,40 @@
     $.get('./assets/includes/users.php?user='+user, function(data){
       if(data >= 400){
         if(data == 400){
-          error_msg("<? echo $personError ?>");
+          error_msg("<?php echo $personError ?>");
         }else if(data == 401 || data == 403){
           noFriend();
         }else if(data == 404){
-          error_msg("<? echo $personNotFound ?>")
+          error_msg("<?php echo $personNotFound ?>")
         }
         $('#loadingIndicator').hide();
       }else{
         data = JSON.parse(data);
         if(data.firstName){
-          $('#userInformation').append('<li><? echo $firstname ?>: <b>'+data.firstName+'</b></li>');
+          $('#userInformation').append('<li><?php echo $firstname ?>: <b>'+data.firstName+'</b></li>');
           $('#firstName').val(data.firstName);
         }
         if(data.mail){
           $('#mail').val(data.mail);
         }
         if(data.lastName){
-          $('#userInformation').append('<li><? echo $lastname ?>: <b>'+data.lastName+'</b></li>');
+          $('#userInformation').append('<li><?php echo $lastname ?>: <b>'+data.lastName+'</b></li>');
           $('#lastName').val(data.lastName);
         }
         if(data.gender){
-          $('#userInformation').append('<li><? echo $gender ?>: <b>'+(data.gender == 'm' ? '<? echo $male ?>':'<? echo $female ?>') +'</b></li>');
+          $('#userInformation').append('<li><?php echo $gender ?>: <b>'+(data.gender == 'm' ? '<?php echo $male ?>':'<?php echo $female ?>') +'</b></li>');
           $('#gender').val(data.gender);
         }
         if(data.dayOfBirth){
-          $('#userInformation').append('<li><? echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
+          $('#userInformation').append('<li><?php echo $birthday ?>: <b>'+data.dayOfBirth+'</b></li>');
           $('#dayOfBirth').val(data.dayOfBirth);
         }
         if(data.location){
-          $('#userInformation').append('<li><? echo $location ?>: <b>'+data.location+'</b></li>');
+          $('#userInformation').append('<li><?php echo $location ?>: <b>'+data.location+'</b></li>');
           $('#location').val(data.location);
         }
         if(data.country){
-          $('#userInformation').append('<li><? echo $country ?>: <b>'+data.country+'</b></li>');
+          $('#userInformation').append('<li><?php echo $country ?>: <b>'+data.country+'</b></li>');
           $('#country').val(data.country);
         }
         if(data.url){
@@ -615,7 +615,7 @@
           $('#url').val(data.url);
         }
         if(data.language){
-          $('#userInformation').append('<li><? echo $language ?>: <b>'+data.language+'</b></li>');
+          $('#userInformation').append('<li><?php echo $language ?>: <b>'+data.language+'</b></li>');
           $('#language').val(data.language);
         }
         if(data.aboutMe){
@@ -677,7 +677,7 @@
     $.get('./assets/includes/users.php?updateAcceptedTermsofUse&date=' + serverTermsOfUseIssuedDate, function(data){    
       if(data >= 400){
         
-        error_msg("<? echo $error_setting_terms_on_server ?>");
+        error_msg("<?php echo $error_setting_terms_on_server ?>");
         
       }else{        
         toggle_visibility('accept_terms_div');        
@@ -713,11 +713,11 @@
     data.addColumn('number', 'Speed');
     data.addColumn('number', 'CO2');  
     
-    data.addRow(['<? echo $_SESSION['name'] ?>', values[speedIndex], values[co2Index]]);     
-    data.addRow(['<? echo $allUsers ?>', values2[speedIndex], values2[co2Index]]);
+    data.addRow(['<?php echo $_SESSION['name'] ?>', values[speedIndex], values[co2Index]]);     
+    data.addRow(['<?php echo $allUsers ?>', values2[speedIndex], values2[co2Index]]);
     
     var options = {
-      title: '<? echo $statistics ?>',
+      title: '<?php echo $statistics ?>',
       backgroundColor: 'white',
       vAxes: {0: {title:'km/h', logScale: false, minValue:0}, 1: {title:'kg/h', logScale: false, minValue:0}},
       series: {
@@ -734,7 +734,7 @@
   $(function () {
     $('#createGroupForm').submit(function(){
       if($('#group_name').val() === '' || $('#group_description').val() === ''){
-        alert("<? echo $bothFieldsFilled ?>");
+        alert("<?php echo $bothFieldsFilled ?>");
       }
       else{
         if(!validateInput($('#group_name').val()) && !validateInput($('#group_description').val())){
@@ -745,7 +745,7 @@
                  , 
                  function(response){
                    if(response >= 400){
-                     error_msg("<? echo $creategrouperror ?>");
+                     error_msg("<?php echo $creategrouperror ?>");
                    }
                    else{
                      window.location.href="group.php?group="+$('#group_name').val();
@@ -755,7 +755,7 @@
         }
         else{
           $('#loadingIndicator').hide();
-          alert("<? echo $invalidCharacterError ?>");
+          alert("<?php echo $invalidCharacterError ?>");
         }
       }
       return false;

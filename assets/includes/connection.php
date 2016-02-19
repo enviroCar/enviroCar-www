@@ -268,5 +268,3 @@ function processTrackNumberResponse($response) {
 		return $response['status'];
 	}
 }
-
-?>

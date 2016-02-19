@@ -30,14 +30,14 @@ if(!is_logged_in()){
 <!-- Validate plugin -->
 <script src="./assets/js/jquery.validate.min.js"></script>
 
-<?
+<?php 
 if(isset($_GET['name_taken'])){
 ?>
   <div class="container alert alert-block alert-info fade in"> 
   <a class="close" data-dismiss="alert">×</a>  
-  <? echo $index_register_name_taken; ?>
+  <?php echo $index_register_name_taken; ?>
 </div> 
-<?
+<?php 
 }
 ?>
 
@@ -85,7 +85,7 @@ if(isset($_GET['name_taken'])){
 
 
 <script src="./assets/js/jqBootstrapValidation.js"></script>
-<?
+<?php 
 	include('footer.php');
 ?>
 

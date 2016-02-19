@@ -26,7 +26,7 @@ include('header.php');
 <div class="container leftband">
  <div class="span5 offset6">
   <div class="btn-group" style="float:right">
-      <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong><? echo $pickfriends ?></strong> <span class="caret"></span>
+      <button class="btn dropdown-toggle" data-toggle="dropdown"  style="width:250px"><strong><?php echo $pickfriends ?></strong> <span class="caret"></span>
       </button>
       <ul id="friendsDropdown" class="dropdown-menu" style=" max-height: 300px; width:200px; overflow-y: scroll;">
 
@@ -39,7 +39,7 @@ include('header.php');
  
   <div class="span5">
       <div id="userStatistics" style="max-height:400px; overflow:auto;">
-    <p style="font-size:25px"><? echo $statisticsOf ?> <? echo $_SESSION['name'] ?>:</p> 
+    <p style="font-size:25px"><?php echo $statisticsOf ?> <?php echo $_SESSION['name'] ?>:</p> 
   </div>
         
   </div>
@@ -69,9 +69,9 @@ include('header.php');
 
  //Display the user Statistics.. Append the statistics values, icons, tooltips.... if any statistical value equal to Zero, do not display 0 display '<strong>Not Calculated</strong>'
 //fetch the statiscial values from the server
- $.get('assets/includes/users.php?userStatistics=<? echo $_SESSION['name'] ?>', function(data) {
+ $.get('assets/includes/users.php?userStatistics=<?php echo $_SESSION['name'] ?>', function(data) {
     if(data >= 400){
-        error_msg("<? echo $statisticsError ?>");
+        error_msg("<?php echo $statisticsError ?>");
         $('#loadingIndicator').hide();
     }else{
       data = JSON.parse(data);
@@ -193,8 +193,8 @@ google.load("visualization", "1", {packages:["corechart"]});
     fname = friend;
     $.get('assets/includes/users.php?friendStatistics='+friend, function(data) {
       if(data >= 400){
-          if(data == 401 || data == 403) error_msg(friend+" <? echo $noFriendsYet ?>.");
-          else error_msg("<? echo $statisticsNotFound ?>");
+          if(data == 401 || data == 403) error_msg(friend+" <?php echo $noFriendsYet ?>.");
+          else error_msg("<?php echo $statisticsNotFound ?>");
       }else{
         $('#fStatistics').text("");
         data = JSON.parse(data);
@@ -202,7 +202,7 @@ google.load("visualization", "1", {packages:["corechart"]});
         for (h=0; h<count; h++ ){
           values2[h]=0;
         }
-        $('#friendHeadline').html("<? echo $statisticsOf ?> "+friend+":");
+        $('#friendHeadline').html("<?php echo $statisticsOf ?> "+friend+":");
         for(i = 0; i < data.statistics.length; i++){ 
     		if (data.statistics[i].phenomenon.name=="Speed")
 				{
@@ -281,7 +281,7 @@ google.load("visualization", "1", {packages:["corechart"]});
           }
         }
         if(data.statistics.length==0){
-          $('#fStatistics').text(friend+" <? echo $noDataYet ?>");
+          $('#fStatistics').text(friend+" <?php echo $noDataYet ?>");
           values2 = [0,0,0,0];
 
         }
@@ -295,9 +295,9 @@ google.load("visualization", "1", {packages:["corechart"]});
     });
   }
 
-  $.get('./assets/includes/users.php?friendsOf=<? echo $_SESSION['name'] ?>', function(data) {
+  $.get('./assets/includes/users.php?friendsOf=<?php echo $_SESSION['name'] ?>', function(data) {
     if(data >= 400){
-      error_msg("<? echo $friendsError ?>");
+      error_msg("<?php echo $friendsError ?>");
     }else{
       data = JSON.parse(data);
       if(data.users.length > 0 ){
@@ -326,7 +326,7 @@ function drawChart()
     var data = new google.visualization.DataTable();
 	
       data.addColumn('string','Measurement'); //y-axis values
-      data.addColumn('number', '<? echo $_SESSION['name'] ?>'); //user chart seriese 
+      data.addColumn('number', '<?php echo $_SESSION['name'] ?>'); //user chart seriese 
       data.addColumn('number', fname);  // friend chart seriese
 
       data.addRows(count);
@@ -347,7 +347,7 @@ function drawChart()
       }
  
         var options = {
-          title: '<? echo $statistics ?>',
+          title: '<?php echo $statistics ?>',
           vAxis: {title: '',  titleTextStyle: {color: 'red'}}
         };
 
@@ -360,6 +360,5 @@ function drawChart()
   </script>
   
   
-<?
+<?php 
 include('footer.php');
-?>

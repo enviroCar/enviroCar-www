@@ -122,9 +122,4 @@ else
 $lang = 'en';
 }
 
-
-
 include('lang_'.$lang.'.php');
-
-
-?>

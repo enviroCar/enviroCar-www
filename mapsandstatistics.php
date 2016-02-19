@@ -87,6 +87,5 @@ if(!is_logged_in()){
 
 
 
-<?
+<?php 
 include('footer.php');
-?>

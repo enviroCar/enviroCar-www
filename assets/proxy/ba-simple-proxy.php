@@ -254,5 +254,3 @@ if ( $_GET['mode'] == 'native' ) {
   print $jsonp_callback ? "$jsonp_callback($json)" : $json;
   
 }
-
-?>

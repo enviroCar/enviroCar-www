@@ -19,9 +19,6 @@
 require_once('connection.php');
 require_once('config.php');
 
-	$resp = get_request_with_headers($serverurl."/tracks/?limit=1&page=0", false);
-	
-	echo processTrackNumberResponse($resp);
-	
-	
-?>
+$resp = get_request_with_headers($serverurl."/tracks/?limit=1&page=0", false);
+
+echo processTrackNumberResponse($resp);

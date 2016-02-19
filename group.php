@@ -21,7 +21,7 @@ include('header.php');
 
   	<script type="text/javascript">
   		var users = Array();
-  		var loggedInUser = '<? echo $_SESSION["name"] ?>';
+  		var loggedInUser = '<?php echo $_SESSION["name"] ?>';
 		
     function getAvatar(name, size){
       return './assets/includes/get.php?redirectUrl=https://envirocar.org/api/stable/users/'+name+'/avatar&auth=true';
@@ -34,14 +34,14 @@ include('header.php');
 
   		function joinGroup(){
         $('#loadingIndicator').show();
-  			$.get('./assets/includes/groups.php?joinGroup=<? echo $_GET['group'] ?>', function(data){
+  			$.get('./assets/includes/groups.php?joinGroup=<?php echo $_GET['group'] ?>', function(data){
 	      		if(data >= 400){
       			  if(data == 400){
-      			    error_msg("<? echo $groupError ?>");
+      			    error_msg("<?php echo $groupError ?>");
       			  }else if(data == 401 || data == 403){
-      			    error_msg("<? echo $joinGroupNotAllowed ?>")
+      			    error_msg("<?php echo $joinGroupNotAllowed ?>")
       			  }else if(data == 404){
-      			    error_msg("<? echo $groupNotFound ?>")
+      			    error_msg("<?php echo $groupNotFound ?>")
       			  }
       			  $('#loadingIndicator').hide();
       			}else{
@@ -53,7 +53,7 @@ include('header.php');
 
   		 function leaveGroup(){
         $('#loadingIndicator').show();
-  			$.get('./assets/includes/groups.php?leaveGroup=<? echo $_GET['group'] ?>', function(data){
+  			$.get('./assets/includes/groups.php?leaveGroup=<?php echo $_GET['group'] ?>', function(data){
   				if(data >= 400){
             $('#loadingIndicator').hide();
   					error_msg("The group couldn't be left successfully.");
@@ -66,7 +66,7 @@ include('header.php');
   		function deleteGroup(){
   			if(confirm("Are you sure you want to delete this group? This can't be undone!")){
           $('#loadingIndicator').show();
-	  			$.get('./assets/includes/groups.php?deleteGroup=<? echo $_GET['group'] ?>', function(data){
+	  			$.get('./assets/includes/groups.php?deleteGroup=<?php echo $_GET['group'] ?>', function(data){
 	  				if(data >= 400){
               $('#loadingIndicator').hide();
 	  					error_msg("The group couldn't be deleted successfully.");
@@ -82,14 +82,14 @@ include('header.php');
     	}
 
 
-    	$.get('./assets/includes/groups.php?group=<? echo $_GET['group'] ?>', function(data) {
+    	$.get('./assets/includes/groups.php?group=<?php echo $_GET['group'] ?>', function(data) {
 	      	if(data >= 400){
       		  if(data == 400){
-      		    error_msg("<? echo $groupError ?>");
+      		    error_msg("<?php echo $groupError ?>");
       		  }else if(data == 401 || data == 403){
-      		    error_msg("<? echo $groupNotAllowed ?>")
+      		    error_msg("<?php echo $groupNotAllowed ?>")
       		  }else if(data == 404){
-      		    error_msg("<? echo $groupNotFound ?>")
+      		    error_msg("<?php echo $groupNotFound ?>")
       		  }
       		  $('#loadingIndicator').hide();
       		}else{
@@ -98,20 +98,20 @@ include('header.php');
 		        $('#group_description').html(data.description);
 		        $('#group_owner').append('<a href="profile.php?user='+data.owner.name+'">'+data.owner.name+'</a>');
 		        if(data.owner.name == loggedInUser){
-		        	$('#delete_group').html('- <a href="javascript:deleteGroup()"><? echo $deletegroup ?></a>');
+		        	$('#delete_group').html('- <a href="javascript:deleteGroup()"><?php echo $deletegroup ?></a>');
 		        }
 		    }
 		});
 
-  		$.get('./assets/includes/groups.php?groupMembers=<? echo $_GET['group'] ?>', function(data) {
+  		$.get('./assets/includes/groups.php?groupMembers=<?php echo $_GET['group'] ?>', function(data) {
       		if(data >= 400){
       		  if(data == 400){
-      		    error_msg("<? echo $groupError ?>");
+      		    error_msg("<?php echo $groupError ?>");
       		  }else if(data == 401 || data == 403){
-      		   	$('#memberList').html("<? echo $groupMemberNotAllowed ?>");
-      		    $('#join_leave_group').html('<a href="javascript:joinGroup()"><? echo $joingroup ?></a>');
+      		   	$('#memberList').html("<?php echo $groupMemberNotAllowed ?>");
+      		    $('#join_leave_group').html('<a href="javascript:joinGroup()"><?php echo $joingroup ?></a>');
       		  }else if(data == 404){
-      		    error_msg("<? echo $groupNotFound ?>")
+      		    error_msg("<?php echo $groupNotFound ?>")
       		  }
       		  $('#loadingIndicator_members').hide();
       		}else{
@@ -128,22 +128,22 @@ include('header.php');
 		          	}
 		        }
 		        if(member){
-		          		$('#join_leave_group').html('<a href="javascript:leaveGroup()"><? echo $leavegroup ?></a>');
+		          		$('#join_leave_group').html('<a href="javascript:leaveGroup()"><?php echo $leavegroup ?></a>');
 		          	}else{
-		          		$('#join_leave_group').html('<a href="javascript:joinGroup()"><? echo $joingroup ?></a>');
+		          		$('#join_leave_group').html('<a href="javascript:joinGroup()"><?php echo $joingroup ?></a>');
 		        }
 	      	}
           $('#loadingIndicator_members').hide();
 	  	});
 
-	  	$.get('./assets/includes/groups.php?groupActivities=<? echo $_GET['group'] ?>', function(data) {
+	  	$.get('./assets/includes/groups.php?groupActivities=<?php echo $_GET['group'] ?>', function(data) {
       		if(data >= 400){
       		  if(data == 400){
-      		    error_msg("<? echo $activityError ?>");
+      		    error_msg("<?php echo $activityError ?>");
       		  }else if(data == 401 || data == 403){
-      		  	$('#groupActivities').html("<? echo $activityNotAllowed ?>");
+      		  	$('#groupActivities').html("<?php echo $activityNotAllowed ?>");
       		  }else if(data == 404){
-      		    error_msg("<? echo $activityNotFound ?>")
+      		    error_msg("<?php echo $activityNotFound ?>")
       		  }
       		  $('#loadingIndicator_activities').hide();
       		}else{
@@ -152,23 +152,23 @@ include('header.php');
 		            for(i = 0; i < data.activities.length; i++){
 		              	var activity = data.activities[i];
 		              	if(activity.type == "JOINED_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $joined ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $createdGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $createdGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "FRIENDED_USER"){
-		                	addGroupActivities(getAvatar(activity.user.name,30),getAvatar(activity.other.name,30), "profile.php?user="+activity.other.name, activity.user.name+" <? echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
+		                	addGroupActivities(getAvatar(activity.user.name,30),getAvatar(activity.other.name,30), "profile.php?user="+activity.other.name, activity.user.name+" <?php echo $friended ?>: "+activity.other.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CREATED_TRACK"){
-		                	if(typeof activity.track != 'undefined') addGroupActivities("./assets/img/route.svg",getAvatar(activity.user.name,30), "route.php?id="+activity.track.id, activity.user.name+" <? echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
+		                	if(typeof activity.track != 'undefined') addGroupActivities("./assets/img/route.svg",getAvatar(activity.user.name,30), "route.php?id="+activity.track.id, activity.user.name+" <?php echo $createdRoute ?>: "+activity.track.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "LEFT_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $left ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CHANGED_PROFILE"){
-		                	addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "profile.php?user="+activity.user.name, activity.user.name+' <? echo $changedProfile?>', convertToLocalTime(activity.time));
+		                	addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "profile.php?user="+activity.user.name, activity.user.name+' <?php echo $changedProfile?>', convertToLocalTime(activity.time));
 		              	}else if(activity.type == "CHANGED_GROUP"){
-		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <? echo $changedGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
+		                	if(activity.group) addGroupActivities("./assets/img/person.svg",getAvatar(activity.user.name,30), "group.php?group="+activity.group.name, activity.user.name+" <?php echo $changedGroup ?>: "+activity.group.name, convertToLocalTime(activity.time));
 		              	}
 		            }
 		        }else{
-		          $('#groupActivities').append("<? echo $norecentactivities ?>");
+		          $('#groupActivities').append("<?php echo $norecentactivities ?>");
 		        }   
 	      	}
           $('#loadingIndicator_activities').hide();
@@ -209,7 +209,7 @@ include('header.php');
 				<div id="group_description"></div> 
 			</div>
 			<div class="span3 offset1">
-				<div id="group_owner"><? echo $foundedby ?>: </div>
+				<div id="group_owner"><?php echo $foundedby ?>: </div>
 				<div id="join_leave_group" style="display:inline"></div>
 				<div id="delete_group" style="display:inline"></div>
 			</div>
@@ -220,7 +220,7 @@ include('header.php');
 		<div class="container leftband">
 
 			<div class="span5">
-				<h2><? echo $member ?></h2>
+				<h2><?php echo $member ?></h2>
           <div id="loadingIndicator_members" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 				<ul id="memberList" style="max-height: 400px; overflow-y: auto;">	
 
@@ -228,7 +228,7 @@ include('header.php');
 	        </div>
 			
 			<div class="span4">
-				<h2><? echo $dashboard_group_activities ?></h2>	
+				<h2><?php echo $dashboard_group_activities ?></h2>	
           <div id="loadingIndicator_activities" style="background:url(./assets/img/ajax-loader.gif) no-repeat center center; height:100px;"></div>
 			  	<ul id="groupActivities" style="max-height: 400px; overflow-y: auto;">
 			  	</ul>
@@ -237,6 +237,5 @@ include('header.php');
 		</div>
 
 
-<?
+<?php 
 include('footer.php');
-?>

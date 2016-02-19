@@ -41,5 +41,3 @@ if(strpos($_SERVER['REQUEST_URI'], 'dev')){
 
 //WPS url variables
 $wps_fuel_price = "http://processing.envirocar.org:8080/wps/WebProcessingService?Service=WPS&Request=Execute&Version=1.0.0&Identifier=org.envirocar.wps.GetFuelPriceProcess&RawDataOutput=fuelPrice&DataInputs=fuelType=";
-
-?>

@@ -51,7 +51,3 @@ if(isset($_GET['redirectUrl'])){
 		}
 	}
 }
-
-
-
-

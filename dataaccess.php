@@ -30,27 +30,26 @@ if(!is_logged_in()){
 	<div class="container leftband">
 		<div class="row-fluid">
 			<div class="span12">
-				<h2 id="dataaccess"><? echo $dataaccess_head ?></h2>
-				<h3 id="data_api"><? echo $dataaccess_viaAPIHead ?></h3>
+				<h2 id="dataaccess"><?php echo $dataaccess_head ?></h2>
+				<h3 id="data_api"><?php echo $dataaccess_viaAPIHead ?></h3>
 				<p style="text-align: justify">
-					<? echo $dataaccess_viaAPIText ?>
+					<?php echo $dataaccess_viaAPIText ?>
 				</p>
-				<h4 id="data_endpoint"><? echo $dataaccess_endpointHead ?></h4>
+				<h4 id="data_endpoint"><?php echo $dataaccess_endpointHead ?></h4>
 				<p style="text-align: justify">
-					<? echo $dataaccess_endpointText ?>
+					<?php echo $dataaccess_endpointText ?>
 				</p>
-				<h4 id="data_download"><? echo $dataaccess_downloadHead ?></h4>
+				<h4 id="data_download"><?php echo $dataaccess_downloadHead ?></h4>
 				<p style="text-align: justify">
-				<? echo $dataaccess_downloadText ?>
+				<?php echo $dataaccess_downloadText ?>
 				</p>
-				<h3 id="data_license"><? echo $dataaccess_licenseHead ?></h3>
+				<h3 id="data_license"><?php echo $dataaccess_licenseHead ?></h3>
 				<p style="text-align: justify">
-					<? echo $dataaccess_licenseText ?>
+					<?php echo $dataaccess_licenseText ?>
 				</p>
 			</div>
 		</div>
 	</div>
 
-<?
+<?php 
 include('footer.php');
-?>

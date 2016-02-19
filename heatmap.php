@@ -1,4 +1,4 @@
-<?
+<?php 
 /*
 * This file is part of enviroCar.
 * 
@@ -191,6 +191,5 @@ include('header.php');
 
 
 
-<?
+<?php 
 include('footer.php');
-?>
