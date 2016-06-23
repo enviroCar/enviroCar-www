@@ -1,0 +1,80 @@
+{
+  "user": "naveen-gsoc",
+  "distance": 3344.22,
+  "duration": 50.2,
+  "statistics": {
+    "below60kmh": {
+      "distance": 1610.2,
+      "duration": 32.1
+    },
+    "above130kmh": {
+      "distance": 502.34,
+      "duration": 7.1
+    }
+  },
+  "trackSummaries": [
+    {
+      "id": "5743fd9ee4b09078f971f0d7",
+      "startPosition": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.935220557150537,
+            51.38094428409963
+          ]
+        }
+      },
+      "endPosition": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            7.022849717547225,
+            51.43455885936926
+          ]
+        }
+      }
+    },
+    {
+      "id": "4743fd9ee4b09078f971f0d8",
+      "startPosition": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.154406,
+            53.437805
+          ]
+        }
+      },
+      "endPosition": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            13.32280,
+            53.4959299
+          ]
+        }
+      }
+    },
+    {
+      "id": "3743fd9ee4b09078f971f0d8",
+      "startPosition": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.154406,
+            43.437805
+          ]
+        }
+      },
+      "endPosition": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.32280,
+            43.4959299
+          ]
+        }
+      }
+    }
+  ]
+}
