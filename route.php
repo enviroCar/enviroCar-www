@@ -1,7 +1,7 @@
 <?php
 /*
 * This file is part of enviroCar.
-* 
+*
 * enviroCar is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
 include('header.php');
 ?>
 
-<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>  
+<script type="text/javascript" src="./assets/OpenLayers/OpenLayers.light.js"></script>
 <script src="./assets/js/geojsontools.js"></script>
 <script src="./assets/js/canvasjs.js" type="text/javascript"></script>
 <link href="./assets/css/jquery.share.css" rel="stylesheet">
@@ -35,7 +35,7 @@ include('header.php');
         <li><p id="avg-consum"></p><p id="total-consum"></p><span class="muted"><?php echo $route_fuelConsumption; ?></span></li>
         <li><p id="avg-co2"></p><p id="total-co2"></p><span class="muted"><?php echo $route_CO2; ?></span></li>
         <li><p><br></p><p id="idle-time"></p><span class="muted"><?php echo $route_idleTime; ?></span></li>
-        <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>   
+        <li><p><br></p><p id="avg-speed"></p><span class="muted"><?php echo $route_avgSpeed; ?></span></li>
       </ul>
     </div>
     <div rel="tooltip" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $route_sharing_info; ?>" class="onoffswitch">
@@ -200,8 +200,8 @@ include('header.php');
                   <?php echo $route_dropup_maf ?>
               </label>
         </div>
-        
-        
+
+
       </div>
     </div>
   </div>
@@ -209,8 +209,8 @@ include('header.php');
 
 </div>
 <script type="text/javascript">
-  
-  
+
+
 
   var popup;
   var lengthOfTrack = 0;
@@ -261,25 +261,25 @@ include('header.php');
       $('#download-geojson').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'" download="enviroCar_track_'+$_GET(['id'])+'.geojson" target="_blank">GeoJSON (*.json)</a>');
       $('#download-shapefile').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.shp" download="enviroCar_track_'+$_GET(['id'])+'.shp" target="_blank">Zipped shapefile (*.shp)</a>');
       $('#download-csv').append('<a href="https://envirocar.org/api/stable/tracks/'+$_GET(['id'])+'.csv" download="enviroCar_track_'+$_GET(['id'])+'.csv" target="_blank">Comma-separated values (*.csv)</a>');
-  }     
+  }
 
 
 
-	
+
 	function checkPhenomenonValue(phenomenomName, feature){
-		
+
 		var phenomenom = feature.properties.phenomenons[phenomenomName];
-		
+
 		if(phenomenom){
-			return phenomenom.value;		
+			return phenomenom.value;
 		}else{
-			return 0;		
+			return 0;
 		}
-		
-	}	
-	
+
+	}
+
 	function fillStatistics(){
-	
+
     $.get('assets/includes/users.php?trackStatistics='+$_GET(['id']), function(data) {
       if(data >= 400){
         console.log(data);
@@ -294,7 +294,7 @@ include('header.php');
       }else{
       data = JSON.parse(data);
 
-		
+
 		var maxSpeed = 0;
 		var maxConsumption = 0;
 		var maxRPM = 0;
@@ -307,7 +307,7 @@ include('header.php');
       	var phenoName = data.statistics[i].phenomenon.name;
       	if(phenoName == 'Speed'){
       		maxSpeed = data.statistics[i].max;
-      		$('#avg-speed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');				
+      		$('#avg-speed').append(' <p><img src="./assets/img/icon_durchschnitt.gif">' + Math.round(data.statistics[i].avg) + ' km/h</p>');
         	}else if(phenoName == 'Consumption'){
         		maxConsumption = data.statistics[i].max;
         	}else if(phenoName == 'Rpm'){
@@ -322,8 +322,8 @@ include('header.php');
             maxMaf = data.statistics[i].max;
           }
       }
-      gon.statistics = {max_speed : maxSpeed, 
-      						max_rpm : maxRPM, 
+      gon.statistics = {max_speed : maxSpeed,
+      						max_rpm : maxRPM,
      							 max_consumption : maxConsumption,
                    max_iat : maxIat,
                    max_map : maxMap,
@@ -333,7 +333,7 @@ include('header.php');
 
     }
     initShowTrack();
-   $('#loadingIndicator_route').hide(); 
+   $('#loadingIndicator_route').hide();
   });
   }
   function getDistance(lat1, lng1, lat2, lng2){
@@ -346,7 +346,7 @@ include('header.php');
 
 		return dist;
   	}
-	
+
 	function getTotalCO2(){
 		var sum = 0;
 		for(var i = 0; i < gon.measurements.length-1; i++) {
@@ -357,38 +357,38 @@ include('header.php');
 			if(seconds <= 10){
 				var co2 = (((m.maf / 14.7) / 730 )) * 2.35;
 				sum += seconds * co2;
-			}			
+			}
 		}
-		return sum;		
-	}	
-	
+		return sum;
+	}
+
 	function getFuelPrice(totalFuelConsumption, fuelType){
 		$.get('assets/includes/fuelprices.php?fuelType='+fuelType, function(data) {
 			$('#total-consum').append('<p><i class="icon-fire"> </i>' + Math.round(totalFuelConsumption*100)/100 + ' l, circa ' + Math.round(totalFuelConsumption * data*100)/100 + ' €</p>');
 		});
 	}
-			
+
 	function getTotalFuelConsumption(){
 		var sum = 0;
 		for(var i = 0; i < gon.measurements.length-1; i++) {
 			var m = gon.measurements[i];
 			var m2 = gon.measurements[i + 1];
 			var seconds = new Date(m2.recorded_at).getTime() - new Date(m.recorded_at).getTime();
-			seconds = seconds / 1000;			
+			seconds = seconds / 1000;
 			if(seconds <= 10){
 				var consumption = m.maf / 10731;
 				sum += seconds * consumption;
-			}			
+			}
 		}
 		return sum;
-	}	
-	
+	}
+
 	function convertMilisecondsToTime(miliseconds) {
 
       var totalSec = miliseconds / 1000;
       var hours = parseInt( totalSec / 3600 ) % 24;
       var minutes = parseInt( totalSec / 60 ) % 60;
-	
+
 		totalSec = totalSec % 60;
 
       return (hours > 0 ? hours + ' h' : '') + ' ' + (minutes > 0 ? minutes + " m" : "") + ' ' + (totalSec > 0 ? totalSec + " s" : "");
@@ -432,7 +432,7 @@ function initShowTrack(){
 var chart;
 var data;
 function initChart(){
-  
+
   //defining data and setting up the hash for lookup
   var seriesData = [[],[],[],[],[],[]];
   epsg4326 =  new OpenLayers.Projection("EPSG:4326"); //WGS 1984 projection
@@ -479,14 +479,14 @@ function initChart(){
     }
     dataHash[date] = new OpenLayers.Geometry.Point( coords[1], coords[2] ).transform(epsg4326, projectTo);
   }
-  
-  
+
+
   chart = new CanvasJS.Chart("chartContainer", {
     zoomEnabled: true,
     panEnabled: true,
     legend: {
       fontFamily: "Droid Sans",
-      horizontalAlign: "left", // left, center ,right 
+      horizontalAlign: "left", // left, center ,right
       verticalAlign: "top",  // top, center, bottom
     },
     axisX:{
@@ -508,7 +508,7 @@ function initChart(){
     { //dataSeries object
 
       /*** Change type "column" to "bar", "area", "line" or "pie"***/
-      
+
       type: "spline",
       axisYType: "primary",
       name: "<?php echo $route_dropup_speed; ?> in km/h",
@@ -569,7 +569,7 @@ function initChart(){
     ]
   });
 
-  
+
   chartSeries = $.extend({},chart.options.data);
   chart.options.data.splice(2,4);
   chart.render();
@@ -595,15 +595,19 @@ function addSeries(series, axis){
 /* http://b.www.toolserver.org/tiles/bw-mapnik/$%7Bz%7D/$%7Bx%7D/$%7By%7D.png
 */
 function initMap() {
-	
+
+  // var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
+	// "./assets/proxy/ba-simple-proxy.php?mode=native&sub=a&url=${z}%2F${x}%2F${y}.png",
+	// "./assets/proxy/ba-simple-proxy.php?mode=native&sub=b&url=${z}%2F${x}%2F${y}.png",
+	// "./assets/proxy/ba-simple-proxy.php?mode=native&sub=c&url=${z}%2F${x}%2F${y}.png"], {
+	// 	crossOriginKeyword: null
+	// });
   var osm = new OpenLayers.Layer.OSM('<?php echo $route_baseLayer; ?>', [
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile1&url=${z}%2F${x}%2F${y}.png",
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile2&url=${z}%2F${x}%2F${y}.png",
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile3&url=${z}%2F${x}%2F${y}.png",
-	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=otile4&url=${z}%2F${x}%2F${y}.png"], {
+	"./assets/proxy/ba-simple-proxy.php?mode=native&sub=tile&url=${z}%2F${x}%2F${y}.png"], {
 		crossOriginKeyword: null
 	});
-	osm.attribution = '<p>Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png"></p>';
+
+	osm.attribution = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
 
   map.addLayer(osm);
   vectorLayer = new OpenLayers.Layer.Vector('<?php echo $route_drivenRoute; ?>');
@@ -749,13 +753,13 @@ function changeSensor(sensor){
               color = "#E01B1B";
             }
             var style = {
-              strokeColor: color, 
+              strokeColor: color,
               strokeOpacity: 0.8,
               strokeWidth: 5
             };
             vectorLayer.features[i].style = style;
           }
-          vectorLayer.redraw();          
+          vectorLayer.redraw();
 
           document.getElementById("legend1").innerHTML = "0-5 l/100km"
           document.getElementById("legend2").innerHTML = "5-9 l/100km"
@@ -768,7 +772,7 @@ function changeSensor(sensor){
 
     for(i = 0; i < vectorLayer.features.length; i++){
         var style = {
-          strokeColor: getColor(sensor, gon.measurements[i][sensor]), 
+          strokeColor: getColor(sensor, gon.measurements[i][sensor]),
           strokeOpacity: 0.8,
           strokeWidth: 5
         };
@@ -777,7 +781,7 @@ function changeSensor(sensor){
     vectorLayer.redraw();
 
     var steps = gon.statistics["max_" + sensor]/5;
-  
+
     document.getElementById("legend1").innerHTML = "0" + "-" + Math.round(steps) + unit
     document.getElementById("legend2").innerHTML = Math.round(steps) + "-" + Math.round(2*steps) + unit
     document.getElementById("legend3").innerHTML = Math.round(2*steps) + "-" + Math.round(3*steps) + unit
@@ -804,7 +808,7 @@ $(document).ready(function () {
 		if ($("#btn-full-screen").hasClass("btn-full-screen")) {
 			scroll = $(window).scrollTop();
 			window.scrollTo(0,0);
-			
+
 			$("#route-information-container").hide();
 			$("#map-and-chart-container").hide();
 			$("footer").hide();
@@ -829,7 +833,7 @@ $(document).ready(function () {
 				'overflow': 'visible'
 			});
 
-			
+
 
 			$("#map").height("");
 			$("#map").appendTo("#small-map-span");
@@ -837,41 +841,41 @@ $(document).ready(function () {
 			$("#map").addClass("simple-map");
 			$("#btn-full-screen").removeClass("btn-partial-screen");
 			$("#btn-full-screen").addClass("btn-full-screen");
-			$("#btn-full-screen").text('Fullscreen');                    
+			$("#btn-full-screen").text('Fullscreen');
 			$(window).scrollTop(scroll);
 		}
 		map.updateSize();
 	});
-	
-	$('a#change-sensor-speed').click(function(){ 
+
+	$('a#change-sensor-speed').click(function(){
 	  changeSensor("speed");
 	  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_speed ?>");
 	});
-	$('a#change-sensor-rpm').click(function(){ 
+	$('a#change-sensor-rpm').click(function(){
 	  changeSensor("rpm");
 	  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_speed ?>");
 	});
-	$('a#change-sensor-consumption').click(function(){ 
+	$('a#change-sensor-consumption').click(function(){
 	  changeSensor("consumption");
 	  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_fuelconsumption ?>");
 	});
-	$('a#change-sensor-intake-temp').click(function(){ 
+	$('a#change-sensor-intake-temp').click(function(){
 	  changeSensor("iat");
 	  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_intake_temp ?>");
 	});
-	$('a#change-sensor-intake-pressure').click(function(){ 
+	$('a#change-sensor-intake-pressure').click(function(){
 	  changeSensor("map");
 	  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_intake_pressure ?>");
 	});
-	$('a#change-sensor-co2').click(function(){ 
+	$('a#change-sensor-co2').click(function(){
 	  changeSensor("co2");
 	  $('#legend-title').text("<?php echo $route_legend_title.'CO2' ?>");
 	});
-	$('a#change-sensor-maf').click(function(){ 
+	$('a#change-sensor-maf').click(function(){
 	  changeSensor("maf");
 	  $('#legend-title').text("<?php echo $route_legend_title.$route_dropup_maf ?>");
 	});
-	
+
   //GET the information about the specific track
   $.get('assets/includes/users.php?track='+$_GET(['id']), function(data) {
     if(data >= 400){
@@ -885,88 +889,88 @@ $(document).ready(function () {
       }
       $('#loadingIndicator').hide();
     }else{
-	
+
       data = JSON.parse(data);
       addRouteInformation(data.properties.name);
-      var fuelType = data.properties.sensor.properties.fuelType;	
-		
+      var fuelType = data.properties.sensor.properties.fuelType;
+
 		var measurements = [];
-		
+
 		//speed = 0 counts as idle time
 		var idleTime = 0;
-		
+
 		var distance = 0;
 		if (data.properties.length) {
 			lengthOfTrack = data.properties.length;
 		}
-		
+
 		// total fuel consumption in liter per hour
-		var totalFuelConsumptionLiterPerHour = 0;		
-		
+		var totalFuelConsumptionLiterPerHour = 0;
+
 		//prevent memory issues, only show shapefile download for smaller tracks
 		//max value must correspond with max measurements value of enviroCar-server
         if (data.features.length >= 500) {
       	    $('#download-shapefile').hide();
         }
-		
+
 		if (data.features.length > 1) {
 			for (var i = 0; i < data.features.length; i++) {
-				
-				var feature = data.features[i];		
-				
+
+				var feature = data.features[i];
+
 				if(i == 0){
 					startTime = new Date(data.features[i].properties.time);
 				}else if(i == data.features.length - 2){
-					endTime = new Date(data.features[i + 1].properties.time);	
+					endTime = new Date(data.features[i + 1].properties.time);
 				}
 				var lat1 = feature.geometry.coordinates[1];
 				var lng1 = feature.geometry.coordinates[0];
- 				
- 				var trackPartDistance = 0;				
-				
-				if (lengthOfTrack == 0 && i < data.features.length-1){				
+
+ 				var trackPartDistance = 0;
+
+				if (lengthOfTrack == 0 && i < data.features.length-1){
 					var lat2 = data.features[i+1].geometry.coordinates[1];
 					var lng2 = data.features[i+1].geometry.coordinates[0];
-					
-					trackPartDistance = getDistance(lat1, lng1, lat2, lng2);				
-					
+
+					trackPartDistance = getDistance(lat1, lng1, lat2, lng2);
+
 					distance = distance + trackPartDistance;
 				}
-				
+
 				var coords = "POINT (" + feature.geometry.coordinates[0] + " " + feature.geometry.coordinates[1]+ ")";
-        		
+
         		var rpm = checkPhenomenonValue('Rpm', feature).value;
         		var iat = checkPhenomenonValue('Intake Temperature', feature);
         		var map = checkPhenomenonValue('Intake Pressure', feature);
         		var speed = checkPhenomenonValue('Speed', feature);
-				
+
 				if(speed == 0){
 					//add five thousand miliseconds of idle time for each measurement with speed = 0
-					idleTime = idleTime + 5000;	
-				}	
-				
+					idleTime = idleTime + 5000;
+				}
+
 				var maf = feature.properties.phenomenons["MAF"];
 
 				if(maf){
 					 maf = checkPhenomenonValue("MAF", feature);
 				}else if (!maf || maf <= 0) {
-					maf = checkPhenomenonValue("Calculated MAF", feature);		
-				}	
-				
-				var secondsBtwnMeasurements = 0;				
+					maf = checkPhenomenonValue("Calculated MAF", feature);
+				}
 
-				if(i == (data.features.length - 1)){				
+				var secondsBtwnMeasurements = 0;
+
+				if(i == (data.features.length - 1)){
 					secondsBtwnMeasurements = 1;
-					
-				}else{				
+
+				}else{
 					//multiply with seconds between measurements
-					secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;		
-									
-				}		
-				
-				var consumption = 0;				
+					secondsBtwnMeasurements = (new Date(data.features[i+1].properties.time).getTime() - new Date(feature.properties.time).getTime()) / 1000;
+
+				}
+
+				var consumption = 0;
 				var co2 = 0;
-				var fuelConsumptionOfMeasurement = checkPhenomenonValue('Consumption', feature);       		
+				var fuelConsumptionOfMeasurement = checkPhenomenonValue('Consumption', feature);
 
         		if (speed > 0){
           		//consumption = (maf * 3355) / (speed * 100);
@@ -975,21 +979,21 @@ $(document).ready(function () {
           		//consumption = (maf * 3355) / 10000;
           		consumption = fuelConsumptionOfMeasurement / 10000;//??
         		}
-        
+
 				if (consumption > 50){
           		consumption = 50;
        		}
-       		
+
 				//this does not work as the distance between measurment points can be 0 sometimes
 				//if(trackPartDistance != 0){
 				//	consumption = fuelConsumptionOfMeasurement * secondsBtwnMeasurements / 3600 / trackPartDistance * 100;
 				//}
-				totalFuelConsumptionLiterPerHour += fuelConsumptionOfMeasurement;			
-				
-        		co2 = consumption * 2.35 //gets kg/100 km        
-        
-				var recorded_at = feature.properties.time;				
-				
+				totalFuelConsumptionLiterPerHour += fuelConsumptionOfMeasurement;
+
+        		co2 = consumption * 2.35 //gets kg/100 km
+
+				var recorded_at = feature.properties.time;
+
         		var m = {
           		recorded_at : recorded_at,
           		speed : speed,
@@ -1001,32 +1005,32 @@ $(document).ready(function () {
           		co2 : co2,
           		latlon : coords
           	};
-				
+
 				measurements.push(m);
-			}	
-			
-			gon.measurements = measurements;	
-			
+			}
+
+			gon.measurements = measurements;
+
 			duration = endTime.getTime() - startTime.getTime();
-		
+
 			if (lengthOfTrack == 0) {
 				lengthOfTrack = distance;
 			}
-			
+
 			// in liter per 100 km
-			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;			
-						
+			var avgFuelConsumption = (totalFuelConsumptionLiterPerHour / data.features.length) * duration / (1000 * 60 * 60) / lengthOfTrack * 100;
+
 			//calculate grams of CO2 per km
 			var co2inGramsPerKm	= 0;
-			
+
 			if(fuelType == "gasoline"){
 				co2inGramsPerKm = avgFuelConsumption * 23.3;
 			}else if(fuelType == "diesel"){
 				co2inGramsPerKm = avgFuelConsumption * 26.4;
 			}
-			
+
 			var totalCO2 = co2inGramsPerKm * lengthOfTrack / 1000;
-			
+
 			$('#routeInformation').append('<h2>'+name+'</h2>');
 			$('#idle-time').append('<p><i class="icon-pause"></i>' + convertMilisecondsToTime(idleTime) + '</p>');
 			$('#dist').append('<p><i class="icon-globe"> </i>' + Math.round(lengthOfTrack*100)/100 + ' km</p>');
@@ -1034,18 +1038,18 @@ $(document).ready(function () {
 			$('#avg-consum').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(avgFuelConsumption*100)/100 + ' l/100 km </p>');
 			$('#avg-co2').append('<p><img src="./assets/img/icon_durchschnitt.gif"/>' + Math.round(co2inGramsPerKm*100)/100 + ' g/km</p>');
 			$('#total-co2').append('<p><i class="icon-leaf"></i>' + Math.round(totalCO2*100)/100 + ' kg</p>');
-			
-			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;		
-			
-			getFuelPrice(totalFuelConsumptionInLiter, fuelType);	
-			
-		}    	
-		
-    	fillStatistics()     
-      
+
+			var totalFuelConsumptionInLiter = (avgFuelConsumption / 100) * lengthOfTrack;
+
+			getFuelPrice(totalFuelConsumptionInLiter, fuelType);
+
+		}
+
+    	fillStatistics()
+
     }
   });
-	
+
 });
 
 
